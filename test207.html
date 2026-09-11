@@ -1,0 +1,222 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>ACT Math Test 107</title><style>@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:#fff;color:#2d3748;line-height:1.7}
+.container{max-width:800px;margin:0 auto;padding:20px 24px}
+header{background:linear-gradient(135deg,#1a3a4a 0%,#2d6a7a 100%);color:#fff;padding:28px 0;margin-bottom:36px;text-align:center}
+header .container{display:block}
+header h1{font-size:1.6rem;font-weight:700;letter-spacing:-0.3px}
+header a{color:rgba(255,255,255,.7);text-decoration:none;font-size:.9rem;display:inline-block;margin-bottom:6px;transition:color .2s}
+header a:hover{color:#fff}
+.question{background:#fff;border-radius:12px;padding:24px;margin-bottom:20px;border:1px solid #e2e8f0;transition:border-color .2s}
+.question:hover{border-color:#cbd5e0}
+.question p{margin-bottom:14px;font-size:1.05rem}
+img{max-width:100%;height:auto;margin:4px 0;vertical-align:middle}
+.choices{list-style:none}
+.choices li{padding:10px 14px;margin:6px 0;border-radius:8px;cursor:pointer;transition:all .2s;border:2px solid transparent}
+.choices li:hover{background:#f0f7fa}
+.choices li.selected{background:#d1ecf1;border-color:#bee5eb}
+.choices li.correct{background:#d4edda;border-color:#28a745}
+.choices li.wrong{background:#f8d7da;border-color:#dc3545}
+.choices li.show-correct{background:#d4edda;border-color:#28a745}
+.submit-wrap{text-align:center;margin:36px 0}
+.submit-btn{display:inline-block;padding:14px 40px;background:linear-gradient(135deg,#1a3a4a,#2d6a7a);color:#fff;border:none;border-radius:10px;font-size:1.1rem;cursor:pointer;font-weight:600;font-family:inherit;transition:all .25s;letter-spacing:.3px}
+.submit-btn:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(26,58,74,.25)}
+.score-box{background:#fff;border-radius:12px;padding:28px;margin-bottom:28px;text-align:center;border:1px solid #e2e8f0;box-shadow:0 4px 20px rgba(0,0,0,.06);display:none}
+.score-box h2{font-size:1.4rem;margin-bottom:8px;color:#1a3a4a;text-align:center}
+.score-box .pct{font-size:3rem;font-weight:700}
+.score-box .pct.good{color:#28a745}
+.score-box .pct.ok{color:#e6a817}
+.score-box .pct.bad{color:#dc3545}
+.score-box .detail{color:#666;margin-top:4px}
+.result-tag{display:inline-block;padding:2px 10px;border-radius:12px;font-size:.8rem;font-weight:600;margin-left:8px}
+.result-tag.correct{background:#d4edda;color:#155724}
+.result-tag.wrong{background:#f8d7da;color:#721c24}
+.reset-btn{display:none;margin:16px auto;padding:12px 28px;background:#6c757d;color:#fff;border:none;border-radius:10px;font-size:1rem;cursor:pointer;font-family:inherit;transition:all .25s}
+.reset-btn:hover{background:#5a6268;transform:translateY(-1px)}
+.explanation{background:#f0f7ff;border-left:4px solid #1a3a4a;padding:14px 18px;margin-top:14px;border-radius:0 8px 8px 0;font-size:.95rem;color:#444;display:none}
+.explanation.show{display:block}
+.explanation strong{color:#1a3a4a}
+.nav{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin:36px 0}
+.nav a{display:inline-block;padding:10px 24px;background:linear-gradient(135deg,#1a3a4a,#2d6a7a);color:#fff;text-decoration:none;border-radius:10px;font-weight:500;font-size:.95rem;transition:all .25s}
+.nav a:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(26,58,74,.25)}
+footer{text-align:center;padding:36px 24px;color:#8899a4;font-size:.85rem;border-top:1px solid #e2e8f0;margin-top:40px}
+.report-btn{display:inline-block;margin:0;padding:12px 28px;background:linear-gradient(135deg,#1a3a4a,#2d6a7a);color:#fff;border:none;border-radius:10px;font-size:1rem;cursor:pointer;font-family:inherit;transition:all .25s}
+.report-btn:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(26,58,74,.25)}
+.bottom-score{background:#fff;border-radius:12px;padding:20px;margin:20px 0;text-align:center;border:1px solid #e2e8f0;box-shadow:0 4px 20px rgba(0,0,0,.06)}
+.bottom-score .pct{font-size:2.5rem;font-weight:700}
+.bottom-score .pct.good{color:#28a745}
+.bottom-score .pct.ok{color:#e6a817}
+.bottom-score .pct.bad{color:#dc3545}
+.bottom-score .detail{color:#666;margin-top:4px;font-size:.95rem}
+.report-wrap{display:none;text-align:center;margin:16px 0}
+.name-input{padding:10px 14px;border:1px solid #e2e8f0;border-radius:10px;font-size:.95rem;font-family:inherit;width:200px;margin-right:8px;outline:none;transition:border-color .2s}
+.name-input:focus{border-color:#1a3a4a}
+</style></head><body><header><div class="container"><a href="index.html">&larr; All Tests</a><h1>ACT Math Practice Test 107</h1></div></header><div class="container"><div id="score-box" class="score-box"><h2>Your Score</h2><div class="pct">0%</div><div class="detail"></div></div><div class="question"><p><b>1.</b> For which of the following functions is <em>f</em>(-5) &gt; <em>f</em>(5)?</p><ul class="choices"><li>A. <em>f</em>(<em>x</em>) = 6<em>x</em><sup>2</sup></li><li>B. <em>f</em>(<em>x</em>) = 6</li><li>C. <em>f</em>(<em>x</em>) = 6/<em>x</em></li><li>D. <em>f</em>(<em>x</em>) = 6 - <em>x</em><sup>3</sup></li><li>E. <em>f</em>(<em>x</em>) = <em>x</em><sup>6</sup> + 6</li></ul></div><div class="question"><p><b>2.</b> For what value of <em>n</em> would the following system of equations have an infinite number of solutions?<br><img src="https://img.crackab.com/act/nmg10/e0203-01.jpg"></p><ul class="choices"><li>F. 4</li><li>G. 9</li><li>H. 16</li><li>J. 36</li><li>K. 48</li></ul></div><div class="question"><p><b>3.</b> If <em>x</em> and <em>y</em> are positive integers such that the greatest common factor of <em>x</em><sup>2</sup> <em>y</em><sup>2</sup> and <em>xy</em><sup>3</sup> is 27, then which of the following could <em>y</em> equal?</p><ul class="choices"><li>A. 81</li><li>B. 27</li><li>C. 18</li><li>D. 9</li><li>E. 3</li></ul></div><div class="question"><p><b>4.</b> Given consecutive integers <em>r</em>, <em>s</em>, <em>t</em>, and <em>u</em> such that <em>r</em> &lt; <em>s</em> &lt; <em>t</em> &lt; <em>u</em>, which of the following expressions has the greatest value?</p><ul class="choices"><li>F. <math xmlns="http://www.w3.org/1998/Math/MathML"><mfrac><mi>r</mi><mi>s</mi></mfrac></math></li><li>G. <math xmlns="http://www.w3.org/1998/Math/MathML"><mfrac><mi>s</mi><mi>t</mi></mfrac></math></li><li>H. <math xmlns="http://www.w3.org/1998/Math/MathML"><mfrac><mi>t</mi><mi>u</mi></mfrac></math></li><li>J. <math xmlns="http://www.w3.org/1998/Math/MathML"><mfrac><mrow><mo>(</mo><mi>r</mi><mo>+</mo><mi>s</mi><mo>)</mo></mrow><mfenced><mrow><mi>s</mi><mo>+</mo><mi>t</mi></mrow></mfenced></mfrac></math></li><li>K. <math xmlns="http://www.w3.org/1998/Math/MathML"><mfrac><mrow><mo>(</mo><mi>s</mi><mo>+</mo><mi>t</mi><mo>)</mo></mrow><mfenced><mrow><mi>t</mi><mo>+</mo><mi>u</mi></mrow></mfenced></mfrac></math></li></ul></div><div class="question"><p><b>5.</b> What is the distance in the standard (<em>x</em>, <em>y</em>) coordinate plane between the points (0,1) and (4,4)?</p><ul class="choices"><li>A. <math><msqrt><mn>7</mn></msqrt></math></li><li>B. 3</li><li>C. 4</li><li>D. 5</li><li>E. <math><msqrt><mn>27</mn></msqrt></math></li></ul></div><div class="question"><p><b>6.</b> The sides of a triangle are 9, 12, and 15 centimeters long. What is the angle between the 2 shortest sides?</p><ul class="choices"><li>F. 180°</li><li>G. 90°</li><li>H. 60°</li><li>J. 45°</li><li>K. 30°</li></ul></div><div class="question"><p><b>7.</b> In the pentagon shown below, one interior angle measures 40°. What is the total measure of the other 4 interior angles?<br><img src="https://img.crackab.com/act/nmg10/f0204-01.jpg"></p><ul class="choices"><li>A. 120°</li><li>B. 160°</li><li>C. 320°</li><li>D. 500°</li><li>E. 680°</li></ul></div><div class="question"><p><b>8.</b> For real numbers <em>r</em> and <em>s</em>, when is the equation |<em>r</em> - <em>s</em>| = | <em>r</em> + <em>s</em>| true?</p><ul class="choices"><li>F. Always</li><li>G. Only when <em>r</em> = <em>s</em></li><li>H. Only when <em>r</em> = 0 or <em>s</em> = 0</li><li>J. Only when <em>r &gt;</em> 0 and <em>s &lt;</em> 0</li><li>K. Never</li></ul></div><div class="question"><p><b>9.</b> What is the value of log<sub>4</sub> 64?</p><ul class="choices"><li>A. 3</li><li>B. 4</li><li>C. 8</li><li>D. 10</li><li>E. 16</li></ul></div><div class="question"><p><b>10.</b> How many different positive three-digit integers can be formed if the three digits 3, 4, and 5 must be used in each of the integers?</p><ul class="choices"><li>F. 6</li><li>G. 8</li><li>H. 12</li><li>J. 15</li><li>K. 24</li></ul></div><div class="submit-wrap"><button class="submit-btn" onclick="gradeTest()">Submit Test</button><button class="reset-btn" onclick="resetTest()">Try Again</button>
+<div class="report-wrap"><input type="text" class="name-input" placeholder="Student name (for report)"><button class="report-btn" onclick="generateReport()">Download Report (PDF)</button></div></div><div class="nav"><a href="test206.html">&larr; Prev</a><a href="index.html">All Tests</a><a href="test208.html">Next &rarr;</a></div></div><footer><div class="container">ACT Math Practice</div></footer>
+<script>
+const ANSWERS = {"1": "D", "2": "H", "3": "E", "4": "H", "5": "D", "6": "G", "7": "D", "8": "H", "9": "A", "10": "F"};
+const EXPLANATIONS = {"1":"The correct answer is D. To solve this problem, first eliminate answer choices that yield equal values for f(-5) and f(5). These include answer choices in which the functions have even powers of x such as answer choice A, where f(x)  =  6x2, answer choice B, where f(x)  =  6, and answer choice E, where f(x)  =  x6 + 6. Now, substitute -5 and 5 into the remaining answer choices: Answer choice C: f(x)  =  6/x. When x is -5, f(x)  =  -6/5, and when x is 5, f(x)  =  6/5. Therefore, f(5) is greater than f(-5) and answer choice C is incorrect. Answer choice D: f(x)  =  6 - x3. When x  =  -5, f(x)  =  6 - (-125) or 131, and when x is 5, f(x)  =  6 - 125, or -116. Therefore, f(-5) is greater than f(5).", "2":"The correct answer is H. Systems of equations have an infinite number of solutions when the equations are equivalent. In order for the two equations to be equivalent, the constants and coefficients must be proportional. If the entire equation 3a + b  =  12 is multiplied by 4, the result is 4(3a + b)  =  4(12), or 12a + 4b  =  48. Thus, in order for the two equations to be equivalent, 3n  =  48, or n  =  16.", "3":"The correct answer is E. You could take a "brute-force" approach and test all the given values of y and see if you could find an x that worked. For example, if y  =  9, then the two numbers are x2 × 92 and x × 93. You can see that 92 is a factor of these 2 numbers, so 27 cannot be the greatest common factor. It might be more efficient to be more general and avoid testing all 5 values of x. Notice that xy2 is a common factor of both x2 y2 and xy3. Because it is a factor, xy2 must also be a factor of 27. Twenty-seven factors as 3 × 32, so it seems natural to see if x  =  3 and y  =  3 are possible solutions. In this case, the two numbers from the problem are 32 × 32 and 33 × 3 and the greatest common factor is 3 × 32  =  27, so it works.", "4":"The correct answer is H. One way to solve this problem is to pick values for the given variables. Make r  =  2, s  =  3, t  =  4, and u  =  5. These values follow the rule established in the question. Now, try the values in each answer choice: The fraction with the greatest value is  so answer choice H is correct.", "5":"The correct answer is D. To find the distance between 2 points in the standard (x, y) coordinate plane you can use the distance formula . Calculate the distance as follows:", "6":"The correct answer is G. A triangle with sides 9, 12, and 15 centimeters long has sides in the ratio of 9:12:15, which simplifies to 3:4:5. Recall that a 3-4-5 triangle is a special case because it is known to be a right triangle. Any triangle with sides in the same ratio is also a right triangle. Thus, there is a right angle between the smaller sides.", "7":"The correct answer is D. The sum of the interior angles of a pentagon is (5 - 2)(180°), or 540°. Thus, the total of the other 4 angles is 540° - 40°, or 500°.", "8":"The correct answer is H. The equation |r - s|  =  | r + s| is true only when r  =  0 or s  =  0. Thus, | 0 - s|  =  | 0 + s|, or |r - 0|  =  |r + 0|.", "9":"The correct answer is A. Logarithms are used to indicate exponents of certain numbers called bases. By definition, loga b  =  c, if ac  =  b. To solve, let log4 64  =  x; therefore, 64  =  4x. Because 43  =  64, x  =  3.", "10":"The correct answer is F. To solve, write out every possible three-digit integer: 345, 354, 435, 453, 534, and 543; six different positive three-digit numbers can be formed, answer choice F."};
+let graded = false;
+
+document.querySelectorAll('.choices li').forEach(li => {
+  // Remove old onclick
+  li.removeAttribute('onclick');
+  li.addEventListener('click', function() {
+    if (graded) return;
+    const siblings = this.parentElement.querySelectorAll('li');
+    siblings.forEach(s => s.classList.remove('selected'));
+    this.classList.add('selected');
+  });
+});
+
+function gradeTest() {
+  if (graded) return;
+  graded = true;
+  let correct = 0;
+  const total = Object.keys(ANSWERS).length;
+  
+  document.querySelectorAll('.question').forEach((qDiv, idx) => {
+    const qNum = idx + 1;
+    const correctAns = ANSWERS[qNum];
+    if (!correctAns) return;
+    const choices = qDiv.querySelectorAll('.choices li');
+    const selected = qDiv.querySelector('.choices li.selected');
+    const selectedLetter = selected ? selected.textContent.trim().charAt(0) : null;
+    
+    choices.forEach(li => {
+      const letter = li.textContent.trim().charAt(0);
+      if (letter === correctAns) li.classList.add('show-correct');
+      li.style.cursor = 'default';
+    });
+    
+    const tag = document.createElement('span');
+    tag.className = 'result-tag';
+    
+    if (selectedLetter === correctAns) {
+      correct++;
+      tag.className += ' correct';
+      tag.textContent = 'Correct';
+      if (selected) { selected.classList.remove('selected'); selected.classList.add('correct'); }
+    } else {
+      tag.className += ' wrong';
+      tag.textContent = 'Incorrect (Answer: ' + correctAns + ')';
+      if (selected) { selected.classList.remove('selected'); selected.classList.add('wrong'); }
+    }
+    
+    const firstP = qDiv.querySelector('p');
+    if (firstP) firstP.appendChild(tag);
+    
+    if (typeof EXPLANATIONS !== 'undefined' && EXPLANATIONS[qNum]) {
+      const explDiv = document.createElement('div');
+      explDiv.className = 'explanation show';
+      explDiv.innerHTML = '<strong>Explanation:</strong> ' + EXPLANATIONS[qNum];
+      qDiv.appendChild(explDiv);
+    }
+  });
+  
+  const pct = Math.round((correct / total) * 100);
+  document.querySelector('.submit-btn').style.display = 'none';
+  document.querySelector('.reset-btn').style.display = 'block';
+  var rw=document.querySelector('.report-wrap');if(rw)rw.style.display='block';
+  var bs=document.createElement('div');bs.className='bottom-score';bs.id='bottom-score';
+  bs.innerHTML='<h2 style="font-size:1.3rem;margin-bottom:6px;color:#1a3a4a">Your Score</h2><div class="pct '+(pct>=80?'good':pct>=60?'ok':'bad')+'">'+pct+'%</div><div class="detail">'+correct+' out of '+total+' correct</div>';
+  document.querySelector('.submit-wrap').after(bs);
+  try{var tn=location.pathname.match(/test(\d+)/);if(tn)localStorage.setItem('actmath_'+tn[1],pct);}catch(e){}
+}
+
+function resetTest() {
+  graded = false;
+  var bsEl=document.getElementById('bottom-score');if(bsEl)bsEl.remove();
+  document.querySelector('.submit-btn').style.display = '';
+  document.querySelector('.reset-btn').style.display = 'none';
+  var rw=document.querySelector('.report-wrap');if(rw)rw.style.display='none';
+  var ni=document.querySelector('.name-input');if(ni)ni.value='';
+  document.querySelectorAll('.choices li').forEach(li => {
+    li.classList.remove('selected','correct','wrong','show-correct');
+    li.style.cursor = 'pointer';
+  });
+  document.querySelectorAll('.result-tag').forEach(t => t.remove());
+  document.querySelectorAll('.explanation').forEach(e => e.remove());
+}
+
+function generateReport(){
+  var nameInput=document.querySelector('.name-input');
+  var name=(nameInput&&nameInput.value.trim())||'Student';
+  var testName=document.querySelector('header h1').textContent;
+  var bs=document.getElementById('bottom-score');
+  var scorePct=bs?bs.querySelector('.pct').textContent:'';
+  var detailTxt=bs?bs.querySelector('.detail').textContent:'';
+  var d=new Date().toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'});
+  var btn=document.querySelector('.report-btn');btn.textContent='Generating...';btn.disabled=true;
+  var s=document.createElement('script');
+  s.src='https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js';
+  s.onerror=function(){btn.textContent='Download Report (PDF)';btn.disabled=false;alert('Could not load PDF library.');};
+  s.onload=function(){
+    var doc=new jspdf.jsPDF('portrait','mm','letter');
+    var pw=215.9,ph=279.4,mx=12,cw=pw-2*mx,y=8;
+    doc.setFillColor(26,58,74);doc.rect(0,0,pw,22,'F');
+    doc.setTextColor(255,255,255);doc.setFontSize(13);doc.setFont('helvetica','bold');
+    doc.text(testName,mx,9);
+    doc.setFontSize(7.5);doc.setFont('helvetica','normal');
+    doc.text(d+'  |  Student: '+name,mx,14.5);
+    doc.setFontSize(18);doc.setFont('helvetica','bold');
+    doc.text(scorePct,pw-mx,11,{align:'right'});
+    doc.setFontSize(7.5);doc.setFont('helvetica','normal');
+    doc.text(detailTxt,pw-mx,16,{align:'right'});
+    y=25;
+    doc.setDrawColor(26,58,74);doc.setLineWidth(0.3);doc.line(mx,y,pw-mx,y);y+=3;
+    document.querySelectorAll('.question').forEach(function(qDiv,idx){
+      var qNum=idx+1;var ca=ANSWERS[qNum];if(!ca)return;
+      var sel=qDiv.querySelector('.choices li.correct,.choices li.wrong');
+      var sa=sel?sel.textContent.trim().charAt(0):'-';
+      var ok=sel&&sel.classList.contains('correct');
+      if(ok){
+        doc.setFillColor(40,167,69);doc.circle(mx+1.2,y-1,1,'F');
+        doc.setTextColor(33,33,33);doc.setFont('helvetica','bold');doc.setFontSize(8);
+        doc.text('Q'+qNum,mx+4,y);
+        doc.setFont('helvetica','normal');doc.setTextColor(40,167,69);
+        doc.text('Correct ('+ca+')',mx+14,y);
+      }else{
+        doc.setFillColor(220,53,69);doc.circle(mx+1.2,y-1,1,'F');
+        doc.setTextColor(33,33,33);doc.setFont('helvetica','bold');doc.setFontSize(8);
+        doc.text('Q'+qNum,mx+4,y);
+        doc.setFont('helvetica','normal');doc.setTextColor(220,53,69);
+        doc.text('Incorrect',mx+14,y);
+        doc.setTextColor(120,120,120);
+        doc.text('(Chose '+sa+', Correct: '+ca+')',mx+32,y);
+      }
+      y+=3.2;
+      var qP=qDiv.querySelector('p');
+      if(qP){
+        var qT=qP.cloneNode(true);
+        var tags=qT.querySelectorAll('.result-tag');tags.forEach(function(t){t.remove();});
+        var qt=qT.textContent.replace(/^\d+\.\s*/,'').trim();
+        if(qt.length>0){
+          doc.setFont('helvetica','normal');doc.setTextColor(60,60,60);doc.setFontSize(6.5);
+          var ql=doc.splitTextToSize(qt,cw-5);
+          ql=ql.slice(0,1);
+          if(doc.splitTextToSize(qt,cw-5).length>1){ql[0]=ql[0].substring(0,ql[0].length-3)+'...';}
+          doc.text(ql,mx+4,y);y+=2.4;
+        }
+      }
+      if(typeof EXPLANATIONS!=='undefined'&&EXPLANATIONS[qNum]){
+        doc.setFont('helvetica','italic');doc.setTextColor(100,100,100);doc.setFontSize(6);
+        var lines=doc.splitTextToSize(EXPLANATIONS[qNum],cw-5);
+        if(lines.length>2){lines=lines.slice(0,2);lines[1]=lines[1].substring(0,Math.max(0,lines[1].length-3))+'...';}
+        doc.text(lines,mx+4,y);y+=lines.length*2.2;
+      }
+      y+=2;
+    });
+    doc.setDrawColor(200,200,200);doc.setLineWidth(0.2);doc.line(mx,ph-10,pw-mx,ph-10);
+    doc.setTextColor(170,170,170);doc.setFontSize(6);doc.setFont('helvetica','normal');
+    doc.text('ACT Math Practice  |  Score Report',pw/2,ph-7,{align:'center'});
+    var tn=location.pathname.match(/test(\d+)/);
+    var testNum=tn?parseInt(tn[1])-100:0;
+    var ds=new Date().toISOString().slice(0,10);
+    doc.save('ACT-Math-Test-'+testNum+'-'+ds+'.pdf');
+    btn.textContent='Download Report (PDF)';btn.disabled=false;
+  };
+  document.head.appendChild(s);
+}
+</script>
+</body></html>

@@ -1,0 +1,222 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>ACT Math Test 35</title><style>@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:#fff;color:#2d3748;line-height:1.7}
+.container{max-width:800px;margin:0 auto;padding:20px 24px}
+header{background:linear-gradient(135deg,#1a3a4a 0%,#2d6a7a 100%);color:#fff;padding:28px 0;margin-bottom:36px;text-align:center}
+header .container{display:block}
+header h1{font-size:1.6rem;font-weight:700;letter-spacing:-0.3px}
+header a{color:rgba(255,255,255,.7);text-decoration:none;font-size:.9rem;display:inline-block;margin-bottom:6px;transition:color .2s}
+header a:hover{color:#fff}
+.question{background:#fff;border-radius:12px;padding:24px;margin-bottom:20px;border:1px solid #e2e8f0;transition:border-color .2s}
+.question:hover{border-color:#cbd5e0}
+.question p{margin-bottom:14px;font-size:1.05rem}
+img{max-width:100%;height:auto;margin:4px 0;vertical-align:middle}
+.choices{list-style:none}
+.choices li{padding:10px 14px;margin:6px 0;border-radius:8px;cursor:pointer;transition:all .2s;border:2px solid transparent}
+.choices li:hover{background:#f0f7fa}
+.choices li.selected{background:#d1ecf1;border-color:#bee5eb}
+.choices li.correct{background:#d4edda;border-color:#28a745}
+.choices li.wrong{background:#f8d7da;border-color:#dc3545}
+.choices li.show-correct{background:#d4edda;border-color:#28a745}
+.submit-wrap{text-align:center;margin:36px 0}
+.submit-btn{display:inline-block;padding:14px 40px;background:linear-gradient(135deg,#1a3a4a,#2d6a7a);color:#fff;border:none;border-radius:10px;font-size:1.1rem;cursor:pointer;font-weight:600;font-family:inherit;transition:all .25s;letter-spacing:.3px}
+.submit-btn:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(26,58,74,.25)}
+.score-box{background:#fff;border-radius:12px;padding:28px;margin-bottom:28px;text-align:center;border:1px solid #e2e8f0;box-shadow:0 4px 20px rgba(0,0,0,.06);display:none}
+.score-box h2{font-size:1.4rem;margin-bottom:8px;color:#1a3a4a;text-align:center}
+.score-box .pct{font-size:3rem;font-weight:700}
+.score-box .pct.good{color:#28a745}
+.score-box .pct.ok{color:#e6a817}
+.score-box .pct.bad{color:#dc3545}
+.score-box .detail{color:#666;margin-top:4px}
+.result-tag{display:inline-block;padding:2px 10px;border-radius:12px;font-size:.8rem;font-weight:600;margin-left:8px}
+.result-tag.correct{background:#d4edda;color:#155724}
+.result-tag.wrong{background:#f8d7da;color:#721c24}
+.reset-btn{display:none;margin:16px auto;padding:12px 28px;background:#6c757d;color:#fff;border:none;border-radius:10px;font-size:1rem;cursor:pointer;font-family:inherit;transition:all .25s}
+.reset-btn:hover{background:#5a6268;transform:translateY(-1px)}
+.explanation{background:#f0f7ff;border-left:4px solid #1a3a4a;padding:14px 18px;margin-top:14px;border-radius:0 8px 8px 0;font-size:.95rem;color:#444;display:none}
+.explanation.show{display:block}
+.explanation strong{color:#1a3a4a}
+.nav{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin:36px 0}
+.nav a{display:inline-block;padding:10px 24px;background:linear-gradient(135deg,#1a3a4a,#2d6a7a);color:#fff;text-decoration:none;border-radius:10px;font-weight:500;font-size:.95rem;transition:all .25s}
+.nav a:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(26,58,74,.25)}
+footer{text-align:center;padding:36px 24px;color:#8899a4;font-size:.85rem;border-top:1px solid #e2e8f0;margin-top:40px}
+.report-btn{display:inline-block;margin:0;padding:12px 28px;background:linear-gradient(135deg,#1a3a4a,#2d6a7a);color:#fff;border:none;border-radius:10px;font-size:1rem;cursor:pointer;font-family:inherit;transition:all .25s}
+.report-btn:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(26,58,74,.25)}
+.bottom-score{background:#fff;border-radius:12px;padding:20px;margin:20px 0;text-align:center;border:1px solid #e2e8f0;box-shadow:0 4px 20px rgba(0,0,0,.06)}
+.bottom-score .pct{font-size:2.5rem;font-weight:700}
+.bottom-score .pct.good{color:#28a745}
+.bottom-score .pct.ok{color:#e6a817}
+.bottom-score .pct.bad{color:#dc3545}
+.bottom-score .detail{color:#666;margin-top:4px;font-size:.95rem}
+.report-wrap{display:none;text-align:center;margin:16px 0}
+.name-input{padding:10px 14px;border:1px solid #e2e8f0;border-radius:10px;font-size:.95rem;font-family:inherit;width:200px;margin-right:8px;outline:none;transition:border-color .2s}
+.name-input:focus{border-color:#1a3a4a}
+</style></head><body><header><div class="container"><a href="index.html">&larr; All Tests</a><h1>ACT Math Practice Test 35</h1></div></header><div class="container"><div id="score-box" class="score-box"><h2>Your Score</h2><div class="pct">0%</div><div class="detail"></div></div><div class="question"><p><b>1.</b> If <em>a</em>, <em>b</em>, and <em>c</em> are positive prime numbers, in the equation <em>a</em> – <em>b</em> = <em>c</em>, either <em>b</em> or <em>c</em> must represent which number?</p><ul class="choices"><li>A. 13</li><li>B. 11</li><li>C. 7</li><li>D. 5</li><li>E. 2</li></ul></div><div class="question"><p><b>2.</b> Pierre competes in a triathlon, along a course as shown in the figure below. He begins swimming at starting point <em>S</em> and swims straight across the lake, gets on his bicycle at station <em>A</em>, bikes to station <em>B</em>, and then runs to finishing line <em>F</em>. The judges use a stopwatch to record his elapsed times of <em>t</em><sub class="frac">A</sub>, <em>t</em><sub class="frac">B</sub>, and <em>t</em><sub class="frac">F</sub> hours from point <em>S</em> to points <em>A</em>, <em>B</em>, and <em>F</em>, respectively. If the distance, in miles, between points <em>S</em> and <em>A</em> along the racecourse is denoted by <em>SA</em>, then what is Pierre's average speed for this race, in miles per hour?<br><img alt="" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_182_r1.jpg"></p><ul class="choices"><li>F. <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_177_r1.jpg"></li><li>G. <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_178_r1.jpg"></li><li>H. <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_179_r1.jpg"></li><li>J. <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_180_r1.jpg"></li><li>K. <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_181_r1.jpg"></li></ul></div><div class="question"><p><b>3.</b> The triangle shown below has a hypotenuse with a length of 13 feet. The measure of <img alt="" class="root" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_029_r1.jpg"><em>A</em> is 20° and the measure of <img alt="" class="root" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_029_r1.jpg"><em>B</em> is 70°. Which of the following is closest to the length, in feet, of <img alt="" class="root" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_032_r1.jpg">?<br>(Note: sin 70° ≈ 0.9397<br>      cos 70° ≈ 0.3420<br>      tan 70° ≈ 2.747)<br><img alt="" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_183_r1.jpg"></p><ul class="choices"><li>A. 4.4</li><li>B. 5</li><li>C. 12</li><li>D. 12.2</li><li>E. 35.7</li></ul></div><div class="question"><p><b>4.</b> What is the value of <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_184_r1.jpg"> when <em>x</em> = -3 and <em>y</em> = -4?</p><ul class="choices"><li>F. -<img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_334_r1.jpg"></li><li>G. -<img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_009_r1.jpg"></li><li>H. <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_009_r1.jpg"></li><li>J. <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_334_r1.jpg"></li><li>K. <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_1035_r1.jpg"></li></ul></div><div class="question"><p><b>5.</b> As shown in the figure below, with angles as marked, a ramp is being designed that will have a vertical height of 4 feet. Which of the following is closest to the horizontal length of the ramp, in feet?<br><img alt="" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_185_r1.jpg"></p><ul class="choices"><li>A. 5</li><li>B. 6</li><li>C. 7</li><li>D. 8</li><li>E. 9</li></ul></div><div class="question"><p><b>6.</b> In the diagram below, <img alt="" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_151_r1.jpg"><em>ABC</em> is isosceles and <img alt="" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_151_r1.jpg"><em>BCD</em> is equilateral. <img alt="" class="root" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_021_r1.jpg"> = <img alt="" class="root" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_032_r1.jpg"> and the measure of <img alt="" class="root" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_029_r1.jpg"><em>ABC</em> is half the measure of <img alt="" class="root" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_029_r1.jpg"><em>BAC</em>. What is the measure of <img alt="" class="root" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_029_r1.jpg"><em>ABD</em>?<br><img alt="" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_186_r1.jpg"></p><ul class="choices"><li>F. 36°</li><li>G. 60°</li><li>H. 72°</li><li>J. 96°</li><li>K. 150°</li></ul></div><div class="question"><p><b>7.</b> The coordinates of the vertices of <img alt="" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_151_r1.jpg"><em>MON</em> are shown in the standard (<em>x</em>,<em>y</em>) coordinate plane below. Rectangle <em>MPQR</em> is shown shaded. Point <em>P</em> lies on <img alt="" class="root" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_064_r1.jpg">, point <em>Q</em> lies on <img alt="" class="root" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_117_r1.jpg">, and point <em>R</em> lies on <img alt="" class="root" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_063_r1.jpg">.<br><img alt="" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_187_r1.jpg"><br>What is the slope of <img alt="" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_151_r1.jpg"><em>MON</em>?</p><ul class="choices"><li>A. -2</li><li>B. -<img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_385_r1.jpg"></li><li>C. 0</li><li>D. <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_385_r1.jpg"></li><li>E. 2</li></ul></div><div class="question"><p><b>8.</b> The coordinates of the vertices of <img alt="" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_151_r1.jpg"><em>MON</em> are shown in the standard (<em>x</em>,<em>y</em>) coordinate plane below. Rectangle <em>MPQR</em> is shown shaded. Point <em>P</em> lies on <img alt="" class="root" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_064_r1.jpg">, point <em>Q</em> lies on <img alt="" class="root" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_117_r1.jpg">, and point <em>R</em> lies on <img alt="" class="root" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_063_r1.jpg">.<br><img alt="" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_187_r1.jpg"><br>Which of the following is closest to the perimeter, in coordinate units, of <img alt="" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_151_r1.jpg"><em>MON</em>?</p><ul class="choices"><li>F. 12</li><li>G. 16.9</li><li>H. 18</li><li>J. 20.9</li><li>K. 92</li></ul></div><div class="question"><p><b>9.</b> The coordinates of the vertices of <img alt="" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_151_r1.jpg"><em>MON</em> are shown in the standard (<em>x</em>,<em>y</em>) coordinate plane below. Rectangle <em>MPQR</em> is shown shaded. Point <em>P</em> lies on <img alt="" class="root" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_064_r1.jpg">, point <em>Q</em> lies on <img alt="" class="root" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_117_r1.jpg">, and point <em>R</em> lies on <img alt="" class="root" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_063_r1.jpg">.<br><img alt="" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_187_r1.jpg"><br>What is the value of cos (<img alt="" class="root" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_029_r1.jpg"><em>MON</em>)?</p><ul class="choices"><li>A. <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_188_r1.jpg"></li><li>B. <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_189_r1.jpg"></li><li>C. 2</li><li>D. <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_385_r1.jpg"></li><li>E. <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_190_r1.jpg"></li></ul></div><div class="question"><p><b>10.</b> In a Spanish class there are <em>m</em> students, of which <em>n</em> did NOT pass the last exam. Which of the following is a general expression for the fraction of the class that did receive a passing grade?</p><ul class="choices"><li>F. <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_191_r1.jpg"></li><li>G. <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_066_r1.jpg"></li><li>H. <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_193_r1.jpg"></li><li>J. <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_194_r1.jpg"></li><li>K. <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_195_r1.jpg"></li></ul></div><div class="question"><p><b>11.</b> The solution set of 5<em>x</em> + 9 ≥ 2(3<em>x</em> + 4) + 7 is shown by which of the following number line graphs?</p><ul class="choices"><li>A. <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_196_r1.jpg"></li><li>B. <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_197_r1.jpg"></li><li>C. <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_198_r1.jpg"></li><li>D. <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_199_r1.jpg"></li><li>E. <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_200_r1.jpg"></li></ul></div><div class="question"><p><b>12.</b> An artist wants to cover the entire outside of a rectangular box with mosaic tiles. The dimensions of the box shown below are given in centimeters. If each tile is exactly one square centimeter, and the artist lays the tiles with no space between them, how many tiles will he need?<br><img alt="" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_192_r1.jpg"></p><ul class="choices"><li>F. 75</li><li>G. 96</li><li>H. 108</li><li>J. 126</li><li>K. 150</li></ul></div><div class="question"><p><b>13.</b> In the figure shown below, <img alt="" class="root" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_032_r1.jpg"> and <img alt="" class="root" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_046_r1.jpg"> are parallel and <img alt="" class="root" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_026_r1.jpg"> = <img alt="" class="root" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_048_r1.jpg">. If <img alt="" class="root" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_029_r1.jpg"><em>ABC</em> is 130° and <img alt="" class="root" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_029_r1.jpg"><em>BAF</em> is 22°, what is the measure of <img alt="" class="root" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_029_r1.jpg"><em>AEF</em>?<br><img alt="" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_201_r1.jpg"></p><ul class="choices"><li>A. 50°</li><li>B. 118°</li><li>C. 152°</li><li>D. 158°</li><li>E. 164°</li></ul></div><div class="question"><p><b>14.</b> Given the figure below, what is the area of the trapezoid, in square inches?<br><img alt="" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_202_r1.jpg"></p><ul class="choices"><li>F. 18</li><li>G. 30</li><li>H. 42</li><li>J. 50</li><li>K. 52</li></ul></div><div class="question"><p><b>15.</b> What is the solution set of <img alt="" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_203_r1.jpg"></p><ul class="choices"><li>A. {4}</li><li>B. {8}</li><li>C. {-4, 8}</li><li>D. {-8, 4}</li><li>E. {-2, ±2<img alt="" class="root" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_133_r1.jpg">}</li></ul></div><div class="submit-wrap"><button class="submit-btn" onclick="gradeTest()">Submit Test</button><button class="reset-btn" onclick="resetTest()">Try Again</button>
+<div class="report-wrap"><input type="text" class="name-input" placeholder="Student name (for report)"><button class="report-btn" onclick="generateReport()">Download Report (PDF)</button></div></div><div class="nav"><a href="test134.html">&larr; Prev</a><a href="index.html">All Tests</a><a href="test136.html">Next &rarr;</a></div></div><footer><div class="container">ACT Math Practice</div></footer>
+<script>
+const ANSWERS = {"1": "E", "2": "H", "3": "A", "4": "J", "5": "C", "6": "J", "7": "D", "8": "J", "9": "B", "10": "F", "11": "A", "12": "K", "13": "C", "14": "G", "15": "D"};
+const EXPLANATIONS = {"1":"E Test the prime numbers from the answer choices in the equation. Since all the numbers in the equation a - b  =  c must be positive prime numbers, the only possible result for c can be 2 (e.g., 13 - 11  =  7 - 5  =  2). The only exceptions to c  =  2 are 5 - 2  =  3, 13 - 2  =  11, and 7 - 2  =  5. Even so, the only number common to all of these equations is 2, answer choice (E).", "2":"H You can determine Pierre\'s average speed, in miles per hour, by dividing his total mileage by his total time. The total number of miles he covers is the distance from starting point S to finish line F, which is SF. You can eliminate choices (F), (G), and (J) because they don\'t include the entire length of the racecourse. The total elapsed time from point S to point F is tF. You can eliminate choices (F), (G), and (K) because they don\'t use the elapsed time clocked at the end of the race.", "3":"A Since you know the hypotenuse of the triangle and need to find the adjacent side of ABC, use SOHCAHTOA:   =  cos (70°). So,  =  13 cos (70°) ≈ 4.4. Choices (D) and (E) are the answers that you would get if you used either the sine or the tangent functions in the equation above. If you chose either choice (B) or (C), you might have assumed that the triangle was a 5:12:13 right triangle.", "4":"J When x  =  -3 and y  =  -4, then . Choices (F), (G) and (J) all confuse the signs. Choice (K) switches x and y.", "5":"C The ramp forms a 30°-60°-90° triangle with side lengths in a ratio of 1::2. Since the shortest leg measures 4, the other leg of the triangle will be  times the short side:   =  6.92 ≈ 7. Choice (D) gives the length of the ramp itself, not the horizontal length.", "6":"J BCD is equilateral, so CBD is 60°. ABD must be larger than 60°, eliminating choices (F) and (G). Choice (J) would mean ABC is 96° - 60°  =  36°. Since ABC is half the measure of BAC and BAC  =  BCA, each base angle of the isosceles triangle would be (180° - 36°) ÷ 2  =  72°, which works within ABC: 36° + 72° + 72°  =  180. Choice (K) mistakenly calculates ABC to be twice, rather than half, the measure of BAC.", "7":"D Use the standard slope formula with points (8,0) and (0,-4):m  =  . If you selected choice (E), you may have flipped the x and the y when you calculated the slope. If you selected choice (A), you may have confused some of the negative signs.", "8":"J Find the hypotenuse with the Pythagorean theorem: a2 + b2  =  c2. With the values given in the figure, this becomes (8)2 + (4)2  =  c2, and c2  =  80, so c ≈ 8.9. Accordingly, the sides of this triangle have lengths of 4, 8, and 8.9. To find the perimeter, add these sides together to get 20.9.", "9":"B The formula for cosine is as follows: . Since you are dealing with MNO, the adjacent side will be 4, and the hypotenuse (the same whether you\'re dealing with sine or cosine) is . Accordingly, the cosine is . Choice (A) gives the sine of MNO, and choice (C) gives the tangent.", "10":"F The fraction is equal to . If there are m students in the class, m must be the denominator, so you can eliminate choices (G), (H), and (J). The number of students who received a passing grade is calculated by subtracting the number who didn\'t pass the last exam, n, from the total number of students, m. Choice (K) would give a negative fraction, which is not possible.", "11":"A To solve the inequality, distribute the 2 on the right side of the inequality: 5x + 9 ≥ 6x + 8 + 7. Then combine like terms to get: -x ≥ 6. Remember to flip the sign when you divide by -1 for x to give you the range x ≤-6. Choice (B) forgets to flip the sign. Choices (C) and (D) are the result if you forget to distribute 2 to the 4 in the first step. Choice (E) results if you missed a negative sign.", "12":"K The tiles must equal the surface area of the box, which is the sum of the areas of all 6 faces. There are three sets of faces: front/back, top/bottom, and the two sides: 2 (4 × 9) + 2 (3 × 9) + 2 (3 × 4)  =  24 + 72 + 54  =  150. Because each tile covers 1 cm2, the artist must have 150 cm2 ÷ 1 cm2  =  150, choice (K). Choice (F) finds the area of only three faces, and choices (G) and (J) account for only two of the three pairs of faces. Choice (H) finds the volume of the box.", "13":"C Draw in , which is parallel to both  and , to find BAD. The interior angles of two parallel lines add up to 180°, so you can subtract ABC (130°) from 180° to yield BAD  =  50°. Subtract BAE from the larger angle BAD to get EAD  =  50° - 22°  =  28°. Since AEF and EAD are also interior angles of two parallel lines, subtract: 180° - EAD  =  180° - 28°  =  152°  =  AEF. You could also extend  to  and find the third angle of the triangle. The same rule will apply—the third angle of this triangle will be equal to AEF because  and  are parallel.", "14":"G To find the area of a trapezoid, multiply the height by the average of the bases. The bases are 6 and 14, so their average is 10. Don\'t confuse the height of the trapezoid with the length of one of the slanted sides, which would give you choice (J). Choices (F) and (H) are the results when you multiply the length of only one of the bases by the height. You can also solve this problem by breaking the trapezoid apart into one central rectangle and right triangles on either side.", "15":"D First, raise both sides of the equation to the fifth power to get rid of the fifth root:  becomes x2 + 4x  =  32. Then, subtract 32 from both sides to get a standard quadratic form: x2 + 4x - 32  =  0. Factor the quadratic to get (x + 8)(x - 4)  =  0. So, x  =  -8 or x  =  4. You could also test the answers until you find all the numbers that satisfy the equation. Choice (A) gives only one of the possible values for x. Choice (C) reverses the signs. Be careful of choice (E)—that\'s what you get if you only square the 2 and use the quadratic formula!"};
+let graded = false;
+
+document.querySelectorAll('.choices li').forEach(li => {
+  // Remove old onclick
+  li.removeAttribute('onclick');
+  li.addEventListener('click', function() {
+    if (graded) return;
+    const siblings = this.parentElement.querySelectorAll('li');
+    siblings.forEach(s => s.classList.remove('selected'));
+    this.classList.add('selected');
+  });
+});
+
+function gradeTest() {
+  if (graded) return;
+  graded = true;
+  let correct = 0;
+  const total = Object.keys(ANSWERS).length;
+  
+  document.querySelectorAll('.question').forEach((qDiv, idx) => {
+    const qNum = idx + 1;
+    const correctAns = ANSWERS[qNum];
+    if (!correctAns) return;
+    const choices = qDiv.querySelectorAll('.choices li');
+    const selected = qDiv.querySelector('.choices li.selected');
+    const selectedLetter = selected ? selected.textContent.trim().charAt(0) : null;
+    
+    choices.forEach(li => {
+      const letter = li.textContent.trim().charAt(0);
+      if (letter === correctAns) li.classList.add('show-correct');
+      li.style.cursor = 'default';
+    });
+    
+    const tag = document.createElement('span');
+    tag.className = 'result-tag';
+    
+    if (selectedLetter === correctAns) {
+      correct++;
+      tag.className += ' correct';
+      tag.textContent = 'Correct';
+      if (selected) { selected.classList.remove('selected'); selected.classList.add('correct'); }
+    } else {
+      tag.className += ' wrong';
+      tag.textContent = 'Incorrect (Answer: ' + correctAns + ')';
+      if (selected) { selected.classList.remove('selected'); selected.classList.add('wrong'); }
+    }
+    
+    const firstP = qDiv.querySelector('p');
+    if (firstP) firstP.appendChild(tag);
+    
+    if (typeof EXPLANATIONS !== 'undefined' && EXPLANATIONS[qNum]) {
+      const explDiv = document.createElement('div');
+      explDiv.className = 'explanation show';
+      explDiv.innerHTML = '<strong>Explanation:</strong> ' + EXPLANATIONS[qNum];
+      qDiv.appendChild(explDiv);
+    }
+  });
+  
+  const pct = Math.round((correct / total) * 100);
+  document.querySelector('.submit-btn').style.display = 'none';
+  document.querySelector('.reset-btn').style.display = 'block';
+  var rw=document.querySelector('.report-wrap');if(rw)rw.style.display='block';
+  var bs=document.createElement('div');bs.className='bottom-score';bs.id='bottom-score';
+  bs.innerHTML='<h2 style="font-size:1.3rem;margin-bottom:6px;color:#1a3a4a">Your Score</h2><div class="pct '+(pct>=80?'good':pct>=60?'ok':'bad')+'">'+pct+'%</div><div class="detail">'+correct+' out of '+total+' correct</div>';
+  document.querySelector('.submit-wrap').after(bs);
+  try{var tn=location.pathname.match(/test(\d+)/);if(tn)localStorage.setItem('actmath_'+tn[1],pct);}catch(e){}
+}
+
+function resetTest() {
+  graded = false;
+  var bsEl=document.getElementById('bottom-score');if(bsEl)bsEl.remove();
+  document.querySelector('.submit-btn').style.display = '';
+  document.querySelector('.reset-btn').style.display = 'none';
+  var rw=document.querySelector('.report-wrap');if(rw)rw.style.display='none';
+  var ni=document.querySelector('.name-input');if(ni)ni.value='';
+  document.querySelectorAll('.choices li').forEach(li => {
+    li.classList.remove('selected','correct','wrong','show-correct');
+    li.style.cursor = 'pointer';
+  });
+  document.querySelectorAll('.result-tag').forEach(t => t.remove());
+  document.querySelectorAll('.explanation').forEach(e => e.remove());
+}
+
+function generateReport(){
+  var nameInput=document.querySelector('.name-input');
+  var name=(nameInput&&nameInput.value.trim())||'Student';
+  var testName=document.querySelector('header h1').textContent;
+  var bs=document.getElementById('bottom-score');
+  var scorePct=bs?bs.querySelector('.pct').textContent:'';
+  var detailTxt=bs?bs.querySelector('.detail').textContent:'';
+  var d=new Date().toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'});
+  var btn=document.querySelector('.report-btn');btn.textContent='Generating...';btn.disabled=true;
+  var s=document.createElement('script');
+  s.src='https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js';
+  s.onerror=function(){btn.textContent='Download Report (PDF)';btn.disabled=false;alert('Could not load PDF library.');};
+  s.onload=function(){
+    var doc=new jspdf.jsPDF('portrait','mm','letter');
+    var pw=215.9,ph=279.4,mx=12,cw=pw-2*mx,y=8;
+    doc.setFillColor(26,58,74);doc.rect(0,0,pw,22,'F');
+    doc.setTextColor(255,255,255);doc.setFontSize(13);doc.setFont('helvetica','bold');
+    doc.text(testName,mx,9);
+    doc.setFontSize(7.5);doc.setFont('helvetica','normal');
+    doc.text(d+'  |  Student: '+name,mx,14.5);
+    doc.setFontSize(18);doc.setFont('helvetica','bold');
+    doc.text(scorePct,pw-mx,11,{align:'right'});
+    doc.setFontSize(7.5);doc.setFont('helvetica','normal');
+    doc.text(detailTxt,pw-mx,16,{align:'right'});
+    y=25;
+    doc.setDrawColor(26,58,74);doc.setLineWidth(0.3);doc.line(mx,y,pw-mx,y);y+=3;
+    document.querySelectorAll('.question').forEach(function(qDiv,idx){
+      var qNum=idx+1;var ca=ANSWERS[qNum];if(!ca)return;
+      var sel=qDiv.querySelector('.choices li.correct,.choices li.wrong');
+      var sa=sel?sel.textContent.trim().charAt(0):'-';
+      var ok=sel&&sel.classList.contains('correct');
+      if(ok){
+        doc.setFillColor(40,167,69);doc.circle(mx+1.2,y-1,1,'F');
+        doc.setTextColor(33,33,33);doc.setFont('helvetica','bold');doc.setFontSize(8);
+        doc.text('Q'+qNum,mx+4,y);
+        doc.setFont('helvetica','normal');doc.setTextColor(40,167,69);
+        doc.text('Correct ('+ca+')',mx+14,y);
+      }else{
+        doc.setFillColor(220,53,69);doc.circle(mx+1.2,y-1,1,'F');
+        doc.setTextColor(33,33,33);doc.setFont('helvetica','bold');doc.setFontSize(8);
+        doc.text('Q'+qNum,mx+4,y);
+        doc.setFont('helvetica','normal');doc.setTextColor(220,53,69);
+        doc.text('Incorrect',mx+14,y);
+        doc.setTextColor(120,120,120);
+        doc.text('(Chose '+sa+', Correct: '+ca+')',mx+32,y);
+      }
+      y+=3.2;
+      var qP=qDiv.querySelector('p');
+      if(qP){
+        var qT=qP.cloneNode(true);
+        var tags=qT.querySelectorAll('.result-tag');tags.forEach(function(t){t.remove();});
+        var qt=qT.textContent.replace(/^\d+\.\s*/,'').trim();
+        if(qt.length>0){
+          doc.setFont('helvetica','normal');doc.setTextColor(60,60,60);doc.setFontSize(6.5);
+          var ql=doc.splitTextToSize(qt,cw-5);
+          ql=ql.slice(0,1);
+          if(doc.splitTextToSize(qt,cw-5).length>1){ql[0]=ql[0].substring(0,ql[0].length-3)+'...';}
+          doc.text(ql,mx+4,y);y+=2.4;
+        }
+      }
+      if(typeof EXPLANATIONS!=='undefined'&&EXPLANATIONS[qNum]){
+        doc.setFont('helvetica','italic');doc.setTextColor(100,100,100);doc.setFontSize(6);
+        var lines=doc.splitTextToSize(EXPLANATIONS[qNum],cw-5);
+        if(lines.length>2){lines=lines.slice(0,2);lines[1]=lines[1].substring(0,Math.max(0,lines[1].length-3))+'...';}
+        doc.text(lines,mx+4,y);y+=lines.length*2.2;
+      }
+      y+=2;
+    });
+    doc.setDrawColor(200,200,200);doc.setLineWidth(0.2);doc.line(mx,ph-10,pw-mx,ph-10);
+    doc.setTextColor(170,170,170);doc.setFontSize(6);doc.setFont('helvetica','normal');
+    doc.text('ACT Math Practice  |  Score Report',pw/2,ph-7,{align:'center'});
+    var tn=location.pathname.match(/test(\d+)/);
+    var testNum=tn?parseInt(tn[1])-100:0;
+    var ds=new Date().toISOString().slice(0,10);
+    doc.save('ACT-Math-Test-'+testNum+'-'+ds+'.pdf');
+    btn.textContent='Download Report (PDF)';btn.disabled=false;
+  };
+  document.head.appendChild(s);
+}
+</script>
+</body></html>

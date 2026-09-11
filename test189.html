@@ -1,0 +1,222 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>ACT Math Test 89</title><style>@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:#fff;color:#2d3748;line-height:1.7}
+.container{max-width:800px;margin:0 auto;padding:20px 24px}
+header{background:linear-gradient(135deg,#1a3a4a 0%,#2d6a7a 100%);color:#fff;padding:28px 0;margin-bottom:36px;text-align:center}
+header .container{display:block}
+header h1{font-size:1.6rem;font-weight:700;letter-spacing:-0.3px}
+header a{color:rgba(255,255,255,.7);text-decoration:none;font-size:.9rem;display:inline-block;margin-bottom:6px;transition:color .2s}
+header a:hover{color:#fff}
+.question{background:#fff;border-radius:12px;padding:24px;margin-bottom:20px;border:1px solid #e2e8f0;transition:border-color .2s}
+.question:hover{border-color:#cbd5e0}
+.question p{margin-bottom:14px;font-size:1.05rem}
+img{max-width:100%;height:auto;margin:4px 0;vertical-align:middle}
+.choices{list-style:none}
+.choices li{padding:10px 14px;margin:6px 0;border-radius:8px;cursor:pointer;transition:all .2s;border:2px solid transparent}
+.choices li:hover{background:#f0f7fa}
+.choices li.selected{background:#d1ecf1;border-color:#bee5eb}
+.choices li.correct{background:#d4edda;border-color:#28a745}
+.choices li.wrong{background:#f8d7da;border-color:#dc3545}
+.choices li.show-correct{background:#d4edda;border-color:#28a745}
+.submit-wrap{text-align:center;margin:36px 0}
+.submit-btn{display:inline-block;padding:14px 40px;background:linear-gradient(135deg,#1a3a4a,#2d6a7a);color:#fff;border:none;border-radius:10px;font-size:1.1rem;cursor:pointer;font-weight:600;font-family:inherit;transition:all .25s;letter-spacing:.3px}
+.submit-btn:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(26,58,74,.25)}
+.score-box{background:#fff;border-radius:12px;padding:28px;margin-bottom:28px;text-align:center;border:1px solid #e2e8f0;box-shadow:0 4px 20px rgba(0,0,0,.06);display:none}
+.score-box h2{font-size:1.4rem;margin-bottom:8px;color:#1a3a4a;text-align:center}
+.score-box .pct{font-size:3rem;font-weight:700}
+.score-box .pct.good{color:#28a745}
+.score-box .pct.ok{color:#e6a817}
+.score-box .pct.bad{color:#dc3545}
+.score-box .detail{color:#666;margin-top:4px}
+.result-tag{display:inline-block;padding:2px 10px;border-radius:12px;font-size:.8rem;font-weight:600;margin-left:8px}
+.result-tag.correct{background:#d4edda;color:#155724}
+.result-tag.wrong{background:#f8d7da;color:#721c24}
+.reset-btn{display:none;margin:16px auto;padding:12px 28px;background:#6c757d;color:#fff;border:none;border-radius:10px;font-size:1rem;cursor:pointer;font-family:inherit;transition:all .25s}
+.reset-btn:hover{background:#5a6268;transform:translateY(-1px)}
+.explanation{background:#f0f7ff;border-left:4px solid #1a3a4a;padding:14px 18px;margin-top:14px;border-radius:0 8px 8px 0;font-size:.95rem;color:#444;display:none}
+.explanation.show{display:block}
+.explanation strong{color:#1a3a4a}
+.nav{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin:36px 0}
+.nav a{display:inline-block;padding:10px 24px;background:linear-gradient(135deg,#1a3a4a,#2d6a7a);color:#fff;text-decoration:none;border-radius:10px;font-weight:500;font-size:.95rem;transition:all .25s}
+.nav a:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(26,58,74,.25)}
+footer{text-align:center;padding:36px 24px;color:#8899a4;font-size:.85rem;border-top:1px solid #e2e8f0;margin-top:40px}
+.report-btn{display:inline-block;margin:0;padding:12px 28px;background:linear-gradient(135deg,#1a3a4a,#2d6a7a);color:#fff;border:none;border-radius:10px;font-size:1rem;cursor:pointer;font-family:inherit;transition:all .25s}
+.report-btn:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(26,58,74,.25)}
+.bottom-score{background:#fff;border-radius:12px;padding:20px;margin:20px 0;text-align:center;border:1px solid #e2e8f0;box-shadow:0 4px 20px rgba(0,0,0,.06)}
+.bottom-score .pct{font-size:2.5rem;font-weight:700}
+.bottom-score .pct.good{color:#28a745}
+.bottom-score .pct.ok{color:#e6a817}
+.bottom-score .pct.bad{color:#dc3545}
+.bottom-score .detail{color:#666;margin-top:4px;font-size:.95rem}
+.report-wrap{display:none;text-align:center;margin:16px 0}
+.name-input{padding:10px 14px;border:1px solid #e2e8f0;border-radius:10px;font-size:.95rem;font-family:inherit;width:200px;margin-right:8px;outline:none;transition:border-color .2s}
+.name-input:focus{border-color:#1a3a4a}
+</style></head><body><header><div class="container"><a href="index.html">&larr; All Tests</a><h1>ACT Math Practice Test 89</h1></div></header><div class="container"><div id="score-box" class="score-box"><h2>Your Score</h2><div class="pct">0%</div><div class="detail"></div></div><div class="question"><p><b>1.</b> If <span class="italic">x<sup><small>2</small></sup></span> - 3 ≤ 13, what is the greatest real value that <span class="italic">x</span> can have?</p><ul class="choices"><li>A. 10</li><li>B. 5</li><li>C. 4</li><li>D. 3</li><li>E. 0</li></ul></div><div class="question"><p><b>2.</b> In an isosceles right triangle, the hypotenuse is 12. What is the length of one (1) of the sides?</p><ul class="choices"><li>F. <img src="https://www.crackab.com/image/tests/mg10/01630.jpg"></li><li>G. <img src="https://www.crackab.com/image/tests/mg10/01191.jpg"></li><li>H. <img src="https://www.crackab.com/image/tests/mg10/00233.jpg"></li><li>J. <img src="https://www.crackab.com/image/tests/mg10/02487.jpg"></li><li>K. <img src="https://www.crackab.com/image/tests/mg10/00099.jpg"></li></ul></div><div class="question"><p><b>3.</b> In the standard (<span class="italic">x</span>, <span class="italic">y</span>) coordinate plane, what is the center of a circle with the equation (<span class="italic">x</span> - 2)<sup><small>2</small></sup> + (<span class="italic">y</span> + 1)<sup><small>2</small></sup> = 4?</p><ul class="choices"><li>A. (-2,1)</li><li>B. (-2,4)</li><li>C. (2,-1)</li><li>D. (4,-2)</li><li>E. (-2,2)</li></ul></div><div class="question"><p><b>4.</b> What is the slope of the line determined by the equation 2<span class="italic">x</span> - 3<span class="italic">y</span> = 6?</p><ul class="choices"><li>F. -6</li><li>G. -3</li><li>H. <img src="https://www.crackab.com/image/tests/mg10/01459.jpg"></li><li>J. <img src="https://www.crackab.com/image/tests/mg10/01068.jpg"></li><li>K. 2</li></ul></div><div class="question"><p><b>5.</b> Fifty (50) households were surveyed to determine the number of TVs in each of the households. The number of TVs in each household is shown in the chart below. What is the average number of TVs per household for these 50 households?<br><img src="https://www.crackab.com/image/tests/mg10/02278.jpg"><br></p><ul class="choices"><li>A. 1.0</li><li>B. 1.3</li><li>C. 2.7</li><li>D. 3.6</li><li>E. 4.2</li></ul></div><div class="question"><p><b>6.</b> In the figure below, both circles are centered around <span class="italic">X</span>. The length of <span class="italic">XY</span> is 2 units and the length of XZ is 6 units. If the smaller circle is cut out of the larger circle, how much of the area, in square units, of the larger circle will remain?<br><img src="https://www.crackab.com/image/tests/mg10/01600.jpg"><br></p><ul class="choices"><li>F. 12<span class="italic">π</span></li><li>G. 16<span class="italic">π</span></li><li>H. 32<span class="italic">π</span></li><li>J. 36<span class="italic">π</span></li><li>K. 40<span class="italic">π</span></li></ul></div><div class="question"><p><b>7.</b> In the standard (<span class="italic">x</span>, <span class="italic">y</span>) coordinate plane, what is the <span class="italic">x</span> intercept of a line that has a slope of <img src="https://www.crackab.com/image/tests/mg10/01110.jpg"> and passes through the point (-2,2)?</p><ul class="choices"><li>A. (-3,0)</li><li>B. (-5,0)</li><li>C. (3,0)</li><li>D. (0,-2)</li><li>E. (2,0)</li></ul></div><div class="question"><p><b>8.</b> The figure below represents a solution set for which of the following inequalities?<br><img src="https://www.crackab.com/image/tests/mg10/01713.jpg"><br></p><ul class="choices"><li>F. -2<span class="italic">x</span> + 12 &lt; <span class="italic">x</span> - 2</li><li>G. 4<span class="italic">x</span> - 2 ≥ 2<span class="italic">x</span> - 3</li><li>H. 5<span class="italic">x</span> + 5 ≥ <span class="italic">x</span></li><li>J. 3<span class="italic">x</span> - 1 ≤ 5<span class="italic">x</span> + 3</li><li>K. 6<span class="italic">x</span> - 3 &gt; 3<span class="italic">x</span> + 2</li></ul></div><div class="question"><p><b>9.</b> What is the slope of the line pictured in the standard (<span class="italic">x</span>, <span class="italic">y</span>) coordinate plane below that passes through (1,3) and (5,5) in the standard (<span class="italic">x</span>, <span class="italic">y</span>) coordinate plane?<br><img src="https://www.crackab.com/image/tests/mg10/01776.jpg"><br></p><ul class="choices"><li>A. -2</li><li>B. <img src="https://www.crackab.com/image/tests/mg10/01154.jpg"></li><li>C. <img src="https://www.crackab.com/image/tests/mg10/01864.jpg"></li><li>D. <img src="https://www.crackab.com/image/tests/mg10/01179.jpg"></li><li>E. <img src="https://www.crackab.com/image/tests/mg10/01195.jpg"></li></ul></div><div class="question"><p><b>10.</b> A formula for calculating simple interest is <span class="italic">I</span> = <span class="italic">Pr</span>, were <span class="italic">I</span> is the interest earned in dollars, <span class="italic">P</span> is the principal or original investment, and <span class="italic">r</span> is the fixed rate of interest. If the amount of interest earned is $2.25 and the interest rate is 3%, what is <span class="italic">P</span>?</p><ul class="choices"><li>F. $6.75</li><li>G. $7.50</li><li>H. $13.30</li><li>J. $67.50</li><li>K. $75.00</li></ul></div><div class="question"><p><b>11.</b> Three vertices of a rectangle in the standard (<span class="italic">x</span>, <span class="italic">y</span>) coordinate plane have the coordinates (-2,3), (4,3) and (4,2). What are the coordinates of the fourth vertex?</p><ul class="choices"><li>A. (-2,-2)</li><li>B. (3,-3)</li><li>C. (-3,3)</li><li>D. (2,-2)</li><li>E. (-2,2)</li></ul></div><div class="question"><p><b>12.</b> If two lines in the standard (<span class="italic">x</span>, <span class="italic">y</span>) coordinate plane are perpendicular and the slope of one of the lines is <img src="https://www.crackab.com/image/tests/mg10/00978.jpg">, what is the slope of the other line?</p><ul class="choices"><li>F. <img src="https://www.crackab.com/image/tests/mg10/01222.jpg"></li><li>G. <img src="https://www.crackab.com/image/tests/mg10/01662.jpg"></li><li>H. <img src="https://www.crackab.com/image/tests/mg10/00004.jpg"></li><li>J. <img src="https://www.crackab.com/image/tests/mg10/01794.jpg"></li><li>K. -5</li></ul></div><div class="question"><p><b>13.</b> Gail made apple jelly and applesauce out of a bushel of apples. If the number of jars of jelly, <span class="italic">j</span>, is 3 less than twice the number of jars of applesauce, <span class="italic">a</span>, which expression shows the relationship of jars of jelly, <span class="italic">j</span>, to the jars of applesauce, <span class="italic">a</span>?</p><ul class="choices"><li>A. 2 <span class="italic">j</span> = 2<span class="italic">a</span> - 3</li><li>B. <span class="italic">j</span> - 3 = 2<span class="italic">a</span></li><li>C. 2 <span class="italic">j</span> = 3<span class="italic">a</span></li><li>D. <span class="italic">j</span> + 3 = 2<span class="italic">a</span></li><li>E. <span class="italic">ja</span> = 2<span class="italic">a</span></li></ul></div><div class="question"><p><b>14.</b> What are the solutions for the equation 3<span class="italic">x<sup><small>2</small></sup></span> -5<span class="italic">x</span> + 2 = 0?</p><ul class="choices"><li>F. <span class="italic">x</span> = -1, <img src="https://www.crackab.com/image/tests/mg10/00009.jpg"></li><li>G. <span class="italic">x</span> = 1, <img src="https://www.crackab.com/image/tests/mg10/01874.jpg"></li><li>H. <span class="italic">x</span> = -5, <img src="https://www.crackab.com/image/tests/mg10/00013.jpg"></li><li>J. <img src="https://www.crackab.com/image/tests/mg10/00695.jpg">, <span class="italic">x</span> = 1</li><li>K. <span class="italic">x</span> = -1, <img src="https://www.crackab.com/image/tests/mg10/00017.jpg"></li></ul></div><div class="question"><p><b>15.</b> What is the smallest possible value for <span class="italic">a</span> where <span class="italic">y</span> = sin 2<span class="italic">a</span> reaches its maximum?</p><ul class="choices"><li>A. <img src="https://www.crackab.com/image/tests/mg10/00109.jpg"></li><li>B. <img src="https://www.crackab.com/image/tests/mg10/00117.jpg"></li><li>C. <span class="italic">π</span></li><li>D. 2<span class="italic">π</span></li><li>E. 4<span class="italic">π</span></li></ul></div><div class="submit-wrap"><button class="submit-btn" onclick="gradeTest()">Submit Test</button><button class="reset-btn" onclick="resetTest()">Try Again</button>
+<div class="report-wrap"><input type="text" class="name-input" placeholder="Student name (for report)"><button class="report-btn" onclick="generateReport()">Download Report (PDF)</button></div></div><div class="nav"><a href="test188.html">&larr; Prev</a><a href="index.html">All Tests</a><a href="test190.html">Next &rarr;</a></div></div><footer><div class="container">ACT Math Practice</div></footer>
+<script>
+const ANSWERS = {"1": "C", "2": "F", "3": "C", "4": "J", "5": "D", "6": "H", "7": "B", "8": "J", "9": "D", "10": "K", "11": "E", "12": "F", "13": "D", "14": "G", "15": "A"};
+const EXPLANATIONS = {"1":"The correct answer is C. Here, you must first solve the inequality: x2 - 3 ≤ 13 x2 ≤ 16 Because a negative number squared will yield a positive result, you must consider both the positive and negative values of x. x ≤ 4 and x ≥ -4. The greatest real value of x is 4.", "2":"The correct answer is F. By definition, an isosceles triangle has a hypotenuse, c, and two legs, a and b, that are congruent. Use the measure of the hypotenuse given in the problem (12), and the Pythagorean theorem, a2 + b2  =  c2, to determine the length of one of the legs. Remember that a  =  b: The  can be reduced to .", "3":"The correct answer is C. The formula for a circle is (x - a)2 + (y - b)2  =  r2, where (a, b) is the center of the circle and r is the radius of the circle. The question gives you the equation of the circle as (x - 2)2 + (y + 1)2  =  4. So, a is 2 and b is -1. The center of the circle, (a, b), is (2, -1).", "4":"The correct answer is J. Find the slope by putting 2x - 3y  =  6 into the slope-intercept form (y  =  mx + b where m is the slope):", "5":"The correct answer is D. This question is asking you to determine a weighted average. To answer the question, first calculate the total number of TVs: (2 × 5), (3 × 20), (4 × 15), and (5 × 10). Next, add these values together and divide by the total number of houses (50):", "6":"The correct answer is H. Since you are given the radii of both circles, you can find the area of both circles. The radius of the smaller circle is 2, so the area is π(2)2, or 4π. The radius of the larger circle is 6, so the area is π(6)2  =  36π. Since the smaller circle is removed from the larger circle, simply subtract the area of the smaller circle from the area of the larger circle: 36π - 4π  =  32π.", "7":"The correct answer is B. By definition, the slope of any line is . The question gives the slope of the line as . The x-intercept will be 3 points left (along the x-axis) and 2 points down (along the y-axis), putting it at (-5,0).", "8":"The correct answer is J. From the graph, you can determine that the inequality is x ≥ -2. However, that is not an answer given. So, you must solve the inequalities in the answer choices. Answer choices F and K do not contain a greater than or equal to sign, so they may be eliminated. Solve the remaining three inequalities: (remember to switch the sign when dividing by a negative number.) Answer choice J is correct.", "9":"The correct answer is D. By definition, the slope of any line is . The question asks you to determine the slope from two points on the graph, so divide the change in y between the two points given by the change in x between the two points given:", "10":"The correct answer is K. You are given two of the three unknowns; plug I  =  2.25 and r  =  0.03 (the decimal equivalent of 3%) into the formula I  =  Pr: 2.25  =  P(0.03) Solve for P: P  =  75", "11":"The correct answer is E. Graph the rectangle on a coordinate graph. As you can see from the graph, the fourth vertex must be (-2, 2).", "12":"The correct answer is F. Perpendicular lines have slopes that are the negative reciprocal of each other. Therefore, if one of the lines has a slope of , the slope of the other line must be .", "13":"The correct answer is D. You are given that number of jars of jelly, j, is three less than twice the number of jars of applesauce, a. Put this into equation form: j  =  2a - 3. Since none of the answers match this one, rearrange the equation: j + 3  =  2a.", "14":"The correct answer is G. The first step in answering this question is to factor the equation 3x2 - 5x + 2  =  0: (3x - 2)(x - 1)  =  0 To find the two solutions to this equation, solve for zero: The solutions to the equation given are x  =  1 and .", "15":"The correct answer is A. To solve this problem, you must first recall that the maximum value of the sine function is 1, and that the smallest value for a at this maximum value will be . So, if , then ."};
+let graded = false;
+
+document.querySelectorAll('.choices li').forEach(li => {
+  // Remove old onclick
+  li.removeAttribute('onclick');
+  li.addEventListener('click', function() {
+    if (graded) return;
+    const siblings = this.parentElement.querySelectorAll('li');
+    siblings.forEach(s => s.classList.remove('selected'));
+    this.classList.add('selected');
+  });
+});
+
+function gradeTest() {
+  if (graded) return;
+  graded = true;
+  let correct = 0;
+  const total = Object.keys(ANSWERS).length;
+  
+  document.querySelectorAll('.question').forEach((qDiv, idx) => {
+    const qNum = idx + 1;
+    const correctAns = ANSWERS[qNum];
+    if (!correctAns) return;
+    const choices = qDiv.querySelectorAll('.choices li');
+    const selected = qDiv.querySelector('.choices li.selected');
+    const selectedLetter = selected ? selected.textContent.trim().charAt(0) : null;
+    
+    choices.forEach(li => {
+      const letter = li.textContent.trim().charAt(0);
+      if (letter === correctAns) li.classList.add('show-correct');
+      li.style.cursor = 'default';
+    });
+    
+    const tag = document.createElement('span');
+    tag.className = 'result-tag';
+    
+    if (selectedLetter === correctAns) {
+      correct++;
+      tag.className += ' correct';
+      tag.textContent = 'Correct';
+      if (selected) { selected.classList.remove('selected'); selected.classList.add('correct'); }
+    } else {
+      tag.className += ' wrong';
+      tag.textContent = 'Incorrect (Answer: ' + correctAns + ')';
+      if (selected) { selected.classList.remove('selected'); selected.classList.add('wrong'); }
+    }
+    
+    const firstP = qDiv.querySelector('p');
+    if (firstP) firstP.appendChild(tag);
+    
+    if (typeof EXPLANATIONS !== 'undefined' && EXPLANATIONS[qNum]) {
+      const explDiv = document.createElement('div');
+      explDiv.className = 'explanation show';
+      explDiv.innerHTML = '<strong>Explanation:</strong> ' + EXPLANATIONS[qNum];
+      qDiv.appendChild(explDiv);
+    }
+  });
+  
+  const pct = Math.round((correct / total) * 100);
+  document.querySelector('.submit-btn').style.display = 'none';
+  document.querySelector('.reset-btn').style.display = 'block';
+  var rw=document.querySelector('.report-wrap');if(rw)rw.style.display='block';
+  var bs=document.createElement('div');bs.className='bottom-score';bs.id='bottom-score';
+  bs.innerHTML='<h2 style="font-size:1.3rem;margin-bottom:6px;color:#1a3a4a">Your Score</h2><div class="pct '+(pct>=80?'good':pct>=60?'ok':'bad')+'">'+pct+'%</div><div class="detail">'+correct+' out of '+total+' correct</div>';
+  document.querySelector('.submit-wrap').after(bs);
+  try{var tn=location.pathname.match(/test(\d+)/);if(tn)localStorage.setItem('actmath_'+tn[1],pct);}catch(e){}
+}
+
+function resetTest() {
+  graded = false;
+  var bsEl=document.getElementById('bottom-score');if(bsEl)bsEl.remove();
+  document.querySelector('.submit-btn').style.display = '';
+  document.querySelector('.reset-btn').style.display = 'none';
+  var rw=document.querySelector('.report-wrap');if(rw)rw.style.display='none';
+  var ni=document.querySelector('.name-input');if(ni)ni.value='';
+  document.querySelectorAll('.choices li').forEach(li => {
+    li.classList.remove('selected','correct','wrong','show-correct');
+    li.style.cursor = 'pointer';
+  });
+  document.querySelectorAll('.result-tag').forEach(t => t.remove());
+  document.querySelectorAll('.explanation').forEach(e => e.remove());
+}
+
+function generateReport(){
+  var nameInput=document.querySelector('.name-input');
+  var name=(nameInput&&nameInput.value.trim())||'Student';
+  var testName=document.querySelector('header h1').textContent;
+  var bs=document.getElementById('bottom-score');
+  var scorePct=bs?bs.querySelector('.pct').textContent:'';
+  var detailTxt=bs?bs.querySelector('.detail').textContent:'';
+  var d=new Date().toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'});
+  var btn=document.querySelector('.report-btn');btn.textContent='Generating...';btn.disabled=true;
+  var s=document.createElement('script');
+  s.src='https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js';
+  s.onerror=function(){btn.textContent='Download Report (PDF)';btn.disabled=false;alert('Could not load PDF library.');};
+  s.onload=function(){
+    var doc=new jspdf.jsPDF('portrait','mm','letter');
+    var pw=215.9,ph=279.4,mx=12,cw=pw-2*mx,y=8;
+    doc.setFillColor(26,58,74);doc.rect(0,0,pw,22,'F');
+    doc.setTextColor(255,255,255);doc.setFontSize(13);doc.setFont('helvetica','bold');
+    doc.text(testName,mx,9);
+    doc.setFontSize(7.5);doc.setFont('helvetica','normal');
+    doc.text(d+'  |  Student: '+name,mx,14.5);
+    doc.setFontSize(18);doc.setFont('helvetica','bold');
+    doc.text(scorePct,pw-mx,11,{align:'right'});
+    doc.setFontSize(7.5);doc.setFont('helvetica','normal');
+    doc.text(detailTxt,pw-mx,16,{align:'right'});
+    y=25;
+    doc.setDrawColor(26,58,74);doc.setLineWidth(0.3);doc.line(mx,y,pw-mx,y);y+=3;
+    document.querySelectorAll('.question').forEach(function(qDiv,idx){
+      var qNum=idx+1;var ca=ANSWERS[qNum];if(!ca)return;
+      var sel=qDiv.querySelector('.choices li.correct,.choices li.wrong');
+      var sa=sel?sel.textContent.trim().charAt(0):'-';
+      var ok=sel&&sel.classList.contains('correct');
+      if(ok){
+        doc.setFillColor(40,167,69);doc.circle(mx+1.2,y-1,1,'F');
+        doc.setTextColor(33,33,33);doc.setFont('helvetica','bold');doc.setFontSize(8);
+        doc.text('Q'+qNum,mx+4,y);
+        doc.setFont('helvetica','normal');doc.setTextColor(40,167,69);
+        doc.text('Correct ('+ca+')',mx+14,y);
+      }else{
+        doc.setFillColor(220,53,69);doc.circle(mx+1.2,y-1,1,'F');
+        doc.setTextColor(33,33,33);doc.setFont('helvetica','bold');doc.setFontSize(8);
+        doc.text('Q'+qNum,mx+4,y);
+        doc.setFont('helvetica','normal');doc.setTextColor(220,53,69);
+        doc.text('Incorrect',mx+14,y);
+        doc.setTextColor(120,120,120);
+        doc.text('(Chose '+sa+', Correct: '+ca+')',mx+32,y);
+      }
+      y+=3.2;
+      var qP=qDiv.querySelector('p');
+      if(qP){
+        var qT=qP.cloneNode(true);
+        var tags=qT.querySelectorAll('.result-tag');tags.forEach(function(t){t.remove();});
+        var qt=qT.textContent.replace(/^\d+\.\s*/,'').trim();
+        if(qt.length>0){
+          doc.setFont('helvetica','normal');doc.setTextColor(60,60,60);doc.setFontSize(6.5);
+          var ql=doc.splitTextToSize(qt,cw-5);
+          ql=ql.slice(0,1);
+          if(doc.splitTextToSize(qt,cw-5).length>1){ql[0]=ql[0].substring(0,ql[0].length-3)+'...';}
+          doc.text(ql,mx+4,y);y+=2.4;
+        }
+      }
+      if(typeof EXPLANATIONS!=='undefined'&&EXPLANATIONS[qNum]){
+        doc.setFont('helvetica','italic');doc.setTextColor(100,100,100);doc.setFontSize(6);
+        var lines=doc.splitTextToSize(EXPLANATIONS[qNum],cw-5);
+        if(lines.length>2){lines=lines.slice(0,2);lines[1]=lines[1].substring(0,Math.max(0,lines[1].length-3))+'...';}
+        doc.text(lines,mx+4,y);y+=lines.length*2.2;
+      }
+      y+=2;
+    });
+    doc.setDrawColor(200,200,200);doc.setLineWidth(0.2);doc.line(mx,ph-10,pw-mx,ph-10);
+    doc.setTextColor(170,170,170);doc.setFontSize(6);doc.setFont('helvetica','normal');
+    doc.text('ACT Math Practice  |  Score Report',pw/2,ph-7,{align:'center'});
+    var tn=location.pathname.match(/test(\d+)/);
+    var testNum=tn?parseInt(tn[1])-100:0;
+    var ds=new Date().toISOString().slice(0,10);
+    doc.save('ACT-Math-Test-'+testNum+'-'+ds+'.pdf');
+    btn.textContent='Download Report (PDF)';btn.disabled=false;
+  };
+  document.head.appendChild(s);
+}
+</script>
+</body></html>

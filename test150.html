@@ -1,0 +1,222 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>ACT Math Test 50</title><style>@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:#fff;color:#2d3748;line-height:1.7}
+.container{max-width:800px;margin:0 auto;padding:20px 24px}
+header{background:linear-gradient(135deg,#1a3a4a 0%,#2d6a7a 100%);color:#fff;padding:28px 0;margin-bottom:36px;text-align:center}
+header .container{display:block}
+header h1{font-size:1.6rem;font-weight:700;letter-spacing:-0.3px}
+header a{color:rgba(255,255,255,.7);text-decoration:none;font-size:.9rem;display:inline-block;margin-bottom:6px;transition:color .2s}
+header a:hover{color:#fff}
+.question{background:#fff;border-radius:12px;padding:24px;margin-bottom:20px;border:1px solid #e2e8f0;transition:border-color .2s}
+.question:hover{border-color:#cbd5e0}
+.question p{margin-bottom:14px;font-size:1.05rem}
+img{max-width:100%;height:auto;margin:4px 0;vertical-align:middle}
+.choices{list-style:none}
+.choices li{padding:10px 14px;margin:6px 0;border-radius:8px;cursor:pointer;transition:all .2s;border:2px solid transparent}
+.choices li:hover{background:#f0f7fa}
+.choices li.selected{background:#d1ecf1;border-color:#bee5eb}
+.choices li.correct{background:#d4edda;border-color:#28a745}
+.choices li.wrong{background:#f8d7da;border-color:#dc3545}
+.choices li.show-correct{background:#d4edda;border-color:#28a745}
+.submit-wrap{text-align:center;margin:36px 0}
+.submit-btn{display:inline-block;padding:14px 40px;background:linear-gradient(135deg,#1a3a4a,#2d6a7a);color:#fff;border:none;border-radius:10px;font-size:1.1rem;cursor:pointer;font-weight:600;font-family:inherit;transition:all .25s;letter-spacing:.3px}
+.submit-btn:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(26,58,74,.25)}
+.score-box{background:#fff;border-radius:12px;padding:28px;margin-bottom:28px;text-align:center;border:1px solid #e2e8f0;box-shadow:0 4px 20px rgba(0,0,0,.06);display:none}
+.score-box h2{font-size:1.4rem;margin-bottom:8px;color:#1a3a4a;text-align:center}
+.score-box .pct{font-size:3rem;font-weight:700}
+.score-box .pct.good{color:#28a745}
+.score-box .pct.ok{color:#e6a817}
+.score-box .pct.bad{color:#dc3545}
+.score-box .detail{color:#666;margin-top:4px}
+.result-tag{display:inline-block;padding:2px 10px;border-radius:12px;font-size:.8rem;font-weight:600;margin-left:8px}
+.result-tag.correct{background:#d4edda;color:#155724}
+.result-tag.wrong{background:#f8d7da;color:#721c24}
+.reset-btn{display:none;margin:16px auto;padding:12px 28px;background:#6c757d;color:#fff;border:none;border-radius:10px;font-size:1rem;cursor:pointer;font-family:inherit;transition:all .25s}
+.reset-btn:hover{background:#5a6268;transform:translateY(-1px)}
+.explanation{background:#f0f7ff;border-left:4px solid #1a3a4a;padding:14px 18px;margin-top:14px;border-radius:0 8px 8px 0;font-size:.95rem;color:#444;display:none}
+.explanation.show{display:block}
+.explanation strong{color:#1a3a4a}
+.nav{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin:36px 0}
+.nav a{display:inline-block;padding:10px 24px;background:linear-gradient(135deg,#1a3a4a,#2d6a7a);color:#fff;text-decoration:none;border-radius:10px;font-weight:500;font-size:.95rem;transition:all .25s}
+.nav a:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(26,58,74,.25)}
+footer{text-align:center;padding:36px 24px;color:#8899a4;font-size:.85rem;border-top:1px solid #e2e8f0;margin-top:40px}
+.report-btn{display:inline-block;margin:0;padding:12px 28px;background:linear-gradient(135deg,#1a3a4a,#2d6a7a);color:#fff;border:none;border-radius:10px;font-size:1rem;cursor:pointer;font-family:inherit;transition:all .25s}
+.report-btn:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(26,58,74,.25)}
+.bottom-score{background:#fff;border-radius:12px;padding:20px;margin:20px 0;text-align:center;border:1px solid #e2e8f0;box-shadow:0 4px 20px rgba(0,0,0,.06)}
+.bottom-score .pct{font-size:2.5rem;font-weight:700}
+.bottom-score .pct.good{color:#28a745}
+.bottom-score .pct.ok{color:#e6a817}
+.bottom-score .pct.bad{color:#dc3545}
+.bottom-score .detail{color:#666;margin-top:4px;font-size:.95rem}
+.report-wrap{display:none;text-align:center;margin:16px 0}
+.name-input{padding:10px 14px;border:1px solid #e2e8f0;border-radius:10px;font-size:.95rem;font-family:inherit;width:200px;margin-right:8px;outline:none;transition:border-color .2s}
+.name-input:focus{border-color:#1a3a4a}
+</style></head><body><header><div class="container"><a href="index.html">&larr; All Tests</a><h1>ACT Math Practice Test 50</h1></div></header><div class="container"><div id="score-box" class="score-box"><h2>Your Score</h2><div class="pct">0%</div><div class="detail"></div></div><div class="question"><p><b>1.</b> Let <img alt="image" src="https://www.crackab.com/image/tests/6/00661.jpg">. What happens to the value of <i>z</i> as both <i>x</i> and <i>y</i> are doubled?</p><ul class="choices"><li>F. <i>z</i> remains the same</li><li>G. <i>z</i> doubles</li><li>H. <i>z</i> decreases by <img alt="image" src="https://www.crackab.com/image/tests/6/00617.jpg"></li><li>J. <i>z</i> quadruples</li><li>K. <i>z</i> decreases by a factor of <img alt="image" src="https://www.crackab.com/image/tests/6/00662.jpg"></li></ul></div><div class="question"><p><b>2.</b> If <img alt="image" src="https://www.crackab.com/image/tests/6/00663.jpg">, then which of the following is true?</p><ul class="choices"><li>A. <i>w</i> &gt; 0</li><li>B. <i>T</i> &gt; 0</li><li>C. <i>m</i> &gt; 0</li><li>D. <i>wt</i> &gt; 0</li><li>E. <i>tm</i> &gt; 0</li></ul></div><div class="question"><p><b>3.</b> Which of the following is equivalent to <img alt="image" src="https://www.crackab.com/image/tests/6/00664.jpg">?</p><ul class="choices"><li>F. log (2<i>x</i> + <img alt="image" src="https://www.crackab.com/image/tests/6/00617.jpg"><i>y</i> - 4<i>z</i>)?</li><li>G. log (<i>x</i><sup class="frac">2</sup><i>z</i><sup class="frac">4</sup><img alt="image" src="https://www.crackab.com/image/tests/6/00665.jpg">)</li><li>H. <img alt="image" src="https://www.crackab.com/image/tests/6/00666.jpg"></li><li>J. <img alt="image" src="https://www.crackab.com/image/tests/6/00667.jpg"></li><li>K. log (2<i>x</i><sup class="frac">2</sup><i>yz</i>)</li></ul></div><div class="question"><p><b>4.</b> Given the following table, find <i>f</i>(<i>g</i>(2)):<br><img alt="image" src="https://www.crackab.com/image/tests/6/00668.jpg"></p><ul class="choices"><li>A. -15</li><li>B. -10</li><li>C. 0</li><li>D. 3</li><li>E. 6</li></ul></div><div class="question"><p><b>5.</b> The number of fish, <i>p</i>, a small pond can sustain varies inversely with the square root of the amount of predators, <i>q</i>, in the pond. If a pond with 49 predators can sustain a population of 800 fish, how many fish could a pond with 100 predators sustain?</p><ul class="choices"><li>F. 560</li><li>G. 600</li><li>H. 650</li><li>J. 1,600</li><li>K. 2,000</li></ul></div><div class="question"><p><b>6.</b> Points <i>P</i>(1, 1) and <i>Q</i>(<i>x</i>, <i>x</i><sup class="frac"><i>2</i></sup>) lie in the standard (<i>x</i>, <i>y</i>) coordinate plane. Which of the following is an expression for the slope between points <i>P</i> and <i>Q</i> when <i>x</i> &gt; 5?</p><ul class="choices"><li>A. 0</li><li>B. <img alt="image" src="https://www.crackab.com/image/tests/6/00669.jpg"></li><li>C. <i>x</i> + 1</li><li>D. <img alt="image" src="https://www.crackab.com/image/tests/6/00670.jpg"></li><li>E. Undefined</li></ul></div><div class="question"><p><b>7.</b> Which of the following expressions is equivalent to <img alt="image" src="https://www.crackab.com/image/tests/6/00671.jpg">?</p><ul class="choices"><li>F. 3<sup class="frac"><i>x</i> - 7</sup></li><li>G. 3<sup class="frac"><i>x</i> - 5</sup></li><li>H. 3<sup class="frac"><i>x</i> - 3</sup></li><li>J. 3<sup class="frac"><i>x</i> - 1</sup></li><li>K. 1</li></ul></div><div class="question"><p><b>8.</b> What fraction is located exactly halfway between <img alt="image" src="https://www.crackab.com/image/tests/6/00672.jpg"> and <img alt="image" src="https://www.crackab.com/image/tests/6/00673.jpg"> on the standard number line?</p><ul class="choices"><li>A. <img alt="image" src="https://www.crackab.com/image/tests/6/00674.jpg"></li><li>B. <img alt="image" src="https://www.crackab.com/image/tests/6/00675.jpg"></li><li>C. <img alt="image" src="https://www.crackab.com/image/tests/6/00617.jpg"></li><li>D. <img alt="image" src="https://www.crackab.com/image/tests/6/00676.jpg"></li><li>E. <img alt="image" src="https://www.crackab.com/image/tests/6/00677.jpg"></li></ul></div><div class="question"><p><b>9.</b> Mike has taken 4 tests in algebra so far. His average after 4 tests is 85%. If he has not received a grade lower than 80% on any tests, what is the highest possible score Mike could have achieved on one test?</p><ul class="choices"><li>F. 96%</li><li>G. 97%</li><li>H. 98%</li><li>J. 99%</li><li>K. 100%</li></ul></div><div class="question"><p><b>10.</b> Given |<i>x</i> - 3| &gt; <i>x</i> - 3, what is the solution set for the inequality?</p><ul class="choices"><li>A. <i>x</i> &gt; 3</li><li>B. <i>x</i> &lt; 3</li><li>C. <i>x</i> &gt; 0</li><li>D. <i>x</i> &lt; 0</li><li>E. All real numbers</li></ul></div><div class="question"><p><b>11.</b> Which of the following is equivalent to <img alt="image" src="https://www.crackab.com/image/tests/6/00678.jpg">?</p><ul class="choices"><li>F. -1</li><li>G. <img alt="image" src="https://www.crackab.com/image/tests/6/00679.jpg"></li><li>H. <img alt="image" src="https://www.crackab.com/image/tests/6/00680.jpg"></li><li>J. <img alt="image" src="https://www.crackab.com/image/tests/6/00681.jpg"></li><li>K. <img alt="image" src="https://www.crackab.com/image/tests/6/00682.jpg"></li></ul></div><div class="question"><p><b>12.</b> One square inch on the average pizza contains 50 calories. Alex bakes a 12″ diameter pizza and cuts it into 8 equal slices. If his dad eats 3 slices and Alex only eats 2, approximately how many more calories did Alex's dad eat than he did?</p><ul class="choices"><li>A. 100</li><li>B. 700</li><li>C. 1,400</li><li>D. 2,100</li><li>E. 2,200</li></ul></div><div class="question"><p><b>13.</b> Given tan(θ) = <i>v</i> where 0° ≤ θ ≤ 90°, which of the following could be an expression for cos (θ)?</p><ul class="choices"><li>F. <img alt="image" src="https://www.crackab.com/image/tests/6/00683.jpg"></li><li>G. <img alt="image" src="https://www.crackab.com/image/tests/6/00684.jpg"></li><li>H. <img alt="image" src="https://www.crackab.com/image/tests/6/00685.jpg"></li><li>J. <img alt="image" src="https://www.crackab.com/image/tests/6/00686.jpg"></li><li>K. <img alt="image" src="https://www.crackab.com/image/tests/6/00687.jpg"></li></ul></div><div class="question"><p><b>14.</b> Lisa, Carl, Max, Jenny, and Andy go to watch a movie and all sit next to each other in the same aisle. Andy must sit at either end of the group, but everyone else can sit anywhere within the group. How many possible seating arrangements are there?</p><ul class="choices"><li>A. 15</li><li>B. 48</li><li>C. 56</li><li>D. 92</li><li>E. 120</li></ul></div><div class="question"><p><b>15.</b> In the standard (<i>x, y</i>) coordinate plane, points (<i>m, n</i>) and (<i>m</i> - 2, <i>n</i> + <img alt="image" src="https://www.crackab.com/image/tests/6/00688.jpg">) lie on the graph of the equation <img alt="image" src="https://www.crackab.com/image/tests/6/00689.jpg">, where <i>T</i> &gt; 1. What is the value of <i>g</i>?</p><ul class="choices"><li>F. -3</li><li>G. <img alt="image" src="https://www.crackab.com/image/tests/6/00690.jpg"></li><li>H. 1</li><li>J. <img alt="image" src="https://www.crackab.com/image/tests/6/00691.jpg"></li><li>K. <img alt="image" src="https://www.crackab.com/image/tests/6/00692.jpg"></li></ul></div><div class="submit-wrap"><button class="submit-btn" onclick="gradeTest()">Submit Test</button><button class="reset-btn" onclick="resetTest()">Try Again</button>
+<div class="report-wrap"><input type="text" class="name-input" placeholder="Student name (for report)"><button class="report-btn" onclick="generateReport()">Download Report (PDF)</button></div></div><div class="nav"><a href="test149.html">&larr; Prev</a><a href="index.html">All Tests</a><a href="test151.html">Next &rarr;</a></div></div><footer><div class="container">ACT Math Practice</div></footer>
+<script>
+const ANSWERS = {"1": "F", "2": "E", "3": "H", "4": "A", "5": "F", "6": "C", "7": "G", "8": "E", "9": "K", "10": "B", "11": "G", "12": "B", "13": "H", "14": "B", "15": "F"};
+const EXPLANATIONS = {"1":"(F) First, solve for z to get 3z · y  =  2x → z  =  . Now to find out what happens as x and y are doubled, substitute 2x and 2y in place of them to get . Simplify to get , which is the same expression as what z originally started as. You could also substitute numbers like x  =  1, y  =  1 into the problem, then plug in x  =  2, y  =  2 to see what happens to z when x and y are doubled.", "2":"(E) The only way a product and quotient of three things can be greater than zero is if all factors are positive, or if exactly two factors are negative. The only factors in the expression that can be negative are t5 and m9 because w6 is always positive. This means that t and m are either both positive or both negative. Either way the product t · m would be positive.", "3":"(H) Using a law of logarithms, a log b  =  log ba, the expression becomes . Now, use the law of logarithms, log(a) + log(b)  =  log(a · b), to get . Finally, use the law of logarithms, .", "4":"(A) To evaluate f(g(2)) start inside the parentheses by finding g(2). To find g(2) from the table, look where x  =  2, and read g(x)  =  3, therefore g(2)  =  3. Now, evaluate f (3) using the table the same way to get f(3)  =  –15.", "5":"(F) The problem states that p varies inversely with the square root of q, meaning we can set up an equation  where k is a constant. Using the initial criteria q  =  49 and p  =  800, we get . Solving for k gives . Now that we know the constant, use it and the fact that there are 100 predators to get .", "6":"(C) To find the slope between two points, use the slope formula m  =   and substitute in the points to get . Now simplify the answer by factoring to get . Cancel like factors to get x + 1, as long as x ≠ 1. Since the problem states "for x > 5," we don\'t have to worry about this hole.", "7":"(G) Using the laws of exponents we first get . Then use the law of exponents to divide and get 32x – 4 – (x+1)  =  3x – 5.", "8":"(E) A good way to find a number that is halfway between two numbers is to find the average of those two numbers. To find the average of , add them up and divide by 2. A calculator can be handy for this step, or you can do it by hand. Either way, you should get .", "9":"(K) For Mike to achieve the highest grade on one test, we want the other 3 tests to be as low as possible. The problem states that he never scored lower than 80%, so assume he scored an 80 on each of his first 3 tests and let x be the score on his fourth test. Set up an equation to find x using the fact that his average is an . Solve for x to get x  =  100.", "10":"(B) To solve an absolute value inequality, split the problem into two inequalities without an absolute value. The first inequality stays exactly as the problem was written but without the absolute value bars: x – 3 > x – 3. Solving this inequality yields –3 > –3, which has no solution. The other inequality we get from splitting up the absolute value is x – 3 < –(x – 3). Solve this inequality to get x < 3.", "11":"(G) Multiplying . Recall that i2  =  –1; therefore, the expression becomes . Now multiply the top and bottom of the fraction by i + 5 to get . Simplify to get . Divide the top and bottom by 2 to get .", "12":"(B) First calculate the area of the pizza by using the formula A  =  πr2 to get A ≈ 113.1. If each square inch contains 50 calories, there is a total of 113.1 · 50  =  5,655 calories. Alex\'s dad eats 3 out of 8 slices, or in other words,  of the pizza, which is (5,655)  =  2,120 calories. Alex eats two slices or (5,655)  =  1,414 calories. Subtract Alex\'s calories from his dad\'s to get 2120 – 1414 ≈ 700 calories.", "13":"(H) Start by drawing a right triangle with unknown angle θ as seen in the diagram below. Since tan(θ)  =  v then we know the  from angle θ is . Now find the missing side using the Pythagorean Theorem to get it: . Now using SOH CAH TOA, .", "14":"(B) Andy only has two possible places to sit, but the other four people can sit anywhere. Starting with just the arrangements for the other 4 people, we get 4 · 3 · 2 · 1  =  24 possible seating arrangements for them. Then multiply the answer by 2 for the two possible choices for Andy to get 2 · 24  =  48 total arrangements.", "15":"(F) If the two points lie on the graph of the equation, then their slope must equal , which is the slope of the equation. Using the slope formula and setting it equal to , we get . Simplify the numerator and denominator to get . Keep simplifying to get . Solve to get g  =  –3."};
+let graded = false;
+
+document.querySelectorAll('.choices li').forEach(li => {
+  // Remove old onclick
+  li.removeAttribute('onclick');
+  li.addEventListener('click', function() {
+    if (graded) return;
+    const siblings = this.parentElement.querySelectorAll('li');
+    siblings.forEach(s => s.classList.remove('selected'));
+    this.classList.add('selected');
+  });
+});
+
+function gradeTest() {
+  if (graded) return;
+  graded = true;
+  let correct = 0;
+  const total = Object.keys(ANSWERS).length;
+  
+  document.querySelectorAll('.question').forEach((qDiv, idx) => {
+    const qNum = idx + 1;
+    const correctAns = ANSWERS[qNum];
+    if (!correctAns) return;
+    const choices = qDiv.querySelectorAll('.choices li');
+    const selected = qDiv.querySelector('.choices li.selected');
+    const selectedLetter = selected ? selected.textContent.trim().charAt(0) : null;
+    
+    choices.forEach(li => {
+      const letter = li.textContent.trim().charAt(0);
+      if (letter === correctAns) li.classList.add('show-correct');
+      li.style.cursor = 'default';
+    });
+    
+    const tag = document.createElement('span');
+    tag.className = 'result-tag';
+    
+    if (selectedLetter === correctAns) {
+      correct++;
+      tag.className += ' correct';
+      tag.textContent = 'Correct';
+      if (selected) { selected.classList.remove('selected'); selected.classList.add('correct'); }
+    } else {
+      tag.className += ' wrong';
+      tag.textContent = 'Incorrect (Answer: ' + correctAns + ')';
+      if (selected) { selected.classList.remove('selected'); selected.classList.add('wrong'); }
+    }
+    
+    const firstP = qDiv.querySelector('p');
+    if (firstP) firstP.appendChild(tag);
+    
+    if (typeof EXPLANATIONS !== 'undefined' && EXPLANATIONS[qNum]) {
+      const explDiv = document.createElement('div');
+      explDiv.className = 'explanation show';
+      explDiv.innerHTML = '<strong>Explanation:</strong> ' + EXPLANATIONS[qNum];
+      qDiv.appendChild(explDiv);
+    }
+  });
+  
+  const pct = Math.round((correct / total) * 100);
+  document.querySelector('.submit-btn').style.display = 'none';
+  document.querySelector('.reset-btn').style.display = 'block';
+  var rw=document.querySelector('.report-wrap');if(rw)rw.style.display='block';
+  var bs=document.createElement('div');bs.className='bottom-score';bs.id='bottom-score';
+  bs.innerHTML='<h2 style="font-size:1.3rem;margin-bottom:6px;color:#1a3a4a">Your Score</h2><div class="pct '+(pct>=80?'good':pct>=60?'ok':'bad')+'">'+pct+'%</div><div class="detail">'+correct+' out of '+total+' correct</div>';
+  document.querySelector('.submit-wrap').after(bs);
+  try{var tn=location.pathname.match(/test(\d+)/);if(tn)localStorage.setItem('actmath_'+tn[1],pct);}catch(e){}
+}
+
+function resetTest() {
+  graded = false;
+  var bsEl=document.getElementById('bottom-score');if(bsEl)bsEl.remove();
+  document.querySelector('.submit-btn').style.display = '';
+  document.querySelector('.reset-btn').style.display = 'none';
+  var rw=document.querySelector('.report-wrap');if(rw)rw.style.display='none';
+  var ni=document.querySelector('.name-input');if(ni)ni.value='';
+  document.querySelectorAll('.choices li').forEach(li => {
+    li.classList.remove('selected','correct','wrong','show-correct');
+    li.style.cursor = 'pointer';
+  });
+  document.querySelectorAll('.result-tag').forEach(t => t.remove());
+  document.querySelectorAll('.explanation').forEach(e => e.remove());
+}
+
+function generateReport(){
+  var nameInput=document.querySelector('.name-input');
+  var name=(nameInput&&nameInput.value.trim())||'Student';
+  var testName=document.querySelector('header h1').textContent;
+  var bs=document.getElementById('bottom-score');
+  var scorePct=bs?bs.querySelector('.pct').textContent:'';
+  var detailTxt=bs?bs.querySelector('.detail').textContent:'';
+  var d=new Date().toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'});
+  var btn=document.querySelector('.report-btn');btn.textContent='Generating...';btn.disabled=true;
+  var s=document.createElement('script');
+  s.src='https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js';
+  s.onerror=function(){btn.textContent='Download Report (PDF)';btn.disabled=false;alert('Could not load PDF library.');};
+  s.onload=function(){
+    var doc=new jspdf.jsPDF('portrait','mm','letter');
+    var pw=215.9,ph=279.4,mx=12,cw=pw-2*mx,y=8;
+    doc.setFillColor(26,58,74);doc.rect(0,0,pw,22,'F');
+    doc.setTextColor(255,255,255);doc.setFontSize(13);doc.setFont('helvetica','bold');
+    doc.text(testName,mx,9);
+    doc.setFontSize(7.5);doc.setFont('helvetica','normal');
+    doc.text(d+'  |  Student: '+name,mx,14.5);
+    doc.setFontSize(18);doc.setFont('helvetica','bold');
+    doc.text(scorePct,pw-mx,11,{align:'right'});
+    doc.setFontSize(7.5);doc.setFont('helvetica','normal');
+    doc.text(detailTxt,pw-mx,16,{align:'right'});
+    y=25;
+    doc.setDrawColor(26,58,74);doc.setLineWidth(0.3);doc.line(mx,y,pw-mx,y);y+=3;
+    document.querySelectorAll('.question').forEach(function(qDiv,idx){
+      var qNum=idx+1;var ca=ANSWERS[qNum];if(!ca)return;
+      var sel=qDiv.querySelector('.choices li.correct,.choices li.wrong');
+      var sa=sel?sel.textContent.trim().charAt(0):'-';
+      var ok=sel&&sel.classList.contains('correct');
+      if(ok){
+        doc.setFillColor(40,167,69);doc.circle(mx+1.2,y-1,1,'F');
+        doc.setTextColor(33,33,33);doc.setFont('helvetica','bold');doc.setFontSize(8);
+        doc.text('Q'+qNum,mx+4,y);
+        doc.setFont('helvetica','normal');doc.setTextColor(40,167,69);
+        doc.text('Correct ('+ca+')',mx+14,y);
+      }else{
+        doc.setFillColor(220,53,69);doc.circle(mx+1.2,y-1,1,'F');
+        doc.setTextColor(33,33,33);doc.setFont('helvetica','bold');doc.setFontSize(8);
+        doc.text('Q'+qNum,mx+4,y);
+        doc.setFont('helvetica','normal');doc.setTextColor(220,53,69);
+        doc.text('Incorrect',mx+14,y);
+        doc.setTextColor(120,120,120);
+        doc.text('(Chose '+sa+', Correct: '+ca+')',mx+32,y);
+      }
+      y+=3.2;
+      var qP=qDiv.querySelector('p');
+      if(qP){
+        var qT=qP.cloneNode(true);
+        var tags=qT.querySelectorAll('.result-tag');tags.forEach(function(t){t.remove();});
+        var qt=qT.textContent.replace(/^\d+\.\s*/,'').trim();
+        if(qt.length>0){
+          doc.setFont('helvetica','normal');doc.setTextColor(60,60,60);doc.setFontSize(6.5);
+          var ql=doc.splitTextToSize(qt,cw-5);
+          ql=ql.slice(0,1);
+          if(doc.splitTextToSize(qt,cw-5).length>1){ql[0]=ql[0].substring(0,ql[0].length-3)+'...';}
+          doc.text(ql,mx+4,y);y+=2.4;
+        }
+      }
+      if(typeof EXPLANATIONS!=='undefined'&&EXPLANATIONS[qNum]){
+        doc.setFont('helvetica','italic');doc.setTextColor(100,100,100);doc.setFontSize(6);
+        var lines=doc.splitTextToSize(EXPLANATIONS[qNum],cw-5);
+        if(lines.length>2){lines=lines.slice(0,2);lines[1]=lines[1].substring(0,Math.max(0,lines[1].length-3))+'...';}
+        doc.text(lines,mx+4,y);y+=lines.length*2.2;
+      }
+      y+=2;
+    });
+    doc.setDrawColor(200,200,200);doc.setLineWidth(0.2);doc.line(mx,ph-10,pw-mx,ph-10);
+    doc.setTextColor(170,170,170);doc.setFontSize(6);doc.setFont('helvetica','normal');
+    doc.text('ACT Math Practice  |  Score Report',pw/2,ph-7,{align:'center'});
+    var tn=location.pathname.match(/test(\d+)/);
+    var testNum=tn?parseInt(tn[1])-100:0;
+    var ds=new Date().toISOString().slice(0,10);
+    doc.save('ACT-Math-Test-'+testNum+'-'+ds+'.pdf');
+    btn.textContent='Download Report (PDF)';btn.disabled=false;
+  };
+  document.head.appendChild(s);
+}
+</script>
+</body></html>

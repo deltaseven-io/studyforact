@@ -1,0 +1,10 @@
+# Build scripts
+*.py
+*.js
+
+# Temp data files
+*.json
+!data/*.json
+
+# OS files
+.DS_Store

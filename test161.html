@@ -1,0 +1,222 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>ACT Math Test 61</title><style>@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:#fff;color:#2d3748;line-height:1.7}
+.container{max-width:800px;margin:0 auto;padding:20px 24px}
+header{background:linear-gradient(135deg,#1a3a4a 0%,#2d6a7a 100%);color:#fff;padding:28px 0;margin-bottom:36px;text-align:center}
+header .container{display:block}
+header h1{font-size:1.6rem;font-weight:700;letter-spacing:-0.3px}
+header a{color:rgba(255,255,255,.7);text-decoration:none;font-size:.9rem;display:inline-block;margin-bottom:6px;transition:color .2s}
+header a:hover{color:#fff}
+.question{background:#fff;border-radius:12px;padding:24px;margin-bottom:20px;border:1px solid #e2e8f0;transition:border-color .2s}
+.question:hover{border-color:#cbd5e0}
+.question p{margin-bottom:14px;font-size:1.05rem}
+img{max-width:100%;height:auto;margin:4px 0;vertical-align:middle}
+.choices{list-style:none}
+.choices li{padding:10px 14px;margin:6px 0;border-radius:8px;cursor:pointer;transition:all .2s;border:2px solid transparent}
+.choices li:hover{background:#f0f7fa}
+.choices li.selected{background:#d1ecf1;border-color:#bee5eb}
+.choices li.correct{background:#d4edda;border-color:#28a745}
+.choices li.wrong{background:#f8d7da;border-color:#dc3545}
+.choices li.show-correct{background:#d4edda;border-color:#28a745}
+.submit-wrap{text-align:center;margin:36px 0}
+.submit-btn{display:inline-block;padding:14px 40px;background:linear-gradient(135deg,#1a3a4a,#2d6a7a);color:#fff;border:none;border-radius:10px;font-size:1.1rem;cursor:pointer;font-weight:600;font-family:inherit;transition:all .25s;letter-spacing:.3px}
+.submit-btn:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(26,58,74,.25)}
+.score-box{background:#fff;border-radius:12px;padding:28px;margin-bottom:28px;text-align:center;border:1px solid #e2e8f0;box-shadow:0 4px 20px rgba(0,0,0,.06);display:none}
+.score-box h2{font-size:1.4rem;margin-bottom:8px;color:#1a3a4a;text-align:center}
+.score-box .pct{font-size:3rem;font-weight:700}
+.score-box .pct.good{color:#28a745}
+.score-box .pct.ok{color:#e6a817}
+.score-box .pct.bad{color:#dc3545}
+.score-box .detail{color:#666;margin-top:4px}
+.result-tag{display:inline-block;padding:2px 10px;border-radius:12px;font-size:.8rem;font-weight:600;margin-left:8px}
+.result-tag.correct{background:#d4edda;color:#155724}
+.result-tag.wrong{background:#f8d7da;color:#721c24}
+.reset-btn{display:none;margin:16px auto;padding:12px 28px;background:#6c757d;color:#fff;border:none;border-radius:10px;font-size:1rem;cursor:pointer;font-family:inherit;transition:all .25s}
+.reset-btn:hover{background:#5a6268;transform:translateY(-1px)}
+.explanation{background:#f0f7ff;border-left:4px solid #1a3a4a;padding:14px 18px;margin-top:14px;border-radius:0 8px 8px 0;font-size:.95rem;color:#444;display:none}
+.explanation.show{display:block}
+.explanation strong{color:#1a3a4a}
+.nav{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin:36px 0}
+.nav a{display:inline-block;padding:10px 24px;background:linear-gradient(135deg,#1a3a4a,#2d6a7a);color:#fff;text-decoration:none;border-radius:10px;font-weight:500;font-size:.95rem;transition:all .25s}
+.nav a:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(26,58,74,.25)}
+footer{text-align:center;padding:36px 24px;color:#8899a4;font-size:.85rem;border-top:1px solid #e2e8f0;margin-top:40px}
+.report-btn{display:inline-block;margin:0;padding:12px 28px;background:linear-gradient(135deg,#1a3a4a,#2d6a7a);color:#fff;border:none;border-radius:10px;font-size:1rem;cursor:pointer;font-family:inherit;transition:all .25s}
+.report-btn:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(26,58,74,.25)}
+.bottom-score{background:#fff;border-radius:12px;padding:20px;margin:20px 0;text-align:center;border:1px solid #e2e8f0;box-shadow:0 4px 20px rgba(0,0,0,.06)}
+.bottom-score .pct{font-size:2.5rem;font-weight:700}
+.bottom-score .pct.good{color:#28a745}
+.bottom-score .pct.ok{color:#e6a817}
+.bottom-score .pct.bad{color:#dc3545}
+.bottom-score .detail{color:#666;margin-top:4px;font-size:.95rem}
+.report-wrap{display:none;text-align:center;margin:16px 0}
+.name-input{padding:10px 14px;border:1px solid #e2e8f0;border-radius:10px;font-size:.95rem;font-family:inherit;width:200px;margin-right:8px;outline:none;transition:border-color .2s}
+.name-input:focus{border-color:#1a3a4a}
+</style></head><body><header><div class="container"><a href="index.html">&larr; All Tests</a><h1>ACT Math Practice Test 61</h1></div></header><div class="container"><div id="score-box" class="score-box"><h2>Your Score</h2><div class="pct">0%</div><div class="detail"></div></div><div class="question"><p><b>1.</b> In the figure all angles are right angles and each dimension given is in inches. What is the perimeter of the figure in inches?<br><img alt="image" src="https://www.crackab.com/image/tests/6/01431.jpg"></p><ul class="choices"><li>A. 21</li><li>B. 35</li><li>C. 36</li><li>D. 54</li><li>E. 72</li></ul></div><div class="question"><p><b>2.</b> Which of the following graphs represents the solution set of the inequality |<i>x</i>| &gt; 2 on the real number line?</p><ul class="choices"><li>F. <img alt="image" src="https://www.crackab.com/image/tests/6/01432.jpg"></li><li>G. <img alt="image" src="https://www.crackab.com/image/tests/6/01433.jpg"></li><li>H. <img alt="image" src="https://www.crackab.com/image/tests/6/01434.jpg"></li><li>J. <img alt="image" src="https://www.crackab.com/image/tests/6/01435.jpg"></li><li>K. <img alt="image" src="https://www.crackab.com/image/tests/6/01436.jpg"></li></ul></div><div class="question"><p><b>3.</b> In a game, 100 marbles numbered 0-99 are placed into a box. A player draws 1 marble at random from the box. Without replacing the first marble, the player draws a second marble at random. If both marbles drawn have the same tens digit (that is, both are numbered 0-9 or 10-19 or 20-29, etc.), the player is a winner. If the first marble drawn is numbered 56, what is the probability that Terry will be a winner on the next draw?</p><ul class="choices"><li>A. <img alt="image" src="https://www.crackab.com/image/tests/6/01437.jpg"></li><li>B. <img alt="image" src="https://www.crackab.com/image/tests/6/01438.jpg"></li><li>C. <img alt="image" src="https://www.crackab.com/image/tests/6/01439.jpg"></li><li>D. <img alt="image" src="https://www.crackab.com/image/tests/6/01440.jpg"></li><li>E. <img alt="image" src="https://www.crackab.com/image/tests/6/01441.jpg"></li></ul></div><div class="question"><p><b>4.</b> In the diagram <img alt="image" src="https://www.crackab.com/image/tests/6/01442.jpg"> intersects <img alt="image" src="https://www.crackab.com/image/tests/6/01443.jpg"> at <i>c</i> and <img alt="image" src="https://www.crackab.com/image/tests/6/01444.jpg"> is parallel to <img alt="image" src="https://www.crackab.com/image/tests/6/01445.jpg"> Which of the following statements must be true?<br><img alt="image" src="https://www.crackab.com/image/tests/6/01448.jpg"></p><ul class="choices"><li>F. <img alt="image" src="https://www.crackab.com/image/tests/6/01396.jpg"><i>a</i> is congruent to <img alt="image" src="https://www.crackab.com/image/tests/6/01396.jpg"><i>d</i>.</li><li>G. Δ <i>ACB</i> is congruent to Δ<i>ECD</i>.</li><li>H. <img alt="image" src="https://www.crackab.com/image/tests/6/01446.jpg"> is congruent to <img alt="image" src="https://www.crackab.com/image/tests/6/01447.jpg"></li><li>J. Δ <i>ACB</i> is similar to Δ<i>ECD</i>.</li><li>K. <img alt="image" src="https://www.crackab.com/image/tests/6/01396.jpg"><i>ACB</i> is congruent to <img alt="image" src="https://www.crackab.com/image/tests/6/01396.jpg"><i>CED</i>.</li></ul></div><div class="question"><p><b>5.</b> At the same time that a 6-foot man has a 4-foot shadow, a flag pole has a 14-foot shadow. What is the height of the flag pole, in feet?</p><ul class="choices"><li>A. <img alt="image" src="https://www.crackab.com/image/tests/6/01449.jpg"></li><li>B. 12</li><li>C. 16</li><li>D. 21</li><li>E. 28</li></ul></div><div class="question"><p><b>6.</b> The formula for surface area of a right circular cylinder is <i>a</i> = 2π<i>R</i>(<i>R</i> + <i>h</i>) where <i>a</i> is surface area, <i>R</i> = radius of the cylinder, and <i>h</i> is the height of the cylinder. Then <i>h</i> = ?<br><img alt="image" src="https://www.crackab.com/image/tests/6/01454.jpg"></p><ul class="choices"><li>F. <i>a</i> - 2π<i>R</i> - <i>R</i></li><li>G. <img alt="image" src="https://www.crackab.com/image/tests/6/01450.jpg"></li><li>H. <img alt="image" src="https://www.crackab.com/image/tests/6/01451.jpg"></li><li>J. <img alt="image" src="https://www.crackab.com/image/tests/6/01452.jpg"></li><li>K. <img alt="image" src="https://www.crackab.com/image/tests/6/01453.jpg"></li></ul></div><div class="question"><p><br>Juanita, an employee of We-Bug-U, worked for 6 hours and earned $68.00 for the 6-hour period. What was the amount of her sales for the 6-hour period?</p><ul class="choices"><li>A. $20.00</li><li>B. $80.00</li><li>C. $100.00</li><li>D. $200.00</li><li>E. $400.00</li></ul></div><div class="question"><p><b>8.</b> Romeo and Juliet (both employees of We-Bug-U) each worked 15 hours and had sales of $400.00. Romeo chose Option A while Juliet chose Option B. Which employee made more money and how much more?</p><ul class="choices"><li>F. Romeo: $5.00 more</li><li>G. Juliet: $5.00 more</li><li>H. They earned the same amount.</li><li>J. Juliet: $25.00 more</li><li>K. Romeo: $355.00 more</li></ul></div><div class="question"><p><b>9.</b> The width of a rectangle is 27 feet and the length is 36 feet. What is the length of a diagonal of the rectangle in feet?</p><ul class="choices"><li>A. 63</li><li>B. 54</li><li>C. 45</li><li>D. 42</li><li>E. 36</li></ul></div><div class="question"><p><b>10.</b> The vertices of a parallelogram in the coordinate plane are (3, 3), (7, 3), (8, 8), and (4, 8). What is the area of this parallelogram?</p><ul class="choices"><li>F. 10</li><li>G. <img alt="image" src="https://www.crackab.com/image/tests/6/01455.jpg"></li><li>H. 16</li><li>J. 20</li><li>K. <img alt="image" src="https://www.crackab.com/image/tests/6/01456.jpg"></li></ul></div><div class="question"><p><b>11.</b> The point (-1, 1) is the midpoint of the line segment in the standard (<i>x, y</i>) coordinate plane joining the point (1, 6) and the point (<i>a, b</i>). Which of the following is (<i>a, b</i>)?</p><ul class="choices"><li>A. (-2, 3)</li><li>B. (-3, -4)</li><li>C. (0, 3.5)</li><li>D. (3, 11)</li><li>E. (2, 5)</li></ul></div><div class="question"><p><b>12.</b> The first term of the geometric sequence below is 27. What is the twelfth term? 27, 9, 3….</p><ul class="choices"><li>F. <img alt="image" src="https://www.crackab.com/image/tests/6/01457.jpg"></li><li>G. <img alt="image" src="https://www.crackab.com/image/tests/6/01458.jpg"></li><li>H. <img alt="image" src="https://www.crackab.com/image/tests/6/01459.jpg"></li><li>J. <img alt="image" src="https://www.crackab.com/image/tests/6/01460.jpg"></li><li>K. <img alt="image" src="https://www.crackab.com/image/tests/6/01461.jpg"></li></ul></div><div class="question"><p><b>13.</b> In Δ<i>ABC</i>, <i>AB</i> = <i>AC</i> = 14. Which of these values could NOT be the length of the third side, <img alt="image" src="https://www.crackab.com/image/tests/6/01462.jpg">?<br><img alt="image" src="https://www.crackab.com/image/tests/6/01463.jpg"></p><ul class="choices"><li>A. 5</li><li>B. 7</li><li>C. 14</li><li>D. 16</li><li>E. 28</li></ul></div><div class="question"><p><b>14.</b> If 4<sup class="frac">3<i>x</i>+1</sup> = 8<sup class="frac"><i>x</i>+2</sup>, then <i>x</i> = ?</p><ul class="choices"><li>F. <img alt="image" src="https://www.crackab.com/image/tests/6/01464.jpg"></li><li>G. <img alt="image" src="https://www.crackab.com/image/tests/6/01465.jpg"></li><li>H. <img alt="image" src="https://www.crackab.com/image/tests/6/01466.jpg"></li><li>J. 3</li><li>K. None of these</li></ul></div><div class="question"><p><b>15.</b> If <i>f</i>(<i>x</i>) = <i>x</i><sup class="frac">2</sup> and <i>g</i>(<i>x</i>) = 2<i>x -</i> 1, then <i>f</i>(<i>g</i>(<i>x</i>)) = ?</p><ul class="choices"><li>A. 4<i>x</i><sup class="frac">2</sup> - 4<i>x</i> + 1</li><li>B. 4<i>x</i><sup class="frac">2</sup> + 1</li><li>C. 2<i>x</i><sup class="frac">2</sup> - 1</li><li>D. <i>x</i><sup class="frac">2</sup> - 1</li><li>E. 4<i>x</i><sup class="frac">2</sup> + 4<i>x</i> + 1</li></ul></div><div class="submit-wrap"><button class="submit-btn" onclick="gradeTest()">Submit Test</button><button class="reset-btn" onclick="resetTest()">Try Again</button>
+<div class="report-wrap"><input type="text" class="name-input" placeholder="Student name (for report)"><button class="report-btn" onclick="generateReport()">Download Report (PDF)</button></div></div><div class="nav"><a href="test160.html">&larr; Prev</a><a href="index.html">All Tests</a><a href="test162.html">Next &rarr;</a></div></div><footer><div class="container">ACT Math Practice</div></footer>
+<script>
+const ANSWERS = {"1": "C", "2": "H", "3": "D", "4": "J", "5": "D", "6": "H", "7": "D", "8": "G", "9": "C", "10": "J", "11": "B", "12": "G", "13": "E", "14": "H", "15": "A"};
+const EXPLANATIONS = {"1":"(C) We can calculate the length of all but two of the segments. Call these two segments x and y. By adding the horizontal segments, we get 3 + x + y  =  12 ? x + y  =  9. Now the perimeter equals 6 + 3 + 3 + x + 1 + y + 2 + 12. This yields 27 + (x + y)  =  27 + 9  =  36. The same answer would be obtained by making a rectangle and adding the perimeter of it. Note: it is not possible to get values for x and y, but we can find their sum.", "2":"(H) The inequality |x| > 2 is equivalent to the compound inequality x > 2 OR x < –2. The correct answer is easily x > 2 obtained by choosing numbers.", "3":"(D) After the first marble is drawn, there are 99 marbles left in the box. A winning marble must have a 5 in the tens digit. Originally, there were 10 marbles in the 50\'s but after the first was drawn, only 9 are left. Probability is", "4":"(J) Two triangles are similar if 2 corresponding angles are congruent. In this case, ∠A must be congruent to ∠E, and ∠B must be congruent to ∠D, by alternate interior angles. By vertical angles ∠ACB is congruent to ∠ECD. Therefore, ΔACB must be similar to ΔECD.", "5":"(D) These are similar triangles and the following proportion is true:  ? 4x  =  84 ? x  =  21 ft.", "6":"(H) Since we are multiplying by 2πr in A  =  2πr(r + h), we should divide by 2πr. We get   =  r + h. Then subtract r from both sides and get  ?  =  h", "7":"(D) Juanita must have Option A since 6 hours for Option B would be 6(11)  =  $66. Under Option A, she would make 6(8) plus 10% of her sales. This gives the equation 6(8) + .10(sales)  =  68 ? .10(sales)  =  20 ? sales  =    =  $200.", "8":"(G) Under Option A, Romeo would earn 15(8) + .10(400)  =  120 + 40  =  $160. Under Option B, Juliette would earn 15(11)  =  $165. Juliette makes 165 – 160  =  $5 more than Romeo.", "9":"(C) For a problem involving a rectangle, make a sketch. The rectangle has 4 right angles. When we draw the diagonal we make a right triangle in which we know 2 sides. The Pythagorean Theorem applies: a2 + b2  =  c2, so 272 + 362  =  c2 ? 729 + 1296  =  c2 ? c2  =  2025; c  =    =  45. Also, 27, 36, 45 is a Pythagorean triple (3,4,5).", "10":"(J) When given coordinates of points, we graph them. The segment joining (3, 3) and (7, 3) is horizontal, so its length is 7 – 3  =  4. The height of the parallelogram is the distance between the 2 horizontal segments. That distance is 5. It is the distance from 3 to 8 on the y-axis. Area of a parallelogram  =  bh; A  =  4(5)  =  20.", "11":"(B) We use the midpoint formula to get this equation:  Thus,  and  ? a + 1  =  –2 and b + 6  =  2 ? a  =  –3 and b  =  –4.Graph the points in the (x, y) plane. By your knowledge of what a midpoint is, you should see that the other endpoint has to be in quadrant III; (–3, –4) is the only choice that is in quadrant III.", "12":"(G) We could get the correct answer by noticing that we get successive terms by dividing by 3. Writing out 12 terms, 27, 9, 3, 1,  the twelfth term is  Using the formula for the nth term of a geometric sequence:", "13":"(E) The triangle inequality states that the sum of any two sides of a triangle must be greater than the third side. Since 14 + 14  =  28, the third side has to be less than 28.", "14":"(H) Both 4 and 8 are powers of 2 (4  =  22 and 8  =  23, respectively); therefore, we can write both expressions as 2 to a power: 43x+1  =  (22)(3x+1)  =  26x+2 and 8x+2  =  (23)x+2  =  23x+6. The equation can then be written as 26x+2  =  23x+6. Since the base (2) is the same, the exponents must be equal: 6x + 2  =  3x + 6: 3x  =  4: x  = ", "15":"(A) f(g(x)) is equivalent to f(2x – 1), which is equivalent to (2x – 1)2. This is a FOIL problem: (2x – 1)(2x – 1)  =  4x2 – 2x – 2x + 1  =  4x2 – 4x + 1."};
+let graded = false;
+
+document.querySelectorAll('.choices li').forEach(li => {
+  // Remove old onclick
+  li.removeAttribute('onclick');
+  li.addEventListener('click', function() {
+    if (graded) return;
+    const siblings = this.parentElement.querySelectorAll('li');
+    siblings.forEach(s => s.classList.remove('selected'));
+    this.classList.add('selected');
+  });
+});
+
+function gradeTest() {
+  if (graded) return;
+  graded = true;
+  let correct = 0;
+  const total = Object.keys(ANSWERS).length;
+  
+  document.querySelectorAll('.question').forEach((qDiv, idx) => {
+    const qNum = idx + 1;
+    const correctAns = ANSWERS[qNum];
+    if (!correctAns) return;
+    const choices = qDiv.querySelectorAll('.choices li');
+    const selected = qDiv.querySelector('.choices li.selected');
+    const selectedLetter = selected ? selected.textContent.trim().charAt(0) : null;
+    
+    choices.forEach(li => {
+      const letter = li.textContent.trim().charAt(0);
+      if (letter === correctAns) li.classList.add('show-correct');
+      li.style.cursor = 'default';
+    });
+    
+    const tag = document.createElement('span');
+    tag.className = 'result-tag';
+    
+    if (selectedLetter === correctAns) {
+      correct++;
+      tag.className += ' correct';
+      tag.textContent = 'Correct';
+      if (selected) { selected.classList.remove('selected'); selected.classList.add('correct'); }
+    } else {
+      tag.className += ' wrong';
+      tag.textContent = 'Incorrect (Answer: ' + correctAns + ')';
+      if (selected) { selected.classList.remove('selected'); selected.classList.add('wrong'); }
+    }
+    
+    const firstP = qDiv.querySelector('p');
+    if (firstP) firstP.appendChild(tag);
+    
+    if (typeof EXPLANATIONS !== 'undefined' && EXPLANATIONS[qNum]) {
+      const explDiv = document.createElement('div');
+      explDiv.className = 'explanation show';
+      explDiv.innerHTML = '<strong>Explanation:</strong> ' + EXPLANATIONS[qNum];
+      qDiv.appendChild(explDiv);
+    }
+  });
+  
+  const pct = Math.round((correct / total) * 100);
+  document.querySelector('.submit-btn').style.display = 'none';
+  document.querySelector('.reset-btn').style.display = 'block';
+  var rw=document.querySelector('.report-wrap');if(rw)rw.style.display='block';
+  var bs=document.createElement('div');bs.className='bottom-score';bs.id='bottom-score';
+  bs.innerHTML='<h2 style="font-size:1.3rem;margin-bottom:6px;color:#1a3a4a">Your Score</h2><div class="pct '+(pct>=80?'good':pct>=60?'ok':'bad')+'">'+pct+'%</div><div class="detail">'+correct+' out of '+total+' correct</div>';
+  document.querySelector('.submit-wrap').after(bs);
+  try{var tn=location.pathname.match(/test(\d+)/);if(tn)localStorage.setItem('actmath_'+tn[1],pct);}catch(e){}
+}
+
+function resetTest() {
+  graded = false;
+  var bsEl=document.getElementById('bottom-score');if(bsEl)bsEl.remove();
+  document.querySelector('.submit-btn').style.display = '';
+  document.querySelector('.reset-btn').style.display = 'none';
+  var rw=document.querySelector('.report-wrap');if(rw)rw.style.display='none';
+  var ni=document.querySelector('.name-input');if(ni)ni.value='';
+  document.querySelectorAll('.choices li').forEach(li => {
+    li.classList.remove('selected','correct','wrong','show-correct');
+    li.style.cursor = 'pointer';
+  });
+  document.querySelectorAll('.result-tag').forEach(t => t.remove());
+  document.querySelectorAll('.explanation').forEach(e => e.remove());
+}
+
+function generateReport(){
+  var nameInput=document.querySelector('.name-input');
+  var name=(nameInput&&nameInput.value.trim())||'Student';
+  var testName=document.querySelector('header h1').textContent;
+  var bs=document.getElementById('bottom-score');
+  var scorePct=bs?bs.querySelector('.pct').textContent:'';
+  var detailTxt=bs?bs.querySelector('.detail').textContent:'';
+  var d=new Date().toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'});
+  var btn=document.querySelector('.report-btn');btn.textContent='Generating...';btn.disabled=true;
+  var s=document.createElement('script');
+  s.src='https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js';
+  s.onerror=function(){btn.textContent='Download Report (PDF)';btn.disabled=false;alert('Could not load PDF library.');};
+  s.onload=function(){
+    var doc=new jspdf.jsPDF('portrait','mm','letter');
+    var pw=215.9,ph=279.4,mx=12,cw=pw-2*mx,y=8;
+    doc.setFillColor(26,58,74);doc.rect(0,0,pw,22,'F');
+    doc.setTextColor(255,255,255);doc.setFontSize(13);doc.setFont('helvetica','bold');
+    doc.text(testName,mx,9);
+    doc.setFontSize(7.5);doc.setFont('helvetica','normal');
+    doc.text(d+'  |  Student: '+name,mx,14.5);
+    doc.setFontSize(18);doc.setFont('helvetica','bold');
+    doc.text(scorePct,pw-mx,11,{align:'right'});
+    doc.setFontSize(7.5);doc.setFont('helvetica','normal');
+    doc.text(detailTxt,pw-mx,16,{align:'right'});
+    y=25;
+    doc.setDrawColor(26,58,74);doc.setLineWidth(0.3);doc.line(mx,y,pw-mx,y);y+=3;
+    document.querySelectorAll('.question').forEach(function(qDiv,idx){
+      var qNum=idx+1;var ca=ANSWERS[qNum];if(!ca)return;
+      var sel=qDiv.querySelector('.choices li.correct,.choices li.wrong');
+      var sa=sel?sel.textContent.trim().charAt(0):'-';
+      var ok=sel&&sel.classList.contains('correct');
+      if(ok){
+        doc.setFillColor(40,167,69);doc.circle(mx+1.2,y-1,1,'F');
+        doc.setTextColor(33,33,33);doc.setFont('helvetica','bold');doc.setFontSize(8);
+        doc.text('Q'+qNum,mx+4,y);
+        doc.setFont('helvetica','normal');doc.setTextColor(40,167,69);
+        doc.text('Correct ('+ca+')',mx+14,y);
+      }else{
+        doc.setFillColor(220,53,69);doc.circle(mx+1.2,y-1,1,'F');
+        doc.setTextColor(33,33,33);doc.setFont('helvetica','bold');doc.setFontSize(8);
+        doc.text('Q'+qNum,mx+4,y);
+        doc.setFont('helvetica','normal');doc.setTextColor(220,53,69);
+        doc.text('Incorrect',mx+14,y);
+        doc.setTextColor(120,120,120);
+        doc.text('(Chose '+sa+', Correct: '+ca+')',mx+32,y);
+      }
+      y+=3.2;
+      var qP=qDiv.querySelector('p');
+      if(qP){
+        var qT=qP.cloneNode(true);
+        var tags=qT.querySelectorAll('.result-tag');tags.forEach(function(t){t.remove();});
+        var qt=qT.textContent.replace(/^\d+\.\s*/,'').trim();
+        if(qt.length>0){
+          doc.setFont('helvetica','normal');doc.setTextColor(60,60,60);doc.setFontSize(6.5);
+          var ql=doc.splitTextToSize(qt,cw-5);
+          ql=ql.slice(0,1);
+          if(doc.splitTextToSize(qt,cw-5).length>1){ql[0]=ql[0].substring(0,ql[0].length-3)+'...';}
+          doc.text(ql,mx+4,y);y+=2.4;
+        }
+      }
+      if(typeof EXPLANATIONS!=='undefined'&&EXPLANATIONS[qNum]){
+        doc.setFont('helvetica','italic');doc.setTextColor(100,100,100);doc.setFontSize(6);
+        var lines=doc.splitTextToSize(EXPLANATIONS[qNum],cw-5);
+        if(lines.length>2){lines=lines.slice(0,2);lines[1]=lines[1].substring(0,Math.max(0,lines[1].length-3))+'...';}
+        doc.text(lines,mx+4,y);y+=lines.length*2.2;
+      }
+      y+=2;
+    });
+    doc.setDrawColor(200,200,200);doc.setLineWidth(0.2);doc.line(mx,ph-10,pw-mx,ph-10);
+    doc.setTextColor(170,170,170);doc.setFontSize(6);doc.setFont('helvetica','normal');
+    doc.text('ACT Math Practice  |  Score Report',pw/2,ph-7,{align:'center'});
+    var tn=location.pathname.match(/test(\d+)/);
+    var testNum=tn?parseInt(tn[1])-100:0;
+    var ds=new Date().toISOString().slice(0,10);
+    doc.save('ACT-Math-Test-'+testNum+'-'+ds+'.pdf');
+    btn.textContent='Download Report (PDF)';btn.disabled=false;
+  };
+  document.head.appendChild(s);
+}
+</script>
+</body></html>

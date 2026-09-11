@@ -1,0 +1,222 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>ACT Math Test 19</title><style>@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:#fff;color:#2d3748;line-height:1.7}
+.container{max-width:800px;margin:0 auto;padding:20px 24px}
+header{background:linear-gradient(135deg,#1a3a4a 0%,#2d6a7a 100%);color:#fff;padding:28px 0;margin-bottom:36px;text-align:center}
+header .container{display:block}
+header h1{font-size:1.6rem;font-weight:700;letter-spacing:-0.3px}
+header a{color:rgba(255,255,255,.7);text-decoration:none;font-size:.9rem;display:inline-block;margin-bottom:6px;transition:color .2s}
+header a:hover{color:#fff}
+.question{background:#fff;border-radius:12px;padding:24px;margin-bottom:20px;border:1px solid #e2e8f0;transition:border-color .2s}
+.question:hover{border-color:#cbd5e0}
+.question p{margin-bottom:14px;font-size:1.05rem}
+img{max-width:100%;height:auto;margin:4px 0;vertical-align:middle}
+.choices{list-style:none}
+.choices li{padding:10px 14px;margin:6px 0;border-radius:8px;cursor:pointer;transition:all .2s;border:2px solid transparent}
+.choices li:hover{background:#f0f7fa}
+.choices li.selected{background:#d1ecf1;border-color:#bee5eb}
+.choices li.correct{background:#d4edda;border-color:#28a745}
+.choices li.wrong{background:#f8d7da;border-color:#dc3545}
+.choices li.show-correct{background:#d4edda;border-color:#28a745}
+.submit-wrap{text-align:center;margin:36px 0}
+.submit-btn{display:inline-block;padding:14px 40px;background:linear-gradient(135deg,#1a3a4a,#2d6a7a);color:#fff;border:none;border-radius:10px;font-size:1.1rem;cursor:pointer;font-weight:600;font-family:inherit;transition:all .25s;letter-spacing:.3px}
+.submit-btn:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(26,58,74,.25)}
+.score-box{background:#fff;border-radius:12px;padding:28px;margin-bottom:28px;text-align:center;border:1px solid #e2e8f0;box-shadow:0 4px 20px rgba(0,0,0,.06);display:none}
+.score-box h2{font-size:1.4rem;margin-bottom:8px;color:#1a3a4a;text-align:center}
+.score-box .pct{font-size:3rem;font-weight:700}
+.score-box .pct.good{color:#28a745}
+.score-box .pct.ok{color:#e6a817}
+.score-box .pct.bad{color:#dc3545}
+.score-box .detail{color:#666;margin-top:4px}
+.result-tag{display:inline-block;padding:2px 10px;border-radius:12px;font-size:.8rem;font-weight:600;margin-left:8px}
+.result-tag.correct{background:#d4edda;color:#155724}
+.result-tag.wrong{background:#f8d7da;color:#721c24}
+.reset-btn{display:none;margin:16px auto;padding:12px 28px;background:#6c757d;color:#fff;border:none;border-radius:10px;font-size:1rem;cursor:pointer;font-family:inherit;transition:all .25s}
+.reset-btn:hover{background:#5a6268;transform:translateY(-1px)}
+.explanation{background:#f0f7ff;border-left:4px solid #1a3a4a;padding:14px 18px;margin-top:14px;border-radius:0 8px 8px 0;font-size:.95rem;color:#444;display:none}
+.explanation.show{display:block}
+.explanation strong{color:#1a3a4a}
+.nav{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin:36px 0}
+.nav a{display:inline-block;padding:10px 24px;background:linear-gradient(135deg,#1a3a4a,#2d6a7a);color:#fff;text-decoration:none;border-radius:10px;font-weight:500;font-size:.95rem;transition:all .25s}
+.nav a:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(26,58,74,.25)}
+footer{text-align:center;padding:36px 24px;color:#8899a4;font-size:.85rem;border-top:1px solid #e2e8f0;margin-top:40px}
+.report-btn{display:inline-block;margin:0;padding:12px 28px;background:linear-gradient(135deg,#1a3a4a,#2d6a7a);color:#fff;border:none;border-radius:10px;font-size:1rem;cursor:pointer;font-family:inherit;transition:all .25s}
+.report-btn:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(26,58,74,.25)}
+.bottom-score{background:#fff;border-radius:12px;padding:20px;margin:20px 0;text-align:center;border:1px solid #e2e8f0;box-shadow:0 4px 20px rgba(0,0,0,.06)}
+.bottom-score .pct{font-size:2.5rem;font-weight:700}
+.bottom-score .pct.good{color:#28a745}
+.bottom-score .pct.ok{color:#e6a817}
+.bottom-score .pct.bad{color:#dc3545}
+.bottom-score .detail{color:#666;margin-top:4px;font-size:.95rem}
+.report-wrap{display:none;text-align:center;margin:16px 0}
+.name-input{padding:10px 14px;border:1px solid #e2e8f0;border-radius:10px;font-size:.95rem;font-family:inherit;width:200px;margin-right:8px;outline:none;transition:border-color .2s}
+.name-input:focus{border-color:#1a3a4a}
+</style></head><body><header><div class="container"><a href="index.html">&larr; All Tests</a><h1>ACT Math Practice Test 19</h1></div></header><div class="container"><div id="score-box" class="score-box"><h2>Your Score</h2><div class="pct">0%</div><div class="detail"></div></div><div class="question"><p><b>1.</b> What is the slope of the line given by the equation 8 = 3<em>y</em> - 5<em>x</em>?</p><ul class="choices"><li>A. -5</li><li>B. -<img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780804124393_epub_5by3_r1.jpg"></li><li>C. -<img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780804124393_epub_3by5_r1.jpg"></li><li>D. <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780804124393_epub_3by5_r1.jpg"></li><li>E. <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780804124393_epub_5by3_r1.jpg"></li></ul></div><div class="question"><p><b>2.</b> When adding fractions, a useful first step is to find the least common denominator (LCD) of the fractions. What is the LCD for these fractions?<br><img alt="" src="https://www.crackab.com/images/tests/Prin_9780804124393_epub_548_r1.jpg"></p><ul class="choices"><li>F. 3 · 5 · 7 · 11</li><li>G. 3<sup class="frac">2</sup> · 5<sup class="frac">2</sup> · 7 · 11</li><li>H. 3<sup class="frac">2</sup> · 5<sup class="frac">2</sup> · · 11<sup class="frac">3</sup></li><li>J. 3<sup class="frac">2</sup> · 5<sup class="frac">2</sup> · 7 · 11<sup class="frac">3</sup></li><li>K. 3<sup class="frac">3</sup> · 5<sup class="frac">3</sup> · 7 · 11<sup class="frac">4</sup></li></ul></div><div class="question"><p><b>3.</b> <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780804124393_epub_549_r1.jpg"> = ?</p><ul class="choices"><li>A. <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780804124393_epub_1by720_r1.jpg"></li><li>B. <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780804124393_epub_1by360_r1.jpg"></li><li>C. <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780804124393_epub_1by120_r1.jpg"></li><li>D. <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780804124393_epub_27by49_r1.jpg"></li><li>E. 1</li></ul></div><div class="question"><p><b>4.</b> Dave is in Pikeston and needs to go to Danville, which is about 110 miles due south of Pikeston. From Danville, he'll head east to Rocketville, about 200 miles from Danville. As he sets out on his trip, a plane takes off from the Pikeston airport and flies directly to Rocketville. Approximately how far, in miles, does the plane fly?<br><img alt="" src="https://www.crackab.com/images/tests/Prin_9780804124393_epub_550_r1.jpg"></p><ul class="choices"><li>F. 310</li><li>G. <img alt="" src="https://www.crackab.com/images/tests/Prin_9780804124393_epub_551_r1.jpg"></li><li>H. <img alt="" src="https://www.crackab.com/images/tests/Prin_9780804124393_epub_552_r1.jpg"></li><li>J. <img alt="" src="https://www.crackab.com/images/tests/Prin_9780804124393_epub_553_r1.jpg"></li><li>K. <img alt="" src="https://www.crackab.com/images/tests/Prin_9780804124393_epub_554_r1.jpg"></li></ul></div><div class="question"><p><b>5.</b> The figure below is a pentagon (5-sided figure). Suppose a second pentagon were overlaid on this pentagon. At most, the two figures could have how many points of intersection?<br><img alt="" src="https://www.crackab.com/images/tests/Prin_9780804124393_epub_555_r1.jpg"></p><ul class="choices"><li>A. 1</li><li>B. 2</li><li>C. 5</li><li>D. 10</li><li>E. Infinitely many</li></ul></div><div class="question"><p><b>6.</b> MicroCorp will hold its annual company picnic next week and will assign 3 planning duties to its employees. One person selected will reserve a venue, another will arrange catering, and a third will plan activities. There are 10 employees eligible to fulfill these duties, and no employee can be assigned more than one duty. How many different ways are there for duties to be assigned to employees?</p><ul class="choices"><li>F. 7<sup class="frac">3</sup></li><li>G. 9<sup class="frac">3</sup></li><li>H. 10<sup class="frac">3</sup></li><li>J. 9 · 8 · 7</li><li>K. 10 · 9 · 8</li></ul></div><div class="question"><p><b>7.</b> In the (<em>x</em>,<em>y</em>) coordinate plane below, points <em>P</em> (6,2) and <em>Q</em> (1,4) are two vertices of Δ<em>PQR</em>. If <img alt="" src="https://www.crackab.com/images/tests/Prin_9780804124393_epub_L08_r1.jpg"><em>PQR</em> is a right angle, then which of the following could be the coordinates of <em>R</em>?<br><img alt="" src="https://www.crackab.com/images/tests/Prin_9780804124393_epub_556_r1.jpg"></p><ul class="choices"><li>A. (4,-3)</li><li>B. (3, 0)</li><li>C. (2, 1)</li><li>D. (2, 4)</li><li>E. (3, 9)</li></ul></div><div class="question"><p><b>8.</b> If <em>y</em> = 0.25(100 - <em>y</em>), then what is the value of <em>y</em>?</p><ul class="choices"><li>F. 200</li><li>G. 75</li><li>H. 25</li><li>J. 20</li><li>K. 18</li></ul></div><div class="question"><p><b>9.</b> If 0° ≤ <em>x</em>° ≤ 180° and 4cos2<em>x</em> = 1, then <em>x</em>= ?</p><ul class="choices"><li>A. 0°</li><li>B. 60°</li><li>C. 90°</li><li>D. 150°</li><li>E. 180°</li></ul></div><div class="question"><p><b>10.</b> Danielle's living room is a rectangle with the dimensions 16 feet by 18 feet. If she partially covers the bare floor with a circular throw rug with a diameter of 12 feet, what is the approximate area of bare floor, in square feet, that remains exposed?<br>(Note: Assume the rug lies completely flat and does not touch any wall.)</p><ul class="choices"><li>F. 113</li><li>G. 144</li><li>H. 175</li><li>J. 288</li><li>K. Cannot be determined without knowing the exact position of the rug</li></ul></div><div class="question"><p><b>11.</b> In the standard (<em>x</em>,<em>y</em>) coordinate plane, which of the following is the equation of the line perpendicular to the line <em>y</em> = -2<em>x</em> + 2 and that passes through the point (0,-3)?</p><ul class="choices"><li>A. <em>y</em> = -2<em>x</em> - 3</li><li>B. <em>y</em> = -<img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780804124393_epub_1by2_r1.jpg"><em>x</em> + 2</li><li>C. <em>y</em> = <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780804124393_epub_1by2_r1.jpg"><em>x</em> -3</li><li>D. <em>y</em> = <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780804124393_epub_1by2_r1.jpg"> <em>x</em> + 2</li><li>E. <em>y</em> = 2<em>x</em> - 3</li></ul></div><div class="question"><p><b>12.</b> In the figure given below, what is sin θ?<br><img alt="" src="https://www.crackab.com/images/tests/Prin_9780804124393_epub_557_r1.jpg"></p><ul class="choices"><li>F. <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780804124393_epub_1by2_r1.jpg"></li><li>G. <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780804124393_epub_558_r1.jpg"></li><li>H. <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780804124393_epub_559_r1.jpg"></li><li>J. 1</li><li>K. <img alt="" src="https://www.crackab.com/images/tests/Prin_9780804124393_epub_560_r1.jpg"></li></ul></div><div class="question"><p><b>13.</b> If <em>a</em> = 5 and <em>b</em> = -<img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780804124393_epub_1by4_r1.jpg">, which of the following expressions will be the greatest?</p><ul class="choices"><li>A. <em>a</em> + <em>b</em></li><li>B. <em>a</em> - <em>b</em></li><li>C. <em>a</em> × <em>b</em></li><li>D. <em>a</em> ÷ <em>b</em></li><li>E. |<em>a</em> × <em>b</em>|</li></ul></div><div class="question"><p><b>14.</b> When <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780804124393_epub_561_r1.jpg">, which of the following must be true?</p><ul class="choices"><li>F. -12 &lt; <em>x</em> &lt; -3</li><li>G. -3 &lt; <em>x</em> &lt; 0</li><li>H. 0 &lt; <em>x</em> &lt; 3</li><li>J. 3 &lt; <em>x</em> &lt; 4</li><li>K. 4 &lt; <em>x</em></li></ul></div><div class="question"><p><b>15.</b> Which choice below is the complete solution set of |2<em>z</em> - 3| ≥ 7?</p><ul class="choices"><li>A. <em>z</em> ≥ 5</li><li>B. <em>z</em> ≤ -2 or <em>z</em> ≥ 5</li><li>C. -5 ≤ -6 or <em>z</em> ≥ 2</li><li>D. <em>z</em> ≤ -6 or <em>z</em> ≥ 2</li><li>E. <em>z</em> ≤ -5 or <em>z</em> ≥ 2</li></ul></div><div class="submit-wrap"><button class="submit-btn" onclick="gradeTest()">Submit Test</button><button class="reset-btn" onclick="resetTest()">Try Again</button>
+<div class="report-wrap"><input type="text" class="name-input" placeholder="Student name (for report)"><button class="report-btn" onclick="generateReport()">Download Report (PDF)</button></div></div><div class="nav"><a href="test118.html">&larr; Prev</a><a href="index.html">All Tests</a><a href="test120.html">Next &rarr;</a></div></div><footer><div class="container">ACT Math Practice</div></footer>
+<script>
+const ANSWERS = {"1": "E", "2": "J", "3": "C", "4": "K", "5": "E", "6": "K", "7": "E", "8": "J", "9": "B", "10": "H", "11": "C", "12": "F", "13": "B", "14": "G", "15": "B"};
+const EXPLANATIONS = {"1":"The slope of a line in standard form (Ax + By  =  C) is -; therefore, the slope of -5x + 3y  =  8 is . Or, if you prefer, rearrange the equation into slope-intercept form (y  =  mx + b). 8 - 3y  =  5x becomes 3y  =  5x + 8, or y  =  . In slope-intercept form, m is the slope; in this case,.", "2":"The least common denominator (LCD) must be a multiple of the denominator of each of the three given fractions. Take the factors of each denominator (3, 5, 7, 11) to the highest powers they appear: 32 (first fraction), 52 (second fraction), 7 (second fraction), and 113 (third fraction). This results in 32 · 52 · 7 · 113, choice (J). Choice (K) is the product of all three denominators and is wrong because choice (J) is smaller and still a multiple of all three denominators; in other words, both are common denominators but choice (J) is the "least."", "3":"To multiply fractions, you multiply all the numbers on top of the fractions and all the numbers on the bottom of the fractions: . Now, before you pull out the calculator, you can cancel out numbers that appear on both the top and bottom (4, 5, 6, and 7) because a number divided by itself (such as ) is 1, which doesn\'t affect the final product. After canceling, you get , which reduces to .", "4":"The figure provided is a right triangle, so use the Pythagorean theorem (a2 + b2  =  c2) to find the distance asked for. 1102 + 2002  =  c2, so 12,100 + 40,000  =  c2, 52,100  =  c2, and   =  c.", "5":"The key phrase in this question is at most. It\'s possible that the second pentagon is the same size and is laid directly over the original pentagon. Because all points of one pentagon are the same as the other, select choice (E).", "6":"When assigning employees to duties, there are 10 available to reserve a venue (the first duty). That leaves 9 remaining to arrange catering (because no one can be assigned more than one duty) and then 8 to plan activities. Then multiply 10 × 9 × 8 to find how many different ways these duties can be assigned. Note the format of the answer choices-don\'t do more work than you have to.", "7":"The easiest way to work this problem is to sketch it out. Draw , then draw the line perpendicular to  at Q; R is somewhere on this line. All of the answer choices have x-values greater than 1 and you can see the line rising to the right of Q (1,4) in your sketch. This means that the y-value of R must be greater than 4, which leaves only choice (E). Alternatively, you could find the slope of : the slope formula is , so . Since ∟PQR is a right angle,", "8":"Solve the given equation for y. Start with y  =  0.25(100 - y). You can either distribute the 0.25 or divide both sides by the 0.25. In this case, it is easier to divide by 0.25. After doing this your equation becomes: 4y  =  100 - y. Add y to both sides to get 5y  =  100. Divide both sides by 5 to get y  =  20. If you chose to begin the problem by distributing the 0.25, you should have gotten the same answer.", "9":"Since 4cos2x  =  1, cos2x  =  0.25 and cosx  =  0.5. You want to know x, the degree measure whose cosine is 0.5. A scientific/graphing calculator can help you calculate that: the cos-1 key will tell you the degree measure that yields the cosine you give it. cos-1(0.5)  =  60°, so choice (B) is correct. If you prefer, you can try each of the answers in your scientific/graphing calculator. When you plug in choice (B), you can find that cos60°  =  0.5, so cos260°  =  0.25, and 4cos260°  =  1. Make sure your calculator is in degree mode!", "10":"Sketch the rug over the floor to help you visualize the situation. The area of the exposed floor is the difference between the area of the entire floor and the area of the rug. First, find the area of the entire floor: area of a rectangle formula is A  =  lw, so A  =  16 × 18  =  288. Area of a circle formula is A  =  πr2, where r is the radius. The diameter is 12, so r  =  6. Therefore, A  =  π × 62  =  π × 36, which is approximately 113. The difference: 288 - 113  =  175. If you got a negative number when you did the calculation, you may have used the diameter of the circle in the Area of a circle formula rather than the radius.", "11":"The equation of the given line is in slope-intercept form: y  =  mx + b, where m is the slope and b is the y-intercept. That tells you the slope of this line is -2. Since the slopes of perpendicular lines are negative reciprocals, the slope of the line in the credited answer choice must be : eliminate choices (A), (B), and (E). The question says that the line you\'re looking for passes through the point (0,-3): that makes the y-intercept (by definition) -3, so eliminate choice (D).", "12":"Draw a vertical line from the point (2, 2) straight down to the x-axis; this creates a right triangle with base 2 and height 2. Use the Pythagorean theorem (a2 + b2  =  c2) to find the hypotenuse: (2)2 + 22  =  c2, so 4 × 3 + 4  =  c2, 12 + 4  =  c2, 16  =  c2, so 4  =  c. (A shortcut is to recognize that this is a 30°-60°-90° triangle. Such a triangle has a ratio of side lengths 1::2, which means this trian", "13":"Substitute a  =  5 and b  =  - into the answer choices. Before you actually work each out, you can eliminate choices (C) and (D) because the product and quotient of a positive and a negative number will be negative. Now try choice (A): 5 + . (B): 5 - . (E): . Choice (B) is the greatest.", "14":"Solve for : add 1 to both sides to get , or . Simplify to . Multiply both sides by 3 to get x  =  -. Only choice (G) is true.", "15":"Because the statement includes an absolute value, you\'ll need to solve it twice: once assuming the expression inside is positive, once assuming it\'s negative. First, the positive assumption: 2z - 3 ≥ 7, so 2z ≥ 10 and z ≥ 5. Eliminate choices (C), (D), and (E). Now, assume the expression is negative: you\'d multiply a negative number by -1 to make it positive, so -(2z - 3) ≥ 7. Solve by multiplying both sides by -1 (remember to flip the sign): 2z - 3 ≤ -7, so 2z ≤ -4 and z ≤ -2. Eliminate choice (A). Alternatively, you could try substituting in values for z. Try z  =  4: |2 × 4 - 3|  =  |8 - 3|  =  |5|  =  5. This expression is supposed to be ≥ 7; since it isn\'t, you can eliminate any answer choices that include z  =  4, so eliminate choices (C), (D), and (E). Try z  =  -3: |2 × (-3) - 3|  =  |-6 -3|  =  |-9|  =  9. This is ≥ 7, so z could be equal to -3; therefore, eliminate choice (A)."};
+let graded = false;
+
+document.querySelectorAll('.choices li').forEach(li => {
+  // Remove old onclick
+  li.removeAttribute('onclick');
+  li.addEventListener('click', function() {
+    if (graded) return;
+    const siblings = this.parentElement.querySelectorAll('li');
+    siblings.forEach(s => s.classList.remove('selected'));
+    this.classList.add('selected');
+  });
+});
+
+function gradeTest() {
+  if (graded) return;
+  graded = true;
+  let correct = 0;
+  const total = Object.keys(ANSWERS).length;
+  
+  document.querySelectorAll('.question').forEach((qDiv, idx) => {
+    const qNum = idx + 1;
+    const correctAns = ANSWERS[qNum];
+    if (!correctAns) return;
+    const choices = qDiv.querySelectorAll('.choices li');
+    const selected = qDiv.querySelector('.choices li.selected');
+    const selectedLetter = selected ? selected.textContent.trim().charAt(0) : null;
+    
+    choices.forEach(li => {
+      const letter = li.textContent.trim().charAt(0);
+      if (letter === correctAns) li.classList.add('show-correct');
+      li.style.cursor = 'default';
+    });
+    
+    const tag = document.createElement('span');
+    tag.className = 'result-tag';
+    
+    if (selectedLetter === correctAns) {
+      correct++;
+      tag.className += ' correct';
+      tag.textContent = 'Correct';
+      if (selected) { selected.classList.remove('selected'); selected.classList.add('correct'); }
+    } else {
+      tag.className += ' wrong';
+      tag.textContent = 'Incorrect (Answer: ' + correctAns + ')';
+      if (selected) { selected.classList.remove('selected'); selected.classList.add('wrong'); }
+    }
+    
+    const firstP = qDiv.querySelector('p');
+    if (firstP) firstP.appendChild(tag);
+    
+    if (typeof EXPLANATIONS !== 'undefined' && EXPLANATIONS[qNum]) {
+      const explDiv = document.createElement('div');
+      explDiv.className = 'explanation show';
+      explDiv.innerHTML = '<strong>Explanation:</strong> ' + EXPLANATIONS[qNum];
+      qDiv.appendChild(explDiv);
+    }
+  });
+  
+  const pct = Math.round((correct / total) * 100);
+  document.querySelector('.submit-btn').style.display = 'none';
+  document.querySelector('.reset-btn').style.display = 'block';
+  var rw=document.querySelector('.report-wrap');if(rw)rw.style.display='block';
+  var bs=document.createElement('div');bs.className='bottom-score';bs.id='bottom-score';
+  bs.innerHTML='<h2 style="font-size:1.3rem;margin-bottom:6px;color:#1a3a4a">Your Score</h2><div class="pct '+(pct>=80?'good':pct>=60?'ok':'bad')+'">'+pct+'%</div><div class="detail">'+correct+' out of '+total+' correct</div>';
+  document.querySelector('.submit-wrap').after(bs);
+  try{var tn=location.pathname.match(/test(\d+)/);if(tn)localStorage.setItem('actmath_'+tn[1],pct);}catch(e){}
+}
+
+function resetTest() {
+  graded = false;
+  var bsEl=document.getElementById('bottom-score');if(bsEl)bsEl.remove();
+  document.querySelector('.submit-btn').style.display = '';
+  document.querySelector('.reset-btn').style.display = 'none';
+  var rw=document.querySelector('.report-wrap');if(rw)rw.style.display='none';
+  var ni=document.querySelector('.name-input');if(ni)ni.value='';
+  document.querySelectorAll('.choices li').forEach(li => {
+    li.classList.remove('selected','correct','wrong','show-correct');
+    li.style.cursor = 'pointer';
+  });
+  document.querySelectorAll('.result-tag').forEach(t => t.remove());
+  document.querySelectorAll('.explanation').forEach(e => e.remove());
+}
+
+function generateReport(){
+  var nameInput=document.querySelector('.name-input');
+  var name=(nameInput&&nameInput.value.trim())||'Student';
+  var testName=document.querySelector('header h1').textContent;
+  var bs=document.getElementById('bottom-score');
+  var scorePct=bs?bs.querySelector('.pct').textContent:'';
+  var detailTxt=bs?bs.querySelector('.detail').textContent:'';
+  var d=new Date().toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'});
+  var btn=document.querySelector('.report-btn');btn.textContent='Generating...';btn.disabled=true;
+  var s=document.createElement('script');
+  s.src='https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js';
+  s.onerror=function(){btn.textContent='Download Report (PDF)';btn.disabled=false;alert('Could not load PDF library.');};
+  s.onload=function(){
+    var doc=new jspdf.jsPDF('portrait','mm','letter');
+    var pw=215.9,ph=279.4,mx=12,cw=pw-2*mx,y=8;
+    doc.setFillColor(26,58,74);doc.rect(0,0,pw,22,'F');
+    doc.setTextColor(255,255,255);doc.setFontSize(13);doc.setFont('helvetica','bold');
+    doc.text(testName,mx,9);
+    doc.setFontSize(7.5);doc.setFont('helvetica','normal');
+    doc.text(d+'  |  Student: '+name,mx,14.5);
+    doc.setFontSize(18);doc.setFont('helvetica','bold');
+    doc.text(scorePct,pw-mx,11,{align:'right'});
+    doc.setFontSize(7.5);doc.setFont('helvetica','normal');
+    doc.text(detailTxt,pw-mx,16,{align:'right'});
+    y=25;
+    doc.setDrawColor(26,58,74);doc.setLineWidth(0.3);doc.line(mx,y,pw-mx,y);y+=3;
+    document.querySelectorAll('.question').forEach(function(qDiv,idx){
+      var qNum=idx+1;var ca=ANSWERS[qNum];if(!ca)return;
+      var sel=qDiv.querySelector('.choices li.correct,.choices li.wrong');
+      var sa=sel?sel.textContent.trim().charAt(0):'-';
+      var ok=sel&&sel.classList.contains('correct');
+      if(ok){
+        doc.setFillColor(40,167,69);doc.circle(mx+1.2,y-1,1,'F');
+        doc.setTextColor(33,33,33);doc.setFont('helvetica','bold');doc.setFontSize(8);
+        doc.text('Q'+qNum,mx+4,y);
+        doc.setFont('helvetica','normal');doc.setTextColor(40,167,69);
+        doc.text('Correct ('+ca+')',mx+14,y);
+      }else{
+        doc.setFillColor(220,53,69);doc.circle(mx+1.2,y-1,1,'F');
+        doc.setTextColor(33,33,33);doc.setFont('helvetica','bold');doc.setFontSize(8);
+        doc.text('Q'+qNum,mx+4,y);
+        doc.setFont('helvetica','normal');doc.setTextColor(220,53,69);
+        doc.text('Incorrect',mx+14,y);
+        doc.setTextColor(120,120,120);
+        doc.text('(Chose '+sa+', Correct: '+ca+')',mx+32,y);
+      }
+      y+=3.2;
+      var qP=qDiv.querySelector('p');
+      if(qP){
+        var qT=qP.cloneNode(true);
+        var tags=qT.querySelectorAll('.result-tag');tags.forEach(function(t){t.remove();});
+        var qt=qT.textContent.replace(/^\d+\.\s*/,'').trim();
+        if(qt.length>0){
+          doc.setFont('helvetica','normal');doc.setTextColor(60,60,60);doc.setFontSize(6.5);
+          var ql=doc.splitTextToSize(qt,cw-5);
+          ql=ql.slice(0,1);
+          if(doc.splitTextToSize(qt,cw-5).length>1){ql[0]=ql[0].substring(0,ql[0].length-3)+'...';}
+          doc.text(ql,mx+4,y);y+=2.4;
+        }
+      }
+      if(typeof EXPLANATIONS!=='undefined'&&EXPLANATIONS[qNum]){
+        doc.setFont('helvetica','italic');doc.setTextColor(100,100,100);doc.setFontSize(6);
+        var lines=doc.splitTextToSize(EXPLANATIONS[qNum],cw-5);
+        if(lines.length>2){lines=lines.slice(0,2);lines[1]=lines[1].substring(0,Math.max(0,lines[1].length-3))+'...';}
+        doc.text(lines,mx+4,y);y+=lines.length*2.2;
+      }
+      y+=2;
+    });
+    doc.setDrawColor(200,200,200);doc.setLineWidth(0.2);doc.line(mx,ph-10,pw-mx,ph-10);
+    doc.setTextColor(170,170,170);doc.setFontSize(6);doc.setFont('helvetica','normal');
+    doc.text('ACT Math Practice  |  Score Report',pw/2,ph-7,{align:'center'});
+    var tn=location.pathname.match(/test(\d+)/);
+    var testNum=tn?parseInt(tn[1])-100:0;
+    var ds=new Date().toISOString().slice(0,10);
+    doc.save('ACT-Math-Test-'+testNum+'-'+ds+'.pdf');
+    btn.textContent='Download Report (PDF)';btn.disabled=false;
+  };
+  document.head.appendChild(s);
+}
+</script>
+</body></html>

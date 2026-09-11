@@ -1,0 +1,222 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>ACT Math Test 11</title><style>@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:#fff;color:#2d3748;line-height:1.7}
+.container{max-width:800px;margin:0 auto;padding:20px 24px}
+header{background:linear-gradient(135deg,#1a3a4a 0%,#2d6a7a 100%);color:#fff;padding:28px 0;margin-bottom:36px;text-align:center}
+header .container{display:block}
+header h1{font-size:1.6rem;font-weight:700;letter-spacing:-0.3px}
+header a{color:rgba(255,255,255,.7);text-decoration:none;font-size:.9rem;display:inline-block;margin-bottom:6px;transition:color .2s}
+header a:hover{color:#fff}
+.question{background:#fff;border-radius:12px;padding:24px;margin-bottom:20px;border:1px solid #e2e8f0;transition:border-color .2s}
+.question:hover{border-color:#cbd5e0}
+.question p{margin-bottom:14px;font-size:1.05rem}
+img{max-width:100%;height:auto;margin:4px 0;vertical-align:middle}
+.choices{list-style:none}
+.choices li{padding:10px 14px;margin:6px 0;border-radius:8px;cursor:pointer;transition:all .2s;border:2px solid transparent}
+.choices li:hover{background:#f0f7fa}
+.choices li.selected{background:#d1ecf1;border-color:#bee5eb}
+.choices li.correct{background:#d4edda;border-color:#28a745}
+.choices li.wrong{background:#f8d7da;border-color:#dc3545}
+.choices li.show-correct{background:#d4edda;border-color:#28a745}
+.submit-wrap{text-align:center;margin:36px 0}
+.submit-btn{display:inline-block;padding:14px 40px;background:linear-gradient(135deg,#1a3a4a,#2d6a7a);color:#fff;border:none;border-radius:10px;font-size:1.1rem;cursor:pointer;font-weight:600;font-family:inherit;transition:all .25s;letter-spacing:.3px}
+.submit-btn:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(26,58,74,.25)}
+.score-box{background:#fff;border-radius:12px;padding:28px;margin-bottom:28px;text-align:center;border:1px solid #e2e8f0;box-shadow:0 4px 20px rgba(0,0,0,.06);display:none}
+.score-box h2{font-size:1.4rem;margin-bottom:8px;color:#1a3a4a;text-align:center}
+.score-box .pct{font-size:3rem;font-weight:700}
+.score-box .pct.good{color:#28a745}
+.score-box .pct.ok{color:#e6a817}
+.score-box .pct.bad{color:#dc3545}
+.score-box .detail{color:#666;margin-top:4px}
+.result-tag{display:inline-block;padding:2px 10px;border-radius:12px;font-size:.8rem;font-weight:600;margin-left:8px}
+.result-tag.correct{background:#d4edda;color:#155724}
+.result-tag.wrong{background:#f8d7da;color:#721c24}
+.reset-btn{display:none;margin:16px auto;padding:12px 28px;background:#6c757d;color:#fff;border:none;border-radius:10px;font-size:1rem;cursor:pointer;font-family:inherit;transition:all .25s}
+.reset-btn:hover{background:#5a6268;transform:translateY(-1px)}
+.explanation{background:#f0f7ff;border-left:4px solid #1a3a4a;padding:14px 18px;margin-top:14px;border-radius:0 8px 8px 0;font-size:.95rem;color:#444;display:none}
+.explanation.show{display:block}
+.explanation strong{color:#1a3a4a}
+.nav{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin:36px 0}
+.nav a{display:inline-block;padding:10px 24px;background:linear-gradient(135deg,#1a3a4a,#2d6a7a);color:#fff;text-decoration:none;border-radius:10px;font-weight:500;font-size:.95rem;transition:all .25s}
+.nav a:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(26,58,74,.25)}
+footer{text-align:center;padding:36px 24px;color:#8899a4;font-size:.85rem;border-top:1px solid #e2e8f0;margin-top:40px}
+.report-btn{display:inline-block;margin:0;padding:12px 28px;background:linear-gradient(135deg,#1a3a4a,#2d6a7a);color:#fff;border:none;border-radius:10px;font-size:1rem;cursor:pointer;font-family:inherit;transition:all .25s}
+.report-btn:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(26,58,74,.25)}
+.bottom-score{background:#fff;border-radius:12px;padding:20px;margin:20px 0;text-align:center;border:1px solid #e2e8f0;box-shadow:0 4px 20px rgba(0,0,0,.06)}
+.bottom-score .pct{font-size:2.5rem;font-weight:700}
+.bottom-score .pct.good{color:#28a745}
+.bottom-score .pct.ok{color:#e6a817}
+.bottom-score .pct.bad{color:#dc3545}
+.bottom-score .detail{color:#666;margin-top:4px;font-size:.95rem}
+.report-wrap{display:none;text-align:center;margin:16px 0}
+.name-input{padding:10px 14px;border:1px solid #e2e8f0;border-radius:10px;font-size:.95rem;font-family:inherit;width:200px;margin-right:8px;outline:none;transition:border-color .2s}
+.name-input:focus{border-color:#1a3a4a}
+</style></head><body><header><div class="container"><a href="index.html">&larr; All Tests</a><h1>ACT Math Practice Test 11</h1></div></header><div class="container"><div id="score-box" class="score-box"><h2>Your Score</h2><div class="pct">0%</div><div class="detail"></div></div><div class="question"><p><b>1.</b> If the equation for the line shown in the following graph is <img alt="" src="https://www.crackab.com/images/tests/9781118001547-eq17051_fmt.jpeg">, what is the value of <span class="zcheltitalic">kn</span>?<br><img alt="" src="https://www.crackab.com/images/tests/9781118001547-un1708_fmt.jpeg"></p><ul class="choices"><li>A. 9</li><li>B. 12</li><li>C. 15</li><li>D. 18</li><li>E. 24</li></ul></div><div class="question"><p><b>2.</b> Alfred and Rani both picked different two-digit numbers. If you multiply Alfred’s number by 5 and double Rani’s number, the sum is 300. If you double Alfred’s number and multiply Rani’s number by 3, the sum of the two numbers is 252. What is the sum of their two numbers?</p><ul class="choices"><li>F. 96</li><li>G. 112</li><li>H. 128</li><li>J. 144</li><li>K. 150</li></ul></div><div class="question"><p><b>3.</b> What is the equation for a line that intersects the origin and is perpendicular to 2<i>x</i>– 4<i>y</i>= 13?</p><ul class="choices"><li>A. <i>y</i>= –2</li><li>B. <i>y</i>= 2<span class="zcheltitalic">x</span></li><li>C. <i>y</i>= –2<span class="zcheltitalic">x</span></li><li>D. <img alt="" src="https://www.crackab.com/images/tests/9781118001547-eq17052_fmt.jpeg"></li><li>E. <img alt="" src="https://www.crackab.com/images/tests/9781118001547-eq17053_fmt.jpeg"></li></ul></div><div class="question"><p><b>4.</b> This semester, Gerry scored an average of 93 on his five history exams. He got the same score on his first two exams, and then he got a 94, an 85, and a 90 on the remaining exams. What score did he receive on his first two exams?</p><ul class="choices"><li>F. 95</li><li>G. 96</li><li>H. 97</li><li>J. 98</li><li>K. 99</li></ul></div><div class="question"><p><b>5.</b> What is the value of <span class="zcheltitalic">x </span>if <img alt="" src="https://www.crackab.com/images/tests/9781118001547-eq17054_fmt.jpeg">?</p><ul class="choices"><li>A. 17</li><li>B. –17</li><li>C. 29</li><li>D. –29</li><li>E. Cannot be determined from the information given.</li></ul></div><div class="question"><p><b>6.</b> A scientist performs an experiment in which she measures four values two times each, with the following results:<br><img alt="" src="https://www.crackab.com/images/tests/9781118001547-un1709_fmt.jpeg"></p><ul class="choices"><li>F. 0.5</li><li>G. 1</li><li>H. <span class="zsymbolmedium">π</span></li><li>J. 2<span class="zsymbolmedium">π</span></li><li>K. 4<span class="zsymbolmedium">π</span></li></ul></div><div class="question"><p><b>7.</b> Which of the following is the amplitude of the function shown in the following graph?<br><img src="https://www.crackab.com/images/tests/9781118001547-un1709_fmt.jpeg"></p><ul class="choices"><li>A. 0.5</li><li>B. 1</li><li>C. <span class="zsymbolmedium">π</span></li><li>D. 2<span class="zsymbolmedium">π</span></li><li>E. 4<span class="zsymbolmedium">π</span></li></ul></div><div class="question"><p><b>8.</b> In the following figure, <span class="zcheltitalic">O </span>is the center of the circle, <img alt="" src="https://www.crackab.com/images/tests/9781118001547-eq17058_fmt.jpeg">is tangent to the circle at <span class="zcheltitalic">D,</span>and <img alt="" src="https://www.crackab.com/images/tests/9781118001547-eq17059_fmt.jpeg">is tangent to the circle at <span class="zcheltitalic">E.</span>Which of the following must be true?<br><img alt="" src="https://www.crackab.com/images/tests/9781118001547-un1710_fmt.jpeg"></p><ul class="choices"><li>F. <img alt="" src="https://www.crackab.com/images/tests/9781118001547-eq17060_fmt.jpeg"></li><li>G. <img alt="" src="https://www.crackab.com/images/tests/9781118001547-eq17061_fmt.jpeg">is isosceles</li><li>H. <img alt="" src="https://www.crackab.com/images/tests/9781118001547-eq17062_fmt.jpeg"></li><li>J. <img alt="" src="https://www.crackab.com/images/tests/9781118001547-eq17063_fmt.jpeg"></li><li>K. <img alt="" src="https://www.crackab.com/images/tests/9781118001547-eq17064_fmt.jpeg">is a square</li></ul></div><div class="question"><p><b>9.</b> If <span class="zcheltitalic">g</span>(<i>x</i>) is a transformation that moves <i>f</i>(<i>x</i>) three units to the right and then reflects it across the <span class="zcheltitalic">x-</span>axis, then <span class="zcheltitalic">g</span>(<i>x</i>) =</p><ul class="choices"><li>A. <i>f</i>(–<i>x</i>) + 3</li><li>B. <i>f</i>(–<i>x</i>) – 3</li><li>C. <i>f</i>(<i>x</i>) + 3</li><li>D. –<i>f</i>(<i>x</i>+ 3)</li><li>E. –<i>f</i>(<i>x</i>– 3)</li></ul></div><div class="question"><p><b>10.</b> The following figure shows the graph of an equation <i>y</i>= <span class="zcheltitalic">ax</span><span class="zsuperscript">2</span>+ <span class="zcheltitalic">bx</span>+ <span class="zcheltitalic">c.</span>Which of the answer choices CANNOT be true?<br><img alt="" src="https://www.crackab.com/images/tests/9781118001547-un1711_fmt.jpeg"></p><ul class="choices"><li>F. <span class="zcheltitalic">a</span>&lt; <span class="zcheltitalic">b</span></li><li>G. <span class="zcheltitalic">a</span>&gt; <span class="zcheltitalic">b</span></li><li>H. <span class="zcheltitalic">a</span>&lt; <span class="zcheltitalic">c</span></li><li>J. <span class="zcheltitalic">b</span>&lt; <span class="zcheltitalic">c</span></li><li>K. <span class="zcheltitalic">b</span>&gt; <span class="zcheltitalic">c</span></li></ul></div><div class="question"><p><b>11.</b> Which of the following is the domain of the function <img alt="" src="https://www.crackab.com/images/tests/9781118001547-eq17070_fmt.jpeg">?</p><ul class="choices"><li>A. –3 &gt; <i>x</i>&gt; 3</li><li>B. –3 <span class="zsymbolmedium">≤</span><i>x</i><span class="zsymbolmedium">≤</span>3</li><li>C. –3 <span class="zsymbolmedium">≤</span><i>x</i>&lt; 3</li><li>D. <i>x</i>&lt; –3 or <i>x</i>&lt; 3</li><li>E. <i>x</i><span class="zsymbolmedium">≤</span>–3 or <i>x</i><span class="zsymbolmedium">≥</span>3</li></ul></div><div class="question"><p><b>12.</b> If a number sequence begins 1, 3, 4, 6, 7, 9, 10, 12 . . ., which of the following numbers does NOT appear in the sequence?</p><ul class="choices"><li>F. 34</li><li>G. 43</li><li>H. 57</li><li>J. 65</li><li>K. 72</li></ul></div><div class="question"><p><b>13.</b> A two-digit number from 10 to 99, inclusive, is chosen at random. What is the probability that this number is divisible by 5?</p><ul class="choices"><li>A. <img alt="" src="https://www.crackab.com/images/tests/9781118001547-eq17075_fmt.jpeg"></li><li>B. <img alt="" src="https://www.crackab.com/images/tests/9781118001547-eq17076_fmt.jpeg"></li><li>C. <img alt="" src="https://www.crackab.com/images/tests/9781118001547-eq17077_fmt.jpeg"></li><li>D. <img alt="" src="https://www.crackab.com/images/tests/9781118001547-eq17078_fmt.jpeg"></li><li>E. <img alt="" src="https://www.crackab.com/images/tests/9781118001547-eq17079_fmt.jpeg"></li></ul></div><div class="question"><p><b>14.</b> What is the area of the shaded region in the following figure?<br><img alt="" src="https://www.crackab.com/images/tests/9781118001547-un1712_fmt.jpeg"></p><ul class="choices"><li>F. 10.5</li><li>G. 12.5</li><li>H. 18</li><li>J. 21</li><li>K. 24</li></ul></div><div class="question"><p><b>15.</b> An isosceles triangle contains three angles that measure 40°, <i>x</i>°, and <i>y</i>°. Which of the following CANNOT be true?</p><ul class="choices"><li>A. <i>x</i>= <span class="zcheltitalic">y</span></li><li>B. <i>x</i>= 50</li><li>C. <i>x</i>– <i>y</i>= 60</li><li>D. <i>x</i>= 70</li><li>E. <i>x</i>= 100</li></ul></div><div class="submit-wrap"><button class="submit-btn" onclick="gradeTest()">Submit Test</button><button class="reset-btn" onclick="resetTest()">Try Again</button>
+<div class="report-wrap"><input type="text" class="name-input" placeholder="Student name (for report)"><button class="report-btn" onclick="generateReport()">Download Report (PDF)</button></div></div><div class="nav"><a href="test110.html">&larr; Prev</a><a href="index.html">All Tests</a><a href="test112.html">Next &rarr;</a></div></div><footer><div class="container">ACT Math Practice</div></footer>
+<script>
+const ANSWERS = {"1": "D", "2": "F", "3": "C", "4": "J", "5": "A", "6": "H", "7": "A", "8": "K", "9": "E", "10": "G", "11": "D", "12": "J", "13": "A", "14": "F", "15": "B"};
+const EXPLANATIONS = {"1":"D. The equation for the line is , so the y-intercept is 3; therefore, k =  3. To find the value of n,plug in nfor x and 5 for y in the equation: Therefore, n =  6, so kn  =  3 ×6  =  18.", "2":"F. Let aequal Alfred’s number and rRani’s. Then, translate the statements in the question into two equations as follows: 5a+ 2r =  300 2a+ 3r =  252 Multiply the first equation by 3 and the second equation by 2, and then subtract the second from the first: Solve for a: a =  36 Plug in 36 for ain either equation (the second equation looks easier), and then solve for r: 2(36) + 3r =  252 72 + 3r =  252 3r =  180 r =  60 Therefore, the sum of the two numbers is 36 + 60  =  96.", "3":"C. To begin, put 2x– 4y =  13 into the slope-intercept form: The slope of this line is . Thus, the slope of the line you’re looking for is the negative reciprocal of , which is –2. This line passes through the origin, so its y-intercept is 0. Plug these two values into the slope-intercept form: y =  mx+ b y =  –2x+ 0 y =  –2x", "4":"J. Let x equal the score that Gerry received on each of his first two exams. Plug in his scores, the number of exams he took, and his average into the formula for the mean: Solve for xby first multiplying both sides of the equation by 5 to eliminate the fraction: 465  =  2x+ 269 196  =  2x 98  =  x", "5":"A. To begin, multiply both sides by y+ 5 to eliminate the fraction: Distribute on the right side: 2x+ 3y– 19  =  3y+ 15 Now subtract 3yfrom both sides, and then solve for x: 2x– 19  =  15 2x =  34 x =  17", "6":"H. From the first experiment to the second: The value of wis multiplied by 3. The value of xis divided by 2. The value of yis multiplied by 2. The value of zis multiplied by 3. Thus, the only two possible conclusions would be that wis directly proportional to zand that xis inversely proportional to y.", "7":"A. The amplitudeis the measure of a wave from the vertical center to the crest. Therefore, this wave has an amplitude of 0.5.", "8":"K. and are both radii of the circle, so they’re the same length. is tangent at D,so and are perpendicular to each other. Similarly, is tangent at E,so and are perpendicular to each other. Thus, three angles of DBEOare right angles, so the fourth angle is also a right angle. And adjacent sides and are the same length, so DBEO is a square.", "9":"E. The transformation to move f(x) three units to the right is f(x– 3). Then, to reflect this across the x-axis, change it to –f(x– 3).", "10":"G. The parabola is concave down, so ais negative. It’s shifted to the right, so aand bhave different signs; therefore, bis positive. It crosses the y-axis above the origin, so cis positive. Therefore, acan’t be greater than b.", "11":"D. The value inside the radical must be greater than or equal to 0. Thus, if x =  0, the value inside the radical is: x2 –9  =  02– 9  =  –9 This value is impossible, so you can rule out Choices (A), (B), and (C). Additionally, the value of the denominator can’t equal 0. If x =  3, the value of the denominator is This value is also impossible, so Choice (E) is ruled out as well, leaving Choice (D) as the correct answer.", "12":"J. The sequence includes all multiples of 3, including 57 and 72, so Choices (H) and (K) are ruled out. The sequence also includes every number that’s 1 added to a multiple of 3, which includes 34 (33 + 1) and 43 (42 + 1), so Choices (F) and (G) are ruled out. By the process of elimination, Choice (J) is the correct answer.", "13":"A. Ninety numbers exist in the range from 10 to 99, and 18 of them are divisible by 5. Place these two numbers into the formula for probability:", "14":"F. The base of the triangle is the distance from (–5, –3) to (–2, –3), so it equals 3 units. The height of the triangle extends from y  =  –3 to y =  4, so it measures out to be 7 units. Plug these values into the formula for the area of a triangle:", "15":"B. Every triangle has three angles that add up to 180°, and an isosceles triangle has two equivalent angles. Therefore, the three angles of this triangle are either 40° + 40° + 100° or 40° + 70° + 70°. In any case, this triangle can’t include a 50° angle."};
+let graded = false;
+
+document.querySelectorAll('.choices li').forEach(li => {
+  // Remove old onclick
+  li.removeAttribute('onclick');
+  li.addEventListener('click', function() {
+    if (graded) return;
+    const siblings = this.parentElement.querySelectorAll('li');
+    siblings.forEach(s => s.classList.remove('selected'));
+    this.classList.add('selected');
+  });
+});
+
+function gradeTest() {
+  if (graded) return;
+  graded = true;
+  let correct = 0;
+  const total = Object.keys(ANSWERS).length;
+  
+  document.querySelectorAll('.question').forEach((qDiv, idx) => {
+    const qNum = idx + 1;
+    const correctAns = ANSWERS[qNum];
+    if (!correctAns) return;
+    const choices = qDiv.querySelectorAll('.choices li');
+    const selected = qDiv.querySelector('.choices li.selected');
+    const selectedLetter = selected ? selected.textContent.trim().charAt(0) : null;
+    
+    choices.forEach(li => {
+      const letter = li.textContent.trim().charAt(0);
+      if (letter === correctAns) li.classList.add('show-correct');
+      li.style.cursor = 'default';
+    });
+    
+    const tag = document.createElement('span');
+    tag.className = 'result-tag';
+    
+    if (selectedLetter === correctAns) {
+      correct++;
+      tag.className += ' correct';
+      tag.textContent = 'Correct';
+      if (selected) { selected.classList.remove('selected'); selected.classList.add('correct'); }
+    } else {
+      tag.className += ' wrong';
+      tag.textContent = 'Incorrect (Answer: ' + correctAns + ')';
+      if (selected) { selected.classList.remove('selected'); selected.classList.add('wrong'); }
+    }
+    
+    const firstP = qDiv.querySelector('p');
+    if (firstP) firstP.appendChild(tag);
+    
+    if (typeof EXPLANATIONS !== 'undefined' && EXPLANATIONS[qNum]) {
+      const explDiv = document.createElement('div');
+      explDiv.className = 'explanation show';
+      explDiv.innerHTML = '<strong>Explanation:</strong> ' + EXPLANATIONS[qNum];
+      qDiv.appendChild(explDiv);
+    }
+  });
+  
+  const pct = Math.round((correct / total) * 100);
+  document.querySelector('.submit-btn').style.display = 'none';
+  document.querySelector('.reset-btn').style.display = 'block';
+  var rw=document.querySelector('.report-wrap');if(rw)rw.style.display='block';
+  var bs=document.createElement('div');bs.className='bottom-score';bs.id='bottom-score';
+  bs.innerHTML='<h2 style="font-size:1.3rem;margin-bottom:6px;color:#1a3a4a">Your Score</h2><div class="pct '+(pct>=80?'good':pct>=60?'ok':'bad')+'">'+pct+'%</div><div class="detail">'+correct+' out of '+total+' correct</div>';
+  document.querySelector('.submit-wrap').after(bs);
+  try{var tn=location.pathname.match(/test(\d+)/);if(tn)localStorage.setItem('actmath_'+tn[1],pct);}catch(e){}
+}
+
+function resetTest() {
+  graded = false;
+  var bsEl=document.getElementById('bottom-score');if(bsEl)bsEl.remove();
+  document.querySelector('.submit-btn').style.display = '';
+  document.querySelector('.reset-btn').style.display = 'none';
+  var rw=document.querySelector('.report-wrap');if(rw)rw.style.display='none';
+  var ni=document.querySelector('.name-input');if(ni)ni.value='';
+  document.querySelectorAll('.choices li').forEach(li => {
+    li.classList.remove('selected','correct','wrong','show-correct');
+    li.style.cursor = 'pointer';
+  });
+  document.querySelectorAll('.result-tag').forEach(t => t.remove());
+  document.querySelectorAll('.explanation').forEach(e => e.remove());
+}
+
+function generateReport(){
+  var nameInput=document.querySelector('.name-input');
+  var name=(nameInput&&nameInput.value.trim())||'Student';
+  var testName=document.querySelector('header h1').textContent;
+  var bs=document.getElementById('bottom-score');
+  var scorePct=bs?bs.querySelector('.pct').textContent:'';
+  var detailTxt=bs?bs.querySelector('.detail').textContent:'';
+  var d=new Date().toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'});
+  var btn=document.querySelector('.report-btn');btn.textContent='Generating...';btn.disabled=true;
+  var s=document.createElement('script');
+  s.src='https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js';
+  s.onerror=function(){btn.textContent='Download Report (PDF)';btn.disabled=false;alert('Could not load PDF library.');};
+  s.onload=function(){
+    var doc=new jspdf.jsPDF('portrait','mm','letter');
+    var pw=215.9,ph=279.4,mx=12,cw=pw-2*mx,y=8;
+    doc.setFillColor(26,58,74);doc.rect(0,0,pw,22,'F');
+    doc.setTextColor(255,255,255);doc.setFontSize(13);doc.setFont('helvetica','bold');
+    doc.text(testName,mx,9);
+    doc.setFontSize(7.5);doc.setFont('helvetica','normal');
+    doc.text(d+'  |  Student: '+name,mx,14.5);
+    doc.setFontSize(18);doc.setFont('helvetica','bold');
+    doc.text(scorePct,pw-mx,11,{align:'right'});
+    doc.setFontSize(7.5);doc.setFont('helvetica','normal');
+    doc.text(detailTxt,pw-mx,16,{align:'right'});
+    y=25;
+    doc.setDrawColor(26,58,74);doc.setLineWidth(0.3);doc.line(mx,y,pw-mx,y);y+=3;
+    document.querySelectorAll('.question').forEach(function(qDiv,idx){
+      var qNum=idx+1;var ca=ANSWERS[qNum];if(!ca)return;
+      var sel=qDiv.querySelector('.choices li.correct,.choices li.wrong');
+      var sa=sel?sel.textContent.trim().charAt(0):'-';
+      var ok=sel&&sel.classList.contains('correct');
+      if(ok){
+        doc.setFillColor(40,167,69);doc.circle(mx+1.2,y-1,1,'F');
+        doc.setTextColor(33,33,33);doc.setFont('helvetica','bold');doc.setFontSize(8);
+        doc.text('Q'+qNum,mx+4,y);
+        doc.setFont('helvetica','normal');doc.setTextColor(40,167,69);
+        doc.text('Correct ('+ca+')',mx+14,y);
+      }else{
+        doc.setFillColor(220,53,69);doc.circle(mx+1.2,y-1,1,'F');
+        doc.setTextColor(33,33,33);doc.setFont('helvetica','bold');doc.setFontSize(8);
+        doc.text('Q'+qNum,mx+4,y);
+        doc.setFont('helvetica','normal');doc.setTextColor(220,53,69);
+        doc.text('Incorrect',mx+14,y);
+        doc.setTextColor(120,120,120);
+        doc.text('(Chose '+sa+', Correct: '+ca+')',mx+32,y);
+      }
+      y+=3.2;
+      var qP=qDiv.querySelector('p');
+      if(qP){
+        var qT=qP.cloneNode(true);
+        var tags=qT.querySelectorAll('.result-tag');tags.forEach(function(t){t.remove();});
+        var qt=qT.textContent.replace(/^\d+\.\s*/,'').trim();
+        if(qt.length>0){
+          doc.setFont('helvetica','normal');doc.setTextColor(60,60,60);doc.setFontSize(6.5);
+          var ql=doc.splitTextToSize(qt,cw-5);
+          ql=ql.slice(0,1);
+          if(doc.splitTextToSize(qt,cw-5).length>1){ql[0]=ql[0].substring(0,ql[0].length-3)+'...';}
+          doc.text(ql,mx+4,y);y+=2.4;
+        }
+      }
+      if(typeof EXPLANATIONS!=='undefined'&&EXPLANATIONS[qNum]){
+        doc.setFont('helvetica','italic');doc.setTextColor(100,100,100);doc.setFontSize(6);
+        var lines=doc.splitTextToSize(EXPLANATIONS[qNum],cw-5);
+        if(lines.length>2){lines=lines.slice(0,2);lines[1]=lines[1].substring(0,Math.max(0,lines[1].length-3))+'...';}
+        doc.text(lines,mx+4,y);y+=lines.length*2.2;
+      }
+      y+=2;
+    });
+    doc.setDrawColor(200,200,200);doc.setLineWidth(0.2);doc.line(mx,ph-10,pw-mx,ph-10);
+    doc.setTextColor(170,170,170);doc.setFontSize(6);doc.setFont('helvetica','normal');
+    doc.text('ACT Math Practice  |  Score Report',pw/2,ph-7,{align:'center'});
+    var tn=location.pathname.match(/test(\d+)/);
+    var testNum=tn?parseInt(tn[1])-100:0;
+    var ds=new Date().toISOString().slice(0,10);
+    doc.save('ACT-Math-Test-'+testNum+'-'+ds+'.pdf');
+    btn.textContent='Download Report (PDF)';btn.disabled=false;
+  };
+  document.head.appendChild(s);
+}
+</script>
+</body></html>

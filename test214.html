@@ -1,0 +1,222 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>ACT Math Test 114</title><style>@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:#fff;color:#2d3748;line-height:1.7}
+.container{max-width:800px;margin:0 auto;padding:20px 24px}
+header{background:linear-gradient(135deg,#1a3a4a 0%,#2d6a7a 100%);color:#fff;padding:28px 0;margin-bottom:36px;text-align:center}
+header .container{display:block}
+header h1{font-size:1.6rem;font-weight:700;letter-spacing:-0.3px}
+header a{color:rgba(255,255,255,.7);text-decoration:none;font-size:.9rem;display:inline-block;margin-bottom:6px;transition:color .2s}
+header a:hover{color:#fff}
+.question{background:#fff;border-radius:12px;padding:24px;margin-bottom:20px;border:1px solid #e2e8f0;transition:border-color .2s}
+.question:hover{border-color:#cbd5e0}
+.question p{margin-bottom:14px;font-size:1.05rem}
+img{max-width:100%;height:auto;margin:4px 0;vertical-align:middle}
+.choices{list-style:none}
+.choices li{padding:10px 14px;margin:6px 0;border-radius:8px;cursor:pointer;transition:all .2s;border:2px solid transparent}
+.choices li:hover{background:#f0f7fa}
+.choices li.selected{background:#d1ecf1;border-color:#bee5eb}
+.choices li.correct{background:#d4edda;border-color:#28a745}
+.choices li.wrong{background:#f8d7da;border-color:#dc3545}
+.choices li.show-correct{background:#d4edda;border-color:#28a745}
+.submit-wrap{text-align:center;margin:36px 0}
+.submit-btn{display:inline-block;padding:14px 40px;background:linear-gradient(135deg,#1a3a4a,#2d6a7a);color:#fff;border:none;border-radius:10px;font-size:1.1rem;cursor:pointer;font-weight:600;font-family:inherit;transition:all .25s;letter-spacing:.3px}
+.submit-btn:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(26,58,74,.25)}
+.score-box{background:#fff;border-radius:12px;padding:28px;margin-bottom:28px;text-align:center;border:1px solid #e2e8f0;box-shadow:0 4px 20px rgba(0,0,0,.06);display:none}
+.score-box h2{font-size:1.4rem;margin-bottom:8px;color:#1a3a4a;text-align:center}
+.score-box .pct{font-size:3rem;font-weight:700}
+.score-box .pct.good{color:#28a745}
+.score-box .pct.ok{color:#e6a817}
+.score-box .pct.bad{color:#dc3545}
+.score-box .detail{color:#666;margin-top:4px}
+.result-tag{display:inline-block;padding:2px 10px;border-radius:12px;font-size:.8rem;font-weight:600;margin-left:8px}
+.result-tag.correct{background:#d4edda;color:#155724}
+.result-tag.wrong{background:#f8d7da;color:#721c24}
+.reset-btn{display:none;margin:16px auto;padding:12px 28px;background:#6c757d;color:#fff;border:none;border-radius:10px;font-size:1rem;cursor:pointer;font-family:inherit;transition:all .25s}
+.reset-btn:hover{background:#5a6268;transform:translateY(-1px)}
+.explanation{background:#f0f7ff;border-left:4px solid #1a3a4a;padding:14px 18px;margin-top:14px;border-radius:0 8px 8px 0;font-size:.95rem;color:#444;display:none}
+.explanation.show{display:block}
+.explanation strong{color:#1a3a4a}
+.nav{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin:36px 0}
+.nav a{display:inline-block;padding:10px 24px;background:linear-gradient(135deg,#1a3a4a,#2d6a7a);color:#fff;text-decoration:none;border-radius:10px;font-weight:500;font-size:.95rem;transition:all .25s}
+.nav a:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(26,58,74,.25)}
+footer{text-align:center;padding:36px 24px;color:#8899a4;font-size:.85rem;border-top:1px solid #e2e8f0;margin-top:40px}
+.report-btn{display:inline-block;margin:0;padding:12px 28px;background:linear-gradient(135deg,#1a3a4a,#2d6a7a);color:#fff;border:none;border-radius:10px;font-size:1rem;cursor:pointer;font-family:inherit;transition:all .25s}
+.report-btn:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(26,58,74,.25)}
+.bottom-score{background:#fff;border-radius:12px;padding:20px;margin:20px 0;text-align:center;border:1px solid #e2e8f0;box-shadow:0 4px 20px rgba(0,0,0,.06)}
+.bottom-score .pct{font-size:2.5rem;font-weight:700}
+.bottom-score .pct.good{color:#28a745}
+.bottom-score .pct.ok{color:#e6a817}
+.bottom-score .pct.bad{color:#dc3545}
+.bottom-score .detail{color:#666;margin-top:4px;font-size:.95rem}
+.report-wrap{display:none;text-align:center;margin:16px 0}
+.name-input{padding:10px 14px;border:1px solid #e2e8f0;border-radius:10px;font-size:.95rem;font-family:inherit;width:200px;margin-right:8px;outline:none;transition:border-color .2s}
+.name-input:focus{border-color:#1a3a4a}
+</style></head><body><header><div class="container"><a href="index.html">&larr; All Tests</a><h1>ACT Math Practice Test 114</h1></div></header><div class="container"><div id="score-box" class="score-box"><h2>Your Score</h2><div class="pct">0%</div><div class="detail"></div></div><div class="question"><p><b>1.</b> What is the distance, in coordinate units, between 3 + 6<em>i</em> and -2 + 3<em>i</em> in the complex plane?</p><ul class="choices"><li>A. 5</li><li>B. 9</li><li>C. <img src="https://img.crackab.com/act/nmg10/f0284-03.jpg"></li><li>D. <img src="https://img.crackab.com/act/nmg10/f0284-04.jpg"></li><li>E. <img src="https://img.crackab.com/act/nmg10/f0284-05.jpg"></li></ul></div><div class="question"><p><b>2.</b> If 3<sup>8<em>x</em></sup> = 81<sup>3<em>x</em>-2</sup>, what is the value of <em>x</em>?</p><ul class="choices"><li>F. -2</li><li>G. 0</li><li>H. 2</li><li>J. 3</li><li>K. 4</li></ul></div><div class="question"><p><b>3.</b> The picture shown below has a uniform frame-width of <img src="https://img.crackab.com/act/nmg10/e0289-01.jpg"> inches. What is the approximate area, in square inches, of the viewable portion of the picture?<br><img src="https://img.crackab.com/act/nmg10/f0289-01.jpg"></p><ul class="choices"><li>A. 426.25</li><li>B. 481.56</li><li>C. 510.40</li><li>D. 510.75</li><li>E. 540.00</li></ul></div><div class="question"><p><b>4.</b> A horse eats 12 bales of hay in 5 days. At this rate, how many bales of hay does the horse eat in 5 + <em>x</em> days?</p><ul class="choices"><li>F. <img src="https://img.crackab.com/act/nmg10/e0289-02.jpg"></li><li>G. <img src="https://img.crackab.com/act/nmg10/e0289-03.jpg"></li><li>H. <img src="https://img.crackab.com/act/nmg10/e0289-04.jpg"></li><li>J. <img src="https://img.crackab.com/act/nmg10/e0289-05.jpg"></li><li>K. <img src="https://img.crackab.com/act/nmg10/e0289-06.jpg"></li></ul></div><div class="question"><p><b>5.</b> When graphed in the standard (<em>x</em>, <em>y</em>) coordinate plane, the lines <em>x</em> = -5 and <em>y</em> = <em>x</em> - 5 intersect at what point?</p><ul class="choices"><li>A. (-5,-10)</li><li>B. (-5,-5)</li><li>C. (-5,0)</li><li>D. (0,-5)</li><li>E. (0,0)</li></ul></div><div class="question"><p><b>6.</b> Which of the following expresses the number of miles a runner must travel in a 4-lap race where the course is a circle of radius <em>m</em> miles?</p><ul class="choices"><li>F. 4<em>m</em></li><li>G. 4π<em>m</em></li><li>H. 4π<em>m</em><sup>2</sup></li><li>J. 8π<em>m</em></li><li>K. 16π<em>m</em></li></ul></div><div class="question"><p><b>7.</b> For some real number <em>n</em>, the graph of the line <em>y</em> = (<em>n</em> + 1)<em>x</em> + 6 in the standard (<em>x</em>, <em>y</em>) coordinate plane passes through (4,8). What is the value of <em>n</em>?</p><ul class="choices"><li>A. <img src="https://img.crackab.com/act/nmg10/e0286-01.jpg"></li><li>B. <img src="https://img.crackab.com/act/nmg10/e0286-02.jpg"></li><li>C. <img src="https://img.crackab.com/act/nmg10/e0286-03.jpg"></li><li>D. <img src="https://img.crackab.com/act/nmg10/e0286-04.jpg"></li><li>E. 2</li></ul></div><div class="question"><p><b>8.</b> A computer repair person charges $50.00 per hour, plus an additional mileage fee. The charge for mileage varies directly with the square root of the number of miles traveled. If one hour plus 25 miles traveled costs $140.00, what is the total amount charged for one hour plus 36 miles traveled?</p><ul class="choices"><li>F. $218.00</li><li>G. $196.92</li><li>H. $179.60</li><li>J. $158.00</li><li>K. $143.60</li></ul></div><div class="question"><p><b>9.</b> The table below shows the numbers of rows and columns in each of 5 matrices.<br><img src="https://img.crackab.com/act/nmg10/f0286-02.jpg"><br>For distinct values of <em>a</em>, <em>b</em>, and <em>c</em>, which of the following matrix products is NOT possible?</p><ul class="choices"><li>A. VU</li><li>B. UT</li><li>C. TV</li><li>D. RV</li><li>E. RT</li></ul></div><div class="question"><p><b>10.</b> A triangle, Δ<em>ABD</em>, is reflected across the line <em>y</em> = <em>x</em> to have the image Δ<em>A</em>′<em>B</em>′<em>D</em>′ in the standard (<em>x</em>, <em>y</em>) coordinate plane: thus <em>A</em> reflects to <em>A</em>′. The coordinates of point <em>A</em> are (<em>m</em>, <em>n</em>). What are the coordinates of point <em>A</em>′?</p><ul class="choices"><li>F. (-<em>m</em>, <em>n</em>)</li><li>G. (<em>m,</em> -<em>n</em>)</li><li>H. (-<em>m,</em> -<em>n</em>)</li><li>J. (<em>n, m</em>)</li><li>K. Cannot be determined from the given information</li></ul></div><div class="submit-wrap"><button class="submit-btn" onclick="gradeTest()">Submit Test</button><button class="reset-btn" onclick="resetTest()">Try Again</button>
+<div class="report-wrap"><input type="text" class="name-input" placeholder="Student name (for report)"><button class="report-btn" onclick="generateReport()">Download Report (PDF)</button></div></div><div class="nav"><a href="test213.html">&larr; Prev</a><a href="index.html">All Tests</a></div></div><footer><div class="container">ACT Math Practice</div></footer>
+<script>
+const ANSWERS = {"1": "D", "2": "H", "3": "B", "4": "F", "5": "A", "6": "J", "7": "B", "8": "J", "9": "E", "10": "J"};
+const EXPLANATIONS = {"1":"The correct answer is D. To answer this question, you should know that complex numbers are the sum of a real and an imaginary number, represented as a + bi. Using the complex plane, you can plot complex numbers similar to how you plot a coordinate on the (x, y) coordinate plane. To graph a complex number, a + bi, locate the real part, a, on the real axis (the x-axis), and move up or down to locate b, from the imaginary part, on the imaginary axis (the y-axis). Likewise, you can apply the Distance Formula to calculate the distance between two given points: You are given 3 + 6i and -2 + 3i, where the 3 and the -2 correspond to the values on the x-axis, and 6i and 3i correspond to values on the y-axis. Plug those points into the Distance Formula: Now, you need to recognize that i2  =  -1 and use substitution:", "2":"The correct answer is H. To solve this problem, recall that 81  =  34. Then 813x-2  =  (34)3x-2  =  34(3x-2). Further, if 38x  =  813x-2, then 38x  =  34(3x-2) and 8x  =  4(3x - 2), 12x - 8. Subtracting 8x from both sides and adding 8 to both sides yields 4x  =  8, or x  =  2.", "3":"The correct answer is B. Since the width of the frame is  or 0.625 inches, the length of the viewable portion is 30 - 2(0.625)  =  28.75 inches and the width is 18 - 2(0.625)  =  16.75 inches. Thus, the area is 28.75 × 16.75  =  481.56 square inches.", "4":"The correct answer is F. If a horse eats 12 bales of hay in 5 days, the average rate is  bales per day. At this rate, the number of bales of hay that the horse eats in 5 + x days is the 12 bales for the 5 days plus  bales per day after that, or . Thus, the total is , or .", "5":"The correct answer is A. To solve this problem, substitute the equation x  =  -5 into y  =  x - 5 to find the y-coordinate at which the lines x  =  -5 and y  =  x - 5 intersect (the x-coordinate is -5 because it is given that x  =  -5). Thus, y  =  (-5)-5  =  -10. The point of intersection is (-5,-10).", "6":"The correct answer is J. The number of miles a runner must travel in a 4-lap race where the course is a circle of radius m miles will be equal to 4 times the circumference of the circle. Since circumference is 2πr, where r is the radius, the circumference is 2πm. Since it is a 4-lap race, the total number of miles traveled is 4(2πm), or 8πm.", "7":"The correct answer is B. Given that the graph of the line y  =  (n + 1)x + 6 in the standard (x,y) coordinate plane passes through (4,8), plug the values of the point (4,8) into the equation and solve for n. Substituting (4,8) into y  =  (n + 1)x + 6 yields 8  =  (n + 1)(4) + 6  =  4n + 10. To solve 8  =  4n + 10, subtract 10 from both sides and divide by 4 to get .", "8":"The correct answer is J. You are given that a computer repair person charges $50.00 per hour, plus an additional mileage fee which varies directly with the square root of the number of miles traveled. Therefore, the total fee can be expressed as , where h is the number of hours worked, m is the number of miles traveled, and k is some constant. Since one hour plus 25 miles traveled costs $140, . Since 140  =  50 + 5k, k  =  18. The total amount charged for one hour plus 36 miles traveled is .", "9":"The correct answer is E. To solve this problem, remember that two matrices can only be multiplied together if the number of columns in the first matrix is equal to the number of rows in the second matrix. Because matrix R has c columns and matrix T has a rows, RT is NOT a possible matrix product.", "10":"The correct answer is J. The image of a point (x, y) reflected across the line y  =  x will have coordinates (y, x). If the coordinates of point A are (m, n), then the coordinates of point A′ are (n, m)."};
+let graded = false;
+
+document.querySelectorAll('.choices li').forEach(li => {
+  // Remove old onclick
+  li.removeAttribute('onclick');
+  li.addEventListener('click', function() {
+    if (graded) return;
+    const siblings = this.parentElement.querySelectorAll('li');
+    siblings.forEach(s => s.classList.remove('selected'));
+    this.classList.add('selected');
+  });
+});
+
+function gradeTest() {
+  if (graded) return;
+  graded = true;
+  let correct = 0;
+  const total = Object.keys(ANSWERS).length;
+  
+  document.querySelectorAll('.question').forEach((qDiv, idx) => {
+    const qNum = idx + 1;
+    const correctAns = ANSWERS[qNum];
+    if (!correctAns) return;
+    const choices = qDiv.querySelectorAll('.choices li');
+    const selected = qDiv.querySelector('.choices li.selected');
+    const selectedLetter = selected ? selected.textContent.trim().charAt(0) : null;
+    
+    choices.forEach(li => {
+      const letter = li.textContent.trim().charAt(0);
+      if (letter === correctAns) li.classList.add('show-correct');
+      li.style.cursor = 'default';
+    });
+    
+    const tag = document.createElement('span');
+    tag.className = 'result-tag';
+    
+    if (selectedLetter === correctAns) {
+      correct++;
+      tag.className += ' correct';
+      tag.textContent = 'Correct';
+      if (selected) { selected.classList.remove('selected'); selected.classList.add('correct'); }
+    } else {
+      tag.className += ' wrong';
+      tag.textContent = 'Incorrect (Answer: ' + correctAns + ')';
+      if (selected) { selected.classList.remove('selected'); selected.classList.add('wrong'); }
+    }
+    
+    const firstP = qDiv.querySelector('p');
+    if (firstP) firstP.appendChild(tag);
+    
+    if (typeof EXPLANATIONS !== 'undefined' && EXPLANATIONS[qNum]) {
+      const explDiv = document.createElement('div');
+      explDiv.className = 'explanation show';
+      explDiv.innerHTML = '<strong>Explanation:</strong> ' + EXPLANATIONS[qNum];
+      qDiv.appendChild(explDiv);
+    }
+  });
+  
+  const pct = Math.round((correct / total) * 100);
+  document.querySelector('.submit-btn').style.display = 'none';
+  document.querySelector('.reset-btn').style.display = 'block';
+  var rw=document.querySelector('.report-wrap');if(rw)rw.style.display='block';
+  var bs=document.createElement('div');bs.className='bottom-score';bs.id='bottom-score';
+  bs.innerHTML='<h2 style="font-size:1.3rem;margin-bottom:6px;color:#1a3a4a">Your Score</h2><div class="pct '+(pct>=80?'good':pct>=60?'ok':'bad')+'">'+pct+'%</div><div class="detail">'+correct+' out of '+total+' correct</div>';
+  document.querySelector('.submit-wrap').after(bs);
+  try{var tn=location.pathname.match(/test(\d+)/);if(tn)localStorage.setItem('actmath_'+tn[1],pct);}catch(e){}
+}
+
+function resetTest() {
+  graded = false;
+  var bsEl=document.getElementById('bottom-score');if(bsEl)bsEl.remove();
+  document.querySelector('.submit-btn').style.display = '';
+  document.querySelector('.reset-btn').style.display = 'none';
+  var rw=document.querySelector('.report-wrap');if(rw)rw.style.display='none';
+  var ni=document.querySelector('.name-input');if(ni)ni.value='';
+  document.querySelectorAll('.choices li').forEach(li => {
+    li.classList.remove('selected','correct','wrong','show-correct');
+    li.style.cursor = 'pointer';
+  });
+  document.querySelectorAll('.result-tag').forEach(t => t.remove());
+  document.querySelectorAll('.explanation').forEach(e => e.remove());
+}
+
+function generateReport(){
+  var nameInput=document.querySelector('.name-input');
+  var name=(nameInput&&nameInput.value.trim())||'Student';
+  var testName=document.querySelector('header h1').textContent;
+  var bs=document.getElementById('bottom-score');
+  var scorePct=bs?bs.querySelector('.pct').textContent:'';
+  var detailTxt=bs?bs.querySelector('.detail').textContent:'';
+  var d=new Date().toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'});
+  var btn=document.querySelector('.report-btn');btn.textContent='Generating...';btn.disabled=true;
+  var s=document.createElement('script');
+  s.src='https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js';
+  s.onerror=function(){btn.textContent='Download Report (PDF)';btn.disabled=false;alert('Could not load PDF library.');};
+  s.onload=function(){
+    var doc=new jspdf.jsPDF('portrait','mm','letter');
+    var pw=215.9,ph=279.4,mx=12,cw=pw-2*mx,y=8;
+    doc.setFillColor(26,58,74);doc.rect(0,0,pw,22,'F');
+    doc.setTextColor(255,255,255);doc.setFontSize(13);doc.setFont('helvetica','bold');
+    doc.text(testName,mx,9);
+    doc.setFontSize(7.5);doc.setFont('helvetica','normal');
+    doc.text(d+'  |  Student: '+name,mx,14.5);
+    doc.setFontSize(18);doc.setFont('helvetica','bold');
+    doc.text(scorePct,pw-mx,11,{align:'right'});
+    doc.setFontSize(7.5);doc.setFont('helvetica','normal');
+    doc.text(detailTxt,pw-mx,16,{align:'right'});
+    y=25;
+    doc.setDrawColor(26,58,74);doc.setLineWidth(0.3);doc.line(mx,y,pw-mx,y);y+=3;
+    document.querySelectorAll('.question').forEach(function(qDiv,idx){
+      var qNum=idx+1;var ca=ANSWERS[qNum];if(!ca)return;
+      var sel=qDiv.querySelector('.choices li.correct,.choices li.wrong');
+      var sa=sel?sel.textContent.trim().charAt(0):'-';
+      var ok=sel&&sel.classList.contains('correct');
+      if(ok){
+        doc.setFillColor(40,167,69);doc.circle(mx+1.2,y-1,1,'F');
+        doc.setTextColor(33,33,33);doc.setFont('helvetica','bold');doc.setFontSize(8);
+        doc.text('Q'+qNum,mx+4,y);
+        doc.setFont('helvetica','normal');doc.setTextColor(40,167,69);
+        doc.text('Correct ('+ca+')',mx+14,y);
+      }else{
+        doc.setFillColor(220,53,69);doc.circle(mx+1.2,y-1,1,'F');
+        doc.setTextColor(33,33,33);doc.setFont('helvetica','bold');doc.setFontSize(8);
+        doc.text('Q'+qNum,mx+4,y);
+        doc.setFont('helvetica','normal');doc.setTextColor(220,53,69);
+        doc.text('Incorrect',mx+14,y);
+        doc.setTextColor(120,120,120);
+        doc.text('(Chose '+sa+', Correct: '+ca+')',mx+32,y);
+      }
+      y+=3.2;
+      var qP=qDiv.querySelector('p');
+      if(qP){
+        var qT=qP.cloneNode(true);
+        var tags=qT.querySelectorAll('.result-tag');tags.forEach(function(t){t.remove();});
+        var qt=qT.textContent.replace(/^\d+\.\s*/,'').trim();
+        if(qt.length>0){
+          doc.setFont('helvetica','normal');doc.setTextColor(60,60,60);doc.setFontSize(6.5);
+          var ql=doc.splitTextToSize(qt,cw-5);
+          ql=ql.slice(0,1);
+          if(doc.splitTextToSize(qt,cw-5).length>1){ql[0]=ql[0].substring(0,ql[0].length-3)+'...';}
+          doc.text(ql,mx+4,y);y+=2.4;
+        }
+      }
+      if(typeof EXPLANATIONS!=='undefined'&&EXPLANATIONS[qNum]){
+        doc.setFont('helvetica','italic');doc.setTextColor(100,100,100);doc.setFontSize(6);
+        var lines=doc.splitTextToSize(EXPLANATIONS[qNum],cw-5);
+        if(lines.length>2){lines=lines.slice(0,2);lines[1]=lines[1].substring(0,Math.max(0,lines[1].length-3))+'...';}
+        doc.text(lines,mx+4,y);y+=lines.length*2.2;
+      }
+      y+=2;
+    });
+    doc.setDrawColor(200,200,200);doc.setLineWidth(0.2);doc.line(mx,ph-10,pw-mx,ph-10);
+    doc.setTextColor(170,170,170);doc.setFontSize(6);doc.setFont('helvetica','normal');
+    doc.text('ACT Math Practice  |  Score Report',pw/2,ph-7,{align:'center'});
+    var tn=location.pathname.match(/test(\d+)/);
+    var testNum=tn?parseInt(tn[1])-100:0;
+    var ds=new Date().toISOString().slice(0,10);
+    doc.save('ACT-Math-Test-'+testNum+'-'+ds+'.pdf');
+    btn.textContent='Download Report (PDF)';btn.disabled=false;
+  };
+  document.head.appendChild(s);
+}
+</script>
+</body></html>

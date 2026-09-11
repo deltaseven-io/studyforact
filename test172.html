@@ -1,0 +1,222 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>ACT Math Test 72</title><style>@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:#fff;color:#2d3748;line-height:1.7}
+.container{max-width:800px;margin:0 auto;padding:20px 24px}
+header{background:linear-gradient(135deg,#1a3a4a 0%,#2d6a7a 100%);color:#fff;padding:28px 0;margin-bottom:36px;text-align:center}
+header .container{display:block}
+header h1{font-size:1.6rem;font-weight:700;letter-spacing:-0.3px}
+header a{color:rgba(255,255,255,.7);text-decoration:none;font-size:.9rem;display:inline-block;margin-bottom:6px;transition:color .2s}
+header a:hover{color:#fff}
+.question{background:#fff;border-radius:12px;padding:24px;margin-bottom:20px;border:1px solid #e2e8f0;transition:border-color .2s}
+.question:hover{border-color:#cbd5e0}
+.question p{margin-bottom:14px;font-size:1.05rem}
+img{max-width:100%;height:auto;margin:4px 0;vertical-align:middle}
+.choices{list-style:none}
+.choices li{padding:10px 14px;margin:6px 0;border-radius:8px;cursor:pointer;transition:all .2s;border:2px solid transparent}
+.choices li:hover{background:#f0f7fa}
+.choices li.selected{background:#d1ecf1;border-color:#bee5eb}
+.choices li.correct{background:#d4edda;border-color:#28a745}
+.choices li.wrong{background:#f8d7da;border-color:#dc3545}
+.choices li.show-correct{background:#d4edda;border-color:#28a745}
+.submit-wrap{text-align:center;margin:36px 0}
+.submit-btn{display:inline-block;padding:14px 40px;background:linear-gradient(135deg,#1a3a4a,#2d6a7a);color:#fff;border:none;border-radius:10px;font-size:1.1rem;cursor:pointer;font-weight:600;font-family:inherit;transition:all .25s;letter-spacing:.3px}
+.submit-btn:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(26,58,74,.25)}
+.score-box{background:#fff;border-radius:12px;padding:28px;margin-bottom:28px;text-align:center;border:1px solid #e2e8f0;box-shadow:0 4px 20px rgba(0,0,0,.06);display:none}
+.score-box h2{font-size:1.4rem;margin-bottom:8px;color:#1a3a4a;text-align:center}
+.score-box .pct{font-size:3rem;font-weight:700}
+.score-box .pct.good{color:#28a745}
+.score-box .pct.ok{color:#e6a817}
+.score-box .pct.bad{color:#dc3545}
+.score-box .detail{color:#666;margin-top:4px}
+.result-tag{display:inline-block;padding:2px 10px;border-radius:12px;font-size:.8rem;font-weight:600;margin-left:8px}
+.result-tag.correct{background:#d4edda;color:#155724}
+.result-tag.wrong{background:#f8d7da;color:#721c24}
+.reset-btn{display:none;margin:16px auto;padding:12px 28px;background:#6c757d;color:#fff;border:none;border-radius:10px;font-size:1rem;cursor:pointer;font-family:inherit;transition:all .25s}
+.reset-btn:hover{background:#5a6268;transform:translateY(-1px)}
+.explanation{background:#f0f7ff;border-left:4px solid #1a3a4a;padding:14px 18px;margin-top:14px;border-radius:0 8px 8px 0;font-size:.95rem;color:#444;display:none}
+.explanation.show{display:block}
+.explanation strong{color:#1a3a4a}
+.nav{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin:36px 0}
+.nav a{display:inline-block;padding:10px 24px;background:linear-gradient(135deg,#1a3a4a,#2d6a7a);color:#fff;text-decoration:none;border-radius:10px;font-weight:500;font-size:.95rem;transition:all .25s}
+.nav a:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(26,58,74,.25)}
+footer{text-align:center;padding:36px 24px;color:#8899a4;font-size:.85rem;border-top:1px solid #e2e8f0;margin-top:40px}
+.report-btn{display:inline-block;margin:0;padding:12px 28px;background:linear-gradient(135deg,#1a3a4a,#2d6a7a);color:#fff;border:none;border-radius:10px;font-size:1rem;cursor:pointer;font-family:inherit;transition:all .25s}
+.report-btn:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(26,58,74,.25)}
+.bottom-score{background:#fff;border-radius:12px;padding:20px;margin:20px 0;text-align:center;border:1px solid #e2e8f0;box-shadow:0 4px 20px rgba(0,0,0,.06)}
+.bottom-score .pct{font-size:2.5rem;font-weight:700}
+.bottom-score .pct.good{color:#28a745}
+.bottom-score .pct.ok{color:#e6a817}
+.bottom-score .pct.bad{color:#dc3545}
+.bottom-score .detail{color:#666;margin-top:4px;font-size:.95rem}
+.report-wrap{display:none;text-align:center;margin:16px 0}
+.name-input{padding:10px 14px;border:1px solid #e2e8f0;border-radius:10px;font-size:.95rem;font-family:inherit;width:200px;margin-right:8px;outline:none;transition:border-color .2s}
+.name-input:focus{border-color:#1a3a4a}
+</style></head><body><header><div class="container"><a href="index.html">&larr; All Tests</a><h1>ACT Math Practice Test 72</h1></div></header><div class="container"><div id="score-box" class="score-box"><h2>Your Score</h2><div class="pct">0%</div><div class="detail"></div></div><div class="question"><p><b>1.</b> What is the value of the expression 2<span class="italic">x<sup><small>3</small></sup></span> - <span class="italic">x<sup><small>2</small></sup></span> + 3<span class="italic">x</span> + 5 for <span class="italic">x</span> = -2?</p><ul class="choices"><li>F. -21</li><li>G. -13</li><li>H. 8</li><li>J. 11</li><li>K. 21</li></ul></div><div class="question"><p><b>2.</b> What is the next term after <img src="https://www.crackab.com/image/tests/mg10/01203.jpg"> in the geometric sequence <img src="https://www.crackab.com/image/tests/mg10/01542.jpg"></p><ul class="choices"><li>A. <img src="https://www.crackab.com/image/tests/mg10/01520.jpg"></li><li>B. 0</li><li>C. <img src="https://www.crackab.com/image/tests/mg10/01255.jpg"></li><li>D. <img src="https://www.crackab.com/image/tests/mg10/01166.jpg"></li><li>E. <img src="https://www.crackab.com/image/tests/mg10/00532.jpg"></li></ul></div><div class="question"><p><b>3.</b> On the blueprint for Roger's house, <img src="https://www.crackab.com/image/tests/mg10/01138.jpg"> inch represents an actual length of 1 foot. What is the area, in square feet, of Roger's rectangular living room, which is 3 inches by <img src="https://www.crackab.com/image/tests/mg10/01143.jpg"> inches on the blueprint?</p><ul class="choices"><li>F. 51</li><li>G. 104</li><li>H. 144</li><li>J. 204</li><li>K. 244</li></ul></div><div class="question"><p><b>4.</b> If <span class="italic">m</span> &gt; 0 and <span class="italic">n</span> &lt; 0, then <span class="italic">m</span> - <span class="italic">n</span>:</p><ul class="choices"><li>A. is always positive.</li><li>B. is always negative.</li><li>C. is always zero.</li><li>D. cannot be zero, but can be any real number other than zero.</li><li>E. can be any real number.</li></ul></div><div class="question"><p><b>5.</b> If <img src="https://www.crackab.com/image/tests/mg10/01147.jpg">, then <span class="italic">x</span> = ?</p><ul class="choices"><li>F. <img src="https://www.crackab.com/image/tests/mg10/01334.jpg"></li><li>G. <img src="https://www.crackab.com/image/tests/mg10/01156.jpg"></li><li>H. <img src="https://www.crackab.com/image/tests/mg10/01160.jpg"></li><li>J. <img src="https://www.crackab.com/image/tests/mg10/01164.jpg"></li><li>K. <img src="https://www.crackab.com/image/tests/mg10/01169.jpg"></li></ul></div><div class="question"><p><b>6.</b> What is the slope of the line given by the equation 3<span class="italic">x</span> + 4<span class="italic">y</span> = -12 ?</p><ul class="choices"><li>A. -3</li><li>B. <img src="https://www.crackab.com/image/tests/mg10/00728.jpg"></li><li>C. <img src="https://www.crackab.com/image/tests/mg10/01176.jpg"></li><li>D. <img src="https://www.crackab.com/image/tests/mg10/01022.jpg"></li><li>E. 4</li></ul></div><div class="question"><p><b>7.</b> The length of a side of a square is represented as (3<span class="italic">x</span> - 2) inches. Which of the following general expressions represents the area of the square, in square inches?</p><ul class="choices"><li>F. 12<span class="italic">x</span> - 8</li><li>G. 9<span class="italic">x<sup><small>2</small></sup></span> - 4</li><li>H. 9<span class="italic">x<sup><small>2</small></sup></span> - 6<span class="italic">x</span> + 4</li><li>J. 9<span class="italic">x<sup><small>2</small></sup></span> - 12<span class="italic">x</span> - 4</li><li>K. 9<span class="italic">x<sup><small>2</small></sup></span> - 12<span class="italic">x</span> + 4</li></ul></div><div class="question"><p><b>8.</b> Which of the following is a polynomial factor of <span class="italic">x<sup><small>2</small></sup></span> - 2<span class="italic">x</span> - 24?</p><ul class="choices"><li>A. <span class="italic">x</span> - 4</li><li>B. <span class="italic">x</span> + 4</li><li>C. <span class="italic">x</span> + 6</li><li>D. 6 - <span class="italic">x</span></li><li>E. <span class="italic">x</span></li></ul></div><div class="question"><p><b>9.</b> In the equation <img src="https://www.crackab.com/image/tests/mg10/01518.jpg">, <span class="italic">k</span> represents a positive integer. As <span class="italic">k</span> gets larger without bound, the value of <span class="italic">r</span>:</p><ul class="choices"><li>F. gets closer and closer to 4.</li><li>G. gets closer and closer to 2.</li><li>H. gets closer and closer to 0.</li><li>J. remains constant.</li><li>K. gets larger and larger.</li></ul></div><div class="question"><p><b>10.</b> While doing research on the climates of South American countries, Andrea notices that all of the temperatures are given in degrees Celsius. Because she is not as familiar with the Celsius temperature scale, it is difficult for her to know whether a location with an average temperature of 25°C has a warm climate. Fahrenheit, <span class="italic">F</span>, and Celsius, <span class="italic">C</span>, are related by the formula <img src="https://www.crackab.com/image/tests/mg10/01190.jpg">. What is the temperature in degrees Fahrenheit of the location with an average temperature of 25°C?</p><ul class="choices"><li>A. 103</li><li>B. 88</li><li>C. 83</li><li>D. 77</li><li>E. 69</li></ul></div><div class="question"><p><b>11.</b> The length of a rectangle is 5 inches longer than its width. If the perimeter of the rectangle is 38 inches, what is the width, in inches?</p><ul class="choices"><li>F. 5</li><li>G. 7</li><li>H. 12</li><li>J. 17</li><li>K. 28</li></ul></div><div class="question"><p><b>12.</b> What are all the solutions for <span class="italic">x</span> if 3<span class="italic">x<sup><small>2</small></sup></span> - 2<span class="italic">x</span> - 21 = 0?</p><ul class="choices"><li>A. <span class="italic">x</span> = -21 only</li><li>B. <span class="italic">x</span> = -7 or <span class="italic">x</span> = 3</li><li>C. <span class="italic">x</span> = -3 or <img src="https://www.crackab.com/image/tests/mg10/01196.jpg"></li><li>D. <img src="https://www.crackab.com/image/tests/mg10/01200.jpg"> or <span class="italic">x</span> = 3</li><li>E. <span class="italic">x</span> = -3 or <span class="italic">x</span> = 7</li></ul></div><div class="question"><p><b>13.</b> In Sulema's geography class, all tests count equally. So far, Sulema has taken 2 of the 3 tests in geography this marking period and earned scores of 88% and 79%, respectively. What is the minimum score Sulema needs on the third test to have a test average of 87%?</p><ul class="choices"><li>F. 99%</li><li>G. 94%</li><li>H. 91%</li><li>J. 87%</li><li>K. 84%</li></ul></div><div class="question"><p><b>14.</b> If <span class="italic">a</span>, <span class="italic">b</span>, and <span class="italic">c</span> are positive integers such that <span class="italic">a<sup><small>b</small></sup></span> = <span class="italic">m</span> and <span class="italic">c<sup><small>2b</small></sup></span> = <span class="italic">n</span>, then <span class="italic">mn</span> = ?</p><ul class="choices"><li>A. (<span class="italic">ac<sup><small>2</small></sup></span>)<sup><small><span><span class="italic">b</span></span></small></sup></li><li>B. (<span class="italic">ac</span>)<sup><small>3<span class="italic">b</span></small></sup></li><li>C. 2(<span class="italic">ac</span>)<sup><small><span class="italic">b</span></small></sup></li><li>D. <span class="italic">ac<sup><small>2<span class="italic">b</span></small></sup></span></li><li>E. <span class="italic">a<sup><small><span class="italic">b</span></small></sup></span><span class="italic">c</span></li></ul></div><div class="question"><p><b>15.</b> What is the area, in square inches, of a circle with a diameter equal to 12 inches?</p><ul class="choices"><li>F. 144</li><li>G. 36</li><li>H. 12<span class="italic">π</span></li><li>J. 36<span class="italic">π</span></li><li>K. 144<span class="italic">π</span></li></ul></div><div class="submit-wrap"><button class="submit-btn" onclick="gradeTest()">Submit Test</button><button class="reset-btn" onclick="resetTest()">Try Again</button>
+<div class="report-wrap"><input type="text" class="name-input" placeholder="Student name (for report)"><button class="report-btn" onclick="generateReport()">Download Report (PDF)</button></div></div><div class="nav"><a href="test171.html">&larr; Prev</a><a href="index.html">All Tests</a><a href="test173.html">Next &rarr;</a></div></div><footer><div class="container">ACT Math Practice</div></footer>
+<script>
+const ANSWERS = {"1": "F", "2": "C", "3": "J", "4": "A", "5": "G", "6": "C", "7": "K", "8": "B", "9": "H", "10": "D", "11": "G", "12": "D", "13": "G", "14": "A", "15": "J"};
+const EXPLANATIONS = {"1":"The correct answer is F. To find the value of the expression 2x3 - x2 + 3x + 5 for x  =  -2, simply substitute -2 into the expression wherever there is an x, as follows: Recall that when taking negative numbers to odd powers, they retain their negative sign; however, when negative numbers are taken to even powers, they become positive. Thus the expression 2(-8) - 4 + (-6) + 5 is equivalent to -16 - 4 - 6 + 5  =  21.", "2":"The correct answer is C. To find the next term in the geometric sequence, recall that when looking at a geometric sequence, the nth term can be written (for some base number b) as bn. This sequence is decreasing in magnitude, thus the absolute value of b is less than 1. It also alternates signs, which indicates that b is negative. At this point, mathematical intuition might suggest trying , and then calculating for what value of n the terms in the given sequence correspond (see table).", "3":"The correct answer is J. Since  inch on the blueprint represents an actual length of 1 foot, 1 inch on the blue print represents an actual length of 4 feet. When the room is 3 inches by  inches on the blueprint, it is actually 4(3) feet by  feet. Because the room is rectangular, the area is equal to length times width, so the area is  square feet.", "4":"The correct answer is A. Although the exact values of m and n are not known, it can be determined that the difference of m and n is always positive. This is true because subtracting a negative number is the same as adding the positive. Since n < 0, subtracting the negative n will always be a net addition to the value of m, which is a positive number to begin with. Therefore, answer choice A is correct.", "5":"The correct answer is G. To solve the equation  for x, subtract  from both sides. Doing so will yield . Fractions must have common denominators in order to be added or subtracted from one another. To obtain a common denominator in this problem, you can multiply  by  (multiplying by  is like multiplying by 1, thus it does not change the value of the fraction). . The equation is now , which reduces to .", "6":"The correct answer is C. The line 3x + 4y  =  -12 is given in standard form. To find the slope, convert the equation into slope-intercept form (y  =  mx +b, where m is the slope and b is the y-intercept): Since the equation is now in slope-intercept form, it is easy to see that the slope is .", "7":"The correct answer is K. A square with sides (3x - 2) inches would have an area of (3x - 2)(3x - 2) square inches. Use the "FOIL" method to multiply all terms in the equation: Adding all of these terms yields the expression 9x2 - 6x - 6x + 4. After combining like terms, the expression is 9x2 - 12x + 4.", "8":"The correct answer is B. To solve this problem it is necessary to factor the polynomial x2 - 2x - 24. In this case, since the final term is negative, you know that when this equation is factored, one sign will be positive and the other will be negative. Further, since the term is -24, the numbers in the problem will be factors of 24. The factors of 24 are 1 and 24, 2 and 12, 3 and 8, or 4 and 6. It is logical to look for the factors that have a difference of 2 because of the -2x term in the original polynomial. In this case, 4 and 6 are the only factors of 24 that have a difference of 2. Because the term -2x is negative, the logical expression is (x + 4)(x - 6). Therefore, x + 4 is the correct answer choice.", "9":"The correct answer is H. As k gets larger and larger without bound, the expression  becomes 4 divided by an increasingly large number. For example, think about the trend between the following fractions: , , . Looking at it this way, you can see that the expression for r gets closer and closer to zero.", "10":"The correct answer is D. To convert 25°C to degrees Fahrenheit using the formula , simply substitute 25 for C in the formula:", "11":"The correct answer is G. In a rectangle with length l which is 5 inches longer than the width w, the relation between the sides is l  =  w + 5. Since perimeter, which is the distance around, can be written as twice the length plus twice the width, 38  =  2l + 2w. In order to solve for width w, use the equation l  =  w + 5 to substitute into the perimeter equation:", "12":"The correct answer is D. For the equation 3x2 - 2x - 21  =  0, all solutions of x can be found by either factoring or by using the quadratic formula [ for quadratic equations ax2 + bx + c  =  0]. In this case, since the final term is negative, you know that when this equation is factored, one sign will be positive and the other will be negative. Knowing that the factors of 21 are 1 and 21 and 3 and 7, you can guess and check your answers with relative ease. In this case, the correct answer is (3x +7)(x -3)  =  0. Solve for x:  or x  =  3.", "13":"The correct answer is G. A good way to go about solving this problem is to think of the tests as each having a value of 100 points, making the total of all 3 tests worth 300 points. In order to average 87% overall, Sulema would then need to score 87% of the 300 points, or 300(0.87), or 261 points. By scoring 88% and 79% on her previous tests, she has already obtained 88 + 79, or 167 points. Thus Sulema must score 261 - 167, or 94 points on the third test, which is equivalent to 94%.", "14":"The correct answer is A. If ab  =  m and c2b  =  n, then mn  =  (ab)(c2b). Because a and c are not necessarily the same number, you cannot simply add the exponents. The only legitimate answer choice that further manipulates the expression (ab)(c2b) factors out the b exponent and places it outside a set of parentheses. Thus (ab)(c2b)  =  (abc2b)  =  (ac2)b.", "15":"The correct answer is J. A circle with diameter 12 inches has a radius of 6 inches. The area of a circle is A  =  πr2, where r is the radius. Thus, the area of this circle is A  =  π (62)  =  36π square inches."};
+let graded = false;
+
+document.querySelectorAll('.choices li').forEach(li => {
+  // Remove old onclick
+  li.removeAttribute('onclick');
+  li.addEventListener('click', function() {
+    if (graded) return;
+    const siblings = this.parentElement.querySelectorAll('li');
+    siblings.forEach(s => s.classList.remove('selected'));
+    this.classList.add('selected');
+  });
+});
+
+function gradeTest() {
+  if (graded) return;
+  graded = true;
+  let correct = 0;
+  const total = Object.keys(ANSWERS).length;
+  
+  document.querySelectorAll('.question').forEach((qDiv, idx) => {
+    const qNum = idx + 1;
+    const correctAns = ANSWERS[qNum];
+    if (!correctAns) return;
+    const choices = qDiv.querySelectorAll('.choices li');
+    const selected = qDiv.querySelector('.choices li.selected');
+    const selectedLetter = selected ? selected.textContent.trim().charAt(0) : null;
+    
+    choices.forEach(li => {
+      const letter = li.textContent.trim().charAt(0);
+      if (letter === correctAns) li.classList.add('show-correct');
+      li.style.cursor = 'default';
+    });
+    
+    const tag = document.createElement('span');
+    tag.className = 'result-tag';
+    
+    if (selectedLetter === correctAns) {
+      correct++;
+      tag.className += ' correct';
+      tag.textContent = 'Correct';
+      if (selected) { selected.classList.remove('selected'); selected.classList.add('correct'); }
+    } else {
+      tag.className += ' wrong';
+      tag.textContent = 'Incorrect (Answer: ' + correctAns + ')';
+      if (selected) { selected.classList.remove('selected'); selected.classList.add('wrong'); }
+    }
+    
+    const firstP = qDiv.querySelector('p');
+    if (firstP) firstP.appendChild(tag);
+    
+    if (typeof EXPLANATIONS !== 'undefined' && EXPLANATIONS[qNum]) {
+      const explDiv = document.createElement('div');
+      explDiv.className = 'explanation show';
+      explDiv.innerHTML = '<strong>Explanation:</strong> ' + EXPLANATIONS[qNum];
+      qDiv.appendChild(explDiv);
+    }
+  });
+  
+  const pct = Math.round((correct / total) * 100);
+  document.querySelector('.submit-btn').style.display = 'none';
+  document.querySelector('.reset-btn').style.display = 'block';
+  var rw=document.querySelector('.report-wrap');if(rw)rw.style.display='block';
+  var bs=document.createElement('div');bs.className='bottom-score';bs.id='bottom-score';
+  bs.innerHTML='<h2 style="font-size:1.3rem;margin-bottom:6px;color:#1a3a4a">Your Score</h2><div class="pct '+(pct>=80?'good':pct>=60?'ok':'bad')+'">'+pct+'%</div><div class="detail">'+correct+' out of '+total+' correct</div>';
+  document.querySelector('.submit-wrap').after(bs);
+  try{var tn=location.pathname.match(/test(\d+)/);if(tn)localStorage.setItem('actmath_'+tn[1],pct);}catch(e){}
+}
+
+function resetTest() {
+  graded = false;
+  var bsEl=document.getElementById('bottom-score');if(bsEl)bsEl.remove();
+  document.querySelector('.submit-btn').style.display = '';
+  document.querySelector('.reset-btn').style.display = 'none';
+  var rw=document.querySelector('.report-wrap');if(rw)rw.style.display='none';
+  var ni=document.querySelector('.name-input');if(ni)ni.value='';
+  document.querySelectorAll('.choices li').forEach(li => {
+    li.classList.remove('selected','correct','wrong','show-correct');
+    li.style.cursor = 'pointer';
+  });
+  document.querySelectorAll('.result-tag').forEach(t => t.remove());
+  document.querySelectorAll('.explanation').forEach(e => e.remove());
+}
+
+function generateReport(){
+  var nameInput=document.querySelector('.name-input');
+  var name=(nameInput&&nameInput.value.trim())||'Student';
+  var testName=document.querySelector('header h1').textContent;
+  var bs=document.getElementById('bottom-score');
+  var scorePct=bs?bs.querySelector('.pct').textContent:'';
+  var detailTxt=bs?bs.querySelector('.detail').textContent:'';
+  var d=new Date().toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'});
+  var btn=document.querySelector('.report-btn');btn.textContent='Generating...';btn.disabled=true;
+  var s=document.createElement('script');
+  s.src='https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js';
+  s.onerror=function(){btn.textContent='Download Report (PDF)';btn.disabled=false;alert('Could not load PDF library.');};
+  s.onload=function(){
+    var doc=new jspdf.jsPDF('portrait','mm','letter');
+    var pw=215.9,ph=279.4,mx=12,cw=pw-2*mx,y=8;
+    doc.setFillColor(26,58,74);doc.rect(0,0,pw,22,'F');
+    doc.setTextColor(255,255,255);doc.setFontSize(13);doc.setFont('helvetica','bold');
+    doc.text(testName,mx,9);
+    doc.setFontSize(7.5);doc.setFont('helvetica','normal');
+    doc.text(d+'  |  Student: '+name,mx,14.5);
+    doc.setFontSize(18);doc.setFont('helvetica','bold');
+    doc.text(scorePct,pw-mx,11,{align:'right'});
+    doc.setFontSize(7.5);doc.setFont('helvetica','normal');
+    doc.text(detailTxt,pw-mx,16,{align:'right'});
+    y=25;
+    doc.setDrawColor(26,58,74);doc.setLineWidth(0.3);doc.line(mx,y,pw-mx,y);y+=3;
+    document.querySelectorAll('.question').forEach(function(qDiv,idx){
+      var qNum=idx+1;var ca=ANSWERS[qNum];if(!ca)return;
+      var sel=qDiv.querySelector('.choices li.correct,.choices li.wrong');
+      var sa=sel?sel.textContent.trim().charAt(0):'-';
+      var ok=sel&&sel.classList.contains('correct');
+      if(ok){
+        doc.setFillColor(40,167,69);doc.circle(mx+1.2,y-1,1,'F');
+        doc.setTextColor(33,33,33);doc.setFont('helvetica','bold');doc.setFontSize(8);
+        doc.text('Q'+qNum,mx+4,y);
+        doc.setFont('helvetica','normal');doc.setTextColor(40,167,69);
+        doc.text('Correct ('+ca+')',mx+14,y);
+      }else{
+        doc.setFillColor(220,53,69);doc.circle(mx+1.2,y-1,1,'F');
+        doc.setTextColor(33,33,33);doc.setFont('helvetica','bold');doc.setFontSize(8);
+        doc.text('Q'+qNum,mx+4,y);
+        doc.setFont('helvetica','normal');doc.setTextColor(220,53,69);
+        doc.text('Incorrect',mx+14,y);
+        doc.setTextColor(120,120,120);
+        doc.text('(Chose '+sa+', Correct: '+ca+')',mx+32,y);
+      }
+      y+=3.2;
+      var qP=qDiv.querySelector('p');
+      if(qP){
+        var qT=qP.cloneNode(true);
+        var tags=qT.querySelectorAll('.result-tag');tags.forEach(function(t){t.remove();});
+        var qt=qT.textContent.replace(/^\d+\.\s*/,'').trim();
+        if(qt.length>0){
+          doc.setFont('helvetica','normal');doc.setTextColor(60,60,60);doc.setFontSize(6.5);
+          var ql=doc.splitTextToSize(qt,cw-5);
+          ql=ql.slice(0,1);
+          if(doc.splitTextToSize(qt,cw-5).length>1){ql[0]=ql[0].substring(0,ql[0].length-3)+'...';}
+          doc.text(ql,mx+4,y);y+=2.4;
+        }
+      }
+      if(typeof EXPLANATIONS!=='undefined'&&EXPLANATIONS[qNum]){
+        doc.setFont('helvetica','italic');doc.setTextColor(100,100,100);doc.setFontSize(6);
+        var lines=doc.splitTextToSize(EXPLANATIONS[qNum],cw-5);
+        if(lines.length>2){lines=lines.slice(0,2);lines[1]=lines[1].substring(0,Math.max(0,lines[1].length-3))+'...';}
+        doc.text(lines,mx+4,y);y+=lines.length*2.2;
+      }
+      y+=2;
+    });
+    doc.setDrawColor(200,200,200);doc.setLineWidth(0.2);doc.line(mx,ph-10,pw-mx,ph-10);
+    doc.setTextColor(170,170,170);doc.setFontSize(6);doc.setFont('helvetica','normal');
+    doc.text('ACT Math Practice  |  Score Report',pw/2,ph-7,{align:'center'});
+    var tn=location.pathname.match(/test(\d+)/);
+    var testNum=tn?parseInt(tn[1])-100:0;
+    var ds=new Date().toISOString().slice(0,10);
+    doc.save('ACT-Math-Test-'+testNum+'-'+ds+'.pdf');
+    btn.textContent='Download Report (PDF)';btn.disabled=false;
+  };
+  document.head.appendChild(s);
+}
+</script>
+</body></html>

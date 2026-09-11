@@ -1,0 +1,222 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>ACT Math Test 86</title><style>@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:#fff;color:#2d3748;line-height:1.7}
+.container{max-width:800px;margin:0 auto;padding:20px 24px}
+header{background:linear-gradient(135deg,#1a3a4a 0%,#2d6a7a 100%);color:#fff;padding:28px 0;margin-bottom:36px;text-align:center}
+header .container{display:block}
+header h1{font-size:1.6rem;font-weight:700;letter-spacing:-0.3px}
+header a{color:rgba(255,255,255,.7);text-decoration:none;font-size:.9rem;display:inline-block;margin-bottom:6px;transition:color .2s}
+header a:hover{color:#fff}
+.question{background:#fff;border-radius:12px;padding:24px;margin-bottom:20px;border:1px solid #e2e8f0;transition:border-color .2s}
+.question:hover{border-color:#cbd5e0}
+.question p{margin-bottom:14px;font-size:1.05rem}
+img{max-width:100%;height:auto;margin:4px 0;vertical-align:middle}
+.choices{list-style:none}
+.choices li{padding:10px 14px;margin:6px 0;border-radius:8px;cursor:pointer;transition:all .2s;border:2px solid transparent}
+.choices li:hover{background:#f0f7fa}
+.choices li.selected{background:#d1ecf1;border-color:#bee5eb}
+.choices li.correct{background:#d4edda;border-color:#28a745}
+.choices li.wrong{background:#f8d7da;border-color:#dc3545}
+.choices li.show-correct{background:#d4edda;border-color:#28a745}
+.submit-wrap{text-align:center;margin:36px 0}
+.submit-btn{display:inline-block;padding:14px 40px;background:linear-gradient(135deg,#1a3a4a,#2d6a7a);color:#fff;border:none;border-radius:10px;font-size:1.1rem;cursor:pointer;font-weight:600;font-family:inherit;transition:all .25s;letter-spacing:.3px}
+.submit-btn:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(26,58,74,.25)}
+.score-box{background:#fff;border-radius:12px;padding:28px;margin-bottom:28px;text-align:center;border:1px solid #e2e8f0;box-shadow:0 4px 20px rgba(0,0,0,.06);display:none}
+.score-box h2{font-size:1.4rem;margin-bottom:8px;color:#1a3a4a;text-align:center}
+.score-box .pct{font-size:3rem;font-weight:700}
+.score-box .pct.good{color:#28a745}
+.score-box .pct.ok{color:#e6a817}
+.score-box .pct.bad{color:#dc3545}
+.score-box .detail{color:#666;margin-top:4px}
+.result-tag{display:inline-block;padding:2px 10px;border-radius:12px;font-size:.8rem;font-weight:600;margin-left:8px}
+.result-tag.correct{background:#d4edda;color:#155724}
+.result-tag.wrong{background:#f8d7da;color:#721c24}
+.reset-btn{display:none;margin:16px auto;padding:12px 28px;background:#6c757d;color:#fff;border:none;border-radius:10px;font-size:1rem;cursor:pointer;font-family:inherit;transition:all .25s}
+.reset-btn:hover{background:#5a6268;transform:translateY(-1px)}
+.explanation{background:#f0f7ff;border-left:4px solid #1a3a4a;padding:14px 18px;margin-top:14px;border-radius:0 8px 8px 0;font-size:.95rem;color:#444;display:none}
+.explanation.show{display:block}
+.explanation strong{color:#1a3a4a}
+.nav{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin:36px 0}
+.nav a{display:inline-block;padding:10px 24px;background:linear-gradient(135deg,#1a3a4a,#2d6a7a);color:#fff;text-decoration:none;border-radius:10px;font-weight:500;font-size:.95rem;transition:all .25s}
+.nav a:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(26,58,74,.25)}
+footer{text-align:center;padding:36px 24px;color:#8899a4;font-size:.85rem;border-top:1px solid #e2e8f0;margin-top:40px}
+.report-btn{display:inline-block;margin:0;padding:12px 28px;background:linear-gradient(135deg,#1a3a4a,#2d6a7a);color:#fff;border:none;border-radius:10px;font-size:1rem;cursor:pointer;font-family:inherit;transition:all .25s}
+.report-btn:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(26,58,74,.25)}
+.bottom-score{background:#fff;border-radius:12px;padding:20px;margin:20px 0;text-align:center;border:1px solid #e2e8f0;box-shadow:0 4px 20px rgba(0,0,0,.06)}
+.bottom-score .pct{font-size:2.5rem;font-weight:700}
+.bottom-score .pct.good{color:#28a745}
+.bottom-score .pct.ok{color:#e6a817}
+.bottom-score .pct.bad{color:#dc3545}
+.bottom-score .detail{color:#666;margin-top:4px;font-size:.95rem}
+.report-wrap{display:none;text-align:center;margin:16px 0}
+.name-input{padding:10px 14px;border:1px solid #e2e8f0;border-radius:10px;font-size:.95rem;font-family:inherit;width:200px;margin-right:8px;outline:none;transition:border-color .2s}
+.name-input:focus{border-color:#1a3a4a}
+</style></head><body><header><div class="container"><a href="index.html">&larr; All Tests</a><h1>ACT Math Practice Test 86</h1></div></header><div class="container"><div id="score-box" class="score-box"><h2>Your Score</h2><div class="pct">0%</div><div class="detail"></div></div><div class="question"><p><b>1.</b> In the figure below, all line segments are either horizontal or vertical and the dimensions are given in feet. What is the perimeter in feet, of the figure?<br><img src="https://www.crackab.com/image/tests/mg10/00153.jpg"><br></p><ul class="choices"><li>F. 16</li><li>G. 14</li><li>H. 13</li><li>J. 12</li><li>K. 10</li></ul></div><div class="question"><p><b>2.</b> The average of <span class="italic">a</span> and <span class="italic">b</span> is 6 and the average of <span class="italic">a</span>, <span class="italic">b</span>, and <span class="italic">c</span> is 11. What is the value of <span class="italic">c</span>?</p><ul class="choices"><li>A. 21</li><li>B. 17</li><li>C. 13</li><li>D. 8</li><li>E. 5</li></ul></div><div class="question"><p><b>3.</b> The greatest integer of a set of consecutive even integers is 12. If the sum of these integers is 40, how many integers are in this set?</p><ul class="choices"><li>F. 5</li><li>G. 6</li><li>H. 12</li><li>J. 20</li><li>K. 40</li></ul></div><div class="question"><p><b>4.</b> On the number line shown below, <span class="italic">t</span>, <span class="italic">u</span>, <span class="italic">v</span>, <span class="italic">w</span>, <span class="italic">x</span>, <span class="italic">y</span>, and <span class="italic">z</span> are coordinates of the indicated points. Which of the following is closest in value to |<span class="italic">w</span> - <span class="italic">u</span>|?<br><img src="https://www.crackab.com/image/tests/mg10/00156.jpg"><br></p><ul class="choices"><li>A. <span class="italic">t</span></li><li>B. <span class="italic">v</span></li><li>C. <span class="italic">x</span></li><li>D. <span class="italic">y</span></li><li>E. <span class="italic">z</span></li></ul></div><div class="question"><p><b>5.</b> The length of arc <span class="italic">XY</span> of a circle is equal to <img src="https://www.crackab.com/image/tests/mg10/01313.jpg"> of the circumference of the circle. The length of the arc is 7<span class="italic">π</span> inches. What is the radius, in inches, of the circle?</p><ul class="choices"><li>F. 42</li><li>G. 21</li><li>H. 14</li><li>J. 7</li><li>K. 3</li></ul></div><div class="question"><p><b>6.</b> Let <span class="italic">S</span> be the set of all integers that can be written as 2<span class="italic">n<sup><small>2</small></sup></span> - 6<span class="italic">n</span>, where <span class="italic">n</span> is a nonzero integer. Which of the following integers is in <span class="italic">S</span>?</p><ul class="choices"><li>A. 6</li><li>B. 30</li><li>C. 46</li><li>D. 64</li><li>E. 80</li></ul></div><div class="question"><p><b>7.</b> Let the function <span class="italic">g</span> be defined by <span class="italic">g</span>(<span class="italic">x</span>) = 3(<span class="italic">x<sup><small>2</small></sup></span> - 2). When <span class="italic">g</span>(<span class="italic">x</span>) = 69, what is a possible value of 2<span class="italic">x</span> - 3?</p><ul class="choices"><li>F. -7</li><li>G. -5</li><li>H. 2</li><li>J. 5</li><li>K. 7</li></ul></div><div class="question"><p><b>8.</b> If <span class="italic">a</span> + <span class="italic">b</span> = 25 and <span class="italic">a</span> &gt; 4, then which of the following <span class="italic">must</span> be true?</p><ul class="choices"><li>A. <span class="italic">a</span> = 22</li><li>B. <span class="italic">b</span> &lt; 21</li><li>C. <span class="italic">b</span> &gt; 4</li><li>D. <span class="italic">b</span> = 0</li><li>E. <span class="italic">a</span> &lt; 25</li></ul></div><div class="question"><p><b>9.</b> If <span class="italic">m</span>, <span class="italic">n</span>, and <span class="italic">p</span> are positive integers such that <span class="italic">m</span> + <span class="italic">n</span> is even and the value of (<span class="italic">m</span> + <span class="italic">n</span>)<sup><small>2</small></sup> + <span class="italic">n</span> + <span class="italic">p</span> is odd, which of the following <span class="italic">must</span> be true?</p><ul class="choices"><li>F. <span class="italic">m</span> is odd</li><li>G. <span class="italic">n</span> is even</li><li>H. <span class="italic">p</span> is odd</li><li>J. If <span class="italic">n</span> is even, <span class="italic">p</span> is odd</li><li>K. If <span class="italic">p</span> is odd, <span class="italic">n</span> is odd</li></ul></div><div class="question"><p><b>10.</b> A bag contains only quarters, dimes, and nickels. The probability of randomly selecting a quarter is 1/6. The probability of randomly selecting a nickel is 1/4. Which of the following could be the total number of coins in the bag?</p><ul class="choices"><li>A. 15</li><li>B. 24</li><li>C. 30</li><li>D. 32</li><li>E. 40</li></ul></div><div class="question"><p><b>11.</b> In the <span class="italic">xy</span>-coordinate system, if (<span class="italic">r</span>, <span class="italic">s</span>) and (<span class="italic">r</span> + 2, <span class="italic">s</span> + <span class="italic">t</span>) are two points on the line defined by the equation <span class="italic">y</span> = 4<span class="italic">x</span> + 5, then <span class="italic">t</span> = ?</p><ul class="choices"><li>F. 4</li><li>G. 5</li><li>H. 8</li><li>J. 9</li><li>K. 11</li></ul></div><div class="question"><p><b>12.</b> In the figure shown below, <span class="italic">s</span>⊥<span class="italic">r</span> and <span class="italic">x</span> &gt; 90. Which of the following <span class="italic">must</span> be true?<br><img src="https://www.crackab.com/image/tests/mg10/00095.jpg"><br></p><ul class="choices"><li>A. <span class="italic">s</span> // <span class="italic">t</span></li><li>B. <span class="italic">r</span>⊥<span class="italic">t</span></li><li>C. <span class="italic">y</span> = 90</li><li>D. <span class="italic">y</span> &gt; 90</li><li>E. <span class="italic">y</span> &lt; 90</li></ul></div><div class="question"><p><b>13.</b> Let <span class="italic">x</span> = 2<span class="italic">y</span> + 3<span class="italic">z</span> - 5. What happens to the value of <span class="italic">x</span> if the value of <span class="italic">y</span> decreases by 1 and the value of <span class="italic">z</span> increases by 2?</p><ul class="choices"><li>F. It decreases by 2</li><li>G. It is unchanged</li><li>H. It increases by 1</li><li>J. It increases by 2</li><li>K. It increases by 4</li></ul></div><div class="question"><p><b>14.</b> On the cube in the figure shown below, each of the following points is the same distance from <span class="italic">R</span> as it is from <span class="italic">S</span> EXCEPT:<br><img src="https://www.crackab.com/image/tests/mg10/00100.jpg"><br></p><ul class="choices"><li>A. <span class="italic">M</span></li><li>B. <span class="italic">O</span></li><li>C. <span class="italic">T</span></li><li>D. <span class="italic">Q</span></li><li>E. <span class="italic">N</span></li></ul></div><div class="question"><p><b>15.</b> In the figure shown below, <img src="https://www.crackab.com/image/tests/mg10/01544.jpg"> and <img src="https://www.crackab.com/image/tests/mg10/00110.jpg"> intersect at <span class="italic">O</span> and <img src="https://www.crackab.com/image/tests/mg10/00114.jpg"> is perpendicular to <img src="https://www.crackab.com/image/tests/mg10/00118.jpg">. What is the value of 3<span class="italic">p</span> + 4<span class="italic">s</span> - 2<span class="italic">t</span>?<br><img src="https://www.crackab.com/image/tests/mg10/01800.jpg"><br></p><ul class="choices"><li>F. 15°</li><li>G. 35°</li><li>H. 55°</li><li>J. 135°</li><li>K. 150°</li></ul></div><div class="submit-wrap"><button class="submit-btn" onclick="gradeTest()">Submit Test</button><button class="reset-btn" onclick="resetTest()">Try Again</button>
+<div class="report-wrap"><input type="text" class="name-input" placeholder="Student name (for report)"><button class="report-btn" onclick="generateReport()">Download Report (PDF)</button></div></div><div class="nav"><a href="test185.html">&larr; Prev</a><a href="index.html">All Tests</a><a href="test187.html">Next &rarr;</a></div></div><footer><div class="container">ACT Math Practice</div></footer>
+<script>
+const ANSWERS = {"1": "G", "2": "A", "3": "F", "4": "B", "5": "G", "6": "E", "7": "K", "8": "B", "9": "J", "10": "B", "11": "H", "12": "E", "13": "K", "14": "E", "15": "F"};
+const EXPLANATIONS = {"1":"The correct answer is G. To solve this problem, you will need to find the two missing dimensions. Sketch the figure as shown below to help visualize the missing dimensions: You can see that a must be 1 and b must be 3. Therefore, the perimeter is 4+3+2+1+1+3  =  14.", "2":"The correct answer is A. To solve this problem, first recognize that , which means that a + b  =  12. Also, , which means that a + b + c  =  33. Therefore, 12 + c  =  33, so c must equal 33 - 12, or 21.", "3":"The correct answer is F. One quick way to solve this problem is to start with 12 and add each preceding even integer until you get to a sum of 40, and then count the terms:", "4":"The correct answer is B. The absolute value of any number is positive. Eliminate answer choice A because it is negative. Since w is close to 1.75 on the number line shown, and u is close to 0.6 on the number line shown, the difference of w and u is close to 1.15 on the number line shown. This corresponds to v.", "5":"The correct answer is G. To solve this problem, you must remember that the formula for the circumference of a circle is C  =  2πr, where r is the radius. You are given that the length of arc XY is 7π, and that this is 1/6 of the total circumference. Therefore, the circumference must be 6 × 7π  =  42π. Substitute this value for C in the equation and solve for r, as follows:", "6":"The correct answer is E. To solve this problem, start with n  =  1 until you reach an answer choice: when you reach n  =  8, you will get 2(8)2 - 6(8)  =  80, answer choice E.", "7":"The correct answer is K. To solve this problem, first find the values of x for which g(x)  =  69 by solving the equation 69  =  3(x2 - 2), as follows: The possible values of 2x - 3 are therefore 7 or -13, of which 7 is the only available answer choice.", "8":"The correct answer is B. The correct answer will be the statement that is always true. Because a is greater than 4, and 25 - 4  =  21, b must always be less than 21.", "9":"The correct answer is J. You are given that m + n is even and the value of (m + n)2 is also even. However, because (m + n)2 + n + p is odd, the sum n + p must be odd. A sum of two positive integers is odd only when one is even and one is odd. Therefore, it must be true that if n is even, p is odd.", "10":"The correct answer is B. Since you cannot have a partial coin, the total number of coins in the bag must be divisible by both 6 and 4 (1/6 are quarters and 1/4 are nickels). The only answer choice that is divisible by both 6 and 4 is 24.", "11":"The correct answer is H. To solve this problem, you need to recognize that the slope of the line is equal to 4. In the standard equation for a line, y  =  mx + b, m is equivalent to the slope. The slope is equal to the change in y-values over the change in x-values; set up the following equation to solve for t:", "12":"The correct answer is E. You are given that x > 90, which means that y must be less than 90, because it is a complimentary angle to x. The sum of complimentary angles is 180. None of the other answer choices must necessarily be true.", "13":"The correct answer is K. You are given that x  =  2y + 3z -5. If the value of y decreases by 1, then the new value of y is y - 1; if the value of z increases by 2, then the new value of z is z + 2. Substitute these values into the original equation to see the effects of the changes on the value of x: Therefore, x now equals 2y + 3z - 1, which is 4 more than 2y + 3z - 5.", "14":"The correct answer is E. The distance between R and N is the length of a diagonal of the cube, whereas the distance from S to N is the length of a side of the cube. The length of the diagonal is longer than the length of the side. Therefore, the distance from N to R is not the same as the distance as N to S.", "15":"The correct answer is F. Since t is the supplement of the 35 degree angle, t  =  180 - 35, or 145°. Because s is the supplement to t, s  =  180 - 145, or 35°. Since p is the complement of s, p  =  90 - 35, or 55°. Therefore, 3p + 4s - 2t  =  3(55) + 4(35) - 2(145)  =  165 + 140 - 290  =  15°."};
+let graded = false;
+
+document.querySelectorAll('.choices li').forEach(li => {
+  // Remove old onclick
+  li.removeAttribute('onclick');
+  li.addEventListener('click', function() {
+    if (graded) return;
+    const siblings = this.parentElement.querySelectorAll('li');
+    siblings.forEach(s => s.classList.remove('selected'));
+    this.classList.add('selected');
+  });
+});
+
+function gradeTest() {
+  if (graded) return;
+  graded = true;
+  let correct = 0;
+  const total = Object.keys(ANSWERS).length;
+  
+  document.querySelectorAll('.question').forEach((qDiv, idx) => {
+    const qNum = idx + 1;
+    const correctAns = ANSWERS[qNum];
+    if (!correctAns) return;
+    const choices = qDiv.querySelectorAll('.choices li');
+    const selected = qDiv.querySelector('.choices li.selected');
+    const selectedLetter = selected ? selected.textContent.trim().charAt(0) : null;
+    
+    choices.forEach(li => {
+      const letter = li.textContent.trim().charAt(0);
+      if (letter === correctAns) li.classList.add('show-correct');
+      li.style.cursor = 'default';
+    });
+    
+    const tag = document.createElement('span');
+    tag.className = 'result-tag';
+    
+    if (selectedLetter === correctAns) {
+      correct++;
+      tag.className += ' correct';
+      tag.textContent = 'Correct';
+      if (selected) { selected.classList.remove('selected'); selected.classList.add('correct'); }
+    } else {
+      tag.className += ' wrong';
+      tag.textContent = 'Incorrect (Answer: ' + correctAns + ')';
+      if (selected) { selected.classList.remove('selected'); selected.classList.add('wrong'); }
+    }
+    
+    const firstP = qDiv.querySelector('p');
+    if (firstP) firstP.appendChild(tag);
+    
+    if (typeof EXPLANATIONS !== 'undefined' && EXPLANATIONS[qNum]) {
+      const explDiv = document.createElement('div');
+      explDiv.className = 'explanation show';
+      explDiv.innerHTML = '<strong>Explanation:</strong> ' + EXPLANATIONS[qNum];
+      qDiv.appendChild(explDiv);
+    }
+  });
+  
+  const pct = Math.round((correct / total) * 100);
+  document.querySelector('.submit-btn').style.display = 'none';
+  document.querySelector('.reset-btn').style.display = 'block';
+  var rw=document.querySelector('.report-wrap');if(rw)rw.style.display='block';
+  var bs=document.createElement('div');bs.className='bottom-score';bs.id='bottom-score';
+  bs.innerHTML='<h2 style="font-size:1.3rem;margin-bottom:6px;color:#1a3a4a">Your Score</h2><div class="pct '+(pct>=80?'good':pct>=60?'ok':'bad')+'">'+pct+'%</div><div class="detail">'+correct+' out of '+total+' correct</div>';
+  document.querySelector('.submit-wrap').after(bs);
+  try{var tn=location.pathname.match(/test(\d+)/);if(tn)localStorage.setItem('actmath_'+tn[1],pct);}catch(e){}
+}
+
+function resetTest() {
+  graded = false;
+  var bsEl=document.getElementById('bottom-score');if(bsEl)bsEl.remove();
+  document.querySelector('.submit-btn').style.display = '';
+  document.querySelector('.reset-btn').style.display = 'none';
+  var rw=document.querySelector('.report-wrap');if(rw)rw.style.display='none';
+  var ni=document.querySelector('.name-input');if(ni)ni.value='';
+  document.querySelectorAll('.choices li').forEach(li => {
+    li.classList.remove('selected','correct','wrong','show-correct');
+    li.style.cursor = 'pointer';
+  });
+  document.querySelectorAll('.result-tag').forEach(t => t.remove());
+  document.querySelectorAll('.explanation').forEach(e => e.remove());
+}
+
+function generateReport(){
+  var nameInput=document.querySelector('.name-input');
+  var name=(nameInput&&nameInput.value.trim())||'Student';
+  var testName=document.querySelector('header h1').textContent;
+  var bs=document.getElementById('bottom-score');
+  var scorePct=bs?bs.querySelector('.pct').textContent:'';
+  var detailTxt=bs?bs.querySelector('.detail').textContent:'';
+  var d=new Date().toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'});
+  var btn=document.querySelector('.report-btn');btn.textContent='Generating...';btn.disabled=true;
+  var s=document.createElement('script');
+  s.src='https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js';
+  s.onerror=function(){btn.textContent='Download Report (PDF)';btn.disabled=false;alert('Could not load PDF library.');};
+  s.onload=function(){
+    var doc=new jspdf.jsPDF('portrait','mm','letter');
+    var pw=215.9,ph=279.4,mx=12,cw=pw-2*mx,y=8;
+    doc.setFillColor(26,58,74);doc.rect(0,0,pw,22,'F');
+    doc.setTextColor(255,255,255);doc.setFontSize(13);doc.setFont('helvetica','bold');
+    doc.text(testName,mx,9);
+    doc.setFontSize(7.5);doc.setFont('helvetica','normal');
+    doc.text(d+'  |  Student: '+name,mx,14.5);
+    doc.setFontSize(18);doc.setFont('helvetica','bold');
+    doc.text(scorePct,pw-mx,11,{align:'right'});
+    doc.setFontSize(7.5);doc.setFont('helvetica','normal');
+    doc.text(detailTxt,pw-mx,16,{align:'right'});
+    y=25;
+    doc.setDrawColor(26,58,74);doc.setLineWidth(0.3);doc.line(mx,y,pw-mx,y);y+=3;
+    document.querySelectorAll('.question').forEach(function(qDiv,idx){
+      var qNum=idx+1;var ca=ANSWERS[qNum];if(!ca)return;
+      var sel=qDiv.querySelector('.choices li.correct,.choices li.wrong');
+      var sa=sel?sel.textContent.trim().charAt(0):'-';
+      var ok=sel&&sel.classList.contains('correct');
+      if(ok){
+        doc.setFillColor(40,167,69);doc.circle(mx+1.2,y-1,1,'F');
+        doc.setTextColor(33,33,33);doc.setFont('helvetica','bold');doc.setFontSize(8);
+        doc.text('Q'+qNum,mx+4,y);
+        doc.setFont('helvetica','normal');doc.setTextColor(40,167,69);
+        doc.text('Correct ('+ca+')',mx+14,y);
+      }else{
+        doc.setFillColor(220,53,69);doc.circle(mx+1.2,y-1,1,'F');
+        doc.setTextColor(33,33,33);doc.setFont('helvetica','bold');doc.setFontSize(8);
+        doc.text('Q'+qNum,mx+4,y);
+        doc.setFont('helvetica','normal');doc.setTextColor(220,53,69);
+        doc.text('Incorrect',mx+14,y);
+        doc.setTextColor(120,120,120);
+        doc.text('(Chose '+sa+', Correct: '+ca+')',mx+32,y);
+      }
+      y+=3.2;
+      var qP=qDiv.querySelector('p');
+      if(qP){
+        var qT=qP.cloneNode(true);
+        var tags=qT.querySelectorAll('.result-tag');tags.forEach(function(t){t.remove();});
+        var qt=qT.textContent.replace(/^\d+\.\s*/,'').trim();
+        if(qt.length>0){
+          doc.setFont('helvetica','normal');doc.setTextColor(60,60,60);doc.setFontSize(6.5);
+          var ql=doc.splitTextToSize(qt,cw-5);
+          ql=ql.slice(0,1);
+          if(doc.splitTextToSize(qt,cw-5).length>1){ql[0]=ql[0].substring(0,ql[0].length-3)+'...';}
+          doc.text(ql,mx+4,y);y+=2.4;
+        }
+      }
+      if(typeof EXPLANATIONS!=='undefined'&&EXPLANATIONS[qNum]){
+        doc.setFont('helvetica','italic');doc.setTextColor(100,100,100);doc.setFontSize(6);
+        var lines=doc.splitTextToSize(EXPLANATIONS[qNum],cw-5);
+        if(lines.length>2){lines=lines.slice(0,2);lines[1]=lines[1].substring(0,Math.max(0,lines[1].length-3))+'...';}
+        doc.text(lines,mx+4,y);y+=lines.length*2.2;
+      }
+      y+=2;
+    });
+    doc.setDrawColor(200,200,200);doc.setLineWidth(0.2);doc.line(mx,ph-10,pw-mx,ph-10);
+    doc.setTextColor(170,170,170);doc.setFontSize(6);doc.setFont('helvetica','normal');
+    doc.text('ACT Math Practice  |  Score Report',pw/2,ph-7,{align:'center'});
+    var tn=location.pathname.match(/test(\d+)/);
+    var testNum=tn?parseInt(tn[1])-100:0;
+    var ds=new Date().toISOString().slice(0,10);
+    doc.save('ACT-Math-Test-'+testNum+'-'+ds+'.pdf');
+    btn.textContent='Download Report (PDF)';btn.disabled=false;
+  };
+  document.head.appendChild(s);
+}
+</script>
+</body></html>

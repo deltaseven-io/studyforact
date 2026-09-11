@@ -1,0 +1,222 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>ACT Math Test 67</title><style>@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:#fff;color:#2d3748;line-height:1.7}
+.container{max-width:800px;margin:0 auto;padding:20px 24px}
+header{background:linear-gradient(135deg,#1a3a4a 0%,#2d6a7a 100%);color:#fff;padding:28px 0;margin-bottom:36px;text-align:center}
+header .container{display:block}
+header h1{font-size:1.6rem;font-weight:700;letter-spacing:-0.3px}
+header a{color:rgba(255,255,255,.7);text-decoration:none;font-size:.9rem;display:inline-block;margin-bottom:6px;transition:color .2s}
+header a:hover{color:#fff}
+.question{background:#fff;border-radius:12px;padding:24px;margin-bottom:20px;border:1px solid #e2e8f0;transition:border-color .2s}
+.question:hover{border-color:#cbd5e0}
+.question p{margin-bottom:14px;font-size:1.05rem}
+img{max-width:100%;height:auto;margin:4px 0;vertical-align:middle}
+.choices{list-style:none}
+.choices li{padding:10px 14px;margin:6px 0;border-radius:8px;cursor:pointer;transition:all .2s;border:2px solid transparent}
+.choices li:hover{background:#f0f7fa}
+.choices li.selected{background:#d1ecf1;border-color:#bee5eb}
+.choices li.correct{background:#d4edda;border-color:#28a745}
+.choices li.wrong{background:#f8d7da;border-color:#dc3545}
+.choices li.show-correct{background:#d4edda;border-color:#28a745}
+.submit-wrap{text-align:center;margin:36px 0}
+.submit-btn{display:inline-block;padding:14px 40px;background:linear-gradient(135deg,#1a3a4a,#2d6a7a);color:#fff;border:none;border-radius:10px;font-size:1.1rem;cursor:pointer;font-weight:600;font-family:inherit;transition:all .25s;letter-spacing:.3px}
+.submit-btn:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(26,58,74,.25)}
+.score-box{background:#fff;border-radius:12px;padding:28px;margin-bottom:28px;text-align:center;border:1px solid #e2e8f0;box-shadow:0 4px 20px rgba(0,0,0,.06);display:none}
+.score-box h2{font-size:1.4rem;margin-bottom:8px;color:#1a3a4a;text-align:center}
+.score-box .pct{font-size:3rem;font-weight:700}
+.score-box .pct.good{color:#28a745}
+.score-box .pct.ok{color:#e6a817}
+.score-box .pct.bad{color:#dc3545}
+.score-box .detail{color:#666;margin-top:4px}
+.result-tag{display:inline-block;padding:2px 10px;border-radius:12px;font-size:.8rem;font-weight:600;margin-left:8px}
+.result-tag.correct{background:#d4edda;color:#155724}
+.result-tag.wrong{background:#f8d7da;color:#721c24}
+.reset-btn{display:none;margin:16px auto;padding:12px 28px;background:#6c757d;color:#fff;border:none;border-radius:10px;font-size:1rem;cursor:pointer;font-family:inherit;transition:all .25s}
+.reset-btn:hover{background:#5a6268;transform:translateY(-1px)}
+.explanation{background:#f0f7ff;border-left:4px solid #1a3a4a;padding:14px 18px;margin-top:14px;border-radius:0 8px 8px 0;font-size:.95rem;color:#444;display:none}
+.explanation.show{display:block}
+.explanation strong{color:#1a3a4a}
+.nav{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin:36px 0}
+.nav a{display:inline-block;padding:10px 24px;background:linear-gradient(135deg,#1a3a4a,#2d6a7a);color:#fff;text-decoration:none;border-radius:10px;font-weight:500;font-size:.95rem;transition:all .25s}
+.nav a:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(26,58,74,.25)}
+footer{text-align:center;padding:36px 24px;color:#8899a4;font-size:.85rem;border-top:1px solid #e2e8f0;margin-top:40px}
+.report-btn{display:inline-block;margin:0;padding:12px 28px;background:linear-gradient(135deg,#1a3a4a,#2d6a7a);color:#fff;border:none;border-radius:10px;font-size:1rem;cursor:pointer;font-family:inherit;transition:all .25s}
+.report-btn:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(26,58,74,.25)}
+.bottom-score{background:#fff;border-radius:12px;padding:20px;margin:20px 0;text-align:center;border:1px solid #e2e8f0;box-shadow:0 4px 20px rgba(0,0,0,.06)}
+.bottom-score .pct{font-size:2.5rem;font-weight:700}
+.bottom-score .pct.good{color:#28a745}
+.bottom-score .pct.ok{color:#e6a817}
+.bottom-score .pct.bad{color:#dc3545}
+.bottom-score .detail{color:#666;margin-top:4px;font-size:.95rem}
+.report-wrap{display:none;text-align:center;margin:16px 0}
+.name-input{padding:10px 14px;border:1px solid #e2e8f0;border-radius:10px;font-size:.95rem;font-family:inherit;width:200px;margin-right:8px;outline:none;transition:border-color .2s}
+.name-input:focus{border-color:#1a3a4a}
+</style></head><body><header><div class="container"><a href="index.html">&larr; All Tests</a><h1>ACT Math Practice Test 67</h1></div></header><div class="container"><div id="score-box" class="score-box"><h2>Your Score</h2><div class="pct">0%</div><div class="detail"></div></div><div class="question"><p><b>1.</b> In a geometric sequence, the quotient of any two consecutive terms is the same. If the third term of a geometric sequence is 8 and the fourth term is 16, then what is the second term?</p><ul class="choices"><li>A. -8</li><li>B. -4</li><li>C. 2</li><li>D. 4</li><li>E. 8</li></ul></div><div class="question"><p><b>2.</b> If the function <span class="italic">f</span>(<span class="italic">a</span>, <span class="italic">b</span>) is defined as <span class="italic">f</span>(<span class="italic">a</span>,<span class="italic">b</span>) = 2<span class="italic">ab</span> - (<span class="italic">a</span> + <span class="italic">b</span>), then <span class="italic">f</span>(3,4) = ?</p><ul class="choices"><li>F. 7</li><li>G. 17</li><li>H. 21</li><li>J. 24</li><li>K. 31</li></ul></div><div class="question"><p><b>3.</b> The Korean BBQ taco truck sells short rib tacos for 99?. Christine has only pennies, nickels, dimes, and quarters in her purse. If she wants to pay with exact change, then what is the least number of coins Christine can use to buy a 99? taco? (Note: Assume any sales tax is included in the price.)</p><ul class="choices"><li>A. 6</li><li>B. 7</li><li>C. 8</li><li>D. 9</li><li>E. 10</li></ul></div><div class="question"><p><b>4.</b> What is the area, in square inches, of a square with a side length of 8 inches?</p><ul class="choices"><li>F. 8</li><li>G. 16</li><li>H. 24</li><li>J. 32</li><li>K. 64</li></ul></div><div class="question"><p><b>5.</b> If <span class="italic">x</span> = 3, then the expression <img src="https://www.crackab.com/image/tests/cr2016/00053.jpg"> is equal to:</p><ul class="choices"><li>A. 2</li><li>B. <img src="https://www.crackab.com/image/tests/cr2016/01171.jpg"></li><li>C. 0</li><li>D. <img src="https://www.crackab.com/image/tests/cr2016/00061.jpg"></li><li>E. -8</li></ul></div><div class="question"><p><b>6.</b> Which of the following is NOT a factor of 1,776 ?</p><ul class="choices"><li>F. 12</li><li>G. 16</li><li>H. 18</li><li>J. 24</li><li>K. 37</li></ul></div><div class="question"><p><b>7.</b> Lauren's world history teacher needs to select one of his 19 students to lead the class in song. Lauren's teacher decides that the song leader, who will be chosen at random, CANNOT be any of the 4 seniors in the class. What is the probability that Lauren, who is NOT a senior, will be chosen?</p><ul class="choices"><li>A. 0</li><li>B. <img src="https://www.crackab.com/image/tests/cr2016/00070.jpg"></li><li>C. <img src="https://www.crackab.com/image/tests/cr2016/00049.jpg"></li><li>D. <img src="https://www.crackab.com/image/tests/cr2016/00510.jpg"></li><li>E. <img src="https://www.crackab.com/image/tests/cr2016/00511.jpg"></li></ul></div><div class="question"><p><b>8.</b> If 4(<span class="italic">x</span> - 5) + <span class="italic">x</span> = 45, then <span class="italic">x</span> = ?</p><ul class="choices"><li>F. 5</li><li>G. 8</li><li>H. 9</li><li>J. 10</li><li>K. 13</li></ul></div><div class="question"><p><b>9.</b> Joe rents a car to drive across the state to visit his family for Thanksgiving. The car rental company charges Joe $112 for the weekend rental, plus $0.99 for each mile he drives. If Joe drives the rental car <span class="italic">m</span> miles, then which of the following expressions gives Joe's total cost, in dollars, for renting the car?</p><ul class="choices"><li>A. 0.99<span class="italic">m</span> - 112</li><li>B. 0.99<span class="italic">m</span> + 112</li><li>C. 49.95<span class="italic">m</span></li><li>D. 112<span class="italic">m</span> + 0.99</li><li>E. 112.99<span class="italic">m</span></li></ul></div><div class="question"><p><b>10.</b> Stella wants to buy a scooter for $4,800. A loan company offers to finance the purchase in return for payments of $130 a month for 4 years. If Stella were to finance the scooter, then how much more than the purchase price of the scooter will Stella have paid at the end of the 4-year period?</p><ul class="choices"><li>F. $ 520</li><li>G. $ 780</li><li>H. $ 1,040</li><li>J. $ 1,300</li><li>K. $ 1,440</li></ul></div><div class="question"><p><b>11.</b> The expression <img src="https://www.crackab.com/image/tests/cr2016/01288.jpg"> is equivalent to:</p><ul class="choices"><li>A. 5<span class="italic">y<sup><small>4</small></sup></span></li><li>B. 5<span class="italic">y<sup><small>6</small></sup></span></li><li>C. 5<span class="italic">y<sup><small>8</small></sup></span></li><li>D. 16<span class="italic">y<sup><small>4</small></sup></span></li><li>E. 16<span class="italic">y<sup><small>6</small></sup></span></li></ul></div><div class="question"><p><b>12.</b> Which of the following is equal to <img src="https://www.crackab.com/image/tests/cr2016/01290.jpg"></p><ul class="choices"><li>F. <img src="https://www.crackab.com/image/tests/cr2016/01291.jpg"></li><li>G. 2</li><li>H. 12</li><li>J. 20</li><li>K. <img src="https://www.crackab.com/image/tests/cr2016/01293.jpg"></li></ul></div><div class="question"><p><b>13.</b> Point <span class="italic">C</span> is at 3.5 on the real number line. If Point <span class="italic">D</span> is also on the real number line and is 8.5 units from <span class="italic">C</span>, then which of the following are the possible locations of <span class="italic">D</span> ?</p><ul class="choices"><li>A. -12 and -5</li><li>B. -12 and 5</li><li>C. -5 and 5</li><li>D. 12 and -5</li><li>E. 12 and 5</li></ul></div><div class="question"><p><b>14.</b> The mean of 4 numbers in a data set is 7. If 3 of these numbers are 2, 4, and 10, then which of the following is the fourth number?</p><ul class="choices"><li>F. 4</li><li>G. 7</li><li>H. 8</li><li>J. 10</li><li>K. 12</li></ul></div><div class="question"><p><b>15.</b> Motorcars, Inc. made $1,489,000 in net profit in 2007. In 2009, Motorcars, Inc. made $1,725,000 in net profit. If the net profit increased linearly from 2007 through 2009, then what was the net profit earned in 2008 ?</p><ul class="choices"><li>A. $1,607,000</li><li>B. $1,698,000</li><li>C. $1,724,000</li><li>D. $1,779,000</li><li>E. $1,842,000</li></ul></div><div class="submit-wrap"><button class="submit-btn" onclick="gradeTest()">Submit Test</button><button class="reset-btn" onclick="resetTest()">Try Again</button>
+<div class="report-wrap"><input type="text" class="name-input" placeholder="Student name (for report)"><button class="report-btn" onclick="generateReport()">Download Report (PDF)</button></div></div><div class="nav"><a href="test166.html">&larr; Prev</a><a href="index.html">All Tests</a><a href="test168.html">Next &rarr;</a></div></div><footer><div class="container">ACT Math Practice</div></footer>
+<script>
+const ANSWERS = {"1": "D", "2": "G", "3": "D", "4": "K", "5": "A", "6": "H", "7": "C", "8": "K", "9": "B", "10": "K", "11": "B", "12": "F", "13": "D", "14": "K", "15": "A"};
+const EXPLANATIONS = {"1":"D To find the quotient between terms in the geometric sequence, divide the fourth term by the third to find that 16 ÷ 8  =  2. Then divide the third term by the quotient, 2, to find the second term: 8 ÷ 2  =  4.", "2":"G To solve for f(3,4), substitute 3 into the original equation for a and 4 for b: f(3,4)  =  2(3)(4) -(3 + 4)  =  24 -7  =  17.", "3":"D To find the smallest number of coins Christine could use, start by counting the number of quarters she could use because they have the largest denomination. Because she wants to use exact change, she can only use three quarters, for a total of 75?. This leaves 99? -75?  =  24?. Next, count the number of dimes Christine could use, which is two, for a total of 20?. The amount left is now 24? -20?  =  4?, which must be paid in pennies. The total number of coins she will use is 3 quarters + 2 dimes + 4 pennies  =  9 coins.", "4":"K The equation for the area of a square is A  =  s2. Plug 8 into the equation for s: A  =  82  =  64.", "5":"A Plug 3 into the equation for x:   =  2.", "6":"H When dealing with NOT questions, eliminate answer choices that work. Use your calculator and try out the answer choices. 1,776 ÷ 12  =  148, and because 12 is a factor of 1,776, you can eliminate (F). The same is true of the numbers in (G), (J), and (K). However, 1,776 ÷ 18  =  98.66, so 18 is NOT a factor of 1,776 and is the correct answer.", "7":"C Be careful with the CANNOT and NOT in this problem. Probability equals . In this case, only one person, Lauren, fulfills the requirements. There are 19 total students, but 4 of them cannot be the song leader, so the total number of students who could be the song leader is 19 -4  =  15. The probability that Lauren will be selected is therefore . If you picked choice (B), you may have forgotten to subtract the 4 seniors from the total students.", "8":"K To solve for x, first distribute the 4 on the left side of the equation. Remember to watch your negatives! 4x -20 + x  =  45. Next, combine like terms to get 5x -20  =  45. Then, add 20 to both sides: 5x  =  65, and finally divide both sides by 5 to find that x  =  13.", "9":"B Read carefully to translate this word problem into a math function. The problem indicates that there is a charge of $0.99 for each mile, which means that the final expression should include the term .99m. Eliminate (C), (D), and (E). The problem also states that the rental company charges $112 plus the mileage fee, so the final expression should include addition, which makes (B) correct.", "10":"K Find the total amount that Stella would pay according to the finance plan. 4 years of 12 monthly payments per year makes a total of 4 × 12  =  48 payments. 48 payments × $130  =  $6,240. The question asks how much more than the purchase price Stella would pay, so find the difference between the total price of the finance plan and the purchase price: $6,240 -$4,800  =  $1,440.", "11":"B Begin by reducing the number part of the fraction: . Next, remember the exponent rules: When dividing two numbers with exponents, subtract the exponents, so   =  5y8-2  =  5y6.", "12":"F To avoid making a careless error, be sure to write down all the steps in simplifying this fraction. First, do the subtraction in the numerator and the addition in the denominator: . To divide by a fraction, multiply by the reciprocal: .", "13":"D Point D could lie either to the right or to the left of point C. To find the point to the right, add the distance between the two points, 8.5, to point C: 8.5 + 3.5  =  12. Eliminate (A), (B), and (C). To find the point to the left, subtract the distance between the points from point C: 3.5 -8.5  =  -5, so (D) is correct.", "14":"K To find the mean, or average, of a group of numbers, add the numbers up, and then divide by the number of numbers. This can be written as an equation, Average  =  . Since you don\'t know the total in this case, plug the information you have into the equation: 7  =  , then multiply both sides by 4 to find that Total  =  28. Add the three numbers you are given to find that 2 + 4 + 10  =  16. To find the value of the unknown number, subtract the total of the three known numbers from the total of all four numbers: 28 -16  =  12.", "15":"A Read carefully! The problem tells you that the net profit increased linearly, which means it increased by the same amount each year. This means that the answer should be the number that is exactly halfway between $1,489,000 and $1,725,000. You can eliminate (C) because it is much too close to $1,725,000 and (D) and (E) because they are bigger than $1,725,000. To solve, first find the difference between the 2009 profit and the 2007 profit: $1,725,000 -$1,489,000  =  $236,000. To find the number in the middle, divide the difference by 2: $236,000 ÷ 2  =  $118,000, then add that number to the 2007 profit: $1,489,000 + $118,000  =  $1,607,000."};
+let graded = false;
+
+document.querySelectorAll('.choices li').forEach(li => {
+  // Remove old onclick
+  li.removeAttribute('onclick');
+  li.addEventListener('click', function() {
+    if (graded) return;
+    const siblings = this.parentElement.querySelectorAll('li');
+    siblings.forEach(s => s.classList.remove('selected'));
+    this.classList.add('selected');
+  });
+});
+
+function gradeTest() {
+  if (graded) return;
+  graded = true;
+  let correct = 0;
+  const total = Object.keys(ANSWERS).length;
+  
+  document.querySelectorAll('.question').forEach((qDiv, idx) => {
+    const qNum = idx + 1;
+    const correctAns = ANSWERS[qNum];
+    if (!correctAns) return;
+    const choices = qDiv.querySelectorAll('.choices li');
+    const selected = qDiv.querySelector('.choices li.selected');
+    const selectedLetter = selected ? selected.textContent.trim().charAt(0) : null;
+    
+    choices.forEach(li => {
+      const letter = li.textContent.trim().charAt(0);
+      if (letter === correctAns) li.classList.add('show-correct');
+      li.style.cursor = 'default';
+    });
+    
+    const tag = document.createElement('span');
+    tag.className = 'result-tag';
+    
+    if (selectedLetter === correctAns) {
+      correct++;
+      tag.className += ' correct';
+      tag.textContent = 'Correct';
+      if (selected) { selected.classList.remove('selected'); selected.classList.add('correct'); }
+    } else {
+      tag.className += ' wrong';
+      tag.textContent = 'Incorrect (Answer: ' + correctAns + ')';
+      if (selected) { selected.classList.remove('selected'); selected.classList.add('wrong'); }
+    }
+    
+    const firstP = qDiv.querySelector('p');
+    if (firstP) firstP.appendChild(tag);
+    
+    if (typeof EXPLANATIONS !== 'undefined' && EXPLANATIONS[qNum]) {
+      const explDiv = document.createElement('div');
+      explDiv.className = 'explanation show';
+      explDiv.innerHTML = '<strong>Explanation:</strong> ' + EXPLANATIONS[qNum];
+      qDiv.appendChild(explDiv);
+    }
+  });
+  
+  const pct = Math.round((correct / total) * 100);
+  document.querySelector('.submit-btn').style.display = 'none';
+  document.querySelector('.reset-btn').style.display = 'block';
+  var rw=document.querySelector('.report-wrap');if(rw)rw.style.display='block';
+  var bs=document.createElement('div');bs.className='bottom-score';bs.id='bottom-score';
+  bs.innerHTML='<h2 style="font-size:1.3rem;margin-bottom:6px;color:#1a3a4a">Your Score</h2><div class="pct '+(pct>=80?'good':pct>=60?'ok':'bad')+'">'+pct+'%</div><div class="detail">'+correct+' out of '+total+' correct</div>';
+  document.querySelector('.submit-wrap').after(bs);
+  try{var tn=location.pathname.match(/test(\d+)/);if(tn)localStorage.setItem('actmath_'+tn[1],pct);}catch(e){}
+}
+
+function resetTest() {
+  graded = false;
+  var bsEl=document.getElementById('bottom-score');if(bsEl)bsEl.remove();
+  document.querySelector('.submit-btn').style.display = '';
+  document.querySelector('.reset-btn').style.display = 'none';
+  var rw=document.querySelector('.report-wrap');if(rw)rw.style.display='none';
+  var ni=document.querySelector('.name-input');if(ni)ni.value='';
+  document.querySelectorAll('.choices li').forEach(li => {
+    li.classList.remove('selected','correct','wrong','show-correct');
+    li.style.cursor = 'pointer';
+  });
+  document.querySelectorAll('.result-tag').forEach(t => t.remove());
+  document.querySelectorAll('.explanation').forEach(e => e.remove());
+}
+
+function generateReport(){
+  var nameInput=document.querySelector('.name-input');
+  var name=(nameInput&&nameInput.value.trim())||'Student';
+  var testName=document.querySelector('header h1').textContent;
+  var bs=document.getElementById('bottom-score');
+  var scorePct=bs?bs.querySelector('.pct').textContent:'';
+  var detailTxt=bs?bs.querySelector('.detail').textContent:'';
+  var d=new Date().toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'});
+  var btn=document.querySelector('.report-btn');btn.textContent='Generating...';btn.disabled=true;
+  var s=document.createElement('script');
+  s.src='https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js';
+  s.onerror=function(){btn.textContent='Download Report (PDF)';btn.disabled=false;alert('Could not load PDF library.');};
+  s.onload=function(){
+    var doc=new jspdf.jsPDF('portrait','mm','letter');
+    var pw=215.9,ph=279.4,mx=12,cw=pw-2*mx,y=8;
+    doc.setFillColor(26,58,74);doc.rect(0,0,pw,22,'F');
+    doc.setTextColor(255,255,255);doc.setFontSize(13);doc.setFont('helvetica','bold');
+    doc.text(testName,mx,9);
+    doc.setFontSize(7.5);doc.setFont('helvetica','normal');
+    doc.text(d+'  |  Student: '+name,mx,14.5);
+    doc.setFontSize(18);doc.setFont('helvetica','bold');
+    doc.text(scorePct,pw-mx,11,{align:'right'});
+    doc.setFontSize(7.5);doc.setFont('helvetica','normal');
+    doc.text(detailTxt,pw-mx,16,{align:'right'});
+    y=25;
+    doc.setDrawColor(26,58,74);doc.setLineWidth(0.3);doc.line(mx,y,pw-mx,y);y+=3;
+    document.querySelectorAll('.question').forEach(function(qDiv,idx){
+      var qNum=idx+1;var ca=ANSWERS[qNum];if(!ca)return;
+      var sel=qDiv.querySelector('.choices li.correct,.choices li.wrong');
+      var sa=sel?sel.textContent.trim().charAt(0):'-';
+      var ok=sel&&sel.classList.contains('correct');
+      if(ok){
+        doc.setFillColor(40,167,69);doc.circle(mx+1.2,y-1,1,'F');
+        doc.setTextColor(33,33,33);doc.setFont('helvetica','bold');doc.setFontSize(8);
+        doc.text('Q'+qNum,mx+4,y);
+        doc.setFont('helvetica','normal');doc.setTextColor(40,167,69);
+        doc.text('Correct ('+ca+')',mx+14,y);
+      }else{
+        doc.setFillColor(220,53,69);doc.circle(mx+1.2,y-1,1,'F');
+        doc.setTextColor(33,33,33);doc.setFont('helvetica','bold');doc.setFontSize(8);
+        doc.text('Q'+qNum,mx+4,y);
+        doc.setFont('helvetica','normal');doc.setTextColor(220,53,69);
+        doc.text('Incorrect',mx+14,y);
+        doc.setTextColor(120,120,120);
+        doc.text('(Chose '+sa+', Correct: '+ca+')',mx+32,y);
+      }
+      y+=3.2;
+      var qP=qDiv.querySelector('p');
+      if(qP){
+        var qT=qP.cloneNode(true);
+        var tags=qT.querySelectorAll('.result-tag');tags.forEach(function(t){t.remove();});
+        var qt=qT.textContent.replace(/^\d+\.\s*/,'').trim();
+        if(qt.length>0){
+          doc.setFont('helvetica','normal');doc.setTextColor(60,60,60);doc.setFontSize(6.5);
+          var ql=doc.splitTextToSize(qt,cw-5);
+          ql=ql.slice(0,1);
+          if(doc.splitTextToSize(qt,cw-5).length>1){ql[0]=ql[0].substring(0,ql[0].length-3)+'...';}
+          doc.text(ql,mx+4,y);y+=2.4;
+        }
+      }
+      if(typeof EXPLANATIONS!=='undefined'&&EXPLANATIONS[qNum]){
+        doc.setFont('helvetica','italic');doc.setTextColor(100,100,100);doc.setFontSize(6);
+        var lines=doc.splitTextToSize(EXPLANATIONS[qNum],cw-5);
+        if(lines.length>2){lines=lines.slice(0,2);lines[1]=lines[1].substring(0,Math.max(0,lines[1].length-3))+'...';}
+        doc.text(lines,mx+4,y);y+=lines.length*2.2;
+      }
+      y+=2;
+    });
+    doc.setDrawColor(200,200,200);doc.setLineWidth(0.2);doc.line(mx,ph-10,pw-mx,ph-10);
+    doc.setTextColor(170,170,170);doc.setFontSize(6);doc.setFont('helvetica','normal');
+    doc.text('ACT Math Practice  |  Score Report',pw/2,ph-7,{align:'center'});
+    var tn=location.pathname.match(/test(\d+)/);
+    var testNum=tn?parseInt(tn[1])-100:0;
+    var ds=new Date().toISOString().slice(0,10);
+    doc.save('ACT-Math-Test-'+testNum+'-'+ds+'.pdf');
+    btn.textContent='Download Report (PDF)';btn.disabled=false;
+  };
+  document.head.appendChild(s);
+}
+</script>
+</body></html>

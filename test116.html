@@ -1,0 +1,222 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>ACT Math Test 16</title><style>@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:#fff;color:#2d3748;line-height:1.7}
+.container{max-width:800px;margin:0 auto;padding:20px 24px}
+header{background:linear-gradient(135deg,#1a3a4a 0%,#2d6a7a 100%);color:#fff;padding:28px 0;margin-bottom:36px;text-align:center}
+header .container{display:block}
+header h1{font-size:1.6rem;font-weight:700;letter-spacing:-0.3px}
+header a{color:rgba(255,255,255,.7);text-decoration:none;font-size:.9rem;display:inline-block;margin-bottom:6px;transition:color .2s}
+header a:hover{color:#fff}
+.question{background:#fff;border-radius:12px;padding:24px;margin-bottom:20px;border:1px solid #e2e8f0;transition:border-color .2s}
+.question:hover{border-color:#cbd5e0}
+.question p{margin-bottom:14px;font-size:1.05rem}
+img{max-width:100%;height:auto;margin:4px 0;vertical-align:middle}
+.choices{list-style:none}
+.choices li{padding:10px 14px;margin:6px 0;border-radius:8px;cursor:pointer;transition:all .2s;border:2px solid transparent}
+.choices li:hover{background:#f0f7fa}
+.choices li.selected{background:#d1ecf1;border-color:#bee5eb}
+.choices li.correct{background:#d4edda;border-color:#28a745}
+.choices li.wrong{background:#f8d7da;border-color:#dc3545}
+.choices li.show-correct{background:#d4edda;border-color:#28a745}
+.submit-wrap{text-align:center;margin:36px 0}
+.submit-btn{display:inline-block;padding:14px 40px;background:linear-gradient(135deg,#1a3a4a,#2d6a7a);color:#fff;border:none;border-radius:10px;font-size:1.1rem;cursor:pointer;font-weight:600;font-family:inherit;transition:all .25s;letter-spacing:.3px}
+.submit-btn:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(26,58,74,.25)}
+.score-box{background:#fff;border-radius:12px;padding:28px;margin-bottom:28px;text-align:center;border:1px solid #e2e8f0;box-shadow:0 4px 20px rgba(0,0,0,.06);display:none}
+.score-box h2{font-size:1.4rem;margin-bottom:8px;color:#1a3a4a;text-align:center}
+.score-box .pct{font-size:3rem;font-weight:700}
+.score-box .pct.good{color:#28a745}
+.score-box .pct.ok{color:#e6a817}
+.score-box .pct.bad{color:#dc3545}
+.score-box .detail{color:#666;margin-top:4px}
+.result-tag{display:inline-block;padding:2px 10px;border-radius:12px;font-size:.8rem;font-weight:600;margin-left:8px}
+.result-tag.correct{background:#d4edda;color:#155724}
+.result-tag.wrong{background:#f8d7da;color:#721c24}
+.reset-btn{display:none;margin:16px auto;padding:12px 28px;background:#6c757d;color:#fff;border:none;border-radius:10px;font-size:1rem;cursor:pointer;font-family:inherit;transition:all .25s}
+.reset-btn:hover{background:#5a6268;transform:translateY(-1px)}
+.explanation{background:#f0f7ff;border-left:4px solid #1a3a4a;padding:14px 18px;margin-top:14px;border-radius:0 8px 8px 0;font-size:.95rem;color:#444;display:none}
+.explanation.show{display:block}
+.explanation strong{color:#1a3a4a}
+.nav{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin:36px 0}
+.nav a{display:inline-block;padding:10px 24px;background:linear-gradient(135deg,#1a3a4a,#2d6a7a);color:#fff;text-decoration:none;border-radius:10px;font-weight:500;font-size:.95rem;transition:all .25s}
+.nav a:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(26,58,74,.25)}
+footer{text-align:center;padding:36px 24px;color:#8899a4;font-size:.85rem;border-top:1px solid #e2e8f0;margin-top:40px}
+.report-btn{display:inline-block;margin:0;padding:12px 28px;background:linear-gradient(135deg,#1a3a4a,#2d6a7a);color:#fff;border:none;border-radius:10px;font-size:1rem;cursor:pointer;font-family:inherit;transition:all .25s}
+.report-btn:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(26,58,74,.25)}
+.bottom-score{background:#fff;border-radius:12px;padding:20px;margin:20px 0;text-align:center;border:1px solid #e2e8f0;box-shadow:0 4px 20px rgba(0,0,0,.06)}
+.bottom-score .pct{font-size:2.5rem;font-weight:700}
+.bottom-score .pct.good{color:#28a745}
+.bottom-score .pct.ok{color:#e6a817}
+.bottom-score .pct.bad{color:#dc3545}
+.bottom-score .detail{color:#666;margin-top:4px;font-size:.95rem}
+.report-wrap{display:none;text-align:center;margin:16px 0}
+.name-input{padding:10px 14px;border:1px solid #e2e8f0;border-radius:10px;font-size:.95rem;font-family:inherit;width:200px;margin-right:8px;outline:none;transition:border-color .2s}
+.name-input:focus{border-color:#1a3a4a}
+</style></head><body><header><div class="container"><a href="index.html">&larr; All Tests</a><h1>ACT Math Practice Test 16</h1></div></header><div class="container"><div id="score-box" class="score-box"><h2>Your Score</h2><div class="pct">0%</div><div class="detail"></div></div><div class="question"><p><b>1.</b> In the standard (<em>x</em>,<em>y</em>) coordinate plane, what is the area of the circle (<em>x</em> - 3)<sup class="frac">2</sup> + (<em>y</em> + 2)<sup class="frac">2</sup> = 25?</p><ul class="choices"><li>F. 5π</li><li>G. 10π</li><li>H. 25π</li><li>J. 125π</li><li>K. 225π</li></ul></div><div class="question"><p><b>2.</b> In the standard (<em>x</em>,<em>y</em>) coordinate plane below, the base of a right triangle lies along the <em>x</em>-axis and is bisected by the <em>y</em>-axis. The vertex of the angle opposite the base is on the graph of the parabolic function <em>f</em>(<em>x</em>) = 2<em>x</em><sup class="frac">2</sup> - 4. Let <em>b</em> represent any value of <em>x</em> such that -<img alt="" src="https://www.crackab.com/images/tests/Prin_9780804124393_epub_root2_r1.jpg"> &lt; <em>x</em> &lt; 0. Which of the following is an expression in terms of <em>b</em> for the area, in square coordinate units, of any such right triangle?<br><img alt="" src="https://www.crackab.com/images/tests/Prin_9780804124393_epub_382_r1.jpg"></p><ul class="choices"><li>A. 4<em>b</em><sup class="frac">4</sup> - 16<em>b</em><sup class="frac">2</sup> + 16</li><li>B. 4<em>b</em><sup class="frac">3</sup> - 8<em>b</em></li><li>C. 2<em>b</em><sup class="frac">3</sup> - 4<em>b</em></li><li>D. 2<em>b</em><sup class="frac">2</sup> + <em>b</em> - 4</li><li>E. <em>b</em><sup class="frac">2</sup> - 4<em>b</em> + 4</li></ul></div><div class="question"><p><b>3.</b> Which of the following expressions must be an even integer if <em>x</em> is an integer?</p><ul class="choices"><li>F. <em>x</em> + 5</li><li>G. <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780804124393_epub_xby4_r1.jpg"></li><li>H. <em>x</em><sup class="frac">4</sup></li><li>J. 4<em>x</em></li><li>K. 5<sup class="frac">x</sup></li></ul></div><div class="question"><p><b>4.</b> Which of the following ranges of consecutive integers contains the value of the expression <img alt="" class="in" src="https://www.crackab.com/images/tests/Prin_9780804124393_epub_350a_r1.jpg">?</p><ul class="choices"><li>A. 0 and 1</li><li>B. 1 and 2</li><li>C. 2 and 3</li><li>D. 5 and 6</li><li>E. 7 and 8</li></ul></div><div class="question"><p><b>5.</b> The employees at Belinda's Paint Store are having a competition to see who can create the most new accounts over a period from January to June in a certain year. Data is missing because one of the employees began to erase it from the white board, thinking that the competition was over. The numbers in the chart below have been confirmed with the assistant manager's personal records.<br><img alt="" src="https://www.crackab.com/images/tests/Prin_9780804124393_epub_383_r1.jpg"><br>Which of the following is closest to the percent decrease in Cameron's new accounts from January to February?</p><ul class="choices"><li>F. 4.00%</li><li>G. 17.40%</li><li>H. 19.40%</li><li>J. 20.00%</li><li>K. 21.10%</li></ul></div><div class="question"><p><b>6.</b> The employees at Belinda's Paint Store are having a competition to see who can create the most new accounts over a period from January to June in a certain year. Data is missing because one of the employees began to erase it from the white board, thinking that the competition was over. The numbers in the chart below have been confirmed with the assistant manager's personal records.<br><img alt="" src="https://www.crackab.com/images/tests/Prin_9780804124393_epub_383_r1.jpg"><br>At the beginning of the year, Maura wanted to average 30 new accounts per month for the first four months of the year. How many new accounts did she need to create in March in order to reach this goal?</p><ul class="choices"><li>A. 25</li><li>B. 27</li><li>C. 29</li><li>D. 31</li><li>E. 37</li></ul></div><div class="question"><p><b>7.</b> The employees at Belinda's Paint Store are having a competition to see who can create the most new accounts over a period from January to June in a certain year. Data is missing because one of the employees began to erase it from the white board, thinking that the competition was over. The numbers in the chart below have been confirmed with the assistant manager's personal records.<br><img alt="" src="https://www.crackab.com/images/tests/Prin_9780804124393_epub_383_r1.jpg"><br>Additional records are uncovered that show that Don's sales decreased 5% each month from January to May because his responsibilities in the store mounted and he could not seek out new accounts as frequently. Which of the following is closest to the number of new accounts Don created in May?</p><ul class="choices"><li>F. 44</li><li>G. 52</li><li>H. 56</li><li>J. 72</li><li>K. 84</li></ul></div><div class="question"><p><b>8.</b> The amplitude of the trigonometric function shown below is defined as the average of the absolute values of the maximum value of <em>f</em>(<em>x</em>) and the minimum value of <em>f</em>(<em>x</em>). The trigonometric function graphed below can be described by the equation <em>f</em>(<em>x</em>) = <em>a</em> sin(<em>bx</em> + <em>c</em>), where <em>a</em>, <em>b</em>, and <em>c</em> are real numbers. Which of the following values describes the amplitude of this function?<br><img alt="" src="https://www.crackab.com/images/tests/Prin_9780804124393_epub_384_r1.jpg"></p><ul class="choices"><li>A. 1</li><li>B. 2</li><li>C. 3</li><li>D. π</li><li>E. 2π</li></ul></div><div class="question"><p><b>9.</b> A group of die-hard baseball fans has purchased a house that gives them a direct view of home plate, although their view of the rest of the field is largely impeded by the outfield wall. The house is 30 meters tall, and their angle of vision from the top of the building to home plate has a tangent of <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780804124393_epub_7by6_r1.jpg">. What is the horizontal distance, in meters, from home plate to the closest wall of the fans' house?<br><img alt="" src="https://www.crackab.com/images/tests/Prin_9780804124393_epub_385_r1.jpg"></p><ul class="choices"><li>F. 35</li><li>G. 32</li><li>H. 25.7</li><li>J. 5</li><li>K. 4.3</li></ul></div><div class="question"><p><b>10.</b> Given the equation |<em>y</em><sup class="frac">2</sup> - 11| - 2 = 0, which of the following is a solution but NOT a rational number?</p><ul class="choices"><li>A. <img alt="" src="https://www.crackab.com/images/tests/Prin_9780804124393_epub_11root13_r1.jpg"></li><li>B. 4<img alt="" src="https://www.crackab.com/images/tests/Prin_9780804124393_epub_root13_r1.jpg"></li><li>C. 2<img alt="" src="https://www.crackab.com/images/tests/Prin_9780804124393_epub_root13_r1.jpg"></li><li>D. <img alt="" src="https://www.crackab.com/images/tests/Prin_9780804124393_epub_root13_r1.jpg"></li><li>E. 3</li></ul></div><div class="question"><p><b>11.</b> Below is the graph that a specialty automobile manufacturer uses to plot the speed tests done on his new cars. The speed is recorded in units of <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780804124393_epub_mbys_r1.jpg"> and is conducted for a period of 9 seconds. A certain order of 3 of the following 6 actions describes the results of the speed test depicted in the graph below. Which order is it?<br><img alt="" src="https://www.crackab.com/images/tests/Prin_9780804124393_epub_386_r1.jpg"><br>I. Constant speed for 1 second<br>II. Constant speed for 3 seconds<br>III. Speed increase for 4 seconds<br>IV. Speed increase for 9 seconds<br>V. Speed decrease for 2 seconds<br>VI. Speed decrease for 7 seconds</p><ul class="choices"><li>F. IV, II, VI</li><li>G. III, II, V</li><li>H. I, III, V</li><li>J. III, I, VI</li><li>K. V, I, II</li></ul></div><div class="question"><p><b>12.</b> As shown in the figure below, a compass has marks for every 10° and "North" and "South" are the endpoints of a line segment. If the point of the needle of this compass travels 42 mm as it moves in a clockwise direction from "East" to "North," how long is the needle to the nearest tenth of a millimeter?<br><img alt="" src="https://www.crackab.com/images/tests/Prin_9780804124393_epub_387_r1.jpg"></p><ul class="choices"><li>A. 6.7</li><li>B. 8.9</li><li>C. 13.4</li><li>D. 14</li><li>E. 17.8</li></ul></div><div class="question"><p><b>13.</b> For θ, an angle whose measure is between 270° and 360°, cos θ = <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780804124393_epub_5by13_r1.jpg">. Which of the following equals tan θ?</p><ul class="choices"><li>F. -<img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780804124393_epub_5by12_r1.jpg"></li><li>G. -<img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780804124393_epub_5by13_r1.jpg"></li><li>H. <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780804124393_epub_5by13_r1.jpg"></li><li>J. <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780804124393_epub_5by12_r1.jpg"></li><li>K. <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780804124393_epub_12by13_r1.jpg"></li></ul></div><div class="question"><p><b>14.</b> Consider all positive integer values <em>a</em> and <em>b</em> such that the product <em>ab</em> = 8. For how many values does there exist a positive integer <em>c</em> that satisfies both 2<em><sup class="frac">a</sup></em> = <em>c</em> and <em>c</em>b = 256?</p><ul class="choices"><li>A. Infinitely many</li><li>B. 6</li><li>C. 4</li><li>D. 2</li><li>E. 0</li></ul></div><div class="question"><p><b>15.</b> A sphere is inscribed in a cube with a diagonal of 3<img alt="" src="https://www.crackab.com/images/tests/Prin_9780804124393_epub_root3_r1.jpg"> ft. In feet, what is the diameter of the sphere?<br><img alt="" src="https://www.crackab.com/images/tests/Prin_9780804124393_epub_388_r1.jpg"></p><ul class="choices"><li>F. 3<img alt="" src="https://www.crackab.com/images/tests/Prin_9780804124393_epub_root2_r1.jpg"></li><li>G. 2</li><li>H. 2<img alt="" src="https://www.crackab.com/images/tests/Prin_9780804124393_epub_root2_r1.jpg"></li><li>J. 3</li><li>K. 3<img alt="" src="https://www.crackab.com/images/tests/Prin_9780804124393_epub_root3_r1.jpg"></li></ul></div><div class="submit-wrap"><button class="submit-btn" onclick="gradeTest()">Submit Test</button><button class="reset-btn" onclick="resetTest()">Try Again</button>
+<div class="report-wrap"><input type="text" class="name-input" placeholder="Student name (for report)"><button class="report-btn" onclick="generateReport()">Download Report (PDF)</button></div></div><div class="nav"><a href="test115.html">&larr; Prev</a><a href="index.html">All Tests</a><a href="test117.html">Next &rarr;</a></div></div><footer><div class="container">ACT Math Practice</div></footer>
+<script>
+const ANSWERS = {"1": "H", "2": "C", "3": "J", "4": "C", "5": "G", "6": "E", "7": "G", "8": "C", "9": "F", "10": "D", "11": "G", "12": "B", "13": "F", "14": "C", "15": "J"};
+const EXPLANATIONS = {"1":"The formula for a circle to which this problem is referring is (x - h)2 + (y - k)2  =  r2. In other words, the 25 in the equation (x - 3)2 + (y + 2)2  =  25 is the r2. If r2  =  25, then r  =  5. With the radius, you can find the area of the circle with the basic formula A  =  πr2. In this problem, since r  =  5, the area will be A  =  π(5)2  =  25π.", "2":"Nearly everything you need is written on the figure. The only real piece of information you need from the text of the problem is that the y-axis bisects the base of the triangle. This tells you that the base of this triangle is 2b. The height, according to the figure, is 2b2 - 4. With the base and height, you have all you need to find the area of the triangle with the standard formula A  =  bh. Substitute the expressions to find A  =   (2b)(2b2 - 4) =  (b)(2b2 - 4)  =  2b3 - 4b. If you selected choice (B), you may have forgotten to divide by two.", "3":"Because of the words "must be," the expression given must produce an even number in every instance. If you can find one instance in which an expression produces an odd number, you can eliminate that expression and answer choice. Since x can be any integer, there are many combinations you can try. In Choice (F), x could be 4, in which case x + 5  =  4 + 5  =  9, which is not even. In choice (G), x could be 1, which would make , which is not even (nor is it an integer). If x  =  1, choice (H) gives x4  =  1, which is not even, and in choice (K), 5 raised to any integer power will always be odd. Only choice (J) generates an even number with every integer. This is because the product of an even number multiplied by either an even or an odd number will always be even.", "4":"First, bring the exponent to the front of the expression: . Once you\'re done, you can simplify the log portion of the expression. By the rules of logarithms, log99 can be rewritten as either . As both expressions show, log99  =  1, which means you\'re left with, between 2 and 3.", "5":"In order to find the percent change, use the formula: % change  =  . In this case, Cameron\'s sales decreased from 23 to 19. In other words, he started at 23 (the original number), and he decreased to 19 (a difference of 4). Therefore, % change  =   × 100 ≈ 17.4%. If you selected choice (K), you may have calculated the increase from 19 to 23 rather than the decrease from 23 to 19.", "6":"Maura wanted an average of 30 new accounts over the course of 4 months. This means that over the course of these four months, she had to create a total of 120 new accounts. Write this in an equation: Total  =  Jan. + Feb. + Mar. + Apr. Substitute what you know. 120  =  31 + 25 + Mar. + 27. The total accounts needed in March will therefore be 120 - 31 - 25 - 27  =  37.", "7":"Don had 64 sales in January, and this value decreased by 5% each month. Do the calculations as follows, and don\'t round until you\'re done! February accounts  =  (64) - (0.05)(64)  =  60.8. March accounts  =  (60.8) - (0.05)(60.8)  =  57.76. April accounts  =  (57.76) - (0.05)(57.76)  =  54.872. May accounts  =  (54.872) - (54.872)(0.05)  =  52.1284 ≈ 52 accounts.", "8":"You can disregard the long equation of the function given in the problem. All you need to answer this question is the graph. As the problem says, the amplitude of this function is the "average of the absolute values" of the minimum and maximum values of f(x). Pull this information from the graph. The graph goes up to y  =  3 and down to y  =  -3. Take the average of the absolute values of these: . If you selected choice (E), be careful-this is the period.", "9":"Start with the tangent relationship. The problem says that the tangent of the angle of vision is . From SOHCAHTOA, you know that the tangent relationship is defined as tanθ  =  , or, in terms of this problem, the tangent of the angle of vision is . Set up a proportion: . Fill in what you know: . Cross multiply to find that the horizontal distance from home plate to the building is 35 m. If you selected choice (H), you may have found the opposite relationship.", "10":"If you selected choice (E), be careful-3 is a solution to this equation, but it is rational. This question asks for a solution that is NOT rational. To find the solutions, solve the equation for y. First, isolate the absolute value expression |y2 - 11|  =  2. Remember as you\'re solving this equation that you will have to create two different equations as you\'re removing the absolute value sign: y2 - 11  =  2 and y2- 11  =  -2. Solve each of these equations to find that y2  =  13 and y2  =  9, and therefore y  =  ± and y. The irrational solutions are .", "11":"A positive slope indicates a speed increase; a 0 slope indicates a constant speed; a negative slope indicates a speed decrease. The speed increases for 4 seconds, remains constant for 3 seconds, then decreases to 0 over 2 seconds. This is best described by choice (G). Note, if you\'re not sure how to read the graph, recall that the problem says the entire test takes 9 seconds. Therefore, whether speeds are increasing or decreasing, the times during which they do so will have to add to 9 seconds.", "12":"Because the compass is a circle, it has a degree measure of 360°. "East" starts at 90° from "North," so the point of the needle will need to travel 270° to get back to "North" in a clockwise direction. In other words, the point of the needle will have to travel across  of the circle as it goes from "East" to "North" in a clockwise direction. The problem states that the point of the needle travels 42 mm, so if you apply the ratio to this problem, you can say that 42 mm is  of the circumference of the circle. Use this to find the full circumference: 42  =  C and C  =  56mm. Use this value to find the length of the needle, which is just the radius of this circle: C  =  2πr. Solve the equation for r to find its value:", "13":"From 270° to 360°, the cosine function has a range of values from 0 to 1. In other words, it is always positive. Sine, by contrast, has a range of values from -1 to 0-it\'s always negative. Because the problem is asking for a tangent value from 270° to 360°, you know it must be negative because tanθ  =  . Therefore, you can eliminate choices (H), (J), and (K). Then, because cosθ  =  , the adjacent side, opposite side, and hypotenuse relative to the angle form the Pythagorean triple 5:12:13, respectively. Tanθ  =  , and within the range from 270° to 360°, tangent is negative, so tanθ  =  .", "14":"Since you need a and b such that ab  =  8, your four possible pairs are a  =  1, b  =  8; a  =  2, b  =  4; a  =  4, b  =  2; a  =  8, b  =  1. Keep your work organized as you figure: As this small chart demonstrates, there are four values of c that work in both expressions. If you selected choice (D), you may have forgotten that both a  =  1, b  =  8 and a  =  8, b  =  1 are distinct and valid pairs.", "15":"The formula for the length of the diagonal of a rectangular prism is a2 + b2 + c2  =  d2 where a, b, and c represent the edges of the rectangular prism and d represents its diagonal. In the case of a cube, a  =  b  =  c, so the equation can be rewritten as follows: 3a2  =  d2. In this problem, d  =  , so 3a2  =  (). Therefore, 3a2  =  (9)(3) and a  =  3. Therefore, the length of the edge of this cube is 3. Look at the figure-you can see from the figure that the length of the diameter of the sphere is equivalent t"};
+let graded = false;
+
+document.querySelectorAll('.choices li').forEach(li => {
+  // Remove old onclick
+  li.removeAttribute('onclick');
+  li.addEventListener('click', function() {
+    if (graded) return;
+    const siblings = this.parentElement.querySelectorAll('li');
+    siblings.forEach(s => s.classList.remove('selected'));
+    this.classList.add('selected');
+  });
+});
+
+function gradeTest() {
+  if (graded) return;
+  graded = true;
+  let correct = 0;
+  const total = Object.keys(ANSWERS).length;
+  
+  document.querySelectorAll('.question').forEach((qDiv, idx) => {
+    const qNum = idx + 1;
+    const correctAns = ANSWERS[qNum];
+    if (!correctAns) return;
+    const choices = qDiv.querySelectorAll('.choices li');
+    const selected = qDiv.querySelector('.choices li.selected');
+    const selectedLetter = selected ? selected.textContent.trim().charAt(0) : null;
+    
+    choices.forEach(li => {
+      const letter = li.textContent.trim().charAt(0);
+      if (letter === correctAns) li.classList.add('show-correct');
+      li.style.cursor = 'default';
+    });
+    
+    const tag = document.createElement('span');
+    tag.className = 'result-tag';
+    
+    if (selectedLetter === correctAns) {
+      correct++;
+      tag.className += ' correct';
+      tag.textContent = 'Correct';
+      if (selected) { selected.classList.remove('selected'); selected.classList.add('correct'); }
+    } else {
+      tag.className += ' wrong';
+      tag.textContent = 'Incorrect (Answer: ' + correctAns + ')';
+      if (selected) { selected.classList.remove('selected'); selected.classList.add('wrong'); }
+    }
+    
+    const firstP = qDiv.querySelector('p');
+    if (firstP) firstP.appendChild(tag);
+    
+    if (typeof EXPLANATIONS !== 'undefined' && EXPLANATIONS[qNum]) {
+      const explDiv = document.createElement('div');
+      explDiv.className = 'explanation show';
+      explDiv.innerHTML = '<strong>Explanation:</strong> ' + EXPLANATIONS[qNum];
+      qDiv.appendChild(explDiv);
+    }
+  });
+  
+  const pct = Math.round((correct / total) * 100);
+  document.querySelector('.submit-btn').style.display = 'none';
+  document.querySelector('.reset-btn').style.display = 'block';
+  var rw=document.querySelector('.report-wrap');if(rw)rw.style.display='block';
+  var bs=document.createElement('div');bs.className='bottom-score';bs.id='bottom-score';
+  bs.innerHTML='<h2 style="font-size:1.3rem;margin-bottom:6px;color:#1a3a4a">Your Score</h2><div class="pct '+(pct>=80?'good':pct>=60?'ok':'bad')+'">'+pct+'%</div><div class="detail">'+correct+' out of '+total+' correct</div>';
+  document.querySelector('.submit-wrap').after(bs);
+  try{var tn=location.pathname.match(/test(\d+)/);if(tn)localStorage.setItem('actmath_'+tn[1],pct);}catch(e){}
+}
+
+function resetTest() {
+  graded = false;
+  var bsEl=document.getElementById('bottom-score');if(bsEl)bsEl.remove();
+  document.querySelector('.submit-btn').style.display = '';
+  document.querySelector('.reset-btn').style.display = 'none';
+  var rw=document.querySelector('.report-wrap');if(rw)rw.style.display='none';
+  var ni=document.querySelector('.name-input');if(ni)ni.value='';
+  document.querySelectorAll('.choices li').forEach(li => {
+    li.classList.remove('selected','correct','wrong','show-correct');
+    li.style.cursor = 'pointer';
+  });
+  document.querySelectorAll('.result-tag').forEach(t => t.remove());
+  document.querySelectorAll('.explanation').forEach(e => e.remove());
+}
+
+function generateReport(){
+  var nameInput=document.querySelector('.name-input');
+  var name=(nameInput&&nameInput.value.trim())||'Student';
+  var testName=document.querySelector('header h1').textContent;
+  var bs=document.getElementById('bottom-score');
+  var scorePct=bs?bs.querySelector('.pct').textContent:'';
+  var detailTxt=bs?bs.querySelector('.detail').textContent:'';
+  var d=new Date().toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'});
+  var btn=document.querySelector('.report-btn');btn.textContent='Generating...';btn.disabled=true;
+  var s=document.createElement('script');
+  s.src='https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js';
+  s.onerror=function(){btn.textContent='Download Report (PDF)';btn.disabled=false;alert('Could not load PDF library.');};
+  s.onload=function(){
+    var doc=new jspdf.jsPDF('portrait','mm','letter');
+    var pw=215.9,ph=279.4,mx=12,cw=pw-2*mx,y=8;
+    doc.setFillColor(26,58,74);doc.rect(0,0,pw,22,'F');
+    doc.setTextColor(255,255,255);doc.setFontSize(13);doc.setFont('helvetica','bold');
+    doc.text(testName,mx,9);
+    doc.setFontSize(7.5);doc.setFont('helvetica','normal');
+    doc.text(d+'  |  Student: '+name,mx,14.5);
+    doc.setFontSize(18);doc.setFont('helvetica','bold');
+    doc.text(scorePct,pw-mx,11,{align:'right'});
+    doc.setFontSize(7.5);doc.setFont('helvetica','normal');
+    doc.text(detailTxt,pw-mx,16,{align:'right'});
+    y=25;
+    doc.setDrawColor(26,58,74);doc.setLineWidth(0.3);doc.line(mx,y,pw-mx,y);y+=3;
+    document.querySelectorAll('.question').forEach(function(qDiv,idx){
+      var qNum=idx+1;var ca=ANSWERS[qNum];if(!ca)return;
+      var sel=qDiv.querySelector('.choices li.correct,.choices li.wrong');
+      var sa=sel?sel.textContent.trim().charAt(0):'-';
+      var ok=sel&&sel.classList.contains('correct');
+      if(ok){
+        doc.setFillColor(40,167,69);doc.circle(mx+1.2,y-1,1,'F');
+        doc.setTextColor(33,33,33);doc.setFont('helvetica','bold');doc.setFontSize(8);
+        doc.text('Q'+qNum,mx+4,y);
+        doc.setFont('helvetica','normal');doc.setTextColor(40,167,69);
+        doc.text('Correct ('+ca+')',mx+14,y);
+      }else{
+        doc.setFillColor(220,53,69);doc.circle(mx+1.2,y-1,1,'F');
+        doc.setTextColor(33,33,33);doc.setFont('helvetica','bold');doc.setFontSize(8);
+        doc.text('Q'+qNum,mx+4,y);
+        doc.setFont('helvetica','normal');doc.setTextColor(220,53,69);
+        doc.text('Incorrect',mx+14,y);
+        doc.setTextColor(120,120,120);
+        doc.text('(Chose '+sa+', Correct: '+ca+')',mx+32,y);
+      }
+      y+=3.2;
+      var qP=qDiv.querySelector('p');
+      if(qP){
+        var qT=qP.cloneNode(true);
+        var tags=qT.querySelectorAll('.result-tag');tags.forEach(function(t){t.remove();});
+        var qt=qT.textContent.replace(/^\d+\.\s*/,'').trim();
+        if(qt.length>0){
+          doc.setFont('helvetica','normal');doc.setTextColor(60,60,60);doc.setFontSize(6.5);
+          var ql=doc.splitTextToSize(qt,cw-5);
+          ql=ql.slice(0,1);
+          if(doc.splitTextToSize(qt,cw-5).length>1){ql[0]=ql[0].substring(0,ql[0].length-3)+'...';}
+          doc.text(ql,mx+4,y);y+=2.4;
+        }
+      }
+      if(typeof EXPLANATIONS!=='undefined'&&EXPLANATIONS[qNum]){
+        doc.setFont('helvetica','italic');doc.setTextColor(100,100,100);doc.setFontSize(6);
+        var lines=doc.splitTextToSize(EXPLANATIONS[qNum],cw-5);
+        if(lines.length>2){lines=lines.slice(0,2);lines[1]=lines[1].substring(0,Math.max(0,lines[1].length-3))+'...';}
+        doc.text(lines,mx+4,y);y+=lines.length*2.2;
+      }
+      y+=2;
+    });
+    doc.setDrawColor(200,200,200);doc.setLineWidth(0.2);doc.line(mx,ph-10,pw-mx,ph-10);
+    doc.setTextColor(170,170,170);doc.setFontSize(6);doc.setFont('helvetica','normal');
+    doc.text('ACT Math Practice  |  Score Report',pw/2,ph-7,{align:'center'});
+    var tn=location.pathname.match(/test(\d+)/);
+    var testNum=tn?parseInt(tn[1])-100:0;
+    var ds=new Date().toISOString().slice(0,10);
+    doc.save('ACT-Math-Test-'+testNum+'-'+ds+'.pdf');
+    btn.textContent='Download Report (PDF)';btn.disabled=false;
+  };
+  document.head.appendChild(s);
+}
+</script>
+</body></html>

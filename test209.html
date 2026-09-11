@@ -1,0 +1,222 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>ACT Math Test 109</title><style>@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:#fff;color:#2d3748;line-height:1.7}
+.container{max-width:800px;margin:0 auto;padding:20px 24px}
+header{background:linear-gradient(135deg,#1a3a4a 0%,#2d6a7a 100%);color:#fff;padding:28px 0;margin-bottom:36px;text-align:center}
+header .container{display:block}
+header h1{font-size:1.6rem;font-weight:700;letter-spacing:-0.3px}
+header a{color:rgba(255,255,255,.7);text-decoration:none;font-size:.9rem;display:inline-block;margin-bottom:6px;transition:color .2s}
+header a:hover{color:#fff}
+.question{background:#fff;border-radius:12px;padding:24px;margin-bottom:20px;border:1px solid #e2e8f0;transition:border-color .2s}
+.question:hover{border-color:#cbd5e0}
+.question p{margin-bottom:14px;font-size:1.05rem}
+img{max-width:100%;height:auto;margin:4px 0;vertical-align:middle}
+.choices{list-style:none}
+.choices li{padding:10px 14px;margin:6px 0;border-radius:8px;cursor:pointer;transition:all .2s;border:2px solid transparent}
+.choices li:hover{background:#f0f7fa}
+.choices li.selected{background:#d1ecf1;border-color:#bee5eb}
+.choices li.correct{background:#d4edda;border-color:#28a745}
+.choices li.wrong{background:#f8d7da;border-color:#dc3545}
+.choices li.show-correct{background:#d4edda;border-color:#28a745}
+.submit-wrap{text-align:center;margin:36px 0}
+.submit-btn{display:inline-block;padding:14px 40px;background:linear-gradient(135deg,#1a3a4a,#2d6a7a);color:#fff;border:none;border-radius:10px;font-size:1.1rem;cursor:pointer;font-weight:600;font-family:inherit;transition:all .25s;letter-spacing:.3px}
+.submit-btn:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(26,58,74,.25)}
+.score-box{background:#fff;border-radius:12px;padding:28px;margin-bottom:28px;text-align:center;border:1px solid #e2e8f0;box-shadow:0 4px 20px rgba(0,0,0,.06);display:none}
+.score-box h2{font-size:1.4rem;margin-bottom:8px;color:#1a3a4a;text-align:center}
+.score-box .pct{font-size:3rem;font-weight:700}
+.score-box .pct.good{color:#28a745}
+.score-box .pct.ok{color:#e6a817}
+.score-box .pct.bad{color:#dc3545}
+.score-box .detail{color:#666;margin-top:4px}
+.result-tag{display:inline-block;padding:2px 10px;border-radius:12px;font-size:.8rem;font-weight:600;margin-left:8px}
+.result-tag.correct{background:#d4edda;color:#155724}
+.result-tag.wrong{background:#f8d7da;color:#721c24}
+.reset-btn{display:none;margin:16px auto;padding:12px 28px;background:#6c757d;color:#fff;border:none;border-radius:10px;font-size:1rem;cursor:pointer;font-family:inherit;transition:all .25s}
+.reset-btn:hover{background:#5a6268;transform:translateY(-1px)}
+.explanation{background:#f0f7ff;border-left:4px solid #1a3a4a;padding:14px 18px;margin-top:14px;border-radius:0 8px 8px 0;font-size:.95rem;color:#444;display:none}
+.explanation.show{display:block}
+.explanation strong{color:#1a3a4a}
+.nav{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin:36px 0}
+.nav a{display:inline-block;padding:10px 24px;background:linear-gradient(135deg,#1a3a4a,#2d6a7a);color:#fff;text-decoration:none;border-radius:10px;font-weight:500;font-size:.95rem;transition:all .25s}
+.nav a:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(26,58,74,.25)}
+footer{text-align:center;padding:36px 24px;color:#8899a4;font-size:.85rem;border-top:1px solid #e2e8f0;margin-top:40px}
+.report-btn{display:inline-block;margin:0;padding:12px 28px;background:linear-gradient(135deg,#1a3a4a,#2d6a7a);color:#fff;border:none;border-radius:10px;font-size:1rem;cursor:pointer;font-family:inherit;transition:all .25s}
+.report-btn:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(26,58,74,.25)}
+.bottom-score{background:#fff;border-radius:12px;padding:20px;margin:20px 0;text-align:center;border:1px solid #e2e8f0;box-shadow:0 4px 20px rgba(0,0,0,.06)}
+.bottom-score .pct{font-size:2.5rem;font-weight:700}
+.bottom-score .pct.good{color:#28a745}
+.bottom-score .pct.ok{color:#e6a817}
+.bottom-score .pct.bad{color:#dc3545}
+.bottom-score .detail{color:#666;margin-top:4px;font-size:.95rem}
+.report-wrap{display:none;text-align:center;margin:16px 0}
+.name-input{padding:10px 14px;border:1px solid #e2e8f0;border-radius:10px;font-size:.95rem;font-family:inherit;width:200px;margin-right:8px;outline:none;transition:border-color .2s}
+.name-input:focus{border-color:#1a3a4a}
+</style></head><body><header><div class="container"><a href="index.html">&larr; All Tests</a><h1>ACT Math Practice Test 109</h1></div></header><div class="container"><div id="score-box" class="score-box"><h2>Your Score</h2><div class="pct">0%</div><div class="detail"></div></div><div class="question"><p><b>1.</b> For all nonzero values of <em>a</em> and <em>b</em>, which of the following expressions is equivalent to <img src="https://img.crackab.com/act/nmg10/f0274-01.jpg"></p><ul class="choices"><li>A. -7<em>a</em><sup>3</sup><em>b</em><sup>2</sup></li><li>B. -7<em>a</em><sup>4</sup><em>b</em><sup>4</sup></li><li>C. -7<em>a</em><sup>5</sup><em>b</em><sup>4</sup></li><li>D. -24<em>a</em><sup>3</sup><em>b</em><sup>2</sup></li><li>E. -32<em>a</em><sup>3</sup><em>b</em><sup>2</sup></li></ul></div><div class="question"><p><b>2.</b> To keep up with rising costs, a carpenter needs to increase his $30.00 per hour rate by 18%. What will be his new hourly rate?</p><ul class="choices"><li>F. $30.18</li><li>G. $31.80</li><li>H. $35.40</li><li>J. $38.00</li><li>K. $48.00</li></ul></div><div class="question"><p><b>3.</b> Contributions to the school dance fund are made by each of 4 student groups according to the table below.<br><img src="https://img.crackab.com/act/nmg10/f0274-02.jpg"><br>What is the average dollar amount of the contributions made by the 4 student groups?</p><ul class="choices"><li>A. $110.00</li><li>B. $55.00</li><li>C. $35.00</li><li>D. $27.50</li><li>E. $22.50</li></ul></div><div class="question"><p><b>4.</b> Bus <em>X</em> travels 40 miles per hour for 2 hours; Bus <em>Y</em> travels 60 miles per hour for <img src="https://img.crackab.com/act/nmg10/e0274-01.jpg"> hours. What is the difference, in miles, between the number of miles traveled by Bus <em>X</em> and the number of miles traveled by Bus <em>Y</em>?</p><ul class="choices"><li>F. 10</li><li>G. 20</li><li>H. 50</li><li>J. 80</li><li>K. 90</li></ul></div><div class="question"><p><b>5.</b> Which of the following is a value of <em>r</em> for which (<em>r</em> + 2)(<em>r</em> - 3) = 0?</p><ul class="choices"><li>A. 6</li><li>B. 0</li><li>C. -2</li><li>D. -3</li><li>E. -6</li></ul></div><div class="question"><p><b>6.</b> In the parallelogram <em>PQRS</em> shown below, <em>PS</em> is 7 centimeters long. If the parallelogram's perimeter is 40 centimeters, how many centimeters long is <em>PQ</em>?<br><img src="https://img.crackab.com/act/nmg10/f0275-01.jpg"></p><ul class="choices"><li>F. 49</li><li>G. 26</li><li>H. 13</li><li>J. 10</li><li>K. 5.7</li></ul></div><div class="question"><p><b>7.</b> In the standard (<em>x</em>, <em>y</em>) coordinate plane, if the <em>x</em>-coordinate of each point on a line is 5 more than half the <em>y</em>-coordinate, what is the slope of the line?</p><ul class="choices"><li>A. -5</li><li>B. <img src="https://img.crackab.com/act/nmg10/e0275-01.jpg"></li><li>C. <img src="https://img.crackab.com/act/nmg10/e0275-02.jpg"></li><li>D. 2</li><li>E. 5</li></ul></div><div class="question"><p><b>8.</b> A rectangular garden has a length of <em>x</em> and a width of <em>y</em>. The garden has its length reduced by 3 feet and its width extended by 2 feet. What is the area of the new garden?</p><ul class="choices"><li>F. <em>x</em> + <em>y</em></li><li>G. (<em>x</em> - 3)(<em>y</em> - 2)</li><li>H. (<em>x</em> + 3)(<em>y</em> + 2)</li><li>J. (<em>x</em> - 3)(<em>y</em> + 2)</li><li>K. (<em>x</em> + 3)(<em>y</em> - 2)</li></ul></div><div class="question"><p><b>9.</b> If <em>x</em> = 3<em>yz</em><sup>2</sup>, what is <em>y</em> in terms of <em>x</em> and <em>z</em>?</p><ul class="choices"><li>A. <img src="https://img.crackab.com/act/nmg10/e0275-03.jpg"></li><li>B. 3<em>xz</em><sup>2</sup></li><li>C. <img src="https://img.crackab.com/act/nmg10/e0275-04.jpg"></li><li>D. <img src="https://img.crackab.com/act/nmg10/e0275-05.jpg"></li><li>E. <img src="https://img.crackab.com/act/nmg10/e0275-06.jpg"></li></ul></div><div class="question"><p><b>10.</b> In the figure below, what is the measure of ∠<em>α</em>?<br><img src="https://img.crackab.com/act/nmg10/f0276-01.jpg"></p><ul class="choices"><li>F. 20°</li><li>G. 55°</li><li>H. 70°</li><li>J. 75°</li><li>K. 110°</li></ul></div><div class="submit-wrap"><button class="submit-btn" onclick="gradeTest()">Submit Test</button><button class="reset-btn" onclick="resetTest()">Try Again</button>
+<div class="report-wrap"><input type="text" class="name-input" placeholder="Student name (for report)"><button class="report-btn" onclick="generateReport()">Download Report (PDF)</button></div></div><div class="nav"><a href="test208.html">&larr; Prev</a><a href="index.html">All Tests</a><a href="test210.html">Next &rarr;</a></div></div><footer><div class="container">ACT Math Practice</div></footer>
+<script>
+const ANSWERS = {"1": "A", "2": "H", "3": "D", "4": "F", "5": "C", "6": "H", "7": "D", "8": "J", "9": "A", "10": "H"};
+const EXPLANATIONS = {"1":"The correct answer is A. This question is asking you to simplify the fraction, so the first step is to divide -28 by 4, which is -7. Eliminate answer choices D and E. Now recall that when you divide the same base, you subtract the exponents. So,  and .", "2":"The correct answer is H. To calculate the new hourly rate, multiply the current rate by 18%, or 0.18, its decimal equivalent, and add the result to the current rate: 30(0.18) + 30  =  30 + 5.40, or $35.40", "3":"The correct answer is D. To find the average, divide the sum of the contributions by the number of contributions, as follows:", "4":"The correct answer is F. To find the difference in the distance traveled, first find the distance traveled by each bus. Distance equals rate multiplied by time. Since Bus X travels 40 miles per hour for 2 hours, it traveled 40(2)  =  80 miles. Likewise, since Bus Y travels 60 miles per hour for  hours, it traveled 60(1.5)  =  90 miles. Therefore, the difference is 90 - 80, or 10 miles.", "5":"The correct answer is C. The expression (r + 2)(r - 3) will equal zero when either r + 2 or r - 3 equals zero. Thus r  =  -2 or r  =  3.", "6":"The correct answer is H. The perimeter is the distance around the parallelogram. In parallelograms, opposing sides have equal lengths. If PS is 7 cm long, so is QR. Also, PQ and SR will have the same length. Set the length of PQ and SR to l, and solve.", "7":"The correct answer is D. If the x-coordinate of each point on a line is 5 more than half the y-coordinate, then . To find the slope of the line, solve for y and put the equation in slope-intercept form (y  =  mx + b, where m is the slope). To do so, first subtract 5 from both sides, then multiply the entire equation by 2 to get y  =  2x -10. The slope is 2.", "8":"The correct answer is J. You are given that a rectangular garden has a length of x and a width of y, and has its length reduced by 3 feet and its width extended by 2 feet. Therefore, the length becomes x - 3 and its width becomes y + 2. The area of the new garden is then (x - 3)(y + 2).", "9":"The correct answer is A. To get y in terms of x and z, solve x  =  3yz2 for y, as shown below:", "10":"The correct answer is H. The triangle pictured is isosceles, meaning that the two angles opposite the sides that have equal length have equal measure. Since the sum of the interior angles of a triangle is 180°, the measure of ∠α is 180° - 2(55°), or 180° - 110°, which is 70°."};
+let graded = false;
+
+document.querySelectorAll('.choices li').forEach(li => {
+  // Remove old onclick
+  li.removeAttribute('onclick');
+  li.addEventListener('click', function() {
+    if (graded) return;
+    const siblings = this.parentElement.querySelectorAll('li');
+    siblings.forEach(s => s.classList.remove('selected'));
+    this.classList.add('selected');
+  });
+});
+
+function gradeTest() {
+  if (graded) return;
+  graded = true;
+  let correct = 0;
+  const total = Object.keys(ANSWERS).length;
+  
+  document.querySelectorAll('.question').forEach((qDiv, idx) => {
+    const qNum = idx + 1;
+    const correctAns = ANSWERS[qNum];
+    if (!correctAns) return;
+    const choices = qDiv.querySelectorAll('.choices li');
+    const selected = qDiv.querySelector('.choices li.selected');
+    const selectedLetter = selected ? selected.textContent.trim().charAt(0) : null;
+    
+    choices.forEach(li => {
+      const letter = li.textContent.trim().charAt(0);
+      if (letter === correctAns) li.classList.add('show-correct');
+      li.style.cursor = 'default';
+    });
+    
+    const tag = document.createElement('span');
+    tag.className = 'result-tag';
+    
+    if (selectedLetter === correctAns) {
+      correct++;
+      tag.className += ' correct';
+      tag.textContent = 'Correct';
+      if (selected) { selected.classList.remove('selected'); selected.classList.add('correct'); }
+    } else {
+      tag.className += ' wrong';
+      tag.textContent = 'Incorrect (Answer: ' + correctAns + ')';
+      if (selected) { selected.classList.remove('selected'); selected.classList.add('wrong'); }
+    }
+    
+    const firstP = qDiv.querySelector('p');
+    if (firstP) firstP.appendChild(tag);
+    
+    if (typeof EXPLANATIONS !== 'undefined' && EXPLANATIONS[qNum]) {
+      const explDiv = document.createElement('div');
+      explDiv.className = 'explanation show';
+      explDiv.innerHTML = '<strong>Explanation:</strong> ' + EXPLANATIONS[qNum];
+      qDiv.appendChild(explDiv);
+    }
+  });
+  
+  const pct = Math.round((correct / total) * 100);
+  document.querySelector('.submit-btn').style.display = 'none';
+  document.querySelector('.reset-btn').style.display = 'block';
+  var rw=document.querySelector('.report-wrap');if(rw)rw.style.display='block';
+  var bs=document.createElement('div');bs.className='bottom-score';bs.id='bottom-score';
+  bs.innerHTML='<h2 style="font-size:1.3rem;margin-bottom:6px;color:#1a3a4a">Your Score</h2><div class="pct '+(pct>=80?'good':pct>=60?'ok':'bad')+'">'+pct+'%</div><div class="detail">'+correct+' out of '+total+' correct</div>';
+  document.querySelector('.submit-wrap').after(bs);
+  try{var tn=location.pathname.match(/test(\d+)/);if(tn)localStorage.setItem('actmath_'+tn[1],pct);}catch(e){}
+}
+
+function resetTest() {
+  graded = false;
+  var bsEl=document.getElementById('bottom-score');if(bsEl)bsEl.remove();
+  document.querySelector('.submit-btn').style.display = '';
+  document.querySelector('.reset-btn').style.display = 'none';
+  var rw=document.querySelector('.report-wrap');if(rw)rw.style.display='none';
+  var ni=document.querySelector('.name-input');if(ni)ni.value='';
+  document.querySelectorAll('.choices li').forEach(li => {
+    li.classList.remove('selected','correct','wrong','show-correct');
+    li.style.cursor = 'pointer';
+  });
+  document.querySelectorAll('.result-tag').forEach(t => t.remove());
+  document.querySelectorAll('.explanation').forEach(e => e.remove());
+}
+
+function generateReport(){
+  var nameInput=document.querySelector('.name-input');
+  var name=(nameInput&&nameInput.value.trim())||'Student';
+  var testName=document.querySelector('header h1').textContent;
+  var bs=document.getElementById('bottom-score');
+  var scorePct=bs?bs.querySelector('.pct').textContent:'';
+  var detailTxt=bs?bs.querySelector('.detail').textContent:'';
+  var d=new Date().toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'});
+  var btn=document.querySelector('.report-btn');btn.textContent='Generating...';btn.disabled=true;
+  var s=document.createElement('script');
+  s.src='https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js';
+  s.onerror=function(){btn.textContent='Download Report (PDF)';btn.disabled=false;alert('Could not load PDF library.');};
+  s.onload=function(){
+    var doc=new jspdf.jsPDF('portrait','mm','letter');
+    var pw=215.9,ph=279.4,mx=12,cw=pw-2*mx,y=8;
+    doc.setFillColor(26,58,74);doc.rect(0,0,pw,22,'F');
+    doc.setTextColor(255,255,255);doc.setFontSize(13);doc.setFont('helvetica','bold');
+    doc.text(testName,mx,9);
+    doc.setFontSize(7.5);doc.setFont('helvetica','normal');
+    doc.text(d+'  |  Student: '+name,mx,14.5);
+    doc.setFontSize(18);doc.setFont('helvetica','bold');
+    doc.text(scorePct,pw-mx,11,{align:'right'});
+    doc.setFontSize(7.5);doc.setFont('helvetica','normal');
+    doc.text(detailTxt,pw-mx,16,{align:'right'});
+    y=25;
+    doc.setDrawColor(26,58,74);doc.setLineWidth(0.3);doc.line(mx,y,pw-mx,y);y+=3;
+    document.querySelectorAll('.question').forEach(function(qDiv,idx){
+      var qNum=idx+1;var ca=ANSWERS[qNum];if(!ca)return;
+      var sel=qDiv.querySelector('.choices li.correct,.choices li.wrong');
+      var sa=sel?sel.textContent.trim().charAt(0):'-';
+      var ok=sel&&sel.classList.contains('correct');
+      if(ok){
+        doc.setFillColor(40,167,69);doc.circle(mx+1.2,y-1,1,'F');
+        doc.setTextColor(33,33,33);doc.setFont('helvetica','bold');doc.setFontSize(8);
+        doc.text('Q'+qNum,mx+4,y);
+        doc.setFont('helvetica','normal');doc.setTextColor(40,167,69);
+        doc.text('Correct ('+ca+')',mx+14,y);
+      }else{
+        doc.setFillColor(220,53,69);doc.circle(mx+1.2,y-1,1,'F');
+        doc.setTextColor(33,33,33);doc.setFont('helvetica','bold');doc.setFontSize(8);
+        doc.text('Q'+qNum,mx+4,y);
+        doc.setFont('helvetica','normal');doc.setTextColor(220,53,69);
+        doc.text('Incorrect',mx+14,y);
+        doc.setTextColor(120,120,120);
+        doc.text('(Chose '+sa+', Correct: '+ca+')',mx+32,y);
+      }
+      y+=3.2;
+      var qP=qDiv.querySelector('p');
+      if(qP){
+        var qT=qP.cloneNode(true);
+        var tags=qT.querySelectorAll('.result-tag');tags.forEach(function(t){t.remove();});
+        var qt=qT.textContent.replace(/^\d+\.\s*/,'').trim();
+        if(qt.length>0){
+          doc.setFont('helvetica','normal');doc.setTextColor(60,60,60);doc.setFontSize(6.5);
+          var ql=doc.splitTextToSize(qt,cw-5);
+          ql=ql.slice(0,1);
+          if(doc.splitTextToSize(qt,cw-5).length>1){ql[0]=ql[0].substring(0,ql[0].length-3)+'...';}
+          doc.text(ql,mx+4,y);y+=2.4;
+        }
+      }
+      if(typeof EXPLANATIONS!=='undefined'&&EXPLANATIONS[qNum]){
+        doc.setFont('helvetica','italic');doc.setTextColor(100,100,100);doc.setFontSize(6);
+        var lines=doc.splitTextToSize(EXPLANATIONS[qNum],cw-5);
+        if(lines.length>2){lines=lines.slice(0,2);lines[1]=lines[1].substring(0,Math.max(0,lines[1].length-3))+'...';}
+        doc.text(lines,mx+4,y);y+=lines.length*2.2;
+      }
+      y+=2;
+    });
+    doc.setDrawColor(200,200,200);doc.setLineWidth(0.2);doc.line(mx,ph-10,pw-mx,ph-10);
+    doc.setTextColor(170,170,170);doc.setFontSize(6);doc.setFont('helvetica','normal');
+    doc.text('ACT Math Practice  |  Score Report',pw/2,ph-7,{align:'center'});
+    var tn=location.pathname.match(/test(\d+)/);
+    var testNum=tn?parseInt(tn[1])-100:0;
+    var ds=new Date().toISOString().slice(0,10);
+    doc.save('ACT-Math-Test-'+testNum+'-'+ds+'.pdf');
+    btn.textContent='Download Report (PDF)';btn.disabled=false;
+  };
+  document.head.appendChild(s);
+}
+</script>
+</body></html>

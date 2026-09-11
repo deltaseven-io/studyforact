@@ -1,0 +1,222 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>ACT Math Test 48</title><style>@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:#fff;color:#2d3748;line-height:1.7}
+.container{max-width:800px;margin:0 auto;padding:20px 24px}
+header{background:linear-gradient(135deg,#1a3a4a 0%,#2d6a7a 100%);color:#fff;padding:28px 0;margin-bottom:36px;text-align:center}
+header .container{display:block}
+header h1{font-size:1.6rem;font-weight:700;letter-spacing:-0.3px}
+header a{color:rgba(255,255,255,.7);text-decoration:none;font-size:.9rem;display:inline-block;margin-bottom:6px;transition:color .2s}
+header a:hover{color:#fff}
+.question{background:#fff;border-radius:12px;padding:24px;margin-bottom:20px;border:1px solid #e2e8f0;transition:border-color .2s}
+.question:hover{border-color:#cbd5e0}
+.question p{margin-bottom:14px;font-size:1.05rem}
+img{max-width:100%;height:auto;margin:4px 0;vertical-align:middle}
+.choices{list-style:none}
+.choices li{padding:10px 14px;margin:6px 0;border-radius:8px;cursor:pointer;transition:all .2s;border:2px solid transparent}
+.choices li:hover{background:#f0f7fa}
+.choices li.selected{background:#d1ecf1;border-color:#bee5eb}
+.choices li.correct{background:#d4edda;border-color:#28a745}
+.choices li.wrong{background:#f8d7da;border-color:#dc3545}
+.choices li.show-correct{background:#d4edda;border-color:#28a745}
+.submit-wrap{text-align:center;margin:36px 0}
+.submit-btn{display:inline-block;padding:14px 40px;background:linear-gradient(135deg,#1a3a4a,#2d6a7a);color:#fff;border:none;border-radius:10px;font-size:1.1rem;cursor:pointer;font-weight:600;font-family:inherit;transition:all .25s;letter-spacing:.3px}
+.submit-btn:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(26,58,74,.25)}
+.score-box{background:#fff;border-radius:12px;padding:28px;margin-bottom:28px;text-align:center;border:1px solid #e2e8f0;box-shadow:0 4px 20px rgba(0,0,0,.06);display:none}
+.score-box h2{font-size:1.4rem;margin-bottom:8px;color:#1a3a4a;text-align:center}
+.score-box .pct{font-size:3rem;font-weight:700}
+.score-box .pct.good{color:#28a745}
+.score-box .pct.ok{color:#e6a817}
+.score-box .pct.bad{color:#dc3545}
+.score-box .detail{color:#666;margin-top:4px}
+.result-tag{display:inline-block;padding:2px 10px;border-radius:12px;font-size:.8rem;font-weight:600;margin-left:8px}
+.result-tag.correct{background:#d4edda;color:#155724}
+.result-tag.wrong{background:#f8d7da;color:#721c24}
+.reset-btn{display:none;margin:16px auto;padding:12px 28px;background:#6c757d;color:#fff;border:none;border-radius:10px;font-size:1rem;cursor:pointer;font-family:inherit;transition:all .25s}
+.reset-btn:hover{background:#5a6268;transform:translateY(-1px)}
+.explanation{background:#f0f7ff;border-left:4px solid #1a3a4a;padding:14px 18px;margin-top:14px;border-radius:0 8px 8px 0;font-size:.95rem;color:#444;display:none}
+.explanation.show{display:block}
+.explanation strong{color:#1a3a4a}
+.nav{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin:36px 0}
+.nav a{display:inline-block;padding:10px 24px;background:linear-gradient(135deg,#1a3a4a,#2d6a7a);color:#fff;text-decoration:none;border-radius:10px;font-weight:500;font-size:.95rem;transition:all .25s}
+.nav a:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(26,58,74,.25)}
+footer{text-align:center;padding:36px 24px;color:#8899a4;font-size:.85rem;border-top:1px solid #e2e8f0;margin-top:40px}
+.report-btn{display:inline-block;margin:0;padding:12px 28px;background:linear-gradient(135deg,#1a3a4a,#2d6a7a);color:#fff;border:none;border-radius:10px;font-size:1rem;cursor:pointer;font-family:inherit;transition:all .25s}
+.report-btn:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(26,58,74,.25)}
+.bottom-score{background:#fff;border-radius:12px;padding:20px;margin:20px 0;text-align:center;border:1px solid #e2e8f0;box-shadow:0 4px 20px rgba(0,0,0,.06)}
+.bottom-score .pct{font-size:2.5rem;font-weight:700}
+.bottom-score .pct.good{color:#28a745}
+.bottom-score .pct.ok{color:#e6a817}
+.bottom-score .pct.bad{color:#dc3545}
+.bottom-score .detail{color:#666;margin-top:4px;font-size:.95rem}
+.report-wrap{display:none;text-align:center;margin:16px 0}
+.name-input{padding:10px 14px;border:1px solid #e2e8f0;border-radius:10px;font-size:.95rem;font-family:inherit;width:200px;margin-right:8px;outline:none;transition:border-color .2s}
+.name-input:focus{border-color:#1a3a4a}
+</style></head><body><header><div class="container"><a href="index.html">&larr; All Tests</a><h1>ACT Math Practice Test 48</h1></div></header><div class="container"><div id="score-box" class="score-box"><h2>Your Score</h2><div class="pct">0%</div><div class="detail"></div></div><div class="question"><p><b>1.</b> Three different lines in the same plane can intersect at how many points?</p><ul class="choices"><li>F. 1</li><li>G. 1 or 2</li><li>H. 1 or 3</li><li>J. 1, 2, or 3</li><li>K. 0, 1, 2, or 3</li></ul></div><div class="question"><p><b>2.</b> If -1 &lt; <i>a</i> &lt; 0, -3 &lt; <i>b</i> &lt; -4, and <i>c</i> = <i>a</i> - <i>b</i>, then which of the following statements is true?</p><ul class="choices"><li>A. <i>c</i> &lt; <i>a</i></li><li>B. <i>c</i> &lt; <i>b</i></li><li>C. <i>c</i> &lt; <i>a</i> + <i>b</i></li><li>D. <i>c</i> &lt; 0</li><li>E. <i>c</i> &gt; 0</li></ul></div><div class="question"><p><b>3.</b> What is the slope between the points (-2, 5) and (0, 8)?</p><ul class="choices"><li>F. <img alt="image" src="https://www.crackab.com/image/tests/6/00612.jpg"></li><li>G. <img alt="image" src="https://www.crackab.com/image/tests/6/00613.jpg"></li><li>H. <img alt="image" src="https://www.crackab.com/image/tests/6/00614.jpg"></li><li>J. <img alt="image" src="https://www.crackab.com/image/tests/6/00615.jpg"></li><li>K. <img alt="image" src="https://www.crackab.com/image/tests/6/00616.jpg"></li></ul></div><div class="question"><p><b>4.</b> Rosemary and Caroline are baking cupcakes for a party. They are working from a recipe that will make 32 cupcakes. The recipe requires 2<img alt="image" src="https://www.crackab.com/image/tests/6/00617.jpg"> cups of sugar to make 1 full batch. If they need to make 250 cupcakes for the party, which of the following amounts is the LEAST amount of sugar they need to make all 250 cupcakes?</p><ul class="choices"><li>A. 5 cups</li><li>B. 10 cups</li><li>C. 15 cups</li><li>D. 20 cups</li><li>E. 25 cups</li></ul></div><div class="question"><p><b>5.</b> For the following triangle, what is the value of sin (<i>c</i>)?<br><img alt="image" src="https://www.crackab.com/image/tests/6/00623.jpg"></p><ul class="choices"><li>F. <img alt="image" src="https://www.crackab.com/image/tests/6/00618.jpg"></li><li>G. <img alt="image" src="https://www.crackab.com/image/tests/6/00619.jpg"></li><li>H. <img alt="image" src="https://www.crackab.com/image/tests/6/00620.jpg"></li><li>J. <img alt="image" src="https://www.crackab.com/image/tests/6/00621.jpg"></li><li>K. <img alt="image" src="https://www.crackab.com/image/tests/6/00622.jpg"></li></ul></div><div class="question"><p><b>6.</b> If <img alt="image" src="https://www.crackab.com/image/tests/6/00624.jpg"> then <i>x</i> = ?</p><ul class="choices"><li>A. -21</li><li>B. -4</li><li>C. 4</li><li>D. 7</li><li>E. 21</li></ul></div><div class="question"><p><b>7.</b> In the figure below, m ∠<i>WYZ</i> = 28° and <img alt="image" src="https://www.crackab.com/image/tests/6/00625.jpg"> bisects ∠<i>ZYX</i>. Which of the following is the measure of ∠<i>XYM</i>?<br><img alt="image" src="https://www.crackab.com/image/tests/6/00626.jpg"></p><ul class="choices"><li>F. 76°</li><li>G. 78°</li><li>H. 84°</li><li>J. 90°</li><li>K. 152°</li></ul></div><div class="question"><p><b>8.</b> In the figure below, <img alt="image" src="https://www.crackab.com/image/tests/6/00172.jpg"> is a diameter of the circle and m ∠<i>BAC</i> = 35°. Find the measure of arc <img alt="image" src="https://www.crackab.com/image/tests/6/00627.jpg">.<br><img alt="image" src="https://www.crackab.com/image/tests/6/00628.jpg"></p><ul class="choices"><li>A. 35°</li><li>B. 60°</li><li>C. 70°</li><li>D. 90°</li><li>E. 110°</li></ul></div><div class="question"><p><b>9.</b> Which of the following is the greatest common factor of 36<i>m</i><sup class="frac">4</sup><i>n</i><sup class="frac">3</sup>p<sup class="frac">5</sup> and 24<i>m</i><sup class="frac">2</sup><i>n</i>?</p><ul class="choices"><li>F. 6<i>m</i><sup class="frac">2</sup><i>n</i></li><li>G. 6<i>m</i><sup class="frac">4</sup><i>n</i><sup class="frac">3</sup>p<sup class="frac">5</sup></li><li>H. 12<i>m</i><sup class="frac">2</sup><i>n</i></li><li>J. 12<i>m</i><sup class="frac">2</sup><i>np</i><sup class="frac">5</sup></li><li>K. 72<i>m</i><sup class="frac">2</sup><i>n</i></li></ul></div><div class="question"><p><b>10.</b> Dave drove 144 miles to see his favorite band in concert. The drive to the concert took exactly 3 hours. On the drive home, Dave drove 10 miles per hour faster than he drove to the concert. Approximately how long did the return trip take?</p><ul class="choices"><li>A. 2.2 hours</li><li>B. 2.5 hours</li><li>C. 2.7 hours</li><li>D. 2.9 hours</li><li>E. 3 hours</li></ul></div><div class="question"><p><b>12.</b> Paxton leaves his house at noon heading due east for 4 miles. He then turns and heads directly south for 6 miles until he reaches the marina. What is the straight-line distance from Paxton's house to the marina?</p><ul class="choices"><li>A. 2<img alt="image" src="https://www.crackab.com/image/tests/6/00630.jpg"></li><li>B. 7</li><li>C. 2<img alt="image" src="https://www.crackab.com/image/tests/6/00631.jpg"></li><li>D. 10</li><li>E. 4<img alt="image" src="https://www.crackab.com/image/tests/6/00631.jpg"></li></ul></div><div class="question"><p><b>13.</b> Which of the following is an expression for the area of the triangle below?<br><img alt="image" src="https://www.crackab.com/image/tests/6/00633.jpg"></p><ul class="choices"><li>F. 2<i>w</i><sup class="frac">2</sup> - 8<i>w</i> + 10</li><li>G. <img alt="image" src="https://www.crackab.com/image/tests/6/00632.jpg"></li><li>H. 6<i>w</i><sup class="frac">2</sup> - 24<i>w</i> + 21</li><li>J. 12<i>w</i><sup class="frac">2</sup> - 48<i>w</i> + 42</li><li>K. (2<i>w</i> - 7)(<i>w</i> + 3)</li></ul></div><div class="question"><p><b>14.</b> What is the difference in the measure of one interior angle and one exterior angle of a regular decagon?</p><ul class="choices"><li>A. 36°</li><li>B. 64°</li><li>C. 108°</li><li>D. 144°</li><li>E. 180°</li></ul></div><div class="question"><p><b>15.</b> For <img alt="image" src="https://www.crackab.com/image/tests/6/00163.jpg"><i>ABC</i>, what is the value of tan(<i>a</i>) - cos(<i>c</i>)?<br><img alt="image" src="https://www.crackab.com/image/tests/6/00638.jpg"></p><ul class="choices"><li>F. <img alt="image" src="https://www.crackab.com/image/tests/6/00634.jpg"></li><li>G. <img alt="image" src="https://www.crackab.com/image/tests/6/00635.jpg"></li><li>H. 0</li><li>J. <img alt="image" src="https://www.crackab.com/image/tests/6/00636.jpg"></li><li>K. <img alt="image" src="https://www.crackab.com/image/tests/6/00637.jpg"></li></ul></div><div class="submit-wrap"><button class="submit-btn" onclick="gradeTest()">Submit Test</button><button class="reset-btn" onclick="resetTest()">Try Again</button>
+<div class="report-wrap"><input type="text" class="name-input" placeholder="Student name (for report)"><button class="report-btn" onclick="generateReport()">Download Report (PDF)</button></div></div><div class="nav"><a href="test147.html">&larr; Prev</a><a href="index.html">All Tests</a><a href="test149.html">Next &rarr;</a></div></div><footer><div class="container">ACT Math Practice</div></footer>
+<script>
+const ANSWERS = {"1": "K", "2": "E", "3": "K", "4": "D", "5": "G", "6": "C", "7": "F", "8": "E", "9": "H", "10": "B", "11": "F", "12": "C", "13": "G", "14": "C", "15": "J"};
+const EXPLANATIONS = {"1":"(K) The 3 lines could be parallel yielding no points of intersection, they could all intersect at the same point giving 1 point of intersection, or 2 lines could be parallel with the third crossing the other 2 giving 2 points of intersection, and finally the 3 lines could intersect to form a triangle making 3 points of intersection. See the diagram below.", "2":"(E) Since c  =  a – b, and b is negative, its value actually gets added to a because subtracting a negative number is the same as adding a positive. When b is added to a the result will always be a positive number. Testing some numbers in the range of a and b will help lead you to the right answer.", "3":"(K) To find the slope between 2 points use the slope formula  to get . Simplify to get . Always be careful and check your signs when using the slope formula; it is easy to make an integer error.", "4":"(D) Setting up a proportion to solve for how much sugar they need gives . Cross multiply and solve for x to get x ≈ 19.5, which rounds to 20.", "5":"(G) Recall that the . To find the side opposite angle C, either do the Pythagorean Theorem, or memorize your special 8-15-17 right triangle. Calculating AB gives 82 + x2  =  172 → x  =  15. Now using the above fact, sin(C)  =  .", "6":"(C) Using the laws of exponents we get 53 · 5–7  =  53 + (–7)  =  5–4. Recall that a negative exponent just means take the reciprocal of the base to get . Therefore, x  =  4.", "7":"(F) WYX is a straight line making it 180°. Since ∠WYZ  =  28°, the remaining angle ZYX must equal 180 – 28  =  152. YM bisects angle ZYX making each angle .", "8":"(E) Recall that an angle that lies on a circle is exactly  of its intercepted arc, making arc BC  =  2(35)  =  70. Since AC is a diameter of the circle, the total arc from A to C measures 180°. To find arc AB take 180 – 70  =  110°.", "9":"(H) To find the greatest common factor of two numbers, first find the largest number that divides into both 24 and 36. Testing various numbers gives 12 as the GCF. To find the GCF of two like variables, always take the smallest power. The GCF of m4 and m2 is m2 because it is the smaller power. Doing this for n and p as well gives the answer 12m2n.", "10":"(B) Using the formula d  =  r · t, we can solve to see how fast Dave was initially driving: 144  =  r · 3 → r  =  48. Dave then speeds up 10 mph so he is now traveling 58 mph on the return trip. To calculate the time, use d  =  r · t again to get 144  =  58 · t → t ≈ 2.5.", "11":"(F) In matrix addition, you add elements in the same position to get the sum. Therefore, (2x – 1) + (–4x – 2)  =  12. Solve the equation to get –2x – 3  =  12 → x  =  –7.5.", "12":"(C) Connecting the dots of the path Paxton took will form a right triangle where the 4 miles and the 6 miles make up the legs of the triangle. To find the hypotenuse, use the Pythagorean Theorem to get 42 + 62  =  c2 → c  =  . Simplify to get .", "13":"(G) Use the formula  to find the area of the triangle to get  =    =  .", "14":"(C) To find an interior angle of a regular polygon, use the formula . Substituting 10 for n we get . Exterior angles of a polygon are always supplementary to interior angles, making each exterior angle 180 – 144  =  36. Now, find the difference between 144 and 36 to get 144 – 36  =  108°.", "15":"(J) Recall from SOH CAH TOA that . The given triangle is a special 8-15-17 triangle, therefore BC  =  8. Using this and SOH CAH TOA, we get tan(A) – cos(C)  =  . Combine the fractions together to get ."};
+let graded = false;
+
+document.querySelectorAll('.choices li').forEach(li => {
+  // Remove old onclick
+  li.removeAttribute('onclick');
+  li.addEventListener('click', function() {
+    if (graded) return;
+    const siblings = this.parentElement.querySelectorAll('li');
+    siblings.forEach(s => s.classList.remove('selected'));
+    this.classList.add('selected');
+  });
+});
+
+function gradeTest() {
+  if (graded) return;
+  graded = true;
+  let correct = 0;
+  const total = Object.keys(ANSWERS).length;
+  
+  document.querySelectorAll('.question').forEach((qDiv, idx) => {
+    const qNum = idx + 1;
+    const correctAns = ANSWERS[qNum];
+    if (!correctAns) return;
+    const choices = qDiv.querySelectorAll('.choices li');
+    const selected = qDiv.querySelector('.choices li.selected');
+    const selectedLetter = selected ? selected.textContent.trim().charAt(0) : null;
+    
+    choices.forEach(li => {
+      const letter = li.textContent.trim().charAt(0);
+      if (letter === correctAns) li.classList.add('show-correct');
+      li.style.cursor = 'default';
+    });
+    
+    const tag = document.createElement('span');
+    tag.className = 'result-tag';
+    
+    if (selectedLetter === correctAns) {
+      correct++;
+      tag.className += ' correct';
+      tag.textContent = 'Correct';
+      if (selected) { selected.classList.remove('selected'); selected.classList.add('correct'); }
+    } else {
+      tag.className += ' wrong';
+      tag.textContent = 'Incorrect (Answer: ' + correctAns + ')';
+      if (selected) { selected.classList.remove('selected'); selected.classList.add('wrong'); }
+    }
+    
+    const firstP = qDiv.querySelector('p');
+    if (firstP) firstP.appendChild(tag);
+    
+    if (typeof EXPLANATIONS !== 'undefined' && EXPLANATIONS[qNum]) {
+      const explDiv = document.createElement('div');
+      explDiv.className = 'explanation show';
+      explDiv.innerHTML = '<strong>Explanation:</strong> ' + EXPLANATIONS[qNum];
+      qDiv.appendChild(explDiv);
+    }
+  });
+  
+  const pct = Math.round((correct / total) * 100);
+  document.querySelector('.submit-btn').style.display = 'none';
+  document.querySelector('.reset-btn').style.display = 'block';
+  var rw=document.querySelector('.report-wrap');if(rw)rw.style.display='block';
+  var bs=document.createElement('div');bs.className='bottom-score';bs.id='bottom-score';
+  bs.innerHTML='<h2 style="font-size:1.3rem;margin-bottom:6px;color:#1a3a4a">Your Score</h2><div class="pct '+(pct>=80?'good':pct>=60?'ok':'bad')+'">'+pct+'%</div><div class="detail">'+correct+' out of '+total+' correct</div>';
+  document.querySelector('.submit-wrap').after(bs);
+  try{var tn=location.pathname.match(/test(\d+)/);if(tn)localStorage.setItem('actmath_'+tn[1],pct);}catch(e){}
+}
+
+function resetTest() {
+  graded = false;
+  var bsEl=document.getElementById('bottom-score');if(bsEl)bsEl.remove();
+  document.querySelector('.submit-btn').style.display = '';
+  document.querySelector('.reset-btn').style.display = 'none';
+  var rw=document.querySelector('.report-wrap');if(rw)rw.style.display='none';
+  var ni=document.querySelector('.name-input');if(ni)ni.value='';
+  document.querySelectorAll('.choices li').forEach(li => {
+    li.classList.remove('selected','correct','wrong','show-correct');
+    li.style.cursor = 'pointer';
+  });
+  document.querySelectorAll('.result-tag').forEach(t => t.remove());
+  document.querySelectorAll('.explanation').forEach(e => e.remove());
+}
+
+function generateReport(){
+  var nameInput=document.querySelector('.name-input');
+  var name=(nameInput&&nameInput.value.trim())||'Student';
+  var testName=document.querySelector('header h1').textContent;
+  var bs=document.getElementById('bottom-score');
+  var scorePct=bs?bs.querySelector('.pct').textContent:'';
+  var detailTxt=bs?bs.querySelector('.detail').textContent:'';
+  var d=new Date().toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'});
+  var btn=document.querySelector('.report-btn');btn.textContent='Generating...';btn.disabled=true;
+  var s=document.createElement('script');
+  s.src='https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js';
+  s.onerror=function(){btn.textContent='Download Report (PDF)';btn.disabled=false;alert('Could not load PDF library.');};
+  s.onload=function(){
+    var doc=new jspdf.jsPDF('portrait','mm','letter');
+    var pw=215.9,ph=279.4,mx=12,cw=pw-2*mx,y=8;
+    doc.setFillColor(26,58,74);doc.rect(0,0,pw,22,'F');
+    doc.setTextColor(255,255,255);doc.setFontSize(13);doc.setFont('helvetica','bold');
+    doc.text(testName,mx,9);
+    doc.setFontSize(7.5);doc.setFont('helvetica','normal');
+    doc.text(d+'  |  Student: '+name,mx,14.5);
+    doc.setFontSize(18);doc.setFont('helvetica','bold');
+    doc.text(scorePct,pw-mx,11,{align:'right'});
+    doc.setFontSize(7.5);doc.setFont('helvetica','normal');
+    doc.text(detailTxt,pw-mx,16,{align:'right'});
+    y=25;
+    doc.setDrawColor(26,58,74);doc.setLineWidth(0.3);doc.line(mx,y,pw-mx,y);y+=3;
+    document.querySelectorAll('.question').forEach(function(qDiv,idx){
+      var qNum=idx+1;var ca=ANSWERS[qNum];if(!ca)return;
+      var sel=qDiv.querySelector('.choices li.correct,.choices li.wrong');
+      var sa=sel?sel.textContent.trim().charAt(0):'-';
+      var ok=sel&&sel.classList.contains('correct');
+      if(ok){
+        doc.setFillColor(40,167,69);doc.circle(mx+1.2,y-1,1,'F');
+        doc.setTextColor(33,33,33);doc.setFont('helvetica','bold');doc.setFontSize(8);
+        doc.text('Q'+qNum,mx+4,y);
+        doc.setFont('helvetica','normal');doc.setTextColor(40,167,69);
+        doc.text('Correct ('+ca+')',mx+14,y);
+      }else{
+        doc.setFillColor(220,53,69);doc.circle(mx+1.2,y-1,1,'F');
+        doc.setTextColor(33,33,33);doc.setFont('helvetica','bold');doc.setFontSize(8);
+        doc.text('Q'+qNum,mx+4,y);
+        doc.setFont('helvetica','normal');doc.setTextColor(220,53,69);
+        doc.text('Incorrect',mx+14,y);
+        doc.setTextColor(120,120,120);
+        doc.text('(Chose '+sa+', Correct: '+ca+')',mx+32,y);
+      }
+      y+=3.2;
+      var qP=qDiv.querySelector('p');
+      if(qP){
+        var qT=qP.cloneNode(true);
+        var tags=qT.querySelectorAll('.result-tag');tags.forEach(function(t){t.remove();});
+        var qt=qT.textContent.replace(/^\d+\.\s*/,'').trim();
+        if(qt.length>0){
+          doc.setFont('helvetica','normal');doc.setTextColor(60,60,60);doc.setFontSize(6.5);
+          var ql=doc.splitTextToSize(qt,cw-5);
+          ql=ql.slice(0,1);
+          if(doc.splitTextToSize(qt,cw-5).length>1){ql[0]=ql[0].substring(0,ql[0].length-3)+'...';}
+          doc.text(ql,mx+4,y);y+=2.4;
+        }
+      }
+      if(typeof EXPLANATIONS!=='undefined'&&EXPLANATIONS[qNum]){
+        doc.setFont('helvetica','italic');doc.setTextColor(100,100,100);doc.setFontSize(6);
+        var lines=doc.splitTextToSize(EXPLANATIONS[qNum],cw-5);
+        if(lines.length>2){lines=lines.slice(0,2);lines[1]=lines[1].substring(0,Math.max(0,lines[1].length-3))+'...';}
+        doc.text(lines,mx+4,y);y+=lines.length*2.2;
+      }
+      y+=2;
+    });
+    doc.setDrawColor(200,200,200);doc.setLineWidth(0.2);doc.line(mx,ph-10,pw-mx,ph-10);
+    doc.setTextColor(170,170,170);doc.setFontSize(6);doc.setFont('helvetica','normal');
+    doc.text('ACT Math Practice  |  Score Report',pw/2,ph-7,{align:'center'});
+    var tn=location.pathname.match(/test(\d+)/);
+    var testNum=tn?parseInt(tn[1])-100:0;
+    var ds=new Date().toISOString().slice(0,10);
+    doc.save('ACT-Math-Test-'+testNum+'-'+ds+'.pdf');
+    btn.textContent='Download Report (PDF)';btn.disabled=false;
+  };
+  document.head.appendChild(s);
+}
+</script>
+</body></html>

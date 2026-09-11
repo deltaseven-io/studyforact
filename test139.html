@@ -1,0 +1,222 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>ACT Math Test 39</title><style>@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:#fff;color:#2d3748;line-height:1.7}
+.container{max-width:800px;margin:0 auto;padding:20px 24px}
+header{background:linear-gradient(135deg,#1a3a4a 0%,#2d6a7a 100%);color:#fff;padding:28px 0;margin-bottom:36px;text-align:center}
+header .container{display:block}
+header h1{font-size:1.6rem;font-weight:700;letter-spacing:-0.3px}
+header a{color:rgba(255,255,255,.7);text-decoration:none;font-size:.9rem;display:inline-block;margin-bottom:6px;transition:color .2s}
+header a:hover{color:#fff}
+.question{background:#fff;border-radius:12px;padding:24px;margin-bottom:20px;border:1px solid #e2e8f0;transition:border-color .2s}
+.question:hover{border-color:#cbd5e0}
+.question p{margin-bottom:14px;font-size:1.05rem}
+img{max-width:100%;height:auto;margin:4px 0;vertical-align:middle}
+.choices{list-style:none}
+.choices li{padding:10px 14px;margin:6px 0;border-radius:8px;cursor:pointer;transition:all .2s;border:2px solid transparent}
+.choices li:hover{background:#f0f7fa}
+.choices li.selected{background:#d1ecf1;border-color:#bee5eb}
+.choices li.correct{background:#d4edda;border-color:#28a745}
+.choices li.wrong{background:#f8d7da;border-color:#dc3545}
+.choices li.show-correct{background:#d4edda;border-color:#28a745}
+.submit-wrap{text-align:center;margin:36px 0}
+.submit-btn{display:inline-block;padding:14px 40px;background:linear-gradient(135deg,#1a3a4a,#2d6a7a);color:#fff;border:none;border-radius:10px;font-size:1.1rem;cursor:pointer;font-weight:600;font-family:inherit;transition:all .25s;letter-spacing:.3px}
+.submit-btn:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(26,58,74,.25)}
+.score-box{background:#fff;border-radius:12px;padding:28px;margin-bottom:28px;text-align:center;border:1px solid #e2e8f0;box-shadow:0 4px 20px rgba(0,0,0,.06);display:none}
+.score-box h2{font-size:1.4rem;margin-bottom:8px;color:#1a3a4a;text-align:center}
+.score-box .pct{font-size:3rem;font-weight:700}
+.score-box .pct.good{color:#28a745}
+.score-box .pct.ok{color:#e6a817}
+.score-box .pct.bad{color:#dc3545}
+.score-box .detail{color:#666;margin-top:4px}
+.result-tag{display:inline-block;padding:2px 10px;border-radius:12px;font-size:.8rem;font-weight:600;margin-left:8px}
+.result-tag.correct{background:#d4edda;color:#155724}
+.result-tag.wrong{background:#f8d7da;color:#721c24}
+.reset-btn{display:none;margin:16px auto;padding:12px 28px;background:#6c757d;color:#fff;border:none;border-radius:10px;font-size:1rem;cursor:pointer;font-family:inherit;transition:all .25s}
+.reset-btn:hover{background:#5a6268;transform:translateY(-1px)}
+.explanation{background:#f0f7ff;border-left:4px solid #1a3a4a;padding:14px 18px;margin-top:14px;border-radius:0 8px 8px 0;font-size:.95rem;color:#444;display:none}
+.explanation.show{display:block}
+.explanation strong{color:#1a3a4a}
+.nav{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin:36px 0}
+.nav a{display:inline-block;padding:10px 24px;background:linear-gradient(135deg,#1a3a4a,#2d6a7a);color:#fff;text-decoration:none;border-radius:10px;font-weight:500;font-size:.95rem;transition:all .25s}
+.nav a:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(26,58,74,.25)}
+footer{text-align:center;padding:36px 24px;color:#8899a4;font-size:.85rem;border-top:1px solid #e2e8f0;margin-top:40px}
+.report-btn{display:inline-block;margin:0;padding:12px 28px;background:linear-gradient(135deg,#1a3a4a,#2d6a7a);color:#fff;border:none;border-radius:10px;font-size:1rem;cursor:pointer;font-family:inherit;transition:all .25s}
+.report-btn:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(26,58,74,.25)}
+.bottom-score{background:#fff;border-radius:12px;padding:20px;margin:20px 0;text-align:center;border:1px solid #e2e8f0;box-shadow:0 4px 20px rgba(0,0,0,.06)}
+.bottom-score .pct{font-size:2.5rem;font-weight:700}
+.bottom-score .pct.good{color:#28a745}
+.bottom-score .pct.ok{color:#e6a817}
+.bottom-score .pct.bad{color:#dc3545}
+.bottom-score .detail{color:#666;margin-top:4px;font-size:.95rem}
+.report-wrap{display:none;text-align:center;margin:16px 0}
+.name-input{padding:10px 14px;border:1px solid #e2e8f0;border-radius:10px;font-size:.95rem;font-family:inherit;width:200px;margin-right:8px;outline:none;transition:border-color .2s}
+.name-input:focus{border-color:#1a3a4a}
+</style></head><body><header><div class="container"><a href="index.html">&larr; All Tests</a><h1>ACT Math Practice Test 39</h1></div></header><div class="container"><div id="score-box" class="score-box"><h2>Your Score</h2><div class="pct">0%</div><div class="detail"></div></div><div class="question"><p><b>1.</b> If <i>x</i> = 3, then <i>x</i><sup class="frac">2</sup> + 2<i>x</i> - 12 = ?</p><ul class="choices"><li>A. -3</li><li>B. 0</li><li>C. 3</li><li>D. 6</li><li>E. 21</li></ul></div><div class="question"><p><b>2.</b> If 3(2<i>x</i> - 1) = 11<i>x</i> + 27, then <i>x</i> = ?</p><ul class="choices"><li>F. -6</li><li>G. -2</li><li>H. 2</li><li>J. 6</li><li>K. 7</li></ul></div><div class="question"><p><b>3.</b> To make space for new merchandise, a clothing store offered a 15% discount on all current stock.What is the sale price of a jacket that regularly sells for $42?</p><ul class="choices"><li>A. $6.30</li><li>B. $8.40</li><li>C. $35.70</li><li>D. $37.80</li><li>E. $41.85</li></ul></div><div class="question"><p><b>4.</b> In the figure below, line <i>m</i> is parallel to line <i>n</i>. One angle formed with transversal line <i>T</i> measures 60°, as shown. What is the degree measure of <img alt="image" src="https://www.crackab.com/image/tests/6/00094.jpg"><i>a</i>?<br><img alt="image" src="https://www.crackab.com/image/tests/6/00095.jpg"></p><ul class="choices"><li>F. 30°</li><li>G. 60°</li><li>H. 90°</li><li>J. 120°</li><li>K. Cannot be determined</li></ul></div><div class="question"><p><b>5.</b> If <i>x</i> = 3, <i>y</i> = 5, and <i>w</i> = 4, what is the value of <img alt="image" src="https://www.crackab.com/image/tests/6/00096.jpg"> ?</p><ul class="choices"><li>A. 9</li><li>B. 12</li><li>C. 79.5</li><li>D. 153</li><li>E. 1,689.00</li></ul></div><div class="question"><p><b>6.</b> For all <i>x</i>, (3<i>x</i> - 5)(4<i>x</i> + 3) = ?</p><ul class="choices"><li>F. 12<i>x</i><sup class="frac">2</sup> - 15</li><li>G. 12<i>x</i><sup class="frac">2</sup> + 11<i>x</i> - 15</li><li>H. 12<i>x</i><sup class="frac">2</sup> - 11<i>x</i> - 15</li><li>J. 12<i>x</i><sup class="frac">2</sup> + 29<i>x</i> - 15</li><li>K. 12<i>x</i><sup class="frac">2</sup> - 29<i>x</i> - 15</li></ul></div><div class="question"><p><b>7.</b> |5 - 8| - |9 - 3| = ?</p><ul class="choices"><li>A. -9</li><li>B. -3</li><li>C. 1</li><li>D. 3</li><li>E. 9</li></ul></div><div class="question"><p><b>8.</b> <img alt="image" src="https://www.crackab.com/image/tests/6/00097.jpg"> = ?</p><ul class="choices"><li>F. 15</li><li>G. 10<img alt="image" src="https://www.crackab.com/image/tests/6/00098.jpg"></li><li>H. 45</li><li>J. 34 + 10<img alt="image" src="https://www.crackab.com/image/tests/6/00099.jpg"></li><li>K. 75</li></ul></div><div class="question"><p><br>What is the company's estimate for the number of square feet of carpeting needed for a room that is 15 feet by 18 feet, containing a stairway that is 6 feet by 6 feet with 8 stairs?</p><ul class="choices"><li>A. 826</li><li>B. 894</li><li>C. 906</li><li>D. 1,086</li><li>E. 1,636</li></ul></div><div class="question"><p><b>10.</b> An urn contains 7 blue balls, 5 white balls, and 3 red balls. What is the probability that the first ball drawn at random from the urn will NOT be red?</p><ul class="choices"><li>F. <img alt="image" src="https://www.crackab.com/image/tests/6/00100.jpg"></li><li>G. <img alt="image" src="https://www.crackab.com/image/tests/6/00101.jpg"></li><li>H. <img alt="image" src="https://www.crackab.com/image/tests/6/00102.jpg"></li><li>J. <img alt="image" src="https://www.crackab.com/image/tests/6/00103.jpg"></li><li>K. <img alt="image" src="https://www.crackab.com/image/tests/6/00104.jpg"></li></ul></div><div class="question"><p><b>11.</b> A certain watch costs $100, and a certain pearl necklace costs $300. If the cost of the watch increases by 5% and the cost of the pearl necklace decreases by 10%, what will be the sum of their new costs?</p><ul class="choices"><li>A. $375</li><li>B. $385</li><li>C. $395</li><li>D. $405</li><li>E. $415</li></ul></div><div class="question"><p><b>12.</b> In the figure below, <img alt="image" src="https://www.crackab.com/image/tests/6/00105.jpg"> is tangent to circle <i>O</i> at point <i>T</i>. If <img alt="image" src="https://www.crackab.com/image/tests/6/00106.jpg"> = 6 units, <img alt="image" src="https://www.crackab.com/image/tests/6/00107.jpg"> = 8 units, and <img alt="image" src="https://www.crackab.com/image/tests/6/00108.jpg"> = 10 units, how many units long is the radius of the circle?<br><img alt="image" src="https://www.crackab.com/image/tests/6/00109.jpg"></p><ul class="choices"><li>F. 2</li><li>G. 5</li><li>H. 6</li><li>J. 8</li><li>K. 10</li></ul></div><div class="question"><p><b>13.</b> If <i>a</i> = <i>BC</i>, <i>b</i> = <i>x</i>, and <i>c</i> = <i>yz</i>, then <i>AB</i> = ?</p><ul class="choices"><li>A. <i>xyzx</i></li><li>B. <i>yzxy</i></li><li>C. <i>zxyz</i></li><li>D. <i>xyyz</i></li><li>E. <i>xyz</i></li></ul></div><div class="question"><p><b>14.</b> Which of the following inequalities specifies precisely the real values of <i>x</i> that are solutions to the inequality -5 &lt; -3<i>x</i> - 7?</p><ul class="choices"><li>F. <i>x</i> &lt; 4</li><li>G. <img alt="image" src="https://www.crackab.com/image/tests/6/00110.jpg"></li><li>H. <img alt="image" src="https://www.crackab.com/image/tests/6/00111.jpg"></li><li>J. <img alt="image" src="https://www.crackab.com/image/tests/6/00112.jpg"></li><li>K. <i>x</i> &gt; 4</li></ul></div><div class="question"><p><b>15.</b> What is the slope of the line determined by the equation <img alt="image" src="https://www.crackab.com/image/tests/6/00113.jpg">?</p><ul class="choices"><li>A. 3</li><li>B. 1</li><li>C. <img alt="image" src="https://www.crackab.com/image/tests/6/00114.jpg"></li><li>D. <img alt="image" src="https://www.crackab.com/image/tests/6/00115.jpg"></li><li>E. -3</li></ul></div><div class="submit-wrap"><button class="submit-btn" onclick="gradeTest()">Submit Test</button><button class="reset-btn" onclick="resetTest()">Try Again</button>
+<div class="report-wrap"><input type="text" class="name-input" placeholder="Student name (for report)"><button class="report-btn" onclick="generateReport()">Download Report (PDF)</button></div></div><div class="nav"><a href="test138.html">&larr; Prev</a><a href="index.html">All Tests</a><a href="test140.html">Next &rarr;</a></div></div><footer><div class="container">ACT Math Practice</div></footer>
+<script>
+const ANSWERS = {"1": "C", "2": "F", "3": "C", "4": "J", "5": "D", "6": "H", "7": "B", "8": "K", "9": "C", "10": "K", "11": "A", "12": "H", "13": "A", "14": "G", "15": "C"};
+const EXPLANATIONS = {"1":"(C) Substituting x  =  3 into the equation x2 + 2x – 12 gives (3)2 + 2(3) – 12  =  9 + 6 – 12  =  3", "2":"(F) 3(2x – 1)  =  11x + 27 → 6x – 3  =  11x + 27 → –5x  =  30 → x  =  –6.", "3":"(C) 15% of $42 is 0.15 ? 42  =  $6.30. This answer is the amount the $42 jacket is discounted, so to find the discounted price take $42 – $6.30  =  $35.70.", "4":"(J) a is a same-side exterior angle to the given angle, which is supplementary to 60°. Therefore, ma  =  180 – 60  =  120°", "5":"(D) Substituting x  =  3, y  =  5, and w  =  4 into the given expression yields  (3) (64) + 6 – 45  =  192 + 6 – 45  =  153.", "6":"(H) Distributing the given expression gives (3x – 5)(4x + 3)  =  12x2 + 9x – 20x – 15. Combining like terms gives 12x2 – 11x – 15.", "7":"(B) |5 – 8| – |9 – 3|  =  |–3| – |6|  =  3 – 6  =  –3. Remember when evaluating absolute values to simplify inside the absolute value first, then take the absolute value of the resulting number.", "8":"(K) (5 )2  =  5  · 5   =  25 . Evaluating the square root gives 25 · 3  =  75. Also, your calculator could get this answer by plugging the given expression into it.", "9":"(C) Despite all the words in the problem, it just boils down to plugging the numbers into the proper variables and evaluating. Plugging x  =  15, y  =  18, w  =  6, z  =  6, and n  =  8 into the formula gives A  =  (15)(18) + (6)[6(2 · 8 – 1) + 2 · 8]. Evaluating using the order of operations gives A  =  270 + 6[90 + 16]  =  270 + 636  =  906.", "10":"(K) To calculate probability use the formula  Simplifying the fraction gives .", "11":"(A) The watch increases by 5%, which is an increase of 100 · 0.05  =  $5 making the new price of the watch 100 + 5  =  $105. The necklace decreases by 10%, which is a decrease of 300 · .10  =  $30 making the new price 300 – 30  =  $270. Adding these two prices together gives the sum of the costs as $105 + $270  =  $375.", "12":"(H) The triangle in the figure is a right triangle given that  is tangent to the circle and  is a radius (all tangents to circles are perpendicular to the radius of the circle at the point of tangency). Using this along with the facts   =  8 and   =  10 we can set up the Pythagorean Theorem to calculate the leg  as a2 + b2  =  c2 → 82 + x2  =  102 → 64 + x2  =  100. Solving for x gives x2  =  36 → x  =  6. It is also a Pythagorean triple: 6, 8, 10 (3, 4, 5).", "13":"(A) We are asked to find AB and by looking at the answer choices, we want our answer in terms of x, y, and z. First substituting BC in for A we get AB  =  (BC)B. Now substituting x in for B and yz in for C we get (BC)B  =  (xyz)x, which equals xyzx.", "14":"(G) Solving an inequality is almost identical to solving an equation except if you multiply or divide by a negative number you have to switch the direction of the inequality. Solving this inequality for x we get –5 < –3x –7 → 2 < –3x → – 2 > x, which is equivalent to x < –", "15":"(C) To find the slope of a linear equation, first get it in the form y  =  mx + b where m represents the slope of the line and b represents the y-intercept. Solving for y in the given equation we get  so the slope of the line is m  = "};
+let graded = false;
+
+document.querySelectorAll('.choices li').forEach(li => {
+  // Remove old onclick
+  li.removeAttribute('onclick');
+  li.addEventListener('click', function() {
+    if (graded) return;
+    const siblings = this.parentElement.querySelectorAll('li');
+    siblings.forEach(s => s.classList.remove('selected'));
+    this.classList.add('selected');
+  });
+});
+
+function gradeTest() {
+  if (graded) return;
+  graded = true;
+  let correct = 0;
+  const total = Object.keys(ANSWERS).length;
+  
+  document.querySelectorAll('.question').forEach((qDiv, idx) => {
+    const qNum = idx + 1;
+    const correctAns = ANSWERS[qNum];
+    if (!correctAns) return;
+    const choices = qDiv.querySelectorAll('.choices li');
+    const selected = qDiv.querySelector('.choices li.selected');
+    const selectedLetter = selected ? selected.textContent.trim().charAt(0) : null;
+    
+    choices.forEach(li => {
+      const letter = li.textContent.trim().charAt(0);
+      if (letter === correctAns) li.classList.add('show-correct');
+      li.style.cursor = 'default';
+    });
+    
+    const tag = document.createElement('span');
+    tag.className = 'result-tag';
+    
+    if (selectedLetter === correctAns) {
+      correct++;
+      tag.className += ' correct';
+      tag.textContent = 'Correct';
+      if (selected) { selected.classList.remove('selected'); selected.classList.add('correct'); }
+    } else {
+      tag.className += ' wrong';
+      tag.textContent = 'Incorrect (Answer: ' + correctAns + ')';
+      if (selected) { selected.classList.remove('selected'); selected.classList.add('wrong'); }
+    }
+    
+    const firstP = qDiv.querySelector('p');
+    if (firstP) firstP.appendChild(tag);
+    
+    if (typeof EXPLANATIONS !== 'undefined' && EXPLANATIONS[qNum]) {
+      const explDiv = document.createElement('div');
+      explDiv.className = 'explanation show';
+      explDiv.innerHTML = '<strong>Explanation:</strong> ' + EXPLANATIONS[qNum];
+      qDiv.appendChild(explDiv);
+    }
+  });
+  
+  const pct = Math.round((correct / total) * 100);
+  document.querySelector('.submit-btn').style.display = 'none';
+  document.querySelector('.reset-btn').style.display = 'block';
+  var rw=document.querySelector('.report-wrap');if(rw)rw.style.display='block';
+  var bs=document.createElement('div');bs.className='bottom-score';bs.id='bottom-score';
+  bs.innerHTML='<h2 style="font-size:1.3rem;margin-bottom:6px;color:#1a3a4a">Your Score</h2><div class="pct '+(pct>=80?'good':pct>=60?'ok':'bad')+'">'+pct+'%</div><div class="detail">'+correct+' out of '+total+' correct</div>';
+  document.querySelector('.submit-wrap').after(bs);
+  try{var tn=location.pathname.match(/test(\d+)/);if(tn)localStorage.setItem('actmath_'+tn[1],pct);}catch(e){}
+}
+
+function resetTest() {
+  graded = false;
+  var bsEl=document.getElementById('bottom-score');if(bsEl)bsEl.remove();
+  document.querySelector('.submit-btn').style.display = '';
+  document.querySelector('.reset-btn').style.display = 'none';
+  var rw=document.querySelector('.report-wrap');if(rw)rw.style.display='none';
+  var ni=document.querySelector('.name-input');if(ni)ni.value='';
+  document.querySelectorAll('.choices li').forEach(li => {
+    li.classList.remove('selected','correct','wrong','show-correct');
+    li.style.cursor = 'pointer';
+  });
+  document.querySelectorAll('.result-tag').forEach(t => t.remove());
+  document.querySelectorAll('.explanation').forEach(e => e.remove());
+}
+
+function generateReport(){
+  var nameInput=document.querySelector('.name-input');
+  var name=(nameInput&&nameInput.value.trim())||'Student';
+  var testName=document.querySelector('header h1').textContent;
+  var bs=document.getElementById('bottom-score');
+  var scorePct=bs?bs.querySelector('.pct').textContent:'';
+  var detailTxt=bs?bs.querySelector('.detail').textContent:'';
+  var d=new Date().toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'});
+  var btn=document.querySelector('.report-btn');btn.textContent='Generating...';btn.disabled=true;
+  var s=document.createElement('script');
+  s.src='https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js';
+  s.onerror=function(){btn.textContent='Download Report (PDF)';btn.disabled=false;alert('Could not load PDF library.');};
+  s.onload=function(){
+    var doc=new jspdf.jsPDF('portrait','mm','letter');
+    var pw=215.9,ph=279.4,mx=12,cw=pw-2*mx,y=8;
+    doc.setFillColor(26,58,74);doc.rect(0,0,pw,22,'F');
+    doc.setTextColor(255,255,255);doc.setFontSize(13);doc.setFont('helvetica','bold');
+    doc.text(testName,mx,9);
+    doc.setFontSize(7.5);doc.setFont('helvetica','normal');
+    doc.text(d+'  |  Student: '+name,mx,14.5);
+    doc.setFontSize(18);doc.setFont('helvetica','bold');
+    doc.text(scorePct,pw-mx,11,{align:'right'});
+    doc.setFontSize(7.5);doc.setFont('helvetica','normal');
+    doc.text(detailTxt,pw-mx,16,{align:'right'});
+    y=25;
+    doc.setDrawColor(26,58,74);doc.setLineWidth(0.3);doc.line(mx,y,pw-mx,y);y+=3;
+    document.querySelectorAll('.question').forEach(function(qDiv,idx){
+      var qNum=idx+1;var ca=ANSWERS[qNum];if(!ca)return;
+      var sel=qDiv.querySelector('.choices li.correct,.choices li.wrong');
+      var sa=sel?sel.textContent.trim().charAt(0):'-';
+      var ok=sel&&sel.classList.contains('correct');
+      if(ok){
+        doc.setFillColor(40,167,69);doc.circle(mx+1.2,y-1,1,'F');
+        doc.setTextColor(33,33,33);doc.setFont('helvetica','bold');doc.setFontSize(8);
+        doc.text('Q'+qNum,mx+4,y);
+        doc.setFont('helvetica','normal');doc.setTextColor(40,167,69);
+        doc.text('Correct ('+ca+')',mx+14,y);
+      }else{
+        doc.setFillColor(220,53,69);doc.circle(mx+1.2,y-1,1,'F');
+        doc.setTextColor(33,33,33);doc.setFont('helvetica','bold');doc.setFontSize(8);
+        doc.text('Q'+qNum,mx+4,y);
+        doc.setFont('helvetica','normal');doc.setTextColor(220,53,69);
+        doc.text('Incorrect',mx+14,y);
+        doc.setTextColor(120,120,120);
+        doc.text('(Chose '+sa+', Correct: '+ca+')',mx+32,y);
+      }
+      y+=3.2;
+      var qP=qDiv.querySelector('p');
+      if(qP){
+        var qT=qP.cloneNode(true);
+        var tags=qT.querySelectorAll('.result-tag');tags.forEach(function(t){t.remove();});
+        var qt=qT.textContent.replace(/^\d+\.\s*/,'').trim();
+        if(qt.length>0){
+          doc.setFont('helvetica','normal');doc.setTextColor(60,60,60);doc.setFontSize(6.5);
+          var ql=doc.splitTextToSize(qt,cw-5);
+          ql=ql.slice(0,1);
+          if(doc.splitTextToSize(qt,cw-5).length>1){ql[0]=ql[0].substring(0,ql[0].length-3)+'...';}
+          doc.text(ql,mx+4,y);y+=2.4;
+        }
+      }
+      if(typeof EXPLANATIONS!=='undefined'&&EXPLANATIONS[qNum]){
+        doc.setFont('helvetica','italic');doc.setTextColor(100,100,100);doc.setFontSize(6);
+        var lines=doc.splitTextToSize(EXPLANATIONS[qNum],cw-5);
+        if(lines.length>2){lines=lines.slice(0,2);lines[1]=lines[1].substring(0,Math.max(0,lines[1].length-3))+'...';}
+        doc.text(lines,mx+4,y);y+=lines.length*2.2;
+      }
+      y+=2;
+    });
+    doc.setDrawColor(200,200,200);doc.setLineWidth(0.2);doc.line(mx,ph-10,pw-mx,ph-10);
+    doc.setTextColor(170,170,170);doc.setFontSize(6);doc.setFont('helvetica','normal');
+    doc.text('ACT Math Practice  |  Score Report',pw/2,ph-7,{align:'center'});
+    var tn=location.pathname.match(/test(\d+)/);
+    var testNum=tn?parseInt(tn[1])-100:0;
+    var ds=new Date().toISOString().slice(0,10);
+    doc.save('ACT-Math-Test-'+testNum+'-'+ds+'.pdf');
+    btn.textContent='Download Report (PDF)';btn.disabled=false;
+  };
+  document.head.appendChild(s);
+}
+</script>
+</body></html>

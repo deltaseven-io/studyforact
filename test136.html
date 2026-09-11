@@ -1,0 +1,222 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>ACT Math Test 36</title><style>@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:#fff;color:#2d3748;line-height:1.7}
+.container{max-width:800px;margin:0 auto;padding:20px 24px}
+header{background:linear-gradient(135deg,#1a3a4a 0%,#2d6a7a 100%);color:#fff;padding:28px 0;margin-bottom:36px;text-align:center}
+header .container{display:block}
+header h1{font-size:1.6rem;font-weight:700;letter-spacing:-0.3px}
+header a{color:rgba(255,255,255,.7);text-decoration:none;font-size:.9rem;display:inline-block;margin-bottom:6px;transition:color .2s}
+header a:hover{color:#fff}
+.question{background:#fff;border-radius:12px;padding:24px;margin-bottom:20px;border:1px solid #e2e8f0;transition:border-color .2s}
+.question:hover{border-color:#cbd5e0}
+.question p{margin-bottom:14px;font-size:1.05rem}
+img{max-width:100%;height:auto;margin:4px 0;vertical-align:middle}
+.choices{list-style:none}
+.choices li{padding:10px 14px;margin:6px 0;border-radius:8px;cursor:pointer;transition:all .2s;border:2px solid transparent}
+.choices li:hover{background:#f0f7fa}
+.choices li.selected{background:#d1ecf1;border-color:#bee5eb}
+.choices li.correct{background:#d4edda;border-color:#28a745}
+.choices li.wrong{background:#f8d7da;border-color:#dc3545}
+.choices li.show-correct{background:#d4edda;border-color:#28a745}
+.submit-wrap{text-align:center;margin:36px 0}
+.submit-btn{display:inline-block;padding:14px 40px;background:linear-gradient(135deg,#1a3a4a,#2d6a7a);color:#fff;border:none;border-radius:10px;font-size:1.1rem;cursor:pointer;font-weight:600;font-family:inherit;transition:all .25s;letter-spacing:.3px}
+.submit-btn:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(26,58,74,.25)}
+.score-box{background:#fff;border-radius:12px;padding:28px;margin-bottom:28px;text-align:center;border:1px solid #e2e8f0;box-shadow:0 4px 20px rgba(0,0,0,.06);display:none}
+.score-box h2{font-size:1.4rem;margin-bottom:8px;color:#1a3a4a;text-align:center}
+.score-box .pct{font-size:3rem;font-weight:700}
+.score-box .pct.good{color:#28a745}
+.score-box .pct.ok{color:#e6a817}
+.score-box .pct.bad{color:#dc3545}
+.score-box .detail{color:#666;margin-top:4px}
+.result-tag{display:inline-block;padding:2px 10px;border-radius:12px;font-size:.8rem;font-weight:600;margin-left:8px}
+.result-tag.correct{background:#d4edda;color:#155724}
+.result-tag.wrong{background:#f8d7da;color:#721c24}
+.reset-btn{display:none;margin:16px auto;padding:12px 28px;background:#6c757d;color:#fff;border:none;border-radius:10px;font-size:1rem;cursor:pointer;font-family:inherit;transition:all .25s}
+.reset-btn:hover{background:#5a6268;transform:translateY(-1px)}
+.explanation{background:#f0f7ff;border-left:4px solid #1a3a4a;padding:14px 18px;margin-top:14px;border-radius:0 8px 8px 0;font-size:.95rem;color:#444;display:none}
+.explanation.show{display:block}
+.explanation strong{color:#1a3a4a}
+.nav{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin:36px 0}
+.nav a{display:inline-block;padding:10px 24px;background:linear-gradient(135deg,#1a3a4a,#2d6a7a);color:#fff;text-decoration:none;border-radius:10px;font-weight:500;font-size:.95rem;transition:all .25s}
+.nav a:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(26,58,74,.25)}
+footer{text-align:center;padding:36px 24px;color:#8899a4;font-size:.85rem;border-top:1px solid #e2e8f0;margin-top:40px}
+.report-btn{display:inline-block;margin:0;padding:12px 28px;background:linear-gradient(135deg,#1a3a4a,#2d6a7a);color:#fff;border:none;border-radius:10px;font-size:1rem;cursor:pointer;font-family:inherit;transition:all .25s}
+.report-btn:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(26,58,74,.25)}
+.bottom-score{background:#fff;border-radius:12px;padding:20px;margin:20px 0;text-align:center;border:1px solid #e2e8f0;box-shadow:0 4px 20px rgba(0,0,0,.06)}
+.bottom-score .pct{font-size:2.5rem;font-weight:700}
+.bottom-score .pct.good{color:#28a745}
+.bottom-score .pct.ok{color:#e6a817}
+.bottom-score .pct.bad{color:#dc3545}
+.bottom-score .detail{color:#666;margin-top:4px;font-size:.95rem}
+.report-wrap{display:none;text-align:center;margin:16px 0}
+.name-input{padding:10px 14px;border:1px solid #e2e8f0;border-radius:10px;font-size:.95rem;font-family:inherit;width:200px;margin-right:8px;outline:none;transition:border-color .2s}
+.name-input:focus{border-color:#1a3a4a}
+</style></head><body><header><div class="container"><a href="index.html">&larr; All Tests</a><h1>ACT Math Practice Test 36</h1></div></header><div class="container"><div id="score-box" class="score-box"><h2>Your Score</h2><div class="pct">0%</div><div class="detail"></div></div><div class="question"><p><b>1.</b> As shown in the figure below, a skateboard ramp leading from the top of a boulder is 10 feet long and forms a 32° angle with the level ground. Which of the following expressions represents the height, in feet, of the boulder?<br><img alt="" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_204_r1.jpg"></p><ul class="choices"><li>F. 10 tan 32°</li><li>G. <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_206_r1.jpg"></li><li>H. <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_207_r1.jpg"></li><li>J. 10 sin 32°</li><li>K. 10 cos 32°</li></ul></div><div class="question"><p><b>2.</b> The 4 integers <em>j</em>, <em>j</em>, <em>k</em>, and <em>n</em> have an average of 0. Which of the following equations <em>must</em> be true?</p><ul class="choices"><li>A. <em>k</em> = <em>n</em></li><li>B. <em>k</em> = -<em>j</em></li><li>C. <em>k</em> + <em>n</em> = -2<em>j</em></li><li>D. <em>k</em> + <em>n</em> = 0</li><li>E. <em>k</em> + <em>n</em> = <em>j</em></li></ul></div><div class="question"><p><b>3.</b> If <em>f</em>(<em>x</em>) = <img alt="" class="root" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_150_r1.jpg"> and the composite function <em>f</em>(<em>g</em>(<em>x</em>)) = <img alt="" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_210_r1.jpg">, which of the following could be <em>g</em>(<em>x</em>)?</p><ul class="choices"><li>F. <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_211_r1.jpg"></li><li>G. <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_212_r1.jpg"></li><li>H. 2<em>x</em><sup class="frac">2</sup> - 25</li><li>J. 4<em>x</em><sup class="frac">2</sup> - 5</li><li>K. 16<em>x</em><sup class="frac">4</sup> - 5</li></ul></div><div class="question"><p><b>4.</b> In the qualifying rounds for a race, Rusty and Dale drive their cars around a 6,000-foot oval track. Rusty and Dale each drive 8 laps in the qualifying rounds in lanes of identical length.<br>On day one of the qualifying rounds, Rusty and Dale start from the same point, but their cars are reversed and each drives opposite ways. Rusty drives at a constant speed that is 8 feet per second faster than Dale's constant speed. Rusty passes Dale for the first time in 150 seconds. Rusty drives at a constant rate of how many feet per second?</p><ul class="choices"><li>A. 16</li><li>B. 20</li><li>C. 24</li><li>D. 32</li><li>E. 40</li></ul></div><div class="question"><p><b>5.</b> In the qualifying rounds for a race, Rusty and Dale drive their cars around a 6,000-foot oval track. Rusty and Dale each drive 8 laps in the qualifying rounds in lanes of identical length.<br>In the qualifying rounds, Rusty averages 180 seconds per lap until he begins the last lap. He then goes into a lower gear. He averages 190 seconds per lap for this qualifying round. How many seconds does Rusty take to drive the final lap?</p><ul class="choices"><li>F. 155</li><li>G. 160</li><li>H. 185</li><li>J. 200</li><li>K. 260</li></ul></div><div class="question"><p><b>6.</b> In the qualifying rounds for a race, Rusty and Dale drive their cars around a 6,000-foot oval track. Rusty and Dale each drive 8 laps in the qualifying rounds in lanes of identical length.<br>Dale drives 6 laps in 90 minutes. At what average rate, in feet per hour, does Dale drive these 6 laps?</p><ul class="choices"><li>A. 400</li><li>B. 5,400</li><li>C. 10,000</li><li>D. 24,000</li><li>E. 48,000</li></ul></div><div class="question"><p><b>7.</b> Circle <em>A</em> has its center at point (-5,2) with a radius of 2, and circle <em>B</em> is represented by the equation (<em>x</em> + 4)<sup class="frac">2</sup> + (<em>y</em>-- 2)<sup class="frac">2</sup> = 9. Where is point (-2,2) located?</p><ul class="choices"><li>F. Inside circle <em>A</em> only</li><li>G. Inside circle <em>B</em> only</li><li>H. Inside both circle <em>A</em> and circle <em>B</em></li><li>J. Outside both circle <em>A</em> and circle <em>B</em></li><li>K. Cannot be determined from given information</li></ul></div><div class="question"><p><b>8.</b> A heart-shaped ornament is made from a square and two semicircles, each of whose diameter is a side of the square. The ornament is shown in the standard (<em>x</em>,<em>y</em>) coordinate plane below, where 1 coordinate unit represents 1 inch. The coordinates of six points on the border of the ornament are given. What is the perimeter, in inches, of the ornament?<br><img alt="" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_213_r1.jpg"></p><ul class="choices"><li>A. 4 + 2π</li><li>B. 8 + 4π</li><li>C. 8 + 8π</li><li>D. 16 + 4π</li><li>E. 16 + 8π</li></ul></div><div class="question"><p><b>9.</b> A function <em>f</em>(<em>x</em>) is defined as even if and only if <em>f</em>(<em>x</em>) = <em>f</em>(-<em>x</em>) for all real values of <em>x</em>. Which one of the following graphs represents an even function <em>f</em>(<em>x</em>)?</p><ul class="choices"><li>F. <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_214_r1.jpg"></li><li>G. <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_215_r1.jpg"></li><li>H. <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_216_r1.jpg"></li><li>J. <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_217_r1.jpg"></li><li>K. <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_218_r1.jpg"></li></ul></div><div class="question"><p><b>10.</b> In the standard (<em>x</em>,<em>y</em>) coordinate plane, point <em>A</em> is located at (<em>w</em>,<em>w</em> + 5) and point <em>B</em> is located at (4<em>w</em>,<em>w</em>-- 5). In coordinate units, what is the distance between <em>A</em> and <em>B</em>?</p><ul class="choices"><li>A. <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_219_r1.jpg"></li><li>B. <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_220_r1.jpg"></li><li>C. 9<em>w</em><sup class="frac">2</sup> + 100</li><li>D. <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_222_r1.jpg"></li><li>E. |<em>w</em>|</li></ul></div><div class="question"><p><b>11.</b> <em>RST</em> is a right triangle with side lengths of <em>r</em>, <em>s</em>, and <em>t</em>, as shown below. What is the value of cos<sup class="frac">2</sup> <em>S</em> + cos<sup class="frac">2</sup> <em>R</em>?<br><img alt="" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_223_r1.jpg"></p><ul class="choices"><li>F. 1</li><li>G. <img alt="" class="root" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_133_r1.jpg"></li><li>H. <img alt="" class="root" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_138_r1.jpg"></li><li>J. <img alt="" class="root" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_136_r1.jpg"></li><li>K. <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_224_r1.jpg"></li></ul></div><div class="question"><p><b>12.</b> In isosceles triangle <em>ABC</em> below, the measures of <img alt="" class="root" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_029_r1.jpg"><em>BAC</em> and <img alt="" class="root" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_029_r1.jpg"><em>BCA</em> are equal and <img alt="" class="inline" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_225_r1.jpg">. The diagonals of trapezoid <em>DECA</em> intersect at <em>F</em>. The lengths of <img alt="" class="root" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_042_r1.jpg"> and <img alt="" class="root" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_041_r1.jpg"> are 6 centimeters, the length of <img alt="" class="root" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_041_r1.jpg"> is 9 centimeters, and the length of <img alt="" class="root" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_023_r1.jpg"> is 27 centimeters. What is the length, in centimeters, of <img alt="" class="root" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_047_r1.jpg">?<br><img alt="" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_226_r1.jpg"></p><ul class="choices"><li>A. 12</li><li>B. 15</li><li>C. 18</li><li>D. 33</li><li>E. 36</li></ul></div><div class="question"><p><b>13.</b> Which of the following represents the product of the matrices below?<br><img alt="" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_227_r1.jpg"></p><ul class="choices"><li>F. <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_229_r1.jpg"></li><li>G. <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_230_r1.jpg"></li><li>H. [-6]</li><li>J. [6 -12]</li><li>K. [-4 -12]</li></ul></div><div class="question"><p><b>14.</b> If <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_228_r1.jpg">, then <em>n</em>! =?</p><ul class="choices"><li>A. 6</li><li>B. 10</li><li>C. 12</li><li>D. 24</li><li>E. 120</li></ul></div><div class="question"><p><b>15.</b> What is the ratio of a circle's radius to its circumference?</p><ul class="choices"><li>F. 2π:1</li><li>G. 2:01</li><li>H. π:1</li><li>J. 1:π</li><li>K. 1:2π</li></ul></div><div class="submit-wrap"><button class="submit-btn" onclick="gradeTest()">Submit Test</button><button class="reset-btn" onclick="resetTest()">Try Again</button>
+<div class="report-wrap"><input type="text" class="name-input" placeholder="Student name (for report)"><button class="report-btn" onclick="generateReport()">Download Report (PDF)</button></div></div><div class="nav"><a href="test135.html">&larr; Prev</a><a href="index.html">All Tests</a><a href="test137.html">Next &rarr;</a></div></div><footer><div class="container">ACT Math Practice</div></footer>
+<script>
+const ANSWERS = {"1": "J", "2": "C", "3": "J", "4": "C", "5": "K", "6": "D", "7": "G", "8": "B", "9": "F", "10": "B", "11": "F", "12": "C", "13": "F", "14": "D", "15": "K"};
+const EXPLANATIONS = {"1":"J Since you know the length of the hypotenuse (the ramp) and are solving for the height opposite the angle of 32°, use SOHCAHTOA: . By process of elimination, you can get rid of choices (F), (H), and (K). If , the height h is 10 sin 32°.", "2":"C Since average is , the sum of j + j + k + n must equal 0 to make the average equal 0. Combining like terms gives you 2j + k + n  =  0. Subtracting 2j from both sides, you get k + n  =  -2j. Choices (A) and (B) are not necessarily true (for example, if j  =  -3, k could equal 4 and n could equal 2). Choices (D) and (E) are only true when j is equal to 0.", "3":"J In the composite function f(g(x)), the value of g(x) is the input x value in f(x); therefore f(x) is taking the square root of g(x). When g(x)  =  4x2 - 5, its square root is . Choices (G) and (K) make errors in taking the square root of 4x2 - 5. Choices (F) and (G) reverse the composite and use g(f(x)).", "4":"C Start with the rate formula: d  =  rt. In this problem, t  =  150 s, and you\'ll want to set up equations for as much as you can. If rr is Rusty\'s rate and dr is Rusty\'s distance, the equation will be dr  =  rrt. When the two cars meet, their combined distances will equal the length of the entire track, 6,000 m. Therefore, you can use the relationships given in the problem to set up an equation as follows: 6000 ft  =  rrt + (rr - 8 ft/s)(t). Since t is constant at 150 s throughout this problem, substitute it into the equation to get 6000 ft  =  (150 s)(rr) + (150 s)(rr - 8). The (150 s) is common to both terms so you can factor it out and divide both sides by 150 s to get this:   = rr+rr-8 and 40 ft / s  =  2rr - 8 ft / s. Manipulate the equation to isolate and find rr  =    =  24 ft / s. If you selected choice (A), be careful—this is Dale\'s rate!", "5":"K Since Rusty drives the first 7 laps at an average time of 180 s, you can multiply these values together to find that he drives the first 7 laps in a total time of 1,260 s. Complete the same operation for the second set of numbers: since Rusty drives 8 laps at an average time of 190 s, multiply these values together to find that he drives all 8 laps in a total time of 1,520 s. Since you know the two total times, you can simply find the difference between them to find the time of the last lap: 1,520 s - 1,260 s  =  260 s. If you selected choice (H), be careful—this is the average of 180 and 190, but it doesn\'t take into account that Rusty drives 7 laps at an average of 180 s and only one lap at an average of 190 s.", "6":"D Dale drives 6 laps, each of which is 6,000 ft, for a total of 36,000 ft in 90 minutes. The question asks for this value in feet per hour, so convert the 90 minutes to 1.5 hours. 36,000 ft ÷ 1.5 hrs  =  24,000 ft/hr. If you selected choice (A), you may have forgotten to change the 90 minutes to 1.5 hours.", "7":"G The equation of a circle is (x - h)2 + (y - k)2  =  r2, where (h, k) is the center of the circle and r is the radius. Thus, circle B has its center at (-4,2) with a radius of 3. If you draw a diagram, you\'ll find that point (-2,2) lies outside circle A and inside circle B.", "8":"B The perimeter is the distance of the shape\'s outline. There are two straight lines: from (0,0) to (0,4) and from (0,0) to (4,0), each with a length of 4. The straight lines total 8, eliminating choices (A), (D), and (E). The curved parts are two semicircles and two semicircles make one complete circle, so find the circumference of one circle with radius 2: C  =  2πr  =  2π(2)  =  4π. Eliminate choice (C) and pick choice (B). If you picked choice (D), you may have found the area instead of the perimeter.", "9":"F An even function is defined in the question as a function for which the value of f(x)  =  f(-x). This means that f(x) has the same value for both x and -x. If you fold the graph of an even function along the f(x) axis, the two sides of the graph will be mirror reflections of each other. Choices (G), (J), and (K) are odd functions, in which f(-x)  =  -f(x) for all values of x. Odd functions rotate 180° about the point (0, 0). Choice (H) is not a function, because it does not pass the vertical line test; the same x value yields two values for f(x).", "10":"B Use the distance formula: . .", "11":"F In a right triangle with angle A, . In this triangle,  and . Since RST is a right triangle, use the Pythagorean Theorem to determine that r2 + s2  =  t2. You\'re left with .", "12":"C Trapezoid DECA is isosceles because ABC is isosceles and, since , line segments  and  have equal lengths. Since the trapezoid is isosceles, the diagonals are congruent. Thus, DFE and AFC are similar. Set up a proportion to find the missing side: . So,   =  18. Choice (A) is the short side of DFE multiplied by 2. Choice (B) is 9 + 6. Choice (D) is 27 + 6 and choice (E) is 27 + 9. Remember that hard problems typically require more work than just adding together some of the numbers from the problem!", "13":"F The dimensions of a matrix product are determined by the number of rows in the first matrix and the number of columns in the second matrix, in this case 2 × 1. Thus, choices (H), (J), and (K) have the wrong dimensions. To find the product value, multiply rows by columns and add the products of one row-column: (4 × 0) + (-2 × 2)  =  -4 and (3 × 0) + (-6 × 2)  =  -12.", "14":"D An ! symbol denotes a factorial, which is the product of decreasing consecutive integers starting from the integer in front of the ! sign. (For example, 5!  =  5 × 4 × 3 × 2 × 1  =  120.) You can simplify this expression if you separate the two largest factors in the numerator; in other words, write (n + 1)! as (n + 1) × (n) × (n - 1)! Canceling (n - 1)! from numerator and denominator leaves you with (n + 1)(n). So (n + 1)(n)  =  20, which means that n + 1  =  5 and n  =  4. Finally, the question asks for n!  =  4!  =  4 × 3 × 2 × 1  =  24. Choice (A) is 3! Choice (B) is half of 20. Choice (C) is half of 24. Choice (E) is 5!", "15":"K To simplify this abstract problem, substitute a value in for the circle\'s radius. If the radius is 3, the circumference is . Choice (F) gives the ratio of the circumference to the radius. Choices (H) and (J) work with the diameter instead of the radius, and choice (G) finds the ratio of the diameter to the radius."};
+let graded = false;
+
+document.querySelectorAll('.choices li').forEach(li => {
+  // Remove old onclick
+  li.removeAttribute('onclick');
+  li.addEventListener('click', function() {
+    if (graded) return;
+    const siblings = this.parentElement.querySelectorAll('li');
+    siblings.forEach(s => s.classList.remove('selected'));
+    this.classList.add('selected');
+  });
+});
+
+function gradeTest() {
+  if (graded) return;
+  graded = true;
+  let correct = 0;
+  const total = Object.keys(ANSWERS).length;
+  
+  document.querySelectorAll('.question').forEach((qDiv, idx) => {
+    const qNum = idx + 1;
+    const correctAns = ANSWERS[qNum];
+    if (!correctAns) return;
+    const choices = qDiv.querySelectorAll('.choices li');
+    const selected = qDiv.querySelector('.choices li.selected');
+    const selectedLetter = selected ? selected.textContent.trim().charAt(0) : null;
+    
+    choices.forEach(li => {
+      const letter = li.textContent.trim().charAt(0);
+      if (letter === correctAns) li.classList.add('show-correct');
+      li.style.cursor = 'default';
+    });
+    
+    const tag = document.createElement('span');
+    tag.className = 'result-tag';
+    
+    if (selectedLetter === correctAns) {
+      correct++;
+      tag.className += ' correct';
+      tag.textContent = 'Correct';
+      if (selected) { selected.classList.remove('selected'); selected.classList.add('correct'); }
+    } else {
+      tag.className += ' wrong';
+      tag.textContent = 'Incorrect (Answer: ' + correctAns + ')';
+      if (selected) { selected.classList.remove('selected'); selected.classList.add('wrong'); }
+    }
+    
+    const firstP = qDiv.querySelector('p');
+    if (firstP) firstP.appendChild(tag);
+    
+    if (typeof EXPLANATIONS !== 'undefined' && EXPLANATIONS[qNum]) {
+      const explDiv = document.createElement('div');
+      explDiv.className = 'explanation show';
+      explDiv.innerHTML = '<strong>Explanation:</strong> ' + EXPLANATIONS[qNum];
+      qDiv.appendChild(explDiv);
+    }
+  });
+  
+  const pct = Math.round((correct / total) * 100);
+  document.querySelector('.submit-btn').style.display = 'none';
+  document.querySelector('.reset-btn').style.display = 'block';
+  var rw=document.querySelector('.report-wrap');if(rw)rw.style.display='block';
+  var bs=document.createElement('div');bs.className='bottom-score';bs.id='bottom-score';
+  bs.innerHTML='<h2 style="font-size:1.3rem;margin-bottom:6px;color:#1a3a4a">Your Score</h2><div class="pct '+(pct>=80?'good':pct>=60?'ok':'bad')+'">'+pct+'%</div><div class="detail">'+correct+' out of '+total+' correct</div>';
+  document.querySelector('.submit-wrap').after(bs);
+  try{var tn=location.pathname.match(/test(\d+)/);if(tn)localStorage.setItem('actmath_'+tn[1],pct);}catch(e){}
+}
+
+function resetTest() {
+  graded = false;
+  var bsEl=document.getElementById('bottom-score');if(bsEl)bsEl.remove();
+  document.querySelector('.submit-btn').style.display = '';
+  document.querySelector('.reset-btn').style.display = 'none';
+  var rw=document.querySelector('.report-wrap');if(rw)rw.style.display='none';
+  var ni=document.querySelector('.name-input');if(ni)ni.value='';
+  document.querySelectorAll('.choices li').forEach(li => {
+    li.classList.remove('selected','correct','wrong','show-correct');
+    li.style.cursor = 'pointer';
+  });
+  document.querySelectorAll('.result-tag').forEach(t => t.remove());
+  document.querySelectorAll('.explanation').forEach(e => e.remove());
+}
+
+function generateReport(){
+  var nameInput=document.querySelector('.name-input');
+  var name=(nameInput&&nameInput.value.trim())||'Student';
+  var testName=document.querySelector('header h1').textContent;
+  var bs=document.getElementById('bottom-score');
+  var scorePct=bs?bs.querySelector('.pct').textContent:'';
+  var detailTxt=bs?bs.querySelector('.detail').textContent:'';
+  var d=new Date().toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'});
+  var btn=document.querySelector('.report-btn');btn.textContent='Generating...';btn.disabled=true;
+  var s=document.createElement('script');
+  s.src='https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js';
+  s.onerror=function(){btn.textContent='Download Report (PDF)';btn.disabled=false;alert('Could not load PDF library.');};
+  s.onload=function(){
+    var doc=new jspdf.jsPDF('portrait','mm','letter');
+    var pw=215.9,ph=279.4,mx=12,cw=pw-2*mx,y=8;
+    doc.setFillColor(26,58,74);doc.rect(0,0,pw,22,'F');
+    doc.setTextColor(255,255,255);doc.setFontSize(13);doc.setFont('helvetica','bold');
+    doc.text(testName,mx,9);
+    doc.setFontSize(7.5);doc.setFont('helvetica','normal');
+    doc.text(d+'  |  Student: '+name,mx,14.5);
+    doc.setFontSize(18);doc.setFont('helvetica','bold');
+    doc.text(scorePct,pw-mx,11,{align:'right'});
+    doc.setFontSize(7.5);doc.setFont('helvetica','normal');
+    doc.text(detailTxt,pw-mx,16,{align:'right'});
+    y=25;
+    doc.setDrawColor(26,58,74);doc.setLineWidth(0.3);doc.line(mx,y,pw-mx,y);y+=3;
+    document.querySelectorAll('.question').forEach(function(qDiv,idx){
+      var qNum=idx+1;var ca=ANSWERS[qNum];if(!ca)return;
+      var sel=qDiv.querySelector('.choices li.correct,.choices li.wrong');
+      var sa=sel?sel.textContent.trim().charAt(0):'-';
+      var ok=sel&&sel.classList.contains('correct');
+      if(ok){
+        doc.setFillColor(40,167,69);doc.circle(mx+1.2,y-1,1,'F');
+        doc.setTextColor(33,33,33);doc.setFont('helvetica','bold');doc.setFontSize(8);
+        doc.text('Q'+qNum,mx+4,y);
+        doc.setFont('helvetica','normal');doc.setTextColor(40,167,69);
+        doc.text('Correct ('+ca+')',mx+14,y);
+      }else{
+        doc.setFillColor(220,53,69);doc.circle(mx+1.2,y-1,1,'F');
+        doc.setTextColor(33,33,33);doc.setFont('helvetica','bold');doc.setFontSize(8);
+        doc.text('Q'+qNum,mx+4,y);
+        doc.setFont('helvetica','normal');doc.setTextColor(220,53,69);
+        doc.text('Incorrect',mx+14,y);
+        doc.setTextColor(120,120,120);
+        doc.text('(Chose '+sa+', Correct: '+ca+')',mx+32,y);
+      }
+      y+=3.2;
+      var qP=qDiv.querySelector('p');
+      if(qP){
+        var qT=qP.cloneNode(true);
+        var tags=qT.querySelectorAll('.result-tag');tags.forEach(function(t){t.remove();});
+        var qt=qT.textContent.replace(/^\d+\.\s*/,'').trim();
+        if(qt.length>0){
+          doc.setFont('helvetica','normal');doc.setTextColor(60,60,60);doc.setFontSize(6.5);
+          var ql=doc.splitTextToSize(qt,cw-5);
+          ql=ql.slice(0,1);
+          if(doc.splitTextToSize(qt,cw-5).length>1){ql[0]=ql[0].substring(0,ql[0].length-3)+'...';}
+          doc.text(ql,mx+4,y);y+=2.4;
+        }
+      }
+      if(typeof EXPLANATIONS!=='undefined'&&EXPLANATIONS[qNum]){
+        doc.setFont('helvetica','italic');doc.setTextColor(100,100,100);doc.setFontSize(6);
+        var lines=doc.splitTextToSize(EXPLANATIONS[qNum],cw-5);
+        if(lines.length>2){lines=lines.slice(0,2);lines[1]=lines[1].substring(0,Math.max(0,lines[1].length-3))+'...';}
+        doc.text(lines,mx+4,y);y+=lines.length*2.2;
+      }
+      y+=2;
+    });
+    doc.setDrawColor(200,200,200);doc.setLineWidth(0.2);doc.line(mx,ph-10,pw-mx,ph-10);
+    doc.setTextColor(170,170,170);doc.setFontSize(6);doc.setFont('helvetica','normal');
+    doc.text('ACT Math Practice  |  Score Report',pw/2,ph-7,{align:'center'});
+    var tn=location.pathname.match(/test(\d+)/);
+    var testNum=tn?parseInt(tn[1])-100:0;
+    var ds=new Date().toISOString().slice(0,10);
+    doc.save('ACT-Math-Test-'+testNum+'-'+ds+'.pdf');
+    btn.textContent='Download Report (PDF)';btn.disabled=false;
+  };
+  document.head.appendChild(s);
+}
+</script>
+</body></html>

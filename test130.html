@@ -1,0 +1,222 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>ACT Math Test 30</title><style>@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:#fff;color:#2d3748;line-height:1.7}
+.container{max-width:800px;margin:0 auto;padding:20px 24px}
+header{background:linear-gradient(135deg,#1a3a4a 0%,#2d6a7a 100%);color:#fff;padding:28px 0;margin-bottom:36px;text-align:center}
+header .container{display:block}
+header h1{font-size:1.6rem;font-weight:700;letter-spacing:-0.3px}
+header a{color:rgba(255,255,255,.7);text-decoration:none;font-size:.9rem;display:inline-block;margin-bottom:6px;transition:color .2s}
+header a:hover{color:#fff}
+.question{background:#fff;border-radius:12px;padding:24px;margin-bottom:20px;border:1px solid #e2e8f0;transition:border-color .2s}
+.question:hover{border-color:#cbd5e0}
+.question p{margin-bottom:14px;font-size:1.05rem}
+img{max-width:100%;height:auto;margin:4px 0;vertical-align:middle}
+.choices{list-style:none}
+.choices li{padding:10px 14px;margin:6px 0;border-radius:8px;cursor:pointer;transition:all .2s;border:2px solid transparent}
+.choices li:hover{background:#f0f7fa}
+.choices li.selected{background:#d1ecf1;border-color:#bee5eb}
+.choices li.correct{background:#d4edda;border-color:#28a745}
+.choices li.wrong{background:#f8d7da;border-color:#dc3545}
+.choices li.show-correct{background:#d4edda;border-color:#28a745}
+.submit-wrap{text-align:center;margin:36px 0}
+.submit-btn{display:inline-block;padding:14px 40px;background:linear-gradient(135deg,#1a3a4a,#2d6a7a);color:#fff;border:none;border-radius:10px;font-size:1.1rem;cursor:pointer;font-weight:600;font-family:inherit;transition:all .25s;letter-spacing:.3px}
+.submit-btn:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(26,58,74,.25)}
+.score-box{background:#fff;border-radius:12px;padding:28px;margin-bottom:28px;text-align:center;border:1px solid #e2e8f0;box-shadow:0 4px 20px rgba(0,0,0,.06);display:none}
+.score-box h2{font-size:1.4rem;margin-bottom:8px;color:#1a3a4a;text-align:center}
+.score-box .pct{font-size:3rem;font-weight:700}
+.score-box .pct.good{color:#28a745}
+.score-box .pct.ok{color:#e6a817}
+.score-box .pct.bad{color:#dc3545}
+.score-box .detail{color:#666;margin-top:4px}
+.result-tag{display:inline-block;padding:2px 10px;border-radius:12px;font-size:.8rem;font-weight:600;margin-left:8px}
+.result-tag.correct{background:#d4edda;color:#155724}
+.result-tag.wrong{background:#f8d7da;color:#721c24}
+.reset-btn{display:none;margin:16px auto;padding:12px 28px;background:#6c757d;color:#fff;border:none;border-radius:10px;font-size:1rem;cursor:pointer;font-family:inherit;transition:all .25s}
+.reset-btn:hover{background:#5a6268;transform:translateY(-1px)}
+.explanation{background:#f0f7ff;border-left:4px solid #1a3a4a;padding:14px 18px;margin-top:14px;border-radius:0 8px 8px 0;font-size:.95rem;color:#444;display:none}
+.explanation.show{display:block}
+.explanation strong{color:#1a3a4a}
+.nav{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin:36px 0}
+.nav a{display:inline-block;padding:10px 24px;background:linear-gradient(135deg,#1a3a4a,#2d6a7a);color:#fff;text-decoration:none;border-radius:10px;font-weight:500;font-size:.95rem;transition:all .25s}
+.nav a:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(26,58,74,.25)}
+footer{text-align:center;padding:36px 24px;color:#8899a4;font-size:.85rem;border-top:1px solid #e2e8f0;margin-top:40px}
+.report-btn{display:inline-block;margin:0;padding:12px 28px;background:linear-gradient(135deg,#1a3a4a,#2d6a7a);color:#fff;border:none;border-radius:10px;font-size:1rem;cursor:pointer;font-family:inherit;transition:all .25s}
+.report-btn:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(26,58,74,.25)}
+.bottom-score{background:#fff;border-radius:12px;padding:20px;margin:20px 0;text-align:center;border:1px solid #e2e8f0;box-shadow:0 4px 20px rgba(0,0,0,.06)}
+.bottom-score .pct{font-size:2.5rem;font-weight:700}
+.bottom-score .pct.good{color:#28a745}
+.bottom-score .pct.ok{color:#e6a817}
+.bottom-score .pct.bad{color:#dc3545}
+.bottom-score .detail{color:#666;margin-top:4px;font-size:.95rem}
+.report-wrap{display:none;text-align:center;margin:16px 0}
+.name-input{padding:10px 14px;border:1px solid #e2e8f0;border-radius:10px;font-size:.95rem;font-family:inherit;width:200px;margin-right:8px;outline:none;transition:border-color .2s}
+.name-input:focus{border-color:#1a3a4a}
+</style></head><body><header><div class="container"><a href="index.html">&larr; All Tests</a><h1>ACT Math Practice Test 30</h1></div></header><div class="container"><div id="score-box" class="score-box"><h2>Your Score</h2><div class="pct">0%</div><div class="detail"></div></div><div class="question"><p><b>1.</b> At Blackstone Café, a regular entrée costs $18.00 while an entrée off the children's menu costs less. Cliff treats his niece to dinner at the café and spends <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_386_r1.jpg"> of a gift certificate on her children's entrée and a drink. Afterwards, she orders a $6.00 dessert and he pays for that as well. When Cliff has paid for all of his niece's food, he has exactly enough money left on the gift certificate to pay for his regular entrée. How much money was the gift certificate worth?</p><ul class="choices"><li>F. $34.00</li><li>G. $35.00</li><li>H. $36.00</li><li>J. $37.00</li><li>K. $38.00</li></ul></div><div class="question"><p><b>2.</b> In June, Ms. Kunkel gave her English students 15 books to read over the summer. When classes resumed in September, she asked them what percentage of the books they had finished. Only one of the following values represents a possible percentage of books a student could have completed. Which one is it?</p><ul class="choices"><li>A. 65%</li><li>B. 68%</li><li>C. 70%</li><li>D. 80%</li><li>E. 85%</li></ul></div><div class="question"><p><b>3.</b> A geometric sequence has as its first 4 terms, -0.125, 1, -8, and 64. What is the 5th term of this sequence?</p><ul class="choices"><li>F. 512</li><li>G. 73</li><li>H. -55</li><li>J. -73</li><li>K. -512</li></ul></div><div class="question"><p><b>4.</b> Which of the following is equivalent to (<em>a</em> - 5<em>b</em>)<sup class="frac">2</sup>?</p><ul class="choices"><li>A. 2<em>a</em> - 10<em>b</em></li><li>B. <em>a</em><sup class="frac">2</sup> - 25<em>b</em><sup class="frac">2</sup></li><li>C. <em>a</em><sup class="frac">2</sup> - 10<em>ab</em> + 25<em>b</em><sup class="frac">2</sup></li><li>D. <em>a</em><sup class="frac">2</sup> - 12<em>ab</em> + 25<em>b</em><sup class="frac">2</sup></li><li>E. <em>a</em><sup class="frac">2</sup> - 25<em>ab</em> + 25<em>b</em><sup class="frac">2</sup></li></ul></div><div class="question"><p><b>5.</b> As shown in the figure below, Tony has determined that he must ride his skateboard down a long ramp to be able to jump a shorter ramp with enough time to complete a new trick. First, he needs to determine the dimensions of both the shorter and longer ramps. Tony is on his skateboard at point <em>K</em>, 20 feet above the ground. He then notes that the vertical height <img alt="" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_055_r1.jpg"> of the shorter ramp is 6 feet above the ground, and the length of the shorter ramp <img alt="" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_052_r1.jpg"> is 9 feet. Approximately how many feet long is the longer ramp?<br>(Note: In <img alt="" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_151_r1.jpg"><em>FKG</em> and <img alt="" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_151_r1.jpg"><em>HJG</em>, <img alt="" class="root" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_029_r1.jpg"><em>FGK</em> is congruent to <img alt="" class="root" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_029_r1.jpg"><em>HGJ</em>.<br><img alt="" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_555_r1.jpg"></p><ul class="choices"><li>F. 3</li><li>G. 12</li><li>H. 15</li><li>J. 30</li><li>K. 35</li></ul></div><div class="question"><p><b>6.</b> What is the solution to the equation 9<em>x</em> - (3<em>x</em> - 1) = 3?</p><ul class="choices"><li>A. -3</li><li>B. -<img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_637_r1.jpg"></li><li>C. <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_386_r1.jpg"></li><li>D. <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_637_r1.jpg"></li><li>E. 3</li></ul></div><div class="question"><p><b>7.</b> The area of <img alt="" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_151_r1.jpg"><em>ABC</em> below is 54 square meters. If altitude <img alt="" class="root" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_029_r1.jpg">is 9 meters long, how long is <img alt="" class="root" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_029_r1.jpg"><em>AC</em>, in meters?<br><img alt="" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_556_r1.jpg"></p><ul class="choices"><li>F. 3</li><li>G. 6</li><li>H. 9</li><li>J. 12</li><li>K. 15</li></ul></div><div class="question"><p><b>8.</b> Given <em>g</em>(<em>x</em>) = 4<em>x</em><sup class="frac">2</sup> - 8<em>x</em> + 2, what is the value of <em>g</em>(-5)?</p><ul class="choices"><li>A. 442</li><li>B. 142</li><li>C. 67</li><li>D. -58</li><li>E. -138</li></ul></div><div class="question"><p><b>9.</b> A company will reimburse its employees' personal expenses on weekend business trips. It will reimburse $0.80 for every $1.00 an employee spends, up to $100.00. For the next $200 an employee spends, the company will reimburse $0.70 for every $1.00 spent. For each additional dollar spent, the company will reimburse $0.60. If an employee was reimbursed $400.00, approximately how many dollars must she have spent on a weekend business trip?</p><ul class="choices"><li>F. 667</li><li>G. 600</li><li>H. 500</li><li>J. 400</li><li>K. 367</li></ul></div><div class="question"><p><b>10.</b> The following table shows the ages of all the attendees of Camp Wannaboggin.<br><img alt="" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_557_r1.jpg"><br>What percent of the Wannaboggin campers are at least 11 years old?</p><ul class="choices"><li>A. 34%</li><li>B. 45%</li><li>C. 50%</li><li>D. 55%</li><li>E. 66%</li></ul></div><div class="question"><p><b>11.</b> What percent of <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_1126_r1.jpg"> is <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_392_r1.jpg">?</p><ul class="choices"><li>F. 13%</li><li>G. 20%</li><li>H. 55%</li><li>J. 63%</li><li>K. 500%</li></ul></div><div class="question"><p><b>12.</b> The newspaper headline below tells about a power outage. If there are 63,000 residences in Springfield, how many residences were affected by the outage?<br><img alt="" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_558_r1.jpg"></p><ul class="choices"><li>A. 10,500</li><li>B. 21,000</li><li>C. 31,500</li><li>D. 42,000</li><li>E. 62,995</li></ul></div><div class="question"><p><b>13.</b> The ratio of a side of square <em>X</em> to the length of rectangle <em>Z</em> is 3:4. The ratio of a side of square <em>X</em> to the width of rectangle <em>Z</em> is 3:2. What is the ratio of the area of square <em>X</em> to the area of rectangle <em>Z</em>?</p><ul class="choices"><li>F. 1:01</li><li>G. 2:01</li><li>H. 3:02</li><li>J. 9:04</li><li>K. 9:08</li></ul></div><div class="question"><p><b>14.</b> In her Algebra II class, Mrs. Pemdas writes the following statement on the board: "<em>a</em> varies inversely as the product of <em>b</em><sup class="frac">2</sup> and <em>c</em>, and directly as <em>d</em><sup class="frac">3</sup>." She then asks her students to translate the statement into an equation. Which of the following equations, with <em>k</em> as the constant of proportionality, is a correct translation of Mrs. Pemdas's statement?</p><ul class="choices"><li>A. <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_560_r1.jpg"></li><li>B. <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_561_r1.jpg"></li><li>C. <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_562_r1.jpg"></li><li>D. <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_563_r1.jpg"></li><li>E. <em>a</em> = <em>kb</em><sup class="frac">2</sup> <em>cd</em><sup class="frac">2</sup></li></ul></div><div class="question"><p><b>15.</b> In a certain isosceles triangle, the measure of the vertex angle is four times the measure of each of the base angles. What is the measure, in degrees, of the vertex angle?</p><ul class="choices"><li>F. 30°</li><li>G. 45°</li><li>H. 60°</li><li>J. 120°</li><li>K. 150°</li></ul></div><div class="submit-wrap"><button class="submit-btn" onclick="gradeTest()">Submit Test</button><button class="reset-btn" onclick="resetTest()">Try Again</button>
+<div class="report-wrap"><input type="text" class="name-input" placeholder="Student name (for report)"><button class="report-btn" onclick="generateReport()">Download Report (PDF)</button></div></div><div class="nav"><a href="test129.html">&larr; Prev</a><a href="index.html">All Tests</a><a href="test131.html">Next &rarr;</a></div></div><footer><div class="container">ACT Math Practice</div></footer>
+<script>
+const ANSWERS = {"1": "H", "2": "D", "3": "K", "4": "C", "5": "J", "6": "C", "7": "J", "8": "B", "9": "G", "10": "E", "11": "G", "12": "D", "13": "K", "14": "A", "15": "J"};
+const EXPLANATIONS = {"1":"H  Set up an equation with x as the total amount of money the gift certificate is worth. Subtract  of the total amount for the niece\'s entrée and drink, and $6.00 for the niece\'s dessert, from the total gift certificate value. Set the equation equal to the amount of money Cliff will have left over: $18.00 for his regular entrée: x -(x) - $6.00  =  $18.00. Solve for x: $x  =  $24.00, x  =  $36.00.", "2":"D  To solve, check some possible fractions of books read (out of a possible 15):  =  66.6666%;  =  73.33333%;  =  80%;  =  86.6666%; and  =  93.3333%. Only choice (D) gives a possible percentage. Alternatively, you can try all the percentages in the answer choices and see which gives you an integer value.", "3":"K  A geometric sequence is one that has a constant factor between its terms. To find this constant multiple, divide the second term by the first (or the third by the second, the fourth by the third, etc.). In this case, the constant factor between all terms is 1 ÷ (-0.125)  =  (-8) ÷ 1  =  -8. To find the 5th term, simply multiply the fourth term by -8: 64 × (-8)  =  -512. If you forget what a geometric sequence is, look at what the numbers are doing. First and foremost, they\'re alternating between negative and positive, so the fifth term must be negative—this enables you to eliminate choices (F) and (G). Next, notice that the magnitude of each number (ignoring its sign) is getting larger, so eliminate choice (H). From there, make sure that you\'ve got a relationship of multiplication (geometric sequence) rather than addition (arithmetic sequence). If you chose (J), be careful: you added the second through third terms of the sequence—making them all negative—to get (-1) + (-8) + (-64)  =  -73.", "4":"C  The square refers to everything inside the parentheses, so use FOIL (First Outer Inner Last). (a - 5b) (a - 5b)  =  a2 - 5ab - 5ab + 25b2  =  a2 - 10ab + 25b2. Choices (D) and (E) miscalculate the middle term, and choice (B) squares each term individually. Choice (A) adds the binomials instead of multiplying them.", "5":"J  Use similar triangles. Since FGK is congruent to HGJ, and angles F and H are both right angles, you know the remaining angles are equal as well. Because they share three congruent angles, FKG and HJG are similar. You know, therefore, that the sides are proportional. Set up the following proportion to find the length of the longer ramp :", "6":"C  First distribute the minus sign through the parentheses to get 9x - 3x + 1  =  3. Combine the terms on the left and subtract 1 from both sides: 6x  =  2. Divide both sides by three to find that x  =  . Choice (B) and (D) do not distribute the parentheses and choices (A) and (E) divide incorrectly.", "7":"J  Since you have the full area of the triangle and its height, or altitude, , you can find its base  by rearranging the area formula A  =  bh to be b  =  . Simply enter the numbers from the problem to find the base: b  =    =  12. If you chose (G), be careful—you may have forgotten the .", "8":"B  Plug -5 into the expression given for g(x) and watch your signs. g(-5)  =  4(-5)2 - 8(-5) + 2  =  4(25) - (-40) + 2  =  100 + 40 + 2  =  142. Choice (A) squares the value of 4x and choice (C) omits the 4 in calculating. Choices (D) and (E) confuse signs.", "9":"G  For the first $100.00 spent, multiply $100.00 × $0.80  =  $80.00 that the company will reimburse. For the next $200.00 spent, multiply $200.00 × $0.70  =  $140.00. So far, for $300.00 spent, the company will have reimbursed $80.00 + $140.00  =  $220.00. Subtract $400.00 - $220.00  =  $180.00 that the employee was reimbursed. To find the additional amount of money the employee must have spent, set up an equation with x as the additional number of dollars. $0.60(x)  =  $180.00, x  =  $300.00. Finally, add all of the dollars spent: $100.00 + $200.00 + $300.00  =  $600.00.", "10":"E  The campers who are at least 11 years old include the 11-, 12-, and 13-year-olds. Because all the values in the chart represent percents of the same number, you can simply add them together to get 21 + 37 + 8  =  66%, or choice (E). Choice (A) counts only the 9 and 10 year old percentages; choice (B) counts the percentage of everyone older than 11 (12 and 13 year olds); and choice (D) counts ages up to and including 11. Choice (C) incorrectly guesses 50% because 11 is the median of the 5 numbers.", "11":"G  Although this question is short, it gives the terms in an order that might be unfamiliar to you. It might help to rearrange the terms in the question to this:  is what percent of ? To find the answer simply divide   =  0.2 or 20%. Choice (F) is  converted to a percent, and choice (J) is  converted to a percent. If you chose (K), be careful—you switched your terms to find that  is 500% of .", "12":"D  Multiply the number of residences times the fraction affected by the outage to find the total number of people affected. (63,000)()  =  42,000. Choice (B) tells the number of residences not affected. Choice (C) finds  of the residences. Choice (A) divides the number of residences by the product of 2 and 3, while choice (E) subtracts 2 and 3 from the number of residences.", "13":"K  Since you know that the sides of a square are always equal, pay close attention to the numbers given in the problem. Use them as you draw square X and rectangle Y. In this case, that means the sides of square X are both 3, and the sides of rectangle Y are 2 and 4. Since you know that the area of a square is A  =  s2 and the area of a rectangle is A  =  lw, find the area of each figure with the numbers from the problem. The area of square X is 9, and the area of rectangle Z is 8, so the (area of square X):(area of rectangle Z) is 9:8. Note, you can choose different numbers for the sides of square X and rectangle Z as long as these numbers are in the proportion outlined in the problem. As long as they are, you\'ll see that whatever ratio you find between the areas will reduce to 9:8.", "14":"A  Take the statement in small pieces, and don\'t worry, you don\'t need to know how the constant of proportionality works to answer this question correctly. Since a varies inversely as the product of b2 and c, make sure that these values are both in the denominator of the right side of the equation. This eliminates choices (B), (C), (D), and (E). In case you are interested, the standard forms of direct and inverse variation with k as the constant of proportionality are y  =  kx (direct) and y  =   (inverse).", "15":"J  The base angles of any isosceles triangle are equal, the sum of the angles of any triangle is 180°, and the vertex angle of this triangle is 4 times its base angles, so 4x + x + x  =  180. 6x  =  180, or x  =  30. The question asks for the vertex angle, which is 4x  =  4(30)  =  120. Choice (F) gives the base angles (or the partial answer x you found in your equation), choice (H) gives the sum of the base angles, and choice (K) only subtracts the value of one base angle from 180. Choice (G) finds the value of x when 4x is equal to 180, omitting the base angles."};
+let graded = false;
+
+document.querySelectorAll('.choices li').forEach(li => {
+  // Remove old onclick
+  li.removeAttribute('onclick');
+  li.addEventListener('click', function() {
+    if (graded) return;
+    const siblings = this.parentElement.querySelectorAll('li');
+    siblings.forEach(s => s.classList.remove('selected'));
+    this.classList.add('selected');
+  });
+});
+
+function gradeTest() {
+  if (graded) return;
+  graded = true;
+  let correct = 0;
+  const total = Object.keys(ANSWERS).length;
+  
+  document.querySelectorAll('.question').forEach((qDiv, idx) => {
+    const qNum = idx + 1;
+    const correctAns = ANSWERS[qNum];
+    if (!correctAns) return;
+    const choices = qDiv.querySelectorAll('.choices li');
+    const selected = qDiv.querySelector('.choices li.selected');
+    const selectedLetter = selected ? selected.textContent.trim().charAt(0) : null;
+    
+    choices.forEach(li => {
+      const letter = li.textContent.trim().charAt(0);
+      if (letter === correctAns) li.classList.add('show-correct');
+      li.style.cursor = 'default';
+    });
+    
+    const tag = document.createElement('span');
+    tag.className = 'result-tag';
+    
+    if (selectedLetter === correctAns) {
+      correct++;
+      tag.className += ' correct';
+      tag.textContent = 'Correct';
+      if (selected) { selected.classList.remove('selected'); selected.classList.add('correct'); }
+    } else {
+      tag.className += ' wrong';
+      tag.textContent = 'Incorrect (Answer: ' + correctAns + ')';
+      if (selected) { selected.classList.remove('selected'); selected.classList.add('wrong'); }
+    }
+    
+    const firstP = qDiv.querySelector('p');
+    if (firstP) firstP.appendChild(tag);
+    
+    if (typeof EXPLANATIONS !== 'undefined' && EXPLANATIONS[qNum]) {
+      const explDiv = document.createElement('div');
+      explDiv.className = 'explanation show';
+      explDiv.innerHTML = '<strong>Explanation:</strong> ' + EXPLANATIONS[qNum];
+      qDiv.appendChild(explDiv);
+    }
+  });
+  
+  const pct = Math.round((correct / total) * 100);
+  document.querySelector('.submit-btn').style.display = 'none';
+  document.querySelector('.reset-btn').style.display = 'block';
+  var rw=document.querySelector('.report-wrap');if(rw)rw.style.display='block';
+  var bs=document.createElement('div');bs.className='bottom-score';bs.id='bottom-score';
+  bs.innerHTML='<h2 style="font-size:1.3rem;margin-bottom:6px;color:#1a3a4a">Your Score</h2><div class="pct '+(pct>=80?'good':pct>=60?'ok':'bad')+'">'+pct+'%</div><div class="detail">'+correct+' out of '+total+' correct</div>';
+  document.querySelector('.submit-wrap').after(bs);
+  try{var tn=location.pathname.match(/test(\d+)/);if(tn)localStorage.setItem('actmath_'+tn[1],pct);}catch(e){}
+}
+
+function resetTest() {
+  graded = false;
+  var bsEl=document.getElementById('bottom-score');if(bsEl)bsEl.remove();
+  document.querySelector('.submit-btn').style.display = '';
+  document.querySelector('.reset-btn').style.display = 'none';
+  var rw=document.querySelector('.report-wrap');if(rw)rw.style.display='none';
+  var ni=document.querySelector('.name-input');if(ni)ni.value='';
+  document.querySelectorAll('.choices li').forEach(li => {
+    li.classList.remove('selected','correct','wrong','show-correct');
+    li.style.cursor = 'pointer';
+  });
+  document.querySelectorAll('.result-tag').forEach(t => t.remove());
+  document.querySelectorAll('.explanation').forEach(e => e.remove());
+}
+
+function generateReport(){
+  var nameInput=document.querySelector('.name-input');
+  var name=(nameInput&&nameInput.value.trim())||'Student';
+  var testName=document.querySelector('header h1').textContent;
+  var bs=document.getElementById('bottom-score');
+  var scorePct=bs?bs.querySelector('.pct').textContent:'';
+  var detailTxt=bs?bs.querySelector('.detail').textContent:'';
+  var d=new Date().toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'});
+  var btn=document.querySelector('.report-btn');btn.textContent='Generating...';btn.disabled=true;
+  var s=document.createElement('script');
+  s.src='https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js';
+  s.onerror=function(){btn.textContent='Download Report (PDF)';btn.disabled=false;alert('Could not load PDF library.');};
+  s.onload=function(){
+    var doc=new jspdf.jsPDF('portrait','mm','letter');
+    var pw=215.9,ph=279.4,mx=12,cw=pw-2*mx,y=8;
+    doc.setFillColor(26,58,74);doc.rect(0,0,pw,22,'F');
+    doc.setTextColor(255,255,255);doc.setFontSize(13);doc.setFont('helvetica','bold');
+    doc.text(testName,mx,9);
+    doc.setFontSize(7.5);doc.setFont('helvetica','normal');
+    doc.text(d+'  |  Student: '+name,mx,14.5);
+    doc.setFontSize(18);doc.setFont('helvetica','bold');
+    doc.text(scorePct,pw-mx,11,{align:'right'});
+    doc.setFontSize(7.5);doc.setFont('helvetica','normal');
+    doc.text(detailTxt,pw-mx,16,{align:'right'});
+    y=25;
+    doc.setDrawColor(26,58,74);doc.setLineWidth(0.3);doc.line(mx,y,pw-mx,y);y+=3;
+    document.querySelectorAll('.question').forEach(function(qDiv,idx){
+      var qNum=idx+1;var ca=ANSWERS[qNum];if(!ca)return;
+      var sel=qDiv.querySelector('.choices li.correct,.choices li.wrong');
+      var sa=sel?sel.textContent.trim().charAt(0):'-';
+      var ok=sel&&sel.classList.contains('correct');
+      if(ok){
+        doc.setFillColor(40,167,69);doc.circle(mx+1.2,y-1,1,'F');
+        doc.setTextColor(33,33,33);doc.setFont('helvetica','bold');doc.setFontSize(8);
+        doc.text('Q'+qNum,mx+4,y);
+        doc.setFont('helvetica','normal');doc.setTextColor(40,167,69);
+        doc.text('Correct ('+ca+')',mx+14,y);
+      }else{
+        doc.setFillColor(220,53,69);doc.circle(mx+1.2,y-1,1,'F');
+        doc.setTextColor(33,33,33);doc.setFont('helvetica','bold');doc.setFontSize(8);
+        doc.text('Q'+qNum,mx+4,y);
+        doc.setFont('helvetica','normal');doc.setTextColor(220,53,69);
+        doc.text('Incorrect',mx+14,y);
+        doc.setTextColor(120,120,120);
+        doc.text('(Chose '+sa+', Correct: '+ca+')',mx+32,y);
+      }
+      y+=3.2;
+      var qP=qDiv.querySelector('p');
+      if(qP){
+        var qT=qP.cloneNode(true);
+        var tags=qT.querySelectorAll('.result-tag');tags.forEach(function(t){t.remove();});
+        var qt=qT.textContent.replace(/^\d+\.\s*/,'').trim();
+        if(qt.length>0){
+          doc.setFont('helvetica','normal');doc.setTextColor(60,60,60);doc.setFontSize(6.5);
+          var ql=doc.splitTextToSize(qt,cw-5);
+          ql=ql.slice(0,1);
+          if(doc.splitTextToSize(qt,cw-5).length>1){ql[0]=ql[0].substring(0,ql[0].length-3)+'...';}
+          doc.text(ql,mx+4,y);y+=2.4;
+        }
+      }
+      if(typeof EXPLANATIONS!=='undefined'&&EXPLANATIONS[qNum]){
+        doc.setFont('helvetica','italic');doc.setTextColor(100,100,100);doc.setFontSize(6);
+        var lines=doc.splitTextToSize(EXPLANATIONS[qNum],cw-5);
+        if(lines.length>2){lines=lines.slice(0,2);lines[1]=lines[1].substring(0,Math.max(0,lines[1].length-3))+'...';}
+        doc.text(lines,mx+4,y);y+=lines.length*2.2;
+      }
+      y+=2;
+    });
+    doc.setDrawColor(200,200,200);doc.setLineWidth(0.2);doc.line(mx,ph-10,pw-mx,ph-10);
+    doc.setTextColor(170,170,170);doc.setFontSize(6);doc.setFont('helvetica','normal');
+    doc.text('ACT Math Practice  |  Score Report',pw/2,ph-7,{align:'center'});
+    var tn=location.pathname.match(/test(\d+)/);
+    var testNum=tn?parseInt(tn[1])-100:0;
+    var ds=new Date().toISOString().slice(0,10);
+    doc.save('ACT-Math-Test-'+testNum+'-'+ds+'.pdf');
+    btn.textContent='Download Report (PDF)';btn.disabled=false;
+  };
+  document.head.appendChild(s);
+}
+</script>
+</body></html>

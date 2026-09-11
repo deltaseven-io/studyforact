@@ -1,0 +1,224 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>ACT Math Test 10</title><style>@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:#fff;color:#2d3748;line-height:1.7}
+.container{max-width:800px;margin:0 auto;padding:20px 24px}
+header{background:linear-gradient(135deg,#1a3a4a 0%,#2d6a7a 100%);color:#fff;padding:28px 0;margin-bottom:36px;text-align:center}
+header .container{display:block}
+header h1{font-size:1.6rem;font-weight:700;letter-spacing:-0.3px}
+header a{color:rgba(255,255,255,.7);text-decoration:none;font-size:.9rem;display:inline-block;margin-bottom:6px;transition:color .2s}
+header a:hover{color:#fff}
+.question{background:#fff;border-radius:12px;padding:24px;margin-bottom:20px;border:1px solid #e2e8f0;transition:border-color .2s}
+.question:hover{border-color:#cbd5e0}
+.question p{margin-bottom:14px;font-size:1.05rem}
+img{max-width:100%;height:auto;margin:4px 0;vertical-align:middle}
+.choices{list-style:none}
+.choices li{padding:10px 14px;margin:6px 0;border-radius:8px;cursor:pointer;transition:all .2s;border:2px solid transparent}
+.choices li:hover{background:#f0f7fa}
+.choices li.selected{background:#d1ecf1;border-color:#bee5eb}
+.choices li.correct{background:#d4edda;border-color:#28a745}
+.choices li.wrong{background:#f8d7da;border-color:#dc3545}
+.choices li.show-correct{background:#d4edda;border-color:#28a745}
+.submit-wrap{text-align:center;margin:36px 0}
+.submit-btn{display:inline-block;padding:14px 40px;background:linear-gradient(135deg,#1a3a4a,#2d6a7a);color:#fff;border:none;border-radius:10px;font-size:1.1rem;cursor:pointer;font-weight:600;font-family:inherit;transition:all .25s;letter-spacing:.3px}
+.submit-btn:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(26,58,74,.25)}
+.score-box{background:#fff;border-radius:12px;padding:28px;margin-bottom:28px;text-align:center;border:1px solid #e2e8f0;box-shadow:0 4px 20px rgba(0,0,0,.06);display:none}
+.score-box h2{font-size:1.4rem;margin-bottom:8px;color:#1a3a4a;text-align:center}
+.score-box .pct{font-size:3rem;font-weight:700}
+.score-box .pct.good{color:#28a745}
+.score-box .pct.ok{color:#e6a817}
+.score-box .pct.bad{color:#dc3545}
+.score-box .detail{color:#666;margin-top:4px}
+.result-tag{display:inline-block;padding:2px 10px;border-radius:12px;font-size:.8rem;font-weight:600;margin-left:8px}
+.result-tag.correct{background:#d4edda;color:#155724}
+.result-tag.wrong{background:#f8d7da;color:#721c24}
+.reset-btn{display:none;margin:16px auto;padding:12px 28px;background:#6c757d;color:#fff;border:none;border-radius:10px;font-size:1rem;cursor:pointer;font-family:inherit;transition:all .25s}
+.reset-btn:hover{background:#5a6268;transform:translateY(-1px)}
+.explanation{background:#f0f7ff;border-left:4px solid #1a3a4a;padding:14px 18px;margin-top:14px;border-radius:0 8px 8px 0;font-size:.95rem;color:#444;display:none}
+.explanation.show{display:block}
+.explanation strong{color:#1a3a4a}
+.nav{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin:36px 0}
+.nav a{display:inline-block;padding:10px 24px;background:linear-gradient(135deg,#1a3a4a,#2d6a7a);color:#fff;text-decoration:none;border-radius:10px;font-weight:500;font-size:.95rem;transition:all .25s}
+.nav a:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(26,58,74,.25)}
+footer{text-align:center;padding:36px 24px;color:#8899a4;font-size:.85rem;border-top:1px solid #e2e8f0;margin-top:40px}
+.report-btn{display:inline-block;margin:0;padding:12px 28px;background:linear-gradient(135deg,#1a3a4a,#2d6a7a);color:#fff;border:none;border-radius:10px;font-size:1rem;cursor:pointer;font-family:inherit;transition:all .25s}
+.report-btn:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(26,58,74,.25)}
+.bottom-score{background:#fff;border-radius:12px;padding:20px;margin:20px 0;text-align:center;border:1px solid #e2e8f0;box-shadow:0 4px 20px rgba(0,0,0,.06)}
+.bottom-score .pct{font-size:2.5rem;font-weight:700}
+.bottom-score .pct.good{color:#28a745}
+.bottom-score .pct.ok{color:#e6a817}
+.bottom-score .pct.bad{color:#dc3545}
+.bottom-score .detail{color:#666;margin-top:4px;font-size:.95rem}
+.report-wrap{display:none;text-align:center;margin:16px 0}
+.name-input{padding:10px 14px;border:1px solid #e2e8f0;border-radius:10px;font-size:.95rem;font-family:inherit;width:200px;margin-right:8px;outline:none;transition:border-color .2s}
+.name-input:focus{border-color:#1a3a4a}
+</style></head><body><header><div class="container"><a href="index.html">&larr; All Tests</a><h1>ACT Math Practice Test 10</h1></div></header><div class="container"><div id="score-box" class="score-box"><h2>Your Score</h2><div class="pct">0%</div><div class="detail"></div></div><div class="question"><p><b>1.</b> In the following figure, each of the four angles in the parallelogram is as shown. What is the value of <i>y</i>?<br><img alt="" src="https://www.crackab.com/images/tests/9781118001547-un1704_fmt.jpeg"></p><ul class="choices"><li>F. 30</li><li>G. 35</li><li>H. 40</li><li>J. 45</li><li>K. 50</li></ul></div><div class="question"><p><b>2.</b> If 2<i>x</i>– <i>y</i>= 32 and 5<i>x</i>+ 3<i>y</i>= 14, then <span class="zcheltitalic">xy</span>=</p><ul class="choices"><li>A. 35</li><li>B. –40</li><li>C. 75</li><li>D. 100</li><li>E. –120</li></ul></div><div class="question"><p><b>3.</b> What is the value of <span class="zcheltitalic">a</span>in terms <span class="zcheltitalic">b</span>if <img alt="" src="https://www.crackab.com/images/tests/9781118001547-eq17121_fmt.jpeg">?</p><ul class="choices"><li>F. <img alt="" src="https://www.crackab.com/images/tests/9781118001547-eq17016_fmt.jpeg"></li><li>G. <img alt="" src="https://www.crackab.com/images/tests/9781118001547-eq17017_fmt.jpeg"></li><li>H. <img alt="" src="https://www.crackab.com/images/tests/9781118001547-eq17018_fmt.jpeg"></li><li>J. <img alt="" src="https://www.crackab.com/images/tests/9781118001547-eq17019_fmt.jpeg"></li><li>K. <img alt="" src="https://www.crackab.com/images/tests/9781118001547-eq17020_fmt.jpeg"></li></ul></div><div class="question"><p><b>4.</b> If <span class="zcheltitalic">p</span>percent of 250 is 75, what is 75% of <span class="zcheltitalic">p</span>?</p><ul class="choices"><li>A. 22.5</li><li>B. 25</li><li>C. 75</li><li>D. 225</li><li>E. 250</li></ul></div><div class="question"><p><b>5.</b> What is the slope of the line 9<i>x</i>– 3<i>y</i>= 10?</p><ul class="choices"><li>F. 3</li><li>G. –3</li><li>H. 9</li><li>J. <img alt="" src="https://www.crackab.com/images/tests/9781118001547-eq17021_fmt.jpeg"></li><li>K. <img alt="" src="https://www.crackab.com/images/tests/9781118001547-eq17022_fmt.jpeg"></li></ul></div><div class="question"><p><b>6.</b> In the following figure, <i>f</i>is the midpoint of <img alt="" src="https://www.crackab.com/images/tests/9781118001547-eq17023_fmt.jpeg">. Which of the following are the coordinates of <i>f</i>?<br><img alt="" src="https://www.crackab.com/images/tests/9781118001547-un1705_fmt.jpeg"></p><ul class="choices"><li>A. <img alt="" src="https://www.crackab.com/images/tests/9781118001547-eq17024_fmt.jpeg"></li><li>B. <img alt="" src="https://www.crackab.com/images/tests/9781118001547-eq17025_fmt.jpeg"></li><li>C. <img alt="" src="https://www.crackab.com/images/tests/9781118001547-eq17026_fmt.jpeg"></li><li>D. <img alt="" src="https://www.crackab.com/images/tests/9781118001547-eq17027_fmt.jpeg"></li><li>E. <img alt="" src="https://www.crackab.com/images/tests/9781118001547-eq17028_fmt.jpeg"></li></ul></div><div class="question"><p><b>7.</b> If |6 – 4<i>n</i>| &gt; 1, which of the following must be true?</p><ul class="choices"><li>F. <img alt="" src="https://www.crackab.com/images/tests/9781118001547-eq17029_fmt.jpeg"></li><li>G. <img alt="" src="https://www.crackab.com/images/tests/9781118001547-eq17030_fmt.jpeg"></li><li>H. <img alt="" src="https://www.crackab.com/images/tests/9781118001547-eq17031_fmt.jpeg"></li><li>J. <img alt="" src="https://www.crackab.com/images/tests/9781118001547-eq17032_fmt.jpeg"></li><li>K. <img alt="" src="https://www.crackab.com/images/tests/9781118001547-eq17033_fmt.jpeg"></li></ul></div><div class="question"><p><b>8.</b> In the following figure, sin <span class="zsymbolital">θ</span>=<br><img alt="" src="https://www.crackab.com/images/tests/9781118001547-un1706_fmt.jpeg"></p><ul class="choices"><li>A. <img alt="" src="https://www.crackab.com/images/tests/9781118001547-eq17034_fmt.jpeg"></li><li>B. <img alt="" src="https://www.crackab.com/images/tests/9781118001547-eq17035_fmt.jpeg"></li><li>C. <img alt="" src="https://www.crackab.com/images/tests/9781118001547-eq17036_fmt.jpeg"></li><li>D. <img alt="" src="https://www.crackab.com/images/tests/9781118001547-eq17037_fmt.jpeg"></li><li>E. <img alt="" src="https://www.crackab.com/images/tests/9781118001547-eq17038_fmt.jpeg"></li></ul></div><div class="question"><p><b>9.</b> The formula for the volume of a sphere is <img alt="" src="https://www.crackab.com/images/tests/9781118001547-eq17039_fmt.jpeg">, and the formula for the surface area of a sphere is <img alt="" src="https://www.crackab.com/images/tests/9781118001547-eq17040_fmt.jpeg">. If a sphere has a surface area of 36<span class="zsymbolmedium">π</span>, what is its volume?</p><ul class="choices"><li>F. 27<span class="zsymbolmedium">π</span></li><li>G. 36<span class="zsymbolmedium">π</span></li><li>H. 54<span class="zsymbolmedium">π</span></li><li>J. 72<span class="zsymbolmedium">π</span></li><li>K. 108<span class="zsymbolmedium">π</span></li></ul></div><div class="question"><p><b>10.</b> What is a possible value of <i>x</i>if <img alt="" src="https://www.crackab.com/images/tests/9781118001547-eq17045_fmt.jpeg">?</p><ul class="choices"><li>A. <img alt="" src="https://www.crackab.com/images/tests/9781118001547-eq17046_fmt.jpeg"></li><li>B. <img alt="" src="https://www.crackab.com/images/tests/9781118001547-eq17047_fmt.jpeg"></li><li>C. <img alt="" src="https://www.crackab.com/images/tests/9781118001547-eq17048_fmt.jpeg"></li><li>D. <img alt="" src="https://www.crackab.com/images/tests/9781118001547-eq17049_fmt.jpeg"></li><li>E. <img alt="" src="https://www.crackab.com/images/tests/9781118001547-eq17050_fmt.jpeg"></li></ul></div><div class="question"><p><b>11.</b> If <span class="zcheltitalic">m</span>and <i>n</i>are both factors of 75, which of the following could equal <span class="zcheltitalic">m</span>+ <span class="zcheltitalic">n:</span></p><ul class="choices"><li>F. 12</li><li>G. 18</li><li>H. 22</li><li>J. 36</li><li>K. 54</li></ul></div><div class="question"><p><b>12.</b> The following graph shows the percentage of shares controlled by five owners of a startup software company. Zach intends to sell his shares equally among the other four owners. After this sale is final, what percentage of the company will Bell own?<br><img alt="" src="https://www.crackab.com/images/tests/9781118001547-un1707_fmt.jpeg"></p><ul class="choices"><li>A. 25.25%</li><li>B. 27.25%</li><li>C. 27.50%</li><li>D. 39.90%</li><li>E. 34%</li></ul></div><div class="question"><p><b>13.</b> A clown at an amusement park makes animal shapes from twisted balloons. She sells each animal based on the number of balloons it requires, according to the following chart:<br><img alt="" src="https://www.crackab.com/images/tests/148.jpg"><br>Which of the following functions equals
+the dollar cost of a balloon animal that
+contains <i>x</i> balloons?</p><ul class="choices"><li>F. <i>f(x)</i> = <i>x</i></li><li>G. <i>f(x)</i> = <i>x</i> + 4</li><li>H. <i>f(x)</i> = 4<i>x</i> + 0.5</li><li>J. <i>f(x)</i> = 0.5<i>x</i> + 4</li><li>K. <i>f(x)</i> = 0.5<i>x</i> + 3.5</li></ul></div><div class="question"><p><b>14.</b> What is the sum of the two values of <i>x</i> that satisfy the equation 4<i>x</i><span class="zsuperscript">2</span> – 3<i>x</i> – 1 = 0?</p><ul class="choices"><li>A. 0.75</li><li>B. 1.25</li><li>C. 2.5</li><li>D. –0.75</li><li>E. –1.25</li></ul></div><div class="question"><p><b>15.</b> What is the result when you add the matrix <img src="https://www.crackab.com/images/tests/9781118001547-eq17122_fmt.jpeg"> to the matrix <img src="https://www.crackab.com/images/tests/9781118001547-eq17123_fmt.jpeg"> and multiply the result by 2?</p><ul class="choices"><li>F. <img src="https://www.crackab.com/images/tests/9781118001547-eq17124_fmt.jpeg"></li><li>G. <img src="https://www.crackab.com/images/tests/9781118001547-eq17125_fmt.jpeg"></li><li>H. <img src="https://www.crackab.com/images/tests/9781118001547-eq17126_fmt.jpeg"></li><li>J. <img src="https://www.crackab.com/images/tests/9781118001547-eq17127_fmt.jpeg"></li><li>K. <img src="https://www.crackab.com/images/tests/9781118001547-eq17127__fmt.jpeg"></li></ul></div><div class="submit-wrap"><button class="submit-btn" onclick="gradeTest()">Submit Test</button><button class="reset-btn" onclick="resetTest()">Try Again</button>
+<div class="report-wrap"><input type="text" class="name-input" placeholder="Student name (for report)"><button class="report-btn" onclick="generateReport()">Download Report (PDF)</button></div></div><div class="nav"><a href="test109.html">&larr; Prev</a><a href="index.html">All Tests</a><a href="test111.html">Next &rarr;</a></div></div><footer><div class="container">ACT Math Practice</div></footer>
+<script>
+const ANSWERS = {"1": "K", "2": "E", "3": "K", "4": "A", "5": "F", "6": "D", "7": "J", "8": "E", "9": "G", "10": "A", "11": "G", "12": "B", "13": "K", "14": "A", "15": "H"};
+const EXPLANATIONS = {"1":"K. A parallelogram is a quadrilateral, so its angles add up to 360°. Opposite angles are equal, so any two adjacent angles add up to 180°. Thus, you can set up the following equation: z– 15 + 2z =  180 3z– 15  =  180 3z =  195 z =  65 Therefore ∠D =  z° – 15°  =  65° – 15°  =  50° Because opposite angles in a parallelogram are equal, ∠D =  ∠B, so y =  50.", "2":"E. To begin, solve 2x– y =  32 for y in terms of x: 2x– y =  32 –y =  –2x+ 32 y =  2x– 32 Next, substitute 2x– 32 for y in 5x+ 3y =  14 and solve for x: 5x+ 3(2x– 32)  =  14 5x+ 6x– 96  =  14 11x =  110 x =  10 Now substitute 10 for x in y =  2x– 32: y =  2(10) – 32  =  20 – 32  =  –12 Therefore, xy =  (10)(–12)  =  –120.", "3":"K. Begin by getting a common denominator of 3bon the left side of the equation, and then add the two fractions and simplify: Now cross-multiply to remove the fractions: 4(4a+ 2)  =  3b(1) Simplify and isolate the aterm: 16a+ 8  =  3b 16a =  3b– 8 Finally, divide both sides by 16 to get your answer:", "4":"A. Translate the statement “ppercent of 250 is 75” into an equation and solve for p: p(0.01)(250)  =  75 2.5p =  75 p =  30 Thus, 75% of 30  =  22.5.", "5":"F. To find the slope of 9x– 3y =  10, put the equation in the slope-intercept form:", "6":"D. To find the coordinates, simply use the midpoint formula:", "7":"J. To begin, split |6 – 4n| > 1 into two equations and remove the absolute value bars: 6 – 4n> 1 6 – 4n< –1 Solve the first equation: Then solve the second equation: Therefore, .", "8":"E. The sine equals the opposite side over the hypotenuse: To remove the radical from the denominator, multiply both the numerator and the denominator by :", "9":"G. First, use the formula for the surface area to find the radius: Next, plug the radius into the formula for the volume:", "10":"A. First, isolate the radical on the left side: Next, square both sides of the equation (be sure to square the whole side in each case): Now simplify and solve for x:", "11":"G.Begin by listing the factors of 75: Factors of 75:1 3 5 15 25 75 Thus, m and n could be any of these six values. A bit of trial and error working with these numbers reveals that 3 + 15  =  18.", "12":"B. The four percentages shown in the graph add up to 23% + 21% + 22% + 25%  =  91%. Thus, Zach owns the remaining 9%. When he divides this percent into four equal parts, each part will be 9% ÷ 4  =  2.25%. When this amount is added to Bell’s, her total shares will be 25% + 2.25%  =  27.25%.", "13":"K. According to the chart, the first balloon costs $4.00, so begin building your function with f(x)  =  4. Each balloon after the first costs an additional $0.50, so you need to subtract 1 from x(to account for the first balloon) and then multiply this by 0.50: f(x)  =  4 + 0.50(x– 1) Simplify the function to get the correct answer: f(x)  =  4 + 0.50x– 0.50 f(x)  =  3.50 + 0.50x f(x)  =  0.5x+ 3.5", "14":"A. Solve 4x2– 3x– 1  =  0 by factoring: 4x2– 3x– 1  =  0 (4x+ 1)(x– 1)  =  0 Split this into two equations and solve for x: 4x+ 1  =  0 x– 1  =  0 4x =  –1 x =  1 x =  –0.25 Therefore, the sum of these two values is –0.25 + 1  =  0.75.", "15":"H. First, use matrix addition: Now multiply the result by 2:"};
+let graded = false;
+
+document.querySelectorAll('.choices li').forEach(li => {
+  // Remove old onclick
+  li.removeAttribute('onclick');
+  li.addEventListener('click', function() {
+    if (graded) return;
+    const siblings = this.parentElement.querySelectorAll('li');
+    siblings.forEach(s => s.classList.remove('selected'));
+    this.classList.add('selected');
+  });
+});
+
+function gradeTest() {
+  if (graded) return;
+  graded = true;
+  let correct = 0;
+  const total = Object.keys(ANSWERS).length;
+  
+  document.querySelectorAll('.question').forEach((qDiv, idx) => {
+    const qNum = idx + 1;
+    const correctAns = ANSWERS[qNum];
+    if (!correctAns) return;
+    const choices = qDiv.querySelectorAll('.choices li');
+    const selected = qDiv.querySelector('.choices li.selected');
+    const selectedLetter = selected ? selected.textContent.trim().charAt(0) : null;
+    
+    choices.forEach(li => {
+      const letter = li.textContent.trim().charAt(0);
+      if (letter === correctAns) li.classList.add('show-correct');
+      li.style.cursor = 'default';
+    });
+    
+    const tag = document.createElement('span');
+    tag.className = 'result-tag';
+    
+    if (selectedLetter === correctAns) {
+      correct++;
+      tag.className += ' correct';
+      tag.textContent = 'Correct';
+      if (selected) { selected.classList.remove('selected'); selected.classList.add('correct'); }
+    } else {
+      tag.className += ' wrong';
+      tag.textContent = 'Incorrect (Answer: ' + correctAns + ')';
+      if (selected) { selected.classList.remove('selected'); selected.classList.add('wrong'); }
+    }
+    
+    const firstP = qDiv.querySelector('p');
+    if (firstP) firstP.appendChild(tag);
+    
+    if (typeof EXPLANATIONS !== 'undefined' && EXPLANATIONS[qNum]) {
+      const explDiv = document.createElement('div');
+      explDiv.className = 'explanation show';
+      explDiv.innerHTML = '<strong>Explanation:</strong> ' + EXPLANATIONS[qNum];
+      qDiv.appendChild(explDiv);
+    }
+  });
+  
+  const pct = Math.round((correct / total) * 100);
+  document.querySelector('.submit-btn').style.display = 'none';
+  document.querySelector('.reset-btn').style.display = 'block';
+  var rw=document.querySelector('.report-wrap');if(rw)rw.style.display='block';
+  var bs=document.createElement('div');bs.className='bottom-score';bs.id='bottom-score';
+  bs.innerHTML='<h2 style="font-size:1.3rem;margin-bottom:6px;color:#1a3a4a">Your Score</h2><div class="pct '+(pct>=80?'good':pct>=60?'ok':'bad')+'">'+pct+'%</div><div class="detail">'+correct+' out of '+total+' correct</div>';
+  document.querySelector('.submit-wrap').after(bs);
+  try{var tn=location.pathname.match(/test(\d+)/);if(tn)localStorage.setItem('actmath_'+tn[1],pct);}catch(e){}
+}
+
+function resetTest() {
+  graded = false;
+  var bsEl=document.getElementById('bottom-score');if(bsEl)bsEl.remove();
+  document.querySelector('.submit-btn').style.display = '';
+  document.querySelector('.reset-btn').style.display = 'none';
+  var rw=document.querySelector('.report-wrap');if(rw)rw.style.display='none';
+  var ni=document.querySelector('.name-input');if(ni)ni.value='';
+  document.querySelectorAll('.choices li').forEach(li => {
+    li.classList.remove('selected','correct','wrong','show-correct');
+    li.style.cursor = 'pointer';
+  });
+  document.querySelectorAll('.result-tag').forEach(t => t.remove());
+  document.querySelectorAll('.explanation').forEach(e => e.remove());
+}
+
+function generateReport(){
+  var nameInput=document.querySelector('.name-input');
+  var name=(nameInput&&nameInput.value.trim())||'Student';
+  var testName=document.querySelector('header h1').textContent;
+  var bs=document.getElementById('bottom-score');
+  var scorePct=bs?bs.querySelector('.pct').textContent:'';
+  var detailTxt=bs?bs.querySelector('.detail').textContent:'';
+  var d=new Date().toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'});
+  var btn=document.querySelector('.report-btn');btn.textContent='Generating...';btn.disabled=true;
+  var s=document.createElement('script');
+  s.src='https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js';
+  s.onerror=function(){btn.textContent='Download Report (PDF)';btn.disabled=false;alert('Could not load PDF library.');};
+  s.onload=function(){
+    var doc=new jspdf.jsPDF('portrait','mm','letter');
+    var pw=215.9,ph=279.4,mx=12,cw=pw-2*mx,y=8;
+    doc.setFillColor(26,58,74);doc.rect(0,0,pw,22,'F');
+    doc.setTextColor(255,255,255);doc.setFontSize(13);doc.setFont('helvetica','bold');
+    doc.text(testName,mx,9);
+    doc.setFontSize(7.5);doc.setFont('helvetica','normal');
+    doc.text(d+'  |  Student: '+name,mx,14.5);
+    doc.setFontSize(18);doc.setFont('helvetica','bold');
+    doc.text(scorePct,pw-mx,11,{align:'right'});
+    doc.setFontSize(7.5);doc.setFont('helvetica','normal');
+    doc.text(detailTxt,pw-mx,16,{align:'right'});
+    y=25;
+    doc.setDrawColor(26,58,74);doc.setLineWidth(0.3);doc.line(mx,y,pw-mx,y);y+=3;
+    document.querySelectorAll('.question').forEach(function(qDiv,idx){
+      var qNum=idx+1;var ca=ANSWERS[qNum];if(!ca)return;
+      var sel=qDiv.querySelector('.choices li.correct,.choices li.wrong');
+      var sa=sel?sel.textContent.trim().charAt(0):'-';
+      var ok=sel&&sel.classList.contains('correct');
+      if(ok){
+        doc.setFillColor(40,167,69);doc.circle(mx+1.2,y-1,1,'F');
+        doc.setTextColor(33,33,33);doc.setFont('helvetica','bold');doc.setFontSize(8);
+        doc.text('Q'+qNum,mx+4,y);
+        doc.setFont('helvetica','normal');doc.setTextColor(40,167,69);
+        doc.text('Correct ('+ca+')',mx+14,y);
+      }else{
+        doc.setFillColor(220,53,69);doc.circle(mx+1.2,y-1,1,'F');
+        doc.setTextColor(33,33,33);doc.setFont('helvetica','bold');doc.setFontSize(8);
+        doc.text('Q'+qNum,mx+4,y);
+        doc.setFont('helvetica','normal');doc.setTextColor(220,53,69);
+        doc.text('Incorrect',mx+14,y);
+        doc.setTextColor(120,120,120);
+        doc.text('(Chose '+sa+', Correct: '+ca+')',mx+32,y);
+      }
+      y+=3.2;
+      var qP=qDiv.querySelector('p');
+      if(qP){
+        var qT=qP.cloneNode(true);
+        var tags=qT.querySelectorAll('.result-tag');tags.forEach(function(t){t.remove();});
+        var qt=qT.textContent.replace(/^\d+\.\s*/,'').trim();
+        if(qt.length>0){
+          doc.setFont('helvetica','normal');doc.setTextColor(60,60,60);doc.setFontSize(6.5);
+          var ql=doc.splitTextToSize(qt,cw-5);
+          ql=ql.slice(0,1);
+          if(doc.splitTextToSize(qt,cw-5).length>1){ql[0]=ql[0].substring(0,ql[0].length-3)+'...';}
+          doc.text(ql,mx+4,y);y+=2.4;
+        }
+      }
+      if(typeof EXPLANATIONS!=='undefined'&&EXPLANATIONS[qNum]){
+        doc.setFont('helvetica','italic');doc.setTextColor(100,100,100);doc.setFontSize(6);
+        var lines=doc.splitTextToSize(EXPLANATIONS[qNum],cw-5);
+        if(lines.length>2){lines=lines.slice(0,2);lines[1]=lines[1].substring(0,Math.max(0,lines[1].length-3))+'...';}
+        doc.text(lines,mx+4,y);y+=lines.length*2.2;
+      }
+      y+=2;
+    });
+    doc.setDrawColor(200,200,200);doc.setLineWidth(0.2);doc.line(mx,ph-10,pw-mx,ph-10);
+    doc.setTextColor(170,170,170);doc.setFontSize(6);doc.setFont('helvetica','normal');
+    doc.text('ACT Math Practice  |  Score Report',pw/2,ph-7,{align:'center'});
+    var tn=location.pathname.match(/test(\d+)/);
+    var testNum=tn?parseInt(tn[1])-100:0;
+    var ds=new Date().toISOString().slice(0,10);
+    doc.save('ACT-Math-Test-'+testNum+'-'+ds+'.pdf');
+    btn.textContent='Download Report (PDF)';btn.disabled=false;
+  };
+  document.head.appendChild(s);
+}
+</script>
+</body></html>

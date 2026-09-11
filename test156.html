@@ -1,0 +1,222 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>ACT Math Test 56</title><style>@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:#fff;color:#2d3748;line-height:1.7}
+.container{max-width:800px;margin:0 auto;padding:20px 24px}
+header{background:linear-gradient(135deg,#1a3a4a 0%,#2d6a7a 100%);color:#fff;padding:28px 0;margin-bottom:36px;text-align:center}
+header .container{display:block}
+header h1{font-size:1.6rem;font-weight:700;letter-spacing:-0.3px}
+header a{color:rgba(255,255,255,.7);text-decoration:none;font-size:.9rem;display:inline-block;margin-bottom:6px;transition:color .2s}
+header a:hover{color:#fff}
+.question{background:#fff;border-radius:12px;padding:24px;margin-bottom:20px;border:1px solid #e2e8f0;transition:border-color .2s}
+.question:hover{border-color:#cbd5e0}
+.question p{margin-bottom:14px;font-size:1.05rem}
+img{max-width:100%;height:auto;margin:4px 0;vertical-align:middle}
+.choices{list-style:none}
+.choices li{padding:10px 14px;margin:6px 0;border-radius:8px;cursor:pointer;transition:all .2s;border:2px solid transparent}
+.choices li:hover{background:#f0f7fa}
+.choices li.selected{background:#d1ecf1;border-color:#bee5eb}
+.choices li.correct{background:#d4edda;border-color:#28a745}
+.choices li.wrong{background:#f8d7da;border-color:#dc3545}
+.choices li.show-correct{background:#d4edda;border-color:#28a745}
+.submit-wrap{text-align:center;margin:36px 0}
+.submit-btn{display:inline-block;padding:14px 40px;background:linear-gradient(135deg,#1a3a4a,#2d6a7a);color:#fff;border:none;border-radius:10px;font-size:1.1rem;cursor:pointer;font-weight:600;font-family:inherit;transition:all .25s;letter-spacing:.3px}
+.submit-btn:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(26,58,74,.25)}
+.score-box{background:#fff;border-radius:12px;padding:28px;margin-bottom:28px;text-align:center;border:1px solid #e2e8f0;box-shadow:0 4px 20px rgba(0,0,0,.06);display:none}
+.score-box h2{font-size:1.4rem;margin-bottom:8px;color:#1a3a4a;text-align:center}
+.score-box .pct{font-size:3rem;font-weight:700}
+.score-box .pct.good{color:#28a745}
+.score-box .pct.ok{color:#e6a817}
+.score-box .pct.bad{color:#dc3545}
+.score-box .detail{color:#666;margin-top:4px}
+.result-tag{display:inline-block;padding:2px 10px;border-radius:12px;font-size:.8rem;font-weight:600;margin-left:8px}
+.result-tag.correct{background:#d4edda;color:#155724}
+.result-tag.wrong{background:#f8d7da;color:#721c24}
+.reset-btn{display:none;margin:16px auto;padding:12px 28px;background:#6c757d;color:#fff;border:none;border-radius:10px;font-size:1rem;cursor:pointer;font-family:inherit;transition:all .25s}
+.reset-btn:hover{background:#5a6268;transform:translateY(-1px)}
+.explanation{background:#f0f7ff;border-left:4px solid #1a3a4a;padding:14px 18px;margin-top:14px;border-radius:0 8px 8px 0;font-size:.95rem;color:#444;display:none}
+.explanation.show{display:block}
+.explanation strong{color:#1a3a4a}
+.nav{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin:36px 0}
+.nav a{display:inline-block;padding:10px 24px;background:linear-gradient(135deg,#1a3a4a,#2d6a7a);color:#fff;text-decoration:none;border-radius:10px;font-weight:500;font-size:.95rem;transition:all .25s}
+.nav a:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(26,58,74,.25)}
+footer{text-align:center;padding:36px 24px;color:#8899a4;font-size:.85rem;border-top:1px solid #e2e8f0;margin-top:40px}
+.report-btn{display:inline-block;margin:0;padding:12px 28px;background:linear-gradient(135deg,#1a3a4a,#2d6a7a);color:#fff;border:none;border-radius:10px;font-size:1rem;cursor:pointer;font-family:inherit;transition:all .25s}
+.report-btn:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(26,58,74,.25)}
+.bottom-score{background:#fff;border-radius:12px;padding:20px;margin:20px 0;text-align:center;border:1px solid #e2e8f0;box-shadow:0 4px 20px rgba(0,0,0,.06)}
+.bottom-score .pct{font-size:2.5rem;font-weight:700}
+.bottom-score .pct.good{color:#28a745}
+.bottom-score .pct.ok{color:#e6a817}
+.bottom-score .pct.bad{color:#dc3545}
+.bottom-score .detail{color:#666;margin-top:4px;font-size:.95rem}
+.report-wrap{display:none;text-align:center;margin:16px 0}
+.name-input{padding:10px 14px;border:1px solid #e2e8f0;border-radius:10px;font-size:.95rem;font-family:inherit;width:200px;margin-right:8px;outline:none;transition:border-color .2s}
+.name-input:focus{border-color:#1a3a4a}
+</style></head><body><header><div class="container"><a href="index.html">&larr; All Tests</a><h1>ACT Math Practice Test 56</h1></div></header><div class="container"><div id="score-box" class="score-box"><h2>Your Score</h2><div class="pct">0%</div><div class="detail"></div></div><div class="question"><p><b>1.</b> The average of 5 numbers is 7. If each of the numbers is decreased by 4, what is the average of the 5 new numbers?</p><ul class="choices"><li>F. 0</li><li>G. 1</li><li>H. 2</li><li>J. 3</li><li>K. 7</li></ul></div><div class="question"><p><b>2.</b> Julie works in a clothing store and gets a base salary of $48.00 plus a fixed amount for each item she sells per day. Yesterday she earned $68.00 because she sold 4 items. If Julie sells 3 more items today than yesterday, what will she earn for the day?</p><ul class="choices"><li>A. $51.00</li><li>B. $55.00</li><li>C. $63.00</li><li>D. $78.00</li><li>E. $83.00</li></ul></div><div class="question"><p><b>3.</b> If <img alt="image" src="https://www.crackab.com/image/tests/6/01162.jpg">, what is the largest possible value for <i>x</i>?</p><ul class="choices"><li>F. <img alt="image" src="https://www.crackab.com/image/tests/6/00219.jpg"></li><li>G. 1.5</li><li>H. 10</li><li>J. 24</li><li>K. 36</li></ul></div><div class="question"><p><b>4.</b> Starting at midnight, how many degrees has the hour hand of a clock moved when it gets to 8:00 <small>A.M.</small>?</p><ul class="choices"><li>A. 80°</li><li>B. 100°</li><li>C. 120°</li><li>D. 240°</li><li>E. 270°</li></ul></div><div class="question"><p><b>5.</b> An airplane has <i>R</i> rows of seats with (<i>S</i> + <i>d</i>) seats in each row. Which of the following is an expression for the number of seats in the entire airplane?</p><ul class="choices"><li>F. (<i>R</i> o <i>S</i>) + <i>d</i></li><li>G. (<i>R</i> o <i>S</i>) + (<i>R</i> o <i>d</i>)</li><li>H. <i>S</i> + (<i>R</i> o <i>d</i>)</li><li>J. <i>R</i> o <i>S</i> o <i>d</i></li><li>K. <i>R</i> + <i>S</i> + <i>d</i></li></ul></div><div class="question"><p><b>6.</b> Which nonnegative value of <i>x</i> makes the expression <img alt="image" src="https://www.crackab.com/image/tests/6/01163.jpg"> undefined?</p><ul class="choices"><li>A. 256</li><li>B. 32</li><li>C. 16</li><li>D. 8</li><li>E. 4</li></ul></div><div class="question"><p><b>7.</b> A punch recipe calls for 3 parts fruit juice to 2 parts soda. In order to make 20 quarts of punch, how many quarts of fruit juice should be used?</p><ul class="choices"><li>F. 12</li><li>G. 9</li><li>H. 8</li><li>J. 6</li><li>K. 4</li></ul></div><div class="question"><p><b>8.</b> A line contains the points <i>E, F, G,</i> and <i>h</i>. Point <i>f</i> is between points <i>e</i> and <i>G.</i> Point <i>h</i> is between points <i>g</i> and <i>f</i>. Which of the following inequalities must be true about the lengths of these segments?</p><ul class="choices"><li>A. <i>FG</i> &lt; <i>EF</i></li><li>B. <i>GH</i> &lt; <i>FG</i></li><li>C. <i>FH</i> &lt; <i>GH</i></li><li>D. <i>GH</i> &lt; <i>EF</i></li><li>E. <i>FH</i> &lt; <i>EF</i></li></ul></div><div class="question"><p><b>9.</b> What is the volume, in cubic centimeters, of a cone with a height of 9 centimeters and a base with a radius of 4 centimeters? (The volume of a cone is <img alt="image" src="https://www.crackab.com/image/tests/6/01164.jpg">, where <i>R</i> is the radius of the base of the cone and <i>h</i> is the height of the cone.)</p><ul class="choices"><li>F. 144π</li><li>G. 72π</li><li>H. 48π</li><li>J. 16π</li><li>K. 9π</li></ul></div><div class="question"><p><b>10.</b> One endpoint of a diameter of a circle with center (3, -4) has coordinates (5, -3) in the standard (<i>x</i>, <i>y</i>) plane. What are the coordinates of the other endpoint of that diameter?</p><ul class="choices"><li>A. (1, -5)</li><li>B. (1, 2)</li><li>C. (-1, 5)</li><li>D. (3 + <img alt="image" src="https://www.crackab.com/image/tests/6/01165.jpg">, -3 + <img alt="image" src="https://www.crackab.com/image/tests/6/01165.jpg">)</li><li>E. (3 - <img alt="image" src="https://www.crackab.com/image/tests/6/01165.jpg">, -3 - <img alt="image" src="https://www.crackab.com/image/tests/6/01165.jpg">)</li></ul></div><div class="question"><p><b>11.</b> At an airport, the planes take off from two airfields. One of the fields is capable of sending up a plane every 4 minutes. The other field is capable of sending up 5 planes every 10 minutes. At these rates, which of the following is the best estimate of the total number of minutes the two airfields would need to send up 15 planes?</p><ul class="choices"><li>F. 10</li><li>G. 12</li><li>H. 15</li><li>J. 18</li><li>K. 20</li></ul></div><div class="question"><p><b>12.</b> Which of the following expressions represents the product <i>xy</i>, if <i>x</i> = 4<i>a</i><sup class="frac">3</sup> and <i>y</i> = -3<i>a</i><sup class="frac">5</sup> + <i>b</i>?</p><ul class="choices"><li>A. <i>a</i><sup class="frac">3</sup> + <i>b</i></li><li>B. <i>a</i><sup class="frac">5</sup> + <i>b</i></li><li>C. -12<i>a</i><sup class="frac">8</sup> + 4<i>a</i><sup class="frac">3</sup><i>b</i></li><li>D. -12<i>a</i><sup class="frac">15</sup> + 4<i>a</i><sup class="frac">3</sup><i>b</i></li><li>E. -243<i>a</i><sup class="frac">15</sup> + 4<i>a</i><sup class="frac">3</sup><i>b</i></li></ul></div><div class="question"><p><b>13.</b> Ann is wrapping a gift for her friend's shower. She wants to cut ribbon so that she can place it on the gift like the picture below. What is the minimum length of the ribbon, in centimeters, that Ann would need to cut in order to wrap the box, assuming no overlap?<br><img alt="image" src="https://www.crackab.com/image/tests/6/01166.jpg"></p><ul class="choices"><li>F. 52</li><li>G. 104</li><li>H. 120</li><li>J. 128</li><li>K. 3,072</li></ul></div><div class="question"><p><b>14.</b> For all nonzero <i>x</i> and <i>y</i>, <img alt="image" src="https://www.crackab.com/image/tests/6/01167.jpg">?</p><ul class="choices"><li>A. <img alt="image" src="https://www.crackab.com/image/tests/6/01168.jpg"></li><li>B. <img alt="image" src="https://www.crackab.com/image/tests/6/01169.jpg"></li><li>C. -18<i>x</i><sup class="frac">-2</sup></li><li>D. -18<i>x</i><sup class="frac">-2</sup><i>y</i></li><li>E. -18<i>x</i><sup class="frac">2</sup><i>y</i><sup class="frac">2</sup></li></ul></div><div class="question"><p><b>15.</b> What is the area in centimeters of the polygon below?<br><img alt="image" src="https://www.crackab.com/image/tests/6/01170.jpg"></p><ul class="choices"><li>F. 30</li><li>G. 32.5</li><li>H. 35</li><li>J. 42</li><li>K. 46.5</li></ul></div><div class="submit-wrap"><button class="submit-btn" onclick="gradeTest()">Submit Test</button><button class="reset-btn" onclick="resetTest()">Try Again</button>
+<div class="report-wrap"><input type="text" class="name-input" placeholder="Student name (for report)"><button class="report-btn" onclick="generateReport()">Download Report (PDF)</button></div></div><div class="nav"><a href="test155.html">&larr; Prev</a><a href="index.html">All Tests</a><a href="test157.html">Next &rarr;</a></div></div><footer><div class="container">ACT Math Practice</div></footer>
+<script>
+const ANSWERS = {"1": "J", "2": "E", "3": "J", "4": "D", "5": "G", "6": "E", "7": "F", "8": "B", "9": "H", "10": "A", "11": "K", "12": "C", "13": "H", "14": "D", "15": "K"};
+const EXPLANATIONS = {"1":"(J) If each of the five numbers was decreased by 4, the average would also be decreased by 4 making it 7 – 4  =  3.", "2":"(E) Setting up an equation for Julie\'s overall salary we get salary  =  base salary + amount for sales → S  =  48 + (k)(i) where S is her salary, k is the amount she makes per sale, and i is the number of items she sells. Substituting the values from the problem the equation becomes 68  =  48 + (k)(4). Solving for k gives k  =  5. If Julie sells 4 more items today than yesterday, that is a total of 3 + 4  =  7 items. Using the formula again we get S  =  48 + (5)(7)  =  $83.", "3":"(J) Sometimes the easiest way to solve a problem is to plug in answers. Substitute in answers to find the largest number that will make a true statement. Trying 24 we get , which simplifies to , which is a true statement. Therefore, 24 is the correct answer.", "4":"(D) There are 12 hours on a clock; set up a proportion to get . Cross multiply and solve for x to get 2880  =  12x → x  =  240°.", "5":"(G) To find the total number of seats on the airplane we multiply the number of rows by the number of seats in each row to get r · (s + d). Since this answer is not one of the choices, distribute to get (r · s) + (r · d).", "6":"(E) A rational expression is undefined when the denominator equals zero. To find the value that makes the denominator equal zero set the denominator equal to zero and solve the equation: 16 – x2  =  0 → x2  =  16 → x  =  4.", "7":"(F) Mixing 3 quarts juice to 2 quarts soda would make 5 quarts punch. According to the problem we need 20 quarts of punch, which is 5 · 4. Multiplying each of the other dimensions by 4 we get 3 · 4  =  12 quarts juice and 2 · 4  =  8 quarts soda. We are asked how much juice we need: 12 quarts.", "8":"(B) Point H is between F and G meaning GH < FG. Choice B is correct.", "9":"(H) Using the formula given with h  =  9 and r  =  4 we get .", "10":"(A) The midpoint formula is . Remember, the center of the circle is the midpoint of any diameter of the circle. Substituting (3, –4) for the midpoint, (5, –3) for (x1, y1), and (x, y) for (x2, y2) we get (3, –4)  =  . Solve for x to get 3  =   → 6  =  5 + x → x  =  1. Solving for y the same way gives . Therefore, the other endpoint lies at (1, –5).", "11":"(K) Set up a proportion for each of the choices to get, for 20 minutes, airport 1 sends up  and airport 2 sends up . Solve for x and y to get 4x  =  20 → x  =  5 and 100  =  10y → y  =  10. Therefore, the total number of planes sent up in 20 minutes is 5 + 10  =  15 planes.", "12":"(C) xy  =  (4a3)(–3a5+ b). Distribute and use the laws of exponents to get 4a3 · (–3a5) + 4a3 ? b  =  –12a8 + 4a3b.", "13":"(H) To find the length of ribbon, add the length of ribbon needed for each side of the box. The top needs 32 + 12  =  44 cm. All 4 sides each need 8 cm for a total of 8 · 4  =  32 cm. The bottom needs 32 + 12  =  44 cm. Add the top, bottom, and all 4 sides together to get 44 + 32 + 44  =  120 cm.", "14":"(D) Starting with the multiplication rule of exponents the expression becomes . Now use the division rule of exponents to get –18x–2y.", "15":"(K) We draw two strategic lines to divide the shape into two rectangles and a trapezoid. The area of the small rectangle is A  =  L · W  =  1 · 6  =  6. The area of the larger rectangle is A  =  L · W  =  9 · 3  =  27. The area of the trapezoid is . Simplify to get (1.5)(9)  =  13.5. Add all the areas together to get 6 + 27 + 13.5  =  46.5."};
+let graded = false;
+
+document.querySelectorAll('.choices li').forEach(li => {
+  // Remove old onclick
+  li.removeAttribute('onclick');
+  li.addEventListener('click', function() {
+    if (graded) return;
+    const siblings = this.parentElement.querySelectorAll('li');
+    siblings.forEach(s => s.classList.remove('selected'));
+    this.classList.add('selected');
+  });
+});
+
+function gradeTest() {
+  if (graded) return;
+  graded = true;
+  let correct = 0;
+  const total = Object.keys(ANSWERS).length;
+  
+  document.querySelectorAll('.question').forEach((qDiv, idx) => {
+    const qNum = idx + 1;
+    const correctAns = ANSWERS[qNum];
+    if (!correctAns) return;
+    const choices = qDiv.querySelectorAll('.choices li');
+    const selected = qDiv.querySelector('.choices li.selected');
+    const selectedLetter = selected ? selected.textContent.trim().charAt(0) : null;
+    
+    choices.forEach(li => {
+      const letter = li.textContent.trim().charAt(0);
+      if (letter === correctAns) li.classList.add('show-correct');
+      li.style.cursor = 'default';
+    });
+    
+    const tag = document.createElement('span');
+    tag.className = 'result-tag';
+    
+    if (selectedLetter === correctAns) {
+      correct++;
+      tag.className += ' correct';
+      tag.textContent = 'Correct';
+      if (selected) { selected.classList.remove('selected'); selected.classList.add('correct'); }
+    } else {
+      tag.className += ' wrong';
+      tag.textContent = 'Incorrect (Answer: ' + correctAns + ')';
+      if (selected) { selected.classList.remove('selected'); selected.classList.add('wrong'); }
+    }
+    
+    const firstP = qDiv.querySelector('p');
+    if (firstP) firstP.appendChild(tag);
+    
+    if (typeof EXPLANATIONS !== 'undefined' && EXPLANATIONS[qNum]) {
+      const explDiv = document.createElement('div');
+      explDiv.className = 'explanation show';
+      explDiv.innerHTML = '<strong>Explanation:</strong> ' + EXPLANATIONS[qNum];
+      qDiv.appendChild(explDiv);
+    }
+  });
+  
+  const pct = Math.round((correct / total) * 100);
+  document.querySelector('.submit-btn').style.display = 'none';
+  document.querySelector('.reset-btn').style.display = 'block';
+  var rw=document.querySelector('.report-wrap');if(rw)rw.style.display='block';
+  var bs=document.createElement('div');bs.className='bottom-score';bs.id='bottom-score';
+  bs.innerHTML='<h2 style="font-size:1.3rem;margin-bottom:6px;color:#1a3a4a">Your Score</h2><div class="pct '+(pct>=80?'good':pct>=60?'ok':'bad')+'">'+pct+'%</div><div class="detail">'+correct+' out of '+total+' correct</div>';
+  document.querySelector('.submit-wrap').after(bs);
+  try{var tn=location.pathname.match(/test(\d+)/);if(tn)localStorage.setItem('actmath_'+tn[1],pct);}catch(e){}
+}
+
+function resetTest() {
+  graded = false;
+  var bsEl=document.getElementById('bottom-score');if(bsEl)bsEl.remove();
+  document.querySelector('.submit-btn').style.display = '';
+  document.querySelector('.reset-btn').style.display = 'none';
+  var rw=document.querySelector('.report-wrap');if(rw)rw.style.display='none';
+  var ni=document.querySelector('.name-input');if(ni)ni.value='';
+  document.querySelectorAll('.choices li').forEach(li => {
+    li.classList.remove('selected','correct','wrong','show-correct');
+    li.style.cursor = 'pointer';
+  });
+  document.querySelectorAll('.result-tag').forEach(t => t.remove());
+  document.querySelectorAll('.explanation').forEach(e => e.remove());
+}
+
+function generateReport(){
+  var nameInput=document.querySelector('.name-input');
+  var name=(nameInput&&nameInput.value.trim())||'Student';
+  var testName=document.querySelector('header h1').textContent;
+  var bs=document.getElementById('bottom-score');
+  var scorePct=bs?bs.querySelector('.pct').textContent:'';
+  var detailTxt=bs?bs.querySelector('.detail').textContent:'';
+  var d=new Date().toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'});
+  var btn=document.querySelector('.report-btn');btn.textContent='Generating...';btn.disabled=true;
+  var s=document.createElement('script');
+  s.src='https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js';
+  s.onerror=function(){btn.textContent='Download Report (PDF)';btn.disabled=false;alert('Could not load PDF library.');};
+  s.onload=function(){
+    var doc=new jspdf.jsPDF('portrait','mm','letter');
+    var pw=215.9,ph=279.4,mx=12,cw=pw-2*mx,y=8;
+    doc.setFillColor(26,58,74);doc.rect(0,0,pw,22,'F');
+    doc.setTextColor(255,255,255);doc.setFontSize(13);doc.setFont('helvetica','bold');
+    doc.text(testName,mx,9);
+    doc.setFontSize(7.5);doc.setFont('helvetica','normal');
+    doc.text(d+'  |  Student: '+name,mx,14.5);
+    doc.setFontSize(18);doc.setFont('helvetica','bold');
+    doc.text(scorePct,pw-mx,11,{align:'right'});
+    doc.setFontSize(7.5);doc.setFont('helvetica','normal');
+    doc.text(detailTxt,pw-mx,16,{align:'right'});
+    y=25;
+    doc.setDrawColor(26,58,74);doc.setLineWidth(0.3);doc.line(mx,y,pw-mx,y);y+=3;
+    document.querySelectorAll('.question').forEach(function(qDiv,idx){
+      var qNum=idx+1;var ca=ANSWERS[qNum];if(!ca)return;
+      var sel=qDiv.querySelector('.choices li.correct,.choices li.wrong');
+      var sa=sel?sel.textContent.trim().charAt(0):'-';
+      var ok=sel&&sel.classList.contains('correct');
+      if(ok){
+        doc.setFillColor(40,167,69);doc.circle(mx+1.2,y-1,1,'F');
+        doc.setTextColor(33,33,33);doc.setFont('helvetica','bold');doc.setFontSize(8);
+        doc.text('Q'+qNum,mx+4,y);
+        doc.setFont('helvetica','normal');doc.setTextColor(40,167,69);
+        doc.text('Correct ('+ca+')',mx+14,y);
+      }else{
+        doc.setFillColor(220,53,69);doc.circle(mx+1.2,y-1,1,'F');
+        doc.setTextColor(33,33,33);doc.setFont('helvetica','bold');doc.setFontSize(8);
+        doc.text('Q'+qNum,mx+4,y);
+        doc.setFont('helvetica','normal');doc.setTextColor(220,53,69);
+        doc.text('Incorrect',mx+14,y);
+        doc.setTextColor(120,120,120);
+        doc.text('(Chose '+sa+', Correct: '+ca+')',mx+32,y);
+      }
+      y+=3.2;
+      var qP=qDiv.querySelector('p');
+      if(qP){
+        var qT=qP.cloneNode(true);
+        var tags=qT.querySelectorAll('.result-tag');tags.forEach(function(t){t.remove();});
+        var qt=qT.textContent.replace(/^\d+\.\s*/,'').trim();
+        if(qt.length>0){
+          doc.setFont('helvetica','normal');doc.setTextColor(60,60,60);doc.setFontSize(6.5);
+          var ql=doc.splitTextToSize(qt,cw-5);
+          ql=ql.slice(0,1);
+          if(doc.splitTextToSize(qt,cw-5).length>1){ql[0]=ql[0].substring(0,ql[0].length-3)+'...';}
+          doc.text(ql,mx+4,y);y+=2.4;
+        }
+      }
+      if(typeof EXPLANATIONS!=='undefined'&&EXPLANATIONS[qNum]){
+        doc.setFont('helvetica','italic');doc.setTextColor(100,100,100);doc.setFontSize(6);
+        var lines=doc.splitTextToSize(EXPLANATIONS[qNum],cw-5);
+        if(lines.length>2){lines=lines.slice(0,2);lines[1]=lines[1].substring(0,Math.max(0,lines[1].length-3))+'...';}
+        doc.text(lines,mx+4,y);y+=lines.length*2.2;
+      }
+      y+=2;
+    });
+    doc.setDrawColor(200,200,200);doc.setLineWidth(0.2);doc.line(mx,ph-10,pw-mx,ph-10);
+    doc.setTextColor(170,170,170);doc.setFontSize(6);doc.setFont('helvetica','normal');
+    doc.text('ACT Math Practice  |  Score Report',pw/2,ph-7,{align:'center'});
+    var tn=location.pathname.match(/test(\d+)/);
+    var testNum=tn?parseInt(tn[1])-100:0;
+    var ds=new Date().toISOString().slice(0,10);
+    doc.save('ACT-Math-Test-'+testNum+'-'+ds+'.pdf');
+    btn.textContent='Download Report (PDF)';btn.disabled=false;
+  };
+  document.head.appendChild(s);
+}
+</script>
+</body></html>

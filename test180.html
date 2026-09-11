@@ -1,0 +1,222 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>ACT Math Test 80</title><style>@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:#fff;color:#2d3748;line-height:1.7}
+.container{max-width:800px;margin:0 auto;padding:20px 24px}
+header{background:linear-gradient(135deg,#1a3a4a 0%,#2d6a7a 100%);color:#fff;padding:28px 0;margin-bottom:36px;text-align:center}
+header .container{display:block}
+header h1{font-size:1.6rem;font-weight:700;letter-spacing:-0.3px}
+header a{color:rgba(255,255,255,.7);text-decoration:none;font-size:.9rem;display:inline-block;margin-bottom:6px;transition:color .2s}
+header a:hover{color:#fff}
+.question{background:#fff;border-radius:12px;padding:24px;margin-bottom:20px;border:1px solid #e2e8f0;transition:border-color .2s}
+.question:hover{border-color:#cbd5e0}
+.question p{margin-bottom:14px;font-size:1.05rem}
+img{max-width:100%;height:auto;margin:4px 0;vertical-align:middle}
+.choices{list-style:none}
+.choices li{padding:10px 14px;margin:6px 0;border-radius:8px;cursor:pointer;transition:all .2s;border:2px solid transparent}
+.choices li:hover{background:#f0f7fa}
+.choices li.selected{background:#d1ecf1;border-color:#bee5eb}
+.choices li.correct{background:#d4edda;border-color:#28a745}
+.choices li.wrong{background:#f8d7da;border-color:#dc3545}
+.choices li.show-correct{background:#d4edda;border-color:#28a745}
+.submit-wrap{text-align:center;margin:36px 0}
+.submit-btn{display:inline-block;padding:14px 40px;background:linear-gradient(135deg,#1a3a4a,#2d6a7a);color:#fff;border:none;border-radius:10px;font-size:1.1rem;cursor:pointer;font-weight:600;font-family:inherit;transition:all .25s;letter-spacing:.3px}
+.submit-btn:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(26,58,74,.25)}
+.score-box{background:#fff;border-radius:12px;padding:28px;margin-bottom:28px;text-align:center;border:1px solid #e2e8f0;box-shadow:0 4px 20px rgba(0,0,0,.06);display:none}
+.score-box h2{font-size:1.4rem;margin-bottom:8px;color:#1a3a4a;text-align:center}
+.score-box .pct{font-size:3rem;font-weight:700}
+.score-box .pct.good{color:#28a745}
+.score-box .pct.ok{color:#e6a817}
+.score-box .pct.bad{color:#dc3545}
+.score-box .detail{color:#666;margin-top:4px}
+.result-tag{display:inline-block;padding:2px 10px;border-radius:12px;font-size:.8rem;font-weight:600;margin-left:8px}
+.result-tag.correct{background:#d4edda;color:#155724}
+.result-tag.wrong{background:#f8d7da;color:#721c24}
+.reset-btn{display:none;margin:16px auto;padding:12px 28px;background:#6c757d;color:#fff;border:none;border-radius:10px;font-size:1rem;cursor:pointer;font-family:inherit;transition:all .25s}
+.reset-btn:hover{background:#5a6268;transform:translateY(-1px)}
+.explanation{background:#f0f7ff;border-left:4px solid #1a3a4a;padding:14px 18px;margin-top:14px;border-radius:0 8px 8px 0;font-size:.95rem;color:#444;display:none}
+.explanation.show{display:block}
+.explanation strong{color:#1a3a4a}
+.nav{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin:36px 0}
+.nav a{display:inline-block;padding:10px 24px;background:linear-gradient(135deg,#1a3a4a,#2d6a7a);color:#fff;text-decoration:none;border-radius:10px;font-weight:500;font-size:.95rem;transition:all .25s}
+.nav a:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(26,58,74,.25)}
+footer{text-align:center;padding:36px 24px;color:#8899a4;font-size:.85rem;border-top:1px solid #e2e8f0;margin-top:40px}
+.report-btn{display:inline-block;margin:0;padding:12px 28px;background:linear-gradient(135deg,#1a3a4a,#2d6a7a);color:#fff;border:none;border-radius:10px;font-size:1rem;cursor:pointer;font-family:inherit;transition:all .25s}
+.report-btn:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(26,58,74,.25)}
+.bottom-score{background:#fff;border-radius:12px;padding:20px;margin:20px 0;text-align:center;border:1px solid #e2e8f0;box-shadow:0 4px 20px rgba(0,0,0,.06)}
+.bottom-score .pct{font-size:2.5rem;font-weight:700}
+.bottom-score .pct.good{color:#28a745}
+.bottom-score .pct.ok{color:#e6a817}
+.bottom-score .pct.bad{color:#dc3545}
+.bottom-score .detail{color:#666;margin-top:4px;font-size:.95rem}
+.report-wrap{display:none;text-align:center;margin:16px 0}
+.name-input{padding:10px 14px;border:1px solid #e2e8f0;border-radius:10px;font-size:.95rem;font-family:inherit;width:200px;margin-right:8px;outline:none;transition:border-color .2s}
+.name-input:focus{border-color:#1a3a4a}
+</style></head><body><header><div class="container"><a href="index.html">&larr; All Tests</a><h1>ACT Math Practice Test 80</h1></div></header><div class="container"><div id="score-box" class="score-box"><h2>Your Score</h2><div class="pct">0%</div><div class="detail"></div></div><div class="question"><p><b>1.</b> The total surface area of the rectangular solid shown below is the sum of the areas of the 6 sides. What is the solid's total surface area, in square inches?<br><img src="https://www.crackab.com/image/tests/mg10/01620.jpg"><br></p><ul class="choices"><li>F. 18</li><li>G. 36</li><li>H. 48</li><li>J. 80</li><li>K. 96</li></ul></div><div class="question"><p><b>2.</b> Which of the following is the slope of a line parallel to the line <img src="https://www.crackab.com/image/tests/mg10/01693.jpg"> in the standard (<span class="italic">x</span>, <span class="italic">y</span>) coordinate plane?</p><ul class="choices"><li>A. -7</li><li>B. <img src="https://www.crackab.com/image/tests/mg10/02533.jpg"></li><li>C. <img src="https://www.crackab.com/image/tests/mg10/01793.jpg"></li><li>D. 2</li><li>E. <img src="https://www.crackab.com/image/tests/mg10/01937.jpg"></li></ul></div><div class="question"><p><b>3.</b> A circular lamp base has a radius of 2.5 inches. When placed on a flat table, approximately how much area does the lamp base cover, in square inches?</p><ul class="choices"><li>F. 5.00</li><li>G. 6.25</li><li>H. 15.70</li><li>J. 19.63</li><li>K. 25.00</li></ul></div><div class="question"><p><b>4.</b> What is the largest integer less than <img src="https://www.crackab.com/image/tests/mg10/02005.jpg">?</p><ul class="choices"><li>A. 3</li><li>B. 6</li><li>C. 7</li><li>D. 9</li><li>E. 23</li></ul></div><div class="question"><p><b>5.</b> Amanda plans to paint the 4 walls of her bedroom with 1 coat of paint. The walls are rectangular, and each wall measures 12 feet by 14 feet. She will not paint either the 3-foot-by-4-foot rectangular window in her bedroom or the 3-foot-by-7-foot rectangular bedroom door. Amanda knows that each gallon of paint covers between 350 and 400 square feet. If only 1-gallon cans of paint are available, which of the following is the minimum number of cans of paint Amanda needs to buy to paint her bedroom walls?</p><ul class="choices"><li>F. 1</li><li>G. 2</li><li>H. 3</li><li>J. 4</li><li>K. 5</li></ul></div><div class="question"><p><b>6.</b> For all <span class="italic">x</span> &gt; 0, the expression <img src="https://www.crackab.com/image/tests/mg10/01427.jpg"> equals:</p><ul class="choices"><li>A. <span class="italic">x<sup><small><span>-6</span></small></sup></span></li><li>B. <span class="italic">x<sup><small>3</small></sup></span></li><li>C. <span class="italic">x<sup><small>6</small></sup></span></li><li>D. <span class="italic">x<sup><small>12</small></sup></span></li><li>E. <span class="italic">x<sup><small><span>27</span></small></sup></span></li></ul></div><div class="question"><p><b>7.</b> What values of <span class="italic">a</span> are solutions for <span class="italic">a<sup><small>2</small></sup></span> + 2<span class="italic">a</span> = 8?</p><ul class="choices"><li>F. 6 and 8</li><li>G. 0 and 2</li><li>H. -2 and 4</li><li>J. -2 and 0</li><li>K. -4 and 2</li></ul></div><div class="question"><p><b>8.</b> In the square graphed below, what is the slope of line segment <span class="italic">AC</span>?<br><img src="https://www.crackab.com/image/tests/mg10/02555.jpg"><br></p><ul class="choices"><li>A. 4</li><li>B. 2</li><li>C. 1</li><li>D. -1</li><li>E. -4</li></ul></div><div class="question"><p><b>9.</b> The fixed costs of printing a certain textbook are $900.00 per week. The variable costs are $1.50 per textbook. Which of the following expressions can be used to model the cost of printing <span class="italic">t</span> textbooks in 1 week?</p><ul class="choices"><li>F. $901.50<span class="italic">t</span></li><li>G. $150<span class="italic">t</span>-$900.00</li><li>H. $900.00<span class="italic">t</span>+$1.50</li><li>J. $900.00-$1.50<span class="italic">t</span></li><li>K. $900.00 + $1.50<span class="italic">t</span></li></ul></div><div class="question"><p><b>10.</b> In the figure shown below, the perimeter of the triangle is <img src="https://www.crackab.com/image/tests/mg10/02559.jpg">. What is the value of <span class="italic">x</span>?<br><img src="https://www.crackab.com/image/tests/mg10/02379.jpg"><br></p><ul class="choices"><li>A. 2</li><li>B. 3</li><li>C. 4</li><li>D. 5</li><li>E. 6</li></ul></div><div class="question"><p><b>11.</b> If <img src="https://www.crackab.com/image/tests/mg10/01881.jpg">, then <span class="italic">y</span> =?</p><ul class="choices"><li>F. 1</li><li>G. <img src="https://www.crackab.com/image/tests/mg10/01547.jpg"></li><li>H. 11</li><li>J. 22</li><li>K. 36</li></ul></div><div class="question"><p><b>12.</b> Casey has buckets of 3 different sizes. The total capacity of 12 of the buckets is <span class="italic">g</span> gallons, the total capacity of 8 buckets of another size is <span class="italic">g</span> gallons, and the total capacity of 4 buckets of the third size is also <span class="italic">g</span> gallons. In terms of <span class="italic">g</span> when <span class="italic">g</span> &gt; 0, what is the capacity, in gallons, of each of the smallest-sized buckets?</p><ul class="choices"><li>A. <img src="https://www.crackab.com/image/tests/mg10/01914.jpg"></li><li>B. <img src="https://www.crackab.com/image/tests/mg10/00580.jpg"></li><li>C. <img src="https://www.crackab.com/image/tests/mg10/02581.jpg"></li><li>D. 12<span class="italic">g</span></li><li>E. 8<span class="italic">g</span></li></ul></div><div class="question"><p><b>13.</b> What is the area of a circle that has a circumference of .5<span class="italic">π</span>?</p><ul class="choices"><li>F. 0.0625<span class="italic">π</span></li><li>G. 0.10<span class="italic">π</span></li><li>H. 0.25<span class="italic">π</span></li><li>J. 25<span class="italic">π</span></li><li>K. 625<span class="italic">π</span></li></ul></div><div class="question"><p><b>14.</b> Cube <span class="italic">X</span> has an edge length of 2 inches. Cube <span class="italic">Y</span> has an edge length triple that of Cube <span class="italic">X</span>. What is the volume, in cubic inches, of Cube <span class="italic">Y</span>?</p><ul class="choices"><li>A. 6</li><li>B. 12</li><li>C. 36</li><li>D. 72</li><li>E. 216</li></ul></div><div class="question"><p><b>15.</b> A formula used to compute the current value of an investment account is <span class="italic">A</span> = <span class="italic">P</span>(1 + <span class="italic">r</span>)<sup><small><span class="italic">n</span></small></sup>, where <span class="italic">A</span> is the current value, <span class="italic">P</span> is the amount deposited, <span class="italic">r</span> is the rate of interest for 1 compounding period, expressed as a decimal, and <span class="italic">n</span> is the number of compounding periods. Which of the following is closest to the value of an investment account after 3 years if $8,000 is deposited at 5% annual interest compounded annually?</p><ul class="choices"><li>F. $8,400</li><li>G. $9,261</li><li>H. $15,730</li><li>J. $25,200</li><li>K. $33,463</li></ul></div><div class="submit-wrap"><button class="submit-btn" onclick="gradeTest()">Submit Test</button><button class="reset-btn" onclick="resetTest()">Try Again</button>
+<div class="report-wrap"><input type="text" class="name-input" placeholder="Student name (for report)"><button class="report-btn" onclick="generateReport()">Download Report (PDF)</button></div></div><div class="nav"><a href="test179.html">&larr; Prev</a><a href="index.html">All Tests</a><a href="test181.html">Next &rarr;</a></div></div><footer><div class="container">ACT Math Practice</div></footer>
+<script>
+const ANSWERS = {"1": "J", "2": "C", "3": "J", "4": "B", "5": "G", "6": "A", "7": "K", "8": "C", "9": "K", "10": "D", "11": "G", "12": "A", "13": "F", "14": "E", "15": "G"};
+const EXPLANATIONS = {"1":"The correct answer is J. To solve this problem, calculate the area of the sides: Top/Bottom: Sides: 32 + 48  =  80, the total surface area.", "2":"The correct answer is C. In the equation of a line, y  =  mx + b, m is the slope. Recall that parallel lines have the same slope. Therefore, because the slope of the given line is , the slope of any line parallel to that line will also have a slope of .", "3":"The correct answer is J. To solve this problem, use the formula for the area of a circle: A  =  πr2. Substitute 2.5 for the radius and solve (remember that π ≈ 3.14):", "4":"The correct answer is B. To quickly solve this problem, recall the perfect squares that are closest to : Because the question asks for the largest integer less than , the correct answer must be 6.", "5":"The correct answer is G. The first step in solving this problem is to calculate the total surface area of Amanda\'s room. Each wall measures 12 by 14, so each wall has an area of 12 × 14  =  168. There are 4 walls, so the total area is 168 × 4  =  672. Now, subtract the area that will not be painted: 3 × 4  =  12 for the window, and 3 × 7  =  21 for the door; 168 - 12 - 21  =  639. Because Amanda needs to cover 639 square feet, and each can of paint covers 350 to 400 square feet, she will need a minimum of 2 cans of paint.", "6":"The correct answer is A. To answer this question, remember that when you divide exponential values with the same base you must subtract the exponents. Simplify the expression as follows:", "7":"The correct answer is K. To solve this problem, factor the quadratic equation as follows: The values of a are -4 and 2.", "8":"The correct answer is C. Calculate the slope by finding the change in y-values over the change in x-values using the coordinates for points A and C:", "9":"The correct answer is K. You are given that the fixed costs are $900, which means that the cost of printing will be $900 plus the cost of printing each textbook. The cost of printing each textbook is determined by multiplying the number of textbooks, t, by the cost per textbook, $1.50. Therefore, the cost of printing each textbook is 1.50t, and the cost of printing t textbooks in one week is 900 + 1.50t.", "10":"The correct answer is D. A right triangle in which the length of the longer leg is  times the length of the shorter leg is a 30°–60°–90° right triangle. Another property of this type of right triangle is that the hypotenuse is 2 times the length of the shorter leg. So, this right triangle has lengths x, , and 2x. Its perimeter is , or . Subtract  from both sides to get 3x  =  15; x  =  5.", "11":"The correct answer is G. To solve this problem, note that the numerators are equivalent. Because this is an equation where the fractions are equal to one another, the denominators must also be equivalent. Set up an equation for the denominators and solve for y as follows: You could also have quickly arrived at the correct answer by noticing that , so y must equal .", "12":"The correct answer is A. To solve this problem, first determine the size of each bucket. Because the total capacity of 12 buckets is g gallons, each bucket can hold g, or  gallons. Because the total capacity of 8 buckets is g gallons, then each of those buckets can hold , or  gallons. If the total capacity of 4 buckets is g gallons, then each bucket is , or  gallons. Therefore, the capacity of the smallest buckets is .", "13":"The correct answer is F. To solve this problem, remember that the formula for the circumference of a circle is C  =  2πr, and the formula for the area of a circle is A  =  πr2, where r is the radius. You are given that the circumference is .5π. Calculate the value of r as follows: Now, substitute 0.25 into the formula for the area and solve:", "14":"The correct answer is E. The volume of a cube is calculated by multiplying the length × width × height. You are given that Cube X has an edge length of 2. Because Cube Y has an edge length triple that of Cube X, the volume of Cube Y is 6 × 6 × 6, or 63  =  216 cubic inches.", "15":"The correct answer is G. To solve this problem, substitute the given values into the formula as follows:"};
+let graded = false;
+
+document.querySelectorAll('.choices li').forEach(li => {
+  // Remove old onclick
+  li.removeAttribute('onclick');
+  li.addEventListener('click', function() {
+    if (graded) return;
+    const siblings = this.parentElement.querySelectorAll('li');
+    siblings.forEach(s => s.classList.remove('selected'));
+    this.classList.add('selected');
+  });
+});
+
+function gradeTest() {
+  if (graded) return;
+  graded = true;
+  let correct = 0;
+  const total = Object.keys(ANSWERS).length;
+  
+  document.querySelectorAll('.question').forEach((qDiv, idx) => {
+    const qNum = idx + 1;
+    const correctAns = ANSWERS[qNum];
+    if (!correctAns) return;
+    const choices = qDiv.querySelectorAll('.choices li');
+    const selected = qDiv.querySelector('.choices li.selected');
+    const selectedLetter = selected ? selected.textContent.trim().charAt(0) : null;
+    
+    choices.forEach(li => {
+      const letter = li.textContent.trim().charAt(0);
+      if (letter === correctAns) li.classList.add('show-correct');
+      li.style.cursor = 'default';
+    });
+    
+    const tag = document.createElement('span');
+    tag.className = 'result-tag';
+    
+    if (selectedLetter === correctAns) {
+      correct++;
+      tag.className += ' correct';
+      tag.textContent = 'Correct';
+      if (selected) { selected.classList.remove('selected'); selected.classList.add('correct'); }
+    } else {
+      tag.className += ' wrong';
+      tag.textContent = 'Incorrect (Answer: ' + correctAns + ')';
+      if (selected) { selected.classList.remove('selected'); selected.classList.add('wrong'); }
+    }
+    
+    const firstP = qDiv.querySelector('p');
+    if (firstP) firstP.appendChild(tag);
+    
+    if (typeof EXPLANATIONS !== 'undefined' && EXPLANATIONS[qNum]) {
+      const explDiv = document.createElement('div');
+      explDiv.className = 'explanation show';
+      explDiv.innerHTML = '<strong>Explanation:</strong> ' + EXPLANATIONS[qNum];
+      qDiv.appendChild(explDiv);
+    }
+  });
+  
+  const pct = Math.round((correct / total) * 100);
+  document.querySelector('.submit-btn').style.display = 'none';
+  document.querySelector('.reset-btn').style.display = 'block';
+  var rw=document.querySelector('.report-wrap');if(rw)rw.style.display='block';
+  var bs=document.createElement('div');bs.className='bottom-score';bs.id='bottom-score';
+  bs.innerHTML='<h2 style="font-size:1.3rem;margin-bottom:6px;color:#1a3a4a">Your Score</h2><div class="pct '+(pct>=80?'good':pct>=60?'ok':'bad')+'">'+pct+'%</div><div class="detail">'+correct+' out of '+total+' correct</div>';
+  document.querySelector('.submit-wrap').after(bs);
+  try{var tn=location.pathname.match(/test(\d+)/);if(tn)localStorage.setItem('actmath_'+tn[1],pct);}catch(e){}
+}
+
+function resetTest() {
+  graded = false;
+  var bsEl=document.getElementById('bottom-score');if(bsEl)bsEl.remove();
+  document.querySelector('.submit-btn').style.display = '';
+  document.querySelector('.reset-btn').style.display = 'none';
+  var rw=document.querySelector('.report-wrap');if(rw)rw.style.display='none';
+  var ni=document.querySelector('.name-input');if(ni)ni.value='';
+  document.querySelectorAll('.choices li').forEach(li => {
+    li.classList.remove('selected','correct','wrong','show-correct');
+    li.style.cursor = 'pointer';
+  });
+  document.querySelectorAll('.result-tag').forEach(t => t.remove());
+  document.querySelectorAll('.explanation').forEach(e => e.remove());
+}
+
+function generateReport(){
+  var nameInput=document.querySelector('.name-input');
+  var name=(nameInput&&nameInput.value.trim())||'Student';
+  var testName=document.querySelector('header h1').textContent;
+  var bs=document.getElementById('bottom-score');
+  var scorePct=bs?bs.querySelector('.pct').textContent:'';
+  var detailTxt=bs?bs.querySelector('.detail').textContent:'';
+  var d=new Date().toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'});
+  var btn=document.querySelector('.report-btn');btn.textContent='Generating...';btn.disabled=true;
+  var s=document.createElement('script');
+  s.src='https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js';
+  s.onerror=function(){btn.textContent='Download Report (PDF)';btn.disabled=false;alert('Could not load PDF library.');};
+  s.onload=function(){
+    var doc=new jspdf.jsPDF('portrait','mm','letter');
+    var pw=215.9,ph=279.4,mx=12,cw=pw-2*mx,y=8;
+    doc.setFillColor(26,58,74);doc.rect(0,0,pw,22,'F');
+    doc.setTextColor(255,255,255);doc.setFontSize(13);doc.setFont('helvetica','bold');
+    doc.text(testName,mx,9);
+    doc.setFontSize(7.5);doc.setFont('helvetica','normal');
+    doc.text(d+'  |  Student: '+name,mx,14.5);
+    doc.setFontSize(18);doc.setFont('helvetica','bold');
+    doc.text(scorePct,pw-mx,11,{align:'right'});
+    doc.setFontSize(7.5);doc.setFont('helvetica','normal');
+    doc.text(detailTxt,pw-mx,16,{align:'right'});
+    y=25;
+    doc.setDrawColor(26,58,74);doc.setLineWidth(0.3);doc.line(mx,y,pw-mx,y);y+=3;
+    document.querySelectorAll('.question').forEach(function(qDiv,idx){
+      var qNum=idx+1;var ca=ANSWERS[qNum];if(!ca)return;
+      var sel=qDiv.querySelector('.choices li.correct,.choices li.wrong');
+      var sa=sel?sel.textContent.trim().charAt(0):'-';
+      var ok=sel&&sel.classList.contains('correct');
+      if(ok){
+        doc.setFillColor(40,167,69);doc.circle(mx+1.2,y-1,1,'F');
+        doc.setTextColor(33,33,33);doc.setFont('helvetica','bold');doc.setFontSize(8);
+        doc.text('Q'+qNum,mx+4,y);
+        doc.setFont('helvetica','normal');doc.setTextColor(40,167,69);
+        doc.text('Correct ('+ca+')',mx+14,y);
+      }else{
+        doc.setFillColor(220,53,69);doc.circle(mx+1.2,y-1,1,'F');
+        doc.setTextColor(33,33,33);doc.setFont('helvetica','bold');doc.setFontSize(8);
+        doc.text('Q'+qNum,mx+4,y);
+        doc.setFont('helvetica','normal');doc.setTextColor(220,53,69);
+        doc.text('Incorrect',mx+14,y);
+        doc.setTextColor(120,120,120);
+        doc.text('(Chose '+sa+', Correct: '+ca+')',mx+32,y);
+      }
+      y+=3.2;
+      var qP=qDiv.querySelector('p');
+      if(qP){
+        var qT=qP.cloneNode(true);
+        var tags=qT.querySelectorAll('.result-tag');tags.forEach(function(t){t.remove();});
+        var qt=qT.textContent.replace(/^\d+\.\s*/,'').trim();
+        if(qt.length>0){
+          doc.setFont('helvetica','normal');doc.setTextColor(60,60,60);doc.setFontSize(6.5);
+          var ql=doc.splitTextToSize(qt,cw-5);
+          ql=ql.slice(0,1);
+          if(doc.splitTextToSize(qt,cw-5).length>1){ql[0]=ql[0].substring(0,ql[0].length-3)+'...';}
+          doc.text(ql,mx+4,y);y+=2.4;
+        }
+      }
+      if(typeof EXPLANATIONS!=='undefined'&&EXPLANATIONS[qNum]){
+        doc.setFont('helvetica','italic');doc.setTextColor(100,100,100);doc.setFontSize(6);
+        var lines=doc.splitTextToSize(EXPLANATIONS[qNum],cw-5);
+        if(lines.length>2){lines=lines.slice(0,2);lines[1]=lines[1].substring(0,Math.max(0,lines[1].length-3))+'...';}
+        doc.text(lines,mx+4,y);y+=lines.length*2.2;
+      }
+      y+=2;
+    });
+    doc.setDrawColor(200,200,200);doc.setLineWidth(0.2);doc.line(mx,ph-10,pw-mx,ph-10);
+    doc.setTextColor(170,170,170);doc.setFontSize(6);doc.setFont('helvetica','normal');
+    doc.text('ACT Math Practice  |  Score Report',pw/2,ph-7,{align:'center'});
+    var tn=location.pathname.match(/test(\d+)/);
+    var testNum=tn?parseInt(tn[1])-100:0;
+    var ds=new Date().toISOString().slice(0,10);
+    doc.save('ACT-Math-Test-'+testNum+'-'+ds+'.pdf');
+    btn.textContent='Download Report (PDF)';btn.disabled=false;
+  };
+  document.head.appendChild(s);
+}
+</script>
+</body></html>

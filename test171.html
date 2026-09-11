@@ -1,0 +1,222 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>ACT Math Test 71</title><style>@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:#fff;color:#2d3748;line-height:1.7}
+.container{max-width:800px;margin:0 auto;padding:20px 24px}
+header{background:linear-gradient(135deg,#1a3a4a 0%,#2d6a7a 100%);color:#fff;padding:28px 0;margin-bottom:36px;text-align:center}
+header .container{display:block}
+header h1{font-size:1.6rem;font-weight:700;letter-spacing:-0.3px}
+header a{color:rgba(255,255,255,.7);text-decoration:none;font-size:.9rem;display:inline-block;margin-bottom:6px;transition:color .2s}
+header a:hover{color:#fff}
+.question{background:#fff;border-radius:12px;padding:24px;margin-bottom:20px;border:1px solid #e2e8f0;transition:border-color .2s}
+.question:hover{border-color:#cbd5e0}
+.question p{margin-bottom:14px;font-size:1.05rem}
+img{max-width:100%;height:auto;margin:4px 0;vertical-align:middle}
+.choices{list-style:none}
+.choices li{padding:10px 14px;margin:6px 0;border-radius:8px;cursor:pointer;transition:all .2s;border:2px solid transparent}
+.choices li:hover{background:#f0f7fa}
+.choices li.selected{background:#d1ecf1;border-color:#bee5eb}
+.choices li.correct{background:#d4edda;border-color:#28a745}
+.choices li.wrong{background:#f8d7da;border-color:#dc3545}
+.choices li.show-correct{background:#d4edda;border-color:#28a745}
+.submit-wrap{text-align:center;margin:36px 0}
+.submit-btn{display:inline-block;padding:14px 40px;background:linear-gradient(135deg,#1a3a4a,#2d6a7a);color:#fff;border:none;border-radius:10px;font-size:1.1rem;cursor:pointer;font-weight:600;font-family:inherit;transition:all .25s;letter-spacing:.3px}
+.submit-btn:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(26,58,74,.25)}
+.score-box{background:#fff;border-radius:12px;padding:28px;margin-bottom:28px;text-align:center;border:1px solid #e2e8f0;box-shadow:0 4px 20px rgba(0,0,0,.06);display:none}
+.score-box h2{font-size:1.4rem;margin-bottom:8px;color:#1a3a4a;text-align:center}
+.score-box .pct{font-size:3rem;font-weight:700}
+.score-box .pct.good{color:#28a745}
+.score-box .pct.ok{color:#e6a817}
+.score-box .pct.bad{color:#dc3545}
+.score-box .detail{color:#666;margin-top:4px}
+.result-tag{display:inline-block;padding:2px 10px;border-radius:12px;font-size:.8rem;font-weight:600;margin-left:8px}
+.result-tag.correct{background:#d4edda;color:#155724}
+.result-tag.wrong{background:#f8d7da;color:#721c24}
+.reset-btn{display:none;margin:16px auto;padding:12px 28px;background:#6c757d;color:#fff;border:none;border-radius:10px;font-size:1rem;cursor:pointer;font-family:inherit;transition:all .25s}
+.reset-btn:hover{background:#5a6268;transform:translateY(-1px)}
+.explanation{background:#f0f7ff;border-left:4px solid #1a3a4a;padding:14px 18px;margin-top:14px;border-radius:0 8px 8px 0;font-size:.95rem;color:#444;display:none}
+.explanation.show{display:block}
+.explanation strong{color:#1a3a4a}
+.nav{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin:36px 0}
+.nav a{display:inline-block;padding:10px 24px;background:linear-gradient(135deg,#1a3a4a,#2d6a7a);color:#fff;text-decoration:none;border-radius:10px;font-weight:500;font-size:.95rem;transition:all .25s}
+.nav a:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(26,58,74,.25)}
+footer{text-align:center;padding:36px 24px;color:#8899a4;font-size:.85rem;border-top:1px solid #e2e8f0;margin-top:40px}
+.report-btn{display:inline-block;margin:0;padding:12px 28px;background:linear-gradient(135deg,#1a3a4a,#2d6a7a);color:#fff;border:none;border-radius:10px;font-size:1rem;cursor:pointer;font-family:inherit;transition:all .25s}
+.report-btn:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(26,58,74,.25)}
+.bottom-score{background:#fff;border-radius:12px;padding:20px;margin:20px 0;text-align:center;border:1px solid #e2e8f0;box-shadow:0 4px 20px rgba(0,0,0,.06)}
+.bottom-score .pct{font-size:2.5rem;font-weight:700}
+.bottom-score .pct.good{color:#28a745}
+.bottom-score .pct.ok{color:#e6a817}
+.bottom-score .pct.bad{color:#dc3545}
+.bottom-score .detail{color:#666;margin-top:4px;font-size:.95rem}
+.report-wrap{display:none;text-align:center;margin:16px 0}
+.name-input{padding:10px 14px;border:1px solid #e2e8f0;border-radius:10px;font-size:.95rem;font-family:inherit;width:200px;margin-right:8px;outline:none;transition:border-color .2s}
+.name-input:focus{border-color:#1a3a4a}
+</style></head><body><header><div class="container"><a href="index.html">&larr; All Tests</a><h1>ACT Math Practice Test 71</h1></div></header><div class="container"><div id="score-box" class="score-box"><h2>Your Score</h2><div class="pct">0%</div><div class="detail"></div></div><div class="question"><p><b>1.</b> The lowest temperature on a winter morning was -7°F. Later the same day the temperature reached a high of 21°F. By how many degrees Fahrenheit did the temperature increase?</p><ul class="choices"><li>A. 32</li><li>B. 28</li><li>C. 21</li><li>D. 14</li><li>E. 7</li></ul></div><div class="question"><p><b>2.</b> Disregarding sales tax, how much will you save when you buy a $12.00 video that is on sale for 20% off?</p><ul class="choices"><li>F. $0.24</li><li>G. $0.48</li><li>H. $1.20</li><li>J. $2.40</li><li>K. $3.60</li></ul></div><div class="question"><p><b>3.</b> As part of a school report on the cost of gasoline, Raquel wants to find the average cost of purchasing a gallon of regular unleaded gasoline from local gas stations. She surveys 4 stations and finds the cost per gallon of regular unleaded gas from the 4 stations to be $2.45, $2.50, $2.49, and $2.56, respectively. Using this data, what is the average cost of purchasing one gallon of regular unleaded gasoline from these 4 gas stations?</p><ul class="choices"><li>A. $2.55</li><li>B. $2.53</li><li>C. $2.50</li><li>D. $2.49</li><li>E. $2.45</li></ul></div><div class="question"><p><b>4.</b> What is the volume, in cubic inches, of a cube whose edges each measure 5 inches in length?</p><ul class="choices"><li>F. 15</li><li>G. 25</li><li>H. 50</li><li>J. 125</li><li>K. 500</li></ul></div><div class="question"><p><b>5.</b> If 3(<span class="italic">a</span> - 6) = -21, then <span class="italic">a</span> = ?</p><ul class="choices"><li>A. -9</li><li>B. <img src="https://www.crackab.com/image/tests/mg10/00304.jpg"></li><li>C. -1</li><li>D. <img src="https://www.crackab.com/image/tests/mg10/00307.jpg"></li><li>E. 5</li></ul></div><div class="question"><p><b>6.</b> The price of a cantaloupe is directly proportional to its weight. If a cantaloupe that weighs 3.0 pounds costs $3.87, approximately how much will a 2.25-pound cantaloupe cost?</p><ul class="choices"><li>F. $2.90</li><li>G. $2.65</li><li>H. $2.25</li><li>J. $1.87</li><li>K. $1.29</li></ul></div><div class="question"><p><b>7.</b> In the figure below, <span class="italic">D</span> is a point on segment <span class="italic">AB</span>, and the segment <span class="italic">CD</span> is perpendicular to the segment <span class="italic">AB</span>. Based on this information, which of the following conclusions can be made?<br><img src="https://www.crackab.com/image/tests/mg10/00311.jpg"><br></p><ul class="choices"><li>A. Point <span class="italic">C</span> is equidistant from <span class="italic">A</span> to <span class="italic">B</span>.</li><li>B. Segments <span class="italic">AD</span> and <span class="italic">DB</span> are equal in length.</li><li>C. The segment <span class="italic">CD</span> bisects the segment <span class="italic">AB</span>.</li><li>D. Angle <span class="italic">CDA</span> is larger than angle <span class="italic">CDB</span>.</li><li>E. Angle <span class="italic">CDA</span> is congruent to angle <span class="italic">CDB</span>.</li></ul></div><div class="question"><p><b>8.</b> If 6<span class="italic">x</span> - 5 = 3<span class="italic">x</span> - 16, then <span class="italic">x</span> = ?</p><ul class="choices"><li>F. -11</li><li>G. -7</li><li>H. <img src="https://www.crackab.com/image/tests/mg10/00315.jpg"></li><li>J. <img src="https://www.crackab.com/image/tests/mg10/00317.jpg"></li><li>K. 7</li></ul></div><div class="question"><p><b>9.</b> Which of the following is always equal to <span class="italic">y</span>(3 - <span class="italic">y</span>) + 5(<span class="italic">y</span> - 7)?</p><ul class="choices"><li>A. 8<span class="italic">y</span> - 35</li><li>B. 8<span class="italic">y</span> - 7</li><li>C. -<span class="italic">y<sup><small>2</small></sup></span> + 8<span class="italic">y</span> - 7</li><li>D. -<span class="italic">y<sup><small>2</small></sup></span> + 8<span class="italic">y</span> - 35</li><li>E. 8<span class="italic">y<sup><small>3</small></sup></span> - 35</li></ul></div><div class="question"><p><b>10.</b> The figure below shows part of a circle whose circumference is 40. If arcs of length 4 and length <span class="italic">s</span> continue to alternate around the entire circle so that there are 8 arcs of each length, what is the degree measure of each of the arcs of length <span class="italic">s</span>?<br><img src="https://www.crackab.com/image/tests/mg10/00320.jpg"><br></p><ul class="choices"><li>F. 6°</li><li>G. 9°</li><li>H. 12°</li><li>J. 18°</li><li>K. 36°</li></ul></div><div class="question"><p><b>11.</b> In a poll, 44 people were in favor of constructing a new high school, 58 were against it, and 8 people had no opinion. What fraction of those people polled were in favor of constructing a new high school?</p><ul class="choices"><li>A. <img src="https://www.crackab.com/image/tests/mg10/00323.jpg"></li><li>B. <img src="https://www.crackab.com/image/tests/mg10/00326.jpg"></li><li>C. <img src="https://www.crackab.com/image/tests/mg10/00331.jpg"></li><li>D. <img src="https://www.crackab.com/image/tests/mg10/00261.jpg"></li><li>E. <img src="https://www.crackab.com/image/tests/mg10/01595.jpg"></li></ul></div><div class="question"><p><b>12.</b> On the line segment below, the ratio of lengths <span class="italic">AB</span> to BC is 1:4. What is the ratio of <span class="italic">AB</span> to <span class="italic">AC</span>?<br><img src="https://www.crackab.com/image/tests/mg10/00273.jpg"><br></p><ul class="choices"><li>F. 1:5</li><li>G. 1:4</li><li>H. 1:3</li><li>J. 5:1</li><li>K. Cannot be determined from the given information</li></ul></div><div class="question"><p><b>13.</b> If a board 9 feet 6 inches in length is cut into 2 equal parts, what will be the length of each part?</p><ul class="choices"><li>A. 3 feet 8 inches</li><li>B. 4 feet 5 inches</li><li>C. 4 feet 8 inches</li><li>D. 4 feet 9 inches</li><li>E. 5 feet 2 inches</li></ul></div><div class="question"><p><b>14.</b> The speed of a car exceeds twice the speed of a truck by 15 mph. If <span class="italic">t</span> is the speed of the truck, which of the following expresses the speed, in miles per hour, of the car?</p><ul class="choices"><li>F. <span class="italic">t</span> + 15</li><li>G. <span class="italic">t</span> + 30</li><li>H. <span class="italic">t</span> - 30</li><li>J. 2<span class="italic">t</span> + 15</li><li>K. 2<span class="italic">t</span> + 30</li></ul></div><div class="question"><p><b>15.</b> The circle shown below has a radius of 5 meters, and the length of chord <span class="italic">XY</span> is 8 meters. If <span class="italic">C</span> marks the center of the circle, what is the length, in meters, of segment <span class="italic">CZ</span>?<br><img src="https://www.crackab.com/image/tests/mg10/00297.jpg"><br></p><ul class="choices"><li>A. <img src="https://www.crackab.com/image/tests/mg10/00306.jpg"></li><li>B. 3</li><li>C. <img src="https://www.crackab.com/image/tests/mg10/02104.jpg"></li><li>D. 5</li><li>E. 9</li></ul></div><div class="submit-wrap"><button class="submit-btn" onclick="gradeTest()">Submit Test</button><button class="reset-btn" onclick="resetTest()">Try Again</button>
+<div class="report-wrap"><input type="text" class="name-input" placeholder="Student name (for report)"><button class="report-btn" onclick="generateReport()">Download Report (PDF)</button></div></div><div class="nav"><a href="test170.html">&larr; Prev</a><a href="index.html">All Tests</a><a href="test172.html">Next &rarr;</a></div></div><footer><div class="container">ACT Math Practice</div></footer>
+<script>
+const ANSWERS = {"1": "B", "2": "J", "3": "C", "4": "J", "5": "C", "6": "F", "7": "E", "8": "H", "9": "D", "10": "G", "11": "C", "12": "F", "13": "D", "14": "J", "15": "B"};
+const EXPLANATIONS = {"1":"The correct answer is B. To find how many degrees Fahrenheit the temperature increased, you need to find the range between the highest and lowest temperature for the day. To do so, subtract the lowest temperature from the highest temperature: 21 - (-7)  =  21 + 7  =  28 degrees Fahrenheit.", "2":"The correct answer is J. To find how much money you save when you buy a $12 video that is on sale for 20% off, you should find 20% of $12. To do so, multiply $12 by 20%, or 0.20; ($12)(0.20)  =  $2.40.", "3":"The correct answer is C. To compute the average of the four prices per gallon of gasoline, add the four prices and divide that sum by the number of prices, which in this case is four:", "4":"The correct answer is J. The volume of a cube is calculated by multiplying the length by the width by the height. Because each side of a cube is congruent, simply calculate (side)3. Therefore, the volume is 53, or 125.", "5":"The correct answer is C. Given that 3(a - 6)  =  -21:", "6":"The correct answer is F. When a cantaloupe weighing 3.0 pound cantaloupe costs $3.87, you can find the cost of a 2.25-pound cantaloupe by setting up a proportion, or by finding the cost per pound and then multiplying by the weight. To solve with a proportion, let x be the cost of the 2.25 pound cantaloupe. Thus ; solving for x yields . To solve by finding the per pound rate, divide $3.87 by 3.0 to find the cost per pound in the first cantaloupe, and then multiply that rate by 2.25 pounds, the weight of the second cantaloupe:", "7":"The correct answer is E. Remembering that perpendicular lines form right angles, the angles CDA and CDB both measure 90° and thus are equal in measure, answer choice E. From the figure it may appear as if segments AD and DB are equal in length, but that cannot be determined based solely on the information given in the problem.", "8":"The correct answer is H. To solve this problem, combine like terms and solve for x:", "9":"The correct answer is D. To solve this problem, you must distribute correctly and remember the proper signs. When you distribute y(3 - y) + 5(y - 7), you arrive at 3y - y2 + 5y - 35. Once you add like terms, you get -y2 + 8y - 35.", "10":"The correct answer is G. First, find the value of s. Since there are 8 arcs of each length, it follows that there are 8 arcs of length (4 + s). Since the circumference is 40, then 8(4 + s)  =  40. Solve for s: 32 + 8s  =  40 and s  =  1. Now that you know the value of each length, you can solve for the degree measure of each of the arcs of length s. You know that the entire circle has 360°. You also know that the length of the smaller arc (s) is  the length of the larger arc. Therefore, you can set up the following equation: , where x is the degree measure corresponding to each arc of length 4 and  is the degree measure corresponding to each arc of length s  =  1. Now you have , or 8x + 2x; which is 10x  =  360°. So x  =  36°. Recall that x is the degree measure corresponding to each arc of length 4. The degree measure corresponding to each arc of length s is ; .", "11":"The correct answer is C. To solve this problem, divide the number of those people in favor of constructing a new high school by the total number of people polled and simplify, as follows: 44 ÷ (44 + 58 + 8)  =  44/110  =  2/5", "12":"The correct answer is F. To determine the ratios, it is helpful to assign numerical values to the lengths of the segments. In this case, since the ratio of AB to BC is 1:4, let AB have a length of 1 and BC have a length of 4. Since AC  =  AB + BC, it can be given a length of 5. Therefore, the ratio of lengths AB to AC is 1:5.", "13":"The correct answer is D. To find half of 9 feet 6 inches, recall that there are 12 inches in a foot. Therefore, 9 feet 6 inches is equal to 9(12) + 6  =  114 inches. Half of 114 inches is 57 inches, which is equivalent to 4 feet 9 inches [4(12) + 9  =  57].", "14":"The correct answer is J. If t is the speed of the truck, then twice the speed of the truck can be written as 2t. If the speed of the car exceeded twice the speed of the truck by 15 mph, the car\'s speed was 2t + 15.", "15":"The correct answer is B. If the length of the chord XY is 8, then the length of the segment XZ is 4. The right triangle XCZ has a hypotenuse of 5 (equal to the radius), leg of 4, and second leg equal to the length of segment CZ. To find the length of segment CZ you can use the Pythagorean Theorem for a right triangle (c2  =  a2 + b2 where c is the hypotenuse and a and b are legs):"};
+let graded = false;
+
+document.querySelectorAll('.choices li').forEach(li => {
+  // Remove old onclick
+  li.removeAttribute('onclick');
+  li.addEventListener('click', function() {
+    if (graded) return;
+    const siblings = this.parentElement.querySelectorAll('li');
+    siblings.forEach(s => s.classList.remove('selected'));
+    this.classList.add('selected');
+  });
+});
+
+function gradeTest() {
+  if (graded) return;
+  graded = true;
+  let correct = 0;
+  const total = Object.keys(ANSWERS).length;
+  
+  document.querySelectorAll('.question').forEach((qDiv, idx) => {
+    const qNum = idx + 1;
+    const correctAns = ANSWERS[qNum];
+    if (!correctAns) return;
+    const choices = qDiv.querySelectorAll('.choices li');
+    const selected = qDiv.querySelector('.choices li.selected');
+    const selectedLetter = selected ? selected.textContent.trim().charAt(0) : null;
+    
+    choices.forEach(li => {
+      const letter = li.textContent.trim().charAt(0);
+      if (letter === correctAns) li.classList.add('show-correct');
+      li.style.cursor = 'default';
+    });
+    
+    const tag = document.createElement('span');
+    tag.className = 'result-tag';
+    
+    if (selectedLetter === correctAns) {
+      correct++;
+      tag.className += ' correct';
+      tag.textContent = 'Correct';
+      if (selected) { selected.classList.remove('selected'); selected.classList.add('correct'); }
+    } else {
+      tag.className += ' wrong';
+      tag.textContent = 'Incorrect (Answer: ' + correctAns + ')';
+      if (selected) { selected.classList.remove('selected'); selected.classList.add('wrong'); }
+    }
+    
+    const firstP = qDiv.querySelector('p');
+    if (firstP) firstP.appendChild(tag);
+    
+    if (typeof EXPLANATIONS !== 'undefined' && EXPLANATIONS[qNum]) {
+      const explDiv = document.createElement('div');
+      explDiv.className = 'explanation show';
+      explDiv.innerHTML = '<strong>Explanation:</strong> ' + EXPLANATIONS[qNum];
+      qDiv.appendChild(explDiv);
+    }
+  });
+  
+  const pct = Math.round((correct / total) * 100);
+  document.querySelector('.submit-btn').style.display = 'none';
+  document.querySelector('.reset-btn').style.display = 'block';
+  var rw=document.querySelector('.report-wrap');if(rw)rw.style.display='block';
+  var bs=document.createElement('div');bs.className='bottom-score';bs.id='bottom-score';
+  bs.innerHTML='<h2 style="font-size:1.3rem;margin-bottom:6px;color:#1a3a4a">Your Score</h2><div class="pct '+(pct>=80?'good':pct>=60?'ok':'bad')+'">'+pct+'%</div><div class="detail">'+correct+' out of '+total+' correct</div>';
+  document.querySelector('.submit-wrap').after(bs);
+  try{var tn=location.pathname.match(/test(\d+)/);if(tn)localStorage.setItem('actmath_'+tn[1],pct);}catch(e){}
+}
+
+function resetTest() {
+  graded = false;
+  var bsEl=document.getElementById('bottom-score');if(bsEl)bsEl.remove();
+  document.querySelector('.submit-btn').style.display = '';
+  document.querySelector('.reset-btn').style.display = 'none';
+  var rw=document.querySelector('.report-wrap');if(rw)rw.style.display='none';
+  var ni=document.querySelector('.name-input');if(ni)ni.value='';
+  document.querySelectorAll('.choices li').forEach(li => {
+    li.classList.remove('selected','correct','wrong','show-correct');
+    li.style.cursor = 'pointer';
+  });
+  document.querySelectorAll('.result-tag').forEach(t => t.remove());
+  document.querySelectorAll('.explanation').forEach(e => e.remove());
+}
+
+function generateReport(){
+  var nameInput=document.querySelector('.name-input');
+  var name=(nameInput&&nameInput.value.trim())||'Student';
+  var testName=document.querySelector('header h1').textContent;
+  var bs=document.getElementById('bottom-score');
+  var scorePct=bs?bs.querySelector('.pct').textContent:'';
+  var detailTxt=bs?bs.querySelector('.detail').textContent:'';
+  var d=new Date().toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'});
+  var btn=document.querySelector('.report-btn');btn.textContent='Generating...';btn.disabled=true;
+  var s=document.createElement('script');
+  s.src='https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js';
+  s.onerror=function(){btn.textContent='Download Report (PDF)';btn.disabled=false;alert('Could not load PDF library.');};
+  s.onload=function(){
+    var doc=new jspdf.jsPDF('portrait','mm','letter');
+    var pw=215.9,ph=279.4,mx=12,cw=pw-2*mx,y=8;
+    doc.setFillColor(26,58,74);doc.rect(0,0,pw,22,'F');
+    doc.setTextColor(255,255,255);doc.setFontSize(13);doc.setFont('helvetica','bold');
+    doc.text(testName,mx,9);
+    doc.setFontSize(7.5);doc.setFont('helvetica','normal');
+    doc.text(d+'  |  Student: '+name,mx,14.5);
+    doc.setFontSize(18);doc.setFont('helvetica','bold');
+    doc.text(scorePct,pw-mx,11,{align:'right'});
+    doc.setFontSize(7.5);doc.setFont('helvetica','normal');
+    doc.text(detailTxt,pw-mx,16,{align:'right'});
+    y=25;
+    doc.setDrawColor(26,58,74);doc.setLineWidth(0.3);doc.line(mx,y,pw-mx,y);y+=3;
+    document.querySelectorAll('.question').forEach(function(qDiv,idx){
+      var qNum=idx+1;var ca=ANSWERS[qNum];if(!ca)return;
+      var sel=qDiv.querySelector('.choices li.correct,.choices li.wrong');
+      var sa=sel?sel.textContent.trim().charAt(0):'-';
+      var ok=sel&&sel.classList.contains('correct');
+      if(ok){
+        doc.setFillColor(40,167,69);doc.circle(mx+1.2,y-1,1,'F');
+        doc.setTextColor(33,33,33);doc.setFont('helvetica','bold');doc.setFontSize(8);
+        doc.text('Q'+qNum,mx+4,y);
+        doc.setFont('helvetica','normal');doc.setTextColor(40,167,69);
+        doc.text('Correct ('+ca+')',mx+14,y);
+      }else{
+        doc.setFillColor(220,53,69);doc.circle(mx+1.2,y-1,1,'F');
+        doc.setTextColor(33,33,33);doc.setFont('helvetica','bold');doc.setFontSize(8);
+        doc.text('Q'+qNum,mx+4,y);
+        doc.setFont('helvetica','normal');doc.setTextColor(220,53,69);
+        doc.text('Incorrect',mx+14,y);
+        doc.setTextColor(120,120,120);
+        doc.text('(Chose '+sa+', Correct: '+ca+')',mx+32,y);
+      }
+      y+=3.2;
+      var qP=qDiv.querySelector('p');
+      if(qP){
+        var qT=qP.cloneNode(true);
+        var tags=qT.querySelectorAll('.result-tag');tags.forEach(function(t){t.remove();});
+        var qt=qT.textContent.replace(/^\d+\.\s*/,'').trim();
+        if(qt.length>0){
+          doc.setFont('helvetica','normal');doc.setTextColor(60,60,60);doc.setFontSize(6.5);
+          var ql=doc.splitTextToSize(qt,cw-5);
+          ql=ql.slice(0,1);
+          if(doc.splitTextToSize(qt,cw-5).length>1){ql[0]=ql[0].substring(0,ql[0].length-3)+'...';}
+          doc.text(ql,mx+4,y);y+=2.4;
+        }
+      }
+      if(typeof EXPLANATIONS!=='undefined'&&EXPLANATIONS[qNum]){
+        doc.setFont('helvetica','italic');doc.setTextColor(100,100,100);doc.setFontSize(6);
+        var lines=doc.splitTextToSize(EXPLANATIONS[qNum],cw-5);
+        if(lines.length>2){lines=lines.slice(0,2);lines[1]=lines[1].substring(0,Math.max(0,lines[1].length-3))+'...';}
+        doc.text(lines,mx+4,y);y+=lines.length*2.2;
+      }
+      y+=2;
+    });
+    doc.setDrawColor(200,200,200);doc.setLineWidth(0.2);doc.line(mx,ph-10,pw-mx,ph-10);
+    doc.setTextColor(170,170,170);doc.setFontSize(6);doc.setFont('helvetica','normal');
+    doc.text('ACT Math Practice  |  Score Report',pw/2,ph-7,{align:'center'});
+    var tn=location.pathname.match(/test(\d+)/);
+    var testNum=tn?parseInt(tn[1])-100:0;
+    var ds=new Date().toISOString().slice(0,10);
+    doc.save('ACT-Math-Test-'+testNum+'-'+ds+'.pdf');
+    btn.textContent='Download Report (PDF)';btn.disabled=false;
+  };
+  document.head.appendChild(s);
+}
+</script>
+</body></html>

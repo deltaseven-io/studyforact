@@ -1,0 +1,222 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>ACT Math Test 100</title><style>@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:#fff;color:#2d3748;line-height:1.7}
+.container{max-width:800px;margin:0 auto;padding:20px 24px}
+header{background:linear-gradient(135deg,#1a3a4a 0%,#2d6a7a 100%);color:#fff;padding:28px 0;margin-bottom:36px;text-align:center}
+header .container{display:block}
+header h1{font-size:1.6rem;font-weight:700;letter-spacing:-0.3px}
+header a{color:rgba(255,255,255,.7);text-decoration:none;font-size:.9rem;display:inline-block;margin-bottom:6px;transition:color .2s}
+header a:hover{color:#fff}
+.question{background:#fff;border-radius:12px;padding:24px;margin-bottom:20px;border:1px solid #e2e8f0;transition:border-color .2s}
+.question:hover{border-color:#cbd5e0}
+.question p{margin-bottom:14px;font-size:1.05rem}
+img{max-width:100%;height:auto;margin:4px 0;vertical-align:middle}
+.choices{list-style:none}
+.choices li{padding:10px 14px;margin:6px 0;border-radius:8px;cursor:pointer;transition:all .2s;border:2px solid transparent}
+.choices li:hover{background:#f0f7fa}
+.choices li.selected{background:#d1ecf1;border-color:#bee5eb}
+.choices li.correct{background:#d4edda;border-color:#28a745}
+.choices li.wrong{background:#f8d7da;border-color:#dc3545}
+.choices li.show-correct{background:#d4edda;border-color:#28a745}
+.submit-wrap{text-align:center;margin:36px 0}
+.submit-btn{display:inline-block;padding:14px 40px;background:linear-gradient(135deg,#1a3a4a,#2d6a7a);color:#fff;border:none;border-radius:10px;font-size:1.1rem;cursor:pointer;font-weight:600;font-family:inherit;transition:all .25s;letter-spacing:.3px}
+.submit-btn:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(26,58,74,.25)}
+.score-box{background:#fff;border-radius:12px;padding:28px;margin-bottom:28px;text-align:center;border:1px solid #e2e8f0;box-shadow:0 4px 20px rgba(0,0,0,.06);display:none}
+.score-box h2{font-size:1.4rem;margin-bottom:8px;color:#1a3a4a;text-align:center}
+.score-box .pct{font-size:3rem;font-weight:700}
+.score-box .pct.good{color:#28a745}
+.score-box .pct.ok{color:#e6a817}
+.score-box .pct.bad{color:#dc3545}
+.score-box .detail{color:#666;margin-top:4px}
+.result-tag{display:inline-block;padding:2px 10px;border-radius:12px;font-size:.8rem;font-weight:600;margin-left:8px}
+.result-tag.correct{background:#d4edda;color:#155724}
+.result-tag.wrong{background:#f8d7da;color:#721c24}
+.reset-btn{display:none;margin:16px auto;padding:12px 28px;background:#6c757d;color:#fff;border:none;border-radius:10px;font-size:1rem;cursor:pointer;font-family:inherit;transition:all .25s}
+.reset-btn:hover{background:#5a6268;transform:translateY(-1px)}
+.explanation{background:#f0f7ff;border-left:4px solid #1a3a4a;padding:14px 18px;margin-top:14px;border-radius:0 8px 8px 0;font-size:.95rem;color:#444;display:none}
+.explanation.show{display:block}
+.explanation strong{color:#1a3a4a}
+.nav{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin:36px 0}
+.nav a{display:inline-block;padding:10px 24px;background:linear-gradient(135deg,#1a3a4a,#2d6a7a);color:#fff;text-decoration:none;border-radius:10px;font-weight:500;font-size:.95rem;transition:all .25s}
+.nav a:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(26,58,74,.25)}
+footer{text-align:center;padding:36px 24px;color:#8899a4;font-size:.85rem;border-top:1px solid #e2e8f0;margin-top:40px}
+.report-btn{display:inline-block;margin:0;padding:12px 28px;background:linear-gradient(135deg,#1a3a4a,#2d6a7a);color:#fff;border:none;border-radius:10px;font-size:1rem;cursor:pointer;font-family:inherit;transition:all .25s}
+.report-btn:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(26,58,74,.25)}
+.bottom-score{background:#fff;border-radius:12px;padding:20px;margin:20px 0;text-align:center;border:1px solid #e2e8f0;box-shadow:0 4px 20px rgba(0,0,0,.06)}
+.bottom-score .pct{font-size:2.5rem;font-weight:700}
+.bottom-score .pct.good{color:#28a745}
+.bottom-score .pct.ok{color:#e6a817}
+.bottom-score .pct.bad{color:#dc3545}
+.bottom-score .detail{color:#666;margin-top:4px;font-size:.95rem}
+.report-wrap{display:none;text-align:center;margin:16px 0}
+.name-input{padding:10px 14px;border:1px solid #e2e8f0;border-radius:10px;font-size:.95rem;font-family:inherit;width:200px;margin-right:8px;outline:none;transition:border-color .2s}
+.name-input:focus{border-color:#1a3a4a}
+</style></head><body><header><div class="container"><a href="index.html">&larr; All Tests</a><h1>ACT Math Practice Test 100</h1></div></header><div class="container"><div id="score-box" class="score-box"><h2>Your Score</h2><div class="pct">0%</div><div class="detail"></div></div><div class="question"><p><b>1.</b> What is the sixth term of the geometric sequence whose second term is 2 and whose fifth term is 16?</p><ul class="choices"><li>A. -64</li><li>B. -32</li><li>C. 38</li><li>D. 64</li><li>E. 128</li></ul></div><div class="question"><p><b>2.</b> There are 16 ounces in one pound. If 3.4 pounds of beef cost $4.95, what is the cost per ounce, to the nearest cent?</p><ul class="choices"><li>F. $0.09</li><li>G. $0.31</li><li>H. $1.05</li><li>J. $1.46</li><li>K. $10.99</li></ul></div><div class="question"><p><b>3.</b> <img src="https://img.crackab.com/act/nmg10/e0116-04.jpg"></p><ul class="choices"><li>A. <img src="https://img.crackab.com/act/nmg10/e0116-05.jpg"></li><li>B. <img src="https://img.crackab.com/act/nmg10/e0116-06.jpg"></li><li>C. <img src="https://img.crackab.com/act/nmg10/e0116-07.jpg"></li><li>D. <img src="https://img.crackab.com/act/nmg10/e0116-08.jpg"></li><li>E. 9</li></ul></div><div class="question"><p><b>4.</b> One route along flat terrain from Hermansville to Melville is to drive straight north from Hermansville for 120 miles to Jamestown, then, at Jamestown, to drive straight west for 80 miles to Melville. If a straight, flat road existed between Hermansville and Melville, approximately how many miles long would it be?</p><ul class="choices"><li>F. 200</li><li>G. 144</li><li>H. 100</li><li>J. 98</li><li>K. 40</li></ul></div><div class="question"><p><b>5.</b> In order to clean her aquarium, Stephanie must remove half of the water. The aquarium measures 30 inches long, 16 inches wide, and 12 inches deep. The aquarium is currently completely full. What volume of water, in cubic inches, must Stephanie remove?</p><ul class="choices"><li>A. 1,440</li><li>B. 2,880</li><li>C. 4,320</li><li>D. 5,760</li><li>E. 7,200</li></ul></div><div class="question"><p><b>6.</b> The bowling league selects its 4 officers by first selecting the president, then the vice president, then the secretary, then the treasurer. If there are 40 bowlers who are eligible to hold office and no member can hold more than one office, which of the following gives the number of different possible results of the election?</p><ul class="choices"><li>F. 37<sup>4</sup></li><li>G. 39<sup>4</sup></li><li>H. 40<sup>4</sup></li><li>J. 39 × 38 × 37 × 36</li><li>K. 40 × 39 × 38 × 37</li></ul></div><div class="question"><p><b>7.</b> The points <em>R</em> (2,2) and <em>S</em> (6,3) in the standard (<em>x</em>,<em>y</em>) coordinate plane below are 2 vertices of triangle <em>RST</em>, which has a right angle at <em>S</em>. Which of the following could be the third vertex, <em>T</em>?<br><img src="https://img.crackab.com/act/nmg10/f0117-01.jpg"></p><ul class="choices"><li>A. (5,7)</li><li>B. (5,-5)</li><li>C. (4,6)</li><li>D. (4,9)</li><li>E. <img src="https://img.crackab.com/act/nmg10/e0117-01.jpg"></li></ul></div><div class="question"><p><b>8.</b> If <em>a</em><sup>2</sup> - 4 = 4 - <em>a</em><sup>2</sup>, what are all possible values of <em>a</em>?</p><ul class="choices"><li>F. 0 only</li><li>G. 2 only</li><li>H. 4 only</li><li>J. -2 and 2 only</li><li>K. -2, 0, and 2</li></ul></div><div class="question"><p><b>9.</b> If 0° ≤ <em>x</em> ≤ 90° and tan <img src="https://img.crackab.com/act/nmg10/e0117-02.jpg">, then cos <em>x</em> = ?</p><ul class="choices"><li>A. <img src="https://img.crackab.com/act/nmg10/e0117-03.jpg"></li><li>B. <img src="https://img.crackab.com/act/nmg10/e0117-04.jpg"></li><li>C. <img src="https://img.crackab.com/act/nmg10/e0117-05.jpg"></li><li>D. <img src="https://img.crackab.com/act/nmg10/e0117-06.jpg"></li><li>E. <img src="https://img.crackab.com/act/nmg10/e0117-07.jpg"></li></ul></div><div class="question"><p><b>10.</b> A square pool with an area of 81 square feet is to be placed entirely within a circular enclosure with a radius of 10 feet. Tiles will be laid within the entire enclosure around the pool (but not under it). What is the approximate area, in square feet, of the enclosure that will be tiled?</p><ul class="choices"><li>F. 81</li><li>G. 233</li><li>H. 315</li><li>J. 396</li><li>K. Cannot be determined without knowing the exact placement of the pool.</li></ul></div><div class="submit-wrap"><button class="submit-btn" onclick="gradeTest()">Submit Test</button><button class="reset-btn" onclick="resetTest()">Try Again</button>
+<div class="report-wrap"><input type="text" class="name-input" placeholder="Student name (for report)"><button class="report-btn" onclick="generateReport()">Download Report (PDF)</button></div></div><div class="nav"><a href="test199.html">&larr; Prev</a><a href="index.html">All Tests</a><a href="test201.html">Next &rarr;</a></div></div><footer><div class="container">ACT Math Practice</div></footer>
+<script>
+const ANSWERS = {"1": "B", "2": "F", "3": "C", "4": "G", "5": "B", "6": "K", "7": "A", "8": "J", "9": "A", "10": "G"};
+const EXPLANATIONS = {"1":"The correct answer is B. A geometric sequence is a sequence of numbers where each term after the first is found by multiplying the previous term by a fixed, nonzero number called the common ratio. Your first step in answering this question is to find the common ratio, then fill in the missing terms in the sequence. Since the second term is -2, -2 is a good logical choice for the common ratio. That would make the six terms of the sequence 1, -2, 4, -8, 16, and -32.", "2":"The correct answer is F. To find the cost per ounce, first convert 3.4 pounds to ounces. Because there are 16 ounces in a pound, 3.4 pounds is 3.4(16)  =  54.4 ounces. To find cost per ounce, divide the cost in dollars by the number of ounces, or  ounces  =  $0.09 per ounce.", "3":"The correct answer is C. To solve, first square each fraction: . Remember that to be added, fractions must have a common denominator. In this case, since 4 is a factor of 16, the lowest common denominator is (9)(16)  =  144. To convert fractions into different denominators, you must multiply the top and bottom of a fraction by the same number. If  is multiplied by , the result is . Likewise, multiplying  by  yields , and multiplying  by  yields . Therefore , or .", "4":"The correct answer is G. The easiest way to solve this problem is to draw a picture similar to the one below. Since the route heads straight north from Hermansville for 120 miles to Jamestown, and then straight west for 80 miles to Melville, the turn at Jamestown creates a right angle. If a straight, flat road existed between Hermansville and Melville, it would form the hypotenuse of a right triangle with legs 80 and 120. Using the Pythagorean Theorem (c2  =  a2 + b2), you can see that the distance of this straight route from Hermansville to Melville would be:", "5":"The correct answer is B. To solve this problem, calculate the volume of the aquarium and divide by 2. Since volume is equivalent to length × width × height, the volume is 30 × 16 × 12, or 5,760 cubic inches of water. Dividing by two, you see that half of the tank would be 2,880 cubic inches of water.", "6":"The correct answer is K. To solve this problem, multiply the number of possibilities in each officer position. Since the league selects its 4 officers by first selecting the president, then the vice president, then the secretary, then the treasurer, there are 40 possibilities for president, 39 possibilities for vice president, 38 possibilities for secretary, and 37 possibilities for treasurer. The total number of different possibilities for the election is therefore 40 × 39 × 38 × 37.", "7":"The correct answer is A. Because there is a right angle at S, the point T will lie along the line through S that is perpendicular to the segment RS. To solve this problem, find the equation for the line through S that is perpendicular to the segment RS and try each answer choice to find one that lies on the line. Since the line is perpendicular to segment RS, it will have a slope that is the negative reciprocal of the slope of RS. Since slope is rise/run, the slope of RS is . The slope of a line perpendicular to that is -4. Because a point and the slope of the line are known, the point-slope form of the equation can be utilized. A line through point (h, -k) with slope m has equation y - k  =  m(x - h). Thus the line through S (6,-3) that is perpendicular to the segment RS has equation y - 3  =  -4(x - 6). Distributing and adding like terms, the result is y  =  -4x + 27. Of the answer choices, only the point (5,7) falls on the line.", "8":"The correct answer is J. To answer this question, solve the given equation for a: Therefore, a  =  2 and a  =  -2.", "9":"The correct answer is A. Given that 0° ≤ x ≤ 90° and that tan , x can be pictured in the right triangle below. Because tangent is the ratio of the side opposite the angle to the side adjacent to the angle, the legs of the right triangle can be labeled as above. Cosine is the ratio of the side adjacent to the angle to the hypotenuse, which is not given. It is possible to eliminate answer choices in such a manner that it is not necessary to use the Pythagorean Theorem. Since the side adjacent to x is 8, the numerator in cos x will be 8, eliminating all but answers A and E. Since the legs of the triangle are 8 and 15, the hypotenuse will be longer than either, eliminating answer choice E. Thus .", "10":"The correct answer is G. Since the area of the square pool is given, you must find the area of the circle, with a radius of 10, and subtract the area of the pool. The area of a circle is equal to πr2, where r is the radius. The area of this circle is 102π  =  100π ≈ 314 square feet. Thus the area of the enclosure is approximately 314 - 81  =  233 square feet."};
+let graded = false;
+
+document.querySelectorAll('.choices li').forEach(li => {
+  // Remove old onclick
+  li.removeAttribute('onclick');
+  li.addEventListener('click', function() {
+    if (graded) return;
+    const siblings = this.parentElement.querySelectorAll('li');
+    siblings.forEach(s => s.classList.remove('selected'));
+    this.classList.add('selected');
+  });
+});
+
+function gradeTest() {
+  if (graded) return;
+  graded = true;
+  let correct = 0;
+  const total = Object.keys(ANSWERS).length;
+  
+  document.querySelectorAll('.question').forEach((qDiv, idx) => {
+    const qNum = idx + 1;
+    const correctAns = ANSWERS[qNum];
+    if (!correctAns) return;
+    const choices = qDiv.querySelectorAll('.choices li');
+    const selected = qDiv.querySelector('.choices li.selected');
+    const selectedLetter = selected ? selected.textContent.trim().charAt(0) : null;
+    
+    choices.forEach(li => {
+      const letter = li.textContent.trim().charAt(0);
+      if (letter === correctAns) li.classList.add('show-correct');
+      li.style.cursor = 'default';
+    });
+    
+    const tag = document.createElement('span');
+    tag.className = 'result-tag';
+    
+    if (selectedLetter === correctAns) {
+      correct++;
+      tag.className += ' correct';
+      tag.textContent = 'Correct';
+      if (selected) { selected.classList.remove('selected'); selected.classList.add('correct'); }
+    } else {
+      tag.className += ' wrong';
+      tag.textContent = 'Incorrect (Answer: ' + correctAns + ')';
+      if (selected) { selected.classList.remove('selected'); selected.classList.add('wrong'); }
+    }
+    
+    const firstP = qDiv.querySelector('p');
+    if (firstP) firstP.appendChild(tag);
+    
+    if (typeof EXPLANATIONS !== 'undefined' && EXPLANATIONS[qNum]) {
+      const explDiv = document.createElement('div');
+      explDiv.className = 'explanation show';
+      explDiv.innerHTML = '<strong>Explanation:</strong> ' + EXPLANATIONS[qNum];
+      qDiv.appendChild(explDiv);
+    }
+  });
+  
+  const pct = Math.round((correct / total) * 100);
+  document.querySelector('.submit-btn').style.display = 'none';
+  document.querySelector('.reset-btn').style.display = 'block';
+  var rw=document.querySelector('.report-wrap');if(rw)rw.style.display='block';
+  var bs=document.createElement('div');bs.className='bottom-score';bs.id='bottom-score';
+  bs.innerHTML='<h2 style="font-size:1.3rem;margin-bottom:6px;color:#1a3a4a">Your Score</h2><div class="pct '+(pct>=80?'good':pct>=60?'ok':'bad')+'">'+pct+'%</div><div class="detail">'+correct+' out of '+total+' correct</div>';
+  document.querySelector('.submit-wrap').after(bs);
+  try{var tn=location.pathname.match(/test(\d+)/);if(tn)localStorage.setItem('actmath_'+tn[1],pct);}catch(e){}
+}
+
+function resetTest() {
+  graded = false;
+  var bsEl=document.getElementById('bottom-score');if(bsEl)bsEl.remove();
+  document.querySelector('.submit-btn').style.display = '';
+  document.querySelector('.reset-btn').style.display = 'none';
+  var rw=document.querySelector('.report-wrap');if(rw)rw.style.display='none';
+  var ni=document.querySelector('.name-input');if(ni)ni.value='';
+  document.querySelectorAll('.choices li').forEach(li => {
+    li.classList.remove('selected','correct','wrong','show-correct');
+    li.style.cursor = 'pointer';
+  });
+  document.querySelectorAll('.result-tag').forEach(t => t.remove());
+  document.querySelectorAll('.explanation').forEach(e => e.remove());
+}
+
+function generateReport(){
+  var nameInput=document.querySelector('.name-input');
+  var name=(nameInput&&nameInput.value.trim())||'Student';
+  var testName=document.querySelector('header h1').textContent;
+  var bs=document.getElementById('bottom-score');
+  var scorePct=bs?bs.querySelector('.pct').textContent:'';
+  var detailTxt=bs?bs.querySelector('.detail').textContent:'';
+  var d=new Date().toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'});
+  var btn=document.querySelector('.report-btn');btn.textContent='Generating...';btn.disabled=true;
+  var s=document.createElement('script');
+  s.src='https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js';
+  s.onerror=function(){btn.textContent='Download Report (PDF)';btn.disabled=false;alert('Could not load PDF library.');};
+  s.onload=function(){
+    var doc=new jspdf.jsPDF('portrait','mm','letter');
+    var pw=215.9,ph=279.4,mx=12,cw=pw-2*mx,y=8;
+    doc.setFillColor(26,58,74);doc.rect(0,0,pw,22,'F');
+    doc.setTextColor(255,255,255);doc.setFontSize(13);doc.setFont('helvetica','bold');
+    doc.text(testName,mx,9);
+    doc.setFontSize(7.5);doc.setFont('helvetica','normal');
+    doc.text(d+'  |  Student: '+name,mx,14.5);
+    doc.setFontSize(18);doc.setFont('helvetica','bold');
+    doc.text(scorePct,pw-mx,11,{align:'right'});
+    doc.setFontSize(7.5);doc.setFont('helvetica','normal');
+    doc.text(detailTxt,pw-mx,16,{align:'right'});
+    y=25;
+    doc.setDrawColor(26,58,74);doc.setLineWidth(0.3);doc.line(mx,y,pw-mx,y);y+=3;
+    document.querySelectorAll('.question').forEach(function(qDiv,idx){
+      var qNum=idx+1;var ca=ANSWERS[qNum];if(!ca)return;
+      var sel=qDiv.querySelector('.choices li.correct,.choices li.wrong');
+      var sa=sel?sel.textContent.trim().charAt(0):'-';
+      var ok=sel&&sel.classList.contains('correct');
+      if(ok){
+        doc.setFillColor(40,167,69);doc.circle(mx+1.2,y-1,1,'F');
+        doc.setTextColor(33,33,33);doc.setFont('helvetica','bold');doc.setFontSize(8);
+        doc.text('Q'+qNum,mx+4,y);
+        doc.setFont('helvetica','normal');doc.setTextColor(40,167,69);
+        doc.text('Correct ('+ca+')',mx+14,y);
+      }else{
+        doc.setFillColor(220,53,69);doc.circle(mx+1.2,y-1,1,'F');
+        doc.setTextColor(33,33,33);doc.setFont('helvetica','bold');doc.setFontSize(8);
+        doc.text('Q'+qNum,mx+4,y);
+        doc.setFont('helvetica','normal');doc.setTextColor(220,53,69);
+        doc.text('Incorrect',mx+14,y);
+        doc.setTextColor(120,120,120);
+        doc.text('(Chose '+sa+', Correct: '+ca+')',mx+32,y);
+      }
+      y+=3.2;
+      var qP=qDiv.querySelector('p');
+      if(qP){
+        var qT=qP.cloneNode(true);
+        var tags=qT.querySelectorAll('.result-tag');tags.forEach(function(t){t.remove();});
+        var qt=qT.textContent.replace(/^\d+\.\s*/,'').trim();
+        if(qt.length>0){
+          doc.setFont('helvetica','normal');doc.setTextColor(60,60,60);doc.setFontSize(6.5);
+          var ql=doc.splitTextToSize(qt,cw-5);
+          ql=ql.slice(0,1);
+          if(doc.splitTextToSize(qt,cw-5).length>1){ql[0]=ql[0].substring(0,ql[0].length-3)+'...';}
+          doc.text(ql,mx+4,y);y+=2.4;
+        }
+      }
+      if(typeof EXPLANATIONS!=='undefined'&&EXPLANATIONS[qNum]){
+        doc.setFont('helvetica','italic');doc.setTextColor(100,100,100);doc.setFontSize(6);
+        var lines=doc.splitTextToSize(EXPLANATIONS[qNum],cw-5);
+        if(lines.length>2){lines=lines.slice(0,2);lines[1]=lines[1].substring(0,Math.max(0,lines[1].length-3))+'...';}
+        doc.text(lines,mx+4,y);y+=lines.length*2.2;
+      }
+      y+=2;
+    });
+    doc.setDrawColor(200,200,200);doc.setLineWidth(0.2);doc.line(mx,ph-10,pw-mx,ph-10);
+    doc.setTextColor(170,170,170);doc.setFontSize(6);doc.setFont('helvetica','normal');
+    doc.text('ACT Math Practice  |  Score Report',pw/2,ph-7,{align:'center'});
+    var tn=location.pathname.match(/test(\d+)/);
+    var testNum=tn?parseInt(tn[1])-100:0;
+    var ds=new Date().toISOString().slice(0,10);
+    doc.save('ACT-Math-Test-'+testNum+'-'+ds+'.pdf');
+    btn.textContent='Download Report (PDF)';btn.disabled=false;
+  };
+  document.head.appendChild(s);
+}
+</script>
+</body></html>

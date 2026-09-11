@@ -1,0 +1,222 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>ACT Math Test 34</title><style>@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:#fff;color:#2d3748;line-height:1.7}
+.container{max-width:800px;margin:0 auto;padding:20px 24px}
+header{background:linear-gradient(135deg,#1a3a4a 0%,#2d6a7a 100%);color:#fff;padding:28px 0;margin-bottom:36px;text-align:center}
+header .container{display:block}
+header h1{font-size:1.6rem;font-weight:700;letter-spacing:-0.3px}
+header a{color:rgba(255,255,255,.7);text-decoration:none;font-size:.9rem;display:inline-block;margin-bottom:6px;transition:color .2s}
+header a:hover{color:#fff}
+.question{background:#fff;border-radius:12px;padding:24px;margin-bottom:20px;border:1px solid #e2e8f0;transition:border-color .2s}
+.question:hover{border-color:#cbd5e0}
+.question p{margin-bottom:14px;font-size:1.05rem}
+img{max-width:100%;height:auto;margin:4px 0;vertical-align:middle}
+.choices{list-style:none}
+.choices li{padding:10px 14px;margin:6px 0;border-radius:8px;cursor:pointer;transition:all .2s;border:2px solid transparent}
+.choices li:hover{background:#f0f7fa}
+.choices li.selected{background:#d1ecf1;border-color:#bee5eb}
+.choices li.correct{background:#d4edda;border-color:#28a745}
+.choices li.wrong{background:#f8d7da;border-color:#dc3545}
+.choices li.show-correct{background:#d4edda;border-color:#28a745}
+.submit-wrap{text-align:center;margin:36px 0}
+.submit-btn{display:inline-block;padding:14px 40px;background:linear-gradient(135deg,#1a3a4a,#2d6a7a);color:#fff;border:none;border-radius:10px;font-size:1.1rem;cursor:pointer;font-weight:600;font-family:inherit;transition:all .25s;letter-spacing:.3px}
+.submit-btn:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(26,58,74,.25)}
+.score-box{background:#fff;border-radius:12px;padding:28px;margin-bottom:28px;text-align:center;border:1px solid #e2e8f0;box-shadow:0 4px 20px rgba(0,0,0,.06);display:none}
+.score-box h2{font-size:1.4rem;margin-bottom:8px;color:#1a3a4a;text-align:center}
+.score-box .pct{font-size:3rem;font-weight:700}
+.score-box .pct.good{color:#28a745}
+.score-box .pct.ok{color:#e6a817}
+.score-box .pct.bad{color:#dc3545}
+.score-box .detail{color:#666;margin-top:4px}
+.result-tag{display:inline-block;padding:2px 10px;border-radius:12px;font-size:.8rem;font-weight:600;margin-left:8px}
+.result-tag.correct{background:#d4edda;color:#155724}
+.result-tag.wrong{background:#f8d7da;color:#721c24}
+.reset-btn{display:none;margin:16px auto;padding:12px 28px;background:#6c757d;color:#fff;border:none;border-radius:10px;font-size:1rem;cursor:pointer;font-family:inherit;transition:all .25s}
+.reset-btn:hover{background:#5a6268;transform:translateY(-1px)}
+.explanation{background:#f0f7ff;border-left:4px solid #1a3a4a;padding:14px 18px;margin-top:14px;border-radius:0 8px 8px 0;font-size:.95rem;color:#444;display:none}
+.explanation.show{display:block}
+.explanation strong{color:#1a3a4a}
+.nav{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin:36px 0}
+.nav a{display:inline-block;padding:10px 24px;background:linear-gradient(135deg,#1a3a4a,#2d6a7a);color:#fff;text-decoration:none;border-radius:10px;font-weight:500;font-size:.95rem;transition:all .25s}
+.nav a:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(26,58,74,.25)}
+footer{text-align:center;padding:36px 24px;color:#8899a4;font-size:.85rem;border-top:1px solid #e2e8f0;margin-top:40px}
+.report-btn{display:inline-block;margin:0;padding:12px 28px;background:linear-gradient(135deg,#1a3a4a,#2d6a7a);color:#fff;border:none;border-radius:10px;font-size:1rem;cursor:pointer;font-family:inherit;transition:all .25s}
+.report-btn:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(26,58,74,.25)}
+.bottom-score{background:#fff;border-radius:12px;padding:20px;margin:20px 0;text-align:center;border:1px solid #e2e8f0;box-shadow:0 4px 20px rgba(0,0,0,.06)}
+.bottom-score .pct{font-size:2.5rem;font-weight:700}
+.bottom-score .pct.good{color:#28a745}
+.bottom-score .pct.ok{color:#e6a817}
+.bottom-score .pct.bad{color:#dc3545}
+.bottom-score .detail{color:#666;margin-top:4px;font-size:.95rem}
+.report-wrap{display:none;text-align:center;margin:16px 0}
+.name-input{padding:10px 14px;border:1px solid #e2e8f0;border-radius:10px;font-size:.95rem;font-family:inherit;width:200px;margin-right:8px;outline:none;transition:border-color .2s}
+.name-input:focus{border-color:#1a3a4a}
+</style></head><body><header><div class="container"><a href="index.html">&larr; All Tests</a><h1>ACT Math Practice Test 34</h1></div></header><div class="container"><div id="score-box" class="score-box"><h2>Your Score</h2><div class="pct">0%</div><div class="detail"></div></div><div class="question"><p><b>1.</b> The percent <em>P</em> of a population that has completed 4 years of college is given by the function <em>P</em>(<em>t</em>) = -0.001<em>t</em><sup class="frac">2</sup> + 0.4<em>t</em> where <em>t</em> represents time, in years. What percent of the population have completed four years of college after 20 years, to the nearest tenth?</p><ul class="choices"><li>F. 0.1</li><li>G. 7.6</li><li>H. 8</li><li>J. 8.4</li><li>K. 160</li></ul></div><div class="question"><p><b>2.</b> At Fatima's Fruits, a bag of eight grapefruits costs $4.40. At Ernie's Edibles, a bag of three grapefruits costs $1.86. How much cheaper, per grapefruit, is the cost at Fatima's Fruits than at Ernie's Edibles?</p><ul class="choices"><li>A. $0.07</li><li>B. $0.35</li><li>C. $0.59</li><li>D. $1.17</li><li>E. $2.54</li></ul></div><div class="question"><p><b>3.</b> Which of the following is equivalent to (<em>x</em><sup class="frac">4</sup> - 4)(<em>x</em><sup class="frac">4</sup> + 4)?</p><ul class="choices"><li>F. 2<em>x</em><sup class="frac">4</sup></li><li>G. <em>x</em><sup class="frac">8</sup> - 16</li><li>H. <em>x</em><sup class="frac">8</sup> + 16</li><li>J. <em>x</em><sup class="frac">16</sup> - 16</li><li>K. <em>x</em><sup class="frac">8</sup> - 8<em>x</em><sup class="frac">4</sup> - 16</li></ul></div><div class="question"><p><b>4.</b> Wade is making a tile mosaic. He begins the project by laying tile at a speed of 50 pieces per hour for 3.5 hours. He is then interrupted from his work for 60 minutes. He resumes working and lays tile at a speed of 35 pieces per hour, until he has laid 280 pieces of tile total. How many hours did Wade spend working on the mosaic after he was interrupted?</p><ul class="choices"><li>A. 2.5</li><li>B. 3</li><li>C. 3.5</li><li>D. 4</li><li>E. 4.5</li></ul></div><div class="question"><p><b>5.</b> Point <em>C</em> (1,2) and point <em>D</em> (7,-10) lie in the standard coordinate plane. What are the coordinates of the midpoint of <img alt="" class="root" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_037_r1.jpg">?</p><ul class="choices"><li>F. (1, 8)</li><li>G. (3,-6)</li><li>H. (4,-4)</li><li>J. (4,-6)</li><li>K. (7,-4)</li></ul></div><div class="question"><p><b>6.</b> Michael is planning to put fencing along the edge of his rectangular backyard, which is 22 yards by 16 yards. One long side of the backyard is along his house, so he will need to fence only 3 sides. How many yards of fencing will Michael need?</p><ul class="choices"><li>A. 38</li><li>B. 54</li><li>C. 60</li><li>D. 76</li><li>E. 352</li></ul></div><div class="question"><p><b>7.</b> What is the <em>y</em>-intercept of the line given by the equation 7<em>x –</em> 3<em>y</em> = 21?</p><ul class="choices"><li>F. -7</li><li>G. -<img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_008_r1.jpg"></li><li>H. <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_008_r1.jpg"></li><li>J. 7</li><li>K. 21</li></ul></div><div class="question"><p><b>8.</b> On April 8th, a flower at Blooming Acres Florist was 15.0 centimeters tall. On April 16th, the flower was 17.4 centimeters tall. If the flower grew at a constant rate, on what day was the flower 16.5 centimeters tall?</p><ul class="choices"><li>A. April 11th</li><li>B. April 12th</li><li>C. April 13th</li><li>D. April 14th</li><li>E. April 15th</li></ul></div><div class="question"><p><b>9.</b> Which of the following e<em>x</em>pressions is equivalent to the e<em>x</em>pression given below?<br>(2<em>x</em><sup class="frac">3</sup> – <em>x</em> - 1) - 3(<em>x</em><sup class="frac">4</sup> + 2<em>x</em><sup class="frac">3</sup> - 2<em>x</em><sup class="frac">2</sup> – <em>x</em> + 3)</p><ul class="choices"><li>F. <em>x</em><sup class="frac">14</sup> - 3</li><li>G. -3<em>x</em><sup class="frac">14</sup></li><li>H. -3<em>x</em><sup class="frac">4</sup> + 8<em>x</em><sup class="frac">3</sup> - 6<em>x</em><sup class="frac">2</sup> - 4<em>x</em> + 8</li><li>J. -3<em>x</em><sup class="frac">4</sup> + 4<em>x</em><sup class="frac">3</sup> - 2<em>x</em><sup class="frac">2</sup> - 2<em>x</em> - 3</li><li>K. -3<em>x</em><sup class="frac">4</sup> - 4<em>x</em><sup class="frac">3</sup> + 6<em>x</em><sup class="frac">2</sup> + 2<em>x</em> - 10</li></ul></div><div class="question"><p><b>10.</b> The playground equipment shown below has a ladder that is 6 feet tall and a diagonal slide that is 7 feet long. If the ladder makes a right angle with the ground, approximately how many feet is the base of the slide from the base of the ladder?<br><img alt="" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_175_r1.jpg"></p><ul class="choices"><li>A. 2</li><li>B. 4</li><li>C. 6</li><li>D. 8</li><li>E. 10</li></ul></div><div class="question"><p><b>11.</b> In a data set of 5 points, the mean, median, and mode are each equal to 8. Which of the following could be the data set?</p><ul class="choices"><li>F. {5, 7, 8, 8, 12}</li><li>G. {7, 7, 8, 8, 12}</li><li>H. {7, 8, 8, 8, 12}</li><li>J. {7, 8, 8, 10, 12}</li><li>K. {7, 8, 8, 12, 12}</li></ul></div><div class="question"><p><b>12.</b> In a certain sequence of numbers, each term after the 1st term is the result of adding 2 to the previous term and multiplying that sum by 3. If the 4th term in the sequence is 186, what is the 2nd term?</p><ul class="choices"><li>A. 2</li><li>B. 4</li><li>C. 18</li><li>D. 60</li><li>E. 174</li></ul></div><div class="question"><p><b>13.</b> Which of the following values of <em>x</em> does NOT satisfy the inequality |<em>x</em>-3|≥12?</p><ul class="choices"><li>F. -15</li><li>G. -12</li><li>H. -9</li><li>J. 9</li><li>K. 15</li></ul></div><div class="question"><p><b>14.</b> For all real numbers <em>s</em>, <em>t</em>, <em>u</em>, and <em>v</em>, such that <em>s</em> + <em>t</em> + <em>u</em> = 29 and <em>s</em> &lt; <em>v</em>, which of the following statements is true?</p><ul class="choices"><li>A. <em>s</em> + <em>t</em> + <em>v</em> &lt; 29</li><li>B. <em>t</em> + <em>u</em> + <em>v</em> &gt; 29</li><li>C. <em>s</em> + <em>t</em> + <em>v</em> = 29</li><li>D. <em>s</em> + <em>u</em> + <em>v</em> = 29</li><li>E. <em>s</em> + <em>t</em> + <em>v</em> &gt; 29</li></ul></div><div class="question"><p><b>15.</b> In the figure below, rectangle <em>ABCD</em> shares <img alt="" class="root" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_037_r1.jpg"> with <img alt="" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_151_r1.jpg"><em>CDE</em>, diagonal <img alt="" class="root" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_033_r1.jpg"> of the rectangle extends in a straight line beyond <em>D</em> to <em>E</em> to create <img alt="" class="root" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_041_r1.jpg">, and the measure of <img alt="" class="root" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_029_r1.jpg"><em>CDE</em> is 155°. What is the measure of <img alt="" class="root" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_029_r1.jpg"><em>CBD</em>?<br><img alt="" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_176_r1.jpg"></p><ul class="choices"><li>F. 25</li><li>G. 55</li><li>H. 65</li><li>J. 90</li><li>K. 155</li></ul></div><div class="submit-wrap"><button class="submit-btn" onclick="gradeTest()">Submit Test</button><button class="reset-btn" onclick="resetTest()">Try Again</button>
+<div class="report-wrap"><input type="text" class="name-input" placeholder="Student name (for report)"><button class="report-btn" onclick="generateReport()">Download Report (PDF)</button></div></div><div class="nav"><a href="test133.html">&larr; Prev</a><a href="index.html">All Tests</a><a href="test135.html">Next &rarr;</a></div></div><footer><div class="container">ACT Math Practice</div></footer>
+<script>
+const ANSWERS = {"1": "G", "2": "A", "3": "G", "4": "B", "5": "H", "6": "B", "7": "F", "8": "C", "9": "K", "10": "B", "11": "F", "12": "C", "13": "J", "14": "B", "15": "H"};
+const EXPLANATIONS = {"1":"G To find the percent P, substitute 20 for t to calculate -0.001(20)2 + 0.4(20)  =  7.6. Choice (F) is the rounded value of 0.076%, which is not equivalent to 7.6%. Choices (H) and (J) result if you don\'t pay attention to PEMDAS or distribution of the negative sign. Choice (K) results if t2 and t are switched.", "2":"A Find the cost per grapefruit at each store by dividing the cost of each bag by the number of grapefruits in each bag. The cost per grapefruit at Fatima\'s is $4.40 ÷ 8  =  $0.55, while the cost per grapefruit at Ernie\'s is $1.86 ÷ 3  =  $0.62. Find the difference: $0.62 - $0.55  =  $0.07. Choice (B) comes from multiplying $0.07 by the difference in the number of grapefruits (8 - 3  =  5). Choice (C) comes from averaging $0.55 and $0.62. Choice (D) comes from adding $0.55 and $0.62. Choice (E) is the difference in costs of the two bags.", "3":"G In order to multiply factors, you need to FOIL (First, Outer, Inner, Last). Remember to add exponents when multiplying numbers with the same base and watch your signs carefully: x8 + 4x4 - 4x4 - 16  =  x8 - 16. Choice (F) adds rather than multiplies the factors. Choice (J) multiplies the exponents instead of adding them. Choices (H) and (K) confuse the signs.", "4":"B First, calculate the number of tile pieces laid in the first period of work:  × 3.5 hours  =  175 pieces. Next, since you are looking for the time Wade spends working after the interruption, you\'ll need to figure out how many tile pieces he laid during that time. Subtract 280 pieces - 175 pieces  =  105 pieces. Calculate the number of hours he spends in the second work session by dividing   =  3 hours. If you chose choice (D), be careful—you may have included the 60 minutes during which Wade is interrupted, but the question is looking for the time it took Wade to complete his work after he was interrupted.", "5":"H To find the midpoint of a line, you must take the average of the x-coordinates, , and the average of the y-coordinates of the endpoints, . Choices (F), (G), and (K) incorrectly average the x-coordinates. Choice (J) incorrectly averages the y-coordinates.", "6":"B You might want to draw a picture to see what is happening. Add the lengths of the two short sides of the backyard and one long side: 16 + 16 + 22  =  54. Choice (C) is the sum of two long sides and one short side. Choice (D) is the perimeter of the backyard but the problem says the fencing is needed only on 3 sides. Choice (E) is the area of the backyard.", "7":"F One way to solve this problem is to rewrite the equation in the slope-intercept form, y  =  mx + b, by subtracting 7x and dividing by -3 on both sides. The resulting equation is y  =  x - 7, where -7 is the value of b, the y-intercept. Another way to solve this problem is to remember that the y- intercept occurs at x  =  0 and calculate 7(0) - 3y  =  21. Choice (H) is the slope of the line, and the other choices do not modify the equation correctly.", "8":"C Find the flower\'s growth rate by dividing the total growth by the number of days. This is the same thing as finding the slope:  cm per day. You want to know when the flower was 16.5 cm tall, which means it has grown 16.5 - 15.0  =  1.5 cm: 1.5 cm ÷ 0.3 cm/day  =  5 days after April 8th, which is April 13th.", "9":"K To subtract, you must first distribute -3 to each term in the second parentheses. You get 2x3 - x - 1 - 3x4 - 6x3 + 6x2 + 3x - 9. Combine like terms to get -3x4 - 4x3 + 6x2 + 2x - 10. Choices (H) and (J) incorrectly distribute the -3. Choices (F) and (G) incorrectly combine terms and exponents.", "10":"B The slide makes a right triangle, as shown in the picture. Use the Pythagorean Theorem (a2 + b2  =  c2) to solve 72  =  62 + x2. 49  =  36 + x2, x2  =  13, x ≈ 3.61, which rounds to 4. Choice (A) is too small, and choice (C) is too large.", "11":"F You\'re looking for a set in which the mean (average), median ("middle" value), and mode (number that appears most often) all equal 8. All five answer choices have a median of 8, but you can eliminate (G) and (K), because their modes are not 8. You can then eliminate (H) and (J) by calculating their means—8.6 and 9, respectively. That leaves you with (F).", "12":"C The easiest approach to this problem is to test out the answer choices. For choice (C), if the 2nd term is 18, then the 3rd term is (18 + 2) × 3  =  60, and the 4th term is (60 + 2) × 3  =  186. You could also work backwards: if the 4th term is 186, then the 3rd term is (186 ÷ 3) - 2  =  60, and the 2nd term is (60 ÷ 3) - 2  =  18. Be sure to read the problem carefully. Choices (B) and (D) are the 1st and 3rd terms of the sequence, respectively.", "13":"J The easiest approach to this problem is to test all the answer choices. |9 - 3| ≥ 12 is false; thus the correct answer is choice (J). You could also solve algebraically by solving the equation where (x - 3) ≥ 12 and - (x - 3) ≥ 12. The other choices solve the inequality with wrong direction of signs, choice (K), or confusion of positive/negative values within the absolute value.", "14":"B Given that v is larger than s, then t + u + v must be larger than s + t + u, since t + u are equal in both expressions. Because s + t + u  =  29, t + u + v must be larger than 29. Choices (A), (C), (D), and (E) are not necessarily true, because you don\'t know anything about the relationships of t, u, and v. Another way to approach this question is to make up your own numbers for the variables: for example, let s  =  20, t  =  5, u  =  4, and v  =  21. Using these numbers, choices (A), (C), and (D) are false. Now make up different numbers: s  =  5, t  =  4, u  =  20, and v  =  6. Choice (B) is still true (30 > 29), but choice (E) is now false (15 > 29).", "15":"H You can eliminate choices (J) and (K) immediately since CBD is clearly less than 90° in the figure. Since  is a straight line, CDE + BDC  =  180°, BDC  =  180° - 155°  =  25°.  and  are opposite sides of a rectangle, so the line segments are parallel. Extend line segments , , and  to reveal that the two parallel lines are crossed by a transversal, which means BDC and ABD are congruent. Thus, ABD  =  25°. ABD and CBD make up one of the right angles of rectangle ABCD; thus CBD  =  90° - 25°  =  65°. Choices (F), (J), and (K) are all angles within the figure, but do not answer the question."};
+let graded = false;
+
+document.querySelectorAll('.choices li').forEach(li => {
+  // Remove old onclick
+  li.removeAttribute('onclick');
+  li.addEventListener('click', function() {
+    if (graded) return;
+    const siblings = this.parentElement.querySelectorAll('li');
+    siblings.forEach(s => s.classList.remove('selected'));
+    this.classList.add('selected');
+  });
+});
+
+function gradeTest() {
+  if (graded) return;
+  graded = true;
+  let correct = 0;
+  const total = Object.keys(ANSWERS).length;
+  
+  document.querySelectorAll('.question').forEach((qDiv, idx) => {
+    const qNum = idx + 1;
+    const correctAns = ANSWERS[qNum];
+    if (!correctAns) return;
+    const choices = qDiv.querySelectorAll('.choices li');
+    const selected = qDiv.querySelector('.choices li.selected');
+    const selectedLetter = selected ? selected.textContent.trim().charAt(0) : null;
+    
+    choices.forEach(li => {
+      const letter = li.textContent.trim().charAt(0);
+      if (letter === correctAns) li.classList.add('show-correct');
+      li.style.cursor = 'default';
+    });
+    
+    const tag = document.createElement('span');
+    tag.className = 'result-tag';
+    
+    if (selectedLetter === correctAns) {
+      correct++;
+      tag.className += ' correct';
+      tag.textContent = 'Correct';
+      if (selected) { selected.classList.remove('selected'); selected.classList.add('correct'); }
+    } else {
+      tag.className += ' wrong';
+      tag.textContent = 'Incorrect (Answer: ' + correctAns + ')';
+      if (selected) { selected.classList.remove('selected'); selected.classList.add('wrong'); }
+    }
+    
+    const firstP = qDiv.querySelector('p');
+    if (firstP) firstP.appendChild(tag);
+    
+    if (typeof EXPLANATIONS !== 'undefined' && EXPLANATIONS[qNum]) {
+      const explDiv = document.createElement('div');
+      explDiv.className = 'explanation show';
+      explDiv.innerHTML = '<strong>Explanation:</strong> ' + EXPLANATIONS[qNum];
+      qDiv.appendChild(explDiv);
+    }
+  });
+  
+  const pct = Math.round((correct / total) * 100);
+  document.querySelector('.submit-btn').style.display = 'none';
+  document.querySelector('.reset-btn').style.display = 'block';
+  var rw=document.querySelector('.report-wrap');if(rw)rw.style.display='block';
+  var bs=document.createElement('div');bs.className='bottom-score';bs.id='bottom-score';
+  bs.innerHTML='<h2 style="font-size:1.3rem;margin-bottom:6px;color:#1a3a4a">Your Score</h2><div class="pct '+(pct>=80?'good':pct>=60?'ok':'bad')+'">'+pct+'%</div><div class="detail">'+correct+' out of '+total+' correct</div>';
+  document.querySelector('.submit-wrap').after(bs);
+  try{var tn=location.pathname.match(/test(\d+)/);if(tn)localStorage.setItem('actmath_'+tn[1],pct);}catch(e){}
+}
+
+function resetTest() {
+  graded = false;
+  var bsEl=document.getElementById('bottom-score');if(bsEl)bsEl.remove();
+  document.querySelector('.submit-btn').style.display = '';
+  document.querySelector('.reset-btn').style.display = 'none';
+  var rw=document.querySelector('.report-wrap');if(rw)rw.style.display='none';
+  var ni=document.querySelector('.name-input');if(ni)ni.value='';
+  document.querySelectorAll('.choices li').forEach(li => {
+    li.classList.remove('selected','correct','wrong','show-correct');
+    li.style.cursor = 'pointer';
+  });
+  document.querySelectorAll('.result-tag').forEach(t => t.remove());
+  document.querySelectorAll('.explanation').forEach(e => e.remove());
+}
+
+function generateReport(){
+  var nameInput=document.querySelector('.name-input');
+  var name=(nameInput&&nameInput.value.trim())||'Student';
+  var testName=document.querySelector('header h1').textContent;
+  var bs=document.getElementById('bottom-score');
+  var scorePct=bs?bs.querySelector('.pct').textContent:'';
+  var detailTxt=bs?bs.querySelector('.detail').textContent:'';
+  var d=new Date().toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'});
+  var btn=document.querySelector('.report-btn');btn.textContent='Generating...';btn.disabled=true;
+  var s=document.createElement('script');
+  s.src='https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js';
+  s.onerror=function(){btn.textContent='Download Report (PDF)';btn.disabled=false;alert('Could not load PDF library.');};
+  s.onload=function(){
+    var doc=new jspdf.jsPDF('portrait','mm','letter');
+    var pw=215.9,ph=279.4,mx=12,cw=pw-2*mx,y=8;
+    doc.setFillColor(26,58,74);doc.rect(0,0,pw,22,'F');
+    doc.setTextColor(255,255,255);doc.setFontSize(13);doc.setFont('helvetica','bold');
+    doc.text(testName,mx,9);
+    doc.setFontSize(7.5);doc.setFont('helvetica','normal');
+    doc.text(d+'  |  Student: '+name,mx,14.5);
+    doc.setFontSize(18);doc.setFont('helvetica','bold');
+    doc.text(scorePct,pw-mx,11,{align:'right'});
+    doc.setFontSize(7.5);doc.setFont('helvetica','normal');
+    doc.text(detailTxt,pw-mx,16,{align:'right'});
+    y=25;
+    doc.setDrawColor(26,58,74);doc.setLineWidth(0.3);doc.line(mx,y,pw-mx,y);y+=3;
+    document.querySelectorAll('.question').forEach(function(qDiv,idx){
+      var qNum=idx+1;var ca=ANSWERS[qNum];if(!ca)return;
+      var sel=qDiv.querySelector('.choices li.correct,.choices li.wrong');
+      var sa=sel?sel.textContent.trim().charAt(0):'-';
+      var ok=sel&&sel.classList.contains('correct');
+      if(ok){
+        doc.setFillColor(40,167,69);doc.circle(mx+1.2,y-1,1,'F');
+        doc.setTextColor(33,33,33);doc.setFont('helvetica','bold');doc.setFontSize(8);
+        doc.text('Q'+qNum,mx+4,y);
+        doc.setFont('helvetica','normal');doc.setTextColor(40,167,69);
+        doc.text('Correct ('+ca+')',mx+14,y);
+      }else{
+        doc.setFillColor(220,53,69);doc.circle(mx+1.2,y-1,1,'F');
+        doc.setTextColor(33,33,33);doc.setFont('helvetica','bold');doc.setFontSize(8);
+        doc.text('Q'+qNum,mx+4,y);
+        doc.setFont('helvetica','normal');doc.setTextColor(220,53,69);
+        doc.text('Incorrect',mx+14,y);
+        doc.setTextColor(120,120,120);
+        doc.text('(Chose '+sa+', Correct: '+ca+')',mx+32,y);
+      }
+      y+=3.2;
+      var qP=qDiv.querySelector('p');
+      if(qP){
+        var qT=qP.cloneNode(true);
+        var tags=qT.querySelectorAll('.result-tag');tags.forEach(function(t){t.remove();});
+        var qt=qT.textContent.replace(/^\d+\.\s*/,'').trim();
+        if(qt.length>0){
+          doc.setFont('helvetica','normal');doc.setTextColor(60,60,60);doc.setFontSize(6.5);
+          var ql=doc.splitTextToSize(qt,cw-5);
+          ql=ql.slice(0,1);
+          if(doc.splitTextToSize(qt,cw-5).length>1){ql[0]=ql[0].substring(0,ql[0].length-3)+'...';}
+          doc.text(ql,mx+4,y);y+=2.4;
+        }
+      }
+      if(typeof EXPLANATIONS!=='undefined'&&EXPLANATIONS[qNum]){
+        doc.setFont('helvetica','italic');doc.setTextColor(100,100,100);doc.setFontSize(6);
+        var lines=doc.splitTextToSize(EXPLANATIONS[qNum],cw-5);
+        if(lines.length>2){lines=lines.slice(0,2);lines[1]=lines[1].substring(0,Math.max(0,lines[1].length-3))+'...';}
+        doc.text(lines,mx+4,y);y+=lines.length*2.2;
+      }
+      y+=2;
+    });
+    doc.setDrawColor(200,200,200);doc.setLineWidth(0.2);doc.line(mx,ph-10,pw-mx,ph-10);
+    doc.setTextColor(170,170,170);doc.setFontSize(6);doc.setFont('helvetica','normal');
+    doc.text('ACT Math Practice  |  Score Report',pw/2,ph-7,{align:'center'});
+    var tn=location.pathname.match(/test(\d+)/);
+    var testNum=tn?parseInt(tn[1])-100:0;
+    var ds=new Date().toISOString().slice(0,10);
+    doc.save('ACT-Math-Test-'+testNum+'-'+ds+'.pdf');
+    btn.textContent='Download Report (PDF)';btn.disabled=false;
+  };
+  document.head.appendChild(s);
+}
+</script>
+</body></html>

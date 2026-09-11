@@ -1,0 +1,222 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>ACT Math Test 32</title><style>@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:#fff;color:#2d3748;line-height:1.7}
+.container{max-width:800px;margin:0 auto;padding:20px 24px}
+header{background:linear-gradient(135deg,#1a3a4a 0%,#2d6a7a 100%);color:#fff;padding:28px 0;margin-bottom:36px;text-align:center}
+header .container{display:block}
+header h1{font-size:1.6rem;font-weight:700;letter-spacing:-0.3px}
+header a{color:rgba(255,255,255,.7);text-decoration:none;font-size:.9rem;display:inline-block;margin-bottom:6px;transition:color .2s}
+header a:hover{color:#fff}
+.question{background:#fff;border-radius:12px;padding:24px;margin-bottom:20px;border:1px solid #e2e8f0;transition:border-color .2s}
+.question:hover{border-color:#cbd5e0}
+.question p{margin-bottom:14px;font-size:1.05rem}
+img{max-width:100%;height:auto;margin:4px 0;vertical-align:middle}
+.choices{list-style:none}
+.choices li{padding:10px 14px;margin:6px 0;border-radius:8px;cursor:pointer;transition:all .2s;border:2px solid transparent}
+.choices li:hover{background:#f0f7fa}
+.choices li.selected{background:#d1ecf1;border-color:#bee5eb}
+.choices li.correct{background:#d4edda;border-color:#28a745}
+.choices li.wrong{background:#f8d7da;border-color:#dc3545}
+.choices li.show-correct{background:#d4edda;border-color:#28a745}
+.submit-wrap{text-align:center;margin:36px 0}
+.submit-btn{display:inline-block;padding:14px 40px;background:linear-gradient(135deg,#1a3a4a,#2d6a7a);color:#fff;border:none;border-radius:10px;font-size:1.1rem;cursor:pointer;font-weight:600;font-family:inherit;transition:all .25s;letter-spacing:.3px}
+.submit-btn:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(26,58,74,.25)}
+.score-box{background:#fff;border-radius:12px;padding:28px;margin-bottom:28px;text-align:center;border:1px solid #e2e8f0;box-shadow:0 4px 20px rgba(0,0,0,.06);display:none}
+.score-box h2{font-size:1.4rem;margin-bottom:8px;color:#1a3a4a;text-align:center}
+.score-box .pct{font-size:3rem;font-weight:700}
+.score-box .pct.good{color:#28a745}
+.score-box .pct.ok{color:#e6a817}
+.score-box .pct.bad{color:#dc3545}
+.score-box .detail{color:#666;margin-top:4px}
+.result-tag{display:inline-block;padding:2px 10px;border-radius:12px;font-size:.8rem;font-weight:600;margin-left:8px}
+.result-tag.correct{background:#d4edda;color:#155724}
+.result-tag.wrong{background:#f8d7da;color:#721c24}
+.reset-btn{display:none;margin:16px auto;padding:12px 28px;background:#6c757d;color:#fff;border:none;border-radius:10px;font-size:1rem;cursor:pointer;font-family:inherit;transition:all .25s}
+.reset-btn:hover{background:#5a6268;transform:translateY(-1px)}
+.explanation{background:#f0f7ff;border-left:4px solid #1a3a4a;padding:14px 18px;margin-top:14px;border-radius:0 8px 8px 0;font-size:.95rem;color:#444;display:none}
+.explanation.show{display:block}
+.explanation strong{color:#1a3a4a}
+.nav{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin:36px 0}
+.nav a{display:inline-block;padding:10px 24px;background:linear-gradient(135deg,#1a3a4a,#2d6a7a);color:#fff;text-decoration:none;border-radius:10px;font-weight:500;font-size:.95rem;transition:all .25s}
+.nav a:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(26,58,74,.25)}
+footer{text-align:center;padding:36px 24px;color:#8899a4;font-size:.85rem;border-top:1px solid #e2e8f0;margin-top:40px}
+.report-btn{display:inline-block;margin:0;padding:12px 28px;background:linear-gradient(135deg,#1a3a4a,#2d6a7a);color:#fff;border:none;border-radius:10px;font-size:1rem;cursor:pointer;font-family:inherit;transition:all .25s}
+.report-btn:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(26,58,74,.25)}
+.bottom-score{background:#fff;border-radius:12px;padding:20px;margin:20px 0;text-align:center;border:1px solid #e2e8f0;box-shadow:0 4px 20px rgba(0,0,0,.06)}
+.bottom-score .pct{font-size:2.5rem;font-weight:700}
+.bottom-score .pct.good{color:#28a745}
+.bottom-score .pct.ok{color:#e6a817}
+.bottom-score .pct.bad{color:#dc3545}
+.bottom-score .detail{color:#666;margin-top:4px;font-size:.95rem}
+.report-wrap{display:none;text-align:center;margin:16px 0}
+.name-input{padding:10px 14px;border:1px solid #e2e8f0;border-radius:10px;font-size:.95rem;font-family:inherit;width:200px;margin-right:8px;outline:none;transition:border-color .2s}
+.name-input:focus{border-color:#1a3a4a}
+</style></head><body><header><div class="container"><a href="index.html">&larr; All Tests</a><h1>ACT Math Practice Test 32</h1></div></header><div class="container"><div id="score-box" class="score-box"><h2>Your Score</h2><div class="pct">0%</div><div class="detail"></div></div><div class="question"><p><b>1.</b> During their daily training race, Carl has to stop to tie his shoes. Melissa, whose shoes are velcro, continues to run and gets 20 feet ahead of Carl. Melissa is running at a constant rate of 8 feet per second, and Carl starts running at a constant rate of 9.2 feet per second to catch up to Melissa. Which of the following equations, when solved for <em>s</em>, gives the number of seconds Carl will take to catch up to Melissa?</p><ul class="choices"><li>F. 8<em>s</em> + 20 = 9.2<em>s</em></li><li>G. 8<em>s</em> - 20 = 9.2<em>s</em></li><li>H. <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_569_r1.jpg"></li><li>J. 8<em>s</em> = 20</li><li>K. 9.2<em>s</em> = 20</li></ul></div><div class="question"><p><b>2.</b> Which of the following defines the solution set for the system of inequalities given below?<br>0 &gt; 3<em>x</em> - 6<br>-4 &lt; <em>x</em></p><ul class="choices"><li>A. <em>x</em> &gt; - 4</li><li>B. <em>x</em> &lt; 2</li><li>C. -4 &lt; <em>x</em> &lt; 18</li><li>D. -4 &lt; <em>x</em> &lt; -2</li><li>E. -4 &lt; <em>x</em> &lt; 2</li></ul></div><div class="question"><p><b>3.</b> At the company YouGroove, 35 employees work in the sales department and 50 employees work in the operations department. Of these employees, 15 work in both the sales and the operations departments. How many of the 110 employees at YouGroove do NOT work in either the sales or the operations departments?</p><ul class="choices"><li>F. 10</li><li>G. 15</li><li>H. 20</li><li>J. 35</li><li>K. 40</li></ul></div><div class="question"><p><b>4.</b> The slope of a line in the standard (<em>x</em>,<em>y</em>) coordinate plane is 4. What is the slope of a line perpendicular to that line?</p><ul class="choices"><li>A. 4</li><li>B. <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_387_r1.jpg"></li><li>C. -<img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_387_r1.jpg"></li><li>D. -1</li><li>E. -4</li></ul></div><div class="question"><p><b>5.</b> The point (24,3) on a standard (<em>x</em>,<em>y</em>) coordinate plane is halfway between points (<em>z</em>,2<em>z</em> + 1) and (15<em>z</em>,<em>z</em> - 4). What is the value of <em>z</em>?</p><ul class="choices"><li>F. 1</li><li>G. 1.5</li><li>H. 3</li><li>J. 7</li><li>K. 24</li></ul></div><div class="question"><p><b>6.</b> How many 4-letter orderings, where no letters are repeated, can be made using the letters of the word BADGERS?</p><ul class="choices"><li>A. 4</li><li>B. 7</li><li>C. 256</li><li>D. 840</li><li>E. 2,401</li></ul></div><div class="question"><p><b>7.</b> As shown in the (<em>x</em>,<em>y</em>,<em>z</em>) coordinate space below, the cube with vertices <em>L</em> <em>through</em> <em>S</em> has edges that are 2 coordinate units long. The coordinates of <em>Q</em> are (0,0,0), and <em>S</em> is on the positive <em>x</em>-axis. What are the coordinates of <em>O</em>?<br><img alt="" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_570_r1.jpg"></p><ul class="choices"><li>F. (2,0,2)</li><li>G. (2,2,2)</li><li>H. <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_571_r1.jpg"></li><li>J. <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_572_r1.jpg"></li><li>K. <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_573_r1.jpg"></li></ul></div><div class="question"><p><b>8.</b> Whenever <em>a</em>, <em>b</em>, and <em>c</em> are positive real numbers, which of the following expressions is equivalent to <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_574_r1.jpg"></p><ul class="choices"><li>A. <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_575_r1.jpg"></li><li>B. <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_576_r1.jpg"></li><li>C. <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_577_r1.jpg"></li><li>D. log<sub class="frac">4</sub>(<em>a</em> - <em>c</em>) - log<sub class="frac">8</sub> 2<em>b</em></li><li>E. log<sub class="frac">4</sub>(<em>a</em> - <em>c</em>) - log<sub class="frac">8</sub><em>b</em><sup class="frac">2</sup></li></ul></div><div class="question"><p><b>9.</b> If -6≤<em>a</em>≤-4 and 3≤<em>b</em>≤7, what is the maximum value of |<em>a</em> - 2<em>b</em>|?</p><ul class="choices"><li>F. 10</li><li>G. 11</li><li>H. 18</li><li>J. 20</li><li>K. 42</li></ul></div><div class="question"><p><b>10.</b> The measure of the sum of the interior angles of a regular <em>n</em>-sided polygon is (<em>n</em> - 2)180°. A regular octagon is shown below. What is the measure of the designated angle?<br><img alt="" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_578_r1.jpg"></p><ul class="choices"><li>A. 135°</li><li>B. 144°</li><li>C. 200°</li><li>D. 225°</li><li>E. 315°</li></ul></div><div class="question"><p><b>11.</b> Which of the following trigonometric functions has an amplitude of 3?<br>(Note: the <em>amplitude</em> of a trigonometric function is <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_385_r1.jpg"> the nonnegative difference between the maximum and minimum values of the function.)</p><ul class="choices"><li>F. <em>f</em>(<em>x</em>) = <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_386_r1.jpg">sin <em>x</em></li><li>G. <em>f</em>(<em>x</em>) = cos 3<em>x</em></li><li>H. <em>f</em>(<em>x</em>) = sin(<img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_386_r1.jpg"><em>x</em>)</li><li>J. <em>f</em>(<em>x</em>) = 3 tan <em>x</em></li><li>K. <em>f</em>(<em>x</em>) = 3 cos <em>x</em></li></ul></div><div class="question"><p><b>12.</b> If <em>A</em>, <em>x</em>, and <em>y</em> are all distinct numbers, and <em>A</em> = <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_579_r1.jpg">, which of the following represents <em>x</em> in terms of <em>A</em> and <em>y</em>?</p><ul class="choices"><li>A. <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_580_r1.jpg"></li><li>B. <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_581_r1.jpg"></li><li>C. <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_582_r1.jpg"></li><li>D. <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_583_r1.jpg"></li><li>E. <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_584_r1.jpg"></li></ul></div><div class="question"><p><b>13.</b> In the figure below, lines <em>p</em> and <em>q</em> are parallel and angle measures are as marked. If it can be determined, what is the value of <em>a</em>?<br><img alt="" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_585_r1.jpg"></p><ul class="choices"><li>F. 35°</li><li>G. 45°</li><li>H. 55°</li><li>J. 100°</li><li>K. Cannot be determined from the information given</li></ul></div><div class="question"><p><b>14.</b> In the triangle below, the lengths of the two given sides are measured in centimeters. What is the value, in centimeters, of <em>x</em>?<br><img alt="" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_586_r1.jpg"></p><ul class="choices"><li>A. 9 sin 40°</li><li>B. 9 sin 50°</li><li>C. 9 cos 50°</li><li>D. 9 tan 40°</li><li>E. 9 tan 50°</li></ul></div><div class="question"><p><b>15.</b> An angle in the standard (<em>x</em>,<em>y</em>) coordinate plane has its vertex at the origin and its initial side on the positive <em>x</em>-axis. If the measure of an angle in standard position is (1,314°), it has the same terminal side as an angle of each of the following measures EXCEPT:</p><ul class="choices"><li>F. 594°</li><li>G. 314°</li><li>H. 234°</li><li>J. -126°</li><li>K. -486°</li></ul></div><div class="submit-wrap"><button class="submit-btn" onclick="gradeTest()">Submit Test</button><button class="reset-btn" onclick="resetTest()">Try Again</button>
+<div class="report-wrap"><input type="text" class="name-input" placeholder="Student name (for report)"><button class="report-btn" onclick="generateReport()">Download Report (PDF)</button></div></div><div class="nav"><a href="test131.html">&larr; Prev</a><a href="index.html">All Tests</a><a href="test133.html">Next &rarr;</a></div></div><footer><div class="container">ACT Math Practice</div></footer>
+<script>
+const ANSWERS = {"1": "F", "2": "E", "3": "K", "4": "C", "5": "H", "6": "D", "7": "H", "8": "A", "9": "J", "10": "D", "11": "K", "12": "A", "13": "H", "14": "B", "15": "G"};
+const EXPLANATIONS = {"1":"F  To solve this problem, use the distance formula d  =  rt. If both runners start from the point at which Carl had to stop to tie his shoes, and both d represent the distance at which they meet, then Carl will run d  =  9.2s and Melissa will run d  =  8s + 20 because she has a 20 foot head start. Because the d is the same for each equation, simply set these equations equal to each other to find 8s + 20  =  9.2s. If you chose (G), be careful—you may have given Carl the head start instead of Melissa. Choices (J) and (K) give the time it takes Carl and Melissa to run 20 feet, respectively.", "2":"E  Manipulate the first given inequality to get x alone on one side. -3x > -6, or x < 2. Don\'t forget to flip the inequality sign when dividing both sides by a negative number. Combine the first inequality with the second to get -4 < x < 2. Choice (B) gives the solution to only the first inequality and choice (A) repeats the second inequality. Choices (C) and (D) make errors in manipulating the first inequality.", "3":"K  To solve this problem, use the group formula: Total  =  Group1 + Group2 – Both + Neither. In this problem, that means 110 employees  =  (35 sales) + (50 operations) – (15 both) + Neither. Solve for Neither  =  40, choice (K). Choice (F) erroneously subtracts all the smaller values from the total number of employees; choice (G) subtracts sales employees from operations employees; choice (H) subtracts employees working in both departments from the number of employees in sales; and choice (J) subtracts employees working in both departments from the number of employees in operations.", "4":"C  The slope of a perpendicular line is the negative reciprocal of the slope of the line to which it is perpendicular.", "5":"H  If (24,3) is the midpoint of the other two points, then the average of the two x values should be 24; calculate   =  24, and z  =  3, or (H). Choice (G) mistakenly calculates z + 15z  =  24 (where z  =  1.5). The other choices mistakenly set point values equal to each other. Choice (F) calculates 2z + 1  =  3 (where z  =  1); (J) calculates z - 4  =  3 (where z  =  7); and (K) simply sets z equal to 24.", "6":"D  The word BADGERS has 7 letters, and you are looking for combinations of four letters with no repeats. There are four letter-slots to fill, so you need to figure out how many letters can go in each of these four slots. Since there are 7 letters in BADGERS, you can choose any of them for the first slot. Since there are no repeats, and one of your letters will be in the first slot, you have 6 options for the second slot, 5 options for the third, and 4 options for the fourth. Multiply these numbers together to get (7) (6) (5) (4)  =  840. Choice (A) gives only the number of slots; choice (B) gives only the number of letters in the word BADGERS; choice (C) gives 44; and choice (E) gives 74.", "7":"H  Compare point O to the answer choices, watching the order of the three axes. Point O shifts neither to the left nor right in the y direction, so the y value will be 0, eliminating choices (G) and (K). The height of the cube is 2 units and side  starts where z is 0, so the z coordinate of O is 2, eliminating choice (J). The distance along the x axis from Q to S is the diagonal of square PQRS. The diagonal of a square is the length of its side x , or 2, so the x value of O is 2, eliminating choice (F).", "8":"A  To combine logarithms (logs), the bases must be the same, so eliminate choice (C). Group the first and last terms together, since they have common bases, to get log4 a + log4 c - 2log8b. The laws of logarithms state that . Eliminate choices (B) and (D) which multiply b by 2 instead of squaring it. A fractional power represents a root, so . Eliminate choice (E), which does not include . You are left with choice (A). The laws of logs also state that .", "9":"J  Since you\'re dealing with absolute value, all solutions of the problem will be positive, so work with the extremes of each inequality until you find the greatest value. The greatest value results when a  =  -6 and b  =  7:|a - 2b|  =  |-6 - 14|  =  |-20|  =  20. Choice (H) gives the value if a  =  -4 and b  =  7. Choice (K) gives the absolute value of ab if a  =  -6 and b  =  7.", "10":"D  Octagons have 8 sides, so using the formula in the question, the sum of the interior angles measures (8 - 2)180  =  1,080. The angles of regular polygons are equal, so divide by 8 to find the measure of each angle:  =  135°. The designated angle in the figure is an exterior angle, and there are 360° in a circle, so subtract the interior angle from 360° to find the measure of the designated angle: 360° - 135°  =  225°. If you chose (A), the measure of one of the interior angles, be careful—make sure you\'re answering the right question.", "11":"K  First, tan x does not have an amplitude: Choice (J) is out. Second, multiplying the entire function by a constant stretches the graph vertically and changes the amplitude. Both sin x and cos x alone have amplitudes of 1. Multiplying the functions sin x or cos x by a constant will make the amplitude equal to that constant. Altering the angle, as in choices (G) and (H) does not change the amplitude of the function—it changes the period.", "12":"A  To solve this algebraically, you need to work with the original equation, A  =  , and try to isolate the x variable. First multiply both sides by (x – y), and you\'ll get A(x – y)  =  xy - 2. If you distribute the left side of the equation, you get Ax – Ay  =  xy - 2. Now subtract and add terms from each side so that all the terms with x are on one side; you should get Ax – xy  =  Ay - 2. Pull the x from each term on the left side and you have x(A – y)  =  Ay - 2. Divide both sides by (A – y) and you have the answer: x  =  , or choice (A). If you try to solve by substituting numbers and you pick tricky numbers such as x  =  1 and y  =  0 (for which A  =  -2), you\'ll be misled to choices (D) and (E), since both will seem correct (x  =  1). If you mistakenly set the answer choices equal to the original equation (and again try to solve using 0 and 1 for the variables), you may be misled to choices (B) and (C).", "13":"H  To complete this problem, extend the left transversal to form a triangle with a as one of its angles: First, find that the supplement of 100° will be 80°. Note that because lines p and q are parallel, the uppermost angle of this triangle will be 45°. Now you can find a by subtracting your two known angles from the total angle measure of this triangle: 180° - 45° - 80°  =  55°. Choice (F) erroneously subtracts the 45° and 100° angles from 180°. Choice (G) cannot work because a does not lie along the same transversal as 45°; choice (J) cannot work because the 100° angle and a do not share any parallel lines; and choice (K) cannot work because the value can be determined.", "14":"B  Use SOHCAHTOA, eliminating answer choices that are not supported by the figure. Notice that the third angle of the triangle is 50° to reveal that sin 50°  =  , or x  =  9 sin 50°. The remaining choices confuse the sides of the figure in finding sine, cosine, and tangent of the two angles.", "15":"G  There are 360° in a circle, so each time you add or subtract 360° from an angle measure, you get another angle with the same terminal side. In the case of this problem, every time you find an angle with same the terminal side as 1,314°, you can eliminate it because this problem asks for the angle that does NOT share a terminal side with 1,314°. 1,314° - 360°  =  954°. This is not an answer choice, so keep going. 954° - 360°  =  594°, so eliminate choice (F). 594° - 360°  =  234°, eliminating choice (H). 234° - 360°  =  -126°, so eliminate choice (J). -126° - 360  =  -486, eliminating choice (K). Choice (G) resembles the angle in the problem, but does not land at the same point."};
+let graded = false;
+
+document.querySelectorAll('.choices li').forEach(li => {
+  // Remove old onclick
+  li.removeAttribute('onclick');
+  li.addEventListener('click', function() {
+    if (graded) return;
+    const siblings = this.parentElement.querySelectorAll('li');
+    siblings.forEach(s => s.classList.remove('selected'));
+    this.classList.add('selected');
+  });
+});
+
+function gradeTest() {
+  if (graded) return;
+  graded = true;
+  let correct = 0;
+  const total = Object.keys(ANSWERS).length;
+  
+  document.querySelectorAll('.question').forEach((qDiv, idx) => {
+    const qNum = idx + 1;
+    const correctAns = ANSWERS[qNum];
+    if (!correctAns) return;
+    const choices = qDiv.querySelectorAll('.choices li');
+    const selected = qDiv.querySelector('.choices li.selected');
+    const selectedLetter = selected ? selected.textContent.trim().charAt(0) : null;
+    
+    choices.forEach(li => {
+      const letter = li.textContent.trim().charAt(0);
+      if (letter === correctAns) li.classList.add('show-correct');
+      li.style.cursor = 'default';
+    });
+    
+    const tag = document.createElement('span');
+    tag.className = 'result-tag';
+    
+    if (selectedLetter === correctAns) {
+      correct++;
+      tag.className += ' correct';
+      tag.textContent = 'Correct';
+      if (selected) { selected.classList.remove('selected'); selected.classList.add('correct'); }
+    } else {
+      tag.className += ' wrong';
+      tag.textContent = 'Incorrect (Answer: ' + correctAns + ')';
+      if (selected) { selected.classList.remove('selected'); selected.classList.add('wrong'); }
+    }
+    
+    const firstP = qDiv.querySelector('p');
+    if (firstP) firstP.appendChild(tag);
+    
+    if (typeof EXPLANATIONS !== 'undefined' && EXPLANATIONS[qNum]) {
+      const explDiv = document.createElement('div');
+      explDiv.className = 'explanation show';
+      explDiv.innerHTML = '<strong>Explanation:</strong> ' + EXPLANATIONS[qNum];
+      qDiv.appendChild(explDiv);
+    }
+  });
+  
+  const pct = Math.round((correct / total) * 100);
+  document.querySelector('.submit-btn').style.display = 'none';
+  document.querySelector('.reset-btn').style.display = 'block';
+  var rw=document.querySelector('.report-wrap');if(rw)rw.style.display='block';
+  var bs=document.createElement('div');bs.className='bottom-score';bs.id='bottom-score';
+  bs.innerHTML='<h2 style="font-size:1.3rem;margin-bottom:6px;color:#1a3a4a">Your Score</h2><div class="pct '+(pct>=80?'good':pct>=60?'ok':'bad')+'">'+pct+'%</div><div class="detail">'+correct+' out of '+total+' correct</div>';
+  document.querySelector('.submit-wrap').after(bs);
+  try{var tn=location.pathname.match(/test(\d+)/);if(tn)localStorage.setItem('actmath_'+tn[1],pct);}catch(e){}
+}
+
+function resetTest() {
+  graded = false;
+  var bsEl=document.getElementById('bottom-score');if(bsEl)bsEl.remove();
+  document.querySelector('.submit-btn').style.display = '';
+  document.querySelector('.reset-btn').style.display = 'none';
+  var rw=document.querySelector('.report-wrap');if(rw)rw.style.display='none';
+  var ni=document.querySelector('.name-input');if(ni)ni.value='';
+  document.querySelectorAll('.choices li').forEach(li => {
+    li.classList.remove('selected','correct','wrong','show-correct');
+    li.style.cursor = 'pointer';
+  });
+  document.querySelectorAll('.result-tag').forEach(t => t.remove());
+  document.querySelectorAll('.explanation').forEach(e => e.remove());
+}
+
+function generateReport(){
+  var nameInput=document.querySelector('.name-input');
+  var name=(nameInput&&nameInput.value.trim())||'Student';
+  var testName=document.querySelector('header h1').textContent;
+  var bs=document.getElementById('bottom-score');
+  var scorePct=bs?bs.querySelector('.pct').textContent:'';
+  var detailTxt=bs?bs.querySelector('.detail').textContent:'';
+  var d=new Date().toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'});
+  var btn=document.querySelector('.report-btn');btn.textContent='Generating...';btn.disabled=true;
+  var s=document.createElement('script');
+  s.src='https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js';
+  s.onerror=function(){btn.textContent='Download Report (PDF)';btn.disabled=false;alert('Could not load PDF library.');};
+  s.onload=function(){
+    var doc=new jspdf.jsPDF('portrait','mm','letter');
+    var pw=215.9,ph=279.4,mx=12,cw=pw-2*mx,y=8;
+    doc.setFillColor(26,58,74);doc.rect(0,0,pw,22,'F');
+    doc.setTextColor(255,255,255);doc.setFontSize(13);doc.setFont('helvetica','bold');
+    doc.text(testName,mx,9);
+    doc.setFontSize(7.5);doc.setFont('helvetica','normal');
+    doc.text(d+'  |  Student: '+name,mx,14.5);
+    doc.setFontSize(18);doc.setFont('helvetica','bold');
+    doc.text(scorePct,pw-mx,11,{align:'right'});
+    doc.setFontSize(7.5);doc.setFont('helvetica','normal');
+    doc.text(detailTxt,pw-mx,16,{align:'right'});
+    y=25;
+    doc.setDrawColor(26,58,74);doc.setLineWidth(0.3);doc.line(mx,y,pw-mx,y);y+=3;
+    document.querySelectorAll('.question').forEach(function(qDiv,idx){
+      var qNum=idx+1;var ca=ANSWERS[qNum];if(!ca)return;
+      var sel=qDiv.querySelector('.choices li.correct,.choices li.wrong');
+      var sa=sel?sel.textContent.trim().charAt(0):'-';
+      var ok=sel&&sel.classList.contains('correct');
+      if(ok){
+        doc.setFillColor(40,167,69);doc.circle(mx+1.2,y-1,1,'F');
+        doc.setTextColor(33,33,33);doc.setFont('helvetica','bold');doc.setFontSize(8);
+        doc.text('Q'+qNum,mx+4,y);
+        doc.setFont('helvetica','normal');doc.setTextColor(40,167,69);
+        doc.text('Correct ('+ca+')',mx+14,y);
+      }else{
+        doc.setFillColor(220,53,69);doc.circle(mx+1.2,y-1,1,'F');
+        doc.setTextColor(33,33,33);doc.setFont('helvetica','bold');doc.setFontSize(8);
+        doc.text('Q'+qNum,mx+4,y);
+        doc.setFont('helvetica','normal');doc.setTextColor(220,53,69);
+        doc.text('Incorrect',mx+14,y);
+        doc.setTextColor(120,120,120);
+        doc.text('(Chose '+sa+', Correct: '+ca+')',mx+32,y);
+      }
+      y+=3.2;
+      var qP=qDiv.querySelector('p');
+      if(qP){
+        var qT=qP.cloneNode(true);
+        var tags=qT.querySelectorAll('.result-tag');tags.forEach(function(t){t.remove();});
+        var qt=qT.textContent.replace(/^\d+\.\s*/,'').trim();
+        if(qt.length>0){
+          doc.setFont('helvetica','normal');doc.setTextColor(60,60,60);doc.setFontSize(6.5);
+          var ql=doc.splitTextToSize(qt,cw-5);
+          ql=ql.slice(0,1);
+          if(doc.splitTextToSize(qt,cw-5).length>1){ql[0]=ql[0].substring(0,ql[0].length-3)+'...';}
+          doc.text(ql,mx+4,y);y+=2.4;
+        }
+      }
+      if(typeof EXPLANATIONS!=='undefined'&&EXPLANATIONS[qNum]){
+        doc.setFont('helvetica','italic');doc.setTextColor(100,100,100);doc.setFontSize(6);
+        var lines=doc.splitTextToSize(EXPLANATIONS[qNum],cw-5);
+        if(lines.length>2){lines=lines.slice(0,2);lines[1]=lines[1].substring(0,Math.max(0,lines[1].length-3))+'...';}
+        doc.text(lines,mx+4,y);y+=lines.length*2.2;
+      }
+      y+=2;
+    });
+    doc.setDrawColor(200,200,200);doc.setLineWidth(0.2);doc.line(mx,ph-10,pw-mx,ph-10);
+    doc.setTextColor(170,170,170);doc.setFontSize(6);doc.setFont('helvetica','normal');
+    doc.text('ACT Math Practice  |  Score Report',pw/2,ph-7,{align:'center'});
+    var tn=location.pathname.match(/test(\d+)/);
+    var testNum=tn?parseInt(tn[1])-100:0;
+    var ds=new Date().toISOString().slice(0,10);
+    doc.save('ACT-Math-Test-'+testNum+'-'+ds+'.pdf');
+    btn.textContent='Download Report (PDF)';btn.disabled=false;
+  };
+  document.head.appendChild(s);
+}
+</script>
+</body></html>

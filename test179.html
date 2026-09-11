@@ -1,0 +1,222 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>ACT Math Test 79</title><style>@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:#fff;color:#2d3748;line-height:1.7}
+.container{max-width:800px;margin:0 auto;padding:20px 24px}
+header{background:linear-gradient(135deg,#1a3a4a 0%,#2d6a7a 100%);color:#fff;padding:28px 0;margin-bottom:36px;text-align:center}
+header .container{display:block}
+header h1{font-size:1.6rem;font-weight:700;letter-spacing:-0.3px}
+header a{color:rgba(255,255,255,.7);text-decoration:none;font-size:.9rem;display:inline-block;margin-bottom:6px;transition:color .2s}
+header a:hover{color:#fff}
+.question{background:#fff;border-radius:12px;padding:24px;margin-bottom:20px;border:1px solid #e2e8f0;transition:border-color .2s}
+.question:hover{border-color:#cbd5e0}
+.question p{margin-bottom:14px;font-size:1.05rem}
+img{max-width:100%;height:auto;margin:4px 0;vertical-align:middle}
+.choices{list-style:none}
+.choices li{padding:10px 14px;margin:6px 0;border-radius:8px;cursor:pointer;transition:all .2s;border:2px solid transparent}
+.choices li:hover{background:#f0f7fa}
+.choices li.selected{background:#d1ecf1;border-color:#bee5eb}
+.choices li.correct{background:#d4edda;border-color:#28a745}
+.choices li.wrong{background:#f8d7da;border-color:#dc3545}
+.choices li.show-correct{background:#d4edda;border-color:#28a745}
+.submit-wrap{text-align:center;margin:36px 0}
+.submit-btn{display:inline-block;padding:14px 40px;background:linear-gradient(135deg,#1a3a4a,#2d6a7a);color:#fff;border:none;border-radius:10px;font-size:1.1rem;cursor:pointer;font-weight:600;font-family:inherit;transition:all .25s;letter-spacing:.3px}
+.submit-btn:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(26,58,74,.25)}
+.score-box{background:#fff;border-radius:12px;padding:28px;margin-bottom:28px;text-align:center;border:1px solid #e2e8f0;box-shadow:0 4px 20px rgba(0,0,0,.06);display:none}
+.score-box h2{font-size:1.4rem;margin-bottom:8px;color:#1a3a4a;text-align:center}
+.score-box .pct{font-size:3rem;font-weight:700}
+.score-box .pct.good{color:#28a745}
+.score-box .pct.ok{color:#e6a817}
+.score-box .pct.bad{color:#dc3545}
+.score-box .detail{color:#666;margin-top:4px}
+.result-tag{display:inline-block;padding:2px 10px;border-radius:12px;font-size:.8rem;font-weight:600;margin-left:8px}
+.result-tag.correct{background:#d4edda;color:#155724}
+.result-tag.wrong{background:#f8d7da;color:#721c24}
+.reset-btn{display:none;margin:16px auto;padding:12px 28px;background:#6c757d;color:#fff;border:none;border-radius:10px;font-size:1rem;cursor:pointer;font-family:inherit;transition:all .25s}
+.reset-btn:hover{background:#5a6268;transform:translateY(-1px)}
+.explanation{background:#f0f7ff;border-left:4px solid #1a3a4a;padding:14px 18px;margin-top:14px;border-radius:0 8px 8px 0;font-size:.95rem;color:#444;display:none}
+.explanation.show{display:block}
+.explanation strong{color:#1a3a4a}
+.nav{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin:36px 0}
+.nav a{display:inline-block;padding:10px 24px;background:linear-gradient(135deg,#1a3a4a,#2d6a7a);color:#fff;text-decoration:none;border-radius:10px;font-weight:500;font-size:.95rem;transition:all .25s}
+.nav a:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(26,58,74,.25)}
+footer{text-align:center;padding:36px 24px;color:#8899a4;font-size:.85rem;border-top:1px solid #e2e8f0;margin-top:40px}
+.report-btn{display:inline-block;margin:0;padding:12px 28px;background:linear-gradient(135deg,#1a3a4a,#2d6a7a);color:#fff;border:none;border-radius:10px;font-size:1rem;cursor:pointer;font-family:inherit;transition:all .25s}
+.report-btn:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(26,58,74,.25)}
+.bottom-score{background:#fff;border-radius:12px;padding:20px;margin:20px 0;text-align:center;border:1px solid #e2e8f0;box-shadow:0 4px 20px rgba(0,0,0,.06)}
+.bottom-score .pct{font-size:2.5rem;font-weight:700}
+.bottom-score .pct.good{color:#28a745}
+.bottom-score .pct.ok{color:#e6a817}
+.bottom-score .pct.bad{color:#dc3545}
+.bottom-score .detail{color:#666;margin-top:4px;font-size:.95rem}
+.report-wrap{display:none;text-align:center;margin:16px 0}
+.name-input{padding:10px 14px;border:1px solid #e2e8f0;border-radius:10px;font-size:.95rem;font-family:inherit;width:200px;margin-right:8px;outline:none;transition:border-color .2s}
+.name-input:focus{border-color:#1a3a4a}
+</style></head><body><header><div class="container"><a href="index.html">&larr; All Tests</a><h1>ACT Math Practice Test 79</h1></div></header><div class="container"><div id="score-box" class="score-box"><h2>Your Score</h2><div class="pct">0%</div><div class="detail"></div></div><div class="question"><p><b>1.</b> |9 - 5| - |5 - 9| =?</p><ul class="choices"><li>A. -8</li><li>B. -6</li><li>C. -4</li><li>D. 0</li><li>E. 8</li></ul></div><div class="question"><p><b>2.</b> An editor charges $30 for each hour he works on a book project, plus a flat $25 editing fee. How many hours of work are included in a $190 bill for a book project?</p><ul class="choices"><li>F. <img src="https://www.crackab.com/image/tests/mg10/00080.jpg"></li><li>G. 4</li><li>H. <img src="https://www.crackab.com/image/tests/mg10/01355.jpg"></li><li>J. <img src="https://www.crackab.com/image/tests/mg10/00084.jpg"></li><li>K. 7</li></ul></div><div class="question"><p><b>3.</b> Runner <span class="italic">A</span> averages 5 miles per hour, and Runner <span class="italic">B</span> averages 6 miles per hour. At these rates, how much longer does it take Runner <span class="italic">A</span> than Runner <span class="italic">B</span> to run 15 miles?</p><ul class="choices"><li>A. .5 hour</li><li>B. 1 hour</li><li>C. 1.5 hours</li><li>D. 2.5 hours</li><li>E. 3 hours</li></ul></div><div class="question"><p><b>4.</b> <span class="italic">x<sup><small>2</small></sup></span> + 60<span class="italic">x</span> + 54 - 59<span class="italic">x</span> - 82<span class="italic">x<sup><small>2</small></sup></span> is equivalent to:</p><ul class="choices"><li>F. -26<span class="italic">x<sup><small>2</small></sup></span></li><li>G. -26<span class="italic">x<sup><small>6</small></sup></span></li><li>H. -81<span class="italic">x<sup><small>2</small></sup></span> + <span class="italic">x</span> + 54</li><li>J. -81<span class="italic">x<sup><small>2</small></sup></span> - <span class="italic">x</span> + 54</li><li>K. -83<span class="italic">x<sup><small>2</small></sup></span> - <span class="italic">x</span> - 54</li></ul></div><div class="question"><p><b>5.</b> The figure below is composed of square <span class="italic">ABDE</span> and equilateral triangle <span class="italic">BCD</span>. The length of line segment <span class="italic">AE</span> is 18 centimeters. What is the perimeter of <span class="italic">ABCDE</span>, in centimeters?<br><img src="https://www.crackab.com/image/tests/mg10/00087.jpg"><br></p><ul class="choices"><li>A. 48</li><li>B. 54</li><li>C. 72</li><li>D. 90</li><li>E. 106</li></ul></div><div class="question"><p><b>6.</b> The expression (6<span class="italic">n</span> - 5)(<span class="italic">n</span> + 4) is equivalent to:</p><ul class="choices"><li>F. 6<span class="italic">n<sup><small>2</small></sup></span> - 20</li><li>G. 6<span class="italic">n<sup><small>2</small></sup></span> - 19<span class="italic">n</span> - 20</li><li>H. 6<span class="italic">n<sup><small>2</small></sup></span> - 29<span class="italic">n</span> - 20</li><li>J. 6<span class="italic">n<sup><small>2</small></sup></span> + 19<span class="italic">n</span></li><li>K. 6<span class="italic">n<sup><small>2</small></sup></span> + 19<span class="italic">n</span> - 20</li></ul></div><div class="question"><p><b>7.</b> Blair expects an increase of 3% in her current annual salary of $42,000. What would her new annual salary be?</p><ul class="choices"><li>A. $42,003</li><li>B. $42,126</li><li>C. $43,260</li><li>D. $45,000</li><li>E. $54,600</li></ul></div><div class="question"><p></p><ul class="choices"><li>F. 48</li><li>G. 53</li><li>H. 64</li><li>J. 85</li><li>K. 86</li></ul></div><div class="question"><p><b>9.</b> In the standard (<span class="italic">x, y</span>) coordinate plane, point <span class="italic">B</span> with coordinates (5,6) is the midpoint of <span class="italic">AC</span>, and <span class="italic">A</span> has coordinates (6,7). What are the coordinates of <span class="italic">C</span>?</p><ul class="choices"><li>A. (11,13)</li><li>B. (7,8)</li><li>C. (4,5)</li><li>D. (5.5,6.5)</li><li>E. (-4,-8)</li></ul></div><div class="question"><p><b>10.</b> Rectangle <span class="italic">PQRS</span> lies in the standard (<span class="italic">x, y</span>) coordinate plane so that its sides are not parallel to the axes. What is the product of the slopes of all four sides of rectangle <span class="italic">PQRS</span>?</p><ul class="choices"><li>F. -2</li><li>G. -1</li><li>H. 0</li><li>J. 1</li><li>K. 2</li></ul></div><div class="question"><p><b>11.</b> If Tom traveled 45 miles in 12 hours and Jim traveled four times as far in one-third the time, what was Jim's average speed, in miles per hour?</p><ul class="choices"><li>A. 5</li><li>B. 15</li><li>C. 30</li><li>D. 45</li><li>E. 90</li></ul></div><div class="question"><p><b>12.</b> Given the triangle shown below with exterior angles that measure <span class="italic">a</span>°, <span class="italic">b</span>°, and <span class="italic">c</span>° as shown, what is the sum of <span class="italic">a</span>, <span class="italic">b</span>, and <span class="italic">c</span>?<br><img src="https://www.crackab.com/image/tests/mg10/00091.jpg"><br></p><ul class="choices"><li>F. 180</li><li>G. 236</li><li>H. 261</li><li>J. 360</li><li>K. Cannot be determined from the given information</li></ul></div><div class="question"><p><b>13.</b> A poll of 200 students was taken before Center High School changed the name of its mascot. All 200 students indicated which 1 of the 4 mascot names they would vote for. The results of the poll are given in the table below. <br><img src="https://www.crackab.com/image/tests/mg10/00093.jpg"><br>What percent of the students polled chose Spartans in the poll?</p><ul class="choices"><li>A. 40%</li><li>B. 30%</li><li>C. 25%</li><li>D. 20%</li><li>E. 15%</li></ul></div><div class="question"><p><b>14.</b> A poll of 200 students was taken before Center High School changed the name of its mascot. All 200 students indicated which 1 of the 4 mascot names they would vote for. The results of the poll are given in the table below. <br><img src="https://www.crackab.com/image/tests/mg10/00093.jpg"><br>If the information in the table were converted to a pie chart, then the central angle of the sector for Lions would measure how many degrees?</p><ul class="choices"><li>F. 144°</li><li>G. 108°</li><li>H. 72°</li><li>J. 54°</li><li>K. 45°</li></ul></div><div class="question"><p><b>15.</b> A poll of 200 students was taken before Center High School changed the name of its mascot. All 200 students indicated which 1 of the 4 mascot names they would vote for. The results of the poll are given in the table below. <br><img src="https://www.crackab.com/image/tests/mg10/00093.jpg"><br>If the poll is indicative of how the 3,000 students at Center High School will actually vote, which of the following is the best estimate of the number of votes Knights will receive?</p><ul class="choices"><li>A. 50</li><li>B. 200</li><li>C. 525</li><li>D. 750</li><li>E. 900</li></ul></div><div class="submit-wrap"><button class="submit-btn" onclick="gradeTest()">Submit Test</button><button class="reset-btn" onclick="resetTest()">Try Again</button>
+<div class="report-wrap"><input type="text" class="name-input" placeholder="Student name (for report)"><button class="report-btn" onclick="generateReport()">Download Report (PDF)</button></div></div><div class="nav"><a href="test178.html">&larr; Prev</a><a href="index.html">All Tests</a><a href="test180.html">Next &rarr;</a></div></div><footer><div class="container">ACT Math Practice</div></footer>
+<script>
+const ANSWERS = {"1": "D", "2": "H", "3": "A", "4": "H", "5": "D", "6": "K", "7": "C", "8": "J", "9": "C", "10": "J", "11": "D", "12": "J", "13": "E", "14": "H", "15": "D"};
+const EXPLANATIONS = {"1":"The correct answer is D. To solve this problem, first perform the operations within the absolute value signs, and then perform the subtraction, as follows:", "2":"The correct answer is H. To solve this problem, first subtract the flat fee from the total bill: 190 - 25  =  165 The editor billed $165 for his hourly work. Now, simply divide 165 by 30 to determine the number of hours he worked: 165 ÷ 30  =  5.5, or", "3":"The correct answer is A. The first step in solving this problem is to calculate the time it takes each runner to run 15 miles. Use the Distance  =  Rate × Time formula, as follows (because you are calculating the time, use the variable x): Runner A takes 3 hours and Runner B takes 2.5 hours to run 15 miles. Therefore, it takes Runner A half an hour (3 - 2.5  =  0.5) longer to run 15 miles.", "4":"The correct answer is H. To solve this problem, add or subtract like terms, as follows:", "5":"The correct answer is D. The perimeter is the distance around an object. You are given that the figure is composed of a square, which has congruent sides, and an equilateral triangle, which has congruent sides. You are also given that the length of one side of the square is 18 cm, which means that the length of each of the remaining sides is also 18. Therefore, the perimeter of ABCDE is 18 × 5  =  90.", "6":"The correct answer is K. To solve this problem, use the FOIL method, as follows: Now, put the like terms in order and simplify: 6n2 + 24n - 5n - 20  =  6n2 + 19n - 20", "7":"The correct answer is C. A quick way to solve this problem is to multiply Blair\'s current salary by 1.03, which will yield her new salary with a 3% raise (remember, the decimal equivalent of 3% is .03): 42, 000 × 1.03  =  43, 260 You could also multiply Blair\'s current salary by .03, then add the result to her current salary: 42, 000 × .03  =  1, 260 42, 000 + 1, 260  =  43, 260", "8":"The correct answer is J. One way to solve this problem is to simply set up the equation and solve for n, as follows:", "9":"The correct answer is C. One way to solve this problem is to sketch the (x, y) coordinate plane and plot the given points, as shown below: A quick glance at the figure and the answer choices should indicate that point C would likely have coordinates (4,5) because none of the other options match the figure. Use the midpoint formula to calculate the coordinates, as follows:", "10":"The correct answer is J. Since the figure is a rectangle, the adjacent sides are perpendicular. Perpendicular lines have slopes that are negative reciprocals of each other, meaning that the product of their slopes is -1. Since there are four lines and four perpendicular angles, the product of the slopes is (-1) × (-1) × (-1) × (-1)  =  1.", "11":"The correct answer is D. You are given that Tom traveled 45 miles in 12 hours and that Jim traveled four times as far in one-third the time. That means that Jim traveled 45 × 4, or 180 miles in , or 4 hours. Therefore, Jim traveled , or 45 miles per hour.", "12":"The correct answer is J. If you recognized that a, b, and c are supplementary to the interior angles of the triangle, you could have quickly arrived at the correct answer: a + c  =  180; a + b  =  180; b + c  =  180; therefore, a + b + c  =  360. You could also have calculated the sum of a, b, and c by first finding their values. Because 2 of the interior angles total 124 (43 + 81), the third angle must measure 180 - 124  =  56. Therefore, angle c must measure 180 - 56  =  124, angle a must measure 180 - 43  =  137, and angle b must measure 180 - 81  =  99. The sum is 137 + 99 + 124  =  360.", "13":"The correct answer is E. According to the information given in the table, 30 students voted for the name Spartans. Therefore, 30 out of 200 students voted for Spartans. Because you are looking for a percentage, set up a proportion and solve for x, as follows:", "14":"The correct answer is H. According to the information given in the table, 40 students voted for the name Lions. Therefore, 40 out of 200 students voted for Lions. First, calculate the percentage of the whole pie chart represented by Lions by setting up a proportion and solving for x, as follows: You now know that 20% of the students voted for Lions. Because there are 360° in a circle, find 20% of 360: 360 × 0.2  =  72", "15":"The correct answer is D. According to the information given in the table, 50 students voted for the name Knights. Therefore, 50 out of 200 students polled voted for Knights. First, calculate the percentage of those students polled who voted for Knights by setting up a proportion and solving for x, as follows: You now know that 25% of the students polled voted for Lions. You are given that there are 3,000 students at Center High School, so find 25% of 3,000: 3000 × 0.25  =  750"};
+let graded = false;
+
+document.querySelectorAll('.choices li').forEach(li => {
+  // Remove old onclick
+  li.removeAttribute('onclick');
+  li.addEventListener('click', function() {
+    if (graded) return;
+    const siblings = this.parentElement.querySelectorAll('li');
+    siblings.forEach(s => s.classList.remove('selected'));
+    this.classList.add('selected');
+  });
+});
+
+function gradeTest() {
+  if (graded) return;
+  graded = true;
+  let correct = 0;
+  const total = Object.keys(ANSWERS).length;
+  
+  document.querySelectorAll('.question').forEach((qDiv, idx) => {
+    const qNum = idx + 1;
+    const correctAns = ANSWERS[qNum];
+    if (!correctAns) return;
+    const choices = qDiv.querySelectorAll('.choices li');
+    const selected = qDiv.querySelector('.choices li.selected');
+    const selectedLetter = selected ? selected.textContent.trim().charAt(0) : null;
+    
+    choices.forEach(li => {
+      const letter = li.textContent.trim().charAt(0);
+      if (letter === correctAns) li.classList.add('show-correct');
+      li.style.cursor = 'default';
+    });
+    
+    const tag = document.createElement('span');
+    tag.className = 'result-tag';
+    
+    if (selectedLetter === correctAns) {
+      correct++;
+      tag.className += ' correct';
+      tag.textContent = 'Correct';
+      if (selected) { selected.classList.remove('selected'); selected.classList.add('correct'); }
+    } else {
+      tag.className += ' wrong';
+      tag.textContent = 'Incorrect (Answer: ' + correctAns + ')';
+      if (selected) { selected.classList.remove('selected'); selected.classList.add('wrong'); }
+    }
+    
+    const firstP = qDiv.querySelector('p');
+    if (firstP) firstP.appendChild(tag);
+    
+    if (typeof EXPLANATIONS !== 'undefined' && EXPLANATIONS[qNum]) {
+      const explDiv = document.createElement('div');
+      explDiv.className = 'explanation show';
+      explDiv.innerHTML = '<strong>Explanation:</strong> ' + EXPLANATIONS[qNum];
+      qDiv.appendChild(explDiv);
+    }
+  });
+  
+  const pct = Math.round((correct / total) * 100);
+  document.querySelector('.submit-btn').style.display = 'none';
+  document.querySelector('.reset-btn').style.display = 'block';
+  var rw=document.querySelector('.report-wrap');if(rw)rw.style.display='block';
+  var bs=document.createElement('div');bs.className='bottom-score';bs.id='bottom-score';
+  bs.innerHTML='<h2 style="font-size:1.3rem;margin-bottom:6px;color:#1a3a4a">Your Score</h2><div class="pct '+(pct>=80?'good':pct>=60?'ok':'bad')+'">'+pct+'%</div><div class="detail">'+correct+' out of '+total+' correct</div>';
+  document.querySelector('.submit-wrap').after(bs);
+  try{var tn=location.pathname.match(/test(\d+)/);if(tn)localStorage.setItem('actmath_'+tn[1],pct);}catch(e){}
+}
+
+function resetTest() {
+  graded = false;
+  var bsEl=document.getElementById('bottom-score');if(bsEl)bsEl.remove();
+  document.querySelector('.submit-btn').style.display = '';
+  document.querySelector('.reset-btn').style.display = 'none';
+  var rw=document.querySelector('.report-wrap');if(rw)rw.style.display='none';
+  var ni=document.querySelector('.name-input');if(ni)ni.value='';
+  document.querySelectorAll('.choices li').forEach(li => {
+    li.classList.remove('selected','correct','wrong','show-correct');
+    li.style.cursor = 'pointer';
+  });
+  document.querySelectorAll('.result-tag').forEach(t => t.remove());
+  document.querySelectorAll('.explanation').forEach(e => e.remove());
+}
+
+function generateReport(){
+  var nameInput=document.querySelector('.name-input');
+  var name=(nameInput&&nameInput.value.trim())||'Student';
+  var testName=document.querySelector('header h1').textContent;
+  var bs=document.getElementById('bottom-score');
+  var scorePct=bs?bs.querySelector('.pct').textContent:'';
+  var detailTxt=bs?bs.querySelector('.detail').textContent:'';
+  var d=new Date().toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'});
+  var btn=document.querySelector('.report-btn');btn.textContent='Generating...';btn.disabled=true;
+  var s=document.createElement('script');
+  s.src='https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js';
+  s.onerror=function(){btn.textContent='Download Report (PDF)';btn.disabled=false;alert('Could not load PDF library.');};
+  s.onload=function(){
+    var doc=new jspdf.jsPDF('portrait','mm','letter');
+    var pw=215.9,ph=279.4,mx=12,cw=pw-2*mx,y=8;
+    doc.setFillColor(26,58,74);doc.rect(0,0,pw,22,'F');
+    doc.setTextColor(255,255,255);doc.setFontSize(13);doc.setFont('helvetica','bold');
+    doc.text(testName,mx,9);
+    doc.setFontSize(7.5);doc.setFont('helvetica','normal');
+    doc.text(d+'  |  Student: '+name,mx,14.5);
+    doc.setFontSize(18);doc.setFont('helvetica','bold');
+    doc.text(scorePct,pw-mx,11,{align:'right'});
+    doc.setFontSize(7.5);doc.setFont('helvetica','normal');
+    doc.text(detailTxt,pw-mx,16,{align:'right'});
+    y=25;
+    doc.setDrawColor(26,58,74);doc.setLineWidth(0.3);doc.line(mx,y,pw-mx,y);y+=3;
+    document.querySelectorAll('.question').forEach(function(qDiv,idx){
+      var qNum=idx+1;var ca=ANSWERS[qNum];if(!ca)return;
+      var sel=qDiv.querySelector('.choices li.correct,.choices li.wrong');
+      var sa=sel?sel.textContent.trim().charAt(0):'-';
+      var ok=sel&&sel.classList.contains('correct');
+      if(ok){
+        doc.setFillColor(40,167,69);doc.circle(mx+1.2,y-1,1,'F');
+        doc.setTextColor(33,33,33);doc.setFont('helvetica','bold');doc.setFontSize(8);
+        doc.text('Q'+qNum,mx+4,y);
+        doc.setFont('helvetica','normal');doc.setTextColor(40,167,69);
+        doc.text('Correct ('+ca+')',mx+14,y);
+      }else{
+        doc.setFillColor(220,53,69);doc.circle(mx+1.2,y-1,1,'F');
+        doc.setTextColor(33,33,33);doc.setFont('helvetica','bold');doc.setFontSize(8);
+        doc.text('Q'+qNum,mx+4,y);
+        doc.setFont('helvetica','normal');doc.setTextColor(220,53,69);
+        doc.text('Incorrect',mx+14,y);
+        doc.setTextColor(120,120,120);
+        doc.text('(Chose '+sa+', Correct: '+ca+')',mx+32,y);
+      }
+      y+=3.2;
+      var qP=qDiv.querySelector('p');
+      if(qP){
+        var qT=qP.cloneNode(true);
+        var tags=qT.querySelectorAll('.result-tag');tags.forEach(function(t){t.remove();});
+        var qt=qT.textContent.replace(/^\d+\.\s*/,'').trim();
+        if(qt.length>0){
+          doc.setFont('helvetica','normal');doc.setTextColor(60,60,60);doc.setFontSize(6.5);
+          var ql=doc.splitTextToSize(qt,cw-5);
+          ql=ql.slice(0,1);
+          if(doc.splitTextToSize(qt,cw-5).length>1){ql[0]=ql[0].substring(0,ql[0].length-3)+'...';}
+          doc.text(ql,mx+4,y);y+=2.4;
+        }
+      }
+      if(typeof EXPLANATIONS!=='undefined'&&EXPLANATIONS[qNum]){
+        doc.setFont('helvetica','italic');doc.setTextColor(100,100,100);doc.setFontSize(6);
+        var lines=doc.splitTextToSize(EXPLANATIONS[qNum],cw-5);
+        if(lines.length>2){lines=lines.slice(0,2);lines[1]=lines[1].substring(0,Math.max(0,lines[1].length-3))+'...';}
+        doc.text(lines,mx+4,y);y+=lines.length*2.2;
+      }
+      y+=2;
+    });
+    doc.setDrawColor(200,200,200);doc.setLineWidth(0.2);doc.line(mx,ph-10,pw-mx,ph-10);
+    doc.setTextColor(170,170,170);doc.setFontSize(6);doc.setFont('helvetica','normal');
+    doc.text('ACT Math Practice  |  Score Report',pw/2,ph-7,{align:'center'});
+    var tn=location.pathname.match(/test(\d+)/);
+    var testNum=tn?parseInt(tn[1])-100:0;
+    var ds=new Date().toISOString().slice(0,10);
+    doc.save('ACT-Math-Test-'+testNum+'-'+ds+'.pdf');
+    btn.textContent='Download Report (PDF)';btn.disabled=false;
+  };
+  document.head.appendChild(s);
+}
+</script>
+</body></html>

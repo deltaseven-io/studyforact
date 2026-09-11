@@ -1,0 +1,222 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>ACT Math Test 14</title><style>@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:#fff;color:#2d3748;line-height:1.7}
+.container{max-width:800px;margin:0 auto;padding:20px 24px}
+header{background:linear-gradient(135deg,#1a3a4a 0%,#2d6a7a 100%);color:#fff;padding:28px 0;margin-bottom:36px;text-align:center}
+header .container{display:block}
+header h1{font-size:1.6rem;font-weight:700;letter-spacing:-0.3px}
+header a{color:rgba(255,255,255,.7);text-decoration:none;font-size:.9rem;display:inline-block;margin-bottom:6px;transition:color .2s}
+header a:hover{color:#fff}
+.question{background:#fff;border-radius:12px;padding:24px;margin-bottom:20px;border:1px solid #e2e8f0;transition:border-color .2s}
+.question:hover{border-color:#cbd5e0}
+.question p{margin-bottom:14px;font-size:1.05rem}
+img{max-width:100%;height:auto;margin:4px 0;vertical-align:middle}
+.choices{list-style:none}
+.choices li{padding:10px 14px;margin:6px 0;border-radius:8px;cursor:pointer;transition:all .2s;border:2px solid transparent}
+.choices li:hover{background:#f0f7fa}
+.choices li.selected{background:#d1ecf1;border-color:#bee5eb}
+.choices li.correct{background:#d4edda;border-color:#28a745}
+.choices li.wrong{background:#f8d7da;border-color:#dc3545}
+.choices li.show-correct{background:#d4edda;border-color:#28a745}
+.submit-wrap{text-align:center;margin:36px 0}
+.submit-btn{display:inline-block;padding:14px 40px;background:linear-gradient(135deg,#1a3a4a,#2d6a7a);color:#fff;border:none;border-radius:10px;font-size:1.1rem;cursor:pointer;font-weight:600;font-family:inherit;transition:all .25s;letter-spacing:.3px}
+.submit-btn:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(26,58,74,.25)}
+.score-box{background:#fff;border-radius:12px;padding:28px;margin-bottom:28px;text-align:center;border:1px solid #e2e8f0;box-shadow:0 4px 20px rgba(0,0,0,.06);display:none}
+.score-box h2{font-size:1.4rem;margin-bottom:8px;color:#1a3a4a;text-align:center}
+.score-box .pct{font-size:3rem;font-weight:700}
+.score-box .pct.good{color:#28a745}
+.score-box .pct.ok{color:#e6a817}
+.score-box .pct.bad{color:#dc3545}
+.score-box .detail{color:#666;margin-top:4px}
+.result-tag{display:inline-block;padding:2px 10px;border-radius:12px;font-size:.8rem;font-weight:600;margin-left:8px}
+.result-tag.correct{background:#d4edda;color:#155724}
+.result-tag.wrong{background:#f8d7da;color:#721c24}
+.reset-btn{display:none;margin:16px auto;padding:12px 28px;background:#6c757d;color:#fff;border:none;border-radius:10px;font-size:1rem;cursor:pointer;font-family:inherit;transition:all .25s}
+.reset-btn:hover{background:#5a6268;transform:translateY(-1px)}
+.explanation{background:#f0f7ff;border-left:4px solid #1a3a4a;padding:14px 18px;margin-top:14px;border-radius:0 8px 8px 0;font-size:.95rem;color:#444;display:none}
+.explanation.show{display:block}
+.explanation strong{color:#1a3a4a}
+.nav{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin:36px 0}
+.nav a{display:inline-block;padding:10px 24px;background:linear-gradient(135deg,#1a3a4a,#2d6a7a);color:#fff;text-decoration:none;border-radius:10px;font-weight:500;font-size:.95rem;transition:all .25s}
+.nav a:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(26,58,74,.25)}
+footer{text-align:center;padding:36px 24px;color:#8899a4;font-size:.85rem;border-top:1px solid #e2e8f0;margin-top:40px}
+.report-btn{display:inline-block;margin:0;padding:12px 28px;background:linear-gradient(135deg,#1a3a4a,#2d6a7a);color:#fff;border:none;border-radius:10px;font-size:1rem;cursor:pointer;font-family:inherit;transition:all .25s}
+.report-btn:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(26,58,74,.25)}
+.bottom-score{background:#fff;border-radius:12px;padding:20px;margin:20px 0;text-align:center;border:1px solid #e2e8f0;box-shadow:0 4px 20px rgba(0,0,0,.06)}
+.bottom-score .pct{font-size:2.5rem;font-weight:700}
+.bottom-score .pct.good{color:#28a745}
+.bottom-score .pct.ok{color:#e6a817}
+.bottom-score .pct.bad{color:#dc3545}
+.bottom-score .detail{color:#666;margin-top:4px;font-size:.95rem}
+.report-wrap{display:none;text-align:center;margin:16px 0}
+.name-input{padding:10px 14px;border:1px solid #e2e8f0;border-radius:10px;font-size:.95rem;font-family:inherit;width:200px;margin-right:8px;outline:none;transition:border-color .2s}
+.name-input:focus{border-color:#1a3a4a}
+</style></head><body><header><div class="container"><a href="index.html">&larr; All Tests</a><h1>ACT Math Practice Test 14</h1></div></header><div class="container"><div id="score-box" class="score-box"><h2>Your Score</h2><div class="pct">0%</div><div class="detail"></div></div><div class="question"><p><b>1.</b> Among the following arithmetic operations, which could the emoticon <img alt="" src="https://www.crackab.com/images/tests/Prin_9780804124393_epub_L09_r1.jpg"> represent given that the equation (8 <img alt="" src="https://www.crackab.com/images/tests/Prin_9780804124393_epub_L09_r1.jpg"> 2)<sup class="frac">3</sup> - (4 <img alt="" src="https://www.crackab.com/images/tests/Prin_9780804124393_epub_L09_r1.jpg"> 1)<sup class="frac">2</sup> = 48 is true?<br>I. Subtraction<br>II. Multiplication<br>III. Division</p><ul class="choices"><li>F. I only</li><li>G. III only</li><li>H. II and III only</li><li>J. I and III only</li><li>K. I, II, and III</li></ul></div><div class="question"><p><b>2.</b> Which of the following equations represents the linear relation shown in the standard (<em>x,y</em>) coordinate plane below?<br><img alt="" src="https://www.crackab.com/images/tests/Prin_9780804124393_epub_368_r1.jpg"></p><ul class="choices"><li>A. <em>y</em> = -5<em>x</em></li><li>B. <em>y</em> = -6<em>x</em></li><li>C. <em>y</em> = -2<em>x</em> + 2</li><li>D. <em>y</em> = -5<em>x</em> + 6</li><li>E. <em>y</em> = -2<em>x</em> + 6</li></ul></div><div class="question"><p><b>3.</b> An integer, <em>x</em>, is subtracted from 6. That difference is then multiplied by 3. This product is 15 more than half the original integer. Which of the following equations represents this relationship?</p><ul class="choices"><li>F. 3(6 - <em>x</em>) = <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780804124393_epub_xby2_r1.jpg"> + 15</li><li>G. 3(6 - <em>x</em>) + 15 = <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780804124393_epub_xby2_r1.jpg"></li><li>H. 3(6 - <em>x</em>) = 15 - <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780804124393_epub_xby2_r1.jpg"></li><li>J. <em>x</em> - 6 × 3 = <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780804124393_epub_15by2_r1.jpg"></li><li>K. 6 + 3 = <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780804124393_epub_xby2_r1.jpg"> + 15</li></ul></div><div class="question"><p><b>4.</b> The employees of two factories, X and Y, are comparing their respective production records. Factory X has already produced 18,000 units and can produce 120 units per day. Factory Y has produced only 14,500 units but can produce 155 units per day. If <em>d</em> represents the number of days (that is, days during which each factory is producing its maximum number of units), which of the following equations could be solved to determine the number of days until X's total production equals Y's total production?</p><ul class="choices"><li>A. 18,000 + 120<em>d</em> = 14,500 + 155<em>d</em></li><li>B. 18,000 + 155<em>d</em> = 14,500 + 120<em>d</em></li><li>C. (18,000 + 120)<em>d</em> = (14,500 + 155)<em>d</em></li><li>D. (120 + 155)<em>d</em> = 18,000 - 14,500</li><li>E. (120 + 155)<em>d</em> = 18,000 + 14,500</li></ul></div><div class="question"><p><b>5.</b> A ramp used to access the side entrance to the DPC Candy Store, which is located 7 meters above the ground, covers 24 meters along the level ground from the edge of the building. How many meters long is the ramp?<br><img alt="" src="https://www.crackab.com/images/tests/Prin_9780804124393_epub_369_r1.jpg"></p><ul class="choices"><li>F. 13</li><li>G. 14</li><li>H. 17</li><li>J. 23</li><li>K. 25</li></ul></div><div class="question"><p><b>6.</b> The expression 9(<em>y</em> + 3) - 2(4<em>y</em> - 4) is equivalent to:</p><ul class="choices"><li>A. <em>y</em> - 1</li><li>B. <em>y</em> + 15</li><li>C. <em>y</em> + 18</li><li>D. <em>y</em> + 23</li><li>E. <em>y</em> + 35</li></ul></div><div class="question"><p><b>7.</b> If <em>a</em> + 3<em>b</em> = 27 and <em>a</em> - 3<em>b</em> = 9, then <em>b</em> = ?</p><ul class="choices"><li>F. 3</li><li>G. 9</li><li>H. 14</li><li>J. 18</li><li>K. 36</li></ul></div><div class="question"><p><b>8.</b> When (2<em>x</em> + 4)<sup class="frac">2</sup> is written in the format <em>ax</em><sup class="frac">2</sup> + <em>bx</em> + <em>c</em>, where <em>a</em>, <em>b</em>, and <em>c</em> are integers, what is the value of <em>a</em> + <em>b</em> - <em>c</em>?</p><ul class="choices"><li>A. -20</li><li>B. 4</li><li>C. 20</li><li>D. 32</li><li>E. 36</li></ul></div><div class="question"><p><b>9.</b> What is the area, in square meters, of the figure below?<br><img alt="" src="https://www.crackab.com/images/tests/Prin_9780804124393_epub_370_r1.jpg"></p><ul class="choices"><li>F. 336</li><li>G. 330</li><li>H. 225</li><li>J. 82</li><li>K. 56</li></ul></div><div class="question"><p><b>11.</b> What is the slope of the line represented by the equation 10<em>y</em> - 16<em>x</em> = 13?</p><ul class="choices"><li>F. -16</li><li>G. <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780804124393_epub_13by10_r1.jpg"></li><li>H. <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780804124393_epub_8by5_r1.jpg"></li><li>J. 10</li><li>K. 16</li></ul></div><div class="question"><p><b>12.</b> What is the sum of the 2 solutions of the equation <em>x</em><sup class="frac">2</sup> + 5<em>x</em> - 24 = 0?</p><ul class="choices"><li>A. -24</li><li>B. -8</li><li>C. -5</li><li>D. 0</li><li>E. 5</li></ul></div><div class="question"><p><b>13.</b> Two similar triangles have perimeters in the ratio 5:6. The sides of the larger triangle measure 12 in, 7 in, and 5 in. What is the perimeter, in inches, of the smaller triangle?</p><ul class="choices"><li>F. 18</li><li>G. 20</li><li>H. 22</li><li>J. 24</li><li>K. 32</li></ul></div><div class="question"><p><b>14.</b> In early November in Winnipeg, Manitoba, the temperatures for each of nine consecutive days were -9°C, 3°C, -7°C, 2°C, 5°C, 1°C, 0°C, -8°C, and -7°C. What was the median of the temperatures for these nine days in early November?</p><ul class="choices"><li>A. -7°C</li><li>B. 0°C</li><li>C. 1.5°C</li><li>D. 3°C</li><li>E. 5°C</li></ul></div><div class="question"><p><b>15.</b> When asked the price, in dollars, of his fancy calculator, Albert responded, "If you take the square root of the price, then add <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780804124393_epub_3by8_r1.jpg"> the price, the result is 66." What is the price, in dollars, of Albert's calculator?</p><ul class="choices"><li>F. 169</li><li>G. 144</li><li>H. 121</li><li>J. 13</li><li>K. 12</li></ul></div><div class="submit-wrap"><button class="submit-btn" onclick="gradeTest()">Submit Test</button><button class="reset-btn" onclick="resetTest()">Try Again</button>
+<div class="report-wrap"><input type="text" class="name-input" placeholder="Student name (for report)"><button class="report-btn" onclick="generateReport()">Download Report (PDF)</button></div></div><div class="nav"><a href="test113.html">&larr; Prev</a><a href="index.html">All Tests</a><a href="test115.html">Next &rarr;</a></div></div><footer><div class="container">ACT Math Practice</div></footer>
+<script>
+const ANSWERS = {"1": "G", "2": "D", "3": "F", "4": "A", "5": "K", "6": "E", "7": "F", "8": "B", "9": "H", "10": "E", "11": "H", "12": "C", "13": "G", "14": "B", "15": "G"};
+const EXPLANATIONS = {"1":"Try the different operations listed. You will find that the only operation that makes the statement true is division. Replace all the emoticons with division signs: (8 ÷ 2)3 - (4 ÷ 1)2  =  (4)3 - (4)2  =  64 - 16  =  48.", "2":"First, identify a point on the graph. The easiest place to start is with the intercepts. The x-intercept is unclear, but the y-intercept passes through (0,6), eliminating choices (A), (B), and (C). Between the latter two choices, you can solve for the x-intercept, to find that in choice (D), x  =   and in choice (E), x  =  3. Although the exact x-intercept is unclear on the graph, it is definitely less than 2, so you can eliminate choice (E).", "3":"Translate the English in this problem into the math of the answer choices. The problem reads, "An integer, x, is subtracted from 6. That difference is then multiplied by 3." This translates into the following: (6 - x) o 3 or 3(6 - x). The second part of the problem reads, "This product is 15 more than half the original integer." Therefore 3(6 - x) will equal "15 more than half the original integer": 15 +  or x + 15. Therefore, 3(6 - x)  =  + 15.", "4":"Find the total production of each company after d days. Factory X starts with 18,000 units and can produce 120 units per day, so its production after d days will be 18,000 + 120d. Factory Y starts with only 14,500 units, but it can produce 155 units per day, so its production after d days will be 14,500 + 155d. Since you are looking for the number of days after which the total production of each factory will be equal, set the two equations equal to one another: 18,000 + 120d  =  14,500 + 155d. That\'s all there is to it-you don\'t have to solve this!", "5":"Use the Pythagorean theorem to find the length of the hypotenuse: a2 + b2  =  c2, where c is the hypotenuse. . Note that this is 7:24:25, a Pythagorean triple. If you remember a few of the basic triples, you can save yourself a lot of figuring.", "6":"Make sure you are distributing properly: 9(y + 3) - 2(4 y - 4)  =  9 y + 27 - 8 y + 8  =  y + 35.", "7":"Set up a system of equations to find a: If 2a  =  36, then a  =  18. Use this value to find the value of b: 18 - 3b  =  9 3b  =  18 - 9 3b  =  9 b  =  3", "8":"Make sure you FOIL the equation properly: (2x + 4)2  =  4x2 + 8x + 8x + 16  =  4x2 + 16x + 16. In this case a  =  4, b  =  16, and c  =  16, so a + b - c  =  4 + 16 - 16  =  4. If you selected choice (C), you may have forgotten to FOIL. If you selected choice (E), you may done a + b + c rather than a + b - c.", "9":"Split the figure into two rectangles and find the area of each. See the figure below: The smaller rectangle has sides of length 9 and 5, so its area by the formula A  =  lw is 45. The larger rectangle has sides 30 and 6, so by the same formula, its area is 180. Add the two areas together to get 180 + 45  =  225. If you selected choice (J), be careful-this is the perimeter.", "10":"Look carefully at the values for each function. If a function can be graphed as ax + b, it is a linear function, and it will increase at constant increments. Function g decreases then increases in value. In fact, note the symmetry-this is a parabolic function, and can be graphed according to ax2 + bx + c. Note that all the values in h increase by 3, so this is the function you want to work with. Since h(-1)  =  6, h(0) must equal 9.", "11":"Put the equation into the slope-intercept form, y  =  mx + b. The m in this equation is the slope of the line. From the equation given, 10y - 16x  =  13, isolate the y term to get 10y  =  16x + 13, and divide through by 10 to get . Reduce to . The m term in this equation is .", "12":"First, simplify the expression: x2 + 5x - 24  =  (x + 8)(x + 3). Now that you have the two expressions, find the solutions by setting each quantity equal to 0. If x + 8  =  0, then x  =  -8. If x - 3  =  0, then x  =  3. Now find the sum of the solutions: -8 + 3  =  -5. If you selected choice (E), you may have simplified correctly but found the roots incorrectly. If you selected choice (A), you found the product, not the sum.", "13":"The perimeter of the larger triangle is 12 in. + 7 in. + 5 in.  =  24 in. Since you know the ratio of the perimeters, you do not have to find each side of the smaller triangle; you can set up the following ratio:", "14":"To find the median of a list of numbers, those numbers must be listed in order. Make sure you rearrange the numbers given before you find the median. If you didn\'t rearrange the numbers, you may have picked (E). When you rearrange the numbers in this list, they are in this order: -9°C, -8°C, -7°C, -7°C, 0°C, 1°C, 2°C, 3°C, 5°C. 0°C is the median. If you selected choice (A), be careful-this is the mode.", "15":"You can set up an equation to find the price of the calculator. If we call the price of the calculator x, then the equation will look like this: . A simpler tactic is to try out the answer choices to see which works in this equation. You will find this to be ."};
+let graded = false;
+
+document.querySelectorAll('.choices li').forEach(li => {
+  // Remove old onclick
+  li.removeAttribute('onclick');
+  li.addEventListener('click', function() {
+    if (graded) return;
+    const siblings = this.parentElement.querySelectorAll('li');
+    siblings.forEach(s => s.classList.remove('selected'));
+    this.classList.add('selected');
+  });
+});
+
+function gradeTest() {
+  if (graded) return;
+  graded = true;
+  let correct = 0;
+  const total = Object.keys(ANSWERS).length;
+  
+  document.querySelectorAll('.question').forEach((qDiv, idx) => {
+    const qNum = idx + 1;
+    const correctAns = ANSWERS[qNum];
+    if (!correctAns) return;
+    const choices = qDiv.querySelectorAll('.choices li');
+    const selected = qDiv.querySelector('.choices li.selected');
+    const selectedLetter = selected ? selected.textContent.trim().charAt(0) : null;
+    
+    choices.forEach(li => {
+      const letter = li.textContent.trim().charAt(0);
+      if (letter === correctAns) li.classList.add('show-correct');
+      li.style.cursor = 'default';
+    });
+    
+    const tag = document.createElement('span');
+    tag.className = 'result-tag';
+    
+    if (selectedLetter === correctAns) {
+      correct++;
+      tag.className += ' correct';
+      tag.textContent = 'Correct';
+      if (selected) { selected.classList.remove('selected'); selected.classList.add('correct'); }
+    } else {
+      tag.className += ' wrong';
+      tag.textContent = 'Incorrect (Answer: ' + correctAns + ')';
+      if (selected) { selected.classList.remove('selected'); selected.classList.add('wrong'); }
+    }
+    
+    const firstP = qDiv.querySelector('p');
+    if (firstP) firstP.appendChild(tag);
+    
+    if (typeof EXPLANATIONS !== 'undefined' && EXPLANATIONS[qNum]) {
+      const explDiv = document.createElement('div');
+      explDiv.className = 'explanation show';
+      explDiv.innerHTML = '<strong>Explanation:</strong> ' + EXPLANATIONS[qNum];
+      qDiv.appendChild(explDiv);
+    }
+  });
+  
+  const pct = Math.round((correct / total) * 100);
+  document.querySelector('.submit-btn').style.display = 'none';
+  document.querySelector('.reset-btn').style.display = 'block';
+  var rw=document.querySelector('.report-wrap');if(rw)rw.style.display='block';
+  var bs=document.createElement('div');bs.className='bottom-score';bs.id='bottom-score';
+  bs.innerHTML='<h2 style="font-size:1.3rem;margin-bottom:6px;color:#1a3a4a">Your Score</h2><div class="pct '+(pct>=80?'good':pct>=60?'ok':'bad')+'">'+pct+'%</div><div class="detail">'+correct+' out of '+total+' correct</div>';
+  document.querySelector('.submit-wrap').after(bs);
+  try{var tn=location.pathname.match(/test(\d+)/);if(tn)localStorage.setItem('actmath_'+tn[1],pct);}catch(e){}
+}
+
+function resetTest() {
+  graded = false;
+  var bsEl=document.getElementById('bottom-score');if(bsEl)bsEl.remove();
+  document.querySelector('.submit-btn').style.display = '';
+  document.querySelector('.reset-btn').style.display = 'none';
+  var rw=document.querySelector('.report-wrap');if(rw)rw.style.display='none';
+  var ni=document.querySelector('.name-input');if(ni)ni.value='';
+  document.querySelectorAll('.choices li').forEach(li => {
+    li.classList.remove('selected','correct','wrong','show-correct');
+    li.style.cursor = 'pointer';
+  });
+  document.querySelectorAll('.result-tag').forEach(t => t.remove());
+  document.querySelectorAll('.explanation').forEach(e => e.remove());
+}
+
+function generateReport(){
+  var nameInput=document.querySelector('.name-input');
+  var name=(nameInput&&nameInput.value.trim())||'Student';
+  var testName=document.querySelector('header h1').textContent;
+  var bs=document.getElementById('bottom-score');
+  var scorePct=bs?bs.querySelector('.pct').textContent:'';
+  var detailTxt=bs?bs.querySelector('.detail').textContent:'';
+  var d=new Date().toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'});
+  var btn=document.querySelector('.report-btn');btn.textContent='Generating...';btn.disabled=true;
+  var s=document.createElement('script');
+  s.src='https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js';
+  s.onerror=function(){btn.textContent='Download Report (PDF)';btn.disabled=false;alert('Could not load PDF library.');};
+  s.onload=function(){
+    var doc=new jspdf.jsPDF('portrait','mm','letter');
+    var pw=215.9,ph=279.4,mx=12,cw=pw-2*mx,y=8;
+    doc.setFillColor(26,58,74);doc.rect(0,0,pw,22,'F');
+    doc.setTextColor(255,255,255);doc.setFontSize(13);doc.setFont('helvetica','bold');
+    doc.text(testName,mx,9);
+    doc.setFontSize(7.5);doc.setFont('helvetica','normal');
+    doc.text(d+'  |  Student: '+name,mx,14.5);
+    doc.setFontSize(18);doc.setFont('helvetica','bold');
+    doc.text(scorePct,pw-mx,11,{align:'right'});
+    doc.setFontSize(7.5);doc.setFont('helvetica','normal');
+    doc.text(detailTxt,pw-mx,16,{align:'right'});
+    y=25;
+    doc.setDrawColor(26,58,74);doc.setLineWidth(0.3);doc.line(mx,y,pw-mx,y);y+=3;
+    document.querySelectorAll('.question').forEach(function(qDiv,idx){
+      var qNum=idx+1;var ca=ANSWERS[qNum];if(!ca)return;
+      var sel=qDiv.querySelector('.choices li.correct,.choices li.wrong');
+      var sa=sel?sel.textContent.trim().charAt(0):'-';
+      var ok=sel&&sel.classList.contains('correct');
+      if(ok){
+        doc.setFillColor(40,167,69);doc.circle(mx+1.2,y-1,1,'F');
+        doc.setTextColor(33,33,33);doc.setFont('helvetica','bold');doc.setFontSize(8);
+        doc.text('Q'+qNum,mx+4,y);
+        doc.setFont('helvetica','normal');doc.setTextColor(40,167,69);
+        doc.text('Correct ('+ca+')',mx+14,y);
+      }else{
+        doc.setFillColor(220,53,69);doc.circle(mx+1.2,y-1,1,'F');
+        doc.setTextColor(33,33,33);doc.setFont('helvetica','bold');doc.setFontSize(8);
+        doc.text('Q'+qNum,mx+4,y);
+        doc.setFont('helvetica','normal');doc.setTextColor(220,53,69);
+        doc.text('Incorrect',mx+14,y);
+        doc.setTextColor(120,120,120);
+        doc.text('(Chose '+sa+', Correct: '+ca+')',mx+32,y);
+      }
+      y+=3.2;
+      var qP=qDiv.querySelector('p');
+      if(qP){
+        var qT=qP.cloneNode(true);
+        var tags=qT.querySelectorAll('.result-tag');tags.forEach(function(t){t.remove();});
+        var qt=qT.textContent.replace(/^\d+\.\s*/,'').trim();
+        if(qt.length>0){
+          doc.setFont('helvetica','normal');doc.setTextColor(60,60,60);doc.setFontSize(6.5);
+          var ql=doc.splitTextToSize(qt,cw-5);
+          ql=ql.slice(0,1);
+          if(doc.splitTextToSize(qt,cw-5).length>1){ql[0]=ql[0].substring(0,ql[0].length-3)+'...';}
+          doc.text(ql,mx+4,y);y+=2.4;
+        }
+      }
+      if(typeof EXPLANATIONS!=='undefined'&&EXPLANATIONS[qNum]){
+        doc.setFont('helvetica','italic');doc.setTextColor(100,100,100);doc.setFontSize(6);
+        var lines=doc.splitTextToSize(EXPLANATIONS[qNum],cw-5);
+        if(lines.length>2){lines=lines.slice(0,2);lines[1]=lines[1].substring(0,Math.max(0,lines[1].length-3))+'...';}
+        doc.text(lines,mx+4,y);y+=lines.length*2.2;
+      }
+      y+=2;
+    });
+    doc.setDrawColor(200,200,200);doc.setLineWidth(0.2);doc.line(mx,ph-10,pw-mx,ph-10);
+    doc.setTextColor(170,170,170);doc.setFontSize(6);doc.setFont('helvetica','normal');
+    doc.text('ACT Math Practice  |  Score Report',pw/2,ph-7,{align:'center'});
+    var tn=location.pathname.match(/test(\d+)/);
+    var testNum=tn?parseInt(tn[1])-100:0;
+    var ds=new Date().toISOString().slice(0,10);
+    doc.save('ACT-Math-Test-'+testNum+'-'+ds+'.pdf');
+    btn.textContent='Download Report (PDF)';btn.disabled=false;
+  };
+  document.head.appendChild(s);
+}
+</script>
+</body></html>

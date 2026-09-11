@@ -1,0 +1,223 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>ACT Math Test 84</title><style>@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:#fff;color:#2d3748;line-height:1.7}
+.container{max-width:800px;margin:0 auto;padding:20px 24px}
+header{background:linear-gradient(135deg,#1a3a4a 0%,#2d6a7a 100%);color:#fff;padding:28px 0;margin-bottom:36px;text-align:center}
+header .container{display:block}
+header h1{font-size:1.6rem;font-weight:700;letter-spacing:-0.3px}
+header a{color:rgba(255,255,255,.7);text-decoration:none;font-size:.9rem;display:inline-block;margin-bottom:6px;transition:color .2s}
+header a:hover{color:#fff}
+.question{background:#fff;border-radius:12px;padding:24px;margin-bottom:20px;border:1px solid #e2e8f0;transition:border-color .2s}
+.question:hover{border-color:#cbd5e0}
+.question p{margin-bottom:14px;font-size:1.05rem}
+img{max-width:100%;height:auto;margin:4px 0;vertical-align:middle}
+.choices{list-style:none}
+.choices li{padding:10px 14px;margin:6px 0;border-radius:8px;cursor:pointer;transition:all .2s;border:2px solid transparent}
+.choices li:hover{background:#f0f7fa}
+.choices li.selected{background:#d1ecf1;border-color:#bee5eb}
+.choices li.correct{background:#d4edda;border-color:#28a745}
+.choices li.wrong{background:#f8d7da;border-color:#dc3545}
+.choices li.show-correct{background:#d4edda;border-color:#28a745}
+.submit-wrap{text-align:center;margin:36px 0}
+.submit-btn{display:inline-block;padding:14px 40px;background:linear-gradient(135deg,#1a3a4a,#2d6a7a);color:#fff;border:none;border-radius:10px;font-size:1.1rem;cursor:pointer;font-weight:600;font-family:inherit;transition:all .25s;letter-spacing:.3px}
+.submit-btn:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(26,58,74,.25)}
+.score-box{background:#fff;border-radius:12px;padding:28px;margin-bottom:28px;text-align:center;border:1px solid #e2e8f0;box-shadow:0 4px 20px rgba(0,0,0,.06);display:none}
+.score-box h2{font-size:1.4rem;margin-bottom:8px;color:#1a3a4a;text-align:center}
+.score-box .pct{font-size:3rem;font-weight:700}
+.score-box .pct.good{color:#28a745}
+.score-box .pct.ok{color:#e6a817}
+.score-box .pct.bad{color:#dc3545}
+.score-box .detail{color:#666;margin-top:4px}
+.result-tag{display:inline-block;padding:2px 10px;border-radius:12px;font-size:.8rem;font-weight:600;margin-left:8px}
+.result-tag.correct{background:#d4edda;color:#155724}
+.result-tag.wrong{background:#f8d7da;color:#721c24}
+.reset-btn{display:none;margin:16px auto;padding:12px 28px;background:#6c757d;color:#fff;border:none;border-radius:10px;font-size:1rem;cursor:pointer;font-family:inherit;transition:all .25s}
+.reset-btn:hover{background:#5a6268;transform:translateY(-1px)}
+.explanation{background:#f0f7ff;border-left:4px solid #1a3a4a;padding:14px 18px;margin-top:14px;border-radius:0 8px 8px 0;font-size:.95rem;color:#444;display:none}
+.explanation.show{display:block}
+.explanation strong{color:#1a3a4a}
+.nav{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin:36px 0}
+.nav a{display:inline-block;padding:10px 24px;background:linear-gradient(135deg,#1a3a4a,#2d6a7a);color:#fff;text-decoration:none;border-radius:10px;font-weight:500;font-size:.95rem;transition:all .25s}
+.nav a:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(26,58,74,.25)}
+footer{text-align:center;padding:36px 24px;color:#8899a4;font-size:.85rem;border-top:1px solid #e2e8f0;margin-top:40px}
+.report-btn{display:inline-block;margin:0;padding:12px 28px;background:linear-gradient(135deg,#1a3a4a,#2d6a7a);color:#fff;border:none;border-radius:10px;font-size:1rem;cursor:pointer;font-family:inherit;transition:all .25s}
+.report-btn:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(26,58,74,.25)}
+.bottom-score{background:#fff;border-radius:12px;padding:20px;margin:20px 0;text-align:center;border:1px solid #e2e8f0;box-shadow:0 4px 20px rgba(0,0,0,.06)}
+.bottom-score .pct{font-size:2.5rem;font-weight:700}
+.bottom-score .pct.good{color:#28a745}
+.bottom-score .pct.ok{color:#e6a817}
+.bottom-score .pct.bad{color:#dc3545}
+.bottom-score .detail{color:#666;margin-top:4px;font-size:.95rem}
+.report-wrap{display:none;text-align:center;margin:16px 0}
+.name-input{padding:10px 14px;border:1px solid #e2e8f0;border-radius:10px;font-size:.95rem;font-family:inherit;width:200px;margin-right:8px;outline:none;transition:border-color .2s}
+.name-input:focus{border-color:#1a3a4a}
+</style></head><body><header><div class="container"><a href="index.html">&larr; All Tests</a><h1>ACT Math Practice Test 84</h1></div></header><div class="container"><div id="score-box" class="score-box"><h2>Your Score</h2><div class="pct">0%</div><div class="detail"></div></div><div class="question"><p><b>1.</b> A car leaves a parking lot and travels directly north for 6 miles. It then turns and travels 8 miles straight east. How many miles is the car from the parking lot?</p><ul class="choices"><li>F. 6</li><li>G. 8</li><li>H. 10</li><li>J. 14</li><li>K. 68</li></ul></div><div class="question"><p><b>2.</b> In the standard (<span class="italic">x</span>, <span class="italic">y</span>) coordinate plane, how many times does the graph of (<span class="italic">x</span> + 1)(<span class="italic">x</span> - 2)(<span class="italic">x</span> + 3)(<span class="italic">x</span> + 4) intersect the <span class="italic">x</span>-axis?</p><ul class="choices"><li>A. 1</li><li>B. 4</li><li>C. 6</li><li>D. 10</li><li>E. 24</li></ul></div><div class="question"><p><b>3.</b> Marcia's rectangular horse corral is 50 feet wide by 125 feet long. Marcia wants to increase the area by 1,850 square feet by increasing the width and length by the same amount. What will be the new dimensions (width by length), in feet?</p><ul class="choices"><li>F. 55 by 130</li><li>G. 60 by 135</li><li>H. 65 by 135</li><li>J. 65 by 140</li><li>K. 70 by 145</li></ul></div><div class="question"><p><b>4.</b> The lengths of the sides of a triangle are 3 consecutive even integers. If the perimeter of the triangle is 48 inches, what is the length, in inches, of the longest side?</p><ul class="choices"><li>A. 12</li><li>B. 14</li><li>C. 16</li><li>D. 18</li><li>E. 24</li></ul></div><div class="question"><p><b>5.</b> In the standard (<span class="italic">x</span>, <span class="italic">y</span>) coordinate plane, what is the slope of the line with equation 4<span class="italic">y</span> - 6<span class="italic">x</span> = 8?</p><ul class="choices"><li>F. <img src="https://www.crackab.com/image/tests/mg10/01009.jpg"></li><li>G. -6</li><li>H. <img src="https://www.crackab.com/image/tests/mg10/01072.jpg"></li><li>J. 3</li><li>K. 6</li></ul></div><div class="question"><p><b>6.</b> In the right triangle shown below, which of the following statements is true about ∠<span class="italic">X</span>?<br><img src="https://www.crackab.com/image/tests/mg10/01330.jpg"><br></p><ul class="choices"><li>A. <img src="https://www.crackab.com/image/tests/mg10/01213.jpg"></li><li>B. <img src="https://www.crackab.com/image/tests/mg10/01335.jpg"></li><li>C. <img src="https://www.crackab.com/image/tests/mg10/02377.jpg"></li><li>D. <img src="https://www.crackab.com/image/tests/mg10/00158.jpg"></li><li>E. <img src="https://www.crackab.com/image/tests/mg10/00096.jpg">Use the following information to answer Questions 22-24.Quadrilateral <span class="italic">QRST</span> is shown below in the standard (<span class="italic">x</span>, <span class="italic">y</span>) coordinate plane. For this quadrilateral, <span class="italic">QT</span> = 5, <img src="https://www.crackab.com/image/tests/mg10/00098.jpg">, <span class="italic">ST</span> = 3, and <span class="italic">RQ</span> = 6, all in coordinate units.<p><img src="ht&lt;/label&gt;&lt;/div&gt;&lt;p&gt;&lt;b&gt;7.&lt;/b&gt; What is the length of &lt;span class=italic&gt;QS&lt;/span&gt; in coordinate units?&lt;/p&gt;
+                            &lt;div class=" radio"=""><label>F. <img src="https://www.crackab.com/image/tests/mg10/01482.jpg"></label></p></li><li>G. <img src="https://www.crackab.com/image/tests/mg10/00105.jpg"></li><li>H. <img src="https://www.crackab.com/image/tests/mg10/00107.jpg"></li><li>J. 8</li><li>K. 4</li></ul></div><div class="question"><p><b>8.</b> Which of the following are the coordinates of the image of <span class="italic">R</span> under a 90° counterclockwise rotation about the origin?</p><ul class="choices"><li>A. (5,-1)</li><li>B. (1,5)</li><li>C. (1,-5)</li><li>D. (-1,-5)</li><li>E. (-5,-1)</li></ul></div><div class="question"><p><b>9.</b> Which of the following is closest to the perimeter of quadrilateral <span class="italic">QRST</span>, in coordinate units?</p><ul class="choices"><li>F. 26.0</li><li>G. 22.5</li><li>H. 19.8</li><li>J. 15.0</li><li>K. 14.0<hr></li></ul></div><div class="question"><p><b>10.</b> If 5 times a number <span class="italic">x</span> is subtracted from 15, the result is negative. Which of the following gives the possible value(s) for <span class="italic">x</span>?</p><ul class="choices"><li>A. All <span class="italic">x</span> &lt; 3</li><li>B. All <span class="italic">x</span> &gt; 3</li><li>C. 10 only</li><li>D. 3 only</li><li>E. 0 only</li></ul></div><div class="question"><p><b>11.</b> The temperature, <span class="italic">t</span>, in degrees Fahrenheit, in a certain city on a certain spring day satisfies the inequality |<span class="italic">t</span> - 34|≤ 40. Which of the following temperatures, in degrees Fahrenheit, is NOT in this range?</p><ul class="choices"><li>F. 74</li><li>G. 16</li><li>H. 0</li><li>J. -6</li><li>K. -8</li></ul></div><div class="question"><p><b>12.</b> What is the slope-intercept form of 10<span class="italic">x</span> - <span class="italic">y</span> - 8 = 0?</p><ul class="choices"><li>A. <span class="italic">y</span> = -2<span class="italic">x</span></li><li>B. <span class="italic">y</span> = -10<span class="italic">x</span> - 8</li><li>C. <span class="italic">y</span> = -10<span class="italic">x</span> + 8</li><li>D. <span class="italic">y</span> = 10<span class="italic">x</span> - 8</li><li>E. <span class="italic">y</span> = 10<span class="italic">x</span> + 8</li></ul></div><div class="question"><p><b>13.</b> A chord 32 centimeters long is 6 centimeters from the center of a circle, as shown below. What is the radius of the circle, to the nearest tenth of a centimeter?<br><img src="https://www.crackab.com/image/tests/mg10/00646.jpg"><br></p><ul class="choices"><li>F. 5.3</li><li>G. 13.9</li><li>H. 17.1</li><li>J. 26.0</li><li>K. 38.0</li></ul></div><div class="question"><p><b>14.</b> What is the least common multiple of 3, 4<span class="italic">a</span>, 5<span class="italic">b</span>, and 6<span class="italic">ab</span>?</p><ul class="choices"><li>A. 15<span class="italic">ab</span></li><li>B. 60<span class="italic">ab</span></li><li>C. 60<span class="italic">a<sup><small>2</small></sup>b</span></li><li>D. 120<span class="italic">ab</span></li><li>E. 120<span class="italic">a<sup><small>2</small></sup>b</span></li></ul></div><div class="question"><p><b>15.</b> What is the <span class="italic">y</span>-coordinate of the point in the standard (<span class="italic">x</span>, <span class="italic">y</span>) coordinate plane at which the 2 lines <span class="italic">y</span> = 3<span class="italic">x</span> + 4 and <span class="italic">y</span> = 2<span class="italic">x</span> + 6 intersect?</p><ul class="choices"><li>F. 1</li><li>G. 2</li><li>H. 4</li><li>J. 6</li><li>K. 10</li></ul></div><div class="submit-wrap"><button class="submit-btn" onclick="gradeTest()">Submit Test</button><button class="reset-btn" onclick="resetTest()">Try Again</button>
+<div class="report-wrap"><input type="text" class="name-input" placeholder="Student name (for report)"><button class="report-btn" onclick="generateReport()">Download Report (PDF)</button></div></div><div class="nav"><a href="test183.html">&larr; Prev</a><a href="index.html">All Tests</a><a href="test185.html">Next &rarr;</a></div></div><footer><div class="container">ACT Math Practice</div></footer>
+<script>
+const ANSWERS = {"1": "H", "2": "B", "3": "G", "4": "D", "5": "H", "6": "B", "7": "F", "8": "E", "9": "H", "10": "B", "11": "K", "12": "D", "13": "H", "14": "B", "15": "K"};
+const EXPLANATIONS = {"1":"The correct answer is H. To solve this problem, it might be helpful to draw a picture like the one shown next: You can see that the route traveled creates a right triangle. Use the Pythagorean Theorem to calculate the distance from the parking lot, as follows:", "2":"The correct answer is B. A line, parabola, and so on will intersect the x-axis when y  =  0. Therefore, you can set each of the elements given in the question to 0 and solve for x, as follows: The graph will cross the x-axis at -1, 2, -3, and -4.", "3":"The correct answer is G. To solve this problem, first calculate the new area of Marcia\'s horse corral: Now, you can try the answer choices to see which combination of width and length fits the parameters given in the question: Answer choice F: While these dimensions indicate an increase of 5 feet for both the width and the length, the area does not equal 8,100 (55 × 130  =  7,150 square feet). Answer choice G: These dimensions reflect an increase of 10 feet for both the width and the length, and the area equals 8,100 (60 × 135  =  8,100 square feet), so this is the correct answer.", "4":"The correct answer is D. To solve this problem, first remember that perimeter is equal to the distance around an object. Therefore, the perimeter of a triangle is simply the sum of the lengths of its sides. You are given that the lengths of the sides of the triangle are 3 consecutive even integers. Set the first length (the shortest side) equal to x, the second length equal to x + 2, and the third length (the longest side) equal to x + 4. Now, create an equation and solve for x, as follows: You now know that the length of the shortest side is 14, so the length of the longest side must be 14 + 4  =  18.", "5":"The correct answer is H. To solve this problem, put the given equation in the standard form, y  =  mx + b, where m is the slope: Therefore, .", "6":"", "7":"The correct answer is F. To solve this problem, draw a line from Q to S on the figure, creating right triangle QST. You are given that the length of QT is 5 and the length of ST is 3. Use the Pythagorean theorem to find the length of QS, the hypotenuse:", "8":"The correct answer is E. To solve this problem, recall that a counterclockwise rotation will move point R to the left about the origin. Therefore, the x-value will be negative, and you can eliminate answer choices A, B, and C. Likewise, a rotation about the origin will move point R from its current location, so the x-value will change, leaving answer choice E as the only option.", "9":"The correct answer is H. Recall that the perimeter is the distance around any object. You are given the side lengths, so start by finding the sum of the given lengths: At this point you can safely eliminate answer choices J and K because they are too small. You are asked for an approximation, so you don\'t actually have to do all the math. The square root of 34 is slightly less than the square root of 36, so the perimeter will be slightly less than 14 + 6  =  20, leaving you with 19.8 as the only viable option.", "10":"The correct answer is B. To solve this problem, first convert the information in the question into its mathematical equivalent, as follows: 5 times a number x  =  5x Subtracting 5x from 15 yields a negative result, so 15 - 5x < 0. Now, solve the inequality for x: Divide both sides by -5 and reverse the inequality to get x > 3.", "11":"The correct answer is K. One way to solve this problem is to substitute each of the answer choices for t in the inequality to determine which one does NOT work: Answer choice F: |74 - 34|  =  |40|  =  40; Answer choice G: |16 - 34|  =  | - 18|  =  18; Answer choice H: |0 - 34|  =  | - 34|  =  34; Answer choice J: |- 6 - 34|  =  | - 40|  =  40; By the process of elimination, answer choice K must be correct: |- 8 - 34|  =  | - 42|  =  42, which is NOT ≤ 40.", "12":"The correct answer is D. The slope-intercept form of the equation for a line is y  =  mx + b; isolate y on the left side of the equation, as follows:", "13":"The correct answer is H. As shown in the figure, the radius, r, is the hypotenuse of a right triangle. One leg of the triangle is 6 and the other is half of 32, or 16. Use the Pythagorean theorem to calculate the length of r, as follows: Rounded to the nearest tenth of a centimeter, r  =  17.1 cm.", "14":"The correct answer is B. Each of the numbers in the values given must divide evenly into the least common multiple. Therefore, you can quickly eliminate answer choice A because 4 does not divide evenly into 15. Next, notice that each of the number values divides evenly into 60, which is less than 120, so eliminate answer choices D and E. Because ab is a smaller multiple than a2b, and ab divides evenly into the product of all of the given values, answer choice B is the least common multiple of the given values.", "15":"The correct answer is K. You are given that the two lines intersect at a certain point, which means that the lines cross at the same point in the (x, y) coordinate plane, so at that point, the equations of those lines is equal. Set up the following equation and solve for x: Now, substitute 2 for x in either equation and find y, as follows:"};
+let graded = false;
+
+document.querySelectorAll('.choices li').forEach(li => {
+  // Remove old onclick
+  li.removeAttribute('onclick');
+  li.addEventListener('click', function() {
+    if (graded) return;
+    const siblings = this.parentElement.querySelectorAll('li');
+    siblings.forEach(s => s.classList.remove('selected'));
+    this.classList.add('selected');
+  });
+});
+
+function gradeTest() {
+  if (graded) return;
+  graded = true;
+  let correct = 0;
+  const total = Object.keys(ANSWERS).length;
+  
+  document.querySelectorAll('.question').forEach((qDiv, idx) => {
+    const qNum = idx + 1;
+    const correctAns = ANSWERS[qNum];
+    if (!correctAns) return;
+    const choices = qDiv.querySelectorAll('.choices li');
+    const selected = qDiv.querySelector('.choices li.selected');
+    const selectedLetter = selected ? selected.textContent.trim().charAt(0) : null;
+    
+    choices.forEach(li => {
+      const letter = li.textContent.trim().charAt(0);
+      if (letter === correctAns) li.classList.add('show-correct');
+      li.style.cursor = 'default';
+    });
+    
+    const tag = document.createElement('span');
+    tag.className = 'result-tag';
+    
+    if (selectedLetter === correctAns) {
+      correct++;
+      tag.className += ' correct';
+      tag.textContent = 'Correct';
+      if (selected) { selected.classList.remove('selected'); selected.classList.add('correct'); }
+    } else {
+      tag.className += ' wrong';
+      tag.textContent = 'Incorrect (Answer: ' + correctAns + ')';
+      if (selected) { selected.classList.remove('selected'); selected.classList.add('wrong'); }
+    }
+    
+    const firstP = qDiv.querySelector('p');
+    if (firstP) firstP.appendChild(tag);
+    
+    if (typeof EXPLANATIONS !== 'undefined' && EXPLANATIONS[qNum]) {
+      const explDiv = document.createElement('div');
+      explDiv.className = 'explanation show';
+      explDiv.innerHTML = '<strong>Explanation:</strong> ' + EXPLANATIONS[qNum];
+      qDiv.appendChild(explDiv);
+    }
+  });
+  
+  const pct = Math.round((correct / total) * 100);
+  document.querySelector('.submit-btn').style.display = 'none';
+  document.querySelector('.reset-btn').style.display = 'block';
+  var rw=document.querySelector('.report-wrap');if(rw)rw.style.display='block';
+  var bs=document.createElement('div');bs.className='bottom-score';bs.id='bottom-score';
+  bs.innerHTML='<h2 style="font-size:1.3rem;margin-bottom:6px;color:#1a3a4a">Your Score</h2><div class="pct '+(pct>=80?'good':pct>=60?'ok':'bad')+'">'+pct+'%</div><div class="detail">'+correct+' out of '+total+' correct</div>';
+  document.querySelector('.submit-wrap').after(bs);
+  try{var tn=location.pathname.match(/test(\d+)/);if(tn)localStorage.setItem('actmath_'+tn[1],pct);}catch(e){}
+}
+
+function resetTest() {
+  graded = false;
+  var bsEl=document.getElementById('bottom-score');if(bsEl)bsEl.remove();
+  document.querySelector('.submit-btn').style.display = '';
+  document.querySelector('.reset-btn').style.display = 'none';
+  var rw=document.querySelector('.report-wrap');if(rw)rw.style.display='none';
+  var ni=document.querySelector('.name-input');if(ni)ni.value='';
+  document.querySelectorAll('.choices li').forEach(li => {
+    li.classList.remove('selected','correct','wrong','show-correct');
+    li.style.cursor = 'pointer';
+  });
+  document.querySelectorAll('.result-tag').forEach(t => t.remove());
+  document.querySelectorAll('.explanation').forEach(e => e.remove());
+}
+
+function generateReport(){
+  var nameInput=document.querySelector('.name-input');
+  var name=(nameInput&&nameInput.value.trim())||'Student';
+  var testName=document.querySelector('header h1').textContent;
+  var bs=document.getElementById('bottom-score');
+  var scorePct=bs?bs.querySelector('.pct').textContent:'';
+  var detailTxt=bs?bs.querySelector('.detail').textContent:'';
+  var d=new Date().toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'});
+  var btn=document.querySelector('.report-btn');btn.textContent='Generating...';btn.disabled=true;
+  var s=document.createElement('script');
+  s.src='https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js';
+  s.onerror=function(){btn.textContent='Download Report (PDF)';btn.disabled=false;alert('Could not load PDF library.');};
+  s.onload=function(){
+    var doc=new jspdf.jsPDF('portrait','mm','letter');
+    var pw=215.9,ph=279.4,mx=12,cw=pw-2*mx,y=8;
+    doc.setFillColor(26,58,74);doc.rect(0,0,pw,22,'F');
+    doc.setTextColor(255,255,255);doc.setFontSize(13);doc.setFont('helvetica','bold');
+    doc.text(testName,mx,9);
+    doc.setFontSize(7.5);doc.setFont('helvetica','normal');
+    doc.text(d+'  |  Student: '+name,mx,14.5);
+    doc.setFontSize(18);doc.setFont('helvetica','bold');
+    doc.text(scorePct,pw-mx,11,{align:'right'});
+    doc.setFontSize(7.5);doc.setFont('helvetica','normal');
+    doc.text(detailTxt,pw-mx,16,{align:'right'});
+    y=25;
+    doc.setDrawColor(26,58,74);doc.setLineWidth(0.3);doc.line(mx,y,pw-mx,y);y+=3;
+    document.querySelectorAll('.question').forEach(function(qDiv,idx){
+      var qNum=idx+1;var ca=ANSWERS[qNum];if(!ca)return;
+      var sel=qDiv.querySelector('.choices li.correct,.choices li.wrong');
+      var sa=sel?sel.textContent.trim().charAt(0):'-';
+      var ok=sel&&sel.classList.contains('correct');
+      if(ok){
+        doc.setFillColor(40,167,69);doc.circle(mx+1.2,y-1,1,'F');
+        doc.setTextColor(33,33,33);doc.setFont('helvetica','bold');doc.setFontSize(8);
+        doc.text('Q'+qNum,mx+4,y);
+        doc.setFont('helvetica','normal');doc.setTextColor(40,167,69);
+        doc.text('Correct ('+ca+')',mx+14,y);
+      }else{
+        doc.setFillColor(220,53,69);doc.circle(mx+1.2,y-1,1,'F');
+        doc.setTextColor(33,33,33);doc.setFont('helvetica','bold');doc.setFontSize(8);
+        doc.text('Q'+qNum,mx+4,y);
+        doc.setFont('helvetica','normal');doc.setTextColor(220,53,69);
+        doc.text('Incorrect',mx+14,y);
+        doc.setTextColor(120,120,120);
+        doc.text('(Chose '+sa+', Correct: '+ca+')',mx+32,y);
+      }
+      y+=3.2;
+      var qP=qDiv.querySelector('p');
+      if(qP){
+        var qT=qP.cloneNode(true);
+        var tags=qT.querySelectorAll('.result-tag');tags.forEach(function(t){t.remove();});
+        var qt=qT.textContent.replace(/^\d+\.\s*/,'').trim();
+        if(qt.length>0){
+          doc.setFont('helvetica','normal');doc.setTextColor(60,60,60);doc.setFontSize(6.5);
+          var ql=doc.splitTextToSize(qt,cw-5);
+          ql=ql.slice(0,1);
+          if(doc.splitTextToSize(qt,cw-5).length>1){ql[0]=ql[0].substring(0,ql[0].length-3)+'...';}
+          doc.text(ql,mx+4,y);y+=2.4;
+        }
+      }
+      if(typeof EXPLANATIONS!=='undefined'&&EXPLANATIONS[qNum]){
+        doc.setFont('helvetica','italic');doc.setTextColor(100,100,100);doc.setFontSize(6);
+        var lines=doc.splitTextToSize(EXPLANATIONS[qNum],cw-5);
+        if(lines.length>2){lines=lines.slice(0,2);lines[1]=lines[1].substring(0,Math.max(0,lines[1].length-3))+'...';}
+        doc.text(lines,mx+4,y);y+=lines.length*2.2;
+      }
+      y+=2;
+    });
+    doc.setDrawColor(200,200,200);doc.setLineWidth(0.2);doc.line(mx,ph-10,pw-mx,ph-10);
+    doc.setTextColor(170,170,170);doc.setFontSize(6);doc.setFont('helvetica','normal');
+    doc.text('ACT Math Practice  |  Score Report',pw/2,ph-7,{align:'center'});
+    var tn=location.pathname.match(/test(\d+)/);
+    var testNum=tn?parseInt(tn[1])-100:0;
+    var ds=new Date().toISOString().slice(0,10);
+    doc.save('ACT-Math-Test-'+testNum+'-'+ds+'.pdf');
+    btn.textContent='Download Report (PDF)';btn.disabled=false;
+  };
+  document.head.appendChild(s);
+}
+</script>
+</body></html>

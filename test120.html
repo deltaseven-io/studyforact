@@ -1,0 +1,222 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>ACT Math Test 20</title><style>@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:#fff;color:#2d3748;line-height:1.7}
+.container{max-width:800px;margin:0 auto;padding:20px 24px}
+header{background:linear-gradient(135deg,#1a3a4a 0%,#2d6a7a 100%);color:#fff;padding:28px 0;margin-bottom:36px;text-align:center}
+header .container{display:block}
+header h1{font-size:1.6rem;font-weight:700;letter-spacing:-0.3px}
+header a{color:rgba(255,255,255,.7);text-decoration:none;font-size:.9rem;display:inline-block;margin-bottom:6px;transition:color .2s}
+header a:hover{color:#fff}
+.question{background:#fff;border-radius:12px;padding:24px;margin-bottom:20px;border:1px solid #e2e8f0;transition:border-color .2s}
+.question:hover{border-color:#cbd5e0}
+.question p{margin-bottom:14px;font-size:1.05rem}
+img{max-width:100%;height:auto;margin:4px 0;vertical-align:middle}
+.choices{list-style:none}
+.choices li{padding:10px 14px;margin:6px 0;border-radius:8px;cursor:pointer;transition:all .2s;border:2px solid transparent}
+.choices li:hover{background:#f0f7fa}
+.choices li.selected{background:#d1ecf1;border-color:#bee5eb}
+.choices li.correct{background:#d4edda;border-color:#28a745}
+.choices li.wrong{background:#f8d7da;border-color:#dc3545}
+.choices li.show-correct{background:#d4edda;border-color:#28a745}
+.submit-wrap{text-align:center;margin:36px 0}
+.submit-btn{display:inline-block;padding:14px 40px;background:linear-gradient(135deg,#1a3a4a,#2d6a7a);color:#fff;border:none;border-radius:10px;font-size:1.1rem;cursor:pointer;font-weight:600;font-family:inherit;transition:all .25s;letter-spacing:.3px}
+.submit-btn:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(26,58,74,.25)}
+.score-box{background:#fff;border-radius:12px;padding:28px;margin-bottom:28px;text-align:center;border:1px solid #e2e8f0;box-shadow:0 4px 20px rgba(0,0,0,.06);display:none}
+.score-box h2{font-size:1.4rem;margin-bottom:8px;color:#1a3a4a;text-align:center}
+.score-box .pct{font-size:3rem;font-weight:700}
+.score-box .pct.good{color:#28a745}
+.score-box .pct.ok{color:#e6a817}
+.score-box .pct.bad{color:#dc3545}
+.score-box .detail{color:#666;margin-top:4px}
+.result-tag{display:inline-block;padding:2px 10px;border-radius:12px;font-size:.8rem;font-weight:600;margin-left:8px}
+.result-tag.correct{background:#d4edda;color:#155724}
+.result-tag.wrong{background:#f8d7da;color:#721c24}
+.reset-btn{display:none;margin:16px auto;padding:12px 28px;background:#6c757d;color:#fff;border:none;border-radius:10px;font-size:1rem;cursor:pointer;font-family:inherit;transition:all .25s}
+.reset-btn:hover{background:#5a6268;transform:translateY(-1px)}
+.explanation{background:#f0f7ff;border-left:4px solid #1a3a4a;padding:14px 18px;margin-top:14px;border-radius:0 8px 8px 0;font-size:.95rem;color:#444;display:none}
+.explanation.show{display:block}
+.explanation strong{color:#1a3a4a}
+.nav{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin:36px 0}
+.nav a{display:inline-block;padding:10px 24px;background:linear-gradient(135deg,#1a3a4a,#2d6a7a);color:#fff;text-decoration:none;border-radius:10px;font-weight:500;font-size:.95rem;transition:all .25s}
+.nav a:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(26,58,74,.25)}
+footer{text-align:center;padding:36px 24px;color:#8899a4;font-size:.85rem;border-top:1px solid #e2e8f0;margin-top:40px}
+.report-btn{display:inline-block;margin:0;padding:12px 28px;background:linear-gradient(135deg,#1a3a4a,#2d6a7a);color:#fff;border:none;border-radius:10px;font-size:1rem;cursor:pointer;font-family:inherit;transition:all .25s}
+.report-btn:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(26,58,74,.25)}
+.bottom-score{background:#fff;border-radius:12px;padding:20px;margin:20px 0;text-align:center;border:1px solid #e2e8f0;box-shadow:0 4px 20px rgba(0,0,0,.06)}
+.bottom-score .pct{font-size:2.5rem;font-weight:700}
+.bottom-score .pct.good{color:#28a745}
+.bottom-score .pct.ok{color:#e6a817}
+.bottom-score .pct.bad{color:#dc3545}
+.bottom-score .detail{color:#666;margin-top:4px;font-size:.95rem}
+.report-wrap{display:none;text-align:center;margin:16px 0}
+.name-input{padding:10px 14px;border:1px solid #e2e8f0;border-radius:10px;font-size:.95rem;font-family:inherit;width:200px;margin-right:8px;outline:none;transition:border-color .2s}
+.name-input:focus{border-color:#1a3a4a}
+</style></head><body><header><div class="container"><a href="index.html">&larr; All Tests</a><h1>ACT Math Practice Test 20</h1></div></header><div class="container"><div id="score-box" class="score-box"><h2>Your Score</h2><div class="pct">0%</div><div class="detail"></div></div><div class="question"><p><b>1.</b> Which trigonometric function (where defined) is equivalent to <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780804124393_epub_562_r1.jpg">?</p><ul class="choices"><li>F. <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780804124393_epub_563_r1.jpg"></li><li>G. <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780804124393_epub_564_r1.jpg"></li><li>H. sin <em>x</em></li><li>J. <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780804124393_epub_565_r1.jpg"></li><li>K. <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780804124393_epub_566_r1.jpg"></li></ul></div><div class="question"><p><b>2.</b> When <em>a</em> ≠ <em>b</em>, the expression <img alt="" src="https://www.crackab.com/images/tests/Prin_9780804124393_epub_567_r1.jpg">. Which of the following describes the complete set of <em>x</em> values that make this inequality true?</p><ul class="choices"><li>A. <em>x</em> = -4 only</li><li>B. <em>x</em> = 4 only</li><li>C. <em>x</em> = -<img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780804124393_epub_1by4_r1.jpg"> only</li><li>D. <em>x</em> &lt; 0</li><li>E. <em>x</em> &gt; 0</li></ul></div><div class="question"><p><b>3.</b> The volume of a cone, which is derived by treating it as a pyramid with infinitely many lateral faces, is given by the formula <em>V</em> = <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780804124393_epub_1by3_r1.jpg"> π<em>r</em><sup class="frac">2</sup><em>h</em>, where <em>r</em> is the radius of the base and <em>h</em> is the height. If the radius is halved and the height is doubled, what will be the ratio of the new volume to the old volume?<br><img alt="" src="https://www.crackab.com/images/tests/Prin_9780804124393_epub_568_r1.jpg"></p><ul class="choices"><li>F. 4:01</li><li>G. 2:01</li><li>H. 1:01</li><li>J. 1:02</li><li>K. 1:04</li></ul></div><div class="question"><p><b>4.</b> Al bikes a trail to the top of a hill and back down. He bikes up the hill in <em>m</em> minutes, then returns twice as quickly downhill on the same trail. What is the total time, in hours, that Al spends biking up the hill and back down?</p><ul class="choices"><li>A. <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780804124393_epub_mby60_r1.jpg"></li><li>B. <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780804124393_epub_mby40_r1.jpg"></li><li>C. <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780804124393_epub_mby30_r1.jpg"></li><li>D. <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780804124393_epub_3mby2_r1.jpg"></li><li>E. 2<em>m</em></li></ul></div><div class="question"><p><b>5.</b> Pippin the guinea pig is running on her wheel when, due to a manufacturing error, the wheel breaks free of its axis. Pippin remains in her wheel, running in a straight line until the wheel has rotated exactly 15 times. If the diameter of the wheel is 10 inches, how many inches has the wheel rolled?</p><ul class="choices"><li>F. 75</li><li>G. 150</li><li>H. 75π</li><li>J. 150π</li><li>K. 1,500π</li></ul></div><div class="question"><p><b>6.</b> A circle is inscribed in a square, as shown below. If <em>x</em> is the distance from the center of the circle to a vertex of the square, then what is the length of the radius of the circle, in terms of <em>x</em>?<br><img alt="" src="https://www.crackab.com/images/tests/Prin_9780804124393_epub_569_r1.jpg"></p><ul class="choices"><li>A. 2<em>x</em></li><li>B. <em>x</em><img alt="" src="https://www.crackab.com/images/tests/Prin_9780804124393_epub_root2_r1.jpg"></li><li>C. <em>x</em></li><li>D. <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780804124393_epub_570_r1.jpg"></li><li>E. Cannot be determined from the information given</li></ul></div><div class="question"><p><b>7.</b> A function is defined for <em>x</em> and <em>y</em> such that <em>f</em><sub class="frac">(x, y)</sub> = -2<em>xy</em> + <em>y</em> + <em>x</em> - 4. So, for <em>x</em> = 2 and <em>y</em> = 3, <em>f</em><sub class="frac">(2, 3)</sub> = -2 × 2 × 3 + 3 + 2 - 4 = -12 + 1 = -11. If <em>x</em> and <em>y</em> are to be chosen such that <em>f</em><sub class="frac">(x,y)</sub> = <em>f</em><sub class="frac">(y,x)</sub>, then which of the following restrictions must be placed on <em>x</em> and <em>y</em>?</p><ul class="choices"><li>F. <em>x</em> &gt; 0 and <em>y</em> &gt; 0</li><li>G. <em>x</em> &lt; 0 and <em>y</em> &lt; 0</li><li>H. <em>x</em> = <em>y</em></li><li>J. <em>xy</em> &lt; 0</li><li>K. No restrictions are needed.</li></ul></div><div class="question"><p><b>8.</b> A pipe of radius 4 feet sends water to two smaller pipes of equal size. If each of the smaller pipes allows exactly half as much water to flow as the larger pipe, what is the radius of one of the smaller pipes?<br><img alt="" src="https://www.crackab.com/images/tests/Prin_9780804124393_epub_571_r1.jpg"></p><ul class="choices"><li>A. 2</li><li>B. 2π</li><li>C. 2<img alt="" src="https://www.crackab.com/images/tests/Prin_9780804124393_epub_root2_r1.jpg"></li><li>D. 4<img alt="" src="https://www.crackab.com/images/tests/Prin_9780804124393_epub_root2_r1.jpg"></li><li>E. 2π<img alt="" src="https://www.crackab.com/images/tests/Prin_9780804124393_epub_root2_r1.jpg"></li></ul></div><div class="question"><p><b>9.</b> The cross-sectional view of a tent is shown below. If the tent is 6 feet wide at its base, then which of the following expressions could be used to calculate the height of the tent, in feet?<br><img alt="" src="https://www.crackab.com/images/tests/Prin_9780804124393_epub_572_r1.jpg"></p><ul class="choices"><li>F. <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780804124393_epub_573_r1.jpg"></li><li>G. 3 tan 40°</li><li>H. <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780804124393_epub_574_r1.jpg"></li><li>J. 6 tan 40°</li><li>K. 3 tan 80°</li></ul></div><div class="question"><p><b>10.</b> Two girls walk home from school. Starting from school, Susan walks north 2 blocks and then west 8 blocks, while Cindy walks east 3 blocks and then south 1 block. Approximately how many blocks apart are the girls' homes?</p><ul class="choices"><li>A. 7.1</li><li>B. 10.4</li><li>C. 11.4</li><li>D. 12.7</li><li>E. 16</li></ul></div><div class="question"><p><b>11.</b> For all integer values of <em>a</em> and <em>b</em> such that <em>a</em> &gt; 0 and <em>b</em>&lt;0, which of the following must also be an integer?</p><ul class="choices"><li>F. 3<em><sup class="frac">a+b</sup></em></li><li>G. 3<em><sup class="frac">a-b</sup></em></li><li>H. 3<em><sup class="frac">ab</sup></em></li><li>J. 3<em><sup class="frac">-a</sup></em></li><li>K. <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780804124393_epub_575_r1.jpg"></li></ul></div><div class="question"><p><b>12.</b> If <em>x</em> and <em>y</em> are real numbers and 0 &lt; <em>x</em> &lt; <em>y</em> &lt; <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780804124393_epub_ybyx_r1.jpg">, which of the following gives the set of all values which <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780804124393_epub_ybyx_r1.jpg"> could have?</p><ul class="choices"><li>A. <img alt="" src="https://www.crackab.com/images/tests/Prin_9780804124393_epub_576_r1.jpg"></li><li>B. <img alt="" src="https://www.crackab.com/images/tests/Prin_9780804124393_epub_577_r1.jpg"></li><li>C. <img alt="" src="https://www.crackab.com/images/tests/Prin_9780804124393_epub_578_r1.jpg"></li><li>D. <img alt="" src="https://www.crackab.com/images/tests/Prin_9780804124393_epub_579_r1.jpg"></li><li>E. <img alt="" src="https://www.crackab.com/images/tests/Prin_9780804124393_epub_580_r1.jpg"></li></ul></div><div class="question"><p><b>13.</b> A circular running track is being built in a fenced-in athletic field 100 feet wide and 150 feet long. If a border of 10 feet is needed between the outside edge of the track and the fence, what is the radius of the largest track that can be built?</p><ul class="choices"><li>F. 40</li><li>G. 45</li><li>H. 65</li><li>J. 90</li><li>K. 110</li></ul></div><div class="question"><p><b>14.</b> If a sphere is cut by two different planes, dividing it into sections, how many sections is it possible to end up with?</p><ul class="choices"><li>A. 2 only</li><li>B. 2 or 4 only</li><li>C. 3 only</li><li>D. 3 or 4 only</li><li>E. 2, 3, or 4 only</li></ul></div><div class="question"><p><b>15.</b> For all real values of <em>a</em> and <em>b</em>, the equation |<em>a - b</em>| = 5 can be interpreted as "the positive difference of <em>a</em> and <em>b</em> is 5." What is the positive difference between the 2 solutions for <em>a</em>?</p><ul class="choices"><li>F. <em>b</em></li><li>G. <em>b</em> + <em>5</em></li><li>H. 2<em>b</em></li><li>J. <img alt="" src="https://www.crackab.com/images/tests/Prin_9780804124393_epub_581_r1.jpg"></li><li>K. 10</li></ul></div><div class="submit-wrap"><button class="submit-btn" onclick="gradeTest()">Submit Test</button><button class="reset-btn" onclick="resetTest()">Try Again</button>
+<div class="report-wrap"><input type="text" class="name-input" placeholder="Student name (for report)"><button class="report-btn" onclick="generateReport()">Download Report (PDF)</button></div></div><div class="nav"><a href="test119.html">&larr; Prev</a><a href="index.html">All Tests</a><a href="test121.html">Next &rarr;</a></div></div><footer><div class="container">ACT Math Practice</div></footer>
+<script>
+const ANSWERS = {"1": "H", "2": "D", "3": "J", "4": "B", "5": "J", "6": "D", "7": "K", "8": "C", "9": "H", "10": "C", "11": "G", "12": "A", "13": "F", "14": "D", "15": "K"};
+const EXPLANATIONS = {"1":"To simplify this expression, recall the identity tan x  =  . Now . Simplify:   =  sin x.", "2":"Try the values of x given in the answer choices in the expression. Try x  =  -4: . Since ,  simplifies to -1. Since -1 < 0, x  =  -4 is valid: eliminate choices (B), (C), and (E). Now try x  =  -: . This is also less than 0, so eliminate choice (A).", "3":"The original volume of the figure is described by the equation V  =  πr2h. The new cylinder has had its radius halved and its height doubled, so the volume of the new cylinder will be . This volume is then one-half of the earlier volume, and the ratio is 1:2. If you selected choice (H), be careful-you may have forgotten to square the new radius value.", "4":"Al\'s biking time going up the hill was m minutes, and because he went down the hill twice as fast, his time going down was m. His total time going up and down the hill was therefore m + m or m. If you pick choice (D), be careful-you\'re not done here! The variable m represents the time in minutes, and the question asks for the time in hours; therefore, you need to divide the total value by 60: .", "5":"Since the wheel\'s diameter is 10, you can find the circumference (C  =  πd) of Pippin\'s wheel: C  =  πd  =  10π. This means Pippin\'s wheel travels 10π inches in one rotation. Since her wheel rotated 15 times, multiply 10π × 15  =  150π.", "6":"Draw a horizontal line, which is also the radius of the circle, from the center of the circle to the right side of the square: this creates a 45°-45°-90° triangle. Recall that the ratio of sides in this type of triangle is s:s:s. To find the length of the sides, and hence the radius, divide the hypotenuse (x) by , giving , which, after multiplying by  to rationalize the denominator, becomes , choice (D). You just found the radius, so choice (E) is wrong.", "7":"No restrictions are needed because f(x,y)  =  f(y,x) in all cases. Follow the same rules as the original function, just switch x and y. Because -2yx  =  -2xy, this is the same result that f(x,y) produced in the question and f(y,x)  =  -2yx + x + y - 4. Therefore, all values of x and y will result in f(x,y)  =  f(y,x), so choice (K) is correct. If you don\'t see this relationship immedi", "8":"Each of the smaller pipes can handle exactly half as much water as the large pipe means that the area of the cross-section of the small pipe is one-half the area of the cross-section of the large pipe. So start by finding the area of the circular cross-section of the large pipe: A  =  πr2, so A  =  πr4  =  16π. Therefore, the area of the cross-section of the smaller pipe is one-half that, or 8π. So for the smaller pipe\'s circular area 8π  =  πr2, 8  =  r2, r  =    =   ×   =  2.", "9":"The height (which we\'ll call h) divides this figure into two right triangles, each with base length of 3 feet. Tangent is the ratio of the opposite side to the adjacent side, so tan 40°  =  . Solve for h by multiplying both sides by h: h(tan 40°)  =  3, so h  =  .", "10":"Sketch the girls\' paths out on the coordinate plane. They start at school (0,0), then Susan walks to (-8,2) and Cindy walks to (3,-1). Use the distance formula  to find how far apart their homes are: d  =  .", "11":"If a is a positive integer and b is a negative integer, the only answer choice that will never yield a negative exponent (and therefore a fraction) is choice (G). If you\'re unsure, try substituting values for a and b. Let\'s say a  =  2 and b  =  -3. Choice (F) becomes 32-3  =  3-1  =  ; that\'s not an integer, so you can eliminate choice (F). Likewise, for choice (H), 32(-3)  =  3-6  =  , choice (J), 3-2  =  , and (K), . Only choice (G) gives you an integer: 32-(-3)  =  32+3  = ", "12":"The question tells you that 0 < , which means  ≠ 0, so eliminate choices (D) and (E). The only way  could be larger than y itself is if x < 1 and y ≥ 1. In other words, y could be 1 in this situation, and since we are told that  > y,  must be greater than 1. This is a tough problem, and if you\'re not sure how to come up with these relationships, try to find numbers that make the initial relationship true and try them out on the number line. If x  =  0.5 and y  =  1, then", "13":"Sketch out the rectangular 100-ft by 150-ft field described in the question. The 10-ft border within the field creates a new, smaller rectangle, 80 feet by 130 feet. The largest circle that can fit in this rectangle has a diameter of 80 feet, and therefore a radius of 40 feet. If you picked choice (G), be careful-you may have forgotten to subtract 10 feet on both sides of the track.", "14":"Imagine cutting an orange: the first slice (one plane) cuts it into two pieces. If you hold those two pieces together and make another slice (the second plane), you cut both of those pieces, thereby creating 4 sections. Eliminate choices (A) and (C). Now, if you repeat this orange-slicing experiment, but your second slice is parallel to the first slice, it cuts a circular slice off only one piece, thereby creating 3 sections, so eliminate choice (B). The only way to keep the orange in two pieces after the first slice is for the second slice to repeat the first exactly. Since the question said the sphere was to be cut by two different planes, this cannot happen; therefore, it\'s impossible to get only 2 pieces, so eliminate choice (E).", "15":""Positive difference" means that when you subtract a - b you can get +5 or -5. (That\'s also what the absolute value indicates.) Solve for a in both cases: a - b  =  5, so a  =  b + 5; and a - b  =  -5, so a  =  b - 5. Now subtract these two values: (b + 5) - (b - 5)  =  b + 5 - b + 5  =  10, choice (K). Alternatively, you could substitute a number for b: let\'s say b  =  2, so |a - 2|  =  5. Then solve: a - 2  =  5, so a  =  7; and a - 2  =  -5, so a  =  -3. The positive difference is 7 -(-3)  =  7 + 3  =  10."};
+let graded = false;
+
+document.querySelectorAll('.choices li').forEach(li => {
+  // Remove old onclick
+  li.removeAttribute('onclick');
+  li.addEventListener('click', function() {
+    if (graded) return;
+    const siblings = this.parentElement.querySelectorAll('li');
+    siblings.forEach(s => s.classList.remove('selected'));
+    this.classList.add('selected');
+  });
+});
+
+function gradeTest() {
+  if (graded) return;
+  graded = true;
+  let correct = 0;
+  const total = Object.keys(ANSWERS).length;
+  
+  document.querySelectorAll('.question').forEach((qDiv, idx) => {
+    const qNum = idx + 1;
+    const correctAns = ANSWERS[qNum];
+    if (!correctAns) return;
+    const choices = qDiv.querySelectorAll('.choices li');
+    const selected = qDiv.querySelector('.choices li.selected');
+    const selectedLetter = selected ? selected.textContent.trim().charAt(0) : null;
+    
+    choices.forEach(li => {
+      const letter = li.textContent.trim().charAt(0);
+      if (letter === correctAns) li.classList.add('show-correct');
+      li.style.cursor = 'default';
+    });
+    
+    const tag = document.createElement('span');
+    tag.className = 'result-tag';
+    
+    if (selectedLetter === correctAns) {
+      correct++;
+      tag.className += ' correct';
+      tag.textContent = 'Correct';
+      if (selected) { selected.classList.remove('selected'); selected.classList.add('correct'); }
+    } else {
+      tag.className += ' wrong';
+      tag.textContent = 'Incorrect (Answer: ' + correctAns + ')';
+      if (selected) { selected.classList.remove('selected'); selected.classList.add('wrong'); }
+    }
+    
+    const firstP = qDiv.querySelector('p');
+    if (firstP) firstP.appendChild(tag);
+    
+    if (typeof EXPLANATIONS !== 'undefined' && EXPLANATIONS[qNum]) {
+      const explDiv = document.createElement('div');
+      explDiv.className = 'explanation show';
+      explDiv.innerHTML = '<strong>Explanation:</strong> ' + EXPLANATIONS[qNum];
+      qDiv.appendChild(explDiv);
+    }
+  });
+  
+  const pct = Math.round((correct / total) * 100);
+  document.querySelector('.submit-btn').style.display = 'none';
+  document.querySelector('.reset-btn').style.display = 'block';
+  var rw=document.querySelector('.report-wrap');if(rw)rw.style.display='block';
+  var bs=document.createElement('div');bs.className='bottom-score';bs.id='bottom-score';
+  bs.innerHTML='<h2 style="font-size:1.3rem;margin-bottom:6px;color:#1a3a4a">Your Score</h2><div class="pct '+(pct>=80?'good':pct>=60?'ok':'bad')+'">'+pct+'%</div><div class="detail">'+correct+' out of '+total+' correct</div>';
+  document.querySelector('.submit-wrap').after(bs);
+  try{var tn=location.pathname.match(/test(\d+)/);if(tn)localStorage.setItem('actmath_'+tn[1],pct);}catch(e){}
+}
+
+function resetTest() {
+  graded = false;
+  var bsEl=document.getElementById('bottom-score');if(bsEl)bsEl.remove();
+  document.querySelector('.submit-btn').style.display = '';
+  document.querySelector('.reset-btn').style.display = 'none';
+  var rw=document.querySelector('.report-wrap');if(rw)rw.style.display='none';
+  var ni=document.querySelector('.name-input');if(ni)ni.value='';
+  document.querySelectorAll('.choices li').forEach(li => {
+    li.classList.remove('selected','correct','wrong','show-correct');
+    li.style.cursor = 'pointer';
+  });
+  document.querySelectorAll('.result-tag').forEach(t => t.remove());
+  document.querySelectorAll('.explanation').forEach(e => e.remove());
+}
+
+function generateReport(){
+  var nameInput=document.querySelector('.name-input');
+  var name=(nameInput&&nameInput.value.trim())||'Student';
+  var testName=document.querySelector('header h1').textContent;
+  var bs=document.getElementById('bottom-score');
+  var scorePct=bs?bs.querySelector('.pct').textContent:'';
+  var detailTxt=bs?bs.querySelector('.detail').textContent:'';
+  var d=new Date().toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'});
+  var btn=document.querySelector('.report-btn');btn.textContent='Generating...';btn.disabled=true;
+  var s=document.createElement('script');
+  s.src='https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js';
+  s.onerror=function(){btn.textContent='Download Report (PDF)';btn.disabled=false;alert('Could not load PDF library.');};
+  s.onload=function(){
+    var doc=new jspdf.jsPDF('portrait','mm','letter');
+    var pw=215.9,ph=279.4,mx=12,cw=pw-2*mx,y=8;
+    doc.setFillColor(26,58,74);doc.rect(0,0,pw,22,'F');
+    doc.setTextColor(255,255,255);doc.setFontSize(13);doc.setFont('helvetica','bold');
+    doc.text(testName,mx,9);
+    doc.setFontSize(7.5);doc.setFont('helvetica','normal');
+    doc.text(d+'  |  Student: '+name,mx,14.5);
+    doc.setFontSize(18);doc.setFont('helvetica','bold');
+    doc.text(scorePct,pw-mx,11,{align:'right'});
+    doc.setFontSize(7.5);doc.setFont('helvetica','normal');
+    doc.text(detailTxt,pw-mx,16,{align:'right'});
+    y=25;
+    doc.setDrawColor(26,58,74);doc.setLineWidth(0.3);doc.line(mx,y,pw-mx,y);y+=3;
+    document.querySelectorAll('.question').forEach(function(qDiv,idx){
+      var qNum=idx+1;var ca=ANSWERS[qNum];if(!ca)return;
+      var sel=qDiv.querySelector('.choices li.correct,.choices li.wrong');
+      var sa=sel?sel.textContent.trim().charAt(0):'-';
+      var ok=sel&&sel.classList.contains('correct');
+      if(ok){
+        doc.setFillColor(40,167,69);doc.circle(mx+1.2,y-1,1,'F');
+        doc.setTextColor(33,33,33);doc.setFont('helvetica','bold');doc.setFontSize(8);
+        doc.text('Q'+qNum,mx+4,y);
+        doc.setFont('helvetica','normal');doc.setTextColor(40,167,69);
+        doc.text('Correct ('+ca+')',mx+14,y);
+      }else{
+        doc.setFillColor(220,53,69);doc.circle(mx+1.2,y-1,1,'F');
+        doc.setTextColor(33,33,33);doc.setFont('helvetica','bold');doc.setFontSize(8);
+        doc.text('Q'+qNum,mx+4,y);
+        doc.setFont('helvetica','normal');doc.setTextColor(220,53,69);
+        doc.text('Incorrect',mx+14,y);
+        doc.setTextColor(120,120,120);
+        doc.text('(Chose '+sa+', Correct: '+ca+')',mx+32,y);
+      }
+      y+=3.2;
+      var qP=qDiv.querySelector('p');
+      if(qP){
+        var qT=qP.cloneNode(true);
+        var tags=qT.querySelectorAll('.result-tag');tags.forEach(function(t){t.remove();});
+        var qt=qT.textContent.replace(/^\d+\.\s*/,'').trim();
+        if(qt.length>0){
+          doc.setFont('helvetica','normal');doc.setTextColor(60,60,60);doc.setFontSize(6.5);
+          var ql=doc.splitTextToSize(qt,cw-5);
+          ql=ql.slice(0,1);
+          if(doc.splitTextToSize(qt,cw-5).length>1){ql[0]=ql[0].substring(0,ql[0].length-3)+'...';}
+          doc.text(ql,mx+4,y);y+=2.4;
+        }
+      }
+      if(typeof EXPLANATIONS!=='undefined'&&EXPLANATIONS[qNum]){
+        doc.setFont('helvetica','italic');doc.setTextColor(100,100,100);doc.setFontSize(6);
+        var lines=doc.splitTextToSize(EXPLANATIONS[qNum],cw-5);
+        if(lines.length>2){lines=lines.slice(0,2);lines[1]=lines[1].substring(0,Math.max(0,lines[1].length-3))+'...';}
+        doc.text(lines,mx+4,y);y+=lines.length*2.2;
+      }
+      y+=2;
+    });
+    doc.setDrawColor(200,200,200);doc.setLineWidth(0.2);doc.line(mx,ph-10,pw-mx,ph-10);
+    doc.setTextColor(170,170,170);doc.setFontSize(6);doc.setFont('helvetica','normal');
+    doc.text('ACT Math Practice  |  Score Report',pw/2,ph-7,{align:'center'});
+    var tn=location.pathname.match(/test(\d+)/);
+    var testNum=tn?parseInt(tn[1])-100:0;
+    var ds=new Date().toISOString().slice(0,10);
+    doc.save('ACT-Math-Test-'+testNum+'-'+ds+'.pdf');
+    btn.textContent='Download Report (PDF)';btn.disabled=false;
+  };
+  document.head.appendChild(s);
+}
+</script>
+</body></html>

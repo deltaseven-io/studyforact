@@ -1,0 +1,222 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>ACT Math Test 94</title><style>@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:#fff;color:#2d3748;line-height:1.7}
+.container{max-width:800px;margin:0 auto;padding:20px 24px}
+header{background:linear-gradient(135deg,#1a3a4a 0%,#2d6a7a 100%);color:#fff;padding:28px 0;margin-bottom:36px;text-align:center}
+header .container{display:block}
+header h1{font-size:1.6rem;font-weight:700;letter-spacing:-0.3px}
+header a{color:rgba(255,255,255,.7);text-decoration:none;font-size:.9rem;display:inline-block;margin-bottom:6px;transition:color .2s}
+header a:hover{color:#fff}
+.question{background:#fff;border-radius:12px;padding:24px;margin-bottom:20px;border:1px solid #e2e8f0;transition:border-color .2s}
+.question:hover{border-color:#cbd5e0}
+.question p{margin-bottom:14px;font-size:1.05rem}
+img{max-width:100%;height:auto;margin:4px 0;vertical-align:middle}
+.choices{list-style:none}
+.choices li{padding:10px 14px;margin:6px 0;border-radius:8px;cursor:pointer;transition:all .2s;border:2px solid transparent}
+.choices li:hover{background:#f0f7fa}
+.choices li.selected{background:#d1ecf1;border-color:#bee5eb}
+.choices li.correct{background:#d4edda;border-color:#28a745}
+.choices li.wrong{background:#f8d7da;border-color:#dc3545}
+.choices li.show-correct{background:#d4edda;border-color:#28a745}
+.submit-wrap{text-align:center;margin:36px 0}
+.submit-btn{display:inline-block;padding:14px 40px;background:linear-gradient(135deg,#1a3a4a,#2d6a7a);color:#fff;border:none;border-radius:10px;font-size:1.1rem;cursor:pointer;font-weight:600;font-family:inherit;transition:all .25s;letter-spacing:.3px}
+.submit-btn:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(26,58,74,.25)}
+.score-box{background:#fff;border-radius:12px;padding:28px;margin-bottom:28px;text-align:center;border:1px solid #e2e8f0;box-shadow:0 4px 20px rgba(0,0,0,.06);display:none}
+.score-box h2{font-size:1.4rem;margin-bottom:8px;color:#1a3a4a;text-align:center}
+.score-box .pct{font-size:3rem;font-weight:700}
+.score-box .pct.good{color:#28a745}
+.score-box .pct.ok{color:#e6a817}
+.score-box .pct.bad{color:#dc3545}
+.score-box .detail{color:#666;margin-top:4px}
+.result-tag{display:inline-block;padding:2px 10px;border-radius:12px;font-size:.8rem;font-weight:600;margin-left:8px}
+.result-tag.correct{background:#d4edda;color:#155724}
+.result-tag.wrong{background:#f8d7da;color:#721c24}
+.reset-btn{display:none;margin:16px auto;padding:12px 28px;background:#6c757d;color:#fff;border:none;border-radius:10px;font-size:1rem;cursor:pointer;font-family:inherit;transition:all .25s}
+.reset-btn:hover{background:#5a6268;transform:translateY(-1px)}
+.explanation{background:#f0f7ff;border-left:4px solid #1a3a4a;padding:14px 18px;margin-top:14px;border-radius:0 8px 8px 0;font-size:.95rem;color:#444;display:none}
+.explanation.show{display:block}
+.explanation strong{color:#1a3a4a}
+.nav{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin:36px 0}
+.nav a{display:inline-block;padding:10px 24px;background:linear-gradient(135deg,#1a3a4a,#2d6a7a);color:#fff;text-decoration:none;border-radius:10px;font-weight:500;font-size:.95rem;transition:all .25s}
+.nav a:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(26,58,74,.25)}
+footer{text-align:center;padding:36px 24px;color:#8899a4;font-size:.85rem;border-top:1px solid #e2e8f0;margin-top:40px}
+.report-btn{display:inline-block;margin:0;padding:12px 28px;background:linear-gradient(135deg,#1a3a4a,#2d6a7a);color:#fff;border:none;border-radius:10px;font-size:1rem;cursor:pointer;font-family:inherit;transition:all .25s}
+.report-btn:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(26,58,74,.25)}
+.bottom-score{background:#fff;border-radius:12px;padding:20px;margin:20px 0;text-align:center;border:1px solid #e2e8f0;box-shadow:0 4px 20px rgba(0,0,0,.06)}
+.bottom-score .pct{font-size:2.5rem;font-weight:700}
+.bottom-score .pct.good{color:#28a745}
+.bottom-score .pct.ok{color:#e6a817}
+.bottom-score .pct.bad{color:#dc3545}
+.bottom-score .detail{color:#666;margin-top:4px;font-size:.95rem}
+.report-wrap{display:none;text-align:center;margin:16px 0}
+.name-input{padding:10px 14px;border:1px solid #e2e8f0;border-radius:10px;font-size:.95rem;font-family:inherit;width:200px;margin-right:8px;outline:none;transition:border-color .2s}
+.name-input:focus{border-color:#1a3a4a}
+</style></head><body><header><div class="container"><a href="index.html">&larr; All Tests</a><h1>ACT Math Practice Test 94</h1></div></header><div class="container"><div id="score-box" class="score-box"><h2>Your Score</h2><div class="pct">0%</div><div class="detail"></div></div><div class="question"><p><b>1.</b> What is the <em>x</em>-coordinate of the point in the standard (<em>x, y</em>) coordinate plane at which the two lines <em>y</em> = -2<em>x</em> + 7 and <em>y</em> = 3<em>x</em> - 3 intersect?</p><ul class="choices"><li>A. 10</li><li>B. 5</li><li>C. 3</li><li>D. 2</li><li>E. 1</li></ul></div><div class="question"><p><b>2.</b> Which of the following data sets has the smallest standard deviation?</p><ul class="choices"><li>F. 1, 17</li><li>G. 1, 2, 3, 4</li><li>H. 2, 2, 3, 6, 6, 8</li><li>J. 15, 30, 40</li><li>K. 90, 90, 90, 90, 90</li></ul></div><div class="question"><p><b>3.</b> Parallelogram <em>ABCD</em>, with dimensions in inches, is shown in the diagram below. What is the area of the parallelogram, in square inches?<br><img src="https://img.crackab.com/act/nmg10/f0032-01.jpg"></p><ul class="choices"><li>A. 60</li><li>B. 72</li><li>C. 180</li><li>D. 240</li><li>E. 260</li></ul></div><div class="question"><p><b>4.</b> If <em>b</em> = <em>a</em> + 3, then (<em>a</em> - <em>b</em>)<sup>4</sup> = ?</p><ul class="choices"><li>F. 81</li><li>G. 27</li><li>H. -3</li><li>J. -27</li><li>K. -81</li></ul></div><div class="question"><p><b>5.</b> A park has the shape and dimensions, in miles, given below. The park office is located halfway between point <em>A</em> and point <em>D</em>. Which of the following is the location of the park office from point <em>A</em>? (Note: The park's borders run east-west or north-south.)<br><img src="https://img.crackab.com/act/nmg10/f0033-01.jpg"></p><ul class="choices"><li>A. 3 miles east and <img src="https://img.crackab.com/act/nmg10/e0033-01.jpg"> miles north</li><li>B. <img src="https://img.crackab.com/act/nmg10/e0033-02.jpg"> miles east and 4 miles south</li><li>C. 4 miles east and <img src="https://img.crackab.com/act/nmg10/e0033-03.jpg"> miles south</li><li>D. 6 miles east and 4 miles south</li><li>E. 6 miles east and <img src="https://img.crackab.com/act/nmg10/e0033-04.jpg"> miles south</li></ul></div><div class="question"><p><b>6.</b> The larger of two numbers exceeds three times the smaller number by 4. The sum of twice the larger number and 4 times the smaller number is 58. If <em>x</em> is the smaller number, which equation below determines the correct value of <em>x</em>?</p><ul class="choices"><li>F. 3(2<em>x</em> + 4) + 4<em>x</em> = 58</li><li>G. 3(2<em>x</em> - 4) + 3<em>x</em> = 58</li><li>H. 2(3<em>x</em> + 4) + 2<em>x</em> = 58</li><li>J. 2(3<em>x</em> + 4) + 4<em>x</em> = 58</li><li>K. 2(2<em>x</em> - 4) + 4<em>x</em> = 58</li></ul></div><div class="question"><p><b>7.</b> What is the amplitude of the function <img src="https://img.crackab.com/act/nmg10/e0033a-01.jpg">?</p><ul class="choices"><li>A. 4</li><li>B. 2</li><li>C. <img src="https://img.crackab.com/act/nmg10/e0033b-01.jpg"></li><li>D. <img src="https://img.crackab.com/act/nmg10/e0033c-01.jpg"></li><li>E. 0</li></ul></div><div class="question"><p><b>8.</b> What is the amplitude of the function <img src="https://img.crackab.com/act/nmg10/e0034a-01.jpg"></p><ul class="choices"><li>F. <img src="https://img.crackab.com/act/nmg10/e0034b-01.jpg"></li><li>G. <img src="https://img.crackab.com/act/nmg10/e0034c-01.jpg"></li><li>H. <img src="https://img.crackab.com/act/nmg10/e0034d-01.jpg"></li><li>J. 2</li><li>K. -3</li></ul></div><div class="question"><p><b>9.</b> The ratio of the side lengths for a triangle is exactly 7:11:13. In a second triangle similar to the first, the shortest side is 9 inches long. To the nearest tenth of an inch, what is the length of the longest side of the second triangle?</p><ul class="choices"><li>A. 14.1</li><li>B. 15</li><li>C. 16.7</li><li>D. 17.3</li><li>E. Cannot be determined from the given information.</li></ul></div><div class="question"><p><b>10.</b> In the figure below, <em>ABCD</em> is a trapezoid. <em>E</em> lies on line <em>AD</em>, and angle measures are as marked. What is the measure of angle <em>CDB</em>?<br><img src="https://img.crackab.com/act/nmg10/f0034-02.jpg"></p><ul class="choices"><li>F. 25°</li><li>G. 30°</li><li>H. 55°</li><li>J. 80°</li><li>K. 100°</li></ul></div><div class="submit-wrap"><button class="submit-btn" onclick="gradeTest()">Submit Test</button><button class="reset-btn" onclick="resetTest()">Try Again</button>
+<div class="report-wrap"><input type="text" class="name-input" placeholder="Student name (for report)"><button class="report-btn" onclick="generateReport()">Download Report (PDF)</button></div></div><div class="nav"><a href="test193.html">&larr; Prev</a><a href="index.html">All Tests</a><a href="test195.html">Next &rarr;</a></div></div><footer><div class="container">ACT Math Practice</div></footer>
+<script>
+const ANSWERS = {"1": "D", "2": "K", "3": "D", "4": "F", "5": "B", "6": "J", "7": "C", "8": "F", "9": "C", "10": "H"};
+const EXPLANATIONS = {"1":"The correct answer is D. To find the x-coordinate where the lines with equations y  =  -2x + 7 and y  =  3x - 3 intersect, set -2x + 7 equal to 3x - 3 and solve for x:", "2":"The correct answer is K. Standard deviation is a measure of how spread out numbers are in a given data set, or how much the numbers in the data set deviate from the mean. Because the numbers in answer choice K are all the same number, the data set has the smallest standard deviation.", "3":"The correct answer is D. The area for a parallelogram with base b and corresponding height h is (b)(h). For parallelogram ABCD, segment AD is the base, with length 5 + 15, or 20 inches, and the corresponding height is 12 inches. Therefore, the area is (20)(12), or 240 square inches. The most common incorrect answer is E, which is the result of multiplying the two side lengths: (5 + 15)(13)  =  20(13), or 260.", "4":"The correct answer is F. To find (a - b)4 given b  =  a + 3, substitute a + 3 for b, as follows: If you get stuck on this one, you can try choosing a specific value for a, such as 2. Then b  =  5 and (a - b)4  =  (2 - 5)4  =  81. If you selected answer choice K, you might have gotten -3 for (a - b), but solved -(34) instead of (- 3)4, thus arriving at an answer of -81. Remember that when you have an even numbered exponent, you can eliminate negative answer choices.", "5":"The correct answer is B. To find the location of the park office located halfway between points A and D, it makes sense to give coordinates to the points in relation to an origin (see diagram below). In this case it makes sense to choose point F as the origin because it is in the bottom left of the figure. The first coordinate is the number of miles east of the origin, and the second coordinate is the number of miles north of the origin. The park office is at the midpoint of the segment AD, and so the midpoint formula applies. For points with coordinates (x1, y1) and (x2, y2), the midpoint has coordinates . For A (0,12) and D (9,4), the midpoint is , or . However, the problem asks you to relate the location of the office to its distance and direction from point A. To do so, subtract the coordinates of point A from the coordinates of the midpoint: , or . Thus, the location of the office relative to point A is  miles east and 4 miles south.", "6":"The correct answer is J. A simple way to solve this problem is to let the larger number be y. Therefore, you know that y  =  3x + 4, and that 2y + 4x  =  58. Substitute 3x + 4 for y in the last equation to arrive at 2(3x + 4) + 4x  =  58. This equation allows you to solve for x.", "7":"The correct answer is C. Remember that the amplitude of a function in the form of g(x)  =  A cos (Bx+C) is equal to |A|. Therefore, the amplitude of the given function is .", "8":"The correct answer is F. To solve this problem, remember that the amplitude of a function in the form g(x)  =  A cos(Bx + C) is |A|.", "9":"The correct answer is C. To find the length of the longest side of the second triangle, use ratios of corresponding sides of each triangle. For example, , where x is the longest side of the second triangle. Cross-multiply to arrive at 117  =  7x. Divide by 7 to get x  =  about 16.7. If you selected answer choice B, the most common incorrect answer, you might have noticed that the difference in lengths of the smallest sides was 2 and then simply added 2 to the longest side of the first triangle to get 15 for the longest side of the second triangle.", "10":"The correct answer is H. To find the measure of angle CDB in the figure, it is helpful to recognize that the sides BC and AD are parallel (definition of trapezoid) and are connected by the transversal BD. Angles CBD and ADB are alternate interior angles, and thus are equal and both measure 25°. Because A, D, and E all lie along the same line, angle ADE  =  180°. Because angle ADE is made up of angles ADB, CDB, and CDE, the measures of these three angles add up to 180° : 25° + CDB + 100°  =  180°, thus the measure of angle CDB is 55°."};
+let graded = false;
+
+document.querySelectorAll('.choices li').forEach(li => {
+  // Remove old onclick
+  li.removeAttribute('onclick');
+  li.addEventListener('click', function() {
+    if (graded) return;
+    const siblings = this.parentElement.querySelectorAll('li');
+    siblings.forEach(s => s.classList.remove('selected'));
+    this.classList.add('selected');
+  });
+});
+
+function gradeTest() {
+  if (graded) return;
+  graded = true;
+  let correct = 0;
+  const total = Object.keys(ANSWERS).length;
+  
+  document.querySelectorAll('.question').forEach((qDiv, idx) => {
+    const qNum = idx + 1;
+    const correctAns = ANSWERS[qNum];
+    if (!correctAns) return;
+    const choices = qDiv.querySelectorAll('.choices li');
+    const selected = qDiv.querySelector('.choices li.selected');
+    const selectedLetter = selected ? selected.textContent.trim().charAt(0) : null;
+    
+    choices.forEach(li => {
+      const letter = li.textContent.trim().charAt(0);
+      if (letter === correctAns) li.classList.add('show-correct');
+      li.style.cursor = 'default';
+    });
+    
+    const tag = document.createElement('span');
+    tag.className = 'result-tag';
+    
+    if (selectedLetter === correctAns) {
+      correct++;
+      tag.className += ' correct';
+      tag.textContent = 'Correct';
+      if (selected) { selected.classList.remove('selected'); selected.classList.add('correct'); }
+    } else {
+      tag.className += ' wrong';
+      tag.textContent = 'Incorrect (Answer: ' + correctAns + ')';
+      if (selected) { selected.classList.remove('selected'); selected.classList.add('wrong'); }
+    }
+    
+    const firstP = qDiv.querySelector('p');
+    if (firstP) firstP.appendChild(tag);
+    
+    if (typeof EXPLANATIONS !== 'undefined' && EXPLANATIONS[qNum]) {
+      const explDiv = document.createElement('div');
+      explDiv.className = 'explanation show';
+      explDiv.innerHTML = '<strong>Explanation:</strong> ' + EXPLANATIONS[qNum];
+      qDiv.appendChild(explDiv);
+    }
+  });
+  
+  const pct = Math.round((correct / total) * 100);
+  document.querySelector('.submit-btn').style.display = 'none';
+  document.querySelector('.reset-btn').style.display = 'block';
+  var rw=document.querySelector('.report-wrap');if(rw)rw.style.display='block';
+  var bs=document.createElement('div');bs.className='bottom-score';bs.id='bottom-score';
+  bs.innerHTML='<h2 style="font-size:1.3rem;margin-bottom:6px;color:#1a3a4a">Your Score</h2><div class="pct '+(pct>=80?'good':pct>=60?'ok':'bad')+'">'+pct+'%</div><div class="detail">'+correct+' out of '+total+' correct</div>';
+  document.querySelector('.submit-wrap').after(bs);
+  try{var tn=location.pathname.match(/test(\d+)/);if(tn)localStorage.setItem('actmath_'+tn[1],pct);}catch(e){}
+}
+
+function resetTest() {
+  graded = false;
+  var bsEl=document.getElementById('bottom-score');if(bsEl)bsEl.remove();
+  document.querySelector('.submit-btn').style.display = '';
+  document.querySelector('.reset-btn').style.display = 'none';
+  var rw=document.querySelector('.report-wrap');if(rw)rw.style.display='none';
+  var ni=document.querySelector('.name-input');if(ni)ni.value='';
+  document.querySelectorAll('.choices li').forEach(li => {
+    li.classList.remove('selected','correct','wrong','show-correct');
+    li.style.cursor = 'pointer';
+  });
+  document.querySelectorAll('.result-tag').forEach(t => t.remove());
+  document.querySelectorAll('.explanation').forEach(e => e.remove());
+}
+
+function generateReport(){
+  var nameInput=document.querySelector('.name-input');
+  var name=(nameInput&&nameInput.value.trim())||'Student';
+  var testName=document.querySelector('header h1').textContent;
+  var bs=document.getElementById('bottom-score');
+  var scorePct=bs?bs.querySelector('.pct').textContent:'';
+  var detailTxt=bs?bs.querySelector('.detail').textContent:'';
+  var d=new Date().toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'});
+  var btn=document.querySelector('.report-btn');btn.textContent='Generating...';btn.disabled=true;
+  var s=document.createElement('script');
+  s.src='https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js';
+  s.onerror=function(){btn.textContent='Download Report (PDF)';btn.disabled=false;alert('Could not load PDF library.');};
+  s.onload=function(){
+    var doc=new jspdf.jsPDF('portrait','mm','letter');
+    var pw=215.9,ph=279.4,mx=12,cw=pw-2*mx,y=8;
+    doc.setFillColor(26,58,74);doc.rect(0,0,pw,22,'F');
+    doc.setTextColor(255,255,255);doc.setFontSize(13);doc.setFont('helvetica','bold');
+    doc.text(testName,mx,9);
+    doc.setFontSize(7.5);doc.setFont('helvetica','normal');
+    doc.text(d+'  |  Student: '+name,mx,14.5);
+    doc.setFontSize(18);doc.setFont('helvetica','bold');
+    doc.text(scorePct,pw-mx,11,{align:'right'});
+    doc.setFontSize(7.5);doc.setFont('helvetica','normal');
+    doc.text(detailTxt,pw-mx,16,{align:'right'});
+    y=25;
+    doc.setDrawColor(26,58,74);doc.setLineWidth(0.3);doc.line(mx,y,pw-mx,y);y+=3;
+    document.querySelectorAll('.question').forEach(function(qDiv,idx){
+      var qNum=idx+1;var ca=ANSWERS[qNum];if(!ca)return;
+      var sel=qDiv.querySelector('.choices li.correct,.choices li.wrong');
+      var sa=sel?sel.textContent.trim().charAt(0):'-';
+      var ok=sel&&sel.classList.contains('correct');
+      if(ok){
+        doc.setFillColor(40,167,69);doc.circle(mx+1.2,y-1,1,'F');
+        doc.setTextColor(33,33,33);doc.setFont('helvetica','bold');doc.setFontSize(8);
+        doc.text('Q'+qNum,mx+4,y);
+        doc.setFont('helvetica','normal');doc.setTextColor(40,167,69);
+        doc.text('Correct ('+ca+')',mx+14,y);
+      }else{
+        doc.setFillColor(220,53,69);doc.circle(mx+1.2,y-1,1,'F');
+        doc.setTextColor(33,33,33);doc.setFont('helvetica','bold');doc.setFontSize(8);
+        doc.text('Q'+qNum,mx+4,y);
+        doc.setFont('helvetica','normal');doc.setTextColor(220,53,69);
+        doc.text('Incorrect',mx+14,y);
+        doc.setTextColor(120,120,120);
+        doc.text('(Chose '+sa+', Correct: '+ca+')',mx+32,y);
+      }
+      y+=3.2;
+      var qP=qDiv.querySelector('p');
+      if(qP){
+        var qT=qP.cloneNode(true);
+        var tags=qT.querySelectorAll('.result-tag');tags.forEach(function(t){t.remove();});
+        var qt=qT.textContent.replace(/^\d+\.\s*/,'').trim();
+        if(qt.length>0){
+          doc.setFont('helvetica','normal');doc.setTextColor(60,60,60);doc.setFontSize(6.5);
+          var ql=doc.splitTextToSize(qt,cw-5);
+          ql=ql.slice(0,1);
+          if(doc.splitTextToSize(qt,cw-5).length>1){ql[0]=ql[0].substring(0,ql[0].length-3)+'...';}
+          doc.text(ql,mx+4,y);y+=2.4;
+        }
+      }
+      if(typeof EXPLANATIONS!=='undefined'&&EXPLANATIONS[qNum]){
+        doc.setFont('helvetica','italic');doc.setTextColor(100,100,100);doc.setFontSize(6);
+        var lines=doc.splitTextToSize(EXPLANATIONS[qNum],cw-5);
+        if(lines.length>2){lines=lines.slice(0,2);lines[1]=lines[1].substring(0,Math.max(0,lines[1].length-3))+'...';}
+        doc.text(lines,mx+4,y);y+=lines.length*2.2;
+      }
+      y+=2;
+    });
+    doc.setDrawColor(200,200,200);doc.setLineWidth(0.2);doc.line(mx,ph-10,pw-mx,ph-10);
+    doc.setTextColor(170,170,170);doc.setFontSize(6);doc.setFont('helvetica','normal');
+    doc.text('ACT Math Practice  |  Score Report',pw/2,ph-7,{align:'center'});
+    var tn=location.pathname.match(/test(\d+)/);
+    var testNum=tn?parseInt(tn[1])-100:0;
+    var ds=new Date().toISOString().slice(0,10);
+    doc.save('ACT-Math-Test-'+testNum+'-'+ds+'.pdf');
+    btn.textContent='Download Report (PDF)';btn.disabled=false;
+  };
+  document.head.appendChild(s);
+}
+</script>
+</body></html>

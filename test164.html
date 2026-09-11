@@ -1,0 +1,222 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>ACT Math Test 64</title><style>@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:#fff;color:#2d3748;line-height:1.7}
+.container{max-width:800px;margin:0 auto;padding:20px 24px}
+header{background:linear-gradient(135deg,#1a3a4a 0%,#2d6a7a 100%);color:#fff;padding:28px 0;margin-bottom:36px;text-align:center}
+header .container{display:block}
+header h1{font-size:1.6rem;font-weight:700;letter-spacing:-0.3px}
+header a{color:rgba(255,255,255,.7);text-decoration:none;font-size:.9rem;display:inline-block;margin-bottom:6px;transition:color .2s}
+header a:hover{color:#fff}
+.question{background:#fff;border-radius:12px;padding:24px;margin-bottom:20px;border:1px solid #e2e8f0;transition:border-color .2s}
+.question:hover{border-color:#cbd5e0}
+.question p{margin-bottom:14px;font-size:1.05rem}
+img{max-width:100%;height:auto;margin:4px 0;vertical-align:middle}
+.choices{list-style:none}
+.choices li{padding:10px 14px;margin:6px 0;border-radius:8px;cursor:pointer;transition:all .2s;border:2px solid transparent}
+.choices li:hover{background:#f0f7fa}
+.choices li.selected{background:#d1ecf1;border-color:#bee5eb}
+.choices li.correct{background:#d4edda;border-color:#28a745}
+.choices li.wrong{background:#f8d7da;border-color:#dc3545}
+.choices li.show-correct{background:#d4edda;border-color:#28a745}
+.submit-wrap{text-align:center;margin:36px 0}
+.submit-btn{display:inline-block;padding:14px 40px;background:linear-gradient(135deg,#1a3a4a,#2d6a7a);color:#fff;border:none;border-radius:10px;font-size:1.1rem;cursor:pointer;font-weight:600;font-family:inherit;transition:all .25s;letter-spacing:.3px}
+.submit-btn:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(26,58,74,.25)}
+.score-box{background:#fff;border-radius:12px;padding:28px;margin-bottom:28px;text-align:center;border:1px solid #e2e8f0;box-shadow:0 4px 20px rgba(0,0,0,.06);display:none}
+.score-box h2{font-size:1.4rem;margin-bottom:8px;color:#1a3a4a;text-align:center}
+.score-box .pct{font-size:3rem;font-weight:700}
+.score-box .pct.good{color:#28a745}
+.score-box .pct.ok{color:#e6a817}
+.score-box .pct.bad{color:#dc3545}
+.score-box .detail{color:#666;margin-top:4px}
+.result-tag{display:inline-block;padding:2px 10px;border-radius:12px;font-size:.8rem;font-weight:600;margin-left:8px}
+.result-tag.correct{background:#d4edda;color:#155724}
+.result-tag.wrong{background:#f8d7da;color:#721c24}
+.reset-btn{display:none;margin:16px auto;padding:12px 28px;background:#6c757d;color:#fff;border:none;border-radius:10px;font-size:1rem;cursor:pointer;font-family:inherit;transition:all .25s}
+.reset-btn:hover{background:#5a6268;transform:translateY(-1px)}
+.explanation{background:#f0f7ff;border-left:4px solid #1a3a4a;padding:14px 18px;margin-top:14px;border-radius:0 8px 8px 0;font-size:.95rem;color:#444;display:none}
+.explanation.show{display:block}
+.explanation strong{color:#1a3a4a}
+.nav{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin:36px 0}
+.nav a{display:inline-block;padding:10px 24px;background:linear-gradient(135deg,#1a3a4a,#2d6a7a);color:#fff;text-decoration:none;border-radius:10px;font-weight:500;font-size:.95rem;transition:all .25s}
+.nav a:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(26,58,74,.25)}
+footer{text-align:center;padding:36px 24px;color:#8899a4;font-size:.85rem;border-top:1px solid #e2e8f0;margin-top:40px}
+.report-btn{display:inline-block;margin:0;padding:12px 28px;background:linear-gradient(135deg,#1a3a4a,#2d6a7a);color:#fff;border:none;border-radius:10px;font-size:1rem;cursor:pointer;font-family:inherit;transition:all .25s}
+.report-btn:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(26,58,74,.25)}
+.bottom-score{background:#fff;border-radius:12px;padding:20px;margin:20px 0;text-align:center;border:1px solid #e2e8f0;box-shadow:0 4px 20px rgba(0,0,0,.06)}
+.bottom-score .pct{font-size:2.5rem;font-weight:700}
+.bottom-score .pct.good{color:#28a745}
+.bottom-score .pct.ok{color:#e6a817}
+.bottom-score .pct.bad{color:#dc3545}
+.bottom-score .detail{color:#666;margin-top:4px;font-size:.95rem}
+.report-wrap{display:none;text-align:center;margin:16px 0}
+.name-input{padding:10px 14px;border:1px solid #e2e8f0;border-radius:10px;font-size:.95rem;font-family:inherit;width:200px;margin-right:8px;outline:none;transition:border-color .2s}
+.name-input:focus{border-color:#1a3a4a}
+</style></head><body><header><div class="container"><a href="index.html">&larr; All Tests</a><h1>ACT Math Practice Test 64</h1></div></header><div class="container"><div id="score-box" class="score-box"><h2>Your Score</h2><div class="pct">0%</div><div class="detail"></div></div><div class="question"><p><b>1.</b> Four actors (Jessica, Kevin, Lisa, and Michael) stand around a circular stage of circumference 19 feet. Kevin stands 5 feet counterclockwise from Jessica. Lisa stands 9 feet clockwise from Jessica. Michael stands 6 feet clockwise from Jessica and 13 feet counterclockwise from Jessica. In what order do the actors stand, starting with Jessica and going clockwise around the stage?</p><ul class="choices"><li>F. Jessica, Kevin, Lisa, Michael</li><li>G. Jessica, Kevin, Michael, Lisa</li><li>H. Jessica, Lisa, Kevin, Michael</li><li>J. Jessica, Michael, Kevin, Lisa</li><li>K. Jessica, Michael, Lisa, Kevin</li></ul></div><div class="question"><p><b>2.</b> In 1905, the distance between the edge of a lake and Marker X was 75 meters. In 2005, the distance between the edge of this lake and Marker X was 825 meters. If the edge of this lake withdrew from Marker X at a linear rate, then what was the distance, in meters, between the edge of the lake and Marker X in 1985 ?</p><ul class="choices"><li>A. 675</li><li>B. 682.5</li><li>C. 690</li><li>D. 705</li><li>E. 750</li></ul></div><div class="question"><p><b>3.</b> For a decorating project, Beatrice found the area and perimeter of a drawing she made of a beach scene. She found that the area of her rectangular drawing was 144 square inches and that the perimeter was 80 inches. When she arrived at the craft store to purchase a frame for her drawing, she discovered that she had forgotten to write down the dimensions of her drawing. What are the dimensions of Beatrice's drawing, in inches?</p><ul class="choices"><li>F. 4 by 36</li><li>G. 6 by 24</li><li>H. 8 by 18</li><li>J. 9 by 16</li><li>K. 12 by 12</li></ul></div><div class="question"><p><b>4.</b> Which of the following is equivalent to 5.046 × 10<sup><small>-3</small></sup> ?</p><ul class="choices"><li>A. 5,046</li><li>B. 504.6</li><li>C. 5.046</li><li>D. 0.05046</li><li>E. 0.005046</li></ul></div><div class="question"><p><b>5.</b> If the values of <span class="italic">s</span> and <span class="italic">t</span> are directly proportional and <span class="italic">s</span> = 8 when <span class="italic">t</span> = 10, then what is the value of <span class="italic">s</span> when <span class="italic">t</span> = 15 ?</p><ul class="choices"><li>F. <img src="https://www.crackab.com/image/tests/cr2016/00503.jpg"></li><li>G. <img src="https://www.crackab.com/image/tests/cr2016/00820.jpg"></li><li>H. 12</li><li>J. 13</li><li>K. 18</li></ul></div><div class="question"><p><b>6.</b> The cost to rent headphones at the listening library is $3.50 for the first hour (or any fraction thereof), $2.50 for the second hour (or any fraction thereof), and $1.25 for each additional hour (or any fraction thereof) beyond the first two. If you rent headphones at 2:12 P.M. and are charged $9.75 when you return them, then which of the following could be the time you return the headphones? (Note: Assume that this listening library does not charge additional taxes or fees.)</p><ul class="choices"><li>A. 5:30 P.M.</li><li>B. 6:30 P.M.</li><li>C. 7:30 P.M.</li><li>D. 8:00 P.M.</li><li>E. 8:30 P.M.</li></ul></div><div class="question"><p><b>7.</b> The degree measures of the 4 angles of quadrilateral <span class="italic">LMNO</span>, shown below, form a geometric sequence with a common ratio of 2. What is the last term of the sequence?<br><img src="https://www.crackab.com/image/tests/cr2016/00821.jpg"></p><ul class="choices"><li>F. 24°</li><li>G. 96°</li><li>H. 160°</li><li>J. 192°</li><li>K. 216°</li></ul></div><div class="question"><p><b>8.</b> Points <span class="italic">E</span>, <span class="italic">F</span>, and <span class="italic">G</span> are collinear. Point <span class="italic">H</span> is a point not on <span class="italic">EG</span>. If the measure of ∠<span class="italic">GFH</span> is 64°, then what is the measure of ∠<span class="italic">EFH</span> ?</p><ul class="choices"><li>A. 26°</li><li>B. 58°</li><li>C. 64°</li><li>D. 116°</li><li>E. 296°</li></ul></div><div class="question"><p><b>9.</b> If 6<span class="italic">x</span> + 10<span class="italic">y</span> = 14 and 3<span class="italic">x</span> + 4<span class="italic">y</span> = 2, then what is the value of 5<span class="italic">x</span> + 7<span class="italic">y</span> ?</p><ul class="choices"><li>F. 5</li><li>G. 2</li><li>H. -5</li><li>J. -7</li><li>K. -12</li></ul></div><div class="question"><p><b>10.</b> Which of the following correctly solves the equation <img src="https://www.crackab.com/image/tests/cr2016/00823.jpg"> = 6 for any <span class="italic">b</span> ?</p><ul class="choices"><li>A. <span class="italic">b</span> = 12<span class="italic">a</span></li><li>B. <span class="italic">b</span> = 12 - <span class="italic">a</span></li><li>C. <span class="italic">b</span> = 3 - <span class="italic">a</span></li><li>D. <span class="italic">b</span> = <span class="italic">a</span> - 3</li><li>E. <span class="italic">b</span> = <span class="italic">a</span> - 12</li></ul></div><div class="question"><p><b>11.</b> The product of which of the following results in a negative odd number?</p><ul class="choices"><li>F. A positive even number and a negative even number</li><li>G. Two negative odd numbers</li><li>H. A positive even number and a negative odd number</li><li>J. A negative even number and a negative odd number</li><li>K. A positive odd number and a negative odd number</li></ul></div><div class="question"><p><b>12.</b> A bag contains 11 purple marbles, 11 yellow marbles, 11 red marbles, and 11 black marbles. John begins removing marbles at random from the bag, and the first 4 marbles removed are all purple. What is the probability that the fifth marble removed will also be purple?</p><ul class="choices"><li>A. <img src="https://www.crackab.com/image/tests/cr2016/00824.jpg"></li><li>B. <img src="https://www.crackab.com/image/tests/cr2016/00826.jpg"></li><li>C. <img src="https://www.crackab.com/image/tests/cr2016/01112.jpg"></li><li>D. <img src="https://www.crackab.com/image/tests/cr2016/00827.jpg"></li><li>E. <img src="https://www.crackab.com/image/tests/cr2016/00828.jpg"></li></ul></div><div class="question"><p><b>13.</b> A student in Miss Ruane's class must repeat a test if that student earns less than 70% of the points available on that test. There were 30 points available on the first test of this semester. If Oliver scored <span class="italic">p</span> points on this test and therefore must repeat it, then which of the following is true?</p><ul class="choices"><li>F. <span class="italic">p</span> &lt; 20</li><li>G. <span class="italic">p</span> &gt; 20</li><li>H. <span class="italic">p</span> &lt; 21</li><li>J. <span class="italic">p</span> = 21</li><li>K. <span class="italic">p</span> &gt; 21</li></ul></div><div class="question"><p><b>14.</b> A work crew paints a broken yellow line down the middle of a straight road 16<img src="https://www.crackab.com/image/tests/cr2016/00294.jpg"> miles long over the course of 3 days. On Day 1, the crew records 5<img src="https://www.crackab.com/image/tests/cr2016/00829.jpg"> miles of road painted. On Day 2, the crew forgets to measure how much road was painted, but on Day 3, the crew records 3<img src="https://www.crackab.com/image/tests/cr2016/00009.jpg"> miles painted to finish the job. According to the measurements available, how many miles of road did the crew paint on Day 2 ?<br><img src="https://www.crackab.com/image/tests/cr2016/00831.jpg"></p><ul class="choices"><li>A. 7<img src="https://www.crackab.com/image/tests/cr2016/00832.jpg"></li><li>B. 7<img src="https://www.crackab.com/image/tests/cr2016/00834.jpg"></li><li>C. 7</li><li>D. 6<img src="https://www.crackab.com/image/tests/cr2016/00832.jpg"></li><li>E. 6<img src="https://www.crackab.com/image/tests/cr2016/00834.jpg"></li></ul></div><div class="question"><p><b>15.</b> The owners of the Movie Palace use the <span class="italic">Illuminator 100</span> light bulb in their projectors, but are now considering switching to the <span class="italic">Illuminator 100 Plus</span>, a more powerful light bulb that projects movies onto larger screens farther away. The <span class="italic">Illuminator 100 Plus</span> projects movies onto screens 108 feet wide and 180 feet from the projector, while the <span class="italic">Illuminator 100</span> projects movies onto screens only 81 feet wide, as shown in the figure below. How much farther from the projector, in feet, is the screen for the <span class="italic">Illuminator 100 Plus</span> than the screen for the <span class="italic">Illuminator 100</span> ?<br><img src="https://www.crackab.com/image/tests/cr2016/00836.jpg"></p><ul class="choices"><li>F. 27</li><li>G. 40</li><li>H. 45</li><li>J. 50</li><li>K. 55</li></ul></div><div class="submit-wrap"><button class="submit-btn" onclick="gradeTest()">Submit Test</button><button class="reset-btn" onclick="resetTest()">Try Again</button>
+<div class="report-wrap"><input type="text" class="name-input" placeholder="Student name (for report)"><button class="report-btn" onclick="generateReport()">Download Report (PDF)</button></div></div><div class="nav"><a href="test163.html">&larr; Prev</a><a href="index.html">All Tests</a><a href="test165.html">Next &rarr;</a></div></div><footer><div class="container">ACT Math Practice</div></footer>
+<script>
+const ANSWERS = {"1": "K", "2": "A", "3": "F", "4": "E", "5": "H", "6": "B", "7": "J", "8": "D", "9": "F", "10": "E", "11": "K", "12": "B", "13": "H", "14": "B", "15": "H"};
+const EXPLANATIONS = {"1":"K When no figure is provided, draw your own. On a circle, make 19 evenly-spaced hash marks. Place Jessica first at the top, then Kevin (5 marks to the left, or counterclockwise) then Lisa (9 marks to the right, or clockwise). The exact distance between them is less important than the order, as the answers make clear. Use the first part of the last clue to place Michael in between Jessica and Lisa. The second part of the clue isn\'t necessary, but you can confirm that you\'ve placed all correctly.", "2":"A Underline the question and work the problem in bite-sized pieces. The phrase linear rate means proportionally, so set up a proportion of the number of years\' difference between 1905 and 2005 (100) and the meters the lake withdrew over those 100 years (825 -75  =  750 meters). Since the lake withdrew at the same rate, use the proportion to solve for the meters the lake withdrew from 1905 to 1985.   =  . Cross-multiply to solve for x, and the lake increased by 600 meters. Note that the question, however, asks for the distance from the edge to Marker X in 1985, so add the 600 meters to 75 to find the correct answer of 675, (A).", "3":"F Underline the question and work the problem in bite-sized pieces. It also helps to draw a figure when none is provided. Use the area formula A  =  lw and perimeter formula P  =  2l + 2w and use the answers. Only (F) provides dimensions that yield an area of 144 square inches and a perimeter of 80 inches.", "4":"E Use your calculator, or write the value out and use your pencil to move the decimal 3 spaces to the left. If you chose (A), you missed the negative exponent and moved the decimal 3 spaces to the right.", "5":"H Use the known proportion of s and t and solve for s when t is 15.   =  . Cross-multiply to solve for s is 12, (H). Choice (F) is the ratio of s to t, not the value of s when t is 15. Choice (G) is a ratio of t to t. Choice (K) is the sum of s and t.", "6":"B Underline the question and work the problem in bite-sized pieces. A good option here is to PITA (Plug In the Answers). Start in the middle with (C) and work the bite-sized pieces, keeping your work neatly organized. $11 is too high, so eliminate (C) as well as (D) and (E). Since $11.00 is $1.25 over the $9.75 charged, the answer must be choice (B), 6:30 P.M. $1.25 is charged from 6:13 P.M. until 6:30 P.M. Choice (C) is incorrect because the $1.25 is charged for every hour or any fraction thereof, tricky phrasing easy to miss if you solve it algebraically.", "7":"JGeometric sequence means a pattern of multiplication, in which each term is multiplied by the same amount to determine the next term. In a geometric sequence, each term divided by the prior term yields a constant, or common, ratio. Since the sum of the 4 angles of a quadrilateral equals 360°, x + 2x + 4x + 8x  =  360. Thus, x  =  24, and the fourth angle equals 192°. Choice (F) is the value of the common ratio. Choice (G) is the value of the third term.", "8":"D Draw a figure if none is provided. A straight line equals 180°, so the two angles formed by FH are supplementary, and ∠EFH equals 116°.", "9":"F With a system of equations, elimination is almost always faster than substitution. First, multiply one equation by a common factor to make the coefficients of one of the variables the same in both equations. Multiply 3x + 4y  =  2 by 2 to get 6x + 8y  =  4. Now the coefficients for x are the same in both equations. Subtract 6x + 8y  =  4 from 6x + 10y  =  14: The two x-terms cancel out, and 2y  =  10, and y  =  5. Replace y with 5 in either equation to solve for x: 6x + 10(5)  =  14, so 6x + 50  =  14, 6x  =  -36, and x  =  -6. Use both values to find that 5(-6) + 7(5)  =  -30 + 35  =  5.", "10":"E Solve for b by first multiplying both sides by 2 to get a -b  =  12. Subtract a from both sides, and -b  =  12 -a. Choice (B) is incorrect because this is the value for -b, not b. The last step is to multiply both sides by -1 to find that b  =  -12 + a, or b  =  a -12, choice (E). Choices (C) and (D) are both incorrect because the two sides of the equation were not multiplied by 2.", "11":"K Plug In your own numbers and try them on each answer to find a negative odd number. Use 2 and -4, 2 and -3, and 3 and -2 to find only (K) works. The product of two negative numbers is positive, so (G) and (J) won\'t work. The product of two even numbers or the product of an even and an odd is even, so (F) and (H) will not work either.", "12":"B Underline the question and work the problem in bite-sized pieces. Probability is a  relationship, in which the part is what you want, and the whole is what you\'ve got. There are 44 total marbles to begin with, but after drawing four purples out of the bag, there are 40 marbles total, seven of which are purple. The probability of drawing a purple marble next is , (B). Choice (A) is wrong because the four purple marbles already drawn isn\'t subtracted from the total; (C) is wrong because this is the probability of drawing purple before the first four draws. Choice (E) is wrong because it\'s a ratio of the purple marbles left after four draws and the number of purple marbles at the start.", "13":"H Underline the question and work the problem in bite-sized pieces. Oliver must repeat the test if he scores less than70% of the points available. 70% of 30  =   × 30  =  21. Oliver will repeat the test if his points, p, is less than 21, or if p < 21, (H).", "14":"B Underline the question and work the problem in bite-sized pieces. The miles of road painted on Day 2 will be the number of miles left after subtracting the Day 1 and Day 3 miles from the total. Use your calculator, or write out the conversions from mixed to compound fractions before finding a common denominator among the three fractions. . . The common denominator for these three fractions is 27. To convert , multiply the numerator and denominator by 3 to get . To convert , multiply the numerator and denominator by 9 to get . Last step, subtract Days 1 and 3 from the total: , or 7. If you used your calculator to add the three fractions but then were uncertain what to do with a compound fraction as a result and mixed fractions in the answers, use the decimal value instead of the fraction. The decimal answer is 7.148. Eliminate (D) and (E), and then use your calculator to convert (A) and (B) to find which has the same decimal.", "15":"H Underline the question and work the problem in bite-sized pieces. Use a proportion of the 180-ft distance the Illuminator 100 Plus must be back from its 108-ft screen to find the distance the Illuminator 100 must be back from its 81-ft screen. , so x equals 135 feet. Last step, subtract 135 from 180 to solve for P, the number of feet farther the screen must be placed."};
+let graded = false;
+
+document.querySelectorAll('.choices li').forEach(li => {
+  // Remove old onclick
+  li.removeAttribute('onclick');
+  li.addEventListener('click', function() {
+    if (graded) return;
+    const siblings = this.parentElement.querySelectorAll('li');
+    siblings.forEach(s => s.classList.remove('selected'));
+    this.classList.add('selected');
+  });
+});
+
+function gradeTest() {
+  if (graded) return;
+  graded = true;
+  let correct = 0;
+  const total = Object.keys(ANSWERS).length;
+  
+  document.querySelectorAll('.question').forEach((qDiv, idx) => {
+    const qNum = idx + 1;
+    const correctAns = ANSWERS[qNum];
+    if (!correctAns) return;
+    const choices = qDiv.querySelectorAll('.choices li');
+    const selected = qDiv.querySelector('.choices li.selected');
+    const selectedLetter = selected ? selected.textContent.trim().charAt(0) : null;
+    
+    choices.forEach(li => {
+      const letter = li.textContent.trim().charAt(0);
+      if (letter === correctAns) li.classList.add('show-correct');
+      li.style.cursor = 'default';
+    });
+    
+    const tag = document.createElement('span');
+    tag.className = 'result-tag';
+    
+    if (selectedLetter === correctAns) {
+      correct++;
+      tag.className += ' correct';
+      tag.textContent = 'Correct';
+      if (selected) { selected.classList.remove('selected'); selected.classList.add('correct'); }
+    } else {
+      tag.className += ' wrong';
+      tag.textContent = 'Incorrect (Answer: ' + correctAns + ')';
+      if (selected) { selected.classList.remove('selected'); selected.classList.add('wrong'); }
+    }
+    
+    const firstP = qDiv.querySelector('p');
+    if (firstP) firstP.appendChild(tag);
+    
+    if (typeof EXPLANATIONS !== 'undefined' && EXPLANATIONS[qNum]) {
+      const explDiv = document.createElement('div');
+      explDiv.className = 'explanation show';
+      explDiv.innerHTML = '<strong>Explanation:</strong> ' + EXPLANATIONS[qNum];
+      qDiv.appendChild(explDiv);
+    }
+  });
+  
+  const pct = Math.round((correct / total) * 100);
+  document.querySelector('.submit-btn').style.display = 'none';
+  document.querySelector('.reset-btn').style.display = 'block';
+  var rw=document.querySelector('.report-wrap');if(rw)rw.style.display='block';
+  var bs=document.createElement('div');bs.className='bottom-score';bs.id='bottom-score';
+  bs.innerHTML='<h2 style="font-size:1.3rem;margin-bottom:6px;color:#1a3a4a">Your Score</h2><div class="pct '+(pct>=80?'good':pct>=60?'ok':'bad')+'">'+pct+'%</div><div class="detail">'+correct+' out of '+total+' correct</div>';
+  document.querySelector('.submit-wrap').after(bs);
+  try{var tn=location.pathname.match(/test(\d+)/);if(tn)localStorage.setItem('actmath_'+tn[1],pct);}catch(e){}
+}
+
+function resetTest() {
+  graded = false;
+  var bsEl=document.getElementById('bottom-score');if(bsEl)bsEl.remove();
+  document.querySelector('.submit-btn').style.display = '';
+  document.querySelector('.reset-btn').style.display = 'none';
+  var rw=document.querySelector('.report-wrap');if(rw)rw.style.display='none';
+  var ni=document.querySelector('.name-input');if(ni)ni.value='';
+  document.querySelectorAll('.choices li').forEach(li => {
+    li.classList.remove('selected','correct','wrong','show-correct');
+    li.style.cursor = 'pointer';
+  });
+  document.querySelectorAll('.result-tag').forEach(t => t.remove());
+  document.querySelectorAll('.explanation').forEach(e => e.remove());
+}
+
+function generateReport(){
+  var nameInput=document.querySelector('.name-input');
+  var name=(nameInput&&nameInput.value.trim())||'Student';
+  var testName=document.querySelector('header h1').textContent;
+  var bs=document.getElementById('bottom-score');
+  var scorePct=bs?bs.querySelector('.pct').textContent:'';
+  var detailTxt=bs?bs.querySelector('.detail').textContent:'';
+  var d=new Date().toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'});
+  var btn=document.querySelector('.report-btn');btn.textContent='Generating...';btn.disabled=true;
+  var s=document.createElement('script');
+  s.src='https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js';
+  s.onerror=function(){btn.textContent='Download Report (PDF)';btn.disabled=false;alert('Could not load PDF library.');};
+  s.onload=function(){
+    var doc=new jspdf.jsPDF('portrait','mm','letter');
+    var pw=215.9,ph=279.4,mx=12,cw=pw-2*mx,y=8;
+    doc.setFillColor(26,58,74);doc.rect(0,0,pw,22,'F');
+    doc.setTextColor(255,255,255);doc.setFontSize(13);doc.setFont('helvetica','bold');
+    doc.text(testName,mx,9);
+    doc.setFontSize(7.5);doc.setFont('helvetica','normal');
+    doc.text(d+'  |  Student: '+name,mx,14.5);
+    doc.setFontSize(18);doc.setFont('helvetica','bold');
+    doc.text(scorePct,pw-mx,11,{align:'right'});
+    doc.setFontSize(7.5);doc.setFont('helvetica','normal');
+    doc.text(detailTxt,pw-mx,16,{align:'right'});
+    y=25;
+    doc.setDrawColor(26,58,74);doc.setLineWidth(0.3);doc.line(mx,y,pw-mx,y);y+=3;
+    document.querySelectorAll('.question').forEach(function(qDiv,idx){
+      var qNum=idx+1;var ca=ANSWERS[qNum];if(!ca)return;
+      var sel=qDiv.querySelector('.choices li.correct,.choices li.wrong');
+      var sa=sel?sel.textContent.trim().charAt(0):'-';
+      var ok=sel&&sel.classList.contains('correct');
+      if(ok){
+        doc.setFillColor(40,167,69);doc.circle(mx+1.2,y-1,1,'F');
+        doc.setTextColor(33,33,33);doc.setFont('helvetica','bold');doc.setFontSize(8);
+        doc.text('Q'+qNum,mx+4,y);
+        doc.setFont('helvetica','normal');doc.setTextColor(40,167,69);
+        doc.text('Correct ('+ca+')',mx+14,y);
+      }else{
+        doc.setFillColor(220,53,69);doc.circle(mx+1.2,y-1,1,'F');
+        doc.setTextColor(33,33,33);doc.setFont('helvetica','bold');doc.setFontSize(8);
+        doc.text('Q'+qNum,mx+4,y);
+        doc.setFont('helvetica','normal');doc.setTextColor(220,53,69);
+        doc.text('Incorrect',mx+14,y);
+        doc.setTextColor(120,120,120);
+        doc.text('(Chose '+sa+', Correct: '+ca+')',mx+32,y);
+      }
+      y+=3.2;
+      var qP=qDiv.querySelector('p');
+      if(qP){
+        var qT=qP.cloneNode(true);
+        var tags=qT.querySelectorAll('.result-tag');tags.forEach(function(t){t.remove();});
+        var qt=qT.textContent.replace(/^\d+\.\s*/,'').trim();
+        if(qt.length>0){
+          doc.setFont('helvetica','normal');doc.setTextColor(60,60,60);doc.setFontSize(6.5);
+          var ql=doc.splitTextToSize(qt,cw-5);
+          ql=ql.slice(0,1);
+          if(doc.splitTextToSize(qt,cw-5).length>1){ql[0]=ql[0].substring(0,ql[0].length-3)+'...';}
+          doc.text(ql,mx+4,y);y+=2.4;
+        }
+      }
+      if(typeof EXPLANATIONS!=='undefined'&&EXPLANATIONS[qNum]){
+        doc.setFont('helvetica','italic');doc.setTextColor(100,100,100);doc.setFontSize(6);
+        var lines=doc.splitTextToSize(EXPLANATIONS[qNum],cw-5);
+        if(lines.length>2){lines=lines.slice(0,2);lines[1]=lines[1].substring(0,Math.max(0,lines[1].length-3))+'...';}
+        doc.text(lines,mx+4,y);y+=lines.length*2.2;
+      }
+      y+=2;
+    });
+    doc.setDrawColor(200,200,200);doc.setLineWidth(0.2);doc.line(mx,ph-10,pw-mx,ph-10);
+    doc.setTextColor(170,170,170);doc.setFontSize(6);doc.setFont('helvetica','normal');
+    doc.text('ACT Math Practice  |  Score Report',pw/2,ph-7,{align:'center'});
+    var tn=location.pathname.match(/test(\d+)/);
+    var testNum=tn?parseInt(tn[1])-100:0;
+    var ds=new Date().toISOString().slice(0,10);
+    doc.save('ACT-Math-Test-'+testNum+'-'+ds+'.pdf');
+    btn.textContent='Download Report (PDF)';btn.disabled=false;
+  };
+  document.head.appendChild(s);
+}
+</script>
+</body></html>

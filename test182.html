@@ -1,0 +1,222 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>ACT Math Test 82</title><style>@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:#fff;color:#2d3748;line-height:1.7}
+.container{max-width:800px;margin:0 auto;padding:20px 24px}
+header{background:linear-gradient(135deg,#1a3a4a 0%,#2d6a7a 100%);color:#fff;padding:28px 0;margin-bottom:36px;text-align:center}
+header .container{display:block}
+header h1{font-size:1.6rem;font-weight:700;letter-spacing:-0.3px}
+header a{color:rgba(255,255,255,.7);text-decoration:none;font-size:.9rem;display:inline-block;margin-bottom:6px;transition:color .2s}
+header a:hover{color:#fff}
+.question{background:#fff;border-radius:12px;padding:24px;margin-bottom:20px;border:1px solid #e2e8f0;transition:border-color .2s}
+.question:hover{border-color:#cbd5e0}
+.question p{margin-bottom:14px;font-size:1.05rem}
+img{max-width:100%;height:auto;margin:4px 0;vertical-align:middle}
+.choices{list-style:none}
+.choices li{padding:10px 14px;margin:6px 0;border-radius:8px;cursor:pointer;transition:all .2s;border:2px solid transparent}
+.choices li:hover{background:#f0f7fa}
+.choices li.selected{background:#d1ecf1;border-color:#bee5eb}
+.choices li.correct{background:#d4edda;border-color:#28a745}
+.choices li.wrong{background:#f8d7da;border-color:#dc3545}
+.choices li.show-correct{background:#d4edda;border-color:#28a745}
+.submit-wrap{text-align:center;margin:36px 0}
+.submit-btn{display:inline-block;padding:14px 40px;background:linear-gradient(135deg,#1a3a4a,#2d6a7a);color:#fff;border:none;border-radius:10px;font-size:1.1rem;cursor:pointer;font-weight:600;font-family:inherit;transition:all .25s;letter-spacing:.3px}
+.submit-btn:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(26,58,74,.25)}
+.score-box{background:#fff;border-radius:12px;padding:28px;margin-bottom:28px;text-align:center;border:1px solid #e2e8f0;box-shadow:0 4px 20px rgba(0,0,0,.06);display:none}
+.score-box h2{font-size:1.4rem;margin-bottom:8px;color:#1a3a4a;text-align:center}
+.score-box .pct{font-size:3rem;font-weight:700}
+.score-box .pct.good{color:#28a745}
+.score-box .pct.ok{color:#e6a817}
+.score-box .pct.bad{color:#dc3545}
+.score-box .detail{color:#666;margin-top:4px}
+.result-tag{display:inline-block;padding:2px 10px;border-radius:12px;font-size:.8rem;font-weight:600;margin-left:8px}
+.result-tag.correct{background:#d4edda;color:#155724}
+.result-tag.wrong{background:#f8d7da;color:#721c24}
+.reset-btn{display:none;margin:16px auto;padding:12px 28px;background:#6c757d;color:#fff;border:none;border-radius:10px;font-size:1rem;cursor:pointer;font-family:inherit;transition:all .25s}
+.reset-btn:hover{background:#5a6268;transform:translateY(-1px)}
+.explanation{background:#f0f7ff;border-left:4px solid #1a3a4a;padding:14px 18px;margin-top:14px;border-radius:0 8px 8px 0;font-size:.95rem;color:#444;display:none}
+.explanation.show{display:block}
+.explanation strong{color:#1a3a4a}
+.nav{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin:36px 0}
+.nav a{display:inline-block;padding:10px 24px;background:linear-gradient(135deg,#1a3a4a,#2d6a7a);color:#fff;text-decoration:none;border-radius:10px;font-weight:500;font-size:.95rem;transition:all .25s}
+.nav a:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(26,58,74,.25)}
+footer{text-align:center;padding:36px 24px;color:#8899a4;font-size:.85rem;border-top:1px solid #e2e8f0;margin-top:40px}
+.report-btn{display:inline-block;margin:0;padding:12px 28px;background:linear-gradient(135deg,#1a3a4a,#2d6a7a);color:#fff;border:none;border-radius:10px;font-size:1rem;cursor:pointer;font-family:inherit;transition:all .25s}
+.report-btn:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(26,58,74,.25)}
+.bottom-score{background:#fff;border-radius:12px;padding:20px;margin:20px 0;text-align:center;border:1px solid #e2e8f0;box-shadow:0 4px 20px rgba(0,0,0,.06)}
+.bottom-score .pct{font-size:2.5rem;font-weight:700}
+.bottom-score .pct.good{color:#28a745}
+.bottom-score .pct.ok{color:#e6a817}
+.bottom-score .pct.bad{color:#dc3545}
+.bottom-score .detail{color:#666;margin-top:4px;font-size:.95rem}
+.report-wrap{display:none;text-align:center;margin:16px 0}
+.name-input{padding:10px 14px;border:1px solid #e2e8f0;border-radius:10px;font-size:.95rem;font-family:inherit;width:200px;margin-right:8px;outline:none;transition:border-color .2s}
+.name-input:focus{border-color:#1a3a4a}
+</style></head><body><header><div class="container"><a href="index.html">&larr; All Tests</a><h1>ACT Math Practice Test 82</h1></div></header><div class="container"><div id="score-box" class="score-box"><h2>Your Score</h2><div class="pct">0%</div><div class="detail"></div></div><div class="question"><p><b>1.</b> If <span class="italic">x</span> &lt; <span class="italic">y</span>, then |<span class="italic">x</span> - <span class="italic">y</span>| is equivalent to which of the following?</p><ul class="choices"><li>F. <span class="italic">x</span> + <span class="italic">y</span></li><li>G. -(<span class="italic">x</span> + <span class="italic">y</span>)</li><li>H. <img src="https://www.crackab.com/image/tests/mg10/02002.jpg"></li><li>J. <span class="italic">x</span> - <span class="italic">y</span></li><li>K. -(<span class="italic">x</span> - <span class="italic">y</span>)</li></ul></div><div class="question"><p><b>2.</b> The trapezoid below is divided into 2 triangles and 1 rectangle. Lengths are given in centimeters. What is the combined area, in square centimeters, of the 2 shaded triangles?<br><img src="https://www.crackab.com/image/tests/mg10/00654.jpg"><br></p><ul class="choices"><li>A. 18</li><li>B. 12</li><li>C. 9</li><li>D. 6</li><li>E. 4</li></ul></div><div class="question"><p><b>3.</b> In the figure below, all line segments are either horizontal or vertical, and the dimensions given are in feet. What is the perimeter, in feet, of the figure?<br><img src="https://www.crackab.com/image/tests/mg10/00817.jpg"><br></p><ul class="choices"><li>F. 20</li><li>G. 24</li><li>H. 26</li><li>J. 28</li><li>K. 32</li></ul></div><div class="question"><p><b>4.</b> If <span class="italic">c</span> is directly proportional to <span class="italic">s<sup><small>2</small></sup></span> and <img src="https://www.crackab.com/image/tests/mg10/01024.jpg"> when <img src="https://www.crackab.com/image/tests/mg10/02048.jpg">, what is the value of <span class="italic">s</span> when <span class="italic">c</span> = 175?</p><ul class="choices"><li>A. 2</li><li>B. 3</li><li>C. 4</li><li>D. 5</li><li>E. 6</li></ul></div><div class="question"><p><b>5.</b> If the value, to the nearest thousandth, of cos <span class="italic">α</span> is -0.385, which of the following could be true about <span class="italic">α</span>?</p><ul class="choices"><li>F. <img src="https://www.crackab.com/image/tests/mg10/02370.jpg"></li><li>G. <img src="https://www.crackab.com/image/tests/mg10/02371.jpg"></li><li>H. <img src="https://www.crackab.com/image/tests/mg10/02373.jpg"></li><li>J. <img src="https://www.crackab.com/image/tests/mg10/02374.jpg"></li><li>K. <img src="https://www.crackab.com/image/tests/mg10/01406.jpg"></li></ul></div><div class="question"><p><b>6.</b> An integer from 10 through 99, inclusive, is to be chosen at random. What is the probability that the number chosen will have 0 as at least 1 digit?</p><ul class="choices"><li>A. <img src="https://www.crackab.com/image/tests/mg10/02376.jpg"></li><li>B. <img src="https://www.crackab.com/image/tests/mg10/02378.jpg"></li><li>C. <img src="https://www.crackab.com/image/tests/mg10/02381.jpg"></li><li>D. <img src="https://www.crackab.com/image/tests/mg10/02383.jpg"></li><li>E. <img src="https://www.crackab.com/image/tests/mg10/02386.jpg"></li></ul></div><div class="question"><p><b>7.</b> A 12-centimeter-by-16-centimeter rectangle is inscribed in a circle as shown below. What is the area of the circle, in square centimeters?<br><img src="https://www.crackab.com/image/tests/mg10/02470.jpg"><br></p><ul class="choices"><li>F. 5<span class="italic">π</span></li><li>G. 14<span class="italic">π</span></li><li>H. 25<span class="italic">π</span></li><li>J. 100<span class="italic">π</span></li><li>K. 192<span class="italic">π</span></li></ul></div><div class="question"><p><b>8.</b> If log<sub><small><span><span class="italic">a</span></span></small></sub><span class="italic"> x</span> = <span class="italic">n</span> and log<sub><small><span><span class="italic">a</span></span></small></sub><span class="italic"> y</span> = <span class="italic">p</span>, then log<sub><small><span><span class="italic">a</span></span></small></sub><span class="italic">(xy</span>)2 =?</p><ul class="choices"><li>A. <span class="italic">np</span></li><li>B. 2<span class="italic">np</span></li><li>C. 4<span class="italic">np</span></li><li>D. <span class="italic">n</span> + <span class="italic">p</span></li><li>E. 2(<span class="italic">n</span> + <span class="italic">p</span>)</li></ul></div><div class="question"><p><b>9.</b> For every positive 2-digit number, <span class="italic">a</span>, with units digit <span class="italic">x</span> and tens digit <span class="italic">y</span>, let <span class="italic">b</span> be the 2-digit number formed by reversing the digits of <span class="italic">a</span>. Which of the following expressions is equivalent to <span class="italic">a</span> - <span class="italic">b</span>?</p><ul class="choices"><li>F. 0</li><li>G. 9<span class="italic">x</span> - <span class="italic">y</span></li><li>H. 9<span class="italic">y</span> - <span class="italic">x</span></li><li>J. 9(<span class="italic">x</span> - <span class="italic">y</span>)</li><li>K. 9(<span class="italic">y</span> - <span class="italic">x</span>)</li></ul></div><div class="question"><p><b>10.</b> If <span class="italic">f</span> (<span class="italic">a</span>) = <span class="italic">a<sup><small>2</small></sup></span> - 2, then <span class="italic">f</span> (<span class="italic">a</span> + <span class="italic">b</span>) =?</p><ul class="choices"><li>A. <span class="italic">a<sup><small>2</small></sup></span> + <span class="italic">b<sup><small>2</small></sup></span></li><li>B. <span class="italic">a<sup><small>2</small></sup></span> - 2 + <span class="italic">b</span></li><li>C. <span class="italic">a<sup><small>2</small></sup></span> + <span class="italic">b<sup><small>2</small></sup></span> - 2</li><li>D. <span class="italic">a<sup><small>2</small></sup></span> + 2<span class="italic">ab</span> + <span class="italic">b<sup><small>2</small></sup></span></li><li>E. <span class="italic">a<sup><small>2</small></sup></span> + 2<span class="italic">ab</span> + <span class="italic">b<sup><small>2</small></sup></span> - 2</li></ul></div><div class="question"><p><b>11.</b> In the complex numbers, where <span class="italic">i<sup><small>2</small></sup></span> = -1, <img src="https://www.crackab.com/image/tests/mg10/02388.jpg"></p><ul class="choices"><li>F. <span class="italic">i</span> - 1</li><li>G. 1 + <span class="italic">i</span></li><li>H. 1 - <span class="italic">i</span></li><li>J. <img src="https://www.crackab.com/image/tests/mg10/02389.jpg"></li><li>K. <img src="https://www.crackab.com/image/tests/mg10/02390.jpg"></li></ul></div><div class="question"><p><b>12.</b> Amy's best marathon time decreased by 10% from 2005 to 2006 and by 20% from 2006 to 2007. By what percent did her best marathon time decrease from 2005 to 2007?</p><ul class="choices"><li>A. 28%</li><li>B. 30%</li><li>C. 50%</li><li>D. 72%</li><li>E. 10%</li></ul></div><div class="question"><p><b>13.</b> The sum of an infinite geometric sequence series with first term <span class="italic">x</span> and common ratio <span class="italic">y</span> &lt; 1 is given by <img src="https://www.crackab.com/image/tests/mg10/02391.jpg">. The sum of a given infinite geometric series is 200, and the common ratio is 0.15. What is the second term of this series?</p><ul class="choices"><li>F. 199.85</li><li>G. 170</li><li>H. 169.85</li><li>J. 30</li><li>K. 25.5</li></ul></div><div class="question"><p><b>14.</b> How many different integer values of <span class="italic">a</span> satisfy the inequality <img src="https://www.crackab.com/image/tests/mg10/00076.jpg">?</p><ul class="choices"><li>A. 1</li><li>B. 2</li><li>C. 3</li><li>D. 4</li><li>E. 5</li></ul></div><div class="question"><p><b>15.</b> In 3 fair coin tosses, where the 2 outcomes, heads and tails, are equally likely, what is the probability of obtaining exactly 2 heads?</p><ul class="choices"><li>F. <img src="https://www.crackab.com/image/tests/mg10/00880.jpg"></li><li>G. <img src="https://www.crackab.com/image/tests/mg10/00895.jpg"></li><li>H. <img src="https://www.crackab.com/image/tests/mg10/00914.jpg"></li><li>J. <img src="https://www.crackab.com/image/tests/mg10/02402.jpg"></li><li>K. <img src="https://www.crackab.com/image/tests/mg10/02406.jpg"></li></ul></div><div class="submit-wrap"><button class="submit-btn" onclick="gradeTest()">Submit Test</button><button class="reset-btn" onclick="resetTest()">Try Again</button>
+<div class="report-wrap"><input type="text" class="name-input" placeholder="Student name (for report)"><button class="report-btn" onclick="generateReport()">Download Report (PDF)</button></div></div><div class="nav"><a href="test181.html">&larr; Prev</a><a href="index.html">All Tests</a><a href="test183.html">Next &rarr;</a></div></div><footer><div class="container">ACT Math Practice</div></footer>
+<script>
+const ANSWERS = {"1": "K", "2": "D", "3": "J", "4": "D", "5": "G", "6": "B", "7": "J", "8": "E", "9": "J", "10": "E", "11": "J", "12": "A", "13": "K", "14": "E", "15": "G"};
+const EXPLANATIONS = {"1":"The correct answer is K. One way to solve this problem is to pick numbers for x and y. You are given that x < y, so make x  =  2 and y  =  3. Now, substitute those values into the absolute value given: |x - y|  =  |2 - 3|  =  |- 1|  =  1. Now, substitute the values into each answer choice. The answer choice that yields a value of 1 will be correct: Answer choice F: 2 + 3  =  5; eliminate answer choice F. Answer choice G: -(2 + 3)  =  -5; eliminate answer choice G. Answer choice H:; eliminate answer choice H. Answer choice J: 2 - 3  =  -1; eliminate answer choice J Answer choice K: -(2 - 3)  =  -(-1)  =  1. Answer choice K is correct. For any values of x and y when x < y, |x - y|  =  -(x - y).", "2":"The correct answer is D. You can solve this problem by first calculating the area of the trapezoid. Use the formula Next, calculate the area of the rectangle: 3 × 4  =  12. Because the shaded regions comprise the difference between the area of the trapezoid and the area of the rectangle, the area of the shaded regions is 18 - 12  =  6.", "3":"The correct answer is J. To solve this problem, find the missing side lengths. Because the lengths 2 and 4 make up the entire left vertical side of the figure, you can deduce that the entire right vertical side of the figure will be 2 + 4  =  6. Likewise, because the entire bottom horizontal side of the figure is 8, you can deduce that the missing horizontal length will be 2, because 8 - 6  =  2. Therefore, the perimeter of the figure is 6 + 6 + 8 + 8  =  28.", "4":"The correct answer is D. Since c is directly proportional to s2, then c  =  as2, for some constant a. Given that  when , you can solve for a, as follows: You now know that a  =  7, and c  =  as2. Substitute 175 for c and 7 for a and solve for s, as follows:", "5":"The correct answer is G. You must know something about the values of cosine functions at certain values of α to answer this question correctly. Work through each of the answer choices, as follows: Answer choice F: When α is , ; when α is π, cos α  =  -1. The value -0.385 is not between  and -1, so eliminate answer choice F. Answer choice G: When α is , cos α  =  0; when , . The value -0.385 is between 0 and , so answer choice G is correct.", "6":"The correct answer is B. The first step in solving this problem is to determine how many integers between 10 and 99, inclusive, will have 0 as at least one digit, as follows: 10, 20, 30, 40, 50, 60, 70, 80, 90 There are 9 integers that will have 0 as at least one digit. Next, because there are a total of 90 numbers in the given range, the probability of choosing one of those 9 numbers is , which simplifies to .", "7":"The correct answer is J. The first step in solving this problem is to calculate the diameter of the circle, which corresponds to the diagonal of the rectangle. Use the Pythagorean Theorem to determine the length of the diagonal: To find the area of the circle, you need the radius, which is equal to one-half the diameter, or 10. The formula for the area of a circle is A  =  πr2, so the area is πr2  =  100π.", "8":"The correct answer is E. By definition, loga(xy)2  =  2 loga(xy)  =  2(logax + loga y). Because you are given that logax  =  n and loga y  =  p, the correct answer is 2(n + p).", "9":"The correct answer is J. You are given that a is a number with units digit x and tens digit y. Therefore, x is equivalent to 10 times y, and a  =  xy  =  10x + y. You are given that b is formed by reversing the digits of a. Therefore, b  =  yx  =  10y + x. Set up an equation and solve for a - b as follows:", "10":"The correct answer is E. To solve this problem, substitute a + b for a in (a2 - 2) as follows:", "11":"The correct answer is J. To solve this problem, multiply and make the necessary substitution, as follows:", "12":"The correct answer is A. To solve this problem, let t be Amy\'s time in 2005. Because her time decreased by 10% in 2006, her time in 2006 was (.9)t. Her time in 2007 would be .8(.9t)  =  .72t, which means that her time in 2007 was 72% of her time in 2005, so her time decreased by 28%.", "13":"The correct answer is K. According to the question stem, the sum of the sequence is given by . Therefore, sum . To solve this problem, first substitute the given values into the equation and solve for x: The first term of the sequence, x, is 170. To find the value of the second term, multiply 170 by the common ratio, 0.15: 170 × 0.15  =  25.5.", "14":"The correct answer is E. You are asked for integer values of a, which means that a must be a whole number. The first step will be to change to  and  to ; now it is easy to see that if  is between  and , a can be equal to 21, 20, 19, 18, or 17.", "15":"The correct answer is G. In 3 fair coin tosses, there are exactly 8 equally likely outcomes: HHH, HHT, HTH, HTT, THH, THT, TTH, and TTT. Of these 8 outcomes, 3 include exactly 2 heads, so the probability of obtaining exactly 2 heads is ."};
+let graded = false;
+
+document.querySelectorAll('.choices li').forEach(li => {
+  // Remove old onclick
+  li.removeAttribute('onclick');
+  li.addEventListener('click', function() {
+    if (graded) return;
+    const siblings = this.parentElement.querySelectorAll('li');
+    siblings.forEach(s => s.classList.remove('selected'));
+    this.classList.add('selected');
+  });
+});
+
+function gradeTest() {
+  if (graded) return;
+  graded = true;
+  let correct = 0;
+  const total = Object.keys(ANSWERS).length;
+  
+  document.querySelectorAll('.question').forEach((qDiv, idx) => {
+    const qNum = idx + 1;
+    const correctAns = ANSWERS[qNum];
+    if (!correctAns) return;
+    const choices = qDiv.querySelectorAll('.choices li');
+    const selected = qDiv.querySelector('.choices li.selected');
+    const selectedLetter = selected ? selected.textContent.trim().charAt(0) : null;
+    
+    choices.forEach(li => {
+      const letter = li.textContent.trim().charAt(0);
+      if (letter === correctAns) li.classList.add('show-correct');
+      li.style.cursor = 'default';
+    });
+    
+    const tag = document.createElement('span');
+    tag.className = 'result-tag';
+    
+    if (selectedLetter === correctAns) {
+      correct++;
+      tag.className += ' correct';
+      tag.textContent = 'Correct';
+      if (selected) { selected.classList.remove('selected'); selected.classList.add('correct'); }
+    } else {
+      tag.className += ' wrong';
+      tag.textContent = 'Incorrect (Answer: ' + correctAns + ')';
+      if (selected) { selected.classList.remove('selected'); selected.classList.add('wrong'); }
+    }
+    
+    const firstP = qDiv.querySelector('p');
+    if (firstP) firstP.appendChild(tag);
+    
+    if (typeof EXPLANATIONS !== 'undefined' && EXPLANATIONS[qNum]) {
+      const explDiv = document.createElement('div');
+      explDiv.className = 'explanation show';
+      explDiv.innerHTML = '<strong>Explanation:</strong> ' + EXPLANATIONS[qNum];
+      qDiv.appendChild(explDiv);
+    }
+  });
+  
+  const pct = Math.round((correct / total) * 100);
+  document.querySelector('.submit-btn').style.display = 'none';
+  document.querySelector('.reset-btn').style.display = 'block';
+  var rw=document.querySelector('.report-wrap');if(rw)rw.style.display='block';
+  var bs=document.createElement('div');bs.className='bottom-score';bs.id='bottom-score';
+  bs.innerHTML='<h2 style="font-size:1.3rem;margin-bottom:6px;color:#1a3a4a">Your Score</h2><div class="pct '+(pct>=80?'good':pct>=60?'ok':'bad')+'">'+pct+'%</div><div class="detail">'+correct+' out of '+total+' correct</div>';
+  document.querySelector('.submit-wrap').after(bs);
+  try{var tn=location.pathname.match(/test(\d+)/);if(tn)localStorage.setItem('actmath_'+tn[1],pct);}catch(e){}
+}
+
+function resetTest() {
+  graded = false;
+  var bsEl=document.getElementById('bottom-score');if(bsEl)bsEl.remove();
+  document.querySelector('.submit-btn').style.display = '';
+  document.querySelector('.reset-btn').style.display = 'none';
+  var rw=document.querySelector('.report-wrap');if(rw)rw.style.display='none';
+  var ni=document.querySelector('.name-input');if(ni)ni.value='';
+  document.querySelectorAll('.choices li').forEach(li => {
+    li.classList.remove('selected','correct','wrong','show-correct');
+    li.style.cursor = 'pointer';
+  });
+  document.querySelectorAll('.result-tag').forEach(t => t.remove());
+  document.querySelectorAll('.explanation').forEach(e => e.remove());
+}
+
+function generateReport(){
+  var nameInput=document.querySelector('.name-input');
+  var name=(nameInput&&nameInput.value.trim())||'Student';
+  var testName=document.querySelector('header h1').textContent;
+  var bs=document.getElementById('bottom-score');
+  var scorePct=bs?bs.querySelector('.pct').textContent:'';
+  var detailTxt=bs?bs.querySelector('.detail').textContent:'';
+  var d=new Date().toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'});
+  var btn=document.querySelector('.report-btn');btn.textContent='Generating...';btn.disabled=true;
+  var s=document.createElement('script');
+  s.src='https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js';
+  s.onerror=function(){btn.textContent='Download Report (PDF)';btn.disabled=false;alert('Could not load PDF library.');};
+  s.onload=function(){
+    var doc=new jspdf.jsPDF('portrait','mm','letter');
+    var pw=215.9,ph=279.4,mx=12,cw=pw-2*mx,y=8;
+    doc.setFillColor(26,58,74);doc.rect(0,0,pw,22,'F');
+    doc.setTextColor(255,255,255);doc.setFontSize(13);doc.setFont('helvetica','bold');
+    doc.text(testName,mx,9);
+    doc.setFontSize(7.5);doc.setFont('helvetica','normal');
+    doc.text(d+'  |  Student: '+name,mx,14.5);
+    doc.setFontSize(18);doc.setFont('helvetica','bold');
+    doc.text(scorePct,pw-mx,11,{align:'right'});
+    doc.setFontSize(7.5);doc.setFont('helvetica','normal');
+    doc.text(detailTxt,pw-mx,16,{align:'right'});
+    y=25;
+    doc.setDrawColor(26,58,74);doc.setLineWidth(0.3);doc.line(mx,y,pw-mx,y);y+=3;
+    document.querySelectorAll('.question').forEach(function(qDiv,idx){
+      var qNum=idx+1;var ca=ANSWERS[qNum];if(!ca)return;
+      var sel=qDiv.querySelector('.choices li.correct,.choices li.wrong');
+      var sa=sel?sel.textContent.trim().charAt(0):'-';
+      var ok=sel&&sel.classList.contains('correct');
+      if(ok){
+        doc.setFillColor(40,167,69);doc.circle(mx+1.2,y-1,1,'F');
+        doc.setTextColor(33,33,33);doc.setFont('helvetica','bold');doc.setFontSize(8);
+        doc.text('Q'+qNum,mx+4,y);
+        doc.setFont('helvetica','normal');doc.setTextColor(40,167,69);
+        doc.text('Correct ('+ca+')',mx+14,y);
+      }else{
+        doc.setFillColor(220,53,69);doc.circle(mx+1.2,y-1,1,'F');
+        doc.setTextColor(33,33,33);doc.setFont('helvetica','bold');doc.setFontSize(8);
+        doc.text('Q'+qNum,mx+4,y);
+        doc.setFont('helvetica','normal');doc.setTextColor(220,53,69);
+        doc.text('Incorrect',mx+14,y);
+        doc.setTextColor(120,120,120);
+        doc.text('(Chose '+sa+', Correct: '+ca+')',mx+32,y);
+      }
+      y+=3.2;
+      var qP=qDiv.querySelector('p');
+      if(qP){
+        var qT=qP.cloneNode(true);
+        var tags=qT.querySelectorAll('.result-tag');tags.forEach(function(t){t.remove();});
+        var qt=qT.textContent.replace(/^\d+\.\s*/,'').trim();
+        if(qt.length>0){
+          doc.setFont('helvetica','normal');doc.setTextColor(60,60,60);doc.setFontSize(6.5);
+          var ql=doc.splitTextToSize(qt,cw-5);
+          ql=ql.slice(0,1);
+          if(doc.splitTextToSize(qt,cw-5).length>1){ql[0]=ql[0].substring(0,ql[0].length-3)+'...';}
+          doc.text(ql,mx+4,y);y+=2.4;
+        }
+      }
+      if(typeof EXPLANATIONS!=='undefined'&&EXPLANATIONS[qNum]){
+        doc.setFont('helvetica','italic');doc.setTextColor(100,100,100);doc.setFontSize(6);
+        var lines=doc.splitTextToSize(EXPLANATIONS[qNum],cw-5);
+        if(lines.length>2){lines=lines.slice(0,2);lines[1]=lines[1].substring(0,Math.max(0,lines[1].length-3))+'...';}
+        doc.text(lines,mx+4,y);y+=lines.length*2.2;
+      }
+      y+=2;
+    });
+    doc.setDrawColor(200,200,200);doc.setLineWidth(0.2);doc.line(mx,ph-10,pw-mx,ph-10);
+    doc.setTextColor(170,170,170);doc.setFontSize(6);doc.setFont('helvetica','normal');
+    doc.text('ACT Math Practice  |  Score Report',pw/2,ph-7,{align:'center'});
+    var tn=location.pathname.match(/test(\d+)/);
+    var testNum=tn?parseInt(tn[1])-100:0;
+    var ds=new Date().toISOString().slice(0,10);
+    doc.save('ACT-Math-Test-'+testNum+'-'+ds+'.pdf');
+    btn.textContent='Download Report (PDF)';btn.disabled=false;
+  };
+  document.head.appendChild(s);
+}
+</script>
+</body></html>

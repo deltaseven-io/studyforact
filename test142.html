@@ -1,0 +1,222 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>ACT Math Test 42</title><style>@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:#fff;color:#2d3748;line-height:1.7}
+.container{max-width:800px;margin:0 auto;padding:20px 24px}
+header{background:linear-gradient(135deg,#1a3a4a 0%,#2d6a7a 100%);color:#fff;padding:28px 0;margin-bottom:36px;text-align:center}
+header .container{display:block}
+header h1{font-size:1.6rem;font-weight:700;letter-spacing:-0.3px}
+header a{color:rgba(255,255,255,.7);text-decoration:none;font-size:.9rem;display:inline-block;margin-bottom:6px;transition:color .2s}
+header a:hover{color:#fff}
+.question{background:#fff;border-radius:12px;padding:24px;margin-bottom:20px;border:1px solid #e2e8f0;transition:border-color .2s}
+.question:hover{border-color:#cbd5e0}
+.question p{margin-bottom:14px;font-size:1.05rem}
+img{max-width:100%;height:auto;margin:4px 0;vertical-align:middle}
+.choices{list-style:none}
+.choices li{padding:10px 14px;margin:6px 0;border-radius:8px;cursor:pointer;transition:all .2s;border:2px solid transparent}
+.choices li:hover{background:#f0f7fa}
+.choices li.selected{background:#d1ecf1;border-color:#bee5eb}
+.choices li.correct{background:#d4edda;border-color:#28a745}
+.choices li.wrong{background:#f8d7da;border-color:#dc3545}
+.choices li.show-correct{background:#d4edda;border-color:#28a745}
+.submit-wrap{text-align:center;margin:36px 0}
+.submit-btn{display:inline-block;padding:14px 40px;background:linear-gradient(135deg,#1a3a4a,#2d6a7a);color:#fff;border:none;border-radius:10px;font-size:1.1rem;cursor:pointer;font-weight:600;font-family:inherit;transition:all .25s;letter-spacing:.3px}
+.submit-btn:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(26,58,74,.25)}
+.score-box{background:#fff;border-radius:12px;padding:28px;margin-bottom:28px;text-align:center;border:1px solid #e2e8f0;box-shadow:0 4px 20px rgba(0,0,0,.06);display:none}
+.score-box h2{font-size:1.4rem;margin-bottom:8px;color:#1a3a4a;text-align:center}
+.score-box .pct{font-size:3rem;font-weight:700}
+.score-box .pct.good{color:#28a745}
+.score-box .pct.ok{color:#e6a817}
+.score-box .pct.bad{color:#dc3545}
+.score-box .detail{color:#666;margin-top:4px}
+.result-tag{display:inline-block;padding:2px 10px;border-radius:12px;font-size:.8rem;font-weight:600;margin-left:8px}
+.result-tag.correct{background:#d4edda;color:#155724}
+.result-tag.wrong{background:#f8d7da;color:#721c24}
+.reset-btn{display:none;margin:16px auto;padding:12px 28px;background:#6c757d;color:#fff;border:none;border-radius:10px;font-size:1rem;cursor:pointer;font-family:inherit;transition:all .25s}
+.reset-btn:hover{background:#5a6268;transform:translateY(-1px)}
+.explanation{background:#f0f7ff;border-left:4px solid #1a3a4a;padding:14px 18px;margin-top:14px;border-radius:0 8px 8px 0;font-size:.95rem;color:#444;display:none}
+.explanation.show{display:block}
+.explanation strong{color:#1a3a4a}
+.nav{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin:36px 0}
+.nav a{display:inline-block;padding:10px 24px;background:linear-gradient(135deg,#1a3a4a,#2d6a7a);color:#fff;text-decoration:none;border-radius:10px;font-weight:500;font-size:.95rem;transition:all .25s}
+.nav a:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(26,58,74,.25)}
+footer{text-align:center;padding:36px 24px;color:#8899a4;font-size:.85rem;border-top:1px solid #e2e8f0;margin-top:40px}
+.report-btn{display:inline-block;margin:0;padding:12px 28px;background:linear-gradient(135deg,#1a3a4a,#2d6a7a);color:#fff;border:none;border-radius:10px;font-size:1rem;cursor:pointer;font-family:inherit;transition:all .25s}
+.report-btn:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(26,58,74,.25)}
+.bottom-score{background:#fff;border-radius:12px;padding:20px;margin:20px 0;text-align:center;border:1px solid #e2e8f0;box-shadow:0 4px 20px rgba(0,0,0,.06)}
+.bottom-score .pct{font-size:2.5rem;font-weight:700}
+.bottom-score .pct.good{color:#28a745}
+.bottom-score .pct.ok{color:#e6a817}
+.bottom-score .pct.bad{color:#dc3545}
+.bottom-score .detail{color:#666;margin-top:4px;font-size:.95rem}
+.report-wrap{display:none;text-align:center;margin:16px 0}
+.name-input{padding:10px 14px;border:1px solid #e2e8f0;border-radius:10px;font-size:.95rem;font-family:inherit;width:200px;margin-right:8px;outline:none;transition:border-color .2s}
+.name-input:focus{border-color:#1a3a4a}
+</style></head><body><header><div class="container"><a href="index.html">&larr; All Tests</a><h1>ACT Math Practice Test 42</h1></div></header><div class="container"><div id="score-box" class="score-box"><h2>Your Score</h2><div class="pct">0%</div><div class="detail"></div></div><div class="question"><p><b>1.</b> For <i>i</i><sup class="frac">2</sup> = -1, (5 - <i>i</i>)<sup class="frac">2</sup>= ?</p><ul class="choices"><li>F. 24</li><li>G. 26</li><li>H. 24 - 5<i>i</i></li><li>J. 24 - 10<i>i</i></li><li>K. 26 + 10<i>i</i></li></ul></div><div class="question"><p><b>2.</b> If <i>x</i> and <i>y</i> are integers such that <i>y</i> &gt; 12 and 2<i>x</i> + <i>y</i> = 19, which of the following is the solution set for <i>x</i>?</p><ul class="choices"><li>A. <i>x</i> ≥ 4</li><li>B. <i>x</i> ≥ 3</li><li>C. <i>x</i> ≤ 4</li><li>D. <i>x</i> ≤ 3</li><li>E. <i>x</i> ≤ 0</li></ul></div><div class="question"><p><b>3.</b> If <i>pq</i><sup class="frac">3</sup><i>T</i><sup class="frac">4</sup> &gt; 0, which of the following products must be positive?</p><ul class="choices"><li>F. <i>pq</i></li><li>G. <i>pt</i></li><li>H. <i>qt</i></li><li>J. <i>pqt</i></li><li>K. <i>pq</i><sup class="frac">2</sup></li></ul></div><div class="question"><p><b>4.</b> If log<sub class="frac">3</sub> 81 = <i>x</i> + 1, then <i>x</i> = ?</p><ul class="choices"><li>A. 3</li><li>B. 4</li><li>C. 5</li><li>D. 6</li><li>E. 243</li></ul></div><div class="question"><p><b>5.</b> In <img alt="image" src="https://www.crackab.com/image/tests/6/00163.jpg"><i>RST</i> below, <img alt="image" src="https://www.crackab.com/image/tests/6/00094.jpg"><i>S</i> is a right angle, <img alt="image" src="https://www.crackab.com/image/tests/6/00164.jpg"> = 7 units, and <img alt="image" src="https://www.crackab.com/image/tests/6/00165.jpg"> = 2 units. What does csc <img alt="image" src="https://www.crackab.com/image/tests/6/00094.jpg"><i>T</i> equal?<br><img alt="image" src="https://www.crackab.com/image/tests/6/00170.jpg"></p><ul class="choices"><li>F. <img alt="image" src="https://www.crackab.com/image/tests/6/00166.jpg"></li><li>G. <img alt="image" src="https://www.crackab.com/image/tests/6/00167.jpg"></li><li>H. <img alt="image" src="https://www.crackab.com/image/tests/6/00168.jpg"></li><li>J. <img alt="image" src="https://www.crackab.com/image/tests/6/00169.jpg"></li><li>K. <img alt="image" src="https://www.crackab.com/image/tests/6/00153.jpg"></li></ul></div><div class="question"><p><b>6.</b> A flight instructor charges $75 per lesson, plus an additional fee for the use of his plane. The charge for the use of his plane varies directly with the cube root of the time the plane is used. If a lesson plus 27 minutes of plane usage costs $120, what is the total amount charged for a lesson involving 64 minutes of plane usage?</p><ul class="choices"><li>A. $195</li><li>B. $180</li><li>C. $157</li><li>D. $135</li><li>E. $60</li></ul></div><div class="question"><p><b>7.</b> In Δ<i>ABD</i> shown below, <i>c</i> is on <img alt="image" src="https://www.crackab.com/image/tests/6/00171.jpg">, <img alt="image" src="https://www.crackab.com/image/tests/6/00172.jpg"> ⊥ <img alt="image" src="https://www.crackab.com/image/tests/6/00171.jpg">, the length of <img alt="image" src="https://www.crackab.com/image/tests/6/00173.jpg"> is 6 inches, the length of <img alt="image" src="https://www.crackab.com/image/tests/6/00171.jpg"> is 10 inches, and sin <i>d</i> = 0.8. What is the area of Δ<i>ABD</i> in square inches?<br><img alt="image" src="https://www.crackab.com/image/tests/6/00174.jpg"></p><ul class="choices"><li>F. 6</li><li>G. 12</li><li>H. 24</li><li>J. 30</li><li>K. 60</li></ul></div><div class="question"><p><b>8.</b> For real numbers <i>x</i> and <i>y</i>, when is the equation |2<i>x</i> + 3<i>y</i>| = |2<i>x</i> - 3<i>y</i>| true?</p><ul class="choices"><li>A. Never</li><li>B. Always</li><li>C. Only when 2<i>x</i> = 3<i>y</i></li><li>D. Only when <i>x</i> = 0 and <i>y</i> = 0</li><li>E. Only when <i>x</i> = 0 or <i>y</i> = 0</li></ul></div><div class="question"><p><b>9.</b> In the figure below, all line segments that intersect are perpendicular. Using only the segments and vertices in the figure, how many distinct rectangles are there with areas less than the area of <i>ADLI</i>?<br>(Note: If 2 rectangles have all four vertices in common, then they are not distinct.)<br><img alt="image" src="https://www.crackab.com/image/tests/6/00175.jpg"></p><ul class="choices"><li>F. 7</li><li>G. 8</li><li>H. 17</li><li>J. 18</li><li>K. 19</li></ul></div><div class="question"><p><b>10.</b> For some real number <i>a</i>, the graph of <i>y</i> = (<i>a</i> + 3)<i>x</i> + 5 in the standard (<i>x</i>, <i>y</i>) coordinate plane passes through the point (3, 11). What is the slope of this line?</p><ul class="choices"><li>A. -5</li><li>B. -2</li><li>C. -1</li><li>D. 2</li><li>E. 5<img alt="image" src="https://www.crackab.com/image/tests/6/00119.jpg"></li></ul></div><div class="question"><p><b>11.</b> In the figure below, <img alt="image" src="https://www.crackab.com/image/tests/6/00176.jpg"> is a line segment and all distances are given in inches. What is the ratio of the area of quadrilateral <i>RBCS</i> to the area of quadrilateral <i>SCFT</i>?<br><img alt="image" src="https://www.crackab.com/image/tests/6/00177.jpg"></p><ul class="choices"><li>F. 9:7</li><li>G. 7:9</li><li>H. 11:13</li><li>J. 11:39</li><li>K. 11:50</li></ul></div><div class="question"><p><b>12.</b> When graphed in the standard (<i>x</i>, <i>y</i>) coordinate plane, the graphs of <i>y</i> = <i>x</i><sup class="frac">2</sup> - 5 and <i>y</i> = <i>x</i> + 1 intersect at which of the following points?</p><ul class="choices"><li>A. (-3, 2) and (2, 3)</li><li>B. (-3, 4) and (2, -1)</li><li>C. (3, -4) and (-2, 1)</li><li>D. (3, 4) and (-2, -1)</li><li>E. The graphs do not intersect.</li></ul></div><div class="question"><p><b>13.</b> In septagon <i>ABCDEFG</i> shown below, <img alt="image" src="https://www.crackab.com/image/tests/6/00094.jpg"><i>a</i> = 115° and <img alt="image" src="https://www.crackab.com/image/tests/6/00094.jpg"><i>g</i> = 70°. What is the sum of the measures of the other 5 interior angles?<br><img alt="image" src="https://www.crackab.com/image/tests/6/00178.jpg"></p><ul class="choices"><li>F. 585°</li><li>G. 595°</li><li>H. 655°</li><li>J. 690°</li><li>K. 715°</li></ul></div><div class="question"><p><b>14.</b> For all real numbers <i>x</i> and <i>y</i> such that the product of <i>y</i> and 4 is <i>x</i>, which of the following expressions represents the sum of <i>y</i> and 4 in terms of <i>x</i>?</p><ul class="choices"><li>A. <i>x</i> + 4</li><li>B. 4<i>x</i> + 4</li><li>C. 4(<i>x</i> + 4)</li><li>D. <img alt="image" src="https://www.crackab.com/image/tests/6/00179.jpg"></li><li>E. <img alt="image" src="https://www.crackab.com/image/tests/6/00180.jpg"></li></ul></div><div class="question"><p><b>15.</b> What is cos <img alt="image" src="https://www.crackab.com/image/tests/6/00181.jpg"> given that <img alt="image" src="https://www.crackab.com/image/tests/6/00181.jpg"> = <img alt="image" src="https://www.crackab.com/image/tests/6/00182.jpg"> + <img alt="image" src="https://www.crackab.com/image/tests/6/00183.jpg"> and that cos (<i>a</i>+<i>b</i>) = cos <i>a</i> (cos <i>b</i>) - sin <i>a</i> (sin <i>b</i>)?<br>(Note: You may use the following table of values.)<br><img alt="image" src="https://www.crackab.com/image/tests/6/00184.jpg"></p><ul class="choices"><li>F. <img alt="image" src="https://www.crackab.com/image/tests/6/00185.jpg"></li><li>G. - <img alt="image" src="https://www.crackab.com/image/tests/6/00186.jpg"></li><li>H. <img alt="image" src="https://www.crackab.com/image/tests/6/00187.jpg"></li><li>J. 0.999</li><li>K. <img alt="image" src="https://www.crackab.com/image/tests/6/00188.jpg"></li></ul></div><div class="submit-wrap"><button class="submit-btn" onclick="gradeTest()">Submit Test</button><button class="reset-btn" onclick="resetTest()">Try Again</button>
+<div class="report-wrap"><input type="text" class="name-input" placeholder="Student name (for report)"><button class="report-btn" onclick="generateReport()">Download Report (PDF)</button></div></div><div class="nav"><a href="test141.html">&larr; Prev</a><a href="index.html">All Tests</a><a href="test143.html">Next &rarr;</a></div></div><footer><div class="container">ACT Math Practice</div></footer>
+<script>
+const ANSWERS = {"1": "J", "2": "D", "3": "F", "4": "A", "5": "H", "6": "D", "7": "H", "8": "E", "9": "H", "10": "D", "11": "J", "12": "D", "13": "K", "14": "E", "15": "F"};
+const EXPLANATIONS = {"1":"(J) (5 – i)2  =  (5 – i)(5 – i). Distributing the expression gives 25 – 5i – 5i + i2. Recall that i2  =  –1, so the expression becomes 25 – 5i – 5i + (–1). Combining like terms gives 24 – 10i.", "2":"(D) Solving the second equation for y gives y  =  19 – 2x. Substituting this expression into the inequality for y gives 19 – 2x > 12. Solve the inequality for x to get –2x > –7 → x < 3.5. Since the solution for x must be an integer, the inequality becomes x ≤ 3.", "3":"(F) For the product of pq3t4 to be greater than zero it must be positive. The only way the product of three expressions can be positive is if each is positive or if exactly two are negative and the other is positive. Since t4 is always positive, p and q3 must either both be positive or both be negative; either way, the product of pq must be positive.", "4":"(A) 34  =  81; therefore, log3 81  =  4. The equation then becomes 4  =  x + 1. Solve for x to get x  =  3.", "5":"(H) Using the Pythagorean Theorem to find the missing side of the triangle we get a2 + b2  =  c2 → 22 + x2  =  72 → 4 + x2  =  49 → x2  =  45. Taking the square root of both sides of the equation and simplifying the radical gives . Rationalizing the denominator gives", "6":"(D) Setting up an equation for the total charge by the flight instructor gives  where C is the cost of the flight, k is the constant of variation, and t is time. Substituting 27 for time and $120 for cost yields the equation . Solving for k gives 120  =  75 + 3k → 45  =  3k → k  =  15. Now that we know the constant of variation, use it along with t  =  64 to find the cost of a 64-minute lesson: .", "7":"(H) The ratio for the sine of an angle is . Setting this ratio equal to the ratio given in the problem gives the new equation: . Solve for  to get   =  4.8. Now that we know the height of the triangle, calculate the area using the formula .", "8":"(E) Sometimes the best way to find the right answer is to plug in values and eliminate wrong answers. Starting with x  =  1 and y  =  1, we get |2(1) + 3(1)|  =  |2(1) – 3(1)| → |5|  =  |–1| → 5  =  1. This is not true, which eliminates choices B and C. Next, substitute x  =  0 and y  =  1 to get |2(0) + 3(1)|  =  |2(0) – 3(1)| → |3|  =  |–3| → 3  =  3, which is a true statement eliminating choices A and D leaving E as the correct answer.", "9":"(H) There is no simple trick to this problem; we just have to count all the rectangles. A good strategy is to start with the smallest rectangles and work our way up. There are 6 small rectangles, 7 rectangles composed of 2 small rectangles, 2 rectangles composed of 3 small rectangles, and 2 rectangles composed of 4 small rectangles, making a total of 17 rectangles with area less than that of rectangle ADLI.", "10":"(D) Substituting the given point for x and y into the equation and solving for A gives 11  =  (A + 3)(3) + 5 → 11  =  3A + 9 + 5 → 11  =  3A + 14 → A  =  –1. Now to find the slope we need to get the equation into y  =  mx + b form. Substituting A  =  –1 we get y  =  2x + 5, so the slope is 2.", "11":"(J) To find the area of a trapezoid we need to know the heights of each of the trapezoids. Draw a strategic line parallel to  to make two special 3-4-5 and 5-12-13 right triangles at the top of the figure. Now that we know the heights of the two trapezoids are 4 and 12, we can use the area of a trapezoid formula: . The area of the smaller trapezoid is . The area of the larger trapezoid is . The ratio of the two trapezoids is now .", "12":"(D) Substituting x + 1 for y in the first equation gives x + 1  =  x2 – 5. Solving for x gives x2 – x – 6  =  0. Factor to get (x – 3)(x + 2)  =  0. Solve for x: x – 3  =  0 →x  =  3 and x + 2  =  0 →x  =  –2. Substitute these values back into either equation for x to solve for y. Solving for y we get y  =  (3) + 1 → y  =  4 and y  =  (–2) + 1 → y  =  –1 so the two points of intersection are (3, 4) and (–2, –1).", "13":"(K) To find the sum of the interior angles of a septagon, use the formula (n – 2) · 180. Substituting 7 for n gives (7 – 2) · 180  =  900. Since two of the angles have measures 70° and 115° the remaining angles have a sum of 900 – (70 + 115)  =  715°.", "14":"(E) The product of y and 4 is x can be represented as the equation y · 4  =  x. Solving for y gives . The question asks to find the sum of y and 4 in terms of x. Writing this as an expression we get y + 4. Substitute for  for y to get . Add the two fractions to get .", "15":"(F) . Using the given formula the expression becomes . Substituting the values from the chart gives   =  . You can also ignore the chart, set your calculator in radian mode and get the decimal answer, –.2588. You would then evaluate all the possible answers as decimals and also arrive at choice F as correct."};
+let graded = false;
+
+document.querySelectorAll('.choices li').forEach(li => {
+  // Remove old onclick
+  li.removeAttribute('onclick');
+  li.addEventListener('click', function() {
+    if (graded) return;
+    const siblings = this.parentElement.querySelectorAll('li');
+    siblings.forEach(s => s.classList.remove('selected'));
+    this.classList.add('selected');
+  });
+});
+
+function gradeTest() {
+  if (graded) return;
+  graded = true;
+  let correct = 0;
+  const total = Object.keys(ANSWERS).length;
+  
+  document.querySelectorAll('.question').forEach((qDiv, idx) => {
+    const qNum = idx + 1;
+    const correctAns = ANSWERS[qNum];
+    if (!correctAns) return;
+    const choices = qDiv.querySelectorAll('.choices li');
+    const selected = qDiv.querySelector('.choices li.selected');
+    const selectedLetter = selected ? selected.textContent.trim().charAt(0) : null;
+    
+    choices.forEach(li => {
+      const letter = li.textContent.trim().charAt(0);
+      if (letter === correctAns) li.classList.add('show-correct');
+      li.style.cursor = 'default';
+    });
+    
+    const tag = document.createElement('span');
+    tag.className = 'result-tag';
+    
+    if (selectedLetter === correctAns) {
+      correct++;
+      tag.className += ' correct';
+      tag.textContent = 'Correct';
+      if (selected) { selected.classList.remove('selected'); selected.classList.add('correct'); }
+    } else {
+      tag.className += ' wrong';
+      tag.textContent = 'Incorrect (Answer: ' + correctAns + ')';
+      if (selected) { selected.classList.remove('selected'); selected.classList.add('wrong'); }
+    }
+    
+    const firstP = qDiv.querySelector('p');
+    if (firstP) firstP.appendChild(tag);
+    
+    if (typeof EXPLANATIONS !== 'undefined' && EXPLANATIONS[qNum]) {
+      const explDiv = document.createElement('div');
+      explDiv.className = 'explanation show';
+      explDiv.innerHTML = '<strong>Explanation:</strong> ' + EXPLANATIONS[qNum];
+      qDiv.appendChild(explDiv);
+    }
+  });
+  
+  const pct = Math.round((correct / total) * 100);
+  document.querySelector('.submit-btn').style.display = 'none';
+  document.querySelector('.reset-btn').style.display = 'block';
+  var rw=document.querySelector('.report-wrap');if(rw)rw.style.display='block';
+  var bs=document.createElement('div');bs.className='bottom-score';bs.id='bottom-score';
+  bs.innerHTML='<h2 style="font-size:1.3rem;margin-bottom:6px;color:#1a3a4a">Your Score</h2><div class="pct '+(pct>=80?'good':pct>=60?'ok':'bad')+'">'+pct+'%</div><div class="detail">'+correct+' out of '+total+' correct</div>';
+  document.querySelector('.submit-wrap').after(bs);
+  try{var tn=location.pathname.match(/test(\d+)/);if(tn)localStorage.setItem('actmath_'+tn[1],pct);}catch(e){}
+}
+
+function resetTest() {
+  graded = false;
+  var bsEl=document.getElementById('bottom-score');if(bsEl)bsEl.remove();
+  document.querySelector('.submit-btn').style.display = '';
+  document.querySelector('.reset-btn').style.display = 'none';
+  var rw=document.querySelector('.report-wrap');if(rw)rw.style.display='none';
+  var ni=document.querySelector('.name-input');if(ni)ni.value='';
+  document.querySelectorAll('.choices li').forEach(li => {
+    li.classList.remove('selected','correct','wrong','show-correct');
+    li.style.cursor = 'pointer';
+  });
+  document.querySelectorAll('.result-tag').forEach(t => t.remove());
+  document.querySelectorAll('.explanation').forEach(e => e.remove());
+}
+
+function generateReport(){
+  var nameInput=document.querySelector('.name-input');
+  var name=(nameInput&&nameInput.value.trim())||'Student';
+  var testName=document.querySelector('header h1').textContent;
+  var bs=document.getElementById('bottom-score');
+  var scorePct=bs?bs.querySelector('.pct').textContent:'';
+  var detailTxt=bs?bs.querySelector('.detail').textContent:'';
+  var d=new Date().toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'});
+  var btn=document.querySelector('.report-btn');btn.textContent='Generating...';btn.disabled=true;
+  var s=document.createElement('script');
+  s.src='https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js';
+  s.onerror=function(){btn.textContent='Download Report (PDF)';btn.disabled=false;alert('Could not load PDF library.');};
+  s.onload=function(){
+    var doc=new jspdf.jsPDF('portrait','mm','letter');
+    var pw=215.9,ph=279.4,mx=12,cw=pw-2*mx,y=8;
+    doc.setFillColor(26,58,74);doc.rect(0,0,pw,22,'F');
+    doc.setTextColor(255,255,255);doc.setFontSize(13);doc.setFont('helvetica','bold');
+    doc.text(testName,mx,9);
+    doc.setFontSize(7.5);doc.setFont('helvetica','normal');
+    doc.text(d+'  |  Student: '+name,mx,14.5);
+    doc.setFontSize(18);doc.setFont('helvetica','bold');
+    doc.text(scorePct,pw-mx,11,{align:'right'});
+    doc.setFontSize(7.5);doc.setFont('helvetica','normal');
+    doc.text(detailTxt,pw-mx,16,{align:'right'});
+    y=25;
+    doc.setDrawColor(26,58,74);doc.setLineWidth(0.3);doc.line(mx,y,pw-mx,y);y+=3;
+    document.querySelectorAll('.question').forEach(function(qDiv,idx){
+      var qNum=idx+1;var ca=ANSWERS[qNum];if(!ca)return;
+      var sel=qDiv.querySelector('.choices li.correct,.choices li.wrong');
+      var sa=sel?sel.textContent.trim().charAt(0):'-';
+      var ok=sel&&sel.classList.contains('correct');
+      if(ok){
+        doc.setFillColor(40,167,69);doc.circle(mx+1.2,y-1,1,'F');
+        doc.setTextColor(33,33,33);doc.setFont('helvetica','bold');doc.setFontSize(8);
+        doc.text('Q'+qNum,mx+4,y);
+        doc.setFont('helvetica','normal');doc.setTextColor(40,167,69);
+        doc.text('Correct ('+ca+')',mx+14,y);
+      }else{
+        doc.setFillColor(220,53,69);doc.circle(mx+1.2,y-1,1,'F');
+        doc.setTextColor(33,33,33);doc.setFont('helvetica','bold');doc.setFontSize(8);
+        doc.text('Q'+qNum,mx+4,y);
+        doc.setFont('helvetica','normal');doc.setTextColor(220,53,69);
+        doc.text('Incorrect',mx+14,y);
+        doc.setTextColor(120,120,120);
+        doc.text('(Chose '+sa+', Correct: '+ca+')',mx+32,y);
+      }
+      y+=3.2;
+      var qP=qDiv.querySelector('p');
+      if(qP){
+        var qT=qP.cloneNode(true);
+        var tags=qT.querySelectorAll('.result-tag');tags.forEach(function(t){t.remove();});
+        var qt=qT.textContent.replace(/^\d+\.\s*/,'').trim();
+        if(qt.length>0){
+          doc.setFont('helvetica','normal');doc.setTextColor(60,60,60);doc.setFontSize(6.5);
+          var ql=doc.splitTextToSize(qt,cw-5);
+          ql=ql.slice(0,1);
+          if(doc.splitTextToSize(qt,cw-5).length>1){ql[0]=ql[0].substring(0,ql[0].length-3)+'...';}
+          doc.text(ql,mx+4,y);y+=2.4;
+        }
+      }
+      if(typeof EXPLANATIONS!=='undefined'&&EXPLANATIONS[qNum]){
+        doc.setFont('helvetica','italic');doc.setTextColor(100,100,100);doc.setFontSize(6);
+        var lines=doc.splitTextToSize(EXPLANATIONS[qNum],cw-5);
+        if(lines.length>2){lines=lines.slice(0,2);lines[1]=lines[1].substring(0,Math.max(0,lines[1].length-3))+'...';}
+        doc.text(lines,mx+4,y);y+=lines.length*2.2;
+      }
+      y+=2;
+    });
+    doc.setDrawColor(200,200,200);doc.setLineWidth(0.2);doc.line(mx,ph-10,pw-mx,ph-10);
+    doc.setTextColor(170,170,170);doc.setFontSize(6);doc.setFont('helvetica','normal');
+    doc.text('ACT Math Practice  |  Score Report',pw/2,ph-7,{align:'center'});
+    var tn=location.pathname.match(/test(\d+)/);
+    var testNum=tn?parseInt(tn[1])-100:0;
+    var ds=new Date().toISOString().slice(0,10);
+    doc.save('ACT-Math-Test-'+testNum+'-'+ds+'.pdf');
+    btn.textContent='Download Report (PDF)';btn.disabled=false;
+  };
+  document.head.appendChild(s);
+}
+</script>
+</body></html>

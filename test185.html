@@ -1,0 +1,222 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>ACT Math Test 85</title><style>@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:#fff;color:#2d3748;line-height:1.7}
+.container{max-width:800px;margin:0 auto;padding:20px 24px}
+header{background:linear-gradient(135deg,#1a3a4a 0%,#2d6a7a 100%);color:#fff;padding:28px 0;margin-bottom:36px;text-align:center}
+header .container{display:block}
+header h1{font-size:1.6rem;font-weight:700;letter-spacing:-0.3px}
+header a{color:rgba(255,255,255,.7);text-decoration:none;font-size:.9rem;display:inline-block;margin-bottom:6px;transition:color .2s}
+header a:hover{color:#fff}
+.question{background:#fff;border-radius:12px;padding:24px;margin-bottom:20px;border:1px solid #e2e8f0;transition:border-color .2s}
+.question:hover{border-color:#cbd5e0}
+.question p{margin-bottom:14px;font-size:1.05rem}
+img{max-width:100%;height:auto;margin:4px 0;vertical-align:middle}
+.choices{list-style:none}
+.choices li{padding:10px 14px;margin:6px 0;border-radius:8px;cursor:pointer;transition:all .2s;border:2px solid transparent}
+.choices li:hover{background:#f0f7fa}
+.choices li.selected{background:#d1ecf1;border-color:#bee5eb}
+.choices li.correct{background:#d4edda;border-color:#28a745}
+.choices li.wrong{background:#f8d7da;border-color:#dc3545}
+.choices li.show-correct{background:#d4edda;border-color:#28a745}
+.submit-wrap{text-align:center;margin:36px 0}
+.submit-btn{display:inline-block;padding:14px 40px;background:linear-gradient(135deg,#1a3a4a,#2d6a7a);color:#fff;border:none;border-radius:10px;font-size:1.1rem;cursor:pointer;font-weight:600;font-family:inherit;transition:all .25s;letter-spacing:.3px}
+.submit-btn:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(26,58,74,.25)}
+.score-box{background:#fff;border-radius:12px;padding:28px;margin-bottom:28px;text-align:center;border:1px solid #e2e8f0;box-shadow:0 4px 20px rgba(0,0,0,.06);display:none}
+.score-box h2{font-size:1.4rem;margin-bottom:8px;color:#1a3a4a;text-align:center}
+.score-box .pct{font-size:3rem;font-weight:700}
+.score-box .pct.good{color:#28a745}
+.score-box .pct.ok{color:#e6a817}
+.score-box .pct.bad{color:#dc3545}
+.score-box .detail{color:#666;margin-top:4px}
+.result-tag{display:inline-block;padding:2px 10px;border-radius:12px;font-size:.8rem;font-weight:600;margin-left:8px}
+.result-tag.correct{background:#d4edda;color:#155724}
+.result-tag.wrong{background:#f8d7da;color:#721c24}
+.reset-btn{display:none;margin:16px auto;padding:12px 28px;background:#6c757d;color:#fff;border:none;border-radius:10px;font-size:1rem;cursor:pointer;font-family:inherit;transition:all .25s}
+.reset-btn:hover{background:#5a6268;transform:translateY(-1px)}
+.explanation{background:#f0f7ff;border-left:4px solid #1a3a4a;padding:14px 18px;margin-top:14px;border-radius:0 8px 8px 0;font-size:.95rem;color:#444;display:none}
+.explanation.show{display:block}
+.explanation strong{color:#1a3a4a}
+.nav{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin:36px 0}
+.nav a{display:inline-block;padding:10px 24px;background:linear-gradient(135deg,#1a3a4a,#2d6a7a);color:#fff;text-decoration:none;border-radius:10px;font-weight:500;font-size:.95rem;transition:all .25s}
+.nav a:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(26,58,74,.25)}
+footer{text-align:center;padding:36px 24px;color:#8899a4;font-size:.85rem;border-top:1px solid #e2e8f0;margin-top:40px}
+.report-btn{display:inline-block;margin:0;padding:12px 28px;background:linear-gradient(135deg,#1a3a4a,#2d6a7a);color:#fff;border:none;border-radius:10px;font-size:1rem;cursor:pointer;font-family:inherit;transition:all .25s}
+.report-btn:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(26,58,74,.25)}
+.bottom-score{background:#fff;border-radius:12px;padding:20px;margin:20px 0;text-align:center;border:1px solid #e2e8f0;box-shadow:0 4px 20px rgba(0,0,0,.06)}
+.bottom-score .pct{font-size:2.5rem;font-weight:700}
+.bottom-score .pct.good{color:#28a745}
+.bottom-score .pct.ok{color:#e6a817}
+.bottom-score .pct.bad{color:#dc3545}
+.bottom-score .detail{color:#666;margin-top:4px;font-size:.95rem}
+.report-wrap{display:none;text-align:center;margin:16px 0}
+.name-input{padding:10px 14px;border:1px solid #e2e8f0;border-radius:10px;font-size:.95rem;font-family:inherit;width:200px;margin-right:8px;outline:none;transition:border-color .2s}
+.name-input:focus{border-color:#1a3a4a}
+</style></head><body><header><div class="container"><a href="index.html">&larr; All Tests</a><h1>ACT Math Practice Test 85</h1></div></header><div class="container"><div id="score-box" class="score-box"><h2>Your Score</h2><div class="pct">0%</div><div class="detail"></div></div><div class="question"><p><b>1.</b> For <span class="italic">x<sup><small>2</small></sup></span> ≠ 169, <img src="https://www.crackab.com/image/tests/mg10/00651.jpg"></p><ul class="choices"><li>A. <img src="https://www.crackab.com/image/tests/mg10/00115.jpg"></li><li>B. <img src="https://www.crackab.com/image/tests/mg10/00116.jpg"></li><li>C. <img src="https://www.crackab.com/image/tests/mg10/00119.jpg"></li><li>D. <img src="https://www.crackab.com/image/tests/mg10/00121.jpg"></li><li>E. <img src="https://www.crackab.com/image/tests/mg10/00123.jpg"></li></ul></div><div class="question"><p><b>2.</b> If <span class="italic">n</span> = <span class="italic">m</span> + 2, then (<span class="italic">m</span> - <span class="italic">n</span>)<sup><small>4</small></sup> = ?</p><ul class="choices"><li>F. 16</li><li>G. 8</li><li>H. 1</li><li>J. -8</li><li>K. -16</li></ul></div><div class="question"><p><b>3.</b> The larger of two numbers exceeds twice the smaller number by 9. The sum of twice the larger and 5 times the smaller number is 74. If <span class="italic">a</span> is the smaller number, which equation below determines the correct value of <span class="italic">a</span>?</p><ul class="choices"><li>A. 5(2<span class="italic">a</span> + 9) + 2<span class="italic">a</span> = 74</li><li>B. 5(2<span class="italic">a</span> - 9) + 2<span class="italic">a</span> = 74</li><li>C. (4<span class="italic">a</span> + 9) + 5<span class="italic">a</span> = 74</li><li>D. 2(2<span class="italic">a</span> + 9) + 5<span class="italic">a</span> = 74</li><li>E. 2(2<span class="italic">a</span> - 9) + 5<span class="italic">a</span> = 74</li></ul></div><div class="question"><p><b>4.</b> When <img src="https://www.crackab.com/image/tests/mg10/00125.jpg"></p><ul class="choices"><li>F. 0</li><li>G. 4<span class="italic">y<sup><small>2</small></sup></span></li><li>H. -4<span class="italic">y<sup><small>2</small></sup></span></li><li>J. -8<span class="italic">y<sup><small>2</small></sup></span></li><li>K. 4<span class="italic">y</span></li></ul></div><div class="question"><p><b>5.</b> The ratio of the side lengths for a triangle is exactly 15:14:12. In a second triangle similar to the first, the longest side is 10 inches long. To the nearest tenth of an inch, what is the length of the shortest side of the second triangle?</p><ul class="choices"><li>A. 6.4</li><li>B. 8.0</li><li>C. 9.3</li><li>D. 12.0</li><li>E. Cannot be determined from the given information</li></ul></div><div class="question"><p><b>6.</b> If <span class="italic">a</span> and <span class="italic">b</span> are positive integers such that the greatest common factor of <span class="italic">a<sup><small>2</small></sup>b<sup><small>2</small></sup></span> and <span class="italic">ab<sup><small>3</small></sup></span> is 45, then which of the following could <span class="italic">b</span> equal?</p><ul class="choices"><li>F. 3</li><li>G. 5</li><li>H. 9</li><li>J. 15</li><li>K. 45</li></ul></div><div class="question"><p><b>7.</b> The costs of carriage rides of different lengths, given in half miles, are shown in the table below:<img src="https://www.crackab.com/image/tests/mg10/02399.jpg">Each cost consists of a fixed charge and a charge per half mile. What is the fixed charge?</p><ul class="choices"><li>A. $0.50</li><li>B. $1.00</li><li>C. $5.50</li><li>D. $5.00</li><li>E. $1.50</li></ul></div><div class="question"><p><b>8.</b> The hypotenuse of right triangle <span class="italic">ABC</span> shown below is 16 inches long. The sine of angle <span class="italic">A</span> is <img src="https://www.crackab.com/image/tests/mg10/00129.jpg">. About how many inches long is <img src="https://www.crackab.com/image/tests/mg10/00132.jpg">?<br><img src="https://www.crackab.com/image/tests/mg10/00134.jpg"><br></p><ul class="choices"><li>F. 8.0</li><li>G. 9.6</li><li>H. 12.4</li><li>J. 14.3</li><li>K. 15.6</li></ul></div><div class="question"><p><b>9.</b> A circle in the standard (<span class="italic">x</span>, <span class="italic">y</span>) coordinate plane has center (12,-5) and radius 4 coordinate units. Which of the following is an equation of the circle?</p><ul class="choices"><li>A. (<span class="italic">x</span> - 12)<sup><small>2</small></sup> + (<span class="italic">y</span> - 5)<sup><small>2</small></sup> = 4</li><li>B. (<span class="italic">x</span> - 12)<sup><small>2</small></sup> - (<span class="italic">y</span> + 5)<sup><small>2</small></sup> = 4</li><li>C. (<span class="italic">x</span> - 12)<sup><small>2</small></sup> - (<span class="italic">y</span> - 5)<sup><small>2</small></sup> = 8</li><li>D. (<span class="italic">x</span> - 12)<sup><small>2</small></sup> + (<span class="italic">y</span> - 5)<sup><small>2</small></sup> = 16</li><li>E. (<span class="italic">x</span> - 12)<sup><small>2</small></sup> + (<span class="italic">y</span> + 5)<sup><small>2</small></sup> = 16</li></ul></div><div class="question"><p><b>10.</b> What is the largest integer value of <span class="italic">t</span> that satisfies the inequality <img src="https://www.crackab.com/image/tests/mg10/00062.jpg">?</p><ul class="choices"><li>F. 30</li><li>G. 19</li><li>H. 18</li><li>J. 10</li><li>K. 8</li></ul></div><div class="question"><p><b>11.</b> What is the distance in the standard (<span class="italic">x</span>, <span class="italic">y</span>) coordinate plane between the points (5,5) and (1,0)?</p><ul class="choices"><li>A. <img src="https://www.crackab.com/image/tests/mg10/00139.jpg"></li><li>B. <img src="https://www.crackab.com/image/tests/mg10/00142.jpg"></li><li>C. 4</li><li>D. 6</li><li>E. 16</li></ul></div><div class="question"><p><b>12.</b> In the figure below, <span class="italic">LMNO</span> is a trapezoid, <span class="italic">O</span> lies on <span class="italic">LP</span>, and angle measures are as marked. What is the measure of angle <span class="italic">MON</span>?<br><img src="https://www.crackab.com/image/tests/mg10/00143.jpg"></p><ul class="choices"><li>F. 15°</li><li>G. 25°</li><li>H. 30°</li><li>J. 35°</li><li>K. 45°</li></ul></div><div class="question"><p><b>13.</b> In Δ<span class="italic">ABC</span>, <span class="italic">AB</span> ≅ <span class="italic">AC</span> and the measure of ∠<span class="italic">B</span> is 34°. What is the measure of ∠<span class="italic">A</span>?</p><ul class="choices"><li>A. 34°</li><li>B. 56°</li><li>C. 68°</li><li>D. 73°</li><li>E. 112°</li></ul></div><div class="question"><p><b>14.</b> In a certain budget, 30% of the money goes toward housing costs, and, of that portion, 20% goes toward rent. If the amount of money that goes toward rent is $630, what is the total amount of the budget?</p><ul class="choices"><li>F. $1,680</li><li>G. $2,100</li><li>H. $4,095</li><li>J. $7,560</li><li>K. $10,500</li></ul></div><div class="question"><p><b>15.</b> What is the matrix product <img src="https://www.crackab.com/image/tests/mg10/00146.jpg">?</p><ul class="choices"><li>A. <img src="https://www.crackab.com/image/tests/mg10/00147.jpg"></li><li>B. <img src="https://www.crackab.com/image/tests/mg10/00151.jpg"></li><li>C. [2<span class="italic">x</span>  3<span class="italic">x</span>  5<span class="italic">x</span>]</li><li>D. [9<span class="italic">x</span>  0  -9<span class="italic">x</span>]</li><li>E. [0]</li></ul></div><div class="submit-wrap"><button class="submit-btn" onclick="gradeTest()">Submit Test</button><button class="reset-btn" onclick="resetTest()">Try Again</button>
+<div class="report-wrap"><input type="text" class="name-input" placeholder="Student name (for report)"><button class="report-btn" onclick="generateReport()">Download Report (PDF)</button></div></div><div class="nav"><a href="test184.html">&larr; Prev</a><a href="index.html">All Tests</a><a href="test186.html">Next &rarr;</a></div></div><footer><div class="container">ACT Math Practice</div></footer>
+<script>
+const ANSWERS = {"1": "E", "2": "F", "3": "D", "4": "G", "5": "B", "6": "F", "7": "C", "8": "G", "9": "E", "10": "G", "11": "B", "12": "K", "13": "E", "14": "K", "15": "A"};
+const EXPLANATIONS = {"1":"The correct answer is E. To solve this problem, first expand the numerator and factor the denominator, then simplify, as follows:", "2":"The correct answer is F. To solve this problem, first recognize that, if n  =  m + 2, then m - n  =  -2. Now, substitute this value into the second expression and solve: (m - n)4  =  (-2)4  =  16", "3":"The correct answer is D. To solve this problem, first convert the information given into its mathematical equivalent, as follows (use b to represent the larger number): The larger of two numbers exceeds twice the smaller number by nine: b  =  2a + 9 The sum of twice the larger and five times the smaller number is 74: 2b + 5a  =  74 Now, simply substitute the value of b into the second equation in order to solve for a: 2(2a + 9) + 5a  =  74", "4":"The correct answer is G. You are given that x/y  =  4, so x  =  4y. Substitute 4y for x in the equation and solve, as follows:", "5":"The correct answer is B. You are given certain ratios in this problem, so you can set up a proportion to find the length of the shortest side of the second triangle. The ratio of the longest sides of both triangles is . Set the length of the shortest side of the second triangle to x so that the ratio of the shortest sides of both triangles is . Now, set up a proportion, cross-multiply, and solve for x:", "6":"The correct answer is F. One way to solve this problem is to recognize that ab2 is a common factor of a2b2 and ab3. Therefore, it must also be a factor of 45, which can be factored as 5 × 32. Now you can see that b could be 3, and since there can only be one correct answer, F must be it. If you test a  =  5 and b  =  3, you see that the greatest common factor of 52 × 32 and 5 × 33 is 5 × 32, which equals 45.", "7":"The correct answer is C. To solve this problem, set the fixed charge to x and set the number of half-miles to y. Now, select two values from the table to create a set of equations, and solve for x and y, as follows: The x values will cancel out, leaving y  =  0.50, which means that the cost per half-mile is $0.50; eliminate answer choice A. Now, substitute .5 for y in one of the equations to solve for x:", "8":"The correct answer is G. One way to solve this problem is to use SOH CAH TOA for angle A. You are given that the sine of angle A is 3/5, which means that the ratio of the length of the side opposite angle A to the length of the hypotenuse is 3 to 5. So, the ratio 3/5 is equal to the ratio BC/AC. You are given that AC, the hypotenuse, is equal to 16, so now you can set up a proportion, cross-multiply, and solve for BC, as follows:", "9":"The correct answer is E. The equation of a circle is (x - h)2 + (y - k)2  =  r2, where h and k are the x and y-coordinates of the center of the circle and r is the radius. Therefore, the equation of the circle centered at point (12, -5) with a radius of 4 is (x - 12)2 + (y + 5)2  =  16.", "10":"The correct answer is G. One way to solve this problem is to recognize that, in order for  to be greater than , t must be less than 24. This is true because any fraction with a denominator larger than or equal to its numerator will always be less than a fraction whose numerator is larger than or equal to its denominator. So,  is only less than  when t is less than 24. Because you are asked for the largest integer value of t and you know that t must be less than 24, the correct answer must be 19. You could also set the values equal to each other, cross-multiply and solve for t, as follows: The integer value that makes  greater than , therefore, is 19.", "11":"The correct answer is B. To solve this problem you could either use the distance formula, or sketch a quick figure like the one shown below: You can see that the distance between the points is the hypotenuse of the right triangle with side lengths of 5 and 4. Use the Pythagorean theorem to solve for the hypotenuse, c:", "12":"The correct answer is K. To solve this problem, recognize that MN is parallel to LO and that these lines are cut by the transversal MO. Therefore, angles OMN and MOL are alternate interior angles and they have the same measure, 30°. Now, because a straight line has 180°, the measure of angle MON must be 180° - 30° - 105°  =  45°.", "13":"The correct answer is E. A good way to solve this problem is to sketch triangle ABC, as shown below: You are given that AB is congruent to AC, and that the measure of angle B is 34°. This means that the measure of angle C is also 34°, and the measure of angle A is 180° - 34° - 34°  =  112°.", "14":"The correct answer is K. To solve this problem, first set the total amount of the budget equal to b. Housing costs are equal to 30 percent of b, or .3b. Of this portion, 20 percent, or .2, goes toward rent. Therefore, rent, r, is equal to .2(.3b), or .06b. You are given that rent, r, equals $630, so now you can set up an equation and solve for b, as follows:", "15":"The correct answer is A. To find the matrix product, simply multiply the terms from a row in the first matrix by the corresponding term from a column in the second matrix, as shown next:"};
+let graded = false;
+
+document.querySelectorAll('.choices li').forEach(li => {
+  // Remove old onclick
+  li.removeAttribute('onclick');
+  li.addEventListener('click', function() {
+    if (graded) return;
+    const siblings = this.parentElement.querySelectorAll('li');
+    siblings.forEach(s => s.classList.remove('selected'));
+    this.classList.add('selected');
+  });
+});
+
+function gradeTest() {
+  if (graded) return;
+  graded = true;
+  let correct = 0;
+  const total = Object.keys(ANSWERS).length;
+  
+  document.querySelectorAll('.question').forEach((qDiv, idx) => {
+    const qNum = idx + 1;
+    const correctAns = ANSWERS[qNum];
+    if (!correctAns) return;
+    const choices = qDiv.querySelectorAll('.choices li');
+    const selected = qDiv.querySelector('.choices li.selected');
+    const selectedLetter = selected ? selected.textContent.trim().charAt(0) : null;
+    
+    choices.forEach(li => {
+      const letter = li.textContent.trim().charAt(0);
+      if (letter === correctAns) li.classList.add('show-correct');
+      li.style.cursor = 'default';
+    });
+    
+    const tag = document.createElement('span');
+    tag.className = 'result-tag';
+    
+    if (selectedLetter === correctAns) {
+      correct++;
+      tag.className += ' correct';
+      tag.textContent = 'Correct';
+      if (selected) { selected.classList.remove('selected'); selected.classList.add('correct'); }
+    } else {
+      tag.className += ' wrong';
+      tag.textContent = 'Incorrect (Answer: ' + correctAns + ')';
+      if (selected) { selected.classList.remove('selected'); selected.classList.add('wrong'); }
+    }
+    
+    const firstP = qDiv.querySelector('p');
+    if (firstP) firstP.appendChild(tag);
+    
+    if (typeof EXPLANATIONS !== 'undefined' && EXPLANATIONS[qNum]) {
+      const explDiv = document.createElement('div');
+      explDiv.className = 'explanation show';
+      explDiv.innerHTML = '<strong>Explanation:</strong> ' + EXPLANATIONS[qNum];
+      qDiv.appendChild(explDiv);
+    }
+  });
+  
+  const pct = Math.round((correct / total) * 100);
+  document.querySelector('.submit-btn').style.display = 'none';
+  document.querySelector('.reset-btn').style.display = 'block';
+  var rw=document.querySelector('.report-wrap');if(rw)rw.style.display='block';
+  var bs=document.createElement('div');bs.className='bottom-score';bs.id='bottom-score';
+  bs.innerHTML='<h2 style="font-size:1.3rem;margin-bottom:6px;color:#1a3a4a">Your Score</h2><div class="pct '+(pct>=80?'good':pct>=60?'ok':'bad')+'">'+pct+'%</div><div class="detail">'+correct+' out of '+total+' correct</div>';
+  document.querySelector('.submit-wrap').after(bs);
+  try{var tn=location.pathname.match(/test(\d+)/);if(tn)localStorage.setItem('actmath_'+tn[1],pct);}catch(e){}
+}
+
+function resetTest() {
+  graded = false;
+  var bsEl=document.getElementById('bottom-score');if(bsEl)bsEl.remove();
+  document.querySelector('.submit-btn').style.display = '';
+  document.querySelector('.reset-btn').style.display = 'none';
+  var rw=document.querySelector('.report-wrap');if(rw)rw.style.display='none';
+  var ni=document.querySelector('.name-input');if(ni)ni.value='';
+  document.querySelectorAll('.choices li').forEach(li => {
+    li.classList.remove('selected','correct','wrong','show-correct');
+    li.style.cursor = 'pointer';
+  });
+  document.querySelectorAll('.result-tag').forEach(t => t.remove());
+  document.querySelectorAll('.explanation').forEach(e => e.remove());
+}
+
+function generateReport(){
+  var nameInput=document.querySelector('.name-input');
+  var name=(nameInput&&nameInput.value.trim())||'Student';
+  var testName=document.querySelector('header h1').textContent;
+  var bs=document.getElementById('bottom-score');
+  var scorePct=bs?bs.querySelector('.pct').textContent:'';
+  var detailTxt=bs?bs.querySelector('.detail').textContent:'';
+  var d=new Date().toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'});
+  var btn=document.querySelector('.report-btn');btn.textContent='Generating...';btn.disabled=true;
+  var s=document.createElement('script');
+  s.src='https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js';
+  s.onerror=function(){btn.textContent='Download Report (PDF)';btn.disabled=false;alert('Could not load PDF library.');};
+  s.onload=function(){
+    var doc=new jspdf.jsPDF('portrait','mm','letter');
+    var pw=215.9,ph=279.4,mx=12,cw=pw-2*mx,y=8;
+    doc.setFillColor(26,58,74);doc.rect(0,0,pw,22,'F');
+    doc.setTextColor(255,255,255);doc.setFontSize(13);doc.setFont('helvetica','bold');
+    doc.text(testName,mx,9);
+    doc.setFontSize(7.5);doc.setFont('helvetica','normal');
+    doc.text(d+'  |  Student: '+name,mx,14.5);
+    doc.setFontSize(18);doc.setFont('helvetica','bold');
+    doc.text(scorePct,pw-mx,11,{align:'right'});
+    doc.setFontSize(7.5);doc.setFont('helvetica','normal');
+    doc.text(detailTxt,pw-mx,16,{align:'right'});
+    y=25;
+    doc.setDrawColor(26,58,74);doc.setLineWidth(0.3);doc.line(mx,y,pw-mx,y);y+=3;
+    document.querySelectorAll('.question').forEach(function(qDiv,idx){
+      var qNum=idx+1;var ca=ANSWERS[qNum];if(!ca)return;
+      var sel=qDiv.querySelector('.choices li.correct,.choices li.wrong');
+      var sa=sel?sel.textContent.trim().charAt(0):'-';
+      var ok=sel&&sel.classList.contains('correct');
+      if(ok){
+        doc.setFillColor(40,167,69);doc.circle(mx+1.2,y-1,1,'F');
+        doc.setTextColor(33,33,33);doc.setFont('helvetica','bold');doc.setFontSize(8);
+        doc.text('Q'+qNum,mx+4,y);
+        doc.setFont('helvetica','normal');doc.setTextColor(40,167,69);
+        doc.text('Correct ('+ca+')',mx+14,y);
+      }else{
+        doc.setFillColor(220,53,69);doc.circle(mx+1.2,y-1,1,'F');
+        doc.setTextColor(33,33,33);doc.setFont('helvetica','bold');doc.setFontSize(8);
+        doc.text('Q'+qNum,mx+4,y);
+        doc.setFont('helvetica','normal');doc.setTextColor(220,53,69);
+        doc.text('Incorrect',mx+14,y);
+        doc.setTextColor(120,120,120);
+        doc.text('(Chose '+sa+', Correct: '+ca+')',mx+32,y);
+      }
+      y+=3.2;
+      var qP=qDiv.querySelector('p');
+      if(qP){
+        var qT=qP.cloneNode(true);
+        var tags=qT.querySelectorAll('.result-tag');tags.forEach(function(t){t.remove();});
+        var qt=qT.textContent.replace(/^\d+\.\s*/,'').trim();
+        if(qt.length>0){
+          doc.setFont('helvetica','normal');doc.setTextColor(60,60,60);doc.setFontSize(6.5);
+          var ql=doc.splitTextToSize(qt,cw-5);
+          ql=ql.slice(0,1);
+          if(doc.splitTextToSize(qt,cw-5).length>1){ql[0]=ql[0].substring(0,ql[0].length-3)+'...';}
+          doc.text(ql,mx+4,y);y+=2.4;
+        }
+      }
+      if(typeof EXPLANATIONS!=='undefined'&&EXPLANATIONS[qNum]){
+        doc.setFont('helvetica','italic');doc.setTextColor(100,100,100);doc.setFontSize(6);
+        var lines=doc.splitTextToSize(EXPLANATIONS[qNum],cw-5);
+        if(lines.length>2){lines=lines.slice(0,2);lines[1]=lines[1].substring(0,Math.max(0,lines[1].length-3))+'...';}
+        doc.text(lines,mx+4,y);y+=lines.length*2.2;
+      }
+      y+=2;
+    });
+    doc.setDrawColor(200,200,200);doc.setLineWidth(0.2);doc.line(mx,ph-10,pw-mx,ph-10);
+    doc.setTextColor(170,170,170);doc.setFontSize(6);doc.setFont('helvetica','normal');
+    doc.text('ACT Math Practice  |  Score Report',pw/2,ph-7,{align:'center'});
+    var tn=location.pathname.match(/test(\d+)/);
+    var testNum=tn?parseInt(tn[1])-100:0;
+    var ds=new Date().toISOString().slice(0,10);
+    doc.save('ACT-Math-Test-'+testNum+'-'+ds+'.pdf');
+    btn.textContent='Download Report (PDF)';btn.disabled=false;
+  };
+  document.head.appendChild(s);
+}
+</script>
+</body></html>

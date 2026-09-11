@@ -1,0 +1,222 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>ACT Math Test 102</title><style>@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:#fff;color:#2d3748;line-height:1.7}
+.container{max-width:800px;margin:0 auto;padding:20px 24px}
+header{background:linear-gradient(135deg,#1a3a4a 0%,#2d6a7a 100%);color:#fff;padding:28px 0;margin-bottom:36px;text-align:center}
+header .container{display:block}
+header h1{font-size:1.6rem;font-weight:700;letter-spacing:-0.3px}
+header a{color:rgba(255,255,255,.7);text-decoration:none;font-size:.9rem;display:inline-block;margin-bottom:6px;transition:color .2s}
+header a:hover{color:#fff}
+.question{background:#fff;border-radius:12px;padding:24px;margin-bottom:20px;border:1px solid #e2e8f0;transition:border-color .2s}
+.question:hover{border-color:#cbd5e0}
+.question p{margin-bottom:14px;font-size:1.05rem}
+img{max-width:100%;height:auto;margin:4px 0;vertical-align:middle}
+.choices{list-style:none}
+.choices li{padding:10px 14px;margin:6px 0;border-radius:8px;cursor:pointer;transition:all .2s;border:2px solid transparent}
+.choices li:hover{background:#f0f7fa}
+.choices li.selected{background:#d1ecf1;border-color:#bee5eb}
+.choices li.correct{background:#d4edda;border-color:#28a745}
+.choices li.wrong{background:#f8d7da;border-color:#dc3545}
+.choices li.show-correct{background:#d4edda;border-color:#28a745}
+.submit-wrap{text-align:center;margin:36px 0}
+.submit-btn{display:inline-block;padding:14px 40px;background:linear-gradient(135deg,#1a3a4a,#2d6a7a);color:#fff;border:none;border-radius:10px;font-size:1.1rem;cursor:pointer;font-weight:600;font-family:inherit;transition:all .25s;letter-spacing:.3px}
+.submit-btn:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(26,58,74,.25)}
+.score-box{background:#fff;border-radius:12px;padding:28px;margin-bottom:28px;text-align:center;border:1px solid #e2e8f0;box-shadow:0 4px 20px rgba(0,0,0,.06);display:none}
+.score-box h2{font-size:1.4rem;margin-bottom:8px;color:#1a3a4a;text-align:center}
+.score-box .pct{font-size:3rem;font-weight:700}
+.score-box .pct.good{color:#28a745}
+.score-box .pct.ok{color:#e6a817}
+.score-box .pct.bad{color:#dc3545}
+.score-box .detail{color:#666;margin-top:4px}
+.result-tag{display:inline-block;padding:2px 10px;border-radius:12px;font-size:.8rem;font-weight:600;margin-left:8px}
+.result-tag.correct{background:#d4edda;color:#155724}
+.result-tag.wrong{background:#f8d7da;color:#721c24}
+.reset-btn{display:none;margin:16px auto;padding:12px 28px;background:#6c757d;color:#fff;border:none;border-radius:10px;font-size:1rem;cursor:pointer;font-family:inherit;transition:all .25s}
+.reset-btn:hover{background:#5a6268;transform:translateY(-1px)}
+.explanation{background:#f0f7ff;border-left:4px solid #1a3a4a;padding:14px 18px;margin-top:14px;border-radius:0 8px 8px 0;font-size:.95rem;color:#444;display:none}
+.explanation.show{display:block}
+.explanation strong{color:#1a3a4a}
+.nav{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin:36px 0}
+.nav a{display:inline-block;padding:10px 24px;background:linear-gradient(135deg,#1a3a4a,#2d6a7a);color:#fff;text-decoration:none;border-radius:10px;font-weight:500;font-size:.95rem;transition:all .25s}
+.nav a:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(26,58,74,.25)}
+footer{text-align:center;padding:36px 24px;color:#8899a4;font-size:.85rem;border-top:1px solid #e2e8f0;margin-top:40px}
+.report-btn{display:inline-block;margin:0;padding:12px 28px;background:linear-gradient(135deg,#1a3a4a,#2d6a7a);color:#fff;border:none;border-radius:10px;font-size:1rem;cursor:pointer;font-family:inherit;transition:all .25s}
+.report-btn:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(26,58,74,.25)}
+.bottom-score{background:#fff;border-radius:12px;padding:20px;margin:20px 0;text-align:center;border:1px solid #e2e8f0;box-shadow:0 4px 20px rgba(0,0,0,.06)}
+.bottom-score .pct{font-size:2.5rem;font-weight:700}
+.bottom-score .pct.good{color:#28a745}
+.bottom-score .pct.ok{color:#e6a817}
+.bottom-score .pct.bad{color:#dc3545}
+.bottom-score .detail{color:#666;margin-top:4px;font-size:.95rem}
+.report-wrap{display:none;text-align:center;margin:16px 0}
+.name-input{padding:10px 14px;border:1px solid #e2e8f0;border-radius:10px;font-size:.95rem;font-family:inherit;width:200px;margin-right:8px;outline:none;transition:border-color .2s}
+.name-input:focus{border-color:#1a3a4a}
+</style></head><body><header><div class="container"><a href="index.html">&larr; All Tests</a><h1>ACT Math Practice Test 102</h1></div></header><div class="container"><div id="score-box" class="score-box"><h2>Your Score</h2><div class="pct">0%</div><div class="detail"></div></div><div class="question"><p><b>1.</b> If log<sub>4</sub> <em>x</em> = 3, then <em>x</em> = ?</p><ul class="choices"><li>A. <img src="https://img.crackab.com/act/nmg10/e0120-04.jpg"></li><li>B. 4 log<sup>3</sup></li><li>C. 12</li><li>D. 64</li><li>E. 81</li></ul></div><div class="question"><p><b>2.</b> If a system of 2 linear equations in 2 variables has NO solution, and 1 of the equations is graphed in the (<em>x</em>,<em>y</em>) coordinate plane below, which of the following <em>could</em> be the other equation?<br><img src="https://img.crackab.com/act/nmg10/f0121-01.jpg"></p><ul class="choices"><li>F. <em>y</em> = -2</li><li>G. <img src="https://img.crackab.com/act/nmg10/e0121-01.jpg"></li><li>H. <em>y</em> = -2<em>x</em> - 4</li><li>J. <img src="https://img.crackab.com/act/nmg10/e0121-02.jpg"></li><li>K. <em>y</em> = 4<em>x</em> - 4</li></ul></div><div class="question"><p><b>3.</b> A certain resort has 60 rooms. Based on many previous years' occupancy rates, the manager created the table below showing the daily occupancy rates and their probability of occurring for the next tourist season. Based on the probability distribution in the table, to the nearest whole number, what is the expected number of rooms that will be occupied on any day during the next tourist season?<br><img src="https://img.crackab.com/act/nmg10/f0121-03.jpg"></p><ul class="choices"><li>A. 25</li><li>B. 38</li><li>C. 45</li><li>D. 52</li><li>E. 60</li></ul></div><div class="question"><p><b>4.</b> In the standard (<em>x</em>,<em>y</em>) coordinate plane, what is the equation of the line that passes through the origin and the point (3,4)?</p><ul class="choices"><li>F. <img src="https://img.crackab.com/act/nmg10/e0122-01.jpg"></li><li>G. <img src="https://img.crackab.com/act/nmg10/e0122-02.jpg"></li><li>H. <img src="https://img.crackab.com/act/nmg10/e0122-03.jpg"></li><li>J. <img src="https://img.crackab.com/act/nmg10/e0122-04.jpg"></li><li>K. <img src="https://img.crackab.com/act/nmg10/e0122-05.jpg"></li></ul></div><div class="question"><p><b>5.</b> The measure of the vertex angle of an isosceles triangle is (<em>a</em> + 30)°. The base angles each measure (2<em>a</em> - 15)°. What is the measure in degrees of one of the base angles?</p><ul class="choices"><li>A. 36°</li><li>B. 45°</li><li>C. 57°</li><li>D. 66°</li><li>E. 90°</li></ul></div><div class="question"><p><b>6.</b> What is the smallest possible value for the product of 2 integers that differ by 7?</p><ul class="choices"><li>F. 8</li><li>G. 0</li><li>H. -6</li><li>J. -10</li><li>K. -12</li></ul></div><div class="question"><p><b>7.</b> Three distinct lines, all contained within a plane, separate that plane into distinct regions. What are all of the possible numbers of distinct regions of the plane that could be separated by any such three lines?</p><ul class="choices"><li>A. 4, 6, 7</li><li>B. 4, 5, 6</li><li>C. 3, 5, 7</li><li>D. 3, 5, 6</li><li>E. 3, 4, 5</li></ul></div><div class="question"><p><b>8.</b> Given the vertices of parallelogram <em>QRST</em> in the standard (<em>x</em>, <em>y</em>) coordinate plane below, what is the area of triangle <em>QRS</em>, in square units?<br><img src="https://img.crackab.com/act/nmg10/f0123-01.jpg"></p><ul class="choices"><li>F. 24</li><li>G. 28</li><li>H. 48</li><li>J. 60</li><li>K. 80</li></ul></div><div class="question"><p><b>9.</b> The first and second terms of a geometric sequence are <em>a</em> and <em>ab</em>, in that order. What is the 643rd term of the sequence?</p><ul class="choices"><li>A. (<em>ab</em>)<sup>642</sup></li><li>B. (<em>ab</em>)<sup>643</sup></li><li>C. <em>a</em><sup>642</sup><em>b</em></li><li>D. <em>a</em><sup>643</sup><em>b</em></li><li>E. <em>ab</em><sup>642</sup></li></ul></div><div class="question"><p><b>10.</b> Points <em>A</em>, <em>B</em>, and <em>C</em> are three distinct points that lie on the same line. If the length of <em>AB</em> is 19 meters and the length of <em>BC</em> is 13 meters, then what are all the possible lengths, in meters, for <em>AC</em>?</p><ul class="choices"><li>F. 6 only</li><li>G. 32 only</li><li>H. 6 and 32 only</li><li>J. Any number less than 32 or greater than 6</li><li>K. Any number greater than 32 or less than 6</li></ul></div><div class="submit-wrap"><button class="submit-btn" onclick="gradeTest()">Submit Test</button><button class="reset-btn" onclick="resetTest()">Try Again</button>
+<div class="report-wrap"><input type="text" class="name-input" placeholder="Student name (for report)"><button class="report-btn" onclick="generateReport()">Download Report (PDF)</button></div></div><div class="nav"><a href="test201.html">&larr; Prev</a><a href="index.html">All Tests</a><a href="test203.html">Next &rarr;</a></div></div><footer><div class="container">ACT Math Practice</div></footer>
+<script>
+const ANSWERS = {"1": "D", "2": "J", "3": "B", "4": "H", "5": "C", "6": "K", "7": "A", "8": "F", "9": "E", "10": "H"};
+const EXPLANATIONS = {"1":"The correct answer is D. Logarithms are used to indicate exponents of certain numbers called bases. By definition, loga b  =  c, if ac  =  b. If log4 x  =  3, then x  =  43, or 64.", "2":"The correct answer is J. In order for a system of 2 linear equations to have no solutions, the graphs of the equations must be parallel. Parallel lines have the same slope. To find the equation whose graph is parallel to the line in the figure, you must find the slope of the line between the points (0,-4) and (3,-0). Since slope is , the slope is . The only equation with the correct slope of  is .", "3":"The correct answer is B. The expected occupancy rate is equal to the sum of the products of each occupancy rate and its corresponding probability: 0.5(0.2) + 0.6(0.4) + 0.7(0.3) + 0.8(0.1) =  0.10 + 0.24 + 0.21 + 0.08  =  0.63", "4":"The correct answer is H. To solve this problem, remember that the formula for slope is , where (x1, y1) and (x2, y2) are two given points on a line. The equation of the line that passes through the origin and the point (3,4) will have slope . Since the line passes through the origin, the y-intercept is 0. Thus the correct equation is .", "5":"The correct answer is C. To solve this problem, you must remember that in an isosceles triangle, the base angles have the same measure. Since the sum of angles is 180° for all triangles, 180  =  (a + 30) + 2(2a-15). Distributing and adding like terms yields Since the base angles are equivalent to 2a -15, they equal 2(36) - 15  =  72 - 15, or 57°.", "6":"The correct answer is K. The smallest possible value will occur when it is negative. A negative product will result only when one of the numbers is positive and one is negative. The possible pairs are then -1 and 6, -2 and 5, -3 and 4, -4 and 3, - 5 and 2, and -6 and 1. Of these pairs, the smallest product is (-3)(4)  =  (-4)(3), or -12.", "7":"The correct answer is A. Start by drawing 3 parallel lines. Now, try drawing 3 lines in other configurations, and you will see that there will always be either 6 or 7 regions: Therefore, the correct answer is 4, 6, or 7 distinct regions, answer choice A.", "8":"The correct answer is F. Remember that the area of a parallelogram is equal to base × height. In this case, the base is [3 - (-3)] or [2 - (-4)], both of which equal 6, and the height is (3 - (-5))  =  8. Thus the area is 6×8  =  48. The area of triangle QRS, , is half the area of the parallelogram, or 24.", "9":"The correct answer is E. Refer to the following chart to follow the patter of the sequence. Since the power of b is one less than the number of terms, the nth term will be abn-1. The 643rd term will then be ab643-1  =  ab642.", "10":"The correct answer is H. Since AB is longer than BC, there are only two possible configurations: B is between A and C or C is between A and B. In the case that B is between A and C, AC  =  AB + BC  =  19 + 13  =  32. In the case that C is between A and B, AC  =  AB - BC  =  19 - 13  =  6. Therefore, AC can be 6 and 32 only."};
+let graded = false;
+
+document.querySelectorAll('.choices li').forEach(li => {
+  // Remove old onclick
+  li.removeAttribute('onclick');
+  li.addEventListener('click', function() {
+    if (graded) return;
+    const siblings = this.parentElement.querySelectorAll('li');
+    siblings.forEach(s => s.classList.remove('selected'));
+    this.classList.add('selected');
+  });
+});
+
+function gradeTest() {
+  if (graded) return;
+  graded = true;
+  let correct = 0;
+  const total = Object.keys(ANSWERS).length;
+  
+  document.querySelectorAll('.question').forEach((qDiv, idx) => {
+    const qNum = idx + 1;
+    const correctAns = ANSWERS[qNum];
+    if (!correctAns) return;
+    const choices = qDiv.querySelectorAll('.choices li');
+    const selected = qDiv.querySelector('.choices li.selected');
+    const selectedLetter = selected ? selected.textContent.trim().charAt(0) : null;
+    
+    choices.forEach(li => {
+      const letter = li.textContent.trim().charAt(0);
+      if (letter === correctAns) li.classList.add('show-correct');
+      li.style.cursor = 'default';
+    });
+    
+    const tag = document.createElement('span');
+    tag.className = 'result-tag';
+    
+    if (selectedLetter === correctAns) {
+      correct++;
+      tag.className += ' correct';
+      tag.textContent = 'Correct';
+      if (selected) { selected.classList.remove('selected'); selected.classList.add('correct'); }
+    } else {
+      tag.className += ' wrong';
+      tag.textContent = 'Incorrect (Answer: ' + correctAns + ')';
+      if (selected) { selected.classList.remove('selected'); selected.classList.add('wrong'); }
+    }
+    
+    const firstP = qDiv.querySelector('p');
+    if (firstP) firstP.appendChild(tag);
+    
+    if (typeof EXPLANATIONS !== 'undefined' && EXPLANATIONS[qNum]) {
+      const explDiv = document.createElement('div');
+      explDiv.className = 'explanation show';
+      explDiv.innerHTML = '<strong>Explanation:</strong> ' + EXPLANATIONS[qNum];
+      qDiv.appendChild(explDiv);
+    }
+  });
+  
+  const pct = Math.round((correct / total) * 100);
+  document.querySelector('.submit-btn').style.display = 'none';
+  document.querySelector('.reset-btn').style.display = 'block';
+  var rw=document.querySelector('.report-wrap');if(rw)rw.style.display='block';
+  var bs=document.createElement('div');bs.className='bottom-score';bs.id='bottom-score';
+  bs.innerHTML='<h2 style="font-size:1.3rem;margin-bottom:6px;color:#1a3a4a">Your Score</h2><div class="pct '+(pct>=80?'good':pct>=60?'ok':'bad')+'">'+pct+'%</div><div class="detail">'+correct+' out of '+total+' correct</div>';
+  document.querySelector('.submit-wrap').after(bs);
+  try{var tn=location.pathname.match(/test(\d+)/);if(tn)localStorage.setItem('actmath_'+tn[1],pct);}catch(e){}
+}
+
+function resetTest() {
+  graded = false;
+  var bsEl=document.getElementById('bottom-score');if(bsEl)bsEl.remove();
+  document.querySelector('.submit-btn').style.display = '';
+  document.querySelector('.reset-btn').style.display = 'none';
+  var rw=document.querySelector('.report-wrap');if(rw)rw.style.display='none';
+  var ni=document.querySelector('.name-input');if(ni)ni.value='';
+  document.querySelectorAll('.choices li').forEach(li => {
+    li.classList.remove('selected','correct','wrong','show-correct');
+    li.style.cursor = 'pointer';
+  });
+  document.querySelectorAll('.result-tag').forEach(t => t.remove());
+  document.querySelectorAll('.explanation').forEach(e => e.remove());
+}
+
+function generateReport(){
+  var nameInput=document.querySelector('.name-input');
+  var name=(nameInput&&nameInput.value.trim())||'Student';
+  var testName=document.querySelector('header h1').textContent;
+  var bs=document.getElementById('bottom-score');
+  var scorePct=bs?bs.querySelector('.pct').textContent:'';
+  var detailTxt=bs?bs.querySelector('.detail').textContent:'';
+  var d=new Date().toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'});
+  var btn=document.querySelector('.report-btn');btn.textContent='Generating...';btn.disabled=true;
+  var s=document.createElement('script');
+  s.src='https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js';
+  s.onerror=function(){btn.textContent='Download Report (PDF)';btn.disabled=false;alert('Could not load PDF library.');};
+  s.onload=function(){
+    var doc=new jspdf.jsPDF('portrait','mm','letter');
+    var pw=215.9,ph=279.4,mx=12,cw=pw-2*mx,y=8;
+    doc.setFillColor(26,58,74);doc.rect(0,0,pw,22,'F');
+    doc.setTextColor(255,255,255);doc.setFontSize(13);doc.setFont('helvetica','bold');
+    doc.text(testName,mx,9);
+    doc.setFontSize(7.5);doc.setFont('helvetica','normal');
+    doc.text(d+'  |  Student: '+name,mx,14.5);
+    doc.setFontSize(18);doc.setFont('helvetica','bold');
+    doc.text(scorePct,pw-mx,11,{align:'right'});
+    doc.setFontSize(7.5);doc.setFont('helvetica','normal');
+    doc.text(detailTxt,pw-mx,16,{align:'right'});
+    y=25;
+    doc.setDrawColor(26,58,74);doc.setLineWidth(0.3);doc.line(mx,y,pw-mx,y);y+=3;
+    document.querySelectorAll('.question').forEach(function(qDiv,idx){
+      var qNum=idx+1;var ca=ANSWERS[qNum];if(!ca)return;
+      var sel=qDiv.querySelector('.choices li.correct,.choices li.wrong');
+      var sa=sel?sel.textContent.trim().charAt(0):'-';
+      var ok=sel&&sel.classList.contains('correct');
+      if(ok){
+        doc.setFillColor(40,167,69);doc.circle(mx+1.2,y-1,1,'F');
+        doc.setTextColor(33,33,33);doc.setFont('helvetica','bold');doc.setFontSize(8);
+        doc.text('Q'+qNum,mx+4,y);
+        doc.setFont('helvetica','normal');doc.setTextColor(40,167,69);
+        doc.text('Correct ('+ca+')',mx+14,y);
+      }else{
+        doc.setFillColor(220,53,69);doc.circle(mx+1.2,y-1,1,'F');
+        doc.setTextColor(33,33,33);doc.setFont('helvetica','bold');doc.setFontSize(8);
+        doc.text('Q'+qNum,mx+4,y);
+        doc.setFont('helvetica','normal');doc.setTextColor(220,53,69);
+        doc.text('Incorrect',mx+14,y);
+        doc.setTextColor(120,120,120);
+        doc.text('(Chose '+sa+', Correct: '+ca+')',mx+32,y);
+      }
+      y+=3.2;
+      var qP=qDiv.querySelector('p');
+      if(qP){
+        var qT=qP.cloneNode(true);
+        var tags=qT.querySelectorAll('.result-tag');tags.forEach(function(t){t.remove();});
+        var qt=qT.textContent.replace(/^\d+\.\s*/,'').trim();
+        if(qt.length>0){
+          doc.setFont('helvetica','normal');doc.setTextColor(60,60,60);doc.setFontSize(6.5);
+          var ql=doc.splitTextToSize(qt,cw-5);
+          ql=ql.slice(0,1);
+          if(doc.splitTextToSize(qt,cw-5).length>1){ql[0]=ql[0].substring(0,ql[0].length-3)+'...';}
+          doc.text(ql,mx+4,y);y+=2.4;
+        }
+      }
+      if(typeof EXPLANATIONS!=='undefined'&&EXPLANATIONS[qNum]){
+        doc.setFont('helvetica','italic');doc.setTextColor(100,100,100);doc.setFontSize(6);
+        var lines=doc.splitTextToSize(EXPLANATIONS[qNum],cw-5);
+        if(lines.length>2){lines=lines.slice(0,2);lines[1]=lines[1].substring(0,Math.max(0,lines[1].length-3))+'...';}
+        doc.text(lines,mx+4,y);y+=lines.length*2.2;
+      }
+      y+=2;
+    });
+    doc.setDrawColor(200,200,200);doc.setLineWidth(0.2);doc.line(mx,ph-10,pw-mx,ph-10);
+    doc.setTextColor(170,170,170);doc.setFontSize(6);doc.setFont('helvetica','normal');
+    doc.text('ACT Math Practice  |  Score Report',pw/2,ph-7,{align:'center'});
+    var tn=location.pathname.match(/test(\d+)/);
+    var testNum=tn?parseInt(tn[1])-100:0;
+    var ds=new Date().toISOString().slice(0,10);
+    doc.save('ACT-Math-Test-'+testNum+'-'+ds+'.pdf');
+    btn.textContent='Download Report (PDF)';btn.disabled=false;
+  };
+  document.head.appendChild(s);
+}
+</script>
+</body></html>

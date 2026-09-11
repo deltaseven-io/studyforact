@@ -1,0 +1,222 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>ACT Math Test 23</title><style>@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:#fff;color:#2d3748;line-height:1.7}
+.container{max-width:800px;margin:0 auto;padding:20px 24px}
+header{background:linear-gradient(135deg,#1a3a4a 0%,#2d6a7a 100%);color:#fff;padding:28px 0;margin-bottom:36px;text-align:center}
+header .container{display:block}
+header h1{font-size:1.6rem;font-weight:700;letter-spacing:-0.3px}
+header a{color:rgba(255,255,255,.7);text-decoration:none;font-size:.9rem;display:inline-block;margin-bottom:6px;transition:color .2s}
+header a:hover{color:#fff}
+.question{background:#fff;border-radius:12px;padding:24px;margin-bottom:20px;border:1px solid #e2e8f0;transition:border-color .2s}
+.question:hover{border-color:#cbd5e0}
+.question p{margin-bottom:14px;font-size:1.05rem}
+img{max-width:100%;height:auto;margin:4px 0;vertical-align:middle}
+.choices{list-style:none}
+.choices li{padding:10px 14px;margin:6px 0;border-radius:8px;cursor:pointer;transition:all .2s;border:2px solid transparent}
+.choices li:hover{background:#f0f7fa}
+.choices li.selected{background:#d1ecf1;border-color:#bee5eb}
+.choices li.correct{background:#d4edda;border-color:#28a745}
+.choices li.wrong{background:#f8d7da;border-color:#dc3545}
+.choices li.show-correct{background:#d4edda;border-color:#28a745}
+.submit-wrap{text-align:center;margin:36px 0}
+.submit-btn{display:inline-block;padding:14px 40px;background:linear-gradient(135deg,#1a3a4a,#2d6a7a);color:#fff;border:none;border-radius:10px;font-size:1.1rem;cursor:pointer;font-weight:600;font-family:inherit;transition:all .25s;letter-spacing:.3px}
+.submit-btn:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(26,58,74,.25)}
+.score-box{background:#fff;border-radius:12px;padding:28px;margin-bottom:28px;text-align:center;border:1px solid #e2e8f0;box-shadow:0 4px 20px rgba(0,0,0,.06);display:none}
+.score-box h2{font-size:1.4rem;margin-bottom:8px;color:#1a3a4a;text-align:center}
+.score-box .pct{font-size:3rem;font-weight:700}
+.score-box .pct.good{color:#28a745}
+.score-box .pct.ok{color:#e6a817}
+.score-box .pct.bad{color:#dc3545}
+.score-box .detail{color:#666;margin-top:4px}
+.result-tag{display:inline-block;padding:2px 10px;border-radius:12px;font-size:.8rem;font-weight:600;margin-left:8px}
+.result-tag.correct{background:#d4edda;color:#155724}
+.result-tag.wrong{background:#f8d7da;color:#721c24}
+.reset-btn{display:none;margin:16px auto;padding:12px 28px;background:#6c757d;color:#fff;border:none;border-radius:10px;font-size:1rem;cursor:pointer;font-family:inherit;transition:all .25s}
+.reset-btn:hover{background:#5a6268;transform:translateY(-1px)}
+.explanation{background:#f0f7ff;border-left:4px solid #1a3a4a;padding:14px 18px;margin-top:14px;border-radius:0 8px 8px 0;font-size:.95rem;color:#444;display:none}
+.explanation.show{display:block}
+.explanation strong{color:#1a3a4a}
+.nav{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin:36px 0}
+.nav a{display:inline-block;padding:10px 24px;background:linear-gradient(135deg,#1a3a4a,#2d6a7a);color:#fff;text-decoration:none;border-radius:10px;font-weight:500;font-size:.95rem;transition:all .25s}
+.nav a:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(26,58,74,.25)}
+footer{text-align:center;padding:36px 24px;color:#8899a4;font-size:.85rem;border-top:1px solid #e2e8f0;margin-top:40px}
+.report-btn{display:inline-block;margin:0;padding:12px 28px;background:linear-gradient(135deg,#1a3a4a,#2d6a7a);color:#fff;border:none;border-radius:10px;font-size:1rem;cursor:pointer;font-family:inherit;transition:all .25s}
+.report-btn:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(26,58,74,.25)}
+.bottom-score{background:#fff;border-radius:12px;padding:20px;margin:20px 0;text-align:center;border:1px solid #e2e8f0;box-shadow:0 4px 20px rgba(0,0,0,.06)}
+.bottom-score .pct{font-size:2.5rem;font-weight:700}
+.bottom-score .pct.good{color:#28a745}
+.bottom-score .pct.ok{color:#e6a817}
+.bottom-score .pct.bad{color:#dc3545}
+.bottom-score .detail{color:#666;margin-top:4px;font-size:.95rem}
+.report-wrap{display:none;text-align:center;margin:16px 0}
+.name-input{padding:10px 14px;border:1px solid #e2e8f0;border-radius:10px;font-size:.95rem;font-family:inherit;width:200px;margin-right:8px;outline:none;transition:border-color .2s}
+.name-input:focus{border-color:#1a3a4a}
+</style></head><body><header><div class="container"><a href="index.html">&larr; All Tests</a><h1>ACT Math Practice Test 23</h1></div></header><div class="container"><div id="score-box" class="score-box"><h2>Your Score</h2><div class="pct">0%</div><div class="detail"></div></div><div class="question"><p><b>1.</b> Two hoses attached to separate water sources are available to fill a cylindrical swimming pool. If both hoses are used, the time it will take to fill the pool can be represented by the following equation: <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_368_r1.jpg">, where <em>T</em><sub class="frac">1</sub> and <em>T</em><sub class="frac">2</sub> represent the time needed for hoses 1 and 2, respectively, to fill the pool on their own, and <em>T</em><sub class="frac">c</sub> represents the time needed for hoses 1 and 2 to fill the pool working together. If hose 1 alone can fill the pool in exactly 20 minutes and hose 2 alone can fill the pool in exactly 60 minutes, how many minutes will it take to fill the pool if both hoses work simultaneously?</p><ul class="choices"><li>A. 3</li><li>B. 10</li><li>C. 15</li><li>D. 18</li><li>E. 40</li></ul></div><div class="question"><p><b>2.</b> A 5-sided die, which has sides 2, 3, 4, 5, and 6, is thrown. What is the probability that the die will NOT land on a prime-numbered face?</p><ul class="choices"><li>F. <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_937_r1.jpg"></li><li>G. <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_791_r1.jpg"></li><li>H. <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_639_r1.jpg"></li><li>J. <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_389_r1.jpg"></li><li>K. 0</li></ul></div><div class="question"><p><b>3.</b> For <em>f</em>(<em>x</em>,<em>y</em>) = 7<em>x</em> + 9<em>y</em>, what is the value of <em>f</em>(<em>x</em>,<em>y</em>) when <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_369_r1.jpg"> and <em>x</em> = 3?</p><ul class="choices"><li>A. <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_002_r1.jpg"></li><li>B. <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_450_r1.jpg"></li><li>C. 36</li><li>D. 46</li><li>E. 96</li></ul></div><div class="question"><p><b>4.</b> What is the length, in coordinate units, of a diagonal of a square in the standard (<em>x</em>,<em>y</em>) coordinate plane with vertices at points (0,0), (4,0) and (4,4)?</p><ul class="choices"><li>F. 3</li><li>G. 4</li><li>H. 4<img alt="" class="root" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_138_r1.jpg"></li><li>J. <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_385_r1.jpg"></li><li>K. 8</li></ul></div><div class="question"><p><b>5.</b> What is the value of <em>a</em> if log<sub class="frac">4</sub><em>a</em> = 3?</p><ul class="choices"><li>A. 120</li><li>B. 64</li><li>C. 12</li><li>D. <img alt="" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_370_r1.jpg"></li><li>E. 4<img alt="" class="root" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_138_r1.jpg"></li></ul></div><div class="question"><p><b>6.</b> A certain 18-quart stockpot is filled completely with water and exposed to a heat source so that the water boils away at a constant rate. The water remaining in the stockpot can be approximated by the following equation: <em>y</em> = 18 - 0.2<em>x</em>, where <em>x</em> is the number of minutes that the pot has been heated for 0 ≤ <em>x</em> ≤ 90, and <em>y</em> is the number of quarts remaining in the pot. According to this equation, which of the following statements is true about this stockpot?</p><ul class="choices"><li>F. After 0.2 minutes, 1 quart of water has boiled away.</li><li>G. After 1 minute, 0.2 quarts of water have boiled away.</li><li>H. After 18 minutes, 0.2 quarts of water have boiled away.</li><li>J. After 18 minutes, 1 quart of water has boiled away.</li><li>K. After 36 minutes, 18 quarts of water have boiled away.</li></ul></div><div class="question"><p><b>7.</b> The volume of a right circular cone with the bottom removed to create a flat base can be calculated from the following equation: <em>V</em> = <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_386_r1.jpg">π<em>h</em>(<em>R</em><sup class="frac">2</sup> + <em>r</em><sup class="frac">2</sup> + <em>Rr</em>), where <em>h</em> represents the height of the shape and <em>R</em> and <em>r</em> represent its radii as shown in the figure below:<br><img alt="" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_371_r1.jpg"><br>This formula can be used to determine the capacity of a large coffee mug. Approximately how many cubic inches of liquid can the cup shown below hold if it is filled to the brim and its handle holds no liquid?<br><img alt="" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_372_r1.jpg"></p><ul class="choices"><li>A. 19</li><li>B. 50</li><li>C. 105</li><li>D. 109</li><li>E. 438</li></ul></div><div class="question"><p><b>8.</b> Which of the following is the set of real solutions for the equation 9<em>x</em> + 12 = 3(3<em>x</em> + 4)?</p><ul class="choices"><li>F. The set of all real numbers</li><li>G. {0,1}</li><li>H. {0}</li><li>J. <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_373_r1.jpg"></li><li>K. The empty set</li></ul></div><div class="question"><p><b>9.</b> The expression <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_374_r1.jpg"> equals:</p><ul class="choices"><li>A. <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_789_r1.jpg"></li><li>B. <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_936_r1.jpg"></li><li>C. <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_462_r1.jpg"></li><li>D. <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_622_r1.jpg"></li><li>E. <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_328_r1.jpg"></li></ul></div><div class="question"><p><b>10.</b> A thin slice is cut from a bagel, creating the cross-section represented below. The diameter of the bagel is 144 mm and the width from the inner edge of the bagel to the outer edge is uniformly 56 mm. Which of the following is closest to the area, in square millimeters, of the shaded empty space inside the cross-section of the bagel?<br><img alt="" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_375_r1.jpg"></p><ul class="choices"><li>F. 100</li><li>G. 450</li><li>H. 800</li><li>J. 3,200</li><li>K. 16,000</li></ul></div><div class="question"><p><b>11.</b> For all nonzero real numbers <em>a, b,</em> and <em>c</em>, what is the value of <em>a</em><sup class="frac">0</sup> + <em>b</em><sup class="frac">0</sup> + <em>c</em><sup class="frac">0</sup>?</p><ul class="choices"><li>A. Undefined</li><li>B. <em>a</em> + <em>b</em> + <em>c</em></li><li>C. 0</li><li>D. 1</li><li>E. 3</li></ul></div><div class="question"><p><b>12.</b> In the figure below, <em>ABCD</em> is a rectangle, <em>AB</em> = <em>AE</em>, and <em>E</em>, <em>F</em>, <em>G</em>, and <em>H</em> lie on <em>AD</em>. Of the angles <img alt="" class="root" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_029_r1.jpg"><em>BEA,</em> <img alt="" class="root" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_029_r1.jpg"><em>BFA,</em> <img alt="" class="root" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_029_r1.jpg"><em>BGA,</em> <img alt="" class="root" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_029_r1.jpg"><em>BHA</em>, and <img alt="" class="root" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_029_r1.jpg"><em>BDA</em>, which one has the greatest tangent?<br><img alt="" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_376_r1.jpg"></p><ul class="choices"><li>F. <img alt="" class="root" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_029_r1.jpg"><em>BEA</em></li><li>G. <img alt="" class="root" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_029_r1.jpg"><em>BFA</em></li><li>H. <img alt="" class="root" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_029_r1.jpg"><em>BGA</em></li><li>J. <img alt="" class="root" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_029_r1.jpg"><em>BHA</em></li><li>K. <img alt="" class="root" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_029_r1.jpg"><em>BDA</em></li></ul></div><div class="question"><p><b>13.</b> <img alt="" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_377_r1.jpg"><br>The <em>y</em>-intercept of the graph of <em>y</em> = <em>f</em>(<em>x</em>) is located at which of the following points?</p><ul class="choices"><li>A. <em>V</em></li><li>B. <em>W</em></li><li>C. <em>X</em></li><li>D. <em>Y</em></li><li>E. <em>Z</em></li></ul></div><div class="question"><p><b>14.</b> <img alt="" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_377_r1.jpg"><br>The function <em>y</em> = <em>f</em>(<em>x</em>) can be classified as one of which of the following types of functions?</p><ul class="choices"><li>F. Trigonometric</li><li>G. Quadratic</li><li>H. Absolute value</li><li>J. Cubic</li><li>K. Linear</li></ul></div><div class="question"><p><b>15.</b> <img alt="" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_377_r1.jpg"><br>If <em>y</em> = <em>f</em>(<em>x</em>) is to be reflected across the line <em>y</em> = <em>x</em>, which of the following graphs represents the result?</p><ul class="choices"><li>A. <img alt="" class="fraction1" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_378_r1.jpg"></li><li>B. <img alt="" class="fraction1" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_379_r1.jpg"></li><li>C. <img alt="" class="fraction1" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_380_r1.jpg"></li><li>D. <img alt="" class="fraction1" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_381_r1.jpg"></li><li>E. <img alt="" class="fraction1" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_382_r1.jpg"></li></ul></div><div class="submit-wrap"><button class="submit-btn" onclick="gradeTest()">Submit Test</button><button class="reset-btn" onclick="resetTest()">Try Again</button>
+<div class="report-wrap"><input type="text" class="name-input" placeholder="Student name (for report)"><button class="report-btn" onclick="generateReport()">Download Report (PDF)</button></div></div><div class="nav"><a href="test122.html">&larr; Prev</a><a href="index.html">All Tests</a><a href="test124.html">Next &rarr;</a></div></div><footer><div class="container">ACT Math Practice</div></footer>
+<script>
+const ANSWERS = {"1": "C", "2": "H", "3": "D", "4": "H", "5": "B", "6": "G", "7": "D", "8": "F", "9": "E", "10": "H", "11": "E", "12": "F", "13": "E", "14": "G", "15": "D"};
+const EXPLANATIONS = {"1":"C  To solve, enter the data into the given equation and solve using a common denominator. , so Tc, the combined time, is 15 minutes. Choice (A) divides the two numbers given while choice (E) finds their average. Choices (B) and (D) make calculation errors. Choice (E) is also unreasonable because the combined time must be less than the time of either hose working alone.", "2":"H  The numbers 2, 3, and 5 are prime, while 6 and 4 are not. The probability that the die will NOT land on a prime number is 2 non-prime numbers out of 5 total numbers, or . If you picked choice (G), you left out the NOT.", "3":"D  Find y by substituting x  =  3: y  =  . Now find the value of 7x + 9y: 7 × 3 + 9 ×  =  21 + 25  =  46. If you chose (A) or (B), you may have forgotten to square the fraction or to multiply it by 9. Choice (C) comes from not squaring the . Choice (E) comes from squaring only the 5 in the numerator.", "4":"H  Sketch a graph of points (0,0), (4,0) and (4,4). You\'ll notice that the fourth point of the square is at (0,4). Since you need to find a diagonal, draw a line from (0,0) to (4,4), and notice you now have two 45°-45°-90° triangles, with the square\'s sides as their legs and the diagonal as their hypotenuse. The hypotenuse will be the length the question asks for, the sides of a 45-45-90 triangle are in the proportion x:x:x, so c  =  4. If you chose (G), you selected the length of a side of the square, not one of its diagonals. If you chose either (J) or (K), you may have been using the ratio of sides in a 30-60-90 triangle rather than that of a 45-45-90 triangle.", "5":"B  The question is asking, 4 raised to the 3rd power  =  ? 4 × 4 × 4  =  64.", "6":"G  An easy way to do this problem is to test each answer choice to find the pair of numbers that satisfies the given equation. For choice (G), y  =  18 - 0.2(1)  =  17.8 or 0.2 quarts of water have boiled away. None of the remaining answers makes the provided equation true.", "7":"D  The second figure shows that the small and large diameters of the coffee cup are 4 and 6 respectively, so the radii are 2 and 3. Plugging the numbers into the equation given, V = π5. 5(32 + 22 + 3ç2)π5.5(19)≈109. Choice (A) is the portion of the equation inside the parentheses and choice (C) neglects to multiply by π. Choice (B) uses a height of  instead of 5, or 5.5. Choice (E) plugs the diameters into the equation instead of the radii.", "8":"F  Simplify the right side of the equation: 3(3x+4)  =  9x + 12. What can x be in the equation 9x + 12  =  9x + 12? Any real number.", "9":"E  First, figure out : the big fraction bar means division, so this is . To subtract  and , get a common denominator of 12:. Now you have , but you divide fractions by flipping the fraction on the right and multiplying, so this becomes. This is  or 9. Now combine the three remaining fractions:. You now have 9÷, which becomes . If you chose one of the other answers, be careful—watch your order of operations, and be careful putting these fractions into your calculator.", "10":"H  To find the area of the shaded empty space, you must first find its radius. Since the width of the bagel from the center to the edge is 56 mm, the width, or diameter, of the space, is the total diameter of the cross-section minus the width of the bagel itself on both sides. 144 - 2(56)  =  32. The radius of a circle is half its diameter, so r  =  16 mm. Area  =  πr2  =  π (16)2 ≈ 800. Choice (J) calculates the area using the diameter of 32 instead of the radius. Choice (K) finds the area of the entire bagel including the shaded space. Choice (F) finds the circumference of the shaded space, and choice (G) finds the outer circumference of the bagel.", "11":"E  Any non-zero number raised to the 0 power  =  1. So a0  =  1, b0  =  1, and c0  =  1. 1 + 1 + 1  =  3.", "12":"F  Use SOHCAHTOA: tan  =  . For each of the angles, the opposite side is AB. Since AB is constant for each angle, the length of the adjacent side is all that matters when determining which angle has the greatest tangent value. The angle with the shortest adjacent side, BEA, has the greatest tangent.", "13":"E  The y-intercept of a graph is the point where the graph meets up with (intercepts) the vertical (y) axis. This graph meets up with the y-axis at point (0,1). Choices (B) and (D) are the two x-intercepts of the graph. Choices (A) and (C) do not lie on either axis.", "14":"G  This graph is symmetrical with a vertex at point X. The squared term of a quadratic equation gives it the smooth curve about the vertex. If you have a graphing calculator, you can enter a simple quadratic equation like y  =  x2 to confirm your choice. Choice (F) would require a wave-like graph and choice (H) would form a graph with a sharp V shape. Cubic functions, as in choice (J), do not create symmetrical graphs. Choice (K) refers to a function that is a straight line, which this is clearly not.", "15":"D  To reflect a graph over the line y  =  x, switch the x and y coordinates of each point on the graph. For this graph, Point V (-2,1) becomes (1,-2) and point Z (0,1) becomes (1,0). Eliminate any graph that does not include these three points. Note that point X (-1,-1) remains the same. You can also visualize the reflection by drawing the line y  =  x on the graph and imagine folding the paper along that line. Where the graph meets the other half of the page is where the reflection will be. Choice (A) reflects the graph across the x-axis and choice (C) reflects it across the y-axis. Choice (B) shifts the graph up two places. Choice (E) moves the vertex to (1,1)."};
+let graded = false;
+
+document.querySelectorAll('.choices li').forEach(li => {
+  // Remove old onclick
+  li.removeAttribute('onclick');
+  li.addEventListener('click', function() {
+    if (graded) return;
+    const siblings = this.parentElement.querySelectorAll('li');
+    siblings.forEach(s => s.classList.remove('selected'));
+    this.classList.add('selected');
+  });
+});
+
+function gradeTest() {
+  if (graded) return;
+  graded = true;
+  let correct = 0;
+  const total = Object.keys(ANSWERS).length;
+  
+  document.querySelectorAll('.question').forEach((qDiv, idx) => {
+    const qNum = idx + 1;
+    const correctAns = ANSWERS[qNum];
+    if (!correctAns) return;
+    const choices = qDiv.querySelectorAll('.choices li');
+    const selected = qDiv.querySelector('.choices li.selected');
+    const selectedLetter = selected ? selected.textContent.trim().charAt(0) : null;
+    
+    choices.forEach(li => {
+      const letter = li.textContent.trim().charAt(0);
+      if (letter === correctAns) li.classList.add('show-correct');
+      li.style.cursor = 'default';
+    });
+    
+    const tag = document.createElement('span');
+    tag.className = 'result-tag';
+    
+    if (selectedLetter === correctAns) {
+      correct++;
+      tag.className += ' correct';
+      tag.textContent = 'Correct';
+      if (selected) { selected.classList.remove('selected'); selected.classList.add('correct'); }
+    } else {
+      tag.className += ' wrong';
+      tag.textContent = 'Incorrect (Answer: ' + correctAns + ')';
+      if (selected) { selected.classList.remove('selected'); selected.classList.add('wrong'); }
+    }
+    
+    const firstP = qDiv.querySelector('p');
+    if (firstP) firstP.appendChild(tag);
+    
+    if (typeof EXPLANATIONS !== 'undefined' && EXPLANATIONS[qNum]) {
+      const explDiv = document.createElement('div');
+      explDiv.className = 'explanation show';
+      explDiv.innerHTML = '<strong>Explanation:</strong> ' + EXPLANATIONS[qNum];
+      qDiv.appendChild(explDiv);
+    }
+  });
+  
+  const pct = Math.round((correct / total) * 100);
+  document.querySelector('.submit-btn').style.display = 'none';
+  document.querySelector('.reset-btn').style.display = 'block';
+  var rw=document.querySelector('.report-wrap');if(rw)rw.style.display='block';
+  var bs=document.createElement('div');bs.className='bottom-score';bs.id='bottom-score';
+  bs.innerHTML='<h2 style="font-size:1.3rem;margin-bottom:6px;color:#1a3a4a">Your Score</h2><div class="pct '+(pct>=80?'good':pct>=60?'ok':'bad')+'">'+pct+'%</div><div class="detail">'+correct+' out of '+total+' correct</div>';
+  document.querySelector('.submit-wrap').after(bs);
+  try{var tn=location.pathname.match(/test(\d+)/);if(tn)localStorage.setItem('actmath_'+tn[1],pct);}catch(e){}
+}
+
+function resetTest() {
+  graded = false;
+  var bsEl=document.getElementById('bottom-score');if(bsEl)bsEl.remove();
+  document.querySelector('.submit-btn').style.display = '';
+  document.querySelector('.reset-btn').style.display = 'none';
+  var rw=document.querySelector('.report-wrap');if(rw)rw.style.display='none';
+  var ni=document.querySelector('.name-input');if(ni)ni.value='';
+  document.querySelectorAll('.choices li').forEach(li => {
+    li.classList.remove('selected','correct','wrong','show-correct');
+    li.style.cursor = 'pointer';
+  });
+  document.querySelectorAll('.result-tag').forEach(t => t.remove());
+  document.querySelectorAll('.explanation').forEach(e => e.remove());
+}
+
+function generateReport(){
+  var nameInput=document.querySelector('.name-input');
+  var name=(nameInput&&nameInput.value.trim())||'Student';
+  var testName=document.querySelector('header h1').textContent;
+  var bs=document.getElementById('bottom-score');
+  var scorePct=bs?bs.querySelector('.pct').textContent:'';
+  var detailTxt=bs?bs.querySelector('.detail').textContent:'';
+  var d=new Date().toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'});
+  var btn=document.querySelector('.report-btn');btn.textContent='Generating...';btn.disabled=true;
+  var s=document.createElement('script');
+  s.src='https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js';
+  s.onerror=function(){btn.textContent='Download Report (PDF)';btn.disabled=false;alert('Could not load PDF library.');};
+  s.onload=function(){
+    var doc=new jspdf.jsPDF('portrait','mm','letter');
+    var pw=215.9,ph=279.4,mx=12,cw=pw-2*mx,y=8;
+    doc.setFillColor(26,58,74);doc.rect(0,0,pw,22,'F');
+    doc.setTextColor(255,255,255);doc.setFontSize(13);doc.setFont('helvetica','bold');
+    doc.text(testName,mx,9);
+    doc.setFontSize(7.5);doc.setFont('helvetica','normal');
+    doc.text(d+'  |  Student: '+name,mx,14.5);
+    doc.setFontSize(18);doc.setFont('helvetica','bold');
+    doc.text(scorePct,pw-mx,11,{align:'right'});
+    doc.setFontSize(7.5);doc.setFont('helvetica','normal');
+    doc.text(detailTxt,pw-mx,16,{align:'right'});
+    y=25;
+    doc.setDrawColor(26,58,74);doc.setLineWidth(0.3);doc.line(mx,y,pw-mx,y);y+=3;
+    document.querySelectorAll('.question').forEach(function(qDiv,idx){
+      var qNum=idx+1;var ca=ANSWERS[qNum];if(!ca)return;
+      var sel=qDiv.querySelector('.choices li.correct,.choices li.wrong');
+      var sa=sel?sel.textContent.trim().charAt(0):'-';
+      var ok=sel&&sel.classList.contains('correct');
+      if(ok){
+        doc.setFillColor(40,167,69);doc.circle(mx+1.2,y-1,1,'F');
+        doc.setTextColor(33,33,33);doc.setFont('helvetica','bold');doc.setFontSize(8);
+        doc.text('Q'+qNum,mx+4,y);
+        doc.setFont('helvetica','normal');doc.setTextColor(40,167,69);
+        doc.text('Correct ('+ca+')',mx+14,y);
+      }else{
+        doc.setFillColor(220,53,69);doc.circle(mx+1.2,y-1,1,'F');
+        doc.setTextColor(33,33,33);doc.setFont('helvetica','bold');doc.setFontSize(8);
+        doc.text('Q'+qNum,mx+4,y);
+        doc.setFont('helvetica','normal');doc.setTextColor(220,53,69);
+        doc.text('Incorrect',mx+14,y);
+        doc.setTextColor(120,120,120);
+        doc.text('(Chose '+sa+', Correct: '+ca+')',mx+32,y);
+      }
+      y+=3.2;
+      var qP=qDiv.querySelector('p');
+      if(qP){
+        var qT=qP.cloneNode(true);
+        var tags=qT.querySelectorAll('.result-tag');tags.forEach(function(t){t.remove();});
+        var qt=qT.textContent.replace(/^\d+\.\s*/,'').trim();
+        if(qt.length>0){
+          doc.setFont('helvetica','normal');doc.setTextColor(60,60,60);doc.setFontSize(6.5);
+          var ql=doc.splitTextToSize(qt,cw-5);
+          ql=ql.slice(0,1);
+          if(doc.splitTextToSize(qt,cw-5).length>1){ql[0]=ql[0].substring(0,ql[0].length-3)+'...';}
+          doc.text(ql,mx+4,y);y+=2.4;
+        }
+      }
+      if(typeof EXPLANATIONS!=='undefined'&&EXPLANATIONS[qNum]){
+        doc.setFont('helvetica','italic');doc.setTextColor(100,100,100);doc.setFontSize(6);
+        var lines=doc.splitTextToSize(EXPLANATIONS[qNum],cw-5);
+        if(lines.length>2){lines=lines.slice(0,2);lines[1]=lines[1].substring(0,Math.max(0,lines[1].length-3))+'...';}
+        doc.text(lines,mx+4,y);y+=lines.length*2.2;
+      }
+      y+=2;
+    });
+    doc.setDrawColor(200,200,200);doc.setLineWidth(0.2);doc.line(mx,ph-10,pw-mx,ph-10);
+    doc.setTextColor(170,170,170);doc.setFontSize(6);doc.setFont('helvetica','normal');
+    doc.text('ACT Math Practice  |  Score Report',pw/2,ph-7,{align:'center'});
+    var tn=location.pathname.match(/test(\d+)/);
+    var testNum=tn?parseInt(tn[1])-100:0;
+    var ds=new Date().toISOString().slice(0,10);
+    doc.save('ACT-Math-Test-'+testNum+'-'+ds+'.pdf');
+    btn.textContent='Download Report (PDF)';btn.disabled=false;
+  };
+  document.head.appendChild(s);
+}
+</script>
+</body></html>

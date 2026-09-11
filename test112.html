@@ -1,0 +1,222 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>ACT Math Test 12</title><style>@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:#fff;color:#2d3748;line-height:1.7}
+.container{max-width:800px;margin:0 auto;padding:20px 24px}
+header{background:linear-gradient(135deg,#1a3a4a 0%,#2d6a7a 100%);color:#fff;padding:28px 0;margin-bottom:36px;text-align:center}
+header .container{display:block}
+header h1{font-size:1.6rem;font-weight:700;letter-spacing:-0.3px}
+header a{color:rgba(255,255,255,.7);text-decoration:none;font-size:.9rem;display:inline-block;margin-bottom:6px;transition:color .2s}
+header a:hover{color:#fff}
+.question{background:#fff;border-radius:12px;padding:24px;margin-bottom:20px;border:1px solid #e2e8f0;transition:border-color .2s}
+.question:hover{border-color:#cbd5e0}
+.question p{margin-bottom:14px;font-size:1.05rem}
+img{max-width:100%;height:auto;margin:4px 0;vertical-align:middle}
+.choices{list-style:none}
+.choices li{padding:10px 14px;margin:6px 0;border-radius:8px;cursor:pointer;transition:all .2s;border:2px solid transparent}
+.choices li:hover{background:#f0f7fa}
+.choices li.selected{background:#d1ecf1;border-color:#bee5eb}
+.choices li.correct{background:#d4edda;border-color:#28a745}
+.choices li.wrong{background:#f8d7da;border-color:#dc3545}
+.choices li.show-correct{background:#d4edda;border-color:#28a745}
+.submit-wrap{text-align:center;margin:36px 0}
+.submit-btn{display:inline-block;padding:14px 40px;background:linear-gradient(135deg,#1a3a4a,#2d6a7a);color:#fff;border:none;border-radius:10px;font-size:1.1rem;cursor:pointer;font-weight:600;font-family:inherit;transition:all .25s;letter-spacing:.3px}
+.submit-btn:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(26,58,74,.25)}
+.score-box{background:#fff;border-radius:12px;padding:28px;margin-bottom:28px;text-align:center;border:1px solid #e2e8f0;box-shadow:0 4px 20px rgba(0,0,0,.06);display:none}
+.score-box h2{font-size:1.4rem;margin-bottom:8px;color:#1a3a4a;text-align:center}
+.score-box .pct{font-size:3rem;font-weight:700}
+.score-box .pct.good{color:#28a745}
+.score-box .pct.ok{color:#e6a817}
+.score-box .pct.bad{color:#dc3545}
+.score-box .detail{color:#666;margin-top:4px}
+.result-tag{display:inline-block;padding:2px 10px;border-radius:12px;font-size:.8rem;font-weight:600;margin-left:8px}
+.result-tag.correct{background:#d4edda;color:#155724}
+.result-tag.wrong{background:#f8d7da;color:#721c24}
+.reset-btn{display:none;margin:16px auto;padding:12px 28px;background:#6c757d;color:#fff;border:none;border-radius:10px;font-size:1rem;cursor:pointer;font-family:inherit;transition:all .25s}
+.reset-btn:hover{background:#5a6268;transform:translateY(-1px)}
+.explanation{background:#f0f7ff;border-left:4px solid #1a3a4a;padding:14px 18px;margin-top:14px;border-radius:0 8px 8px 0;font-size:.95rem;color:#444;display:none}
+.explanation.show{display:block}
+.explanation strong{color:#1a3a4a}
+.nav{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin:36px 0}
+.nav a{display:inline-block;padding:10px 24px;background:linear-gradient(135deg,#1a3a4a,#2d6a7a);color:#fff;text-decoration:none;border-radius:10px;font-weight:500;font-size:.95rem;transition:all .25s}
+.nav a:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(26,58,74,.25)}
+footer{text-align:center;padding:36px 24px;color:#8899a4;font-size:.85rem;border-top:1px solid #e2e8f0;margin-top:40px}
+.report-btn{display:inline-block;margin:0;padding:12px 28px;background:linear-gradient(135deg,#1a3a4a,#2d6a7a);color:#fff;border:none;border-radius:10px;font-size:1rem;cursor:pointer;font-family:inherit;transition:all .25s}
+.report-btn:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(26,58,74,.25)}
+.bottom-score{background:#fff;border-radius:12px;padding:20px;margin:20px 0;text-align:center;border:1px solid #e2e8f0;box-shadow:0 4px 20px rgba(0,0,0,.06)}
+.bottom-score .pct{font-size:2.5rem;font-weight:700}
+.bottom-score .pct.good{color:#28a745}
+.bottom-score .pct.ok{color:#e6a817}
+.bottom-score .pct.bad{color:#dc3545}
+.bottom-score .detail{color:#666;margin-top:4px;font-size:.95rem}
+.report-wrap{display:none;text-align:center;margin:16px 0}
+.name-input{padding:10px 14px;border:1px solid #e2e8f0;border-radius:10px;font-size:.95rem;font-family:inherit;width:200px;margin-right:8px;outline:none;transition:border-color .2s}
+.name-input:focus{border-color:#1a3a4a}
+</style></head><body><header><div class="container"><a href="index.html">&larr; All Tests</a><h1>ACT Math Practice Test 12</h1></div></header><div class="container"><div id="score-box" class="score-box"><h2>Your Score</h2><div class="pct">0%</div><div class="detail"></div></div><div class="question"><p><b>1.</b> In the complex numbers, where <span class="zcheltitalic">i</span><span class="zsuperscript">2</span><span class="zcheltitalic"> </span>= –1, what is the value of 5 + 6<span class="zcheltitalic">i</span>multiplied by 3 – 2<span class="zcheltitalic">i</span>?</p><ul class="choices"><li>F. 27</li><li>G. 27<span class="zcheltitalic">i</span></li><li>H. 27<span class="zcheltitalic"> </span>+ 8<span class="zcheltitalic">i</span></li><li>J. 15 + 8<span class="zcheltitalic">i</span></li><li>K. 15 – 18<span class="zcheltitalic">i</span></li></ul></div><div class="question"><p><b>2.</b> In the following figure, <img alt="" src="https://www.crackab.com/images/tests/9781118001547-eq17083_fmt.jpeg">is a chord of the circle centered at <span class="zcheltitalic">O,</span>with <img alt="" src="https://www.crackab.com/images/tests/9781118001547-eq17084_fmt.jpeg">. If <span class="zcheltitalic">KL</span>= 12 and <span class="zcheltitalic">MO</span>= 6, what is the area of the circle?<br><img alt="" src="https://www.crackab.com/images/tests/9781118001547-un1713_fmt.jpeg"></p><ul class="choices"><li>A. 36<span class="zsymbolmedium">π</span></li><li>B. 48<span class="zsymbolmedium">π</span></li><li>C. 72<span class="zsymbolmedium">π</span></li><li>D. 96<span class="zsymbolmedium">π</span></li><li>E. 144<span class="zsymbolmedium">π</span></li></ul></div><div class="question"><p><b>3.</b> <i>Eldridge opened a savings account with an initial balance of $1,000. After that, every month for 8 months, she made one deposit to the account, always for the same amount. During that time, she made just one withdrawal.</i><br>Which of the following graphs accurately describes these transactions over an 8-month period?</p><ul class="choices"><li>F. <img alt="" src="https://www.crackab.com/images/tests/9781118001547-un1714_fmt.jpeg"></li><li>G. <img alt="" src="https://www.crackab.com/images/tests/9781118001547-un1715_fmt.jpeg"></li><li>H. <img alt="" src="https://www.crackab.com/images/tests/9781118001547-un1716_fmt.jpeg"></li><li>J. <img alt="" src="https://www.crackab.com/images/tests/9781118001547-un1717_fmt.jpeg"></li><li>K. <img alt="" src="https://www.crackab.com/images/tests/9781118001547-un1718_fmt.jpeg"></li></ul></div><div class="question"><p><b>4.</b> <i>Eldridge opened a savings account with an initial balance of $1,000. After that, every month for 8 months, she made one deposit to the account, always for the same amount. During that time, she made just one withdrawal.</i><br>If each of Eldridge’s 8 deposits was in the amount of $200 and her withdrawal was $350, how much money did her account have at the end of 8 months?</p><ul class="choices"><li>A. $850</li><li>B. $1,550</li><li>C. $2,250</li><li>D. $2,350</li><li>E. $2,950</li></ul></div><div class="question"><p><b>5.</b> Martha picked out a pair of shoes she wanted and brought them to the front of the store to pay. The cashier told her that the shoes were on sale for 30% off the original price. She rang up the sale price plus 5% sales tax, so Martha ended up paying $58.80 for the shoes. What was the original price for the shoes?</p><ul class="choices"><li>F. $70</li><li>G. $75</li><li>H. $80</li><li>J. $85</li><li>K. $90</li></ul></div><div class="question"><p><b>6.</b> Which of the following is equivalent to <img alt="" src="https://www.crackab.com/images/tests/9781118001547-eq17090_fmt.jpeg">?</p><ul class="choices"><li>A. 1</li><li>B. sin <span class="zcheltitalic">n</span></li><li>C. cos <span class="zcheltitalic">n</span></li><li>D. cot <span class="zcheltitalic">n</span></li><li>E. csc <span class="zcheltitalic">n</span></li></ul></div><div class="question"><p><b>7.</b> In the following figure, the large quadrilateral is a square. What is the area of the shaded region in terms of <i>x</i>and <i>y</i>?<br><img alt="" src="https://www.crackab.com/images/tests/9781118001547-un1719_fmt.jpeg"></p><ul class="choices"><li>F. <img alt="" src="https://www.crackab.com/images/tests/9781118001547-eq17091_fmt.jpeg"></li><li>G. <img alt="" src="https://www.crackab.com/images/tests/9781118001547-eq17092_fmt.jpeg"></li><li>H. <img alt="" src="https://www.crackab.com/images/tests/9781118001547-eq17093_fmt.jpeg"></li><li>J. <img alt="" src="https://www.crackab.com/images/tests/9781118001547-eq17094_fmt.jpeg"></li><li>K. <img alt="" src="https://www.crackab.com/images/tests/9781118001547-eq17095_fmt.jpeg"></li></ul></div><div class="question"><p><b>8.</b> If <img alt="" src="https://www.crackab.com/images/tests/9781118001547-eq17096_fmt.jpeg">and <img alt="" src="https://www.crackab.com/images/tests/9781118001547-eq17097_fmt.jpeg">, what is the ratio of <span class="zcheltitalic">f:h</span>?</p><ul class="choices"><li>A. 1:06</li><li>B. 1:08</li><li>C. 1:10</li><li>D. 1:12</li><li>E. 1:20</li></ul></div><div class="question"><p><b>9.</b> If <img alt="" src="https://www.crackab.com/images/tests/9781118001547-eq17103_fmt.jpeg">, then <i>y</i>=</p><ul class="choices"><li>F. <img alt="" src="https://www.crackab.com/images/tests/9781118001547-eq17104_fmt.jpeg"></li><li>G. <img alt="" src="https://www.crackab.com/images/tests/9781118001547-eq17105_fmt.jpeg"></li><li>H. <img alt="" src="https://www.crackab.com/images/tests/9781118001547-eq17106_fmt.jpeg"></li><li>J. <img alt="" src="https://www.crackab.com/images/tests/9781118001547-eq17107_fmt.jpeg"></li><li>K. <img alt="" src="https://www.crackab.com/images/tests/9781118001547-eq17108_fmt.jpeg"></li></ul></div><div class="question"><p><b>10.</b> In the following figure, the base of the pyramid has the same area as the base of the cylinder, and the cylinder is twice the height of the pyramid. What is the ratio of the volume of the pyramid to the volume of the cylinder?<br><img alt="" src="https://www.crackab.com/images/tests/9781118001547-un1720_fmt.jpeg"></p><ul class="choices"><li>A. 1 to 3</li><li>B. 1 to 6</li><li>C. 2 to 3</li><li>D. 3 to 2</li><li>E. 6 to 1</li></ul></div><div class="question"><p><b>11.</b> Which of the following is a possible solution for <span class="zcheltitalic">x </span>in terms of <span class="zcheltitalic">k </span>for the equation <img alt="" src="https://www.crackab.com/images/tests/9781118001547-eq17109_fmt.jpeg">?</p><ul class="choices"><li>F. <img alt="" src="https://www.crackab.com/images/tests/9781118001547-eq17110_fmt.jpeg"></li><li>G. <img alt="" src="https://www.crackab.com/images/tests/9781118001547-eq17111_fmt.jpeg"></li><li>H. <img alt="" src="https://www.crackab.com/images/tests/9781118001547-eq17112_fmt.jpeg"></li><li>J. <img alt="" src="https://www.crackab.com/images/tests/9781118001547-eq17113_fmt.jpeg"></li><li>K. <img alt="" src="https://www.crackab.com/images/tests/9781118001547-eq17114_fmt.jpeg"></li></ul></div><div class="question"><p><b>12.</b> If <img alt="" src="https://www.crackab.com/images/tests/9781118001547-eq17115_fmt.jpeg"><span class="zcheltitalic">,</span>what is the value of <span class="zcheltitalic">a</span>– <span class="zcheltitalic">b</span>?</p><ul class="choices"><li>A. 1</li><li>B. –1</li><li>C. 2</li><li>D. <img alt="" src="https://www.crackab.com/images/tests/9781118001547-eq17116_fmt.jpeg"></li><li>E. <img alt="" src="https://www.crackab.com/images/tests/9781118001547-eq17117_fmt.jpeg"></li></ul></div><div class="question"><p><b>13.</b> Which of the following functions has a range of <i>f</i>(<i>x</i>) <span class="zsymbolmedium">≥</span>4?</p><ul class="choices"><li>F. <i>f</i>(<i>x</i>) = |<i>x</i>+ 4|</li><li>G. <i>f</i>(<i>x</i>) = |<i>x</i>– 4|</li><li>H. <i>f</i>(<i>x</i>) = |<i>x</i>+ 4| – 4</li><li>J. <i>f</i>(<i>x</i>) = |<i>x</i>– 4| + 4</li><li>K. <i>f</i>(<i>x</i>) = |<i>x</i>– 4| – 4</li></ul></div><div class="question"><p><b>14.</b> If <img alt="" src="https://www.crackab.com/images/tests/9781118001547-eq17119_fmt.jpeg">, then <span class="zcheltitalic">a</span>=</p><ul class="choices"><li>A. <img alt="" src="https://www.crackab.com/images/tests/9781118001547-eq17120_fmt.jpeg"></li><li>B. <span class="zcheltitalic">b</span></li><li>C. <span class="zcheltitalic">b</span><span class="zsuperscript">2</span></li><li>D. <span class="zcheltitalic">b</span><span class="zsuperscript">4</span></li><li>E. <span class="zcheltitalic">b</span><span class="zsuperscript">8</span></li></ul></div><div class="question"><p><b>15.</b> The following figure shows a regular octagon inscribed in a circle. The arc length from <span class="zcheltitalic">A</span>to <span class="zcheltitalic">B</span>is 6<span class="zsymbolmedium">π</span>. What is the area of the shaded region of the circle?<br><img alt="" src="https://www.crackab.com/images/tests/9781118001547-un1721_fmt.jpeg"></p><ul class="choices"><li>F. 8<span class="zsymbolmedium">π</span></li><li>G. 16<span class="zsymbolmedium">π</span></li><li>H. 24<span class="zsymbolmedium">π</span></li><li>J. 36<span class="zsymbolmedium">π</span></li><li>K. 64<span class="zsymbolmedium">π</span></li></ul></div><div class="submit-wrap"><button class="submit-btn" onclick="gradeTest()">Submit Test</button><button class="reset-btn" onclick="resetTest()">Try Again</button>
+<div class="report-wrap"><input type="text" class="name-input" placeholder="Student name (for report)"><button class="report-btn" onclick="generateReport()">Download Report (PDF)</button></div></div><div class="nav"><a href="test111.html">&larr; Prev</a><a href="index.html">All Tests</a><a href="test113.html">Next &rarr;</a></div></div><footer><div class="container">ACT Math Practice</div></footer>
+<script>
+const ANSWERS = {"1": "H", "2": "C", "3": "J", "4": "C", "5": "H", "6": "E", "7": "F", "8": "C", "9": "K", "10": "B", "11": "K", "12": "D", "13": "J", "14": "C", "15": "H"};
+const EXPLANATIONS = {"1":"H. To begin, FOIL 5 + 6iand 3 – 2i, and then combine like terms: (5 + 6i)(3 – 2i)  =  15 – 10i+ 18i– 12i2 =  15 + 8i– 12i2 Now substitute –1 for i2and combine like terms again:  =  15 + 8i– 12(–1)  =  15 + 8i+ 12  =  27 + 8i", "2":"C. , and is a chord of the circle, so bisects and KM =  6 and ML  =  6. Thus, you can make a right triangle as follows: This right triangle has two sides with the length of 6, so its hypotenuse is . This value is also the radius of the circle, so plug it into the formula for the area of a circle:", "3":"J. Eldridge opened her account with $1,000, so the line on the graph begins above the origin, which rules out Choices (G) and (H). The withdrawal caused the amount in the account to decrease, so the slope of the line decreases during this month. So Choice (F) is wrong. And in every month except the month with the withdrawal, the upward slope of the line is consistent, which rules out Choice (K). Through the process of elimination, you know that Choice (J) is the correct answer.", "4":"C. Eldridge started with $1,000, made 8 deposits of $200 each (8 ×200  =  1,600), and withdrew $350, so 1,000 + 1,600 – 350  =  2,250.", "5":"H. Let xequal the original price for the shoes. The sale price was 0.7x,to which a 5% tax was added. So Martha paid 1.05(0.7x), and this amount was $58.80. Thus, you set up the following equation: 1.05(0.7x)  =  58.8 Simplify and solve for x: Therefore, Martha paid $80 for the shoes.", "6":"E. To begin, use the identity to substitute for tan n: So you can cancel sin n in the numerator and denominator Now the identity means that cos nsec n =  1; therefore, the denominator is 1, so you can drop it:", "7":"F. To get a sense of how to proceed, add a few lines to the given figure: Notice that the shaded triangle is now half of an inner square. Each side of this square is the hypotenuse of a right triangle with legs of length xand y.Use the Pythagorean theorem to find the length of this hypotenuse: Thus, the length of a side of this square is , so its area is x2+ y2. The shaded triangle is half of this square, so its area is .", "8":"C. Multiply the two equations together:", "9":"K. Begin by squaring both sides of the equation to eliminate the radical. I do this in two steps to keep things clear: Now substitute 72for 49 on the left side. Again, I do this in two steps: Because the bases are both 7, the exponents are equal. So now you can drop the bases: 12y =  y+ 1 Solve for y:", "10":"B. Let xequal the area of the base of the pyramid and yequal the height of the pyramid. Plug these values into the formula for the volume of a pyramid: So xequals the area of the base of the cylinder and 2yequals the height of the cylinder. Now plug these values into the formula for the area of a cylinder, substituting xfor πr2: Make a fraction using the area of the pyramid as the numerator and the area of the cylinder as the denominator, and then cancel out xyin the numerator and denominator: Multiply the numerator and the denominator by 3 to eliminate the extra fraction:", "11":"K. Multiply both sides of the equation by x+ 2 to remove the fraction, and then place all terms on one side of the equation: The result is a standard quadratic equation, where a =  1, b =  2, and c =  –2k.Use the quadratic formula to solve: Now simplify: Thus, either of the following two solutions is valid: So in the first solution, reversing the two terms gives you .", "12":"D. Begin by factoring on both sides of the equation: Cancel (a+ b) in the numerator and denominator: Next, cancel (a+ b) on both sides of the equation: Multiply both sides by (a– b): 1  =  2(a– b) Now divide both sides by 2:", "13":"J. The value of a linear function inside absolute value bars can never be less than 0. Thus, a function with a range of f(x) ≥4 takes this minimum value and adds 4 to it. Therefore, f(x)  =  |x– 4| + 4 can never be less than 4, so the correct answer is Choice (J).", "14":"C. To begin, put the logarithm in exponential form: means Square both sides to remove the radical on the right side: Now square both sides again to isolate a:", "15":"H. The arc length from Ato Bis 6π. The angle from Ato Bis of the circle’s total of 360°, which equals 135°. Plug these values into the formula for arc length: Solve for the radius r: Now plug in 8 for rin the formula for the area of a circle: The area of the shaded region is of this value:"};
+let graded = false;
+
+document.querySelectorAll('.choices li').forEach(li => {
+  // Remove old onclick
+  li.removeAttribute('onclick');
+  li.addEventListener('click', function() {
+    if (graded) return;
+    const siblings = this.parentElement.querySelectorAll('li');
+    siblings.forEach(s => s.classList.remove('selected'));
+    this.classList.add('selected');
+  });
+});
+
+function gradeTest() {
+  if (graded) return;
+  graded = true;
+  let correct = 0;
+  const total = Object.keys(ANSWERS).length;
+  
+  document.querySelectorAll('.question').forEach((qDiv, idx) => {
+    const qNum = idx + 1;
+    const correctAns = ANSWERS[qNum];
+    if (!correctAns) return;
+    const choices = qDiv.querySelectorAll('.choices li');
+    const selected = qDiv.querySelector('.choices li.selected');
+    const selectedLetter = selected ? selected.textContent.trim().charAt(0) : null;
+    
+    choices.forEach(li => {
+      const letter = li.textContent.trim().charAt(0);
+      if (letter === correctAns) li.classList.add('show-correct');
+      li.style.cursor = 'default';
+    });
+    
+    const tag = document.createElement('span');
+    tag.className = 'result-tag';
+    
+    if (selectedLetter === correctAns) {
+      correct++;
+      tag.className += ' correct';
+      tag.textContent = 'Correct';
+      if (selected) { selected.classList.remove('selected'); selected.classList.add('correct'); }
+    } else {
+      tag.className += ' wrong';
+      tag.textContent = 'Incorrect (Answer: ' + correctAns + ')';
+      if (selected) { selected.classList.remove('selected'); selected.classList.add('wrong'); }
+    }
+    
+    const firstP = qDiv.querySelector('p');
+    if (firstP) firstP.appendChild(tag);
+    
+    if (typeof EXPLANATIONS !== 'undefined' && EXPLANATIONS[qNum]) {
+      const explDiv = document.createElement('div');
+      explDiv.className = 'explanation show';
+      explDiv.innerHTML = '<strong>Explanation:</strong> ' + EXPLANATIONS[qNum];
+      qDiv.appendChild(explDiv);
+    }
+  });
+  
+  const pct = Math.round((correct / total) * 100);
+  document.querySelector('.submit-btn').style.display = 'none';
+  document.querySelector('.reset-btn').style.display = 'block';
+  var rw=document.querySelector('.report-wrap');if(rw)rw.style.display='block';
+  var bs=document.createElement('div');bs.className='bottom-score';bs.id='bottom-score';
+  bs.innerHTML='<h2 style="font-size:1.3rem;margin-bottom:6px;color:#1a3a4a">Your Score</h2><div class="pct '+(pct>=80?'good':pct>=60?'ok':'bad')+'">'+pct+'%</div><div class="detail">'+correct+' out of '+total+' correct</div>';
+  document.querySelector('.submit-wrap').after(bs);
+  try{var tn=location.pathname.match(/test(\d+)/);if(tn)localStorage.setItem('actmath_'+tn[1],pct);}catch(e){}
+}
+
+function resetTest() {
+  graded = false;
+  var bsEl=document.getElementById('bottom-score');if(bsEl)bsEl.remove();
+  document.querySelector('.submit-btn').style.display = '';
+  document.querySelector('.reset-btn').style.display = 'none';
+  var rw=document.querySelector('.report-wrap');if(rw)rw.style.display='none';
+  var ni=document.querySelector('.name-input');if(ni)ni.value='';
+  document.querySelectorAll('.choices li').forEach(li => {
+    li.classList.remove('selected','correct','wrong','show-correct');
+    li.style.cursor = 'pointer';
+  });
+  document.querySelectorAll('.result-tag').forEach(t => t.remove());
+  document.querySelectorAll('.explanation').forEach(e => e.remove());
+}
+
+function generateReport(){
+  var nameInput=document.querySelector('.name-input');
+  var name=(nameInput&&nameInput.value.trim())||'Student';
+  var testName=document.querySelector('header h1').textContent;
+  var bs=document.getElementById('bottom-score');
+  var scorePct=bs?bs.querySelector('.pct').textContent:'';
+  var detailTxt=bs?bs.querySelector('.detail').textContent:'';
+  var d=new Date().toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'});
+  var btn=document.querySelector('.report-btn');btn.textContent='Generating...';btn.disabled=true;
+  var s=document.createElement('script');
+  s.src='https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js';
+  s.onerror=function(){btn.textContent='Download Report (PDF)';btn.disabled=false;alert('Could not load PDF library.');};
+  s.onload=function(){
+    var doc=new jspdf.jsPDF('portrait','mm','letter');
+    var pw=215.9,ph=279.4,mx=12,cw=pw-2*mx,y=8;
+    doc.setFillColor(26,58,74);doc.rect(0,0,pw,22,'F');
+    doc.setTextColor(255,255,255);doc.setFontSize(13);doc.setFont('helvetica','bold');
+    doc.text(testName,mx,9);
+    doc.setFontSize(7.5);doc.setFont('helvetica','normal');
+    doc.text(d+'  |  Student: '+name,mx,14.5);
+    doc.setFontSize(18);doc.setFont('helvetica','bold');
+    doc.text(scorePct,pw-mx,11,{align:'right'});
+    doc.setFontSize(7.5);doc.setFont('helvetica','normal');
+    doc.text(detailTxt,pw-mx,16,{align:'right'});
+    y=25;
+    doc.setDrawColor(26,58,74);doc.setLineWidth(0.3);doc.line(mx,y,pw-mx,y);y+=3;
+    document.querySelectorAll('.question').forEach(function(qDiv,idx){
+      var qNum=idx+1;var ca=ANSWERS[qNum];if(!ca)return;
+      var sel=qDiv.querySelector('.choices li.correct,.choices li.wrong');
+      var sa=sel?sel.textContent.trim().charAt(0):'-';
+      var ok=sel&&sel.classList.contains('correct');
+      if(ok){
+        doc.setFillColor(40,167,69);doc.circle(mx+1.2,y-1,1,'F');
+        doc.setTextColor(33,33,33);doc.setFont('helvetica','bold');doc.setFontSize(8);
+        doc.text('Q'+qNum,mx+4,y);
+        doc.setFont('helvetica','normal');doc.setTextColor(40,167,69);
+        doc.text('Correct ('+ca+')',mx+14,y);
+      }else{
+        doc.setFillColor(220,53,69);doc.circle(mx+1.2,y-1,1,'F');
+        doc.setTextColor(33,33,33);doc.setFont('helvetica','bold');doc.setFontSize(8);
+        doc.text('Q'+qNum,mx+4,y);
+        doc.setFont('helvetica','normal');doc.setTextColor(220,53,69);
+        doc.text('Incorrect',mx+14,y);
+        doc.setTextColor(120,120,120);
+        doc.text('(Chose '+sa+', Correct: '+ca+')',mx+32,y);
+      }
+      y+=3.2;
+      var qP=qDiv.querySelector('p');
+      if(qP){
+        var qT=qP.cloneNode(true);
+        var tags=qT.querySelectorAll('.result-tag');tags.forEach(function(t){t.remove();});
+        var qt=qT.textContent.replace(/^\d+\.\s*/,'').trim();
+        if(qt.length>0){
+          doc.setFont('helvetica','normal');doc.setTextColor(60,60,60);doc.setFontSize(6.5);
+          var ql=doc.splitTextToSize(qt,cw-5);
+          ql=ql.slice(0,1);
+          if(doc.splitTextToSize(qt,cw-5).length>1){ql[0]=ql[0].substring(0,ql[0].length-3)+'...';}
+          doc.text(ql,mx+4,y);y+=2.4;
+        }
+      }
+      if(typeof EXPLANATIONS!=='undefined'&&EXPLANATIONS[qNum]){
+        doc.setFont('helvetica','italic');doc.setTextColor(100,100,100);doc.setFontSize(6);
+        var lines=doc.splitTextToSize(EXPLANATIONS[qNum],cw-5);
+        if(lines.length>2){lines=lines.slice(0,2);lines[1]=lines[1].substring(0,Math.max(0,lines[1].length-3))+'...';}
+        doc.text(lines,mx+4,y);y+=lines.length*2.2;
+      }
+      y+=2;
+    });
+    doc.setDrawColor(200,200,200);doc.setLineWidth(0.2);doc.line(mx,ph-10,pw-mx,ph-10);
+    doc.setTextColor(170,170,170);doc.setFontSize(6);doc.setFont('helvetica','normal');
+    doc.text('ACT Math Practice  |  Score Report',pw/2,ph-7,{align:'center'});
+    var tn=location.pathname.match(/test(\d+)/);
+    var testNum=tn?parseInt(tn[1])-100:0;
+    var ds=new Date().toISOString().slice(0,10);
+    doc.save('ACT-Math-Test-'+testNum+'-'+ds+'.pdf');
+    btn.textContent='Download Report (PDF)';btn.disabled=false;
+  };
+  document.head.appendChild(s);
+}
+</script>
+</body></html>

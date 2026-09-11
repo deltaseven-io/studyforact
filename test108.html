@@ -1,0 +1,222 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>ACT Math Test 8</title><style>@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:#fff;color:#2d3748;line-height:1.7}
+.container{max-width:800px;margin:0 auto;padding:20px 24px}
+header{background:linear-gradient(135deg,#1a3a4a 0%,#2d6a7a 100%);color:#fff;padding:28px 0;margin-bottom:36px;text-align:center}
+header .container{display:block}
+header h1{font-size:1.6rem;font-weight:700;letter-spacing:-0.3px}
+header a{color:rgba(255,255,255,.7);text-decoration:none;font-size:.9rem;display:inline-block;margin-bottom:6px;transition:color .2s}
+header a:hover{color:#fff}
+.question{background:#fff;border-radius:12px;padding:24px;margin-bottom:20px;border:1px solid #e2e8f0;transition:border-color .2s}
+.question:hover{border-color:#cbd5e0}
+.question p{margin-bottom:14px;font-size:1.05rem}
+img{max-width:100%;height:auto;margin:4px 0;vertical-align:middle}
+.choices{list-style:none}
+.choices li{padding:10px 14px;margin:6px 0;border-radius:8px;cursor:pointer;transition:all .2s;border:2px solid transparent}
+.choices li:hover{background:#f0f7fa}
+.choices li.selected{background:#d1ecf1;border-color:#bee5eb}
+.choices li.correct{background:#d4edda;border-color:#28a745}
+.choices li.wrong{background:#f8d7da;border-color:#dc3545}
+.choices li.show-correct{background:#d4edda;border-color:#28a745}
+.submit-wrap{text-align:center;margin:36px 0}
+.submit-btn{display:inline-block;padding:14px 40px;background:linear-gradient(135deg,#1a3a4a,#2d6a7a);color:#fff;border:none;border-radius:10px;font-size:1.1rem;cursor:pointer;font-weight:600;font-family:inherit;transition:all .25s;letter-spacing:.3px}
+.submit-btn:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(26,58,74,.25)}
+.score-box{background:#fff;border-radius:12px;padding:28px;margin-bottom:28px;text-align:center;border:1px solid #e2e8f0;box-shadow:0 4px 20px rgba(0,0,0,.06);display:none}
+.score-box h2{font-size:1.4rem;margin-bottom:8px;color:#1a3a4a;text-align:center}
+.score-box .pct{font-size:3rem;font-weight:700}
+.score-box .pct.good{color:#28a745}
+.score-box .pct.ok{color:#e6a817}
+.score-box .pct.bad{color:#dc3545}
+.score-box .detail{color:#666;margin-top:4px}
+.result-tag{display:inline-block;padding:2px 10px;border-radius:12px;font-size:.8rem;font-weight:600;margin-left:8px}
+.result-tag.correct{background:#d4edda;color:#155724}
+.result-tag.wrong{background:#f8d7da;color:#721c24}
+.reset-btn{display:none;margin:16px auto;padding:12px 28px;background:#6c757d;color:#fff;border:none;border-radius:10px;font-size:1rem;cursor:pointer;font-family:inherit;transition:all .25s}
+.reset-btn:hover{background:#5a6268;transform:translateY(-1px)}
+.explanation{background:#f0f7ff;border-left:4px solid #1a3a4a;padding:14px 18px;margin-top:14px;border-radius:0 8px 8px 0;font-size:.95rem;color:#444;display:none}
+.explanation.show{display:block}
+.explanation strong{color:#1a3a4a}
+.nav{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin:36px 0}
+.nav a{display:inline-block;padding:10px 24px;background:linear-gradient(135deg,#1a3a4a,#2d6a7a);color:#fff;text-decoration:none;border-radius:10px;font-weight:500;font-size:.95rem;transition:all .25s}
+.nav a:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(26,58,74,.25)}
+footer{text-align:center;padding:36px 24px;color:#8899a4;font-size:.85rem;border-top:1px solid #e2e8f0;margin-top:40px}
+.report-btn{display:inline-block;margin:0;padding:12px 28px;background:linear-gradient(135deg,#1a3a4a,#2d6a7a);color:#fff;border:none;border-radius:10px;font-size:1rem;cursor:pointer;font-family:inherit;transition:all .25s}
+.report-btn:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(26,58,74,.25)}
+.bottom-score{background:#fff;border-radius:12px;padding:20px;margin:20px 0;text-align:center;border:1px solid #e2e8f0;box-shadow:0 4px 20px rgba(0,0,0,.06)}
+.bottom-score .pct{font-size:2.5rem;font-weight:700}
+.bottom-score .pct.good{color:#28a745}
+.bottom-score .pct.ok{color:#e6a817}
+.bottom-score .pct.bad{color:#dc3545}
+.bottom-score .detail{color:#666;margin-top:4px;font-size:.95rem}
+.report-wrap{display:none;text-align:center;margin:16px 0}
+.name-input{padding:10px 14px;border:1px solid #e2e8f0;border-radius:10px;font-size:.95rem;font-family:inherit;width:200px;margin-right:8px;outline:none;transition:border-color .2s}
+.name-input:focus{border-color:#1a3a4a}
+</style></head><body><header><div class="container"><a href="index.html">&larr; All Tests</a><h1>ACT Math Practice Test 8</h1></div></header><div class="container"><div id="score-box" class="score-box"><h2>Your Score</h2><div class="pct">0%</div><div class="detail"></div></div><div class="question"><p><b>1.</b> If <img alt="" src="https://www.crackab.com/images/tests/9781118001547-eq15072_fmt.jpeg">, what is the value of <span class="zcheltitalic">a</span>?</p><ul class="choices"><li>F. 0.01</li><li>G. 0.1</li><li>H. 1</li><li>J. 10</li><li>K. 100</li></ul></div><div class="question"><p><b>2.</b> A password for a computer system requires exactly 6 characters. Each character can be either one of the 26 letters from A to Z or one of the ten digits from 0 to 9. The first character must be a letter and the last character must be a digit. How many different possible passwords are there?</p><ul class="choices"><li>A. less than 10<span class="zsuperscript">7</span></li><li>B. between 10<span class="zsuperscript">7</span>and 10<span class="zsuperscript">8</span></li><li>C. between 10<span class="zsuperscript">8</span>and 10<span class="zsuperscript">9</span></li><li>D. between 10<span class="zsuperscript">9</span>and 10<span class="zsuperscript">10</span></li><li>E. more than 10<span class="zsuperscript">10</span></li></ul></div><div class="question"><p><b>3.</b> On the <i>xy-</i>plane, what is the area of a circle with this equation: (<i>x</i>+ 3)<span class="zsuperscript">2</span>+ (<i>y</i>– 4)<span class="zsuperscript">2</span>= 49?</p><ul class="choices"><li>F. 5<span class="zsymbolmedium">π</span></li><li>G. 7<span class="zsymbolmedium">π</span></li><li>H. 25<span class="zsymbolmedium">π</span></li><li>J. 49<span class="zsymbolmedium">π</span></li><li>K. 125<span class="zsymbolmedium">π</span></li></ul></div><div class="question"><p><b>4.</b> Which of the following is equal to sin <i>x</i>sec <i>x</i>?</p><ul class="choices"><li>A. tan <span class="zcheltitalic">x</span></li><li>B. cot <span class="zcheltitalic">x</span></li><li>C. cos <i>x</i>tan <span class="zcheltitalic">x</span></li><li>D. cos <span class="zcheltitalic">x </span>csc <span class="zcheltitalic">x</span></li><li>E. cot<span class="zcheltitalic"> x</span>csc <span class="zcheltitalic">x</span></li></ul></div><div class="question"><p><b>5.</b> The following figure shows a cylindrical tank whose diameter is 3 times the length of its height. The tank holds approximately 231.5 cubic meters of fluid. Which of the following answer choices most closely approximates the height of the tank?<br><img alt="" src="https://www.crackab.com/images/tests/9781118001547-un1511_fmt.jpeg"></p><ul class="choices"><li>F. 2 meters</li><li>G. 3 meters</li><li>H. 4 meters</li><li>J. 5 meters</li><li>K. 6 meters</li></ul></div><div class="question"><p><b>6.</b> Paulette, Quentin, and Rosie each donated money to a charity. Paulette gave as much money as Quentin and Rosie gave together. If Quentin had given three times more than he gave, he would have given $40 more than Paulette. And if Rosie had given $20 less, she would have given half as much as Paulette. How much did Paulette give?</p><ul class="choices"><li>A. $80</li><li>B. $120</li><li>C. $160</li><li>D. $200</li><li>E. $240</li></ul></div><div class="question"><p><b>7.</b> <i>To this questions below, use the following graph, which provides information about the number of new clients five salespeople registered last month.</i><br><img alt="" src="https://www.crackab.com/images/tests/9781118001547-un1512_fmt.jpeg"><br>What percentage of the new clients did Yolanda register?</p><ul class="choices"><li>F. 18%</li><li>G. 20%</li><li>H. 22%</li><li>J. 24%</li><li>K. 25%</li></ul></div><div class="question"><p><b>8.</b> <i>To this questions below, use the following graph, which provides information about the number of new clients five salespeople registered last month.</i><br><img alt="" src="https://www.crackab.com/images/tests/9781118001547-un1512_fmt.jpeg"><br>Suppose that next month Victoria registers twice as many clients as she did this month and that each of the other four salespeople registers the same number of clients as he or she did this month. In this case, what percentage of clients will Victoria have registered?</p><ul class="choices"><li>A. 36%</li><li>B. 40%</li><li>C. 44%</li><li>D. 48%</li><li>E. 50%</li></ul></div><div class="question"><p><b>9.</b> In the following figure, the regular octagon has a side with a length of 1. What is the area of the shaded region?<br><img alt="" src="https://www.crackab.com/images/tests/9781118001547-un1513_fmt.jpeg"></p><ul class="choices"><li>F. <img alt="" src="https://www.crackab.com/images/tests/9781118001547-eq15078_fmt.jpeg"></li><li>G. <img alt="" src="https://www.crackab.com/images/tests/9781118001547-eq15079_fmt.jpeg"></li><li>H. <img alt="" src="https://www.crackab.com/images/tests/9781118001547-eq15080_fmt.jpeg"></li><li>J. <img alt="" src="https://www.crackab.com/images/tests/9781118001547-eq15081_fmt.jpeg"></li><li>K. <img alt="" src="https://www.crackab.com/images/tests/9781118001547-eq15082_fmt.jpeg"></li></ul></div><div class="question"><p><b>10.</b> If <img alt="" src="https://www.crackab.com/images/tests/9781118001547-eq15083_fmt.jpeg">, with <span class="zcheltitalic">a </span>&gt; 0, <span class="zcheltitalic">b</span>&gt; 0, and <span class="zcheltitalic">c</span>&gt; 0, what is the value of <span class="zcheltitalic">a</span>in terms of <span class="zcheltitalic">b</span>and <span class="zcheltitalic">c</span>?</p><ul class="choices"><li>A. <img alt="" src="https://www.crackab.com/images/tests/9781118001547-eq15084_fmt.jpeg"></li><li>B. <img alt="" src="https://www.crackab.com/images/tests/9781118001547-eq15085_fmt.jpeg"></li><li>C. <img alt="" src="https://www.crackab.com/images/tests/9781118001547-eq15086_fmt.jpeg"></li><li>D. <img alt="" src="https://www.crackab.com/images/tests/9781118001547-eq15087_fmt.jpeg"></li><li>E. <img alt="" src="https://www.crackab.com/images/tests/9781118001547-eq15088_fmt.jpeg"></li></ul></div><div class="question"><p><b>11.</b> At 10:00, Angela starts from her home and runs at a constant pace to Kathleen’s house, which is exactly 2 miles away. Immediately, she and Kathleen turn around and walk back to Angela’s house exactly 4 miles an hour slower than Angela ran. When they arrive at Angela’s house, the time is 10:45. At what speed did Angela run?</p><ul class="choices"><li>F. 6 miles per hour</li><li>G. 6.5 miles per hour</li><li>H. 7 miles per hour</li><li>J. 7.5 miles per hour</li><li>K. 8 miles per hour</li></ul></div><div class="question"><p><b>12.</b> The following figure shows <i>f</i>(<i>x</i>), which includes points <span class="zcheltitalic">L,</span><span class="zcheltitalic">M,</span>and <i>n</i>plus the line segments <img alt="" src="https://www.crackab.com/images/tests/9781118001547-eq15089_fmt.jpeg">and <img alt="" src="https://www.crackab.com/images/tests/9781118001547-eq15090_fmt.jpeg">. Which of the following functions is equivalent to <i>f</i>(<i>x</i>)?<br><img alt="" src="https://www.crackab.com/images/tests/9781118001547-un1514_fmt.jpeg"></p><ul class="choices"><li>A. <i>f</i>(<i>x</i>+ 6)</li><li>B. <i>f</i>(<i>x</i>– 6)</li><li>C. <i>f</i>(6 – <i>x</i>)</li><li>D. –<i>f</i>(<i>x</i>+ 6)</li><li>E. –<i>f</i>(<i>x</i>– 6)</li></ul></div><div class="question"><p><b>13.</b> If log<span class="zsubscript">9</span><i>n</i>= <img alt="" src="https://www.crackab.com/images/tests/9781118001547-eq15091_fmt.jpeg">and <span class="zcheltitalic">n </span>&gt; 0, what is the value of <img alt="" src="https://www.crackab.com/images/tests/9781118001547-eq15098_fmt.jpeg">?</p><ul class="choices"><li>F. 3</li><li>G. <img alt="" src="https://www.crackab.com/images/tests/9781118001547-eq15092_fmt.jpeg"></li><li>H. <img alt="" src="https://www.crackab.com/images/tests/9781118001547-eq15093_fmt.jpeg"></li><li>J. <img alt="" src="https://www.crackab.com/images/tests/9781118001547-eq15094_fmt.jpeg"></li><li>K. <img alt="" src="https://www.crackab.com/images/tests/9781118001547-eq15095_fmt.jpeg"></li></ul></div><div class="question"><p><b>14.</b> In the complex numbers, where <img alt="" src="https://www.crackab.com/images/tests/9781118001547-eq15096_fmt.jpeg">, the conjugate of any value <span class="zcheltitalic">a </span>+ <span class="zcheltitalic">bi </span>is <span class="zcheltitalic">a</span>– <span class="zcheltitalic">bi.</span>What is the result when you multiply 2 + 7<span class="zcheltitalic">i </span>by its conjugate?</p><ul class="choices"><li>A. 45</li><li>B. –45</li><li>C. 45<span class="zcheltitalic">i</span></li><li>D. 53</li><li>E. 53<span class="zcheltitalic">i</span></li></ul></div><div class="question"><p><b>15.</b> Jacob works as a lifeguard at a local pool. At the beginning of a 12-hour overnight shift, the pool was full, and Jacob began draining it. After 2 hours, the pool was completely empty. He spent 3 hours cleaning the pool and then began filling it up again. The pool finished filling just as his shift ended. Which of the following graphs accurately describes the amount of water in the pool throughout Jacob’s shift?</p><ul class="choices"><li>F. <img alt="" src="https://www.crackab.com/images/tests/9781118001547-un1515_fmt.jpeg"></li><li>G. <img alt="" src="https://www.crackab.com/images/tests/9781118001547-un1516_fmt.jpeg"></li><li>H. <img alt="" src="https://www.crackab.com/images/tests/9781118001547-un1517_fmt.jpeg"></li><li>J. <img alt="" src="https://www.crackab.com/images/tests/9781118001547-un1518_fmt.jpeg"></li><li>K. <img alt="" src="https://www.crackab.com/images/tests/9781118001547-un1519_fmt.jpeg"></li></ul></div><div class="submit-wrap"><button class="submit-btn" onclick="gradeTest()">Submit Test</button><button class="reset-btn" onclick="resetTest()">Try Again</button>
+<div class="report-wrap"><input type="text" class="name-input" placeholder="Student name (for report)"><button class="report-btn" onclick="generateReport()">Download Report (PDF)</button></div></div><div class="nav"><a href="test107.html">&larr; Prev</a><a href="index.html">All Tests</a><a href="test109.html">Next &rarr;</a></div></div><footer><div class="container">ACT Math Practice</div></footer>
+<script>
+const ANSWERS = {"1": "J", "2": "C", "3": "J", "4": "A", "5": "G", "6": "D", "7": "G", "8": "B", "9": "H", "10": "B", "11": "K", "12": "C", "13": "G", "14": "D", "15": "K"};
+const EXPLANATIONS = {"1":"J. Cross-multiply to get the two fractions out of the equation: FOIL the left side and distribute the right side: a2– b2 =  10a– b2 Add b2to both sides of the equation, and then divide by a: a2 =  10a a =  10", "2":"C. The first character must be a letter, so 26 possibilities exist for this character. The last (6th) character must be a digit, so 10 possibilities exist for this one. The remaining four characters can be either a letter or a digit, so 36 possibilities exist for each of these. The following chart organizes this information: 1st 2nd 3rd 4th 5th 6th 26 36 36 36 36 10 Multiply these results: 26 ×36 ×36 ×36 ×36 ×10  =  436,700,160 This result has 9 digits, so it’s between 108(100,000,000) and 109(1,000,000,000).", "3":"J. The formula for a circle of radius r is (x– h)2+ (y– k)2 =  r2. So in the equation (x+ 3)2+ (y– 4)2 =  49: r2  =  49 r =  7 You now plug this value into the formula for the area of a circle to get your answer:", "4":"A. First, use the reciprocal identity to substitute for sec x: Now recall the following identity:", "5":"G. The height of the tank is hand its diameter is 3h,so its radius is 1.5h.The volume of the tank is approximately 231.5 cubic meters. Use 3.14 as an approximation of πand plug these values into the formula for a cylinder: Simplify and solve for h: 231.5 ≈(3.14)(2.25h2)h 231.5 ≈7.065h3 32.767 ≈h3 3.2 ≈h Thus, the height of the tank is closest to 3 meters.", "6":"D. Let p,q,and requal the amounts that Paulette, Quentin, and Rosie gave, respectively. Then you can set up the following three equations: p =  q+ r 3q =  p+ 40 2(r– 20)  =  p Simplify the third equation p =  q+ r 3q =  p+ 40 2r– 40  =  p Substitute q+ rfor pinto the second and third equations: 3q =  q+ r+ 40 2r– 40  =  q+ r Simplify both equations: 2q =  r+ 40 r– 40  =  q Now substitute r– 40 for qinto the equation 2q =  r+ 40 and solve for r: 2(r– 40)  =  r+ 40 2r– 80  =  r+ 40 r– 80  =  40 r =  120 Substitute 120 for rin the equation 2r– 40  =  pand solve for p: 2(120) – 40  =  p 240 – 40  =  p 200  =  p", "7":"G. Zach registered 12 clients, Yolanda registered 16, Xavier registered 19, Wanda registered 13, and Victoria registered 20. Add these together to find the total number of clients registered: 12 + 16 + 19 + 13 + 20  =  80 So Yolanda registered:", "8":"B. If Victoria doubles her registration to 40 and the others keep the same numbers, the sum of registrations will be: 12 + 16 + 19 + 13 + 40  =  100 Thus, Victoria’s registration will be:", "9":"H. The octagon is regular, so the shaded region is a right triangle. It has a base of 1, so you need to know its height to find its area. Draw a few lines as follows to help find the height of the triangle: If you let x equal the unknown length, the height of the shaded region is 2x+ 1. To find the value of x,notice that the length x is the leg of a 45-45-90 triangle with a hypotenuse of 1. The ratio of a leg of this triangle to its hypotenuse is Thus: Therefore: So Plug this value as the height into the formula for the area of a triangle, with a base of 1:", "10":"B. Begin by multiplying all three terms by a common denominator of abcto get rid of the fractions: When the denominators are canceled out, the result is the following equation: a2b– a2c =  bc(b– c) Factor out a2 on the left side of the equation: a2(b– c)  =  bc(b– c) Now divide both sides of the equation by (b– c) and cancel: Finally, take the square root of both sides:", "11":"K. If you let xbe the speed at which Angela ran, you can let x– 4 be the speed at which Angela and Kathleen walked. The distance in each direction was 2 miles, and the total time was 45 minutes, which is of an hour. Place all of this information into a Rate-Time-Distance chart: Rate ×Time  =  Distance, so, in your chart, calculate Time  =  Distance ÷ Rate: Adding the Time column, set up the following equation: Use x(x– 4) as a common denominator on the left side of the equation to add the two fractions and simplify: Now cross-multiply and simplify again: 4(4x – 8)  =  3(x2– 4x) 16x– 32  =  3x2– 12x 0  =  3x2– 28x+ 32 Solve the resulting quadratic equation for xusing either factoring or the quadratic formula (I use factoring): (3x– 4)(x– 8)  =  0 3x– 4  =  0 x– 8  =  0 The first equation solves for x as a number that’s less than 4 (), which isn’t correct in the context of the question because their speed on the way back would be negative. The seco[TRUNCATED]", "12":"C. The function f(x) is symmetrical, so if you reflect it horizontally across the y-axis and then shift it 6 units to right, it returns to where it started. To reflect it horizontally, change xto –x: f(–x) Now, to move this function 6 units to the right, change x in this new function to x – 6 and simplify: f(–(x– 6))  =  f(–x+ 6)  =  f(6 – x)", "13":"G. Convert the log into an exponent: Simplify, keeping in mind that :", "14":"D. The conjugate of 2 + 7iis 2 – 7i,so you’re looking for the value of (2 + 7i)(2 – 7i). Begin by FOILing to remove the parentheses: (2 + 7i)(2 – 7i)  =  4 – 14i+ 14i– 49i2 =  4 – 49i2 Now, because , you can substitute –1 for i2: 4 – 49(–1)  =  4 + 49  =  53", "15":"K. The water level decreases and then rises again, which rules out Choices (F) and (H). The pool is full to capacity at the beginning of the shift, so it can’t have more water at the end of the shift; therefore, Choice (J) is also wrong. Finally, the pool drains in 2 hours but takes 7 hours to fill, so the downward slope at the beginning of the shift is greater than the upward slope at the end; as a result, you can rule out Choice (G), leaving Choice (K) as the correct answer."};
+let graded = false;
+
+document.querySelectorAll('.choices li').forEach(li => {
+  // Remove old onclick
+  li.removeAttribute('onclick');
+  li.addEventListener('click', function() {
+    if (graded) return;
+    const siblings = this.parentElement.querySelectorAll('li');
+    siblings.forEach(s => s.classList.remove('selected'));
+    this.classList.add('selected');
+  });
+});
+
+function gradeTest() {
+  if (graded) return;
+  graded = true;
+  let correct = 0;
+  const total = Object.keys(ANSWERS).length;
+  
+  document.querySelectorAll('.question').forEach((qDiv, idx) => {
+    const qNum = idx + 1;
+    const correctAns = ANSWERS[qNum];
+    if (!correctAns) return;
+    const choices = qDiv.querySelectorAll('.choices li');
+    const selected = qDiv.querySelector('.choices li.selected');
+    const selectedLetter = selected ? selected.textContent.trim().charAt(0) : null;
+    
+    choices.forEach(li => {
+      const letter = li.textContent.trim().charAt(0);
+      if (letter === correctAns) li.classList.add('show-correct');
+      li.style.cursor = 'default';
+    });
+    
+    const tag = document.createElement('span');
+    tag.className = 'result-tag';
+    
+    if (selectedLetter === correctAns) {
+      correct++;
+      tag.className += ' correct';
+      tag.textContent = 'Correct';
+      if (selected) { selected.classList.remove('selected'); selected.classList.add('correct'); }
+    } else {
+      tag.className += ' wrong';
+      tag.textContent = 'Incorrect (Answer: ' + correctAns + ')';
+      if (selected) { selected.classList.remove('selected'); selected.classList.add('wrong'); }
+    }
+    
+    const firstP = qDiv.querySelector('p');
+    if (firstP) firstP.appendChild(tag);
+    
+    if (typeof EXPLANATIONS !== 'undefined' && EXPLANATIONS[qNum]) {
+      const explDiv = document.createElement('div');
+      explDiv.className = 'explanation show';
+      explDiv.innerHTML = '<strong>Explanation:</strong> ' + EXPLANATIONS[qNum];
+      qDiv.appendChild(explDiv);
+    }
+  });
+  
+  const pct = Math.round((correct / total) * 100);
+  document.querySelector('.submit-btn').style.display = 'none';
+  document.querySelector('.reset-btn').style.display = 'block';
+  var rw=document.querySelector('.report-wrap');if(rw)rw.style.display='block';
+  var bs=document.createElement('div');bs.className='bottom-score';bs.id='bottom-score';
+  bs.innerHTML='<h2 style="font-size:1.3rem;margin-bottom:6px;color:#1a3a4a">Your Score</h2><div class="pct '+(pct>=80?'good':pct>=60?'ok':'bad')+'">'+pct+'%</div><div class="detail">'+correct+' out of '+total+' correct</div>';
+  document.querySelector('.submit-wrap').after(bs);
+  try{var tn=location.pathname.match(/test(\d+)/);if(tn)localStorage.setItem('actmath_'+tn[1],pct);}catch(e){}
+}
+
+function resetTest() {
+  graded = false;
+  var bsEl=document.getElementById('bottom-score');if(bsEl)bsEl.remove();
+  document.querySelector('.submit-btn').style.display = '';
+  document.querySelector('.reset-btn').style.display = 'none';
+  var rw=document.querySelector('.report-wrap');if(rw)rw.style.display='none';
+  var ni=document.querySelector('.name-input');if(ni)ni.value='';
+  document.querySelectorAll('.choices li').forEach(li => {
+    li.classList.remove('selected','correct','wrong','show-correct');
+    li.style.cursor = 'pointer';
+  });
+  document.querySelectorAll('.result-tag').forEach(t => t.remove());
+  document.querySelectorAll('.explanation').forEach(e => e.remove());
+}
+
+function generateReport(){
+  var nameInput=document.querySelector('.name-input');
+  var name=(nameInput&&nameInput.value.trim())||'Student';
+  var testName=document.querySelector('header h1').textContent;
+  var bs=document.getElementById('bottom-score');
+  var scorePct=bs?bs.querySelector('.pct').textContent:'';
+  var detailTxt=bs?bs.querySelector('.detail').textContent:'';
+  var d=new Date().toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'});
+  var btn=document.querySelector('.report-btn');btn.textContent='Generating...';btn.disabled=true;
+  var s=document.createElement('script');
+  s.src='https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js';
+  s.onerror=function(){btn.textContent='Download Report (PDF)';btn.disabled=false;alert('Could not load PDF library.');};
+  s.onload=function(){
+    var doc=new jspdf.jsPDF('portrait','mm','letter');
+    var pw=215.9,ph=279.4,mx=12,cw=pw-2*mx,y=8;
+    doc.setFillColor(26,58,74);doc.rect(0,0,pw,22,'F');
+    doc.setTextColor(255,255,255);doc.setFontSize(13);doc.setFont('helvetica','bold');
+    doc.text(testName,mx,9);
+    doc.setFontSize(7.5);doc.setFont('helvetica','normal');
+    doc.text(d+'  |  Student: '+name,mx,14.5);
+    doc.setFontSize(18);doc.setFont('helvetica','bold');
+    doc.text(scorePct,pw-mx,11,{align:'right'});
+    doc.setFontSize(7.5);doc.setFont('helvetica','normal');
+    doc.text(detailTxt,pw-mx,16,{align:'right'});
+    y=25;
+    doc.setDrawColor(26,58,74);doc.setLineWidth(0.3);doc.line(mx,y,pw-mx,y);y+=3;
+    document.querySelectorAll('.question').forEach(function(qDiv,idx){
+      var qNum=idx+1;var ca=ANSWERS[qNum];if(!ca)return;
+      var sel=qDiv.querySelector('.choices li.correct,.choices li.wrong');
+      var sa=sel?sel.textContent.trim().charAt(0):'-';
+      var ok=sel&&sel.classList.contains('correct');
+      if(ok){
+        doc.setFillColor(40,167,69);doc.circle(mx+1.2,y-1,1,'F');
+        doc.setTextColor(33,33,33);doc.setFont('helvetica','bold');doc.setFontSize(8);
+        doc.text('Q'+qNum,mx+4,y);
+        doc.setFont('helvetica','normal');doc.setTextColor(40,167,69);
+        doc.text('Correct ('+ca+')',mx+14,y);
+      }else{
+        doc.setFillColor(220,53,69);doc.circle(mx+1.2,y-1,1,'F');
+        doc.setTextColor(33,33,33);doc.setFont('helvetica','bold');doc.setFontSize(8);
+        doc.text('Q'+qNum,mx+4,y);
+        doc.setFont('helvetica','normal');doc.setTextColor(220,53,69);
+        doc.text('Incorrect',mx+14,y);
+        doc.setTextColor(120,120,120);
+        doc.text('(Chose '+sa+', Correct: '+ca+')',mx+32,y);
+      }
+      y+=3.2;
+      var qP=qDiv.querySelector('p');
+      if(qP){
+        var qT=qP.cloneNode(true);
+        var tags=qT.querySelectorAll('.result-tag');tags.forEach(function(t){t.remove();});
+        var qt=qT.textContent.replace(/^\d+\.\s*/,'').trim();
+        if(qt.length>0){
+          doc.setFont('helvetica','normal');doc.setTextColor(60,60,60);doc.setFontSize(6.5);
+          var ql=doc.splitTextToSize(qt,cw-5);
+          ql=ql.slice(0,1);
+          if(doc.splitTextToSize(qt,cw-5).length>1){ql[0]=ql[0].substring(0,ql[0].length-3)+'...';}
+          doc.text(ql,mx+4,y);y+=2.4;
+        }
+      }
+      if(typeof EXPLANATIONS!=='undefined'&&EXPLANATIONS[qNum]){
+        doc.setFont('helvetica','italic');doc.setTextColor(100,100,100);doc.setFontSize(6);
+        var lines=doc.splitTextToSize(EXPLANATIONS[qNum],cw-5);
+        if(lines.length>2){lines=lines.slice(0,2);lines[1]=lines[1].substring(0,Math.max(0,lines[1].length-3))+'...';}
+        doc.text(lines,mx+4,y);y+=lines.length*2.2;
+      }
+      y+=2;
+    });
+    doc.setDrawColor(200,200,200);doc.setLineWidth(0.2);doc.line(mx,ph-10,pw-mx,ph-10);
+    doc.setTextColor(170,170,170);doc.setFontSize(6);doc.setFont('helvetica','normal');
+    doc.text('ACT Math Practice  |  Score Report',pw/2,ph-7,{align:'center'});
+    var tn=location.pathname.match(/test(\d+)/);
+    var testNum=tn?parseInt(tn[1])-100:0;
+    var ds=new Date().toISOString().slice(0,10);
+    doc.save('ACT-Math-Test-'+testNum+'-'+ds+'.pdf');
+    btn.textContent='Download Report (PDF)';btn.disabled=false;
+  };
+  document.head.appendChild(s);
+}
+</script>
+</body></html>

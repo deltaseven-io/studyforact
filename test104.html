@@ -1,0 +1,222 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>ACT Math Test 4</title><style>@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:#fff;color:#2d3748;line-height:1.7}
+.container{max-width:800px;margin:0 auto;padding:20px 24px}
+header{background:linear-gradient(135deg,#1a3a4a 0%,#2d6a7a 100%);color:#fff;padding:28px 0;margin-bottom:36px;text-align:center}
+header .container{display:block}
+header h1{font-size:1.6rem;font-weight:700;letter-spacing:-0.3px}
+header a{color:rgba(255,255,255,.7);text-decoration:none;font-size:.9rem;display:inline-block;margin-bottom:6px;transition:color .2s}
+header a:hover{color:#fff}
+.question{background:#fff;border-radius:12px;padding:24px;margin-bottom:20px;border:1px solid #e2e8f0;transition:border-color .2s}
+.question:hover{border-color:#cbd5e0}
+.question p{margin-bottom:14px;font-size:1.05rem}
+img{max-width:100%;height:auto;margin:4px 0;vertical-align:middle}
+.choices{list-style:none}
+.choices li{padding:10px 14px;margin:6px 0;border-radius:8px;cursor:pointer;transition:all .2s;border:2px solid transparent}
+.choices li:hover{background:#f0f7fa}
+.choices li.selected{background:#d1ecf1;border-color:#bee5eb}
+.choices li.correct{background:#d4edda;border-color:#28a745}
+.choices li.wrong{background:#f8d7da;border-color:#dc3545}
+.choices li.show-correct{background:#d4edda;border-color:#28a745}
+.submit-wrap{text-align:center;margin:36px 0}
+.submit-btn{display:inline-block;padding:14px 40px;background:linear-gradient(135deg,#1a3a4a,#2d6a7a);color:#fff;border:none;border-radius:10px;font-size:1.1rem;cursor:pointer;font-weight:600;font-family:inherit;transition:all .25s;letter-spacing:.3px}
+.submit-btn:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(26,58,74,.25)}
+.score-box{background:#fff;border-radius:12px;padding:28px;margin-bottom:28px;text-align:center;border:1px solid #e2e8f0;box-shadow:0 4px 20px rgba(0,0,0,.06);display:none}
+.score-box h2{font-size:1.4rem;margin-bottom:8px;color:#1a3a4a;text-align:center}
+.score-box .pct{font-size:3rem;font-weight:700}
+.score-box .pct.good{color:#28a745}
+.score-box .pct.ok{color:#e6a817}
+.score-box .pct.bad{color:#dc3545}
+.score-box .detail{color:#666;margin-top:4px}
+.result-tag{display:inline-block;padding:2px 10px;border-radius:12px;font-size:.8rem;font-weight:600;margin-left:8px}
+.result-tag.correct{background:#d4edda;color:#155724}
+.result-tag.wrong{background:#f8d7da;color:#721c24}
+.reset-btn{display:none;margin:16px auto;padding:12px 28px;background:#6c757d;color:#fff;border:none;border-radius:10px;font-size:1rem;cursor:pointer;font-family:inherit;transition:all .25s}
+.reset-btn:hover{background:#5a6268;transform:translateY(-1px)}
+.explanation{background:#f0f7ff;border-left:4px solid #1a3a4a;padding:14px 18px;margin-top:14px;border-radius:0 8px 8px 0;font-size:.95rem;color:#444;display:none}
+.explanation.show{display:block}
+.explanation strong{color:#1a3a4a}
+.nav{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin:36px 0}
+.nav a{display:inline-block;padding:10px 24px;background:linear-gradient(135deg,#1a3a4a,#2d6a7a);color:#fff;text-decoration:none;border-radius:10px;font-weight:500;font-size:.95rem;transition:all .25s}
+.nav a:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(26,58,74,.25)}
+footer{text-align:center;padding:36px 24px;color:#8899a4;font-size:.85rem;border-top:1px solid #e2e8f0;margin-top:40px}
+.report-btn{display:inline-block;margin:0;padding:12px 28px;background:linear-gradient(135deg,#1a3a4a,#2d6a7a);color:#fff;border:none;border-radius:10px;font-size:1rem;cursor:pointer;font-family:inherit;transition:all .25s}
+.report-btn:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(26,58,74,.25)}
+.bottom-score{background:#fff;border-radius:12px;padding:20px;margin:20px 0;text-align:center;border:1px solid #e2e8f0;box-shadow:0 4px 20px rgba(0,0,0,.06)}
+.bottom-score .pct{font-size:2.5rem;font-weight:700}
+.bottom-score .pct.good{color:#28a745}
+.bottom-score .pct.ok{color:#e6a817}
+.bottom-score .pct.bad{color:#dc3545}
+.bottom-score .detail{color:#666;margin-top:4px;font-size:.95rem}
+.report-wrap{display:none;text-align:center;margin:16px 0}
+.name-input{padding:10px 14px;border:1px solid #e2e8f0;border-radius:10px;font-size:.95rem;font-family:inherit;width:200px;margin-right:8px;outline:none;transition:border-color .2s}
+.name-input:focus{border-color:#1a3a4a}
+</style></head><body><header><div class="container"><a href="index.html">&larr; All Tests</a><h1>ACT Math Practice Test 4</h1></div></header><div class="container"><div id="score-box" class="score-box"><h2>Your Score</h2><div class="pct">0%</div><div class="detail"></div></div><div class="question"><p><b>1.</b> In the following figure, the line passes through the origin and through <span class="zcheltitalic">P</span>= (1, 3). If you were to draw a new line perpendicular to the first that also passes through <span class="zcheltitalic">P,</span>what would be the equation of this new line?<br><img alt="" src="https://www.crackab.com/images/tests/9781118001547-un1316_fmt.jpeg"></p><ul class="choices"><li>F. <i>y</i>= 3<i>x</i>+ 4</li><li>G. <img alt="" src="https://www.crackab.com/images/tests/9781118001547-eq13066_fmt.jpeg"></li><li>H. <img alt="" src="https://www.crackab.com/images/tests/9781118001547-eq13067_fmt.jpeg"></li><li>J. <img alt="" src="https://www.crackab.com/images/tests/9781118001547-eq13068_fmt.jpeg"></li><li>K. <img alt="" src="https://www.crackab.com/images/tests/9781118001547-eq13069_fmt.jpeg"></li></ul></div><div class="question"><p><b>2.</b> If <img alt="" src="https://www.crackab.com/images/tests/9781118001547-eq13077_fmt.jpeg"> <img alt="" src="https://www.crackab.com/images/tests/9781118001547-eq13077_fmt.jpeg"></p><ul class="choices"><li>A. 4</li><li>B. 5</li><li>C. 6</li><li>D. 7</li><li>E. 8</li></ul></div><div class="question"><p><b>3.</b> What is the area of the trapezoid in the following figure?<br><img alt="" src="https://www.crackab.com/images/tests/9781118001547-un1317_fmt.jpeg"></p><ul class="choices"><li>F. 7</li><li>G. <img alt="" src="https://www.crackab.com/images/tests/9781118001547-eq13070_fmt.jpeg"></li><li>H. <img alt="" src="https://www.crackab.com/images/tests/9781118001547-eq13071_fmt.jpeg"></li><li>J. <img alt="" src="https://www.crackab.com/images/tests/9781118001547-eq13072_fmt.jpeg"></li><li>K. <img alt="" src="https://www.crackab.com/images/tests/9781118001547-eq13073_fmt.jpeg"></li></ul></div><div class="question"><p><b>4.</b> The following graph shows the number of new bank accounts that eight account executives have opened so far this week. Which of the following answer choices is the median number of accounts opened among these eight people?<br><img alt="" src="https://www.crackab.com/images/tests/9781118001547-un1318_fmt.jpeg"></p><ul class="choices"><li>A. 9.5</li><li>B. 10</li><li>C. 10.5</li><li>D. 11</li><li>E. 12</li></ul></div><div class="question"><p><b>5.</b> If <i>x</i><span class="zsuperscript">2</span>– <i>x</i>– 2 &gt; 0, which of the following is the solution set for <i>x</i>?</p><ul class="choices"><li>F. <i>x</i>&gt; –1</li><li>G. <i>x</i>&gt; 2</li><li>H. –1 &lt; <span class="zcheltitalic">x </span>&lt;<span class="zcheltitalic"> </span>2</li><li>J. <i>x</i>&lt; –1 or <i>x</i>&gt; 2</li><li>K. No solutions are possible.</li></ul></div><div class="question"><p><b>6.</b> If you plot the equation <i>x</i><span class="zsuperscript">2</span>+ (<i>y</i>– 2)<span class="zsuperscript">2</span>= 4 as a circle on a standard <i>xy-</i>graph, what is the area of the circle’s region that will lie in Quadrant 1, as shown in the following figure?<br><img alt="" src="https://www.crackab.com/images/tests/9781118001547-un1319_fmt.jpeg"></p><ul class="choices"><li>A. 0</li><li>B. <span class="zsymbolmedium">π</span></li><li>C. 2<span class="zsymbolmedium">π</span></li><li>D. 4<span class="zsymbolmedium">π</span></li><li>E. 16<span class="zsymbolmedium">π</span></li></ul></div><div class="question"><p><b>7.</b> If <span class="zcheltitalic">a</span>+ 2<span class="zcheltitalic">b</span>= 2, what is the value of <img alt="" src="https://www.crackab.com/images/tests/9781118001547-eq13074_fmt.jpeg">?</p><ul class="choices"><li>F. –6</li><li>G. 8</li><li>H. 10</li><li>J. –12</li><li>K. 14</li></ul></div><div class="question"><p><b>8.</b> On an <i>xy-</i>graph, three corners of a parallelogram are located at (3, 3), (4, – 4), and (–2, –1). Which of the following points could be the remaining corner?</p><ul class="choices"><li>A. (8, 0)</li><li>B. (8, –1)</li><li>C. (–1, 9)</li><li>D. (–3, 6)</li><li>E. (–5, 7)</li></ul></div><div class="question"><p><b>9.</b> Doug, who runs track for his high school, was challenged to a race by his younger brother, Matt. Matt started running first, and Doug didn’t start running until Matt had finished a quarter-mile lap on the school track. Doug passed Matt as they both finished their sixth lap. If both boys ran at a constant speed, with Doug running 2 miles an hour faster than Matt, what was Matt’s speed?</p><ul class="choices"><li>F. 10.5 miles per hour</li><li>G. 10 miles per hour</li><li>H. 9 miles per hour</li><li>J. 8 miles per hour</li><li>K. 7.5 miles per hour</li></ul></div><div class="question"><p><b>10.</b> When calculating a certain tax, Simone found that no tax is due for all income up to <span class="zcheltitalic">p</span>dollars, with <span class="zcheltitalic">p </span>&gt; 0. Income greater than <span class="zcheltitalic">p</span>dollars is taxed at a rate of 15%. Which of the following graphs accurately represents this tax?</p><ul class="choices"><li>A. <img alt="" src="https://www.crackab.com/images/tests/9781118001547-un1320_fmt.jpeg"></li><li>B. <img alt="" src="https://www.crackab.com/images/tests/9781118001547-un1321_fmt.jpeg"></li><li>C. <img alt="" src="https://www.crackab.com/images/tests/9781118001547-un1322_fmt.jpeg"></li><li>D. <img alt="" src="https://www.crackab.com/images/tests/9781118001547-un1323_fmt.jpeg"></li><li>E. <img alt="" src="https://www.crackab.com/images/tests/9781118001547-un1324_fmt.jpeg"></li></ul></div><div class="question"><p><b>11.</b> The following figure shows the graph of <img alt="" src="https://www.crackab.com/images/tests/9781118001547-eq13075_fmt.jpeg">. Which of the answer choices are the correct amplitude and period of this function?<br><img alt="" src="https://www.crackab.com/images/tests/9781118001547-un1325_fmt.jpeg"></p><ul class="choices"><li>F. amplitude = 5, period = <span class="zsymbolmedium">π</span></li><li>G. amplitude = 5, period = 2<span class="zsymbolmedium">π</span></li><li>H. amplitude = 5, period = 4<span class="zsymbolmedium">π</span></li><li>J. amplitude = 10, period = 2<span class="zsymbolmedium">π</span></li><li>K. amplitude = 10, period = 4<span class="zsymbolmedium">π</span></li></ul></div><div class="question"><p><b>12.</b> If the equation <i>x</i><span class="zsuperscript">2</span>+ <span class="zcheltitalic">mx</span>+ <i>n</i>= 0 has two solutions, <span class="zcheltitalic">x </span>= <i>k</i>and <span class="zcheltitalic">x </span>= 2<span class="zcheltitalic">k,</span>what is the value of <span class="zcheltitalic">mn</span>in terms of <i>k</i>?</p><ul class="choices"><li>A. 2<i>k</i><span class="zsuperscript">2</span></li><li>B. –2<i>k</i><span class="zsuperscript">2</span></li><li>C. –2<i>k</i><span class="zsuperscript">3</span></li><li>D. 6<i>k</i><span class="zsuperscript">3</span></li><li>E. –6<i>k</i><span class="zsuperscript">3</span></li></ul></div><div class="question"><p><b>13.</b> When she chooses a password, Eloise always uses exactly ten different characters: five letters (A, B, C, D, and E) and five numbers (2, 3, 4, 5, and 6). Additionally, she always ensures that no pair of letters is consecutive and that no pair of numbers is consecutive. How many different passwords conform to these rules?</p><ul class="choices"><li>F. fewer than 1,000</li><li>G. between 1,000 and 10,000</li><li>H. between 10,000 and 100,000</li><li>J. between 100,000 and 1,000,000</li><li>K. more than 1,000,000</li></ul></div><div class="question"><p><b>14.</b> If the least common multiple of 9, 10, 12, and <span class="zcheltitalic">v</span>is 540, which of the following could be <span class="zcheltitalic">v</span>?</p><ul class="choices"><li>A. 18</li><li>B. 24</li><li>C. 27</li><li>D. 36</li><li>E. 45</li></ul></div><div class="question"><p><b>15.</b> The equation <i>y</i>= <span class="zcheltitalic">ax</span><span class="zcheltitalicsup">b</span>+ <span class="zcheltitalic">c</span>produces the following (<i>x</i>, <i>y</i>) coordinate pairs: (0, 2), (1, 7), and (2, 42)<span class="zcheltitalic">.</span>What is the value of <span class="zcheltitalic">abc</span>?</p><ul class="choices"><li>F. 10</li><li>G. 20</li><li>H. 30</li><li>J. 40</li><li>K. 60</li></ul></div><div class="submit-wrap"><button class="submit-btn" onclick="gradeTest()">Submit Test</button><button class="reset-btn" onclick="resetTest()">Try Again</button>
+<div class="report-wrap"><input type="text" class="name-input" placeholder="Student name (for report)"><button class="report-btn" onclick="generateReport()">Download Report (PDF)</button></div></div><div class="nav"><a href="test103.html">&larr; Prev</a><a href="index.html">All Tests</a><a href="test105.html">Next &rarr;</a></div></div><footer><div class="container">ACT Math Practice</div></footer>
+<script>
+const ANSWERS = {"1": "K", "2": "E", "3": "J", "4": "C", "5": "J", "6": "C", "7": "F", "8": "D", "9": "G", "10": "B", "11": "H", "12": "E", "13": "H", "14": "C", "15": "H"};
+const EXPLANATIONS = {"1":"K. The line that’s shown in the figure passes through (0, 0) and (1, 3), so its slope is “up 3, over 1”: Thus, the new line that’s perpendicular to this line, and passing through P =  (1, 3), will have a negative reciprocal slope, which is . To find the equation of this line, plug these numbers into the slope-intercept form to get b: Finally, plug in the values to get the equation for this line:", "2":"E. To add two matrices, you add the corresponding components. So this matrix equation yields the following three equations: 6 + x =  9 x+ y =  7 y+ z =  5 In the first equation, x =  3. Substituting 3 for xin the second equation gives you 3 + y =  7, so y =  4. If you substitute 4 for yin the third equation, you get 4 + z =  5; therefore, z =  1. Therefore, x+ y+ z =  3 + 4 + 1  =  8.", "3":"J. To begin, add a line to the figure, cutting off a 30-60-90 triangle on the left side of the trapezoid, as shown here: Notice that the short leg of this triangle has a length of 1, so the height of the trapezoid is . Plug this value, plus the lengths of the two bases, into the formula for a trapezoid to get your answer:", "4":"C. Place the numbers of accounts sold in order from smallest to largest: 7 8 9 10 11 12 12 14 The middle two numbers are 10 and 11, so the median is the average of these two numbers, which is 10.5.", "5":"J. Begin by treating the inequality x2– x– 2 > 0 as if it were an equation. Factor to find the zeros: x2– x– 2  =  0 (x+ 1)(x– 2)  =  0 x =  –1 and x =  2 The graph of this function is a parabola that crosses the x-axis at –1 and 2. This graph is concave up because the coefficient of the x2term (that is, a) is positive. The parabola dips below the x-axis when –1 < x < 2, so these values do not satisfy the equation. Therefore, the correct answer is Choice (J). (If you doubt this answer, note that when x =  0, x2– x– 2  =  –2, which is less than 0. So 0 is notin the solution set.)", "6":"C. The formula for a circle with a radius r centered at (a,b) is (x– a)2+ (y– b)2 =  r2. Thus, x2+ (y– 2)2 =  4 has a radius of 2 and is centered at (0, 2), as shown here: This circle has a radius of 2, so calculate its total area as follows: Because half the circle is in Quadrant 1, the area of this region is 2π.", "7":"F. Begin by finding the value of : Now substitute –2 for to get your answer:", "8":"D. A good way to begin is to draw a picture showing the three points given, including possible places where a fourth point would form a parallelogram. Here’s what your picture may look like: This figure shows three possible points for the remaining corner of the parallelogram: A, B, and C.To find the exact coordinates of these three additional points, choose any of the given points and count up and over (or down and over) to a second given point. Then, starting from the third given point, count the same number of steps up and over (or down and over) and label the point where you end up. By this method, you find that A  =  (–3, 6), B =  (9, 0), and C =  (–1, –8). Only point A is listed as an answer.", "9":"G.Doug runs 2 miles an hour faster than Matt, so let Matt’s speed equal xmiles per hour. Then Doug’s speed equals x + 2 miles per hour. Each lap is one-quarter of a mile, so Doug runs 1.5 miles in the time it takes Matt to run 1.25 miles. Place this information in a chart: The two boys took the same amount of time from the time Doug started, so make an equation by setting the two times in the chart equal to each other, and then solve for x: So Matt ran at 10 miles per hour.", "10":"B. For income less than pdollars, the tax rate is $0, so the line should begin at the origin; therefore, you can rule out Choices (A) and (E). For income greater than pdollars, the tax rate increases at a steady rate without leveling off, so you can rule out Choices (C) and (D). By elimination you know that the correct answer is Choice (B).", "11":"H. The amplitudeis the vertical distance from the midpoint to the crest, so in this case it’s 5. The periodis the horizontal distance between two adjacent crests, so it’s 4π.", "12":"E. Given that the equation x2+ mx+ n =  0 has two solutions, x  =  kand x  =  2k,you can work backward to build the original equation. Here’s how: x =  kx =  2k x– k =  0 x– 2k =  0 Now take the two equations and combine them: (x– k)(x– 2k)  =  0 x2– 2kx– kx + 2k2 =  0 x2– 3kx + 2k2 =  0 As you can see, m =  –3kand n  =  2k2, so mn =  –6k3.", "13":"H. The first character of the password can be any letter or number, so Eloise has ten options. Her second choice must be from the set (letter or number) not yet used, so she has five options. Choice 3 is from the same set as Choice 1, and she has four options left. Choice 4 is the second item from the same set as Choice 2, so she has four options. Choices 5 and 6 are from different sets, each with three options; Choices 7 and 8 are from different sets, each with two options; Choices 9 and 10 are from different sets, each with only one option remaining. You can see this information in the following chart: 1st 2nd 3rd 4th 5th 6th 7th 8th 9th 10th 10 5 4 4 3 3 2 2 1 1 To find the total number of possible passwords, multiply these numbers together: 10 ×5 ×4 ×4 ×3 ×3 ×2 ×2 ×1 ×1  =  28,800", "14":"C. To begin, notice that 540 isn’t a multiple of 24, so you can rule out Choice (B). Now find the least common multiple (LCM) of 9, 10, and 12. The LCM of 9 and 10 is 90, so the LCM of 9, 10, and 12 must be a multiple of 90. Here are the first six multiples of 90: 90, 180, 270, 360, 450, 540 The number 180 is a multiple of 12 as well, so the LCM of 9, 10, and 12 is 180. However, 180 also is a multiple of 18, 36, and 45. So if any of these numbers were v,the LCM of 9, 10, 12, and vwould be 180. As a result, you can rule out Choices (A), (D), and (E), leaving Choice (C) as your only answer.", "15":"H. To begin, plug x =  0 and y =  2 into the equation y =  axb+ c.Note that the first term drops out: 2  =  a(0)b+ c 2  =  c Now you can substitute 2 for cin the original equation, giving you y =  axb+ 2. Next, plug in x =  1 and y =  7. Notice that everything drops out except for the coefficient of the first term: 7  =  a(1)b+ 2 5  =  a You can now substitute 5 for ain the equation, giving you y =  5xb+ 2. Now plug in x =  2 and y =  42: 42  =  5(2)b+ 2 40  =  5(2)b 8  =  2b 23 =  2b 3  =  b Finally, you can see that abc  =  (5)(3)(2)  =  30."};
+let graded = false;
+
+document.querySelectorAll('.choices li').forEach(li => {
+  // Remove old onclick
+  li.removeAttribute('onclick');
+  li.addEventListener('click', function() {
+    if (graded) return;
+    const siblings = this.parentElement.querySelectorAll('li');
+    siblings.forEach(s => s.classList.remove('selected'));
+    this.classList.add('selected');
+  });
+});
+
+function gradeTest() {
+  if (graded) return;
+  graded = true;
+  let correct = 0;
+  const total = Object.keys(ANSWERS).length;
+  
+  document.querySelectorAll('.question').forEach((qDiv, idx) => {
+    const qNum = idx + 1;
+    const correctAns = ANSWERS[qNum];
+    if (!correctAns) return;
+    const choices = qDiv.querySelectorAll('.choices li');
+    const selected = qDiv.querySelector('.choices li.selected');
+    const selectedLetter = selected ? selected.textContent.trim().charAt(0) : null;
+    
+    choices.forEach(li => {
+      const letter = li.textContent.trim().charAt(0);
+      if (letter === correctAns) li.classList.add('show-correct');
+      li.style.cursor = 'default';
+    });
+    
+    const tag = document.createElement('span');
+    tag.className = 'result-tag';
+    
+    if (selectedLetter === correctAns) {
+      correct++;
+      tag.className += ' correct';
+      tag.textContent = 'Correct';
+      if (selected) { selected.classList.remove('selected'); selected.classList.add('correct'); }
+    } else {
+      tag.className += ' wrong';
+      tag.textContent = 'Incorrect (Answer: ' + correctAns + ')';
+      if (selected) { selected.classList.remove('selected'); selected.classList.add('wrong'); }
+    }
+    
+    const firstP = qDiv.querySelector('p');
+    if (firstP) firstP.appendChild(tag);
+    
+    if (typeof EXPLANATIONS !== 'undefined' && EXPLANATIONS[qNum]) {
+      const explDiv = document.createElement('div');
+      explDiv.className = 'explanation show';
+      explDiv.innerHTML = '<strong>Explanation:</strong> ' + EXPLANATIONS[qNum];
+      qDiv.appendChild(explDiv);
+    }
+  });
+  
+  const pct = Math.round((correct / total) * 100);
+  document.querySelector('.submit-btn').style.display = 'none';
+  document.querySelector('.reset-btn').style.display = 'block';
+  var rw=document.querySelector('.report-wrap');if(rw)rw.style.display='block';
+  var bs=document.createElement('div');bs.className='bottom-score';bs.id='bottom-score';
+  bs.innerHTML='<h2 style="font-size:1.3rem;margin-bottom:6px;color:#1a3a4a">Your Score</h2><div class="pct '+(pct>=80?'good':pct>=60?'ok':'bad')+'">'+pct+'%</div><div class="detail">'+correct+' out of '+total+' correct</div>';
+  document.querySelector('.submit-wrap').after(bs);
+  try{var tn=location.pathname.match(/test(\d+)/);if(tn)localStorage.setItem('actmath_'+tn[1],pct);}catch(e){}
+}
+
+function resetTest() {
+  graded = false;
+  var bsEl=document.getElementById('bottom-score');if(bsEl)bsEl.remove();
+  document.querySelector('.submit-btn').style.display = '';
+  document.querySelector('.reset-btn').style.display = 'none';
+  var rw=document.querySelector('.report-wrap');if(rw)rw.style.display='none';
+  var ni=document.querySelector('.name-input');if(ni)ni.value='';
+  document.querySelectorAll('.choices li').forEach(li => {
+    li.classList.remove('selected','correct','wrong','show-correct');
+    li.style.cursor = 'pointer';
+  });
+  document.querySelectorAll('.result-tag').forEach(t => t.remove());
+  document.querySelectorAll('.explanation').forEach(e => e.remove());
+}
+
+function generateReport(){
+  var nameInput=document.querySelector('.name-input');
+  var name=(nameInput&&nameInput.value.trim())||'Student';
+  var testName=document.querySelector('header h1').textContent;
+  var bs=document.getElementById('bottom-score');
+  var scorePct=bs?bs.querySelector('.pct').textContent:'';
+  var detailTxt=bs?bs.querySelector('.detail').textContent:'';
+  var d=new Date().toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'});
+  var btn=document.querySelector('.report-btn');btn.textContent='Generating...';btn.disabled=true;
+  var s=document.createElement('script');
+  s.src='https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js';
+  s.onerror=function(){btn.textContent='Download Report (PDF)';btn.disabled=false;alert('Could not load PDF library.');};
+  s.onload=function(){
+    var doc=new jspdf.jsPDF('portrait','mm','letter');
+    var pw=215.9,ph=279.4,mx=12,cw=pw-2*mx,y=8;
+    doc.setFillColor(26,58,74);doc.rect(0,0,pw,22,'F');
+    doc.setTextColor(255,255,255);doc.setFontSize(13);doc.setFont('helvetica','bold');
+    doc.text(testName,mx,9);
+    doc.setFontSize(7.5);doc.setFont('helvetica','normal');
+    doc.text(d+'  |  Student: '+name,mx,14.5);
+    doc.setFontSize(18);doc.setFont('helvetica','bold');
+    doc.text(scorePct,pw-mx,11,{align:'right'});
+    doc.setFontSize(7.5);doc.setFont('helvetica','normal');
+    doc.text(detailTxt,pw-mx,16,{align:'right'});
+    y=25;
+    doc.setDrawColor(26,58,74);doc.setLineWidth(0.3);doc.line(mx,y,pw-mx,y);y+=3;
+    document.querySelectorAll('.question').forEach(function(qDiv,idx){
+      var qNum=idx+1;var ca=ANSWERS[qNum];if(!ca)return;
+      var sel=qDiv.querySelector('.choices li.correct,.choices li.wrong');
+      var sa=sel?sel.textContent.trim().charAt(0):'-';
+      var ok=sel&&sel.classList.contains('correct');
+      if(ok){
+        doc.setFillColor(40,167,69);doc.circle(mx+1.2,y-1,1,'F');
+        doc.setTextColor(33,33,33);doc.setFont('helvetica','bold');doc.setFontSize(8);
+        doc.text('Q'+qNum,mx+4,y);
+        doc.setFont('helvetica','normal');doc.setTextColor(40,167,69);
+        doc.text('Correct ('+ca+')',mx+14,y);
+      }else{
+        doc.setFillColor(220,53,69);doc.circle(mx+1.2,y-1,1,'F');
+        doc.setTextColor(33,33,33);doc.setFont('helvetica','bold');doc.setFontSize(8);
+        doc.text('Q'+qNum,mx+4,y);
+        doc.setFont('helvetica','normal');doc.setTextColor(220,53,69);
+        doc.text('Incorrect',mx+14,y);
+        doc.setTextColor(120,120,120);
+        doc.text('(Chose '+sa+', Correct: '+ca+')',mx+32,y);
+      }
+      y+=3.2;
+      var qP=qDiv.querySelector('p');
+      if(qP){
+        var qT=qP.cloneNode(true);
+        var tags=qT.querySelectorAll('.result-tag');tags.forEach(function(t){t.remove();});
+        var qt=qT.textContent.replace(/^\d+\.\s*/,'').trim();
+        if(qt.length>0){
+          doc.setFont('helvetica','normal');doc.setTextColor(60,60,60);doc.setFontSize(6.5);
+          var ql=doc.splitTextToSize(qt,cw-5);
+          ql=ql.slice(0,1);
+          if(doc.splitTextToSize(qt,cw-5).length>1){ql[0]=ql[0].substring(0,ql[0].length-3)+'...';}
+          doc.text(ql,mx+4,y);y+=2.4;
+        }
+      }
+      if(typeof EXPLANATIONS!=='undefined'&&EXPLANATIONS[qNum]){
+        doc.setFont('helvetica','italic');doc.setTextColor(100,100,100);doc.setFontSize(6);
+        var lines=doc.splitTextToSize(EXPLANATIONS[qNum],cw-5);
+        if(lines.length>2){lines=lines.slice(0,2);lines[1]=lines[1].substring(0,Math.max(0,lines[1].length-3))+'...';}
+        doc.text(lines,mx+4,y);y+=lines.length*2.2;
+      }
+      y+=2;
+    });
+    doc.setDrawColor(200,200,200);doc.setLineWidth(0.2);doc.line(mx,ph-10,pw-mx,ph-10);
+    doc.setTextColor(170,170,170);doc.setFontSize(6);doc.setFont('helvetica','normal');
+    doc.text('ACT Math Practice  |  Score Report',pw/2,ph-7,{align:'center'});
+    var tn=location.pathname.match(/test(\d+)/);
+    var testNum=tn?parseInt(tn[1])-100:0;
+    var ds=new Date().toISOString().slice(0,10);
+    doc.save('ACT-Math-Test-'+testNum+'-'+ds+'.pdf');
+    btn.textContent='Download Report (PDF)';btn.disabled=false;
+  };
+  document.head.appendChild(s);
+}
+</script>
+</body></html>

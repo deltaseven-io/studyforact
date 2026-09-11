@@ -1,0 +1,222 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>ACT Math Test 54</title><style>@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:#fff;color:#2d3748;line-height:1.7}
+.container{max-width:800px;margin:0 auto;padding:20px 24px}
+header{background:linear-gradient(135deg,#1a3a4a 0%,#2d6a7a 100%);color:#fff;padding:28px 0;margin-bottom:36px;text-align:center}
+header .container{display:block}
+header h1{font-size:1.6rem;font-weight:700;letter-spacing:-0.3px}
+header a{color:rgba(255,255,255,.7);text-decoration:none;font-size:.9rem;display:inline-block;margin-bottom:6px;transition:color .2s}
+header a:hover{color:#fff}
+.question{background:#fff;border-radius:12px;padding:24px;margin-bottom:20px;border:1px solid #e2e8f0;transition:border-color .2s}
+.question:hover{border-color:#cbd5e0}
+.question p{margin-bottom:14px;font-size:1.05rem}
+img{max-width:100%;height:auto;margin:4px 0;vertical-align:middle}
+.choices{list-style:none}
+.choices li{padding:10px 14px;margin:6px 0;border-radius:8px;cursor:pointer;transition:all .2s;border:2px solid transparent}
+.choices li:hover{background:#f0f7fa}
+.choices li.selected{background:#d1ecf1;border-color:#bee5eb}
+.choices li.correct{background:#d4edda;border-color:#28a745}
+.choices li.wrong{background:#f8d7da;border-color:#dc3545}
+.choices li.show-correct{background:#d4edda;border-color:#28a745}
+.submit-wrap{text-align:center;margin:36px 0}
+.submit-btn{display:inline-block;padding:14px 40px;background:linear-gradient(135deg,#1a3a4a,#2d6a7a);color:#fff;border:none;border-radius:10px;font-size:1.1rem;cursor:pointer;font-weight:600;font-family:inherit;transition:all .25s;letter-spacing:.3px}
+.submit-btn:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(26,58,74,.25)}
+.score-box{background:#fff;border-radius:12px;padding:28px;margin-bottom:28px;text-align:center;border:1px solid #e2e8f0;box-shadow:0 4px 20px rgba(0,0,0,.06);display:none}
+.score-box h2{font-size:1.4rem;margin-bottom:8px;color:#1a3a4a;text-align:center}
+.score-box .pct{font-size:3rem;font-weight:700}
+.score-box .pct.good{color:#28a745}
+.score-box .pct.ok{color:#e6a817}
+.score-box .pct.bad{color:#dc3545}
+.score-box .detail{color:#666;margin-top:4px}
+.result-tag{display:inline-block;padding:2px 10px;border-radius:12px;font-size:.8rem;font-weight:600;margin-left:8px}
+.result-tag.correct{background:#d4edda;color:#155724}
+.result-tag.wrong{background:#f8d7da;color:#721c24}
+.reset-btn{display:none;margin:16px auto;padding:12px 28px;background:#6c757d;color:#fff;border:none;border-radius:10px;font-size:1rem;cursor:pointer;font-family:inherit;transition:all .25s}
+.reset-btn:hover{background:#5a6268;transform:translateY(-1px)}
+.explanation{background:#f0f7ff;border-left:4px solid #1a3a4a;padding:14px 18px;margin-top:14px;border-radius:0 8px 8px 0;font-size:.95rem;color:#444;display:none}
+.explanation.show{display:block}
+.explanation strong{color:#1a3a4a}
+.nav{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin:36px 0}
+.nav a{display:inline-block;padding:10px 24px;background:linear-gradient(135deg,#1a3a4a,#2d6a7a);color:#fff;text-decoration:none;border-radius:10px;font-weight:500;font-size:.95rem;transition:all .25s}
+.nav a:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(26,58,74,.25)}
+footer{text-align:center;padding:36px 24px;color:#8899a4;font-size:.85rem;border-top:1px solid #e2e8f0;margin-top:40px}
+.report-btn{display:inline-block;margin:0;padding:12px 28px;background:linear-gradient(135deg,#1a3a4a,#2d6a7a);color:#fff;border:none;border-radius:10px;font-size:1rem;cursor:pointer;font-family:inherit;transition:all .25s}
+.report-btn:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(26,58,74,.25)}
+.bottom-score{background:#fff;border-radius:12px;padding:20px;margin:20px 0;text-align:center;border:1px solid #e2e8f0;box-shadow:0 4px 20px rgba(0,0,0,.06)}
+.bottom-score .pct{font-size:2.5rem;font-weight:700}
+.bottom-score .pct.good{color:#28a745}
+.bottom-score .pct.ok{color:#e6a817}
+.bottom-score .pct.bad{color:#dc3545}
+.bottom-score .detail{color:#666;margin-top:4px;font-size:.95rem}
+.report-wrap{display:none;text-align:center;margin:16px 0}
+.name-input{padding:10px 14px;border:1px solid #e2e8f0;border-radius:10px;font-size:.95rem;font-family:inherit;width:200px;margin-right:8px;outline:none;transition:border-color .2s}
+.name-input:focus{border-color:#1a3a4a}
+</style></head><body><header><div class="container"><a href="index.html">&larr; All Tests</a><h1>ACT Math Practice Test 54</h1></div></header><div class="container"><div id="score-box" class="score-box"><h2>Your Score</h2><div class="pct">0%</div><div class="detail"></div></div><div class="question"><p><b>1.</b> For <i>i</i><sup class="frac">2</sup> = -1, (3 - <i>i</i>)<sup class="frac">2</sup> = ?</p><ul class="choices"><li>F. 16</li><li>G. 2<i>i</i></li><li>H. 4<i>i</i></li><li>J. 10 - 6<i>i</i></li><li>K. 8 - 6<i>i</i></li></ul></div><div class="question"><p><b>2.</b> The volume of a sphere is determined by the equation <img alt="img" src="https://www.crackab.com/image/tests/6/00936.jpg">π<i>R</i><sup class="frac">3</sup>, where <i>R</i> is the radius of the sphere. In a given model of the solar system, all of the planets are perfect spheres. If the radius of Mars is exactly 4 times greater than the radius of Venus, how many times the volume of Venus is the volume of Mars?</p><ul class="choices"><li>A. 81</li><li>B. 64</li><li>C. 16</li><li>D. 12</li><li>E. 4</li></ul></div><div class="question"><p><b>3.</b> Which of the following is equivalent to <img alt="img" src="https://www.crackab.com/image/tests/6/00937.jpg"></p><ul class="choices"><li>F. 4<i>R</i><sup class="frac">3</sup></li><li>G. 4<i>R</i><sup class="frac">4</sup></li><li>H. 8<i>R</i><sup class="frac">3</sup></li><li>J. 8<i>R</i><sup class="frac">4</sup></li><li>K. 32<i>R</i><sup class="frac">12</sup></li></ul></div><div class="question"><p><b>4.</b> If 2 is a solution of the equation <i>x</i><sup class="frac">2</sup> + <i>kx</i> + 12 = 0, what does <i>k</i> equal?</p><ul class="choices"><li>A. -12</li><li>B. -8</li><li>C. -2</li><li>D. 6</li><li>E. 8</li></ul></div><div class="question"><p><b>5.</b> In the standard (<i>x, y</i>) coordinate plane, the center of the circle shown below lies on the <i>y</i>-axis at <i>y</i> = 3. If the circle is also tangent to the <i>x</i>-axis, then what is the equation of the circle?<br><img alt="img" src="https://www.crackab.com/image/tests/6/00938.jpg"></p><ul class="choices"><li>F. <i>x</i><sup class="frac">2</sup> + (<i>y</i> - 3)<sup class="frac">2</sup>= 6</li><li>G. <i>x</i><sup class="frac">2</sup> + (<i>y</i> - 3)<sup class="frac">2</sup>= 9</li><li>H. <i>x</i><sup class="frac">2</sup> + (<i>y</i> + 3)<sup class="frac">2</sup> = 9</li><li>J. (<i>x</i> - 3)<sup class="frac">2</sup> + <i>y</i><sup class="frac">2</sup> = 6</li><li>K. (<i>x</i> + 3)<sup class="frac">2</sup> + <i>y</i><sup class="frac">2</sup> = 9</li></ul></div><div class="question"><p><b>6.</b> Which of the following equations summarizes the data listed below?<br><img alt="img" src="https://www.crackab.com/image/tests/6/00939.jpg"></p><ul class="choices"><li>A. <i>y</i> = -2<i>x</i> - 2</li><li>B. <i>y</i> = 2<i>x</i> - 4</li><li>C. <i>y</i> = 2<i>x</i> + 3</li><li>D. <i>y</i> = 3<i>x</i> - 2</li><li>E. <i>y</i> = 3<i>x</i> + 2</li></ul></div><div class="question"><p><b>7.</b> The law of sines states that for any triangle, the ratio between the sine of an angle and the length of the side opposite that angle is the same for all of the interior angles in the triangle. In <img alt="img" src="https://www.crackab.com/image/tests/6/00163.jpg"><i>XYZ</i> shown below, <img alt="image" src="https://www.crackab.com/image/tests/6/00940.jpg"> = 22 cm, <img alt="image" src="https://www.crackab.com/image/tests/6/00094.jpg"><i>z</i> = 32°, and <img alt="image" src="https://www.crackab.com/image/tests/6/00094.jpg"><i>y</i> = 44°. What is the length of <img alt="image" src="https://www.crackab.com/image/tests/6/00941.jpg">?<br><img alt="img" src="https://www.crackab.com/image/tests/6/00942.jpg"></p><ul class="choices"><li>F. <img alt="img" src="https://www.crackab.com/image/tests/6/00943.jpg"></li><li>G. <img alt="img" src="https://www.crackab.com/image/tests/6/00944.jpg"></li><li>H. <img alt="img" src="https://www.crackab.com/image/tests/6/00945.jpg"></li><li>J. <img alt="img" src="https://www.crackab.com/image/tests/6/00946.jpg"></li><li>K. <img alt="img" src="https://www.crackab.com/image/tests/6/00947.jpg"></li></ul></div><div class="question"><p><b>8.</b> Which of the following is the graph of the equation 3<i>x</i> - 2<i>y</i> = 6?</p><ul class="choices"><li>A. mg alt=img src=/image/tests/6/00948.jpg /&gt;</li><li>B. mg alt=img src=/image/tests/6/00949.jpg /&gt;</li><li>C. mg alt=img src=/image/tests/6/00950.jpg /&gt;</li><li>D. mg alt=img src=/image/tests/6/00951.jpg /&gt;</li><li>E. mg alt=img src=/image/tests/6/00952.jpg /&gt;</li></ul></div><div class="question"><p><b>9.</b> For <img alt="img" src="https://www.crackab.com/image/tests/6/00953.jpg"> to be an integer, with <i>m</i> and <i>n</i> representing positive prime numbers, the sum of <i>m</i> + <i>n</i> must equal which of the following?</p><ul class="choices"><li>F. 8</li><li>G. 10</li><li>H. 12</li><li>J. 15</li><li>K. 21</li></ul></div><div class="question"><p><b>10.</b> Cam is going into business selling umbrellas. He pays $25,000 for a building and machinery, and each umbrella costs $4.00 to manufacture. If Cam sells <i>x</i> umbrellas for $6.50 each, which of the following equations best represents his net profit in dollars?</p><ul class="choices"><li>A. 10.50<i>x</i> - 25,000</li><li>B. 6.50<i>x</i> - 25,000</li><li>C. 4.00<i>x</i> + 25,000</li><li>D. 4.00<i>x</i> - 25,000</li><li>E. 2.50<i>x</i> - 25,000</li></ul></div><div class="question"><p><b>11.</b> In the circle shown below, <i>O</i> lies on the center of the circle and on chords <img alt="image" src="https://www.crackab.com/image/tests/6/00906.jpg"> and <img alt="image" src="https://www.crackab.com/image/tests/6/00954.jpg">. The measure of <img alt="img" src="https://www.crackab.com/image/tests/6/00955.jpg"> = 100°. Which of the following statements is NOT true?<br><img alt="img" src="https://www.crackab.com/image/tests/6/00956.jpg"></p><ul class="choices"><li>F. m <img alt="image" src="https://www.crackab.com/image/tests/6/00094.jpg"><i>PLN</i> = 50°</li><li>G. m <img alt="image" src="https://www.crackab.com/image/tests/6/00094.jpg"><i>POL</i> = 80°</li><li>H. <img alt="image" src="https://www.crackab.com/image/tests/6/00094.jpg"><i>PON</i> <img alt="img" src="https://www.crackab.com/image/tests/6/00957.jpg"><img alt="image" src="https://www.crackab.com/image/tests/6/00094.jpg"><i>NOM</i></li><li>J. <img alt="image" src="https://www.crackab.com/image/tests/6/00094.jpg"><i>POL</i> <img alt="img" src="https://www.crackab.com/image/tests/6/00957.jpg"><img alt="image" src="https://www.crackab.com/image/tests/6/00094.jpg"><i>NOM</i></li><li>K. <img alt="image" src="https://www.crackab.com/image/tests/6/00958.jpg"></li></ul></div><div class="question"><p><b>12.</b> For all real numbers <i>m</i> and <i>n</i>, when is the equation |<i>m</i> - <i>n</i>| = |<i>m</i> + <i>n</i>| true?</p><ul class="choices"><li>A. Never</li><li>B. Always</li><li>C. Only when <i>m</i> = <i>n</i></li><li>D. Only when <i>m</i> = 0 and <i>n</i> = 0</li><li>E. Only when <i>m</i> = 0 or <i>n</i> = 0</li></ul></div><div class="question"><p><b>13.</b> What is the value of log<sub class="frac">4</sub> 16?</p><ul class="choices"><li>F. 2</li><li>G. 4</li><li>H. 12</li><li>J. 20</li><li>K. 64</li></ul></div><div class="question"><p><b>14.</b> Television screen sizes are measured on the diagonal. Joshua bought a new television with a 24-inch screen and gave his old 21-inch television to his younger brother. If Joshua is watching a soccer ball that appears to be 4 inches in diameter on his new screen, how long does the diameter of the same ball, to the nearest tenth of an inch, appear to his brother watching on the smaller screen?</p><ul class="choices"><li>A. 3</li><li>B. 3.5</li><li>C. 4.6</li><li>D. 3π</li><li>E. 3.5π</li></ul></div><div class="question"><p><b>15.</b> When 0° &lt; <i>x</i> &lt; 90°, which of the following is NOT equal to tan <i>x</i>?</p><ul class="choices"><li>F. <img alt="img" src="https://www.crackab.com/image/tests/6/00959.jpg"></li><li>G. (sin<sup class="frac">2</sup><i>x</i> + cos<sup class="frac">2</sup><i>x</i>)(tan <i>x</i>)</li><li>H. <img alt="img" src="https://www.crackab.com/image/tests/6/00960.jpg"></li><li>J. <img alt="img" src="https://www.crackab.com/image/tests/6/00961.jpg"></li><li>K. <img alt="img" src="https://www.crackab.com/image/tests/6/00962.jpg"></li></ul></div><div class="submit-wrap"><button class="submit-btn" onclick="gradeTest()">Submit Test</button><button class="reset-btn" onclick="resetTest()">Try Again</button>
+<div class="report-wrap"><input type="text" class="name-input" placeholder="Student name (for report)"><button class="report-btn" onclick="generateReport()">Download Report (PDF)</button></div></div><div class="nav"><a href="test153.html">&larr; Prev</a><a href="index.html">All Tests</a><a href="test155.html">Next &rarr;</a></div></div><footer><div class="container">ACT Math Practice</div></footer>
+<script>
+const ANSWERS = {"1": "K", "2": "B", "3": "F", "4": "B", "5": "G", "6": "D", "7": "J", "8": "B", "9": "F", "10": "E", "11": "H", "12": "E", "13": "F", "14": "B", "15": "K"};
+const EXPLANATIONS = {"1":"(K) (3 – i)2  =  (3 – i)(3 – i)  =  9 – 3i – 3i + i2  =  9 – 6i + i2. Recalling i2  =  –1, the problem becomes 9 – 6i + (–1)  =  8 – 6i. A helpful tip is that TI-83 and TI-84 graphing calculators have an i button above the decimal point. Plugging (3 – i)2 into your calculator will also give you 8 – 6i.", "2":"(B) To find how many times larger Mars is than Venus we must first know the size of each planet. Let x  =  the radius of Venus, then the radius of Mars  =  4 · radius of Venus  =  4x. Using the given formula, the volume of Venus is V  =   and the volume of Mars is  When dividing the volume of Mars by the volume of Venus, the π and x3 cancel out, leaving", "3":"(F)   =  4 · r3  =  4r3.", "4":"(B) If 2 is a solution for x, we can plug 2 into the equation for x and solve for k. This gives (2)2 + k(2) + 12  =  0. Solving for k gives 4 + 2k + 12  =  0 → 2k  =  –16 → k  =  –8.", "5":"(G) The standard form of a circle is (x – h)2 + (y – k)2  =  r2 where (h, k) is the center of the circle and r is the radius. The center of this circle is (0, 3) and the radius is 3. Plugging these numbers in for h, k, and r, respectively, gives (x – 0)2 + (y – 3)2  =  32. Simplifying the equation gives x2 + (y – 3)2  =  9.", "6":"(D) To find the equation of a line we calculate the slope and the y-intercept. The slope can be found by finding the change in y divided by the change in x. The slope of the line through the first two data points is m  =   The y-intercept is the value of y when x  =  0. The third data point is (0, –2); therefore, –2 is the y-intercept. Plugging what we found into the formula y  =  mx + b, we get y  =  3x – 2.", "7":"(J) The sum of the angles of a triangle equals 180°. Using this, angle X  =  180 – 32 – 44  =  104°. Using the law of sines, we get . Cross multiplying and solving for x gives x · sin(44)  =  22 · sin(104) → x  =  .", "8":"(B) In order to graph the equation 3x – 2y  =  6, we must first get it in y  =  mx + b form. Solving for y in the equation gives –2y  =  –3x + 6 → y  =  x – 3 so the slope of the equation is  and the y-intercept is –3. The only graphs that have a y-intercept of –3 are choices B and E. The slope of the line in choice E is  and the slope of the line in choice B is  making choice B correct.", "9":"(F) For  to simplify to an integer, each factor under the radical must have a pair. So far, there are two 7\'s, one 3, one 5, an m, and an n. For 3 and 5 to each have a pair, m and n must be 3 and 5, respectively. Checking to make sure we have the correct m and n we get   =  , which is an integer; therefore, m and n equal 3 and 5, respectively. Now, answering the question asked gives m + n  =  3 + 5  =  8.", "10":"(E) To calculate profit we use the formula profit equals revenue minus cost, or P  =  R – C. To calculate revenue, Cam makes $6.50 per umbrella or R  =  6.5x where x represents the number of umbrellas sold. To calculate cost, Cam has to pay a one-time cost of $25,000 for the building and machinery along with $4.00 per umbrella, making his total cost C  =  25,000 + 4x. Plugging these into the formula P  =  R – C we get P  =  6.5x – (25,000 + 4x)  =  2.50x – 25,000.", "11":"(H) The question asks which statement is NOT true. PON  =    =  100°.  is a diameter so   =  180°. Therefore,   =  180 – 100  =  80°, If   =  80°, then NOM  =  80°. Since PON  =  100°, PON ≠ NOM.", "12":"(E) The best way to solve this problem is to plug in clever numbers for m and n to eliminate wrong answers. Starting with m  =  1 and n  =  1, the equation becomes , which is a false statement. This eliminates choices B and C. Now, plug in m  =  0 and n  =  0 and the equation becomes , which is a true statement, eliminating choice A. Finally, plug in m  =  0 and n  =  1 to get , which is a true statement. This eliminates choice D, leaving choice E as the correct answer.", "13":"(F) Using the change of base formula  the expression becomes . Now, plug  into a calculator to get 2.", "14":"(B) Setting up a ratio of new tv: old tv we get . Setting the cross products equal, the equation becomes 24x  =  4(21). Solving for x gives .", "15":"(K) , which is not equivalent to ."};
+let graded = false;
+
+document.querySelectorAll('.choices li').forEach(li => {
+  // Remove old onclick
+  li.removeAttribute('onclick');
+  li.addEventListener('click', function() {
+    if (graded) return;
+    const siblings = this.parentElement.querySelectorAll('li');
+    siblings.forEach(s => s.classList.remove('selected'));
+    this.classList.add('selected');
+  });
+});
+
+function gradeTest() {
+  if (graded) return;
+  graded = true;
+  let correct = 0;
+  const total = Object.keys(ANSWERS).length;
+  
+  document.querySelectorAll('.question').forEach((qDiv, idx) => {
+    const qNum = idx + 1;
+    const correctAns = ANSWERS[qNum];
+    if (!correctAns) return;
+    const choices = qDiv.querySelectorAll('.choices li');
+    const selected = qDiv.querySelector('.choices li.selected');
+    const selectedLetter = selected ? selected.textContent.trim().charAt(0) : null;
+    
+    choices.forEach(li => {
+      const letter = li.textContent.trim().charAt(0);
+      if (letter === correctAns) li.classList.add('show-correct');
+      li.style.cursor = 'default';
+    });
+    
+    const tag = document.createElement('span');
+    tag.className = 'result-tag';
+    
+    if (selectedLetter === correctAns) {
+      correct++;
+      tag.className += ' correct';
+      tag.textContent = 'Correct';
+      if (selected) { selected.classList.remove('selected'); selected.classList.add('correct'); }
+    } else {
+      tag.className += ' wrong';
+      tag.textContent = 'Incorrect (Answer: ' + correctAns + ')';
+      if (selected) { selected.classList.remove('selected'); selected.classList.add('wrong'); }
+    }
+    
+    const firstP = qDiv.querySelector('p');
+    if (firstP) firstP.appendChild(tag);
+    
+    if (typeof EXPLANATIONS !== 'undefined' && EXPLANATIONS[qNum]) {
+      const explDiv = document.createElement('div');
+      explDiv.className = 'explanation show';
+      explDiv.innerHTML = '<strong>Explanation:</strong> ' + EXPLANATIONS[qNum];
+      qDiv.appendChild(explDiv);
+    }
+  });
+  
+  const pct = Math.round((correct / total) * 100);
+  document.querySelector('.submit-btn').style.display = 'none';
+  document.querySelector('.reset-btn').style.display = 'block';
+  var rw=document.querySelector('.report-wrap');if(rw)rw.style.display='block';
+  var bs=document.createElement('div');bs.className='bottom-score';bs.id='bottom-score';
+  bs.innerHTML='<h2 style="font-size:1.3rem;margin-bottom:6px;color:#1a3a4a">Your Score</h2><div class="pct '+(pct>=80?'good':pct>=60?'ok':'bad')+'">'+pct+'%</div><div class="detail">'+correct+' out of '+total+' correct</div>';
+  document.querySelector('.submit-wrap').after(bs);
+  try{var tn=location.pathname.match(/test(\d+)/);if(tn)localStorage.setItem('actmath_'+tn[1],pct);}catch(e){}
+}
+
+function resetTest() {
+  graded = false;
+  var bsEl=document.getElementById('bottom-score');if(bsEl)bsEl.remove();
+  document.querySelector('.submit-btn').style.display = '';
+  document.querySelector('.reset-btn').style.display = 'none';
+  var rw=document.querySelector('.report-wrap');if(rw)rw.style.display='none';
+  var ni=document.querySelector('.name-input');if(ni)ni.value='';
+  document.querySelectorAll('.choices li').forEach(li => {
+    li.classList.remove('selected','correct','wrong','show-correct');
+    li.style.cursor = 'pointer';
+  });
+  document.querySelectorAll('.result-tag').forEach(t => t.remove());
+  document.querySelectorAll('.explanation').forEach(e => e.remove());
+}
+
+function generateReport(){
+  var nameInput=document.querySelector('.name-input');
+  var name=(nameInput&&nameInput.value.trim())||'Student';
+  var testName=document.querySelector('header h1').textContent;
+  var bs=document.getElementById('bottom-score');
+  var scorePct=bs?bs.querySelector('.pct').textContent:'';
+  var detailTxt=bs?bs.querySelector('.detail').textContent:'';
+  var d=new Date().toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'});
+  var btn=document.querySelector('.report-btn');btn.textContent='Generating...';btn.disabled=true;
+  var s=document.createElement('script');
+  s.src='https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js';
+  s.onerror=function(){btn.textContent='Download Report (PDF)';btn.disabled=false;alert('Could not load PDF library.');};
+  s.onload=function(){
+    var doc=new jspdf.jsPDF('portrait','mm','letter');
+    var pw=215.9,ph=279.4,mx=12,cw=pw-2*mx,y=8;
+    doc.setFillColor(26,58,74);doc.rect(0,0,pw,22,'F');
+    doc.setTextColor(255,255,255);doc.setFontSize(13);doc.setFont('helvetica','bold');
+    doc.text(testName,mx,9);
+    doc.setFontSize(7.5);doc.setFont('helvetica','normal');
+    doc.text(d+'  |  Student: '+name,mx,14.5);
+    doc.setFontSize(18);doc.setFont('helvetica','bold');
+    doc.text(scorePct,pw-mx,11,{align:'right'});
+    doc.setFontSize(7.5);doc.setFont('helvetica','normal');
+    doc.text(detailTxt,pw-mx,16,{align:'right'});
+    y=25;
+    doc.setDrawColor(26,58,74);doc.setLineWidth(0.3);doc.line(mx,y,pw-mx,y);y+=3;
+    document.querySelectorAll('.question').forEach(function(qDiv,idx){
+      var qNum=idx+1;var ca=ANSWERS[qNum];if(!ca)return;
+      var sel=qDiv.querySelector('.choices li.correct,.choices li.wrong');
+      var sa=sel?sel.textContent.trim().charAt(0):'-';
+      var ok=sel&&sel.classList.contains('correct');
+      if(ok){
+        doc.setFillColor(40,167,69);doc.circle(mx+1.2,y-1,1,'F');
+        doc.setTextColor(33,33,33);doc.setFont('helvetica','bold');doc.setFontSize(8);
+        doc.text('Q'+qNum,mx+4,y);
+        doc.setFont('helvetica','normal');doc.setTextColor(40,167,69);
+        doc.text('Correct ('+ca+')',mx+14,y);
+      }else{
+        doc.setFillColor(220,53,69);doc.circle(mx+1.2,y-1,1,'F');
+        doc.setTextColor(33,33,33);doc.setFont('helvetica','bold');doc.setFontSize(8);
+        doc.text('Q'+qNum,mx+4,y);
+        doc.setFont('helvetica','normal');doc.setTextColor(220,53,69);
+        doc.text('Incorrect',mx+14,y);
+        doc.setTextColor(120,120,120);
+        doc.text('(Chose '+sa+', Correct: '+ca+')',mx+32,y);
+      }
+      y+=3.2;
+      var qP=qDiv.querySelector('p');
+      if(qP){
+        var qT=qP.cloneNode(true);
+        var tags=qT.querySelectorAll('.result-tag');tags.forEach(function(t){t.remove();});
+        var qt=qT.textContent.replace(/^\d+\.\s*/,'').trim();
+        if(qt.length>0){
+          doc.setFont('helvetica','normal');doc.setTextColor(60,60,60);doc.setFontSize(6.5);
+          var ql=doc.splitTextToSize(qt,cw-5);
+          ql=ql.slice(0,1);
+          if(doc.splitTextToSize(qt,cw-5).length>1){ql[0]=ql[0].substring(0,ql[0].length-3)+'...';}
+          doc.text(ql,mx+4,y);y+=2.4;
+        }
+      }
+      if(typeof EXPLANATIONS!=='undefined'&&EXPLANATIONS[qNum]){
+        doc.setFont('helvetica','italic');doc.setTextColor(100,100,100);doc.setFontSize(6);
+        var lines=doc.splitTextToSize(EXPLANATIONS[qNum],cw-5);
+        if(lines.length>2){lines=lines.slice(0,2);lines[1]=lines[1].substring(0,Math.max(0,lines[1].length-3))+'...';}
+        doc.text(lines,mx+4,y);y+=lines.length*2.2;
+      }
+      y+=2;
+    });
+    doc.setDrawColor(200,200,200);doc.setLineWidth(0.2);doc.line(mx,ph-10,pw-mx,ph-10);
+    doc.setTextColor(170,170,170);doc.setFontSize(6);doc.setFont('helvetica','normal');
+    doc.text('ACT Math Practice  |  Score Report',pw/2,ph-7,{align:'center'});
+    var tn=location.pathname.match(/test(\d+)/);
+    var testNum=tn?parseInt(tn[1])-100:0;
+    var ds=new Date().toISOString().slice(0,10);
+    doc.save('ACT-Math-Test-'+testNum+'-'+ds+'.pdf');
+    btn.textContent='Download Report (PDF)';btn.disabled=false;
+  };
+  document.head.appendChild(s);
+}
+</script>
+</body></html>

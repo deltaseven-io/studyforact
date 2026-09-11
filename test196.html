@@ -1,0 +1,222 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>ACT Math Test 96</title><style>@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:#fff;color:#2d3748;line-height:1.7}
+.container{max-width:800px;margin:0 auto;padding:20px 24px}
+header{background:linear-gradient(135deg,#1a3a4a 0%,#2d6a7a 100%);color:#fff;padding:28px 0;margin-bottom:36px;text-align:center}
+header .container{display:block}
+header h1{font-size:1.6rem;font-weight:700;letter-spacing:-0.3px}
+header a{color:rgba(255,255,255,.7);text-decoration:none;font-size:.9rem;display:inline-block;margin-bottom:6px;transition:color .2s}
+header a:hover{color:#fff}
+.question{background:#fff;border-radius:12px;padding:24px;margin-bottom:20px;border:1px solid #e2e8f0;transition:border-color .2s}
+.question:hover{border-color:#cbd5e0}
+.question p{margin-bottom:14px;font-size:1.05rem}
+img{max-width:100%;height:auto;margin:4px 0;vertical-align:middle}
+.choices{list-style:none}
+.choices li{padding:10px 14px;margin:6px 0;border-radius:8px;cursor:pointer;transition:all .2s;border:2px solid transparent}
+.choices li:hover{background:#f0f7fa}
+.choices li.selected{background:#d1ecf1;border-color:#bee5eb}
+.choices li.correct{background:#d4edda;border-color:#28a745}
+.choices li.wrong{background:#f8d7da;border-color:#dc3545}
+.choices li.show-correct{background:#d4edda;border-color:#28a745}
+.submit-wrap{text-align:center;margin:36px 0}
+.submit-btn{display:inline-block;padding:14px 40px;background:linear-gradient(135deg,#1a3a4a,#2d6a7a);color:#fff;border:none;border-radius:10px;font-size:1.1rem;cursor:pointer;font-weight:600;font-family:inherit;transition:all .25s;letter-spacing:.3px}
+.submit-btn:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(26,58,74,.25)}
+.score-box{background:#fff;border-radius:12px;padding:28px;margin-bottom:28px;text-align:center;border:1px solid #e2e8f0;box-shadow:0 4px 20px rgba(0,0,0,.06);display:none}
+.score-box h2{font-size:1.4rem;margin-bottom:8px;color:#1a3a4a;text-align:center}
+.score-box .pct{font-size:3rem;font-weight:700}
+.score-box .pct.good{color:#28a745}
+.score-box .pct.ok{color:#e6a817}
+.score-box .pct.bad{color:#dc3545}
+.score-box .detail{color:#666;margin-top:4px}
+.result-tag{display:inline-block;padding:2px 10px;border-radius:12px;font-size:.8rem;font-weight:600;margin-left:8px}
+.result-tag.correct{background:#d4edda;color:#155724}
+.result-tag.wrong{background:#f8d7da;color:#721c24}
+.reset-btn{display:none;margin:16px auto;padding:12px 28px;background:#6c757d;color:#fff;border:none;border-radius:10px;font-size:1rem;cursor:pointer;font-family:inherit;transition:all .25s}
+.reset-btn:hover{background:#5a6268;transform:translateY(-1px)}
+.explanation{background:#f0f7ff;border-left:4px solid #1a3a4a;padding:14px 18px;margin-top:14px;border-radius:0 8px 8px 0;font-size:.95rem;color:#444;display:none}
+.explanation.show{display:block}
+.explanation strong{color:#1a3a4a}
+.nav{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin:36px 0}
+.nav a{display:inline-block;padding:10px 24px;background:linear-gradient(135deg,#1a3a4a,#2d6a7a);color:#fff;text-decoration:none;border-radius:10px;font-weight:500;font-size:.95rem;transition:all .25s}
+.nav a:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(26,58,74,.25)}
+footer{text-align:center;padding:36px 24px;color:#8899a4;font-size:.85rem;border-top:1px solid #e2e8f0;margin-top:40px}
+.report-btn{display:inline-block;margin:0;padding:12px 28px;background:linear-gradient(135deg,#1a3a4a,#2d6a7a);color:#fff;border:none;border-radius:10px;font-size:1rem;cursor:pointer;font-family:inherit;transition:all .25s}
+.report-btn:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(26,58,74,.25)}
+.bottom-score{background:#fff;border-radius:12px;padding:20px;margin:20px 0;text-align:center;border:1px solid #e2e8f0;box-shadow:0 4px 20px rgba(0,0,0,.06)}
+.bottom-score .pct{font-size:2.5rem;font-weight:700}
+.bottom-score .pct.good{color:#28a745}
+.bottom-score .pct.ok{color:#e6a817}
+.bottom-score .pct.bad{color:#dc3545}
+.bottom-score .detail{color:#666;margin-top:4px;font-size:.95rem}
+.report-wrap{display:none;text-align:center;margin:16px 0}
+.name-input{padding:10px 14px;border:1px solid #e2e8f0;border-radius:10px;font-size:.95rem;font-family:inherit;width:200px;margin-right:8px;outline:none;transition:border-color .2s}
+.name-input:focus{border-color:#1a3a4a}
+</style></head><body><header><div class="container"><a href="index.html">&larr; All Tests</a><h1>ACT Math Practice Test 96</h1></div></header><div class="container"><div id="score-box" class="score-box"><h2>Your Score</h2><div class="pct">0%</div><div class="detail"></div></div><div class="question"><p><b>1.</b> Which of the following is the set of all real numbers <em>x</em> such that <em>x</em> + 2 <em>&gt; x</em> + 5?</p><ul class="choices"><li>A. The set containing only zero</li><li>B. The set containing all nonnegative real numbers</li><li>C. The set containing all negative real numbers</li><li>D. The set containing all real numbers</li><li>E. The empty set</li></ul></div><div class="question"><p><b>2.</b> Pentagons have 5 diagonals, as illustrated below. How many diagonals does the heptagon (7 sides) below have?<br><img src="https://img.crackab.com/act/nmg10/f0037-01.jpg"></p><ul class="choices"><li>F. 7</li><li>G. 12</li><li>H. 14</li><li>J. 21</li><li>K. 28</li></ul></div><div class="question"><p><b>3.</b> John wants to draw a circle graph showing his friends' favorite ice cream flavors. When he polled his friends asking each their favorite flavor of ice cream, 35% of his friends said chocolate, 20% of his friends said vanilla, 15% of his friends said strawberry, 25% of his friends said mint chocolate chip, and 5% of his friends said flavors other than those previously listed. What will be the degree measure of the vanilla sector of the circle graph?</p><ul class="choices"><li>A. 126°</li><li>B. 108°</li><li>C. 90°</li><li>D. 72°</li><li>E. 36°</li></ul></div><div class="question"><p><b>4.</b> If sin <img src="https://img.crackab.com/act/nmg10/e0038-01.jpg"> and <img src="https://img.crackab.com/act/nmg10/e0038-02.jpg">, then tan <em>θ</em> = ?</p><ul class="choices"><li>F. <img src="https://img.crackab.com/act/nmg10/e0038-03.jpg"></li><li>G. <img src="https://img.crackab.com/act/nmg10/e0038-04.jpg"></li><li>H. <img src="https://img.crackab.com/act/nmg10/e0038-05.jpg"></li><li>J. <img src="https://img.crackab.com/act/nmg10/e0038-06.jpg"></li><li>K. <img src="https://img.crackab.com/act/nmg10/e0038-07.jpg"></li></ul></div><div class="question"><p><b>5.</b> Which of the following systems of inequalities is represented by the shaded region of the graph below?<br><img src="https://img.crackab.com/act/nmg10/f0038-01.jpg"></p><ul class="choices"><li>A. <em>y</em> ≤ <em>x</em> + 1 or <em>y</em> ≥ <em>x</em> - 3</li><li>B. <em>y</em> ≤ <em>x</em> + 1 and <em>y</em> ≥ <em>x</em> - 3</li><li>C. <img src="https://img.crackab.com/act/nmg10/e0038-08.jpg"></li><li>D. <img src="https://img.crackab.com/act/nmg10/e0038-09.jpg"></li><li>E. <img src="https://img.crackab.com/act/nmg10/e0038-10.jpg"></li></ul></div><div class="question"><p><b>6.</b> If <em>f</em>(<em>x</em>) = 2<em>x</em><sup>2</sup> + 3, then <em>f</em>(<em>x</em> + <em>h</em>) = ?</p><ul class="choices"><li>F. 2<em>x</em><sup>2</sup> + <em>h</em><sup>2</sup></li><li>G. 2<em>x</em><sup>2</sup> + <em>h</em> + 3</li><li>H. 2<em>x</em><sup>2</sup> + 2<em>h</em><sup>2</sup> + 3</li><li>J. <em>x</em><sup>2</sup> + 2<em>xh</em> + <em>h</em><sup>2</sup> + 3</li><li>K. 2<em>x</em><sup>2</sup> + 4<em>xh</em> + 2<em>h</em><sup>2</sup> + 3</li></ul></div><div class="question"><p><b>7.</b> Which of the following is the graph, in the standard (<em>x, y</em>) coordinate plane, of <img src="https://img.crackab.com/act/nmg10/e0039-01a.jpg"></p><ul class="choices"><li>A. <img class="inlinet" src="https://img.crackab.com/act/nmg10/f0039-01.jpg"></li><li>B. <img class="inlinet" src="https://img.crackab.com/act/nmg10/f0039-03.jpg"></li><li>C. <img class="inlinet" src="https://img.crackab.com/act/nmg10/f0039-05.jpg"></li><li>D. <img class="inlinet" src="https://img.crackab.com/act/nmg10/f0039-02.jpg"></li><li>E. <img class="inlinet" src="https://img.crackab.com/act/nmg10/f0039-04.jpg"></li></ul></div><div class="question"><p><b>8.</b> A triangle, Δ<em>ABD</em>, is reflected across the <em>y</em>-axis to have the image Δ<em>A</em>′ <em>B</em>′ <em>D</em>′ in the standard (<em>x, y</em>) coordinate plane; thus, <em>A</em> reflects to <em>A</em>′. The coordinates of point <em>A</em> are (<em>m, n</em>). What are the coordinates of point <em>A</em>′?</p><ul class="choices"><li>F. (-<em>m, n</em>)</li><li>G. (<em>m,</em> -<em>n</em>)</li><li>H. (-<em>m,</em> -<em>n</em>)</li><li>J. (<em>n, m</em>)</li><li>K. Cannot be determined from the given information.</li></ul></div><div class="question"><p><b>9.</b> If <em>x</em> = 3<em>r</em> - 4 and <em>y</em> = 3<em>r</em> + 2, which of the following expresses <em>y</em> in terms of <em>x</em>?</p><ul class="choices"><li>A. <em>y</em> = <em>x</em> + 2</li><li>B. <em>y</em> = <em>x</em> + 6</li><li>C. <em>y</em> = 9<em>r</em> + 14</li><li>D. <em>y</em> = 6<em>r</em> - 2</li><li>E. <em>y</em> = 3<em>x</em> + 14</li></ul></div><div class="question"><p><b>10.</b> What is cos <img src="https://img.crackab.com/act/nmg10/e0040-01.jpg"> given that <img src="https://img.crackab.com/act/nmg10/e0040-02.jpg"> and that cos(<em>α</em> - <em>β</em>) = (cos <em>α</em>)(cos <em>β</em>) + (sin <em>α</em>)(sin <em>β</em>)?<br><img src="https://img.crackab.com/act/nmg10/t0040-01.jpg"></p><ul class="choices"><li>F. <img src="https://img.crackab.com/act/nmg10/e0040-03.jpg"></li><li>G. <img src="https://img.crackab.com/act/nmg10/e0040-04.jpg"></li><li>H. <img src="https://img.crackab.com/act/nmg10/e0040-05.jpg"></li><li>J. <img src="https://img.crackab.com/act/nmg10/e0040-06.jpg"></li><li>K. <img src="https://img.crackab.com/act/nmg10/e0040-07.jpg"></li></ul></div><div class="submit-wrap"><button class="submit-btn" onclick="gradeTest()">Submit Test</button><button class="reset-btn" onclick="resetTest()">Try Again</button>
+<div class="report-wrap"><input type="text" class="name-input" placeholder="Student name (for report)"><button class="report-btn" onclick="generateReport()">Download Report (PDF)</button></div></div><div class="nav"><a href="test195.html">&larr; Prev</a><a href="index.html">All Tests</a><a href="test197.html">Next &rarr;</a></div></div><footer><div class="container">ACT Math Practice</div></footer>
+<script>
+const ANSWERS = {"1": "E", "2": "H", "3": "D", "4": "G", "5": "E", "6": "K", "7": "D", "8": "F", "9": "B", "10": "H"};
+const EXPLANATIONS = {"1":"The correct answer is E. To find the real numbers x such that x + 2 > x + 5, subtract x and 2 from both sides. The result is 0 > 3, and because that inequality is never true, there is no solution for x. The solution set is the empty set.", "2":"The correct answer is H. As shown below, there are 4 diagonals coming from each vertex point. Because there are 7 vertex points, you might be tempted to conclude that there are 7 × 4, or 28 diagonals. But this method counts each diagonal exactly twice. Therefore, there are , or 14 diagonals.", "3":"The correct answer is D. You are given that 20% of John\'s friends selected vanilla ice cream as their favorite flavor. This means that 20% of the 360° in the circle will represent vanilla; 20% of 360 is equivalent to (0.20)(360°), or 72°.", "4":"The correct answer is G. One way to find tan θ given that sin  and , is to first find cos θ, then find , which is equivalent to tan θ. To find cos θ, use the identity sin2 θ + cos2 θ  =  1 and the fact that cos θ < 1 in Quadrant II ( would place the angle in Quadrant II). Use substitution to get , or . After subtracting , you get . After taking the square root of both sides, you get . Because cos θ < 1 is in Quadrant II, cos . Substitute this value into  to get , which equals . Another way you could solve this problem would be to construct an angle in Quadrant II with sin , as shown below. By virtue of the Pythagorean Theorem, the missing side of the right triangle is 3 units long, and is negative because it is along the negative side of the x-axis. From this triangle, knowing that , you can get .", "5":"The correct answer is E. To find the system of inequalities represented by the shaded region of the graph, first find the equations of the line through (-1, 0) and (0, 1) and the line through (-2, 0) and (0, -3). These are y  =  x + 1 (the y-intercept is 1) and  (the y-intercept is -3), respectively. Pay attention to the coordinating conjunctions, and/or.", "6":"The correct answer is K. To find f (x + h) when f (x)  =  2x2 + 3, substitute (x + h) for x in f (x)  =  2x2 + 3, and expand the equation as follows:", "7":"The correct answer is D. The equation  can be simplified to .", "8":"The correct answer is F. To find the coordinates of vertex A after it is reflected across the y-axis, remember that a reflection across the y-axis does not change the sign of the y-coordinate but does change the sign of the x-coordinate. Therefore, you can eliminate answer choices G, H, and J. You might sketch a figure like the one below. The reflection of A (m, n) across the x-axis is A′ (-m, n). The most popular incorrect answer is J, which gives the reflection of A over the line y  =  x.", "9":"The correct answer is B. To obtain an expression for y in terms of x when x  =  3r - 4 and y  =  3r + 2, first solve x  =  3r - 4 for r as follows: Substitute that expression for r into y  =  3r + 2, and solve for y: , which simplifies to y  =  (x + 4) + 2, or y  =  x + 6.", "10":"The correct answer is H. To find cos  using cos (α - β)  =  (cos α)(cos β) + (sin α)(sin β) given that , you can first substitute  for α and  for β and get cos . Using the table of values to substitute into that equation, you get cos , or ."};
+let graded = false;
+
+document.querySelectorAll('.choices li').forEach(li => {
+  // Remove old onclick
+  li.removeAttribute('onclick');
+  li.addEventListener('click', function() {
+    if (graded) return;
+    const siblings = this.parentElement.querySelectorAll('li');
+    siblings.forEach(s => s.classList.remove('selected'));
+    this.classList.add('selected');
+  });
+});
+
+function gradeTest() {
+  if (graded) return;
+  graded = true;
+  let correct = 0;
+  const total = Object.keys(ANSWERS).length;
+  
+  document.querySelectorAll('.question').forEach((qDiv, idx) => {
+    const qNum = idx + 1;
+    const correctAns = ANSWERS[qNum];
+    if (!correctAns) return;
+    const choices = qDiv.querySelectorAll('.choices li');
+    const selected = qDiv.querySelector('.choices li.selected');
+    const selectedLetter = selected ? selected.textContent.trim().charAt(0) : null;
+    
+    choices.forEach(li => {
+      const letter = li.textContent.trim().charAt(0);
+      if (letter === correctAns) li.classList.add('show-correct');
+      li.style.cursor = 'default';
+    });
+    
+    const tag = document.createElement('span');
+    tag.className = 'result-tag';
+    
+    if (selectedLetter === correctAns) {
+      correct++;
+      tag.className += ' correct';
+      tag.textContent = 'Correct';
+      if (selected) { selected.classList.remove('selected'); selected.classList.add('correct'); }
+    } else {
+      tag.className += ' wrong';
+      tag.textContent = 'Incorrect (Answer: ' + correctAns + ')';
+      if (selected) { selected.classList.remove('selected'); selected.classList.add('wrong'); }
+    }
+    
+    const firstP = qDiv.querySelector('p');
+    if (firstP) firstP.appendChild(tag);
+    
+    if (typeof EXPLANATIONS !== 'undefined' && EXPLANATIONS[qNum]) {
+      const explDiv = document.createElement('div');
+      explDiv.className = 'explanation show';
+      explDiv.innerHTML = '<strong>Explanation:</strong> ' + EXPLANATIONS[qNum];
+      qDiv.appendChild(explDiv);
+    }
+  });
+  
+  const pct = Math.round((correct / total) * 100);
+  document.querySelector('.submit-btn').style.display = 'none';
+  document.querySelector('.reset-btn').style.display = 'block';
+  var rw=document.querySelector('.report-wrap');if(rw)rw.style.display='block';
+  var bs=document.createElement('div');bs.className='bottom-score';bs.id='bottom-score';
+  bs.innerHTML='<h2 style="font-size:1.3rem;margin-bottom:6px;color:#1a3a4a">Your Score</h2><div class="pct '+(pct>=80?'good':pct>=60?'ok':'bad')+'">'+pct+'%</div><div class="detail">'+correct+' out of '+total+' correct</div>';
+  document.querySelector('.submit-wrap').after(bs);
+  try{var tn=location.pathname.match(/test(\d+)/);if(tn)localStorage.setItem('actmath_'+tn[1],pct);}catch(e){}
+}
+
+function resetTest() {
+  graded = false;
+  var bsEl=document.getElementById('bottom-score');if(bsEl)bsEl.remove();
+  document.querySelector('.submit-btn').style.display = '';
+  document.querySelector('.reset-btn').style.display = 'none';
+  var rw=document.querySelector('.report-wrap');if(rw)rw.style.display='none';
+  var ni=document.querySelector('.name-input');if(ni)ni.value='';
+  document.querySelectorAll('.choices li').forEach(li => {
+    li.classList.remove('selected','correct','wrong','show-correct');
+    li.style.cursor = 'pointer';
+  });
+  document.querySelectorAll('.result-tag').forEach(t => t.remove());
+  document.querySelectorAll('.explanation').forEach(e => e.remove());
+}
+
+function generateReport(){
+  var nameInput=document.querySelector('.name-input');
+  var name=(nameInput&&nameInput.value.trim())||'Student';
+  var testName=document.querySelector('header h1').textContent;
+  var bs=document.getElementById('bottom-score');
+  var scorePct=bs?bs.querySelector('.pct').textContent:'';
+  var detailTxt=bs?bs.querySelector('.detail').textContent:'';
+  var d=new Date().toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'});
+  var btn=document.querySelector('.report-btn');btn.textContent='Generating...';btn.disabled=true;
+  var s=document.createElement('script');
+  s.src='https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js';
+  s.onerror=function(){btn.textContent='Download Report (PDF)';btn.disabled=false;alert('Could not load PDF library.');};
+  s.onload=function(){
+    var doc=new jspdf.jsPDF('portrait','mm','letter');
+    var pw=215.9,ph=279.4,mx=12,cw=pw-2*mx,y=8;
+    doc.setFillColor(26,58,74);doc.rect(0,0,pw,22,'F');
+    doc.setTextColor(255,255,255);doc.setFontSize(13);doc.setFont('helvetica','bold');
+    doc.text(testName,mx,9);
+    doc.setFontSize(7.5);doc.setFont('helvetica','normal');
+    doc.text(d+'  |  Student: '+name,mx,14.5);
+    doc.setFontSize(18);doc.setFont('helvetica','bold');
+    doc.text(scorePct,pw-mx,11,{align:'right'});
+    doc.setFontSize(7.5);doc.setFont('helvetica','normal');
+    doc.text(detailTxt,pw-mx,16,{align:'right'});
+    y=25;
+    doc.setDrawColor(26,58,74);doc.setLineWidth(0.3);doc.line(mx,y,pw-mx,y);y+=3;
+    document.querySelectorAll('.question').forEach(function(qDiv,idx){
+      var qNum=idx+1;var ca=ANSWERS[qNum];if(!ca)return;
+      var sel=qDiv.querySelector('.choices li.correct,.choices li.wrong');
+      var sa=sel?sel.textContent.trim().charAt(0):'-';
+      var ok=sel&&sel.classList.contains('correct');
+      if(ok){
+        doc.setFillColor(40,167,69);doc.circle(mx+1.2,y-1,1,'F');
+        doc.setTextColor(33,33,33);doc.setFont('helvetica','bold');doc.setFontSize(8);
+        doc.text('Q'+qNum,mx+4,y);
+        doc.setFont('helvetica','normal');doc.setTextColor(40,167,69);
+        doc.text('Correct ('+ca+')',mx+14,y);
+      }else{
+        doc.setFillColor(220,53,69);doc.circle(mx+1.2,y-1,1,'F');
+        doc.setTextColor(33,33,33);doc.setFont('helvetica','bold');doc.setFontSize(8);
+        doc.text('Q'+qNum,mx+4,y);
+        doc.setFont('helvetica','normal');doc.setTextColor(220,53,69);
+        doc.text('Incorrect',mx+14,y);
+        doc.setTextColor(120,120,120);
+        doc.text('(Chose '+sa+', Correct: '+ca+')',mx+32,y);
+      }
+      y+=3.2;
+      var qP=qDiv.querySelector('p');
+      if(qP){
+        var qT=qP.cloneNode(true);
+        var tags=qT.querySelectorAll('.result-tag');tags.forEach(function(t){t.remove();});
+        var qt=qT.textContent.replace(/^\d+\.\s*/,'').trim();
+        if(qt.length>0){
+          doc.setFont('helvetica','normal');doc.setTextColor(60,60,60);doc.setFontSize(6.5);
+          var ql=doc.splitTextToSize(qt,cw-5);
+          ql=ql.slice(0,1);
+          if(doc.splitTextToSize(qt,cw-5).length>1){ql[0]=ql[0].substring(0,ql[0].length-3)+'...';}
+          doc.text(ql,mx+4,y);y+=2.4;
+        }
+      }
+      if(typeof EXPLANATIONS!=='undefined'&&EXPLANATIONS[qNum]){
+        doc.setFont('helvetica','italic');doc.setTextColor(100,100,100);doc.setFontSize(6);
+        var lines=doc.splitTextToSize(EXPLANATIONS[qNum],cw-5);
+        if(lines.length>2){lines=lines.slice(0,2);lines[1]=lines[1].substring(0,Math.max(0,lines[1].length-3))+'...';}
+        doc.text(lines,mx+4,y);y+=lines.length*2.2;
+      }
+      y+=2;
+    });
+    doc.setDrawColor(200,200,200);doc.setLineWidth(0.2);doc.line(mx,ph-10,pw-mx,ph-10);
+    doc.setTextColor(170,170,170);doc.setFontSize(6);doc.setFont('helvetica','normal');
+    doc.text('ACT Math Practice  |  Score Report',pw/2,ph-7,{align:'center'});
+    var tn=location.pathname.match(/test(\d+)/);
+    var testNum=tn?parseInt(tn[1])-100:0;
+    var ds=new Date().toISOString().slice(0,10);
+    doc.save('ACT-Math-Test-'+testNum+'-'+ds+'.pdf');
+    btn.textContent='Download Report (PDF)';btn.disabled=false;
+  };
+  document.head.appendChild(s);
+}
+</script>
+</body></html>

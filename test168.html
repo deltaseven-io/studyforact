@@ -1,0 +1,222 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>ACT Math Test 68</title><style>@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:#fff;color:#2d3748;line-height:1.7}
+.container{max-width:800px;margin:0 auto;padding:20px 24px}
+header{background:linear-gradient(135deg,#1a3a4a 0%,#2d6a7a 100%);color:#fff;padding:28px 0;margin-bottom:36px;text-align:center}
+header .container{display:block}
+header h1{font-size:1.6rem;font-weight:700;letter-spacing:-0.3px}
+header a{color:rgba(255,255,255,.7);text-decoration:none;font-size:.9rem;display:inline-block;margin-bottom:6px;transition:color .2s}
+header a:hover{color:#fff}
+.question{background:#fff;border-radius:12px;padding:24px;margin-bottom:20px;border:1px solid #e2e8f0;transition:border-color .2s}
+.question:hover{border-color:#cbd5e0}
+.question p{margin-bottom:14px;font-size:1.05rem}
+img{max-width:100%;height:auto;margin:4px 0;vertical-align:middle}
+.choices{list-style:none}
+.choices li{padding:10px 14px;margin:6px 0;border-radius:8px;cursor:pointer;transition:all .2s;border:2px solid transparent}
+.choices li:hover{background:#f0f7fa}
+.choices li.selected{background:#d1ecf1;border-color:#bee5eb}
+.choices li.correct{background:#d4edda;border-color:#28a745}
+.choices li.wrong{background:#f8d7da;border-color:#dc3545}
+.choices li.show-correct{background:#d4edda;border-color:#28a745}
+.submit-wrap{text-align:center;margin:36px 0}
+.submit-btn{display:inline-block;padding:14px 40px;background:linear-gradient(135deg,#1a3a4a,#2d6a7a);color:#fff;border:none;border-radius:10px;font-size:1.1rem;cursor:pointer;font-weight:600;font-family:inherit;transition:all .25s;letter-spacing:.3px}
+.submit-btn:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(26,58,74,.25)}
+.score-box{background:#fff;border-radius:12px;padding:28px;margin-bottom:28px;text-align:center;border:1px solid #e2e8f0;box-shadow:0 4px 20px rgba(0,0,0,.06);display:none}
+.score-box h2{font-size:1.4rem;margin-bottom:8px;color:#1a3a4a;text-align:center}
+.score-box .pct{font-size:3rem;font-weight:700}
+.score-box .pct.good{color:#28a745}
+.score-box .pct.ok{color:#e6a817}
+.score-box .pct.bad{color:#dc3545}
+.score-box .detail{color:#666;margin-top:4px}
+.result-tag{display:inline-block;padding:2px 10px;border-radius:12px;font-size:.8rem;font-weight:600;margin-left:8px}
+.result-tag.correct{background:#d4edda;color:#155724}
+.result-tag.wrong{background:#f8d7da;color:#721c24}
+.reset-btn{display:none;margin:16px auto;padding:12px 28px;background:#6c757d;color:#fff;border:none;border-radius:10px;font-size:1rem;cursor:pointer;font-family:inherit;transition:all .25s}
+.reset-btn:hover{background:#5a6268;transform:translateY(-1px)}
+.explanation{background:#f0f7ff;border-left:4px solid #1a3a4a;padding:14px 18px;margin-top:14px;border-radius:0 8px 8px 0;font-size:.95rem;color:#444;display:none}
+.explanation.show{display:block}
+.explanation strong{color:#1a3a4a}
+.nav{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin:36px 0}
+.nav a{display:inline-block;padding:10px 24px;background:linear-gradient(135deg,#1a3a4a,#2d6a7a);color:#fff;text-decoration:none;border-radius:10px;font-weight:500;font-size:.95rem;transition:all .25s}
+.nav a:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(26,58,74,.25)}
+footer{text-align:center;padding:36px 24px;color:#8899a4;font-size:.85rem;border-top:1px solid #e2e8f0;margin-top:40px}
+.report-btn{display:inline-block;margin:0;padding:12px 28px;background:linear-gradient(135deg,#1a3a4a,#2d6a7a);color:#fff;border:none;border-radius:10px;font-size:1rem;cursor:pointer;font-family:inherit;transition:all .25s}
+.report-btn:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(26,58,74,.25)}
+.bottom-score{background:#fff;border-radius:12px;padding:20px;margin:20px 0;text-align:center;border:1px solid #e2e8f0;box-shadow:0 4px 20px rgba(0,0,0,.06)}
+.bottom-score .pct{font-size:2.5rem;font-weight:700}
+.bottom-score .pct.good{color:#28a745}
+.bottom-score .pct.ok{color:#e6a817}
+.bottom-score .pct.bad{color:#dc3545}
+.bottom-score .detail{color:#666;margin-top:4px;font-size:.95rem}
+.report-wrap{display:none;text-align:center;margin:16px 0}
+.name-input{padding:10px 14px;border:1px solid #e2e8f0;border-radius:10px;font-size:.95rem;font-family:inherit;width:200px;margin-right:8px;outline:none;transition:border-color .2s}
+.name-input:focus{border-color:#1a3a4a}
+</style></head><body><header><div class="container"><a href="index.html">&larr; All Tests</a><h1>ACT Math Practice Test 68</h1></div></header><div class="container"><div id="score-box" class="score-box"><h2>Your Score</h2><div class="pct">0%</div><div class="detail"></div></div><div class="question"><p><b>1.</b> The art teacher at Valley High School is decorating her classroom by reproducing famous pictures on her walls. She has a picture 8 inches wide and 10 inches tall that she wants to replicate to scale on the wall. If the painting on the wall will be 6 feet tall, then approximately how wide will the painting be, in feet?</p><ul class="choices"><li>F. 5</li><li>G. 7</li><li>H. 9</li><li>J. 11</li><li>K. 13</li></ul></div><div class="question"><p><b>2.</b> The formula for line <span class="italic">l</span> in standard form is 5<span class="italic">x</span> - <span class="italic">y</span> = 2. Which of the following gives the formula for line <span class="italic">l</span> in slope-intercept form?</p><ul class="choices"><li>A. <span class="italic">y</span> = 5<span class="italic">x</span> + 2</li><li>B. <span class="italic">y</span> = 5<span class="italic">x</span> - 2</li><li>C. <span class="italic">y</span> = 2<span class="italic">x</span> - 5</li><li>D. <span class="italic">y</span> = -5<span class="italic">x</span> - 2</li><li>E. <span class="italic">y</span> = -5<span class="italic">x</span> + 2</li></ul></div><div class="question"><p><b>3.</b> The expression |2-14| - |-25| is equal to:</p><ul class="choices"><li>F. 41</li><li>G. 37</li><li>H. 13</li><li>J. -13</li><li>K. -37</li></ul></div><div class="question"><p><b>4.</b> In Δ<span class="italic">JKL</span> the measure of ∠<span class="italic">J</span> is exactly 37° , and the measure of ∠<span class="italic">K</span> is less than or equal to 63°. Which of the following phrases best describes the measure of ∠<span class="italic">L</span> ?</p><ul class="choices"><li>A. Exactly 120°</li><li>B. Exactly 100°</li><li>C. Exactly 80°</li><li>D. Greater than or equal to 80°</li><li>E. Less than or equal to 80°</li></ul></div><div class="question"><p><b>5.</b> If 3<span class="italic">x</span> - 1 &gt; 26, then which of the following is the smallest possible integer value of <span class="italic">x</span> ?</p><ul class="choices"><li>F. 6</li><li>G. 7</li><li>H. 8</li><li>J. 9</li><li>K. 10</li></ul></div><div class="question"><p><b>6.</b> Paul is tying red and white ribbons around a gift box. He begins by tying the white ribbon and one red ribbon around the box. These two ribbons intersect on one face of the box at a 62° angle, as shown in the figure below. Now Paul wants to tie a second red ribbon onto the box so that the two red ribbons are parallel. What is the degree measure of the angle, indicated below, between the white ribbon and the bottom red ribbon?<br><img src="https://www.crackab.com/image/tests/cr2016/01294.jpg"></p><ul class="choices"><li>A. 62°</li><li>B. 76°</li><li>C. 90°</li><li>D. 104°</li><li>E. 118°</li></ul></div><div class="question"><p><b>7.</b> In right triangle Δ<span class="italic">PRS</span> shown below, <span class="italic">Q</span> is the midpoint of <span class="italic">PR</span>. What is the length of <span class="italic">QR</span>, to the nearest inch?<br><img src="https://www.crackab.com/image/tests/cr2016/01295.jpg"></p><ul class="choices"><li>F. 2</li><li>G. 3</li><li>H. 4</li><li>J. 6</li><li>K. 36</li></ul></div><div class="question"><p><b>8.</b> Katie notices that the textbooks for her past 3 math courses have the same length and width, but each year's textbook has more pages and weighs more than the previous year's textbook. Katie weighs the textbooks, to the nearest 0.1 ounce, for her past 3 math courses and wonders about the relationship between the number of pages in math textbooks and the weights of those textbooks. She graphs the number of pages and corresponding weights of her 3 math textbooks in the standard (<span class="italic">x,y</span>) coordinate plane, as shown below, and discovers a linear relationship among these 3 points. She concludes that the equation of the line that passes through these 3 points is <span class="italic">y</span> = 0.1<span class="italic">x</span> + 2.2.<br><img src="https://www.crackab.com/image/tests/cr2016/01296.jpg"><br>How much more, in ounces, does a math textbook with 1,056 pages weigh than one with 868 pages?</p><ul class="choices"><li>A. 18.8</li><li>B. 19.8</li><li>C. 54.1</li><li>D. 77.3</li><li>E. 107.8</li></ul></div><div class="question"><p><b>9.</b> Katie notices that the textbooks for her past 3 math courses have the same length and width, but each year's textbook has more pages and weighs more than the previous year's textbook. Katie weighs the textbooks, to the nearest 0.1 ounce, for her past 3 math courses and wonders about the relationship between the number of pages in math textbooks and the weights of those textbooks. She graphs the number of pages and corresponding weights of her 3 math textbooks in the standard (<span class="italic">x,y</span>) coordinate plane, as shown below, and discovers a linear relationship among these 3 points. She concludes that the equation of the line that passes through these 3 points is <span class="italic">y</span> = 0.1<span class="italic">x</span> + 2.2.<br><img src="https://www.crackab.com/image/tests/cr2016/01296.jpg"><br>According to Katie's equation, how much would a math textbook with 1,338 pages weigh, in pounds? (Note: 16 ounces = 1 pound)</p><ul class="choices"><li>F. 7.4</li><li>G. 8.5</li><li>H. 10.2</li><li>J. 13.6</li><li>K. 14.1</li></ul></div><div class="question"><p><b>10.</b> All line segments that intersect in the polygon below do so at right angles. If the dimensions given are in centimeters, then what is the area of the polygon, in square centimeters?<br><img src="https://www.crackab.com/image/tests/cr2016/01298.jpg"></p><ul class="choices"><li>A. 168</li><li>B. 176</li><li>C. 184</li><li>D. 192</li><li>E. 200</li></ul></div><div class="question"><p><b>11.</b> Mr. Baylor spent 6 days grading 996 essays. He averaged 178 essays per day for the first 3 days. Which of the following is closest to his average speed, in essays graded per day, for the final 3 days?</p><ul class="choices"><li>F. 154</li><li>G. 157</li><li>H. 160</li><li>J. 163</li><li>K. 166</li></ul></div><div class="question"><p><b>12.</b> For all values of <span class="italic">y</span>, which of the following is equivalent to (<span class="italic">y</span> + 1)(<span class="italic">y<sup><small>2</small></sup></span> - 3<span class="italic">y</span> + 2)?</p><ul class="choices"><li>A. <span class="italic">y<sup><small>3</small></sup></span> + <span class="italic">y<sup><small>2</small></sup></span> - <span class="italic">y</span> - 2</li><li>B. <span class="italic">y<sup><small>3</small></sup></span> + <span class="italic">y<sup><small>2</small></sup></span> + 2<span class="italic">y</span> + 2</li><li>C. <span class="italic">y<sup><small>3</small></sup></span> - 2<span class="italic">y<sup><small>2</small></sup></span> - <span class="italic">y</span> + 2</li><li>D. <span class="italic">y<sup><small>3</small></sup></span> - 2<span class="italic">y<sup><small>2</small></sup></span> + <span class="italic">y</span> - 2</li><li>E. <span class="italic">y<sup><small>3</small></sup></span> - 2<span class="italic">y</span> + 2</li></ul></div><div class="question"><p><b>13.</b> For ∠<span class="italic">D</span> in Δ<span class="italic">DEF</span> below, which of the following trigonometric expressions has value <img src="https://www.crackab.com/image/tests/cr2016/00503.jpg"> ?<br><img src="https://www.crackab.com/image/tests/cr2016/01299.jpg"></p><ul class="choices"><li>F. sin <span class="italic">D</span></li><li>G. tan <span class="italic">D</span></li><li>H. cos <span class="italic">D</span></li><li>J. sec <span class="italic">D</span></li><li>K. csc <span class="italic">D</span></li></ul></div><div class="question"><p><b>14.</b> Over the weekend, Shawn bought 22 songs from an online music store. He spent a total of $17.90 on contemporary and classical songs. If contemporary songs cost $0.95 each and classical songs cost $0.75 each, then how many contemporary songs did Shawn buy? (Note: There is no sales tax charged on these songs because they were purchased online.)</p><ul class="choices"><li>A. 7</li><li>B. 9</li><li>C. 10</li><li>D. 13</li><li>E. 15</li></ul></div><div class="question"><p><b>15.</b> If the operation # is defined as <span class="italic">x</span> # <span class="italic">y</span> = <img src="https://www.crackab.com/image/tests/cr2016/01302.jpg">, where <span class="italic">x</span> and <span class="italic">y</span> are real numbers such that <span class="italic">x</span> ≠ -<span class="italic">y</span>, then what is the value of (-3)#(-7)?</p><ul class="choices"><li>F. 10</li><li>G. 4</li><li>H. 1</li><li>J. -4</li><li>K. -10</li></ul></div><div class="submit-wrap"><button class="submit-btn" onclick="gradeTest()">Submit Test</button><button class="reset-btn" onclick="resetTest()">Try Again</button>
+<div class="report-wrap"><input type="text" class="name-input" placeholder="Student name (for report)"><button class="report-btn" onclick="generateReport()">Download Report (PDF)</button></div></div><div class="nav"><a href="test167.html">&larr; Prev</a><a href="index.html">All Tests</a><a href="test169.html">Next &rarr;</a></div></div><footer><div class="container">ACT Math Practice</div></footer>
+<script>
+const ANSWERS = {"1": "F", "2": "B", "3": "J", "4": "D", "5": "K", "6": "E", "7": "G", "8": "A", "9": "G", "10": "D", "11": "F", "12": "C", "13": "H", "14": "A", "15": "G"};
+const EXPLANATIONS = {"1":"F Notice that the dimensions of the picture are given in inches, and the question asks for the dimensions of the finished painting in feet. Start by converting the dimensions of the original picture from inches to feet. To make the conversion, divide each measurement by 12. The width is   =  0.67 feet, and the height is   =  0.83 feet. Next, set up a proportion of the original measurements to the finished measurements: . To solve for x, which is the width of the finished painting, first cross-multiply: 0.83x  =  (0.67)(6), or 0.83x  =  4.02. Then, divide both sides by 0.83: x  =  4.02 ÷ 0.83  =  4.84. The question asks for the approximate width of the finished painting, so round 4.84 to 5.", "2":"B Slope-intercept form is y  =  mx + b, where m is the slope of the line, and b is its y-intercept. To put the given equation in that form, first subtract 5x from both sides: -y  =  -5x + 2. Next, divide both sides by -1, making sure to divide all three terms: y  =  5x -2. If you picked a different answer choice, you may have made a mistake with the negatives.", "3":"J Remember order of operations on this problem. First, do the subtraction within the first absolute value sign to get |-12| -|-25|. Next, apply the absolute value to each term to get 12 -25, and do the subtraction: 12 -25  =  -13.", "4":"D All the angles in a triangle add up to 180°. Because the problem gives a range of possible values for the measure of ∠K, plug in a number that is less than 63°, such as 60°, then solve for ∠L: 37° + 60° + ∠L  =  180° 97° + ∠L  =  180° ∠L  =  83° Only (D) describes this result.", "5":"K First, simplify the given inequality. Start by adding 1 to both sides: 3x > 27. Next, divide both sides by 3: x > 9. Because x must be greater than 9, its smallest possible integer value is 10.", "6":"E This diagram of ribbons is essentially just parallel lines intersecting. The question states that the second red ribbon will be parallel to the first, and the two sides of the white ribbon are parallel to each other. The rule with intersecting parallel lines is that all big angles are equal, all small angles are equal, and any big angle plus any small angle equals 180°. The angle in question is a big angle, so to find its measurement, subtract the given small angle measurement from 180°: 180° -62°  =  118°.", "7":"G Begin by finding the measurement of PR. If you recognize the side lengths of the triangle as a Pythagorean triple, you know that PR  =  6. Otherwise, use the Pythagorean theorem, a2 + b2  =  c2, where c is the hypotenuse. Make PR side a: a2 + 82  =  102 Since the midpoint is the exact center of a line, QR is half the length of PR: QR  =  6 ÷ 2  =  3.", "8":"A The three marked points on the graph show the weight (which is the given x-coordinate) for books of three different lengths (the y-coordinate gives the number of pages). The weight of a book with 1,056 pages is 107.8 ounces, and the weight of a book with 868 pages is 89.0 ounces. To find how much more the longer book weighs, subtract the two weights: 107.8 -89  =  18.8.", "9":"G Katie\'s equation, y  =  0.1x + 2.2, is given in the description of the graph. The number of pages is shown on the x-axis of the graph, so substitute 1,338 for x in the equation: y  =  0.1(1,338) + 2.2  =  133.8 + 2.2  =  136. This gives you the weight of the book in ounces, but the question asks for its weight in pounds. Notice that the question tells you, in the note, how many ounces are in a pound, in case you don\'t know. To find the weight of the book in pounds, divide its weight in ounces by 16: 136 ? 16  =  8.5.", "10":"D First, divide the shape into smaller rectangles: In this diagram, the points have been labeled for reference. Use the formula for the area of a rectangle, A  =  lw, to find the area of each smaller rectangle. Rectangle BCDE has a length of 4. To find its width, note that AC, which is equal to 22, will have the same measurement as JI + HG + ED. The measurements of two of those segments are given, so solve for ED: 4 + 10 + ED  =  22 The area of BCDE  =  4 × 8  =  32. Next, find the area of IFGH. The width is given, but you need to find the length. AJ plus IH must equal CD plus EG, so fill in the values you know and solve for IH: 10 + IH  =  4 + 8 The area of IFGH  =  2 × 10  =  20. Now find the area of ABFJ. Its length is given, and the width is JI + IF. Since IF  =  HG, the width is 4 + 10  =  14, and the area is 10 ? 14  =  140. Finally, add up all the individual areas to find the area of the entire figure: 32 + 20 + 140  =  192.", "11":"F To find the average speed of essay grading, divide the total essays graded by the number of days it took to grade them. This can be written as an equation, . If Mr. Baylor averaged 178 essays per day for the first 3 days, you can find the total number of essays he graded in those three days: 178  =  Total  =  178 × 3  =  534 In his last 3 days, he then had 996 -534  =  462 essays left to grade. Use the equation to find the average speed for the last 3 days: Average  =    =  154.", "12":"C To correctly multiply, each term in the second set of parentheses must be multiplied by both terms in the first set of parentheses. To ensure you don\'t miss something, write out all six terms, then combine like terms. Multiply each term in the second set of parentheses first by y, then by 1: (y + 1)(y2 -3y + 2)  =  y3 + y2 -3y2 -3y + 2y + 2. Count to be sure you have six terms before proceeding! Combine like terms to get y3 -2y2 -y + 2. If you picked another answer, you may have either forgotten a term or made a mistake with your negatives.", "13":"H Use SOHCAHTOA to solve this problem. Because 5, the number in the denominator, is the hypotenuse of the triangle, the answer to the question must be one of the trig functions that has H in the denominator (that is, sine or cosine), so you can eliminate (G), (J), and (K). 4, the number in the numerator, is the side adjacent to ∠D. Since cos θ  =  , (H) is correct.", "14":"A Plug In the Answers! If Shawn bought 7 contemporary songs, he must have bought 15 classical songs because he bought 22 in all. This means that Shawn spent 7($0.95) + 15($0.75) on songs altogether. These numbers add up to $17.90, which is the number we want, making (A) the correct answer.", "15":"G To find the value of (-3)#(-7), substitute -3 for x and -7 for y throughout the equation:   =  4."};
+let graded = false;
+
+document.querySelectorAll('.choices li').forEach(li => {
+  // Remove old onclick
+  li.removeAttribute('onclick');
+  li.addEventListener('click', function() {
+    if (graded) return;
+    const siblings = this.parentElement.querySelectorAll('li');
+    siblings.forEach(s => s.classList.remove('selected'));
+    this.classList.add('selected');
+  });
+});
+
+function gradeTest() {
+  if (graded) return;
+  graded = true;
+  let correct = 0;
+  const total = Object.keys(ANSWERS).length;
+  
+  document.querySelectorAll('.question').forEach((qDiv, idx) => {
+    const qNum = idx + 1;
+    const correctAns = ANSWERS[qNum];
+    if (!correctAns) return;
+    const choices = qDiv.querySelectorAll('.choices li');
+    const selected = qDiv.querySelector('.choices li.selected');
+    const selectedLetter = selected ? selected.textContent.trim().charAt(0) : null;
+    
+    choices.forEach(li => {
+      const letter = li.textContent.trim().charAt(0);
+      if (letter === correctAns) li.classList.add('show-correct');
+      li.style.cursor = 'default';
+    });
+    
+    const tag = document.createElement('span');
+    tag.className = 'result-tag';
+    
+    if (selectedLetter === correctAns) {
+      correct++;
+      tag.className += ' correct';
+      tag.textContent = 'Correct';
+      if (selected) { selected.classList.remove('selected'); selected.classList.add('correct'); }
+    } else {
+      tag.className += ' wrong';
+      tag.textContent = 'Incorrect (Answer: ' + correctAns + ')';
+      if (selected) { selected.classList.remove('selected'); selected.classList.add('wrong'); }
+    }
+    
+    const firstP = qDiv.querySelector('p');
+    if (firstP) firstP.appendChild(tag);
+    
+    if (typeof EXPLANATIONS !== 'undefined' && EXPLANATIONS[qNum]) {
+      const explDiv = document.createElement('div');
+      explDiv.className = 'explanation show';
+      explDiv.innerHTML = '<strong>Explanation:</strong> ' + EXPLANATIONS[qNum];
+      qDiv.appendChild(explDiv);
+    }
+  });
+  
+  const pct = Math.round((correct / total) * 100);
+  document.querySelector('.submit-btn').style.display = 'none';
+  document.querySelector('.reset-btn').style.display = 'block';
+  var rw=document.querySelector('.report-wrap');if(rw)rw.style.display='block';
+  var bs=document.createElement('div');bs.className='bottom-score';bs.id='bottom-score';
+  bs.innerHTML='<h2 style="font-size:1.3rem;margin-bottom:6px;color:#1a3a4a">Your Score</h2><div class="pct '+(pct>=80?'good':pct>=60?'ok':'bad')+'">'+pct+'%</div><div class="detail">'+correct+' out of '+total+' correct</div>';
+  document.querySelector('.submit-wrap').after(bs);
+  try{var tn=location.pathname.match(/test(\d+)/);if(tn)localStorage.setItem('actmath_'+tn[1],pct);}catch(e){}
+}
+
+function resetTest() {
+  graded = false;
+  var bsEl=document.getElementById('bottom-score');if(bsEl)bsEl.remove();
+  document.querySelector('.submit-btn').style.display = '';
+  document.querySelector('.reset-btn').style.display = 'none';
+  var rw=document.querySelector('.report-wrap');if(rw)rw.style.display='none';
+  var ni=document.querySelector('.name-input');if(ni)ni.value='';
+  document.querySelectorAll('.choices li').forEach(li => {
+    li.classList.remove('selected','correct','wrong','show-correct');
+    li.style.cursor = 'pointer';
+  });
+  document.querySelectorAll('.result-tag').forEach(t => t.remove());
+  document.querySelectorAll('.explanation').forEach(e => e.remove());
+}
+
+function generateReport(){
+  var nameInput=document.querySelector('.name-input');
+  var name=(nameInput&&nameInput.value.trim())||'Student';
+  var testName=document.querySelector('header h1').textContent;
+  var bs=document.getElementById('bottom-score');
+  var scorePct=bs?bs.querySelector('.pct').textContent:'';
+  var detailTxt=bs?bs.querySelector('.detail').textContent:'';
+  var d=new Date().toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'});
+  var btn=document.querySelector('.report-btn');btn.textContent='Generating...';btn.disabled=true;
+  var s=document.createElement('script');
+  s.src='https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js';
+  s.onerror=function(){btn.textContent='Download Report (PDF)';btn.disabled=false;alert('Could not load PDF library.');};
+  s.onload=function(){
+    var doc=new jspdf.jsPDF('portrait','mm','letter');
+    var pw=215.9,ph=279.4,mx=12,cw=pw-2*mx,y=8;
+    doc.setFillColor(26,58,74);doc.rect(0,0,pw,22,'F');
+    doc.setTextColor(255,255,255);doc.setFontSize(13);doc.setFont('helvetica','bold');
+    doc.text(testName,mx,9);
+    doc.setFontSize(7.5);doc.setFont('helvetica','normal');
+    doc.text(d+'  |  Student: '+name,mx,14.5);
+    doc.setFontSize(18);doc.setFont('helvetica','bold');
+    doc.text(scorePct,pw-mx,11,{align:'right'});
+    doc.setFontSize(7.5);doc.setFont('helvetica','normal');
+    doc.text(detailTxt,pw-mx,16,{align:'right'});
+    y=25;
+    doc.setDrawColor(26,58,74);doc.setLineWidth(0.3);doc.line(mx,y,pw-mx,y);y+=3;
+    document.querySelectorAll('.question').forEach(function(qDiv,idx){
+      var qNum=idx+1;var ca=ANSWERS[qNum];if(!ca)return;
+      var sel=qDiv.querySelector('.choices li.correct,.choices li.wrong');
+      var sa=sel?sel.textContent.trim().charAt(0):'-';
+      var ok=sel&&sel.classList.contains('correct');
+      if(ok){
+        doc.setFillColor(40,167,69);doc.circle(mx+1.2,y-1,1,'F');
+        doc.setTextColor(33,33,33);doc.setFont('helvetica','bold');doc.setFontSize(8);
+        doc.text('Q'+qNum,mx+4,y);
+        doc.setFont('helvetica','normal');doc.setTextColor(40,167,69);
+        doc.text('Correct ('+ca+')',mx+14,y);
+      }else{
+        doc.setFillColor(220,53,69);doc.circle(mx+1.2,y-1,1,'F');
+        doc.setTextColor(33,33,33);doc.setFont('helvetica','bold');doc.setFontSize(8);
+        doc.text('Q'+qNum,mx+4,y);
+        doc.setFont('helvetica','normal');doc.setTextColor(220,53,69);
+        doc.text('Incorrect',mx+14,y);
+        doc.setTextColor(120,120,120);
+        doc.text('(Chose '+sa+', Correct: '+ca+')',mx+32,y);
+      }
+      y+=3.2;
+      var qP=qDiv.querySelector('p');
+      if(qP){
+        var qT=qP.cloneNode(true);
+        var tags=qT.querySelectorAll('.result-tag');tags.forEach(function(t){t.remove();});
+        var qt=qT.textContent.replace(/^\d+\.\s*/,'').trim();
+        if(qt.length>0){
+          doc.setFont('helvetica','normal');doc.setTextColor(60,60,60);doc.setFontSize(6.5);
+          var ql=doc.splitTextToSize(qt,cw-5);
+          ql=ql.slice(0,1);
+          if(doc.splitTextToSize(qt,cw-5).length>1){ql[0]=ql[0].substring(0,ql[0].length-3)+'...';}
+          doc.text(ql,mx+4,y);y+=2.4;
+        }
+      }
+      if(typeof EXPLANATIONS!=='undefined'&&EXPLANATIONS[qNum]){
+        doc.setFont('helvetica','italic');doc.setTextColor(100,100,100);doc.setFontSize(6);
+        var lines=doc.splitTextToSize(EXPLANATIONS[qNum],cw-5);
+        if(lines.length>2){lines=lines.slice(0,2);lines[1]=lines[1].substring(0,Math.max(0,lines[1].length-3))+'...';}
+        doc.text(lines,mx+4,y);y+=lines.length*2.2;
+      }
+      y+=2;
+    });
+    doc.setDrawColor(200,200,200);doc.setLineWidth(0.2);doc.line(mx,ph-10,pw-mx,ph-10);
+    doc.setTextColor(170,170,170);doc.setFontSize(6);doc.setFont('helvetica','normal');
+    doc.text('ACT Math Practice  |  Score Report',pw/2,ph-7,{align:'center'});
+    var tn=location.pathname.match(/test(\d+)/);
+    var testNum=tn?parseInt(tn[1])-100:0;
+    var ds=new Date().toISOString().slice(0,10);
+    doc.save('ACT-Math-Test-'+testNum+'-'+ds+'.pdf');
+    btn.textContent='Download Report (PDF)';btn.disabled=false;
+  };
+  document.head.appendChild(s);
+}
+</script>
+</body></html>

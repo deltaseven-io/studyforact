@@ -1,0 +1,222 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>ACT Math Test 73</title><style>@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:#fff;color:#2d3748;line-height:1.7}
+.container{max-width:800px;margin:0 auto;padding:20px 24px}
+header{background:linear-gradient(135deg,#1a3a4a 0%,#2d6a7a 100%);color:#fff;padding:28px 0;margin-bottom:36px;text-align:center}
+header .container{display:block}
+header h1{font-size:1.6rem;font-weight:700;letter-spacing:-0.3px}
+header a{color:rgba(255,255,255,.7);text-decoration:none;font-size:.9rem;display:inline-block;margin-bottom:6px;transition:color .2s}
+header a:hover{color:#fff}
+.question{background:#fff;border-radius:12px;padding:24px;margin-bottom:20px;border:1px solid #e2e8f0;transition:border-color .2s}
+.question:hover{border-color:#cbd5e0}
+.question p{margin-bottom:14px;font-size:1.05rem}
+img{max-width:100%;height:auto;margin:4px 0;vertical-align:middle}
+.choices{list-style:none}
+.choices li{padding:10px 14px;margin:6px 0;border-radius:8px;cursor:pointer;transition:all .2s;border:2px solid transparent}
+.choices li:hover{background:#f0f7fa}
+.choices li.selected{background:#d1ecf1;border-color:#bee5eb}
+.choices li.correct{background:#d4edda;border-color:#28a745}
+.choices li.wrong{background:#f8d7da;border-color:#dc3545}
+.choices li.show-correct{background:#d4edda;border-color:#28a745}
+.submit-wrap{text-align:center;margin:36px 0}
+.submit-btn{display:inline-block;padding:14px 40px;background:linear-gradient(135deg,#1a3a4a,#2d6a7a);color:#fff;border:none;border-radius:10px;font-size:1.1rem;cursor:pointer;font-weight:600;font-family:inherit;transition:all .25s;letter-spacing:.3px}
+.submit-btn:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(26,58,74,.25)}
+.score-box{background:#fff;border-radius:12px;padding:28px;margin-bottom:28px;text-align:center;border:1px solid #e2e8f0;box-shadow:0 4px 20px rgba(0,0,0,.06);display:none}
+.score-box h2{font-size:1.4rem;margin-bottom:8px;color:#1a3a4a;text-align:center}
+.score-box .pct{font-size:3rem;font-weight:700}
+.score-box .pct.good{color:#28a745}
+.score-box .pct.ok{color:#e6a817}
+.score-box .pct.bad{color:#dc3545}
+.score-box .detail{color:#666;margin-top:4px}
+.result-tag{display:inline-block;padding:2px 10px;border-radius:12px;font-size:.8rem;font-weight:600;margin-left:8px}
+.result-tag.correct{background:#d4edda;color:#155724}
+.result-tag.wrong{background:#f8d7da;color:#721c24}
+.reset-btn{display:none;margin:16px auto;padding:12px 28px;background:#6c757d;color:#fff;border:none;border-radius:10px;font-size:1rem;cursor:pointer;font-family:inherit;transition:all .25s}
+.reset-btn:hover{background:#5a6268;transform:translateY(-1px)}
+.explanation{background:#f0f7ff;border-left:4px solid #1a3a4a;padding:14px 18px;margin-top:14px;border-radius:0 8px 8px 0;font-size:.95rem;color:#444;display:none}
+.explanation.show{display:block}
+.explanation strong{color:#1a3a4a}
+.nav{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin:36px 0}
+.nav a{display:inline-block;padding:10px 24px;background:linear-gradient(135deg,#1a3a4a,#2d6a7a);color:#fff;text-decoration:none;border-radius:10px;font-weight:500;font-size:.95rem;transition:all .25s}
+.nav a:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(26,58,74,.25)}
+footer{text-align:center;padding:36px 24px;color:#8899a4;font-size:.85rem;border-top:1px solid #e2e8f0;margin-top:40px}
+.report-btn{display:inline-block;margin:0;padding:12px 28px;background:linear-gradient(135deg,#1a3a4a,#2d6a7a);color:#fff;border:none;border-radius:10px;font-size:1rem;cursor:pointer;font-family:inherit;transition:all .25s}
+.report-btn:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(26,58,74,.25)}
+.bottom-score{background:#fff;border-radius:12px;padding:20px;margin:20px 0;text-align:center;border:1px solid #e2e8f0;box-shadow:0 4px 20px rgba(0,0,0,.06)}
+.bottom-score .pct{font-size:2.5rem;font-weight:700}
+.bottom-score .pct.good{color:#28a745}
+.bottom-score .pct.ok{color:#e6a817}
+.bottom-score .pct.bad{color:#dc3545}
+.bottom-score .detail{color:#666;margin-top:4px;font-size:.95rem}
+.report-wrap{display:none;text-align:center;margin:16px 0}
+.name-input{padding:10px 14px;border:1px solid #e2e8f0;border-radius:10px;font-size:.95rem;font-family:inherit;width:200px;margin-right:8px;outline:none;transition:border-color .2s}
+.name-input:focus{border-color:#1a3a4a}
+</style></head><body><header><div class="container"><a href="index.html">&larr; All Tests</a><h1>ACT Math Practice Test 73</h1></div></header><div class="container"><div id="score-box" class="score-box"><h2>Your Score</h2><div class="pct">0%</div><div class="detail"></div></div><div class="question"><p><b>1.</b> In Mrs. Hartley's foreign language class, students must take both a written exam and an oral exam. In the past, 85% of her students passed the written exam and 70% of those who passed the written exam also passed the oral exam. Based on these figures, about how many students in a random group of 100 students would you expect to pass both exams?</p><ul class="choices"><li>A. 85</li><li>B. 78</li><li>C. 70</li><li>D. 65</li><li>E. 60</li></ul></div><div class="question"><p><b>2.</b> If sin <img src="https://www.crackab.com/image/tests/mg10/01204.jpg">, then which of the following could be tan <span class="italic">A</span>?</p><ul class="choices"><li>F. <img src="https://www.crackab.com/image/tests/mg10/01209.jpg"></li><li>G. <img src="https://www.crackab.com/image/tests/mg10/01625.jpg"></li><li>H. 1</li><li>J. <img src="https://www.crackab.com/image/tests/mg10/01945.jpg"></li><li>K. 4</li></ul></div><div class="question"><p><b>3.</b> If <span class="italic">x</span> is any number other than 3 and 6, then <img src="https://www.crackab.com/image/tests/mg10/01224.jpg"></p><ul class="choices"><li>A. 18</li><li>B. 1</li><li>C. 0</li><li>D. -1</li><li>E. -18</li></ul></div><div class="question"><p><b>4.</b> <img src="https://www.crackab.com/image/tests/mg10/01227.jpg"></p><ul class="choices"><li>F. <img src="https://www.crackab.com/image/tests/mg10/02400.jpg"></li><li>G. <img src="https://www.crackab.com/image/tests/mg10/01609.jpg"></li><li>H. <img src="https://www.crackab.com/image/tests/mg10/01229.jpg"></li><li>J. <img src="https://www.crackab.com/image/tests/mg10/01603.jpg"></li><li>K. <img src="https://www.crackab.com/image/tests/mg10/02545.jpg"></li></ul></div><div class="question"><p><b>5.</b> Δ <span class="italic">ABC</span> is similar to Δ <span class="italic">XYZ</span>. <span class="italic">AB</span> is 5 inches long, <span class="italic">BC</span> is 8 inches long, and <span class="italic">AC</span> is 3 inches long. If the longest side of Δ <span class="italic">XYZ</span> is 20 inches long, what is the perimeter, in inches, of Δ <span class="italic">XYZ</span> ?</p><ul class="choices"><li>A. 16</li><li>B. 28</li><li>C. 40</li><li>D. 64</li><li>E. 88</li></ul></div><div class="question"><p><b>6.</b> Sides <img src="https://www.crackab.com/image/tests/mg10/02475.jpg">, <img src="https://www.crackab.com/image/tests/mg10/02127.jpg">, <img src="https://www.crackab.com/image/tests/mg10/02605.jpg"> and <img src="https://www.crackab.com/image/tests/mg10/02577.jpg"> of square <span class="italic">ABCD</span> are broken up by points <span class="italic">W</span>, <span class="italic">X</span>, <span class="italic">Y</span>, and <span class="italic">Z</span> as shown below. If <img src="https://www.crackab.com/image/tests/mg10/02562.jpg"> is 6 inches long, what is the area, in square inches, of the shaded region?<br><img src="https://www.crackab.com/image/tests/mg10/02551.jpg"><br></p><ul class="choices"><li>F. 36</li><li>G. 32</li><li>H. 20</li><li>J. 16</li><li>K. 12</li></ul></div><div class="question"><p><b>7.</b> In the figure below, <span class="italic">AC</span> is the diameter of the circle, <span class="italic">B</span> is a point on the circle, <span class="italic">AB</span> is congruent to <span class="italic">BC</span>, and <span class="italic">D</span> is the midpoint of <span class="italic">AC</span>. What is the degree measure of angle <span class="italic">ABD</span>?<br><img src="https://www.crackab.com/image/tests/mg10/02539.jpg"><br></p><ul class="choices"><li>A. 30°</li><li>B. 45°</li><li>C. 60°</li><li>D. 90°</li><li>E. Cannot be determined from the given information</li></ul></div><div class="question"><p><b>8.</b> In the standard (<span class="italic">x, y</span>) coordinate plane, what are the coordinates of the midpoint of a line segment with endpoints (-1,3) and (2,5)?</p><ul class="choices"><li>F. (1,8)</li><li>G. (3,2)</li><li>H. <img src="https://www.crackab.com/image/tests/mg10/02537.jpg"></li><li>J. <img src="https://www.crackab.com/image/tests/mg10/02328.jpg"></li><li>K. <img src="https://www.crackab.com/image/tests/mg10/02531.jpg"></li></ul></div><div class="question"><p><b>9.</b> Maria posted a time of 37 minutes and 29 seconds for a 5-mile running course. About how many miles per hour did she average during the run?</p><ul class="choices"><li>A. 12</li><li>B. 10</li><li>C. 8</li><li>D. 7</li><li>E. 5</li></ul></div><div class="question"><p><b>10.</b> For the 2 functions <span class="italic">f</span>(<span class="italic">x</span>) and <span class="italic">g</span>(<span class="italic">x</span>), tables of values are shown below. What is the value of <span class="italic">g</span> ( <span class="italic">f</span>(-1))?<br><img src="https://www.crackab.com/image/tests/mg10/02538.jpg"><br></p><ul class="choices"><li>F. -3</li><li>G. 0</li><li>H. 2</li><li>J. 3</li><li>K. 8</li></ul></div><div class="question"><p><b>11.</b> For positive real numbers <span class="italic">x</span>, <span class="italic">y</span>, and <span class="italic">z</span>, which of the following expressions is equivalent to <img src="https://www.crackab.com/image/tests/mg10/02685.jpg">?</p><ul class="choices"><li>A. <img src="https://www.crackab.com/image/tests/mg10/02550.jpg"></li><li>B. <img src="https://www.crackab.com/image/tests/mg10/00184.jpg"></li><li>C. <img src="https://www.crackab.com/image/tests/mg10/02561.jpg"></li><li>D. <img src="https://www.crackab.com/image/tests/mg10/02565.jpg"></li><li>E. <img src="https://www.crackab.com/image/tests/mg10/02571.jpg"></li></ul></div><div class="question"><p><b>12.</b> The formula for the area of a trapezoid is <img src="https://www.crackab.com/image/tests/mg10/02576.jpg">, where <span class="italic">b<sub><small>1</small></sub></span> and <span class="italic">b<sub><small>2</small></sub></span> are the lengths of the two parallel sides and <span class="italic">h</span> is the height. Which of the following is an expression for <span class="italic">b<sub><small>1</small></sub></span>?</p><ul class="choices"><li>F. <img src="https://www.crackab.com/image/tests/mg10/02580.jpg"></li><li>G. <img src="https://www.crackab.com/image/tests/mg10/02585.jpg"></li><li>H. <img src="https://www.crackab.com/image/tests/mg10/01981.jpg"></li><li>J. 2(<span class="italic">Ah</span> - <span class="italic">b<sub><small>2</small></sub></span>)</li><li>K. <img src="https://www.crackab.com/image/tests/mg10/02596.jpg"></li></ul></div><div class="question"><p><b>13.</b> The line graphed below shows the predicted gasoline use for a certain truck. Which of the following is the closest estimate of this truck's predicted rate of gasoline use, in miles per gallon?<br><img src="https://www.crackab.com/image/tests/mg10/02028.jpg"><br></p><ul class="choices"><li>A. 25</li><li>B. 20</li><li>C. 16</li><li>D. 10</li><li>E. 8</li></ul></div><div class="question"><p><b>14.</b> The graph of <span class="italic">y</span> = <span class="italic">ax<sup><small>2</small></sup></span> + <span class="italic">bx</span> + <span class="italic">c</span> in the standard (<span class="italic">x, y</span>) coordinate plane is shown below. When <span class="italic">y</span> = 0, which of the following best describes the solution set for <span class="italic">x</span>?<br><img src="https://www.crackab.com/image/tests/mg10/02606.jpg"><br></p><ul class="choices"><li>F. 2 imaginary solutions</li><li>G. 1 double imaginary solution</li><li>H. 1 real and 1 imaginary solution</li><li>J. 1 double imaginary solution</li><li>K. 2 real solutions</li></ul></div><div class="question"><p><b>15.</b> If |<span class="italic">x</span>| = <span class="italic">x</span> + 12, then <span class="italic">x</span> = ?</p><ul class="choices"><li>A. -12</li><li>B. -6</li><li>C. 0</li><li>D. 6</li><li>E. 12</li></ul></div><div class="submit-wrap"><button class="submit-btn" onclick="gradeTest()">Submit Test</button><button class="reset-btn" onclick="resetTest()">Try Again</button>
+<div class="report-wrap"><input type="text" class="name-input" placeholder="Student name (for report)"><button class="report-btn" onclick="generateReport()">Download Report (PDF)</button></div></div><div class="nav"><a href="test172.html">&larr; Prev</a><a href="index.html">All Tests</a><a href="test174.html">Next &rarr;</a></div></div><footer><div class="container">ACT Math Practice</div></footer>
+<script>
+const ANSWERS = {"1": "E", "2": "G", "3": "D", "4": "G", "5": "C", "6": "H", "7": "B", "8": "J", "9": "C", "10": "J", "11": "D", "12": "F", "13": "B", "14": "K", "15": "B"};
+const EXPLANATIONS = {"1":"The correct answer is E. The percent of students who pass both exams is (85%)(70%), or 0.85 × 0.70, which is 0.595. In a sample of 100, 100 × 0.595, or 59.5 (roughly 60) students would be expected to pass both exams.", "2":"The correct answer is G. Given that sin , you might want to draw a picture like the one below to illustrate the situation. In this case, the ratio of the side opposite angle A to the hypotenuse is . To find tan A, the length of the other leg is needed. This can be obtained using the Pythagorean Theorem, or by knowing that this is a special 3–4–5 right triangle. According to the Pythagorean Theorem (in a right triangle with sides a, b, and c, where c is the hypotenuse, c2  =  a2 + b2), 52  =  32 + x2, where x is the length of the unknown leg. Solve for x: Once the length of the third leg is obtained, .", "3":"The correct answer is D. To solve  for any x other than 3 or 6, first try to cancel any possible quantities. In this case, (x - 6) appears in both the numerator and the denominator, so it can be canceled out of the equation. The new equation is then . You also must realize that (3 - x) can be written as -1(x - 3). Thus the remaining expression is:", "4":"The correct answer is G. The first step in solving this problem is to factor  and : Now, you can add the simplified numbers; thus , or .", "5":"The correct answer is C. When AB is 5 inches long, BC is 8 inches long, and AC is 3 inches long, Δ ABC has a perimeter of 5 + 8 + 3  =  16. To find the perimeter of Δ XYZ when its longest side is 20, you can set up proportions to find the lengths of the sides, since the sides of similar triangles are in proportion to each other. In this case, you can take the proportion of the longest sides, 20:8, and apply it to the perimeter p:", "6":"The correct answer is H. When square ABCD is divided as shown, each of the small triangles has legs of length 2 and 4. They also happen to be right triangles, because each shares one angle with the corner of the large square, which are right angles. To solve for the area of the shaded region, you can use the Pythagorean Theorem to calculate the length of the side of the shaded square. Alternatively, you can find the area of one triangle, quadruple that value, and subtract it from the area of square ABCD, which is 62, or 36 square inches. The area of a triangle is equal to  (base)(height). In a right triangle, either leg will work as the value for the base or the height, so the area of one triangle is . The area of the 4 triangles together, then, is 4 × 4, or 16. Thus the area of the shaded region is 36 - 16, or 20.", "7":"The correct answer is B. Since AC is the diameter of the circle, and D is the midpoint of AC, D is the center of the circle. Thus the distance from D to any point on the circle is equal to the radius, r. Since B is a point on the circle, the distance BD is equal to r. Since A is a point on the circle, the distance AD is also equal to r. Further, since AB is congruent to BC, the segment AB is perpendicular to the segment AD, thus the measure of angle ADB is 90°. In the triangle ABD, two sides are equal to r, thus the triangle is isosceles with one of the angles equal to 90°. The other two angles are then equal in measure and add up to 90°. Therefore, angle ABD has a measure of 45°.", "8":"The correct answer is J. To solve this problem, recall that the midpoint formula for points (x1, y1) and (x2, y2) is . Therefore, for points (-1,3) and (2,5), the midpoint is , or .", "9":"The correct answer is C. Maria ran 5 miles in 37 minutes 29 seconds, which is about 37.5 minutes. To solve for miles per hour, first calculate how long it took Maria to travel one mile. , or 1 mile in 7.5 minutes. To convert this into miles per hour, simply multiply by the number of minutes there are in one hour:   =  8 miles per hour.", "10":"The correct answer is J. To find g(f(x)) using the values of the functions f(x) and g(x) as given in the tables, think of g(f(x)) as applying the function g to f(x). So, first find f(x) for x  =  -1; f(-1)  =  2. Then, find g(x) for x  =  2 : g(2)  =  3.", "11":"The correct answer is D. To find an equivalent expression for , it is important to be familiar with exponent rules. For example, . The first step in this problem would be to "pull out" a common multiple from the exponents. To better see this, it might be helpful to convert all of the exponents into a common denominator: . In this case, you can see that  is the common multiple: . Further,  can be written as .", "12":"The correct answer is F. To solve  for b1, divide both sides by h and multiply both sides by 2. The remaining equation is . Then simply subtract b2 from both sides of the equation to get .", "13":"The correct answer is B. To find the rate of gasoline use, which translates into miles per gallon, divide the number of miles traveled by the number of gallons of gasoline used. In this case, you can see that the graph goes through the point (100,5), (200,10) and so on. Based on this information, the rate would be , or 20 miles per gallon.", "14":"The correct answer is K. In a graph, the values at which y  =  0 will be where the graph of a function crosses the x-axis. As seen in the figure, the graph of y  =  ax2 + bx + c crosses the x-axis twice; thus there will be two real solutions for the equation 0  =  ax2 + bx + c. Imaginary solutions would apply if the graph did not cross the x-axis at any point.", "15":"The correct answer is B. Recall that |x| means "absolute value of x," which is the magnitude of a number, regardless of its sign. For instance |-2| = |2| =  2. In the case of this problem, the equation |x|  =  x + 12 can be broken into 2 related sub-equations: x  =  x + 12 and -x  =  x + 12. When x  =  x + 12, the equation does not make sense because if you subtract x from both sides, 0  =  12 remains, which obviously is false. With the other sub-equation, -x  =  x + 12, you can subtract an x from both sides to get -2x  =  12. Dividing by -2, you arrive at x  =  -6."};
+let graded = false;
+
+document.querySelectorAll('.choices li').forEach(li => {
+  // Remove old onclick
+  li.removeAttribute('onclick');
+  li.addEventListener('click', function() {
+    if (graded) return;
+    const siblings = this.parentElement.querySelectorAll('li');
+    siblings.forEach(s => s.classList.remove('selected'));
+    this.classList.add('selected');
+  });
+});
+
+function gradeTest() {
+  if (graded) return;
+  graded = true;
+  let correct = 0;
+  const total = Object.keys(ANSWERS).length;
+  
+  document.querySelectorAll('.question').forEach((qDiv, idx) => {
+    const qNum = idx + 1;
+    const correctAns = ANSWERS[qNum];
+    if (!correctAns) return;
+    const choices = qDiv.querySelectorAll('.choices li');
+    const selected = qDiv.querySelector('.choices li.selected');
+    const selectedLetter = selected ? selected.textContent.trim().charAt(0) : null;
+    
+    choices.forEach(li => {
+      const letter = li.textContent.trim().charAt(0);
+      if (letter === correctAns) li.classList.add('show-correct');
+      li.style.cursor = 'default';
+    });
+    
+    const tag = document.createElement('span');
+    tag.className = 'result-tag';
+    
+    if (selectedLetter === correctAns) {
+      correct++;
+      tag.className += ' correct';
+      tag.textContent = 'Correct';
+      if (selected) { selected.classList.remove('selected'); selected.classList.add('correct'); }
+    } else {
+      tag.className += ' wrong';
+      tag.textContent = 'Incorrect (Answer: ' + correctAns + ')';
+      if (selected) { selected.classList.remove('selected'); selected.classList.add('wrong'); }
+    }
+    
+    const firstP = qDiv.querySelector('p');
+    if (firstP) firstP.appendChild(tag);
+    
+    if (typeof EXPLANATIONS !== 'undefined' && EXPLANATIONS[qNum]) {
+      const explDiv = document.createElement('div');
+      explDiv.className = 'explanation show';
+      explDiv.innerHTML = '<strong>Explanation:</strong> ' + EXPLANATIONS[qNum];
+      qDiv.appendChild(explDiv);
+    }
+  });
+  
+  const pct = Math.round((correct / total) * 100);
+  document.querySelector('.submit-btn').style.display = 'none';
+  document.querySelector('.reset-btn').style.display = 'block';
+  var rw=document.querySelector('.report-wrap');if(rw)rw.style.display='block';
+  var bs=document.createElement('div');bs.className='bottom-score';bs.id='bottom-score';
+  bs.innerHTML='<h2 style="font-size:1.3rem;margin-bottom:6px;color:#1a3a4a">Your Score</h2><div class="pct '+(pct>=80?'good':pct>=60?'ok':'bad')+'">'+pct+'%</div><div class="detail">'+correct+' out of '+total+' correct</div>';
+  document.querySelector('.submit-wrap').after(bs);
+  try{var tn=location.pathname.match(/test(\d+)/);if(tn)localStorage.setItem('actmath_'+tn[1],pct);}catch(e){}
+}
+
+function resetTest() {
+  graded = false;
+  var bsEl=document.getElementById('bottom-score');if(bsEl)bsEl.remove();
+  document.querySelector('.submit-btn').style.display = '';
+  document.querySelector('.reset-btn').style.display = 'none';
+  var rw=document.querySelector('.report-wrap');if(rw)rw.style.display='none';
+  var ni=document.querySelector('.name-input');if(ni)ni.value='';
+  document.querySelectorAll('.choices li').forEach(li => {
+    li.classList.remove('selected','correct','wrong','show-correct');
+    li.style.cursor = 'pointer';
+  });
+  document.querySelectorAll('.result-tag').forEach(t => t.remove());
+  document.querySelectorAll('.explanation').forEach(e => e.remove());
+}
+
+function generateReport(){
+  var nameInput=document.querySelector('.name-input');
+  var name=(nameInput&&nameInput.value.trim())||'Student';
+  var testName=document.querySelector('header h1').textContent;
+  var bs=document.getElementById('bottom-score');
+  var scorePct=bs?bs.querySelector('.pct').textContent:'';
+  var detailTxt=bs?bs.querySelector('.detail').textContent:'';
+  var d=new Date().toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'});
+  var btn=document.querySelector('.report-btn');btn.textContent='Generating...';btn.disabled=true;
+  var s=document.createElement('script');
+  s.src='https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js';
+  s.onerror=function(){btn.textContent='Download Report (PDF)';btn.disabled=false;alert('Could not load PDF library.');};
+  s.onload=function(){
+    var doc=new jspdf.jsPDF('portrait','mm','letter');
+    var pw=215.9,ph=279.4,mx=12,cw=pw-2*mx,y=8;
+    doc.setFillColor(26,58,74);doc.rect(0,0,pw,22,'F');
+    doc.setTextColor(255,255,255);doc.setFontSize(13);doc.setFont('helvetica','bold');
+    doc.text(testName,mx,9);
+    doc.setFontSize(7.5);doc.setFont('helvetica','normal');
+    doc.text(d+'  |  Student: '+name,mx,14.5);
+    doc.setFontSize(18);doc.setFont('helvetica','bold');
+    doc.text(scorePct,pw-mx,11,{align:'right'});
+    doc.setFontSize(7.5);doc.setFont('helvetica','normal');
+    doc.text(detailTxt,pw-mx,16,{align:'right'});
+    y=25;
+    doc.setDrawColor(26,58,74);doc.setLineWidth(0.3);doc.line(mx,y,pw-mx,y);y+=3;
+    document.querySelectorAll('.question').forEach(function(qDiv,idx){
+      var qNum=idx+1;var ca=ANSWERS[qNum];if(!ca)return;
+      var sel=qDiv.querySelector('.choices li.correct,.choices li.wrong');
+      var sa=sel?sel.textContent.trim().charAt(0):'-';
+      var ok=sel&&sel.classList.contains('correct');
+      if(ok){
+        doc.setFillColor(40,167,69);doc.circle(mx+1.2,y-1,1,'F');
+        doc.setTextColor(33,33,33);doc.setFont('helvetica','bold');doc.setFontSize(8);
+        doc.text('Q'+qNum,mx+4,y);
+        doc.setFont('helvetica','normal');doc.setTextColor(40,167,69);
+        doc.text('Correct ('+ca+')',mx+14,y);
+      }else{
+        doc.setFillColor(220,53,69);doc.circle(mx+1.2,y-1,1,'F');
+        doc.setTextColor(33,33,33);doc.setFont('helvetica','bold');doc.setFontSize(8);
+        doc.text('Q'+qNum,mx+4,y);
+        doc.setFont('helvetica','normal');doc.setTextColor(220,53,69);
+        doc.text('Incorrect',mx+14,y);
+        doc.setTextColor(120,120,120);
+        doc.text('(Chose '+sa+', Correct: '+ca+')',mx+32,y);
+      }
+      y+=3.2;
+      var qP=qDiv.querySelector('p');
+      if(qP){
+        var qT=qP.cloneNode(true);
+        var tags=qT.querySelectorAll('.result-tag');tags.forEach(function(t){t.remove();});
+        var qt=qT.textContent.replace(/^\d+\.\s*/,'').trim();
+        if(qt.length>0){
+          doc.setFont('helvetica','normal');doc.setTextColor(60,60,60);doc.setFontSize(6.5);
+          var ql=doc.splitTextToSize(qt,cw-5);
+          ql=ql.slice(0,1);
+          if(doc.splitTextToSize(qt,cw-5).length>1){ql[0]=ql[0].substring(0,ql[0].length-3)+'...';}
+          doc.text(ql,mx+4,y);y+=2.4;
+        }
+      }
+      if(typeof EXPLANATIONS!=='undefined'&&EXPLANATIONS[qNum]){
+        doc.setFont('helvetica','italic');doc.setTextColor(100,100,100);doc.setFontSize(6);
+        var lines=doc.splitTextToSize(EXPLANATIONS[qNum],cw-5);
+        if(lines.length>2){lines=lines.slice(0,2);lines[1]=lines[1].substring(0,Math.max(0,lines[1].length-3))+'...';}
+        doc.text(lines,mx+4,y);y+=lines.length*2.2;
+      }
+      y+=2;
+    });
+    doc.setDrawColor(200,200,200);doc.setLineWidth(0.2);doc.line(mx,ph-10,pw-mx,ph-10);
+    doc.setTextColor(170,170,170);doc.setFontSize(6);doc.setFont('helvetica','normal');
+    doc.text('ACT Math Practice  |  Score Report',pw/2,ph-7,{align:'center'});
+    var tn=location.pathname.match(/test(\d+)/);
+    var testNum=tn?parseInt(tn[1])-100:0;
+    var ds=new Date().toISOString().slice(0,10);
+    doc.save('ACT-Math-Test-'+testNum+'-'+ds+'.pdf');
+    btn.textContent='Download Report (PDF)';btn.disabled=false;
+  };
+  document.head.appendChild(s);
+}
+</script>
+</body></html>

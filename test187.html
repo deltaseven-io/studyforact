@@ -1,0 +1,222 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>ACT Math Test 87</title><style>@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:#fff;color:#2d3748;line-height:1.7}
+.container{max-width:800px;margin:0 auto;padding:20px 24px}
+header{background:linear-gradient(135deg,#1a3a4a 0%,#2d6a7a 100%);color:#fff;padding:28px 0;margin-bottom:36px;text-align:center}
+header .container{display:block}
+header h1{font-size:1.6rem;font-weight:700;letter-spacing:-0.3px}
+header a{color:rgba(255,255,255,.7);text-decoration:none;font-size:.9rem;display:inline-block;margin-bottom:6px;transition:color .2s}
+header a:hover{color:#fff}
+.question{background:#fff;border-radius:12px;padding:24px;margin-bottom:20px;border:1px solid #e2e8f0;transition:border-color .2s}
+.question:hover{border-color:#cbd5e0}
+.question p{margin-bottom:14px;font-size:1.05rem}
+img{max-width:100%;height:auto;margin:4px 0;vertical-align:middle}
+.choices{list-style:none}
+.choices li{padding:10px 14px;margin:6px 0;border-radius:8px;cursor:pointer;transition:all .2s;border:2px solid transparent}
+.choices li:hover{background:#f0f7fa}
+.choices li.selected{background:#d1ecf1;border-color:#bee5eb}
+.choices li.correct{background:#d4edda;border-color:#28a745}
+.choices li.wrong{background:#f8d7da;border-color:#dc3545}
+.choices li.show-correct{background:#d4edda;border-color:#28a745}
+.submit-wrap{text-align:center;margin:36px 0}
+.submit-btn{display:inline-block;padding:14px 40px;background:linear-gradient(135deg,#1a3a4a,#2d6a7a);color:#fff;border:none;border-radius:10px;font-size:1.1rem;cursor:pointer;font-weight:600;font-family:inherit;transition:all .25s;letter-spacing:.3px}
+.submit-btn:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(26,58,74,.25)}
+.score-box{background:#fff;border-radius:12px;padding:28px;margin-bottom:28px;text-align:center;border:1px solid #e2e8f0;box-shadow:0 4px 20px rgba(0,0,0,.06);display:none}
+.score-box h2{font-size:1.4rem;margin-bottom:8px;color:#1a3a4a;text-align:center}
+.score-box .pct{font-size:3rem;font-weight:700}
+.score-box .pct.good{color:#28a745}
+.score-box .pct.ok{color:#e6a817}
+.score-box .pct.bad{color:#dc3545}
+.score-box .detail{color:#666;margin-top:4px}
+.result-tag{display:inline-block;padding:2px 10px;border-radius:12px;font-size:.8rem;font-weight:600;margin-left:8px}
+.result-tag.correct{background:#d4edda;color:#155724}
+.result-tag.wrong{background:#f8d7da;color:#721c24}
+.reset-btn{display:none;margin:16px auto;padding:12px 28px;background:#6c757d;color:#fff;border:none;border-radius:10px;font-size:1rem;cursor:pointer;font-family:inherit;transition:all .25s}
+.reset-btn:hover{background:#5a6268;transform:translateY(-1px)}
+.explanation{background:#f0f7ff;border-left:4px solid #1a3a4a;padding:14px 18px;margin-top:14px;border-radius:0 8px 8px 0;font-size:.95rem;color:#444;display:none}
+.explanation.show{display:block}
+.explanation strong{color:#1a3a4a}
+.nav{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin:36px 0}
+.nav a{display:inline-block;padding:10px 24px;background:linear-gradient(135deg,#1a3a4a,#2d6a7a);color:#fff;text-decoration:none;border-radius:10px;font-weight:500;font-size:.95rem;transition:all .25s}
+.nav a:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(26,58,74,.25)}
+footer{text-align:center;padding:36px 24px;color:#8899a4;font-size:.85rem;border-top:1px solid #e2e8f0;margin-top:40px}
+.report-btn{display:inline-block;margin:0;padding:12px 28px;background:linear-gradient(135deg,#1a3a4a,#2d6a7a);color:#fff;border:none;border-radius:10px;font-size:1rem;cursor:pointer;font-family:inherit;transition:all .25s}
+.report-btn:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(26,58,74,.25)}
+.bottom-score{background:#fff;border-radius:12px;padding:20px;margin:20px 0;text-align:center;border:1px solid #e2e8f0;box-shadow:0 4px 20px rgba(0,0,0,.06)}
+.bottom-score .pct{font-size:2.5rem;font-weight:700}
+.bottom-score .pct.good{color:#28a745}
+.bottom-score .pct.ok{color:#e6a817}
+.bottom-score .pct.bad{color:#dc3545}
+.bottom-score .detail{color:#666;margin-top:4px;font-size:.95rem}
+.report-wrap{display:none;text-align:center;margin:16px 0}
+.name-input{padding:10px 14px;border:1px solid #e2e8f0;border-radius:10px;font-size:.95rem;font-family:inherit;width:200px;margin-right:8px;outline:none;transition:border-color .2s}
+.name-input:focus{border-color:#1a3a4a}
+</style></head><body><header><div class="container"><a href="index.html">&larr; All Tests</a><h1>ACT Math Practice Test 87</h1></div></header><div class="container"><div id="score-box" class="score-box"><h2>Your Score</h2><div class="pct">0%</div><div class="detail"></div></div><div class="question"><p><b>1.</b> In triangle <span class="italic">ABC</span> below, the measure of angle <span class="italic">A</span> is 20° and the measure of angle <span class="italic">B</span> is 3 times larger than the measure of angle <span class="italic">C</span>. What is the measure of angle <span class="italic">B</span>?<br><img src="https://www.crackab.com/image/tests/mg10/01005.jpg"><br></p><ul class="choices"><li>A. 40°</li><li>B. 60°</li><li>C. 80°</li><li>D. 120°</li><li>E. 160°</li></ul></div><div class="question"><p><b>2.</b> The 65-member high school band raised money to go on a trip by having a bake sale. If the original cost per band member for the trip is $18.50 and the band members earned a total of $585.00 at the bake sale, how much more money does each band member need in order to pay for the trip?</p><ul class="choices"><li>F. $9.00</li><li>G. $9.50</li><li>H. $18.50</li><li>J. $46.50</li><li>K. $617.50</li></ul></div><div class="question"><p><b>3.</b> Fred works at a car wash where he makes $40.00 per day plus $1.75 per car that he washes. Yesterday, Fred made a total of $61.00. How many cars did he wash yesterday?</p><ul class="choices"><li>A. 10</li><li>B. 12</li><li>C. 17</li><li>D. 20</li><li>E. 34</li></ul></div><div class="question"><p><b>4.</b> Molality, <span class="italic">m</span>, tells us the number of moles of solute dissolved in exactly 1 kilogram (kg) of solvent. Molality is represented by the equation, <img src="https://www.crackab.com/image/tests/mg10/01007.jpg">, were <span class="italic">s</span> represents the moles of solute and <span class="italic">k</span> represents the mass of the solvent in kilograms. A solution is known to have a molality of 0.2 and contain 13 kg of solvent. What is the number of moles of solute contained in the solution?</p><ul class="choices"><li>F. 0.01</li><li>G. 2.6</li><li>H. 3.2</li><li>J. 26</li><li>K. 65</li></ul></div><div class="question"><p><b>5.</b> In the figure below, <span class="italic">l<sub><small>1</small></sub></span> is parallel to <span class="italic">l<sub><small>2</small></sub></span>, and <span class="italic">l<sub><small>3</small></sub></span> is parallel to <span class="italic">l<sub><small>4</small></sub></span>. Which of the following angles is NOT equal to angle <span class="italic">x</span>?<br><img src="https://www.crackab.com/image/tests/mg10/01010.jpg"><br></p><ul class="choices"><li>A. <span class="italic">a</span></li><li>B. <span class="italic">b</span></li><li>C. <span class="italic">c</span></li><li>D. <span class="italic">d</span></li><li>E. <span class="italic">e</span></li></ul></div><div class="question"><p><b>6.</b> Which of the following is equivalent to 4.2 × 10<sup><small><span>-5</span></small></sup>?</p><ul class="choices"><li>F. 0.000042</li><li>G. 0.00042</li><li>H. 42,000</li><li>J. 420,000</li><li>K. 4,200,000</li></ul></div><div class="question"><p><b>7.</b> 3.234 × 0.01 = ?</p><ul class="choices"><li>A. 323.4</li><li>B. 32.34</li><li>C. 3.234</li><li>D. 0.3234</li><li>E. 0.03234</li></ul></div><div class="question"><p><b>8.</b> For all <span class="italic">x</span> ≠ 1, <img src="https://www.crackab.com/image/tests/mg10/01012.jpg"> is equal to ?</p><ul class="choices"><li>F. 1</li><li>G. <span class="italic">x</span> + 2</li><li>H. <span class="italic">x<sup><small>2</small></sup></span></li><li>J. <img src="https://www.crackab.com/image/tests/mg10/01013.jpg"></li><li>K. <span class="italic">x</span> - 1</li></ul></div><div class="question"><p><b>9.</b> If 9 - <span class="italic">x<sup><small>3</small></sup></span> + 2 = 19, what is the value of <span class="italic">x</span>?</p><ul class="choices"><li>A. -2</li><li>B. -1</li><li>C. 2</li><li>D. 3</li><li>E. 8</li></ul></div><div class="question"><p><b>10.</b> In the parallelogram below, what is the measure of ∠<span class="italic">WXY</span>?<br><img src="https://www.crackab.com/image/tests/mg10/01895.jpg"><br></p><ul class="choices"><li>F. 25°</li><li>G. 55°</li><li>H. 65°</li><li>J. 100°</li><li>K. 120°</li></ul></div><div class="question"><p><b>11.</b> The graph below represents which of the following inequalities?<br><img src="https://www.crackab.com/image/tests/mg10/02072.jpg"><br></p><ul class="choices"><li>A. <span class="italic">x</span> &gt; 1</li><li>B. <span class="italic">x</span> &lt; -1</li><li>C. <span class="italic">x</span> ≤ -1</li><li>D. <span class="italic">x</span> ≥ -1</li><li>E. -1 &gt; <span class="italic">x</span> &gt; 1</li></ul></div><div class="question"><p><b>12.</b> If 93 - <span class="italic">x</span> = 342, then <span class="italic">x</span> = ?</p><ul class="choices"><li>F. -435</li><li>G. -249</li><li>H. -156</li><li>J. 249</li><li>K. 435</li></ul></div><div class="question"><p><b>13.</b> In the figure below, triangles <span class="italic">ABC</span> and <span class="italic">ABX</span> are both right triangles. If the length of <img src="https://www.crackab.com/image/tests/mg10/02165.jpg"> is 6 units, the length of <img src="https://www.crackab.com/image/tests/mg10/01829.jpg"> is 10 units, and the length of <img src="https://www.crackab.com/image/tests/mg10/01021.jpg"> is 4 units, what is the length of <img src="https://www.crackab.com/image/tests/mg10/01023.jpg">?<img src="https://www.crackab.com/image/tests/mg10/01026.jpg"></p><ul class="choices"><li>A. <img src="https://www.crackab.com/image/tests/mg10/00649.jpg"></li><li>B. <img src="https://www.crackab.com/image/tests/mg10/01029.jpg"></li><li>C. <img src="https://www.crackab.com/image/tests/mg10/01032.jpg"></li><li>D. <img src="https://www.crackab.com/image/tests/mg10/01034.jpg"></li><li>E. <img src="https://www.crackab.com/image/tests/mg10/02368.jpg"></li></ul></div><div class="question"><p><b>14.</b> A rectangular parking lot has an area 315 square yards. Its length (<span class="italic">l</span>) is 3 times its width (<span class="italic">w</span>). Which of the following equations could you use to determine the width of the parking lot?</p><ul class="choices"><li>F. 3<span class="italic">w</span> × <span class="italic">w</span> = 315</li><li>G. 3<span class="italic">l</span> × <span class="italic">l</span> = 315</li><li>H. <span class="italic">w</span> × 3 = 315</li><li>J. <img src="https://www.crackab.com/image/tests/mg10/02426.jpg"></li><li>K. <span class="italic">w</span> - 3 = 315</li></ul></div><div class="question"><p><b>15.</b> Jordan went for a 3.5-mile jog on Monday that took him 40 minutes. If on Tuesday Jordan jogs at the same rate of speed, how far will he jog in 60 minutes?</p><ul class="choices"><li>A. 3.5 miles</li><li>B. 4.0 miles</li><li>C. 5.25 miles</li><li>D. 7.0 miles</li><li>E. 7.25 miles</li></ul></div><div class="submit-wrap"><button class="submit-btn" onclick="gradeTest()">Submit Test</button><button class="reset-btn" onclick="resetTest()">Try Again</button>
+<div class="report-wrap"><input type="text" class="name-input" placeholder="Student name (for report)"><button class="report-btn" onclick="generateReport()">Download Report (PDF)</button></div></div><div class="nav"><a href="test186.html">&larr; Prev</a><a href="index.html">All Tests</a><a href="test188.html">Next &rarr;</a></div></div><footer><div class="container">ACT Math Practice</div></footer>
+<script>
+const ANSWERS = {"1": "D", "2": "G", "3": "B", "4": "G", "5": "C", "6": "F", "7": "E", "8": "K", "9": "A", "10": "J", "11": "D", "12": "G", "13": "E", "14": "F", "15": "C"};
+const EXPLANATIONS = {"1":"The correct answer is D. Given that angle A is 20° and that angle B is three times larger than angle C, you can set up the following equation. 20°+ B + C  =  180°. Since B  =  3C, you have 20° + 3C + C  =  180°. Combine like terms: 20° + 4C  =  180°. Solve for C: 4C  =  160°; C  =  40°. If C  =  40°, then B  =  (40°)(3)  =  120°.", "2":"The correct answer is G. The first step is to calculate the total cost of the trip by multiplying the number of people in the band (65) by the cost per member: 65 × 18.50  =  $1202.50 A total of $585.00 was raised from the bake sale, $1202.50 - $585.00  =  $617.50, which is the total amount left to earn. That means that each of the 65 members must pay an additional , or $9.50.", "3":"The correct answer is B. To solve this problem, set up an equation showing that Fred\'s total daily income equals his fixed daily income. ($40.00) + the amount he earns for washing cars. Set the number of cars equal to C: $61.00  =  $40.00 + $1.75C. Solve for C:$1.75C  =  $21.00 C  =  12", "4":"The correct answer is G. Since you are given the equation for molality, , and you are given m  =  0.2 and k  =  13, plug in the values and solve:", "5":"The correct answer is C. The best approach to this problem is to identify the relationships between the angles. Since a and b are vertical angles formed from the intersection of parallel lines and transversals, they are equal in measure. Since the same transversal (l1) creates angle x, angle x is equal to angles a and b. Eliminate answer choices A and B. Angle c is a supplementary to angle x, which means that angle c + angle x  =  180°. There are no right angles in the figure, so angle c is NOT equal to angle x; answer choice C is correct.", "6":"The correct answer is F. The expression 4.2 × 10-5 is in scientific notation. The -5 exponent means that the decimal point has been moved five spaces to the right of its original position. So, move the decimal five places to the LEFT back to its original position: 0.000042.", "7":"The correct answer is E. Multiplying by 0.01 is the same as dividing by 100, since . Move the decimal place two spaces to the left to get 0.03234.", "8":"The correct answer is K. To answer this question, you need to first expand the equation and then simplify it: The (x -1) from the numerator cancels out the (x - 1) in the denominator, so the equation is equal to x - 1.", "9":"The correct answer is A. This simple algebra problem asks you to solve for x. Combine like terms and isolate x on one side of the equation.", "10":"The correct answer is J. With the information given, you can find that the measure of angle WZY  =  180° - (25° + 55°)  =  100°. Since WXY is opposite WZY in the same parallelogram, it also equals 100°.", "11":"The correct answer is D. Since the circle at -1 is closed, that means that -1 should be included. Eliminate answer choices A, B, and E, which do not include –1. Since the graph goes to the right, the inequality must be greater than or equal to -1.", "12":"The correct answer is G. Solve for x, and keep track of the negative signs.", "13":"The correct answer is E. You are given that AB  =  6 and BX  =  10. Use the Pythagorean Theorem to solve for AX: If AX  =  8 and XC  =  4, then AC must equal 12. Given that AB  =  6 and AC  =  12, again use the Pythagorean Theorem to solve for BC:", "14":"The correct answer is F. The formula for the area of a rectangle is A  =  l × w, with l as the length and w as the width. The question states that the length of the parking lot is three times as long as the width. If w is the width, then the length is 3 × w, or 3w. Therefore, the area of the parking lot is 3w × w  =  315.", "15":"The correct answer is C. To solve this problem, set up a proportion: 3.5 miles is to x miles as 40 minutes is to 60 minutes. Cross-multiply and solve for x:"};
+let graded = false;
+
+document.querySelectorAll('.choices li').forEach(li => {
+  // Remove old onclick
+  li.removeAttribute('onclick');
+  li.addEventListener('click', function() {
+    if (graded) return;
+    const siblings = this.parentElement.querySelectorAll('li');
+    siblings.forEach(s => s.classList.remove('selected'));
+    this.classList.add('selected');
+  });
+});
+
+function gradeTest() {
+  if (graded) return;
+  graded = true;
+  let correct = 0;
+  const total = Object.keys(ANSWERS).length;
+  
+  document.querySelectorAll('.question').forEach((qDiv, idx) => {
+    const qNum = idx + 1;
+    const correctAns = ANSWERS[qNum];
+    if (!correctAns) return;
+    const choices = qDiv.querySelectorAll('.choices li');
+    const selected = qDiv.querySelector('.choices li.selected');
+    const selectedLetter = selected ? selected.textContent.trim().charAt(0) : null;
+    
+    choices.forEach(li => {
+      const letter = li.textContent.trim().charAt(0);
+      if (letter === correctAns) li.classList.add('show-correct');
+      li.style.cursor = 'default';
+    });
+    
+    const tag = document.createElement('span');
+    tag.className = 'result-tag';
+    
+    if (selectedLetter === correctAns) {
+      correct++;
+      tag.className += ' correct';
+      tag.textContent = 'Correct';
+      if (selected) { selected.classList.remove('selected'); selected.classList.add('correct'); }
+    } else {
+      tag.className += ' wrong';
+      tag.textContent = 'Incorrect (Answer: ' + correctAns + ')';
+      if (selected) { selected.classList.remove('selected'); selected.classList.add('wrong'); }
+    }
+    
+    const firstP = qDiv.querySelector('p');
+    if (firstP) firstP.appendChild(tag);
+    
+    if (typeof EXPLANATIONS !== 'undefined' && EXPLANATIONS[qNum]) {
+      const explDiv = document.createElement('div');
+      explDiv.className = 'explanation show';
+      explDiv.innerHTML = '<strong>Explanation:</strong> ' + EXPLANATIONS[qNum];
+      qDiv.appendChild(explDiv);
+    }
+  });
+  
+  const pct = Math.round((correct / total) * 100);
+  document.querySelector('.submit-btn').style.display = 'none';
+  document.querySelector('.reset-btn').style.display = 'block';
+  var rw=document.querySelector('.report-wrap');if(rw)rw.style.display='block';
+  var bs=document.createElement('div');bs.className='bottom-score';bs.id='bottom-score';
+  bs.innerHTML='<h2 style="font-size:1.3rem;margin-bottom:6px;color:#1a3a4a">Your Score</h2><div class="pct '+(pct>=80?'good':pct>=60?'ok':'bad')+'">'+pct+'%</div><div class="detail">'+correct+' out of '+total+' correct</div>';
+  document.querySelector('.submit-wrap').after(bs);
+  try{var tn=location.pathname.match(/test(\d+)/);if(tn)localStorage.setItem('actmath_'+tn[1],pct);}catch(e){}
+}
+
+function resetTest() {
+  graded = false;
+  var bsEl=document.getElementById('bottom-score');if(bsEl)bsEl.remove();
+  document.querySelector('.submit-btn').style.display = '';
+  document.querySelector('.reset-btn').style.display = 'none';
+  var rw=document.querySelector('.report-wrap');if(rw)rw.style.display='none';
+  var ni=document.querySelector('.name-input');if(ni)ni.value='';
+  document.querySelectorAll('.choices li').forEach(li => {
+    li.classList.remove('selected','correct','wrong','show-correct');
+    li.style.cursor = 'pointer';
+  });
+  document.querySelectorAll('.result-tag').forEach(t => t.remove());
+  document.querySelectorAll('.explanation').forEach(e => e.remove());
+}
+
+function generateReport(){
+  var nameInput=document.querySelector('.name-input');
+  var name=(nameInput&&nameInput.value.trim())||'Student';
+  var testName=document.querySelector('header h1').textContent;
+  var bs=document.getElementById('bottom-score');
+  var scorePct=bs?bs.querySelector('.pct').textContent:'';
+  var detailTxt=bs?bs.querySelector('.detail').textContent:'';
+  var d=new Date().toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'});
+  var btn=document.querySelector('.report-btn');btn.textContent='Generating...';btn.disabled=true;
+  var s=document.createElement('script');
+  s.src='https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js';
+  s.onerror=function(){btn.textContent='Download Report (PDF)';btn.disabled=false;alert('Could not load PDF library.');};
+  s.onload=function(){
+    var doc=new jspdf.jsPDF('portrait','mm','letter');
+    var pw=215.9,ph=279.4,mx=12,cw=pw-2*mx,y=8;
+    doc.setFillColor(26,58,74);doc.rect(0,0,pw,22,'F');
+    doc.setTextColor(255,255,255);doc.setFontSize(13);doc.setFont('helvetica','bold');
+    doc.text(testName,mx,9);
+    doc.setFontSize(7.5);doc.setFont('helvetica','normal');
+    doc.text(d+'  |  Student: '+name,mx,14.5);
+    doc.setFontSize(18);doc.setFont('helvetica','bold');
+    doc.text(scorePct,pw-mx,11,{align:'right'});
+    doc.setFontSize(7.5);doc.setFont('helvetica','normal');
+    doc.text(detailTxt,pw-mx,16,{align:'right'});
+    y=25;
+    doc.setDrawColor(26,58,74);doc.setLineWidth(0.3);doc.line(mx,y,pw-mx,y);y+=3;
+    document.querySelectorAll('.question').forEach(function(qDiv,idx){
+      var qNum=idx+1;var ca=ANSWERS[qNum];if(!ca)return;
+      var sel=qDiv.querySelector('.choices li.correct,.choices li.wrong');
+      var sa=sel?sel.textContent.trim().charAt(0):'-';
+      var ok=sel&&sel.classList.contains('correct');
+      if(ok){
+        doc.setFillColor(40,167,69);doc.circle(mx+1.2,y-1,1,'F');
+        doc.setTextColor(33,33,33);doc.setFont('helvetica','bold');doc.setFontSize(8);
+        doc.text('Q'+qNum,mx+4,y);
+        doc.setFont('helvetica','normal');doc.setTextColor(40,167,69);
+        doc.text('Correct ('+ca+')',mx+14,y);
+      }else{
+        doc.setFillColor(220,53,69);doc.circle(mx+1.2,y-1,1,'F');
+        doc.setTextColor(33,33,33);doc.setFont('helvetica','bold');doc.setFontSize(8);
+        doc.text('Q'+qNum,mx+4,y);
+        doc.setFont('helvetica','normal');doc.setTextColor(220,53,69);
+        doc.text('Incorrect',mx+14,y);
+        doc.setTextColor(120,120,120);
+        doc.text('(Chose '+sa+', Correct: '+ca+')',mx+32,y);
+      }
+      y+=3.2;
+      var qP=qDiv.querySelector('p');
+      if(qP){
+        var qT=qP.cloneNode(true);
+        var tags=qT.querySelectorAll('.result-tag');tags.forEach(function(t){t.remove();});
+        var qt=qT.textContent.replace(/^\d+\.\s*/,'').trim();
+        if(qt.length>0){
+          doc.setFont('helvetica','normal');doc.setTextColor(60,60,60);doc.setFontSize(6.5);
+          var ql=doc.splitTextToSize(qt,cw-5);
+          ql=ql.slice(0,1);
+          if(doc.splitTextToSize(qt,cw-5).length>1){ql[0]=ql[0].substring(0,ql[0].length-3)+'...';}
+          doc.text(ql,mx+4,y);y+=2.4;
+        }
+      }
+      if(typeof EXPLANATIONS!=='undefined'&&EXPLANATIONS[qNum]){
+        doc.setFont('helvetica','italic');doc.setTextColor(100,100,100);doc.setFontSize(6);
+        var lines=doc.splitTextToSize(EXPLANATIONS[qNum],cw-5);
+        if(lines.length>2){lines=lines.slice(0,2);lines[1]=lines[1].substring(0,Math.max(0,lines[1].length-3))+'...';}
+        doc.text(lines,mx+4,y);y+=lines.length*2.2;
+      }
+      y+=2;
+    });
+    doc.setDrawColor(200,200,200);doc.setLineWidth(0.2);doc.line(mx,ph-10,pw-mx,ph-10);
+    doc.setTextColor(170,170,170);doc.setFontSize(6);doc.setFont('helvetica','normal');
+    doc.text('ACT Math Practice  |  Score Report',pw/2,ph-7,{align:'center'});
+    var tn=location.pathname.match(/test(\d+)/);
+    var testNum=tn?parseInt(tn[1])-100:0;
+    var ds=new Date().toISOString().slice(0,10);
+    doc.save('ACT-Math-Test-'+testNum+'-'+ds+'.pdf');
+    btn.textContent='Download Report (PDF)';btn.disabled=false;
+  };
+  document.head.appendChild(s);
+}
+</script>
+</body></html>

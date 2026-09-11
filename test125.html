@@ -1,0 +1,222 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>ACT Math Test 25</title><style>@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:#fff;color:#2d3748;line-height:1.7}
+.container{max-width:800px;margin:0 auto;padding:20px 24px}
+header{background:linear-gradient(135deg,#1a3a4a 0%,#2d6a7a 100%);color:#fff;padding:28px 0;margin-bottom:36px;text-align:center}
+header .container{display:block}
+header h1{font-size:1.6rem;font-weight:700;letter-spacing:-0.3px}
+header a{color:rgba(255,255,255,.7);text-decoration:none;font-size:.9rem;display:inline-block;margin-bottom:6px;transition:color .2s}
+header a:hover{color:#fff}
+.question{background:#fff;border-radius:12px;padding:24px;margin-bottom:20px;border:1px solid #e2e8f0;transition:border-color .2s}
+.question:hover{border-color:#cbd5e0}
+.question p{margin-bottom:14px;font-size:1.05rem}
+img{max-width:100%;height:auto;margin:4px 0;vertical-align:middle}
+.choices{list-style:none}
+.choices li{padding:10px 14px;margin:6px 0;border-radius:8px;cursor:pointer;transition:all .2s;border:2px solid transparent}
+.choices li:hover{background:#f0f7fa}
+.choices li.selected{background:#d1ecf1;border-color:#bee5eb}
+.choices li.correct{background:#d4edda;border-color:#28a745}
+.choices li.wrong{background:#f8d7da;border-color:#dc3545}
+.choices li.show-correct{background:#d4edda;border-color:#28a745}
+.submit-wrap{text-align:center;margin:36px 0}
+.submit-btn{display:inline-block;padding:14px 40px;background:linear-gradient(135deg,#1a3a4a,#2d6a7a);color:#fff;border:none;border-radius:10px;font-size:1.1rem;cursor:pointer;font-weight:600;font-family:inherit;transition:all .25s;letter-spacing:.3px}
+.submit-btn:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(26,58,74,.25)}
+.score-box{background:#fff;border-radius:12px;padding:28px;margin-bottom:28px;text-align:center;border:1px solid #e2e8f0;box-shadow:0 4px 20px rgba(0,0,0,.06);display:none}
+.score-box h2{font-size:1.4rem;margin-bottom:8px;color:#1a3a4a;text-align:center}
+.score-box .pct{font-size:3rem;font-weight:700}
+.score-box .pct.good{color:#28a745}
+.score-box .pct.ok{color:#e6a817}
+.score-box .pct.bad{color:#dc3545}
+.score-box .detail{color:#666;margin-top:4px}
+.result-tag{display:inline-block;padding:2px 10px;border-radius:12px;font-size:.8rem;font-weight:600;margin-left:8px}
+.result-tag.correct{background:#d4edda;color:#155724}
+.result-tag.wrong{background:#f8d7da;color:#721c24}
+.reset-btn{display:none;margin:16px auto;padding:12px 28px;background:#6c757d;color:#fff;border:none;border-radius:10px;font-size:1rem;cursor:pointer;font-family:inherit;transition:all .25s}
+.reset-btn:hover{background:#5a6268;transform:translateY(-1px)}
+.explanation{background:#f0f7ff;border-left:4px solid #1a3a4a;padding:14px 18px;margin-top:14px;border-radius:0 8px 8px 0;font-size:.95rem;color:#444;display:none}
+.explanation.show{display:block}
+.explanation strong{color:#1a3a4a}
+.nav{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin:36px 0}
+.nav a{display:inline-block;padding:10px 24px;background:linear-gradient(135deg,#1a3a4a,#2d6a7a);color:#fff;text-decoration:none;border-radius:10px;font-weight:500;font-size:.95rem;transition:all .25s}
+.nav a:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(26,58,74,.25)}
+footer{text-align:center;padding:36px 24px;color:#8899a4;font-size:.85rem;border-top:1px solid #e2e8f0;margin-top:40px}
+.report-btn{display:inline-block;margin:0;padding:12px 28px;background:linear-gradient(135deg,#1a3a4a,#2d6a7a);color:#fff;border:none;border-radius:10px;font-size:1rem;cursor:pointer;font-family:inherit;transition:all .25s}
+.report-btn:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(26,58,74,.25)}
+.bottom-score{background:#fff;border-radius:12px;padding:20px;margin:20px 0;text-align:center;border:1px solid #e2e8f0;box-shadow:0 4px 20px rgba(0,0,0,.06)}
+.bottom-score .pct{font-size:2.5rem;font-weight:700}
+.bottom-score .pct.good{color:#28a745}
+.bottom-score .pct.ok{color:#e6a817}
+.bottom-score .pct.bad{color:#dc3545}
+.bottom-score .detail{color:#666;margin-top:4px;font-size:.95rem}
+.report-wrap{display:none;text-align:center;margin:16px 0}
+.name-input{padding:10px 14px;border:1px solid #e2e8f0;border-radius:10px;font-size:.95rem;font-family:inherit;width:200px;margin-right:8px;outline:none;transition:border-color .2s}
+.name-input:focus{border-color:#1a3a4a}
+</style></head><body><header><div class="container"><a href="index.html">&larr; All Tests</a><h1>ACT Math Practice Test 25</h1></div></header><div class="container"><div id="score-box" class="score-box"><h2>Your Score</h2><div class="pct">0%</div><div class="detail"></div></div><div class="question"><p><b>1.</b> Which of the following expressions is equivalent to 2<em>a</em> + 4<em>b</em> + 6<em>c</em>?</p><ul class="choices"><li>A. 8(<em>a</em> + <em>b</em> + <em>c</em>)</li><li>B. 2(<em>a</em> + 2<em>b</em>) + 3<em>c</em></li><li>C. 2(<em>a</em> + 4<em>b</em> + 6<em>c</em>)</li><li>D. 2(<em>a</em> + 2<em>b</em> + 6<em>c</em>)</li><li>E. 2(<em>a</em> + 2<em>b</em> + 3<em>c</em>)</li></ul></div><div class="question"><p><b>2.</b> When written in symbols, "The square of the product of <em>a</em> and <em>b</em>" is represented as:</p><ul class="choices"><li>F. <em>ab</em></li><li>G. <em>ab</em><sup class="frac">2</sup></li><li>H. (<em>ab</em>)<sup class="frac">2</sup></li><li>J. <em>a</em><sup class="frac">2</sup><em>b</em></li><li>K. (<em>a</em><sup class="frac">2</sup><em>b</em><sup class="frac">2</sup>)<sup class="frac">2</sup></li></ul></div><div class="question"><p><b>3.</b> Every week, Donald records the amount of mileage that has accumulated on his truck. On Monday, Donald recorded that he had driven 16,450 kilometers. After a week of deliveries, his new recording was 18,130 kilometers. He drove for thirty hours during that week. What was his average driving speed during that week to the nearest kilometer per hour?</p><ul class="choices"><li>A. 38</li><li>B. 41</li><li>C. 48</li><li>D. 56</li><li>E. 59</li></ul></div><div class="question"><p><b>4.</b> The dimensions of a block of cheese are 12 inches by 3 inches by 3 inches. What is the volume, in cubic inches, of the block of cheese?</p><ul class="choices"><li>F. 18</li><li>G. 36</li><li>H. 45</li><li>J. 72</li><li>K. 108</li></ul></div><div class="question"><p><b>5.</b> If <em>x</em> is a real number and 3<sup class="frac">x</sup> = 81, then 3 × 2<sup class="frac">x</sup> =?</p><ul class="choices"><li>A. 3</li><li>B. 16</li><li>C. 24</li><li>D. 48</li><li>E. 81</li></ul></div><div class="question"><p><b>6.</b> For the songs on Charlie's mp3 player, the ratio of folk songs to rock songs is 3:11. Which of the following statements about the songs on his mp3 player is(are) true?<br>I. There are fewer folk songs than rock songs.<br>  II. For every 11 rock songs, there are 3 folk songs.<br> III. Folk songs comprise <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_787_r1.jpg"> of the songs on Charlie's mp3 player.</p><ul class="choices"><li>F. I only</li><li>G. II only</li><li>H. I and II only</li><li>J. II and III only</li><li>K. I, II, and III</li></ul></div><div class="question"><p><b>7.</b> Matt needs <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_454_r1.jpg"> gallons of hydrochloric acid for an experiment. He has <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_455_r1.jpg"> gallons already. How many more gallons of hydrochloric acid does Matt need?</p><ul class="choices"><li>A. <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_456_r1.jpg"></li><li>B. <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_457_r1.jpg"></li><li>C. <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_458_r1.jpg"></li><li>D. <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_459_r1.jpg"></li><li>E. <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_460_r1.jpg"></li></ul></div><div class="question"><p><b>8.</b> As shown below, the diagonals of rectangle <em>EFGH</em> intersect at the point (-2,-4) in the standard (<em>x</em>,<em>y</em>) coordinate plane. Point <em>F</em> is at (-7,-2). Which of the following are the coordinates of <em>H</em>?<br><img alt="" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_463_r1.jpg"></p><ul class="choices"><li>F. <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_464_r1.jpg"></li><li>G. (-7,-6)</li><li>H. (3,-2)</li><li>J. (3,-6)</li><li>K. (-5,3)</li></ul></div><div class="question"><p><b>9.</b> Which of the following expressions is equivalent to <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_465_r1.jpg">?</p><ul class="choices"><li>A. 9<em>x</em> + 5</li><li>B. <em>x</em> + 45</li><li>C. <em>x</em> + 5</li><li>D. 6<em>x</em></li><li>E. 45<em>x</em></li></ul></div><div class="question"><p><b>10.</b> The expression 23<em>fg</em> - 6<em>f</em>(5<em>f</em> +3<em>g</em>) is equivalent to:</p><ul class="choices"><li>F. 5<em>fg</em> - 30<em>f</em><sup class="frac">2</sup></li><li>G. 25<em>fg</em></li><li>H. 3<em>g</em> - 7<em>fg</em></li><li>J. 41<em>fg</em> - 30<em>f</em><sup class="frac">2</sup></li><li>K. 30<em>f</em><sup class="frac">2</sup> - 5<em>fg</em></li></ul></div><div class="question"><p><b>11.</b> A farmer sells strawberries at a market in both pint-sized containers and quart-sized containers. The farmer charges $3 for each pint, $5 for each quart, is always paid on the day of purchase, and sells no other goods. On a recent day, the farmer sold as many pint containers as quart containers and received $120 in sales. How many pints of strawberries did the farmer sell?</p><ul class="choices"><li>A. 12</li><li>B. 15</li><li>C. 24</li><li>D. 40</li><li>E. 50</li></ul></div><div class="question"><p><b>12.</b> A rectangular piece of cloth has a length of 6 feet and a width of 1.5 feet. Brad estimates that the area is 12 square feet. His estimate is approximately what percent <em>greater</em> than the actual area?</p><ul class="choices"><li>F. 75%</li><li>G. 66%</li><li>H. 33%</li><li>J. 25%</li><li>K. 17%</li></ul></div><div class="question"><p><b>13.</b> The <em>geometric mean</em> of 3 positive numbers is the cube root of the product of the 3 numbers. What is the geometric mean of 2, 4, and 27?</p><ul class="choices"><li>A. 6</li><li>B. 11</li><li>C. 21</li><li>D. 72</li><li>E. 216</li></ul></div><div class="question"><p><b>14.</b> A model for the number of questions on an assignment, when the assignment is worth <em>p</em> points, is <em>q</em> = <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_466_r1.jpg">. According to this model, what is the number of questions, <em>q</em>, for an assignment worth 80 points?</p><ul class="choices"><li>F. 128</li><li>G. 26</li><li>H. 80</li><li>J. 13</li><li>K. 3</li></ul></div><div class="question"><p><b>15.</b> The expression <em>x</em><sup class="frac">2</sup> + 2<em>x</em> - 15 can be written as the product of 2 binomials with integer coefficients. One of the binomials is (<em>x</em> + 5). Which of the following is the other binomial?</p><ul class="choices"><li>A. (<em>x</em><sup class="frac">2</sup> - 3)</li><li>B. (<em>x</em><sup class="frac">2</sup> + 3)</li><li>C. (<em>x</em> - 3)</li><li>D. (<em>x</em> + 3)</li><li>E. (<em>x</em> - 5)</li></ul></div><div class="submit-wrap"><button class="submit-btn" onclick="gradeTest()">Submit Test</button><button class="reset-btn" onclick="resetTest()">Try Again</button>
+<div class="report-wrap"><input type="text" class="name-input" placeholder="Student name (for report)"><button class="report-btn" onclick="generateReport()">Download Report (PDF)</button></div></div><div class="nav"><a href="test124.html">&larr; Prev</a><a href="index.html">All Tests</a><a href="test126.html">Next &rarr;</a></div></div><footer><div class="container">ACT Math Practice</div></footer>
+<script>
+const ANSWERS = {"1": "E", "2": "H", "3": "D", "4": "K", "5": "D", "6": "H", "7": "E", "8": "J", "9": "C", "10": "F", "11": "B", "12": "H", "13": "A", "14": "F", "15": "C"};
+const EXPLANATIONS = {"1":"E  Simplify the expression by taking a factor of 2 out of each term. The distributive property guarantees that 2(a + 2b + 3c)  =  2a + 4b + 6c.", "2":"H  "The square of the product" means you must multiply a by b before squaring the result. Choice (H) is the only choice that represents this. If you chose (G), be careful—by the order of operations, in ab2, the b will be squared before it is multiplied together with a, thus precluding the "product of a and b."", "3":"D  In order to get the total distance traveled, subtract the original mileage from the final mileage to find a difference of 18,130 km - 16,450 km  =  1,680 km. Then, divide the change in mileage over the number of hours traveled to get the average driving speed during that week. 1,680 km ÷ 30 hr  =  56 km/hr.", "4":"K  To solve, use the formula: Volume  =  length × width × height. Here, our dimensions are 12 by 3 by 3, so the volume is 12 × 3 × 3, which equals 108. Choice (F) is the sum of the three dimensions. Choice (G) is the area of one of the sides. Choices (H) and (J) are the results of adding two of the sides before you multiply.", "5":"D  34  =  81, so x  =  4. Plug x  =  4 into the given expression to get 3 × 24  =  3 × 16  =  48. Choice (B) gives one 24, and choice (C) miscalculates x as 3. Choices (A) and (E) are distracting numbers from the problem and do not answer the question.", "6":"H  The ratio of folk songs to rock songs is 3 to 11, which means that for every 3 folk songs, there are 11 rock songs. Hence, there are more rock songs on the mp3 player than folk songs. I is true, which eliminates choices (G) and (J). II is also true, which eliminates choice (F). Ratios compare parts to parts, however, not parts to wholes as do fractions. The fraction of the songs that are folk songs is actually . So, III is false. Eliminate choice (K).", "7":"E  Subtract  gallons - gallons. Convert each mixed number into a fraction: The equation becomes . To subtract, both fractions need to have common denominators, so make  into .", "8":"J  The point of intersection represents the midpoint between points F and H. You can use the midpoint formula,  to determine the coordinates of point H. Solving for the x-coordinate gives . The x-coordinate of point H equals 3, eliminating choices (F), (G), and (K). Solving for the y-coordinate gives . The y-coordinate of point H equals -6, eliminating choice (H).", "9":"C  First, factor out the numerator to get . The nines cancel out, and the x + 5 remains. Choices (A) and (B) divide only one of the terms in the numerator by the denominator. Choice (D) adds the integers in the numerator to get .", "10":"F  To solve this question, remember to follow the order of operations. First, distribute the -6f to the (5f + 3g) and get -30f2 - 18fg. Now simplify 23fg - 30f2 - 18fg and get 5fg - 30f2. Choice (G) is the result of adding 5f and 3g and then distributing the 6. Choice (J) is the result of adding 23fg and 18fg instead of subtracting. Choice (K) is the result of switching the signs.", "11":"B  Set a variable for the number of pints of strawberries, which is equal to the number of quarts. The number of pints at $3 each plus the number of quarts at $5 each is equal to the total of $120, so you can write an equation: 3x + 5x  =  120. Solve for x to find that 8x  =  120 and x  =  15. Choice (E) gives the total sales in dollars of the pints of strawberries. Choice (C) assumes all sales were at $5, and choice (D) assumes all the sales were at $3. Choice (A) makes a calculation error in solving for x. You can also test the answer choices to see which fits the requirements of the problem. When there are 15 pints sold at $3, there are also 15 quarts sold at $5: 15(3) + 15(5)  = 120.", "12":"H  The formula for the area of a rectangle is A  =  lw. So, the actual area of the cloth is A  =  (6)(1.5)  =  9 ft2. To find the percent greater for the estimate use the percent change formula: %change = ×100. So, %change = ×100≈33%. If you chose (F), be careful—you may have calculated what percent of 12 is 9. If you chose (J), you may have found the percent change from 12 to 9, rather than the percent change from 9 to 12.", "13":"A  Use the definition provided by the problem: . Choice (B) is the arithmetic mean or average of the three numbers. Choice (C) is 27 - 4 - 2. Choice (D) is the product of the three numbers, 216, divided by 3 rather than the cube root of the product. Choice (E) is the product of the three numbers.", "14":"F  Plug the given values for p and q into the equation.  questions.", "15":"C  You can eliminate choices (A) and (B) immediately because these are not binomial expressions. The fastest way to do this problem is to factor the quadratic equation x2 + 2x - 15  =  (x + 5)(x - 3); thus, the other binomial will be (x - 3). If you\'re not sure how to factor, FOIL the answer choices with (x + 5) and see which gives you the quadratic expression from the problem. When you multiply (x + 5) by choice (C), (x - 3), you find it equals x2 + 2x - 15. Eliminate choices (D) and (E)."};
+let graded = false;
+
+document.querySelectorAll('.choices li').forEach(li => {
+  // Remove old onclick
+  li.removeAttribute('onclick');
+  li.addEventListener('click', function() {
+    if (graded) return;
+    const siblings = this.parentElement.querySelectorAll('li');
+    siblings.forEach(s => s.classList.remove('selected'));
+    this.classList.add('selected');
+  });
+});
+
+function gradeTest() {
+  if (graded) return;
+  graded = true;
+  let correct = 0;
+  const total = Object.keys(ANSWERS).length;
+  
+  document.querySelectorAll('.question').forEach((qDiv, idx) => {
+    const qNum = idx + 1;
+    const correctAns = ANSWERS[qNum];
+    if (!correctAns) return;
+    const choices = qDiv.querySelectorAll('.choices li');
+    const selected = qDiv.querySelector('.choices li.selected');
+    const selectedLetter = selected ? selected.textContent.trim().charAt(0) : null;
+    
+    choices.forEach(li => {
+      const letter = li.textContent.trim().charAt(0);
+      if (letter === correctAns) li.classList.add('show-correct');
+      li.style.cursor = 'default';
+    });
+    
+    const tag = document.createElement('span');
+    tag.className = 'result-tag';
+    
+    if (selectedLetter === correctAns) {
+      correct++;
+      tag.className += ' correct';
+      tag.textContent = 'Correct';
+      if (selected) { selected.classList.remove('selected'); selected.classList.add('correct'); }
+    } else {
+      tag.className += ' wrong';
+      tag.textContent = 'Incorrect (Answer: ' + correctAns + ')';
+      if (selected) { selected.classList.remove('selected'); selected.classList.add('wrong'); }
+    }
+    
+    const firstP = qDiv.querySelector('p');
+    if (firstP) firstP.appendChild(tag);
+    
+    if (typeof EXPLANATIONS !== 'undefined' && EXPLANATIONS[qNum]) {
+      const explDiv = document.createElement('div');
+      explDiv.className = 'explanation show';
+      explDiv.innerHTML = '<strong>Explanation:</strong> ' + EXPLANATIONS[qNum];
+      qDiv.appendChild(explDiv);
+    }
+  });
+  
+  const pct = Math.round((correct / total) * 100);
+  document.querySelector('.submit-btn').style.display = 'none';
+  document.querySelector('.reset-btn').style.display = 'block';
+  var rw=document.querySelector('.report-wrap');if(rw)rw.style.display='block';
+  var bs=document.createElement('div');bs.className='bottom-score';bs.id='bottom-score';
+  bs.innerHTML='<h2 style="font-size:1.3rem;margin-bottom:6px;color:#1a3a4a">Your Score</h2><div class="pct '+(pct>=80?'good':pct>=60?'ok':'bad')+'">'+pct+'%</div><div class="detail">'+correct+' out of '+total+' correct</div>';
+  document.querySelector('.submit-wrap').after(bs);
+  try{var tn=location.pathname.match(/test(\d+)/);if(tn)localStorage.setItem('actmath_'+tn[1],pct);}catch(e){}
+}
+
+function resetTest() {
+  graded = false;
+  var bsEl=document.getElementById('bottom-score');if(bsEl)bsEl.remove();
+  document.querySelector('.submit-btn').style.display = '';
+  document.querySelector('.reset-btn').style.display = 'none';
+  var rw=document.querySelector('.report-wrap');if(rw)rw.style.display='none';
+  var ni=document.querySelector('.name-input');if(ni)ni.value='';
+  document.querySelectorAll('.choices li').forEach(li => {
+    li.classList.remove('selected','correct','wrong','show-correct');
+    li.style.cursor = 'pointer';
+  });
+  document.querySelectorAll('.result-tag').forEach(t => t.remove());
+  document.querySelectorAll('.explanation').forEach(e => e.remove());
+}
+
+function generateReport(){
+  var nameInput=document.querySelector('.name-input');
+  var name=(nameInput&&nameInput.value.trim())||'Student';
+  var testName=document.querySelector('header h1').textContent;
+  var bs=document.getElementById('bottom-score');
+  var scorePct=bs?bs.querySelector('.pct').textContent:'';
+  var detailTxt=bs?bs.querySelector('.detail').textContent:'';
+  var d=new Date().toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'});
+  var btn=document.querySelector('.report-btn');btn.textContent='Generating...';btn.disabled=true;
+  var s=document.createElement('script');
+  s.src='https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js';
+  s.onerror=function(){btn.textContent='Download Report (PDF)';btn.disabled=false;alert('Could not load PDF library.');};
+  s.onload=function(){
+    var doc=new jspdf.jsPDF('portrait','mm','letter');
+    var pw=215.9,ph=279.4,mx=12,cw=pw-2*mx,y=8;
+    doc.setFillColor(26,58,74);doc.rect(0,0,pw,22,'F');
+    doc.setTextColor(255,255,255);doc.setFontSize(13);doc.setFont('helvetica','bold');
+    doc.text(testName,mx,9);
+    doc.setFontSize(7.5);doc.setFont('helvetica','normal');
+    doc.text(d+'  |  Student: '+name,mx,14.5);
+    doc.setFontSize(18);doc.setFont('helvetica','bold');
+    doc.text(scorePct,pw-mx,11,{align:'right'});
+    doc.setFontSize(7.5);doc.setFont('helvetica','normal');
+    doc.text(detailTxt,pw-mx,16,{align:'right'});
+    y=25;
+    doc.setDrawColor(26,58,74);doc.setLineWidth(0.3);doc.line(mx,y,pw-mx,y);y+=3;
+    document.querySelectorAll('.question').forEach(function(qDiv,idx){
+      var qNum=idx+1;var ca=ANSWERS[qNum];if(!ca)return;
+      var sel=qDiv.querySelector('.choices li.correct,.choices li.wrong');
+      var sa=sel?sel.textContent.trim().charAt(0):'-';
+      var ok=sel&&sel.classList.contains('correct');
+      if(ok){
+        doc.setFillColor(40,167,69);doc.circle(mx+1.2,y-1,1,'F');
+        doc.setTextColor(33,33,33);doc.setFont('helvetica','bold');doc.setFontSize(8);
+        doc.text('Q'+qNum,mx+4,y);
+        doc.setFont('helvetica','normal');doc.setTextColor(40,167,69);
+        doc.text('Correct ('+ca+')',mx+14,y);
+      }else{
+        doc.setFillColor(220,53,69);doc.circle(mx+1.2,y-1,1,'F');
+        doc.setTextColor(33,33,33);doc.setFont('helvetica','bold');doc.setFontSize(8);
+        doc.text('Q'+qNum,mx+4,y);
+        doc.setFont('helvetica','normal');doc.setTextColor(220,53,69);
+        doc.text('Incorrect',mx+14,y);
+        doc.setTextColor(120,120,120);
+        doc.text('(Chose '+sa+', Correct: '+ca+')',mx+32,y);
+      }
+      y+=3.2;
+      var qP=qDiv.querySelector('p');
+      if(qP){
+        var qT=qP.cloneNode(true);
+        var tags=qT.querySelectorAll('.result-tag');tags.forEach(function(t){t.remove();});
+        var qt=qT.textContent.replace(/^\d+\.\s*/,'').trim();
+        if(qt.length>0){
+          doc.setFont('helvetica','normal');doc.setTextColor(60,60,60);doc.setFontSize(6.5);
+          var ql=doc.splitTextToSize(qt,cw-5);
+          ql=ql.slice(0,1);
+          if(doc.splitTextToSize(qt,cw-5).length>1){ql[0]=ql[0].substring(0,ql[0].length-3)+'...';}
+          doc.text(ql,mx+4,y);y+=2.4;
+        }
+      }
+      if(typeof EXPLANATIONS!=='undefined'&&EXPLANATIONS[qNum]){
+        doc.setFont('helvetica','italic');doc.setTextColor(100,100,100);doc.setFontSize(6);
+        var lines=doc.splitTextToSize(EXPLANATIONS[qNum],cw-5);
+        if(lines.length>2){lines=lines.slice(0,2);lines[1]=lines[1].substring(0,Math.max(0,lines[1].length-3))+'...';}
+        doc.text(lines,mx+4,y);y+=lines.length*2.2;
+      }
+      y+=2;
+    });
+    doc.setDrawColor(200,200,200);doc.setLineWidth(0.2);doc.line(mx,ph-10,pw-mx,ph-10);
+    doc.setTextColor(170,170,170);doc.setFontSize(6);doc.setFont('helvetica','normal');
+    doc.text('ACT Math Practice  |  Score Report',pw/2,ph-7,{align:'center'});
+    var tn=location.pathname.match(/test(\d+)/);
+    var testNum=tn?parseInt(tn[1])-100:0;
+    var ds=new Date().toISOString().slice(0,10);
+    doc.save('ACT-Math-Test-'+testNum+'-'+ds+'.pdf');
+    btn.textContent='Download Report (PDF)';btn.disabled=false;
+  };
+  document.head.appendChild(s);
+}
+</script>
+</body></html>

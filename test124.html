@@ -1,0 +1,222 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>ACT Math Test 24</title><style>@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:#fff;color:#2d3748;line-height:1.7}
+.container{max-width:800px;margin:0 auto;padding:20px 24px}
+header{background:linear-gradient(135deg,#1a3a4a 0%,#2d6a7a 100%);color:#fff;padding:28px 0;margin-bottom:36px;text-align:center}
+header .container{display:block}
+header h1{font-size:1.6rem;font-weight:700;letter-spacing:-0.3px}
+header a{color:rgba(255,255,255,.7);text-decoration:none;font-size:.9rem;display:inline-block;margin-bottom:6px;transition:color .2s}
+header a:hover{color:#fff}
+.question{background:#fff;border-radius:12px;padding:24px;margin-bottom:20px;border:1px solid #e2e8f0;transition:border-color .2s}
+.question:hover{border-color:#cbd5e0}
+.question p{margin-bottom:14px;font-size:1.05rem}
+img{max-width:100%;height:auto;margin:4px 0;vertical-align:middle}
+.choices{list-style:none}
+.choices li{padding:10px 14px;margin:6px 0;border-radius:8px;cursor:pointer;transition:all .2s;border:2px solid transparent}
+.choices li:hover{background:#f0f7fa}
+.choices li.selected{background:#d1ecf1;border-color:#bee5eb}
+.choices li.correct{background:#d4edda;border-color:#28a745}
+.choices li.wrong{background:#f8d7da;border-color:#dc3545}
+.choices li.show-correct{background:#d4edda;border-color:#28a745}
+.submit-wrap{text-align:center;margin:36px 0}
+.submit-btn{display:inline-block;padding:14px 40px;background:linear-gradient(135deg,#1a3a4a,#2d6a7a);color:#fff;border:none;border-radius:10px;font-size:1.1rem;cursor:pointer;font-weight:600;font-family:inherit;transition:all .25s;letter-spacing:.3px}
+.submit-btn:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(26,58,74,.25)}
+.score-box{background:#fff;border-radius:12px;padding:28px;margin-bottom:28px;text-align:center;border:1px solid #e2e8f0;box-shadow:0 4px 20px rgba(0,0,0,.06);display:none}
+.score-box h2{font-size:1.4rem;margin-bottom:8px;color:#1a3a4a;text-align:center}
+.score-box .pct{font-size:3rem;font-weight:700}
+.score-box .pct.good{color:#28a745}
+.score-box .pct.ok{color:#e6a817}
+.score-box .pct.bad{color:#dc3545}
+.score-box .detail{color:#666;margin-top:4px}
+.result-tag{display:inline-block;padding:2px 10px;border-radius:12px;font-size:.8rem;font-weight:600;margin-left:8px}
+.result-tag.correct{background:#d4edda;color:#155724}
+.result-tag.wrong{background:#f8d7da;color:#721c24}
+.reset-btn{display:none;margin:16px auto;padding:12px 28px;background:#6c757d;color:#fff;border:none;border-radius:10px;font-size:1rem;cursor:pointer;font-family:inherit;transition:all .25s}
+.reset-btn:hover{background:#5a6268;transform:translateY(-1px)}
+.explanation{background:#f0f7ff;border-left:4px solid #1a3a4a;padding:14px 18px;margin-top:14px;border-radius:0 8px 8px 0;font-size:.95rem;color:#444;display:none}
+.explanation.show{display:block}
+.explanation strong{color:#1a3a4a}
+.nav{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin:36px 0}
+.nav a{display:inline-block;padding:10px 24px;background:linear-gradient(135deg,#1a3a4a,#2d6a7a);color:#fff;text-decoration:none;border-radius:10px;font-weight:500;font-size:.95rem;transition:all .25s}
+.nav a:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(26,58,74,.25)}
+footer{text-align:center;padding:36px 24px;color:#8899a4;font-size:.85rem;border-top:1px solid #e2e8f0;margin-top:40px}
+.report-btn{display:inline-block;margin:0;padding:12px 28px;background:linear-gradient(135deg,#1a3a4a,#2d6a7a);color:#fff;border:none;border-radius:10px;font-size:1rem;cursor:pointer;font-family:inherit;transition:all .25s}
+.report-btn:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(26,58,74,.25)}
+.bottom-score{background:#fff;border-radius:12px;padding:20px;margin:20px 0;text-align:center;border:1px solid #e2e8f0;box-shadow:0 4px 20px rgba(0,0,0,.06)}
+.bottom-score .pct{font-size:2.5rem;font-weight:700}
+.bottom-score .pct.good{color:#28a745}
+.bottom-score .pct.ok{color:#e6a817}
+.bottom-score .pct.bad{color:#dc3545}
+.bottom-score .detail{color:#666;margin-top:4px;font-size:.95rem}
+.report-wrap{display:none;text-align:center;margin:16px 0}
+.name-input{padding:10px 14px;border:1px solid #e2e8f0;border-radius:10px;font-size:.95rem;font-family:inherit;width:200px;margin-right:8px;outline:none;transition:border-color .2s}
+.name-input:focus{border-color:#1a3a4a}
+</style></head><body><header><div class="container"><a href="index.html">&larr; All Tests</a><h1>ACT Math Practice Test 24</h1></div></header><div class="container"><div id="score-box" class="score-box"><h2>Your Score</h2><div class="pct">0%</div><div class="detail"></div></div><div class="question"><p><b>1.</b> If <em>a</em> is a factor of 32 and <em>b</em> is a factor of 45, the product of <em>a</em> and <em>b</em> could NOT be which of the following?</p><ul class="choices"><li>F. 1,440</li><li>G. 288</li><li>H. 80</li><li>J. 54</li><li>K. 1</li></ul></div><div class="question"><p><b>2.</b> For each positive integer <em>k</em>, let <em>k</em><sub class="frac">o</sub> be the sum of all positive odd integers less than <em>k</em>. For example, 6<sub class="frac">o</sub> = 5 + 3 + 1 = 9 and 7<sub class="frac">o</sub> = 5 + 3 + 1 = 9. What is the value of 17<sub class="frac">o</sub> × 4<sub class="frac">o</sub>?</p><ul class="choices"><li>A. 16</li><li>B. 144</li><li>C. 256</li><li>D. 324</li><li>E. 816</li></ul></div><div class="question"><p><b>3.</b> If (<em>a</em>,-3) is on the graph of the equation <em>x</em> - 4<em>y</em> = 14 in the standard (<em>x</em>,<em>y</em>) coordinate plane, then <em>a</em> =?</p><ul class="choices"><li>F. <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_393_r1.jpg"></li><li>G. -2</li><li>H. 2</li><li>J. 17</li><li>K. 26</li></ul></div><div class="question"><p><b>4.</b> For all <em>t</em> &gt; 0, <em>f</em><em>(t)</em> = <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_394_r1.jpg">. Which of the following is true about <em>f</em>(<em>t</em>) ?</p><ul class="choices"><li>A. It increases in proportion to <em>t</em>.</li><li>B. It increases in proportion to <em>t</em><sup class="frac">2</sup>.</li><li>C. It decreases in proportion to <em>t</em>.</li><li>D. It decreases in proportion to <em>t</em><sup class="frac">2</sup>.</li><li>E. It remains constant.</li></ul></div><div class="question"><p><b>5.</b> In the figure below, <em>X</em> is on <img alt="" class="root" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_154_r1.jpg">. If the angle measures are as shown, what is the degree measure of <img alt="" class="root" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_029_r1.jpg"><em>YXZ</em>?</p><ul class="choices"><li>F. 25°</li><li>G. <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_395_r1.jpg"></li><li>H. <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_396_r1.jpg"></li><li>J. <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_397_r1.jpg"></li><li>K. <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_398_r1.jpg"></li></ul></div><div class="question"><p><b>6.</b> Points (2, - 2) and (3,10) lie on the same line in the standard (<em>x</em>,<em>y</em>) coordinate plane. What is the slope of this line?</p><ul class="choices"><li>A. 12</li><li>B. 8</li><li>C. <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_384_r1.jpg"></li><li>D. -8</li><li>E. -12</li></ul></div><div class="question"><p><b>7.</b> What is the degree measure of an angle that measures <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_400_r1.jpg"> radians?</p><ul class="choices"><li>F. <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_401_r1.jpg"></li><li>G. <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_402_r1.jpg"></li><li>H. 252°</li><li>J. 84°</li><li>K. 12°</li></ul></div><div class="question"><p><b>8.</b> Which of the following gives the equation for the circle in the standard (<em>x</em>,<em>y</em>) coordinate plane with a center at (4,-8) and a circumference of 10π square coordinate units?</p><ul class="choices"><li>A. (<em>x</em> - 4)<sup class="frac">2</sup> + (<em>y</em> + 8)<sup class="frac">2</sup> = 25</li><li>B. (<em>x</em> - 4)<sup class="frac">2</sup> + (<em>y</em> + 8)<sup class="frac">2</sup> = 100</li><li>C. (<em>x</em> + 8)<sup class="frac">2</sup> + (<em>y</em> - 4)<sup class="frac">2</sup> = 25</li><li>D. (<em>x</em> + 8)<sup class="frac">2</sup> - (<em>y</em> - 4)<sup class="frac">2</sup> = 100</li><li>E. (<em>x</em> + 8)<sup class="frac">2</sup> + (<em>y</em> - 4)<sup class="frac">2</sup> = 100</li></ul></div><div class="question"><p><b>9.</b> For some <em>x</em> and <em>y</em> that satisfy the equation <em>xy</em> = -<em>x</em><sup class="frac">2</sup>, which of the following is FALSE?</p><ul class="choices"><li>F. <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_403_r1.jpg"></li><li>G. <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_404_r1.jpg"></li><li>H. <em>x</em><sup class="frac">2</sup> + <em>y</em><sup class="frac">2</sup> = -2<em>xy</em></li><li>J. <em>x</em><sup class="frac">2</sup> = <em>y</em><sup class="frac">2</sup></li><li>K. <em>x</em><sup class="frac">3</sup> - <em>y</em><sup class="frac">3</sup> = 0</li></ul></div><div class="question"><p><b>10.</b> Rectangle <em>ABCD</em> lies in the standard (<em>x</em>,<em>y</em>) coordinate plane with corners at <em>A</em>(4,2), <em>B</em>(6,-1), <em>C</em>(1,-4), and <em>D</em>(-1,-1), and is represented by the 2 × 4 matrix <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_405_r1.jpg">. <em>ABCD</em> is then translated, with the corners of the translated rectangle represented by the matrix <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_406_r1.jpg">. What is the value of <em>n</em>?</p><ul class="choices"><li>A. 0</li><li>B. -1</li><li>C. -2</li><li>D. -3</li><li>E. -4</li></ul></div><div class="question"><p><b>11.</b> Whenever <em>a</em> &gt; 0, which of the following real number line graphs represents the solutions for <em>x</em> to the inequality |<em>x</em> - <em>a</em>|≤?</p><ul class="choices"><li>F. <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_407_r1.jpg"></li><li>G. <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_408_r1.jpg"></li><li>H. <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_409_r1.jpg"></li><li>J. <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_410_r1.jpg"></li><li>K. <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_411_r1.jpg"></li></ul></div><div class="question"><p><b>12.</b> Three different functions are defined in the table below.<br><img alt="" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_412_r1.jpg"><br>The diagram below uses three functions. The only values for <em>p</em>, <em>q</em>, <em>r</em>, <em>s</em>, and <em>t</em> are 1 and 0. Which of the following inputs (<em>p</em>, <em>q</em>, <em>r</em>, <em>s</em>, <em>t</em>) will produce the output 0?<br><img alt="" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_413_r1.jpg"></p><ul class="choices"><li>A. (0,1,1,0,1)</li><li>B. (0,1,1,1,1)</li><li>C. (0,0,1,0,1)</li><li>D. (1,0,1,0,0)</li><li>E. (1,0,1,0,1)</li></ul></div><div class="question"><p><b>13.</b> Whenever <em>x</em> and <em>y</em> are both integers, what is (6.0 × 10<em><sup class="frac">x</sup></em>)(5.0<em><sup class="frac">y</sup></em> × 10<em><sup class="frac">y</sup></em>)expressed in scientific notation?</p><ul class="choices"><li>F. 30.0 × 100<em><sup class="frac">xy</sup></em></li><li>G. 30.0 × 100<em><sup class="frac">xy</sup></em><em><sup class="frac">y</sup></em></li><li>H. 30.0 × 10<em><sup class="frac">xy</sup></em></li><li>J. 3.0 × 10<em><sup class="frac">x + y + 1</sup></em></li><li>K. 3.0 × 10<em><sup class="frac">xy</sup></em></li></ul></div><div class="question"><p><b>14.</b> The points <em>P</em>, <em>Q</em>, <em>R</em>, and <em>S</em> lie in that order on a straight line. The midpoint of <img alt="" class="root" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_125_r1.jpg"> is <em>R</em> and the midpoint of <img alt="" class="root" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_123_r1.jpg"> is <em>Q</em>. The length of <img alt="" class="root" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_124_r1.jpg"> is <em>x</em> feet and the length of <img alt="" class="root" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_121_r1.jpg"> is 4<em>x</em> - 16 feet. What is the length, in feet, of <img alt="" class="root" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_123_r1.jpg">?</p><ul class="choices"><li>A. 32</li><li>B. 20</li><li>C. 16</li><li>D. 8</li><li>E. 4</li></ul></div><div class="question"><p><b>15.</b> The circle below has an area of 64π cm<sup class="frac">2</sup>. A central angle with measure 24° intercepts minor arc <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_414_r1.jpg">. What is the length of minor arc <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_414_r1.jpg">, in centimeters?<br><img alt="" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_415_r1.jpg"></p><ul class="choices"><li>F. <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_392_r1.jpg">π</li><li>G. <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_387_r1.jpg">π</li><li>H. <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_417_r1.jpg"></li><li>J. <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_013_r1.jpg">π</li><li>K. 192π</li></ul></div><div class="submit-wrap"><button class="submit-btn" onclick="gradeTest()">Submit Test</button><button class="reset-btn" onclick="resetTest()">Try Again</button>
+<div class="report-wrap"><input type="text" class="name-input" placeholder="Student name (for report)"><button class="report-btn" onclick="generateReport()">Download Report (PDF)</button></div></div><div class="nav"><a href="test123.html">&larr; Prev</a><a href="index.html">All Tests</a><a href="test125.html">Next &rarr;</a></div></div><footer><div class="container">ACT Math Practice</div></footer>
+<script>
+const ANSWERS = {"1": "J", "2": "C", "3": "H", "4": "E", "5": "K", "6": "A", "7": "J", "8": "A", "9": "K", "10": "A", "11": "K", "12": "B", "13": "J", "14": "A", "15": "H"};
+const EXPLANATIONS = {"1":"J  Factor 32 and 45. 32 has factors 32, 16, 8, 4, 2, and 1. 45 has factors 45, 15, 9, 5, 3, and 1. Answer choice (F) is 32 × 45, (G) is 32 × 9, (H) is 16 × 5, (K) is 1 × 1, and (J) cannot be made by multiplying 1 number from the set of factors of 32 by 1 number in the set of factors of 45.", "2":"C  17o  =  15 + 13 + 11 + 9 + 7 + 5 + 3 + 1  =  64 and 4o  =  3 + 1  =  4. So 17o × 4o  =  64 × 4  =  256. Choice (A) is 17o ÷ 4o. Choice (B) is 72 × 2; this would be correct if you were adding all even integers less than k, instead of the odd ones. Choice (D) is 81 × 4; this would be correct if the problem said "less than or equal to k." Choice (E) is 136 × 6; this would be correct if you were adding all integers less than k, not just the odd ones.", "3":"H  There\'s no need to graph the equation or to put it into y  =  mx + b form. Substitute a into the equation for x and -3 into the equation for y. So, a - 4(-3)  =  14 or a + 12  =  14. So, a  =  2. Choice (F) is the result of substituting a for y and -3 for x. Choice (K) is the result of a sign error when substituting to get a- 12  =  14.", "4":"E  Substitute values to see what happens as t grows larger. When t  =  . When . Even when . Choices (A), (B), (C), and (D) mirror terms from the question but do not accurately describe what happens as t changes. If you work this problem algebraically, it will give you the same result: .", "5":"K  Since there are 180° in a straight line, the sum of the two angle measures must be equal to 180. (3x + 2) + (x + 28)  =  180. Simplify the equation: 4x + 30  =  180, 4x  =  150, x  =  37. To find the measure of YXZ, substitute 37 for x in the expression 3x + 2, and solve. Choice (G) represents the value of x. Choice (H) is the value of YXW.", "6":"A  Use the formula for the slope of a line, m = . You can start with either point, so long as you start with the same point in both the numerator and denominator. In this case, . Watch your signs and remember to put the y values on top. Slope measures how steep something is; how quickly the height rises. Choice (C) reverses the x and y values. Choice (E) confuses signs when dividing. Choices (B) and (D) confuse signs in calculating the numerator.", "7":"J  One radian  =  , or 180°  =  π radians. Multiply  radians  =    =  84°.", "8":"A  The equation of a circle with center (h,k) and radius r is defined as (x - h)2 + (y - k)2  =  r2. Here, h  =  4 and k  =  -8. Eliminate choices (C), (D), and (E), which all flip the values of h and k. To find the radius, use the circumference 10π given in the problem. C  =  πd  =  10π, so the diameter is 10. The radius is half of that, or 5, so to complete the equation, r2  =  25. Choice (B) squares the diameter instead of the radius.", "9":"K  Choose values for x and y that make xy  =  -x2 true. For example, x  =  2 and y  =  -2. Choices (F), (G), (H), and (J) are all true with these numbers. However, choice (K) is false because (2)3- (-2)3  =  16.", "10":"A  Compare the points of the original rectangle with the first matrix to see that the x values of A, B, C, and D run along the top row and their y values run along the bottom row. For the translated rectangle ABCD, plot the points you know: B(3,-3), C(-2,-6), and D(-4,-3). When you\'ve got those points, note the relationship between them. In your figure, it should be clear that the distance from point C to point D will be the same as the distance from point B to point A. From C to D, the point shifts to the left 2 and up 3. Now do the same thing to point B to get A(1, 0) and n  =  0, choice (A). Choices (B), (C), (D), and (E) are in the range of numbers of the problem, but do not translate properly.", "11":"K  To solve this equation, you\'ll need to remove the absolute value signs. Remember, since absolute value means only the "positive distance from 0," the value inside the absolute value signs can be either positive or negative. To solve |x - a|≤3, therefore, remember that when you remove the absolute value sign, this becomes two separate inequalities: x - a≤3 and x - a≥-3. Don\'t forget to flip the inequality sign in the second equation when you introduce the negative! These expressions simplify to x ≤ a + 3 and x ≥ a - 3. Combine these two equations to get a - 3 ≤ x ≤ a + 3 which is represented in choice (K).", "12":"B  Start from the output 0. Since a CHANGE function needs to have input 1 to get output 0, the output of the IF function needs to be a 1. A 1 is the output of an IF function either if the first input is 1 and the second input is 1, or if the first input is 0 and the third input is 1. The first input could be 1 if both p and q are 1; however, no answer choices contain p and q values which are both 1. Therefore, p and q could be either 0 and 1, or 1 and 0, or 0 and 0, to yield an output of 0. This doesn\'t narrow any answer choices. Since you know that the first input of the IF function is 0, the second input could be either 1 or 0, so the input of the next CHANGE function doesn\'t matter. s and t, however, must both be 1, since the output of the BOTH function must be a 1 in order to make the third term in the IF function a 1. Choice (B) is the only answer choice that has s and t both as 1.", "13":"J  First, scientific notation requires that the first term be a number less than 10. (F), (G), and (H) are out. Multiply the terms in the given expression: 30 × 10x + y  =  3.0 × 10x + y + 1. Remember that when you multiply exponents with the same bases the base remains the same and the exponents are added together. The exponent 1 is added because 10 is being multiplied by itself one more time, to make up for taking a factor of 10 out of 30.", "14":"A  The midpoint of a line segment divides that line segment in half; therefore, if the length of  is x, the length of  is 2x. The question also states that the midpoint of  is Q, so   =  . Substitute for the lengths to get 4x -16  =  2x. (4x -16 is given in the problem as the length of .) Solving for x, you get 2x  =  16, or x  =  8. The length of  is x + x + 4x -16  =  8 + 8 + 32 - 16  =  32. To understand this problem, draw a straight line, mark points P, Q, R, and S along it, and label the lengths as you find them. Choice (D) gives the value of x, not the length of  Choice (C) finds the length of 4x -16. Choice (B) miscalculates x to be 4, and choice (E) is the value of the miscalculated x.", "15":"H  Find the radius of the circle using the area formula: A  =  πr2. So, 64π  =  πr2 and r  =  8. To find the length of a minor arc, first find the circumference of the circle: C  =  2πr  =  2π(8)  =  16π. The minor arc is  of the circumference of the circle. So, the length of the minor arc is . Choice (F) attempts to use the radius of the circle, 8, to find the fractional part of the circle. Choice (G) is similar to (F) but uses half of the radius. Choice (J) is the area divided by the central angle. Choice (K) is the radius multiplied by the central angle."};
+let graded = false;
+
+document.querySelectorAll('.choices li').forEach(li => {
+  // Remove old onclick
+  li.removeAttribute('onclick');
+  li.addEventListener('click', function() {
+    if (graded) return;
+    const siblings = this.parentElement.querySelectorAll('li');
+    siblings.forEach(s => s.classList.remove('selected'));
+    this.classList.add('selected');
+  });
+});
+
+function gradeTest() {
+  if (graded) return;
+  graded = true;
+  let correct = 0;
+  const total = Object.keys(ANSWERS).length;
+  
+  document.querySelectorAll('.question').forEach((qDiv, idx) => {
+    const qNum = idx + 1;
+    const correctAns = ANSWERS[qNum];
+    if (!correctAns) return;
+    const choices = qDiv.querySelectorAll('.choices li');
+    const selected = qDiv.querySelector('.choices li.selected');
+    const selectedLetter = selected ? selected.textContent.trim().charAt(0) : null;
+    
+    choices.forEach(li => {
+      const letter = li.textContent.trim().charAt(0);
+      if (letter === correctAns) li.classList.add('show-correct');
+      li.style.cursor = 'default';
+    });
+    
+    const tag = document.createElement('span');
+    tag.className = 'result-tag';
+    
+    if (selectedLetter === correctAns) {
+      correct++;
+      tag.className += ' correct';
+      tag.textContent = 'Correct';
+      if (selected) { selected.classList.remove('selected'); selected.classList.add('correct'); }
+    } else {
+      tag.className += ' wrong';
+      tag.textContent = 'Incorrect (Answer: ' + correctAns + ')';
+      if (selected) { selected.classList.remove('selected'); selected.classList.add('wrong'); }
+    }
+    
+    const firstP = qDiv.querySelector('p');
+    if (firstP) firstP.appendChild(tag);
+    
+    if (typeof EXPLANATIONS !== 'undefined' && EXPLANATIONS[qNum]) {
+      const explDiv = document.createElement('div');
+      explDiv.className = 'explanation show';
+      explDiv.innerHTML = '<strong>Explanation:</strong> ' + EXPLANATIONS[qNum];
+      qDiv.appendChild(explDiv);
+    }
+  });
+  
+  const pct = Math.round((correct / total) * 100);
+  document.querySelector('.submit-btn').style.display = 'none';
+  document.querySelector('.reset-btn').style.display = 'block';
+  var rw=document.querySelector('.report-wrap');if(rw)rw.style.display='block';
+  var bs=document.createElement('div');bs.className='bottom-score';bs.id='bottom-score';
+  bs.innerHTML='<h2 style="font-size:1.3rem;margin-bottom:6px;color:#1a3a4a">Your Score</h2><div class="pct '+(pct>=80?'good':pct>=60?'ok':'bad')+'">'+pct+'%</div><div class="detail">'+correct+' out of '+total+' correct</div>';
+  document.querySelector('.submit-wrap').after(bs);
+  try{var tn=location.pathname.match(/test(\d+)/);if(tn)localStorage.setItem('actmath_'+tn[1],pct);}catch(e){}
+}
+
+function resetTest() {
+  graded = false;
+  var bsEl=document.getElementById('bottom-score');if(bsEl)bsEl.remove();
+  document.querySelector('.submit-btn').style.display = '';
+  document.querySelector('.reset-btn').style.display = 'none';
+  var rw=document.querySelector('.report-wrap');if(rw)rw.style.display='none';
+  var ni=document.querySelector('.name-input');if(ni)ni.value='';
+  document.querySelectorAll('.choices li').forEach(li => {
+    li.classList.remove('selected','correct','wrong','show-correct');
+    li.style.cursor = 'pointer';
+  });
+  document.querySelectorAll('.result-tag').forEach(t => t.remove());
+  document.querySelectorAll('.explanation').forEach(e => e.remove());
+}
+
+function generateReport(){
+  var nameInput=document.querySelector('.name-input');
+  var name=(nameInput&&nameInput.value.trim())||'Student';
+  var testName=document.querySelector('header h1').textContent;
+  var bs=document.getElementById('bottom-score');
+  var scorePct=bs?bs.querySelector('.pct').textContent:'';
+  var detailTxt=bs?bs.querySelector('.detail').textContent:'';
+  var d=new Date().toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'});
+  var btn=document.querySelector('.report-btn');btn.textContent='Generating...';btn.disabled=true;
+  var s=document.createElement('script');
+  s.src='https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js';
+  s.onerror=function(){btn.textContent='Download Report (PDF)';btn.disabled=false;alert('Could not load PDF library.');};
+  s.onload=function(){
+    var doc=new jspdf.jsPDF('portrait','mm','letter');
+    var pw=215.9,ph=279.4,mx=12,cw=pw-2*mx,y=8;
+    doc.setFillColor(26,58,74);doc.rect(0,0,pw,22,'F');
+    doc.setTextColor(255,255,255);doc.setFontSize(13);doc.setFont('helvetica','bold');
+    doc.text(testName,mx,9);
+    doc.setFontSize(7.5);doc.setFont('helvetica','normal');
+    doc.text(d+'  |  Student: '+name,mx,14.5);
+    doc.setFontSize(18);doc.setFont('helvetica','bold');
+    doc.text(scorePct,pw-mx,11,{align:'right'});
+    doc.setFontSize(7.5);doc.setFont('helvetica','normal');
+    doc.text(detailTxt,pw-mx,16,{align:'right'});
+    y=25;
+    doc.setDrawColor(26,58,74);doc.setLineWidth(0.3);doc.line(mx,y,pw-mx,y);y+=3;
+    document.querySelectorAll('.question').forEach(function(qDiv,idx){
+      var qNum=idx+1;var ca=ANSWERS[qNum];if(!ca)return;
+      var sel=qDiv.querySelector('.choices li.correct,.choices li.wrong');
+      var sa=sel?sel.textContent.trim().charAt(0):'-';
+      var ok=sel&&sel.classList.contains('correct');
+      if(ok){
+        doc.setFillColor(40,167,69);doc.circle(mx+1.2,y-1,1,'F');
+        doc.setTextColor(33,33,33);doc.setFont('helvetica','bold');doc.setFontSize(8);
+        doc.text('Q'+qNum,mx+4,y);
+        doc.setFont('helvetica','normal');doc.setTextColor(40,167,69);
+        doc.text('Correct ('+ca+')',mx+14,y);
+      }else{
+        doc.setFillColor(220,53,69);doc.circle(mx+1.2,y-1,1,'F');
+        doc.setTextColor(33,33,33);doc.setFont('helvetica','bold');doc.setFontSize(8);
+        doc.text('Q'+qNum,mx+4,y);
+        doc.setFont('helvetica','normal');doc.setTextColor(220,53,69);
+        doc.text('Incorrect',mx+14,y);
+        doc.setTextColor(120,120,120);
+        doc.text('(Chose '+sa+', Correct: '+ca+')',mx+32,y);
+      }
+      y+=3.2;
+      var qP=qDiv.querySelector('p');
+      if(qP){
+        var qT=qP.cloneNode(true);
+        var tags=qT.querySelectorAll('.result-tag');tags.forEach(function(t){t.remove();});
+        var qt=qT.textContent.replace(/^\d+\.\s*/,'').trim();
+        if(qt.length>0){
+          doc.setFont('helvetica','normal');doc.setTextColor(60,60,60);doc.setFontSize(6.5);
+          var ql=doc.splitTextToSize(qt,cw-5);
+          ql=ql.slice(0,1);
+          if(doc.splitTextToSize(qt,cw-5).length>1){ql[0]=ql[0].substring(0,ql[0].length-3)+'...';}
+          doc.text(ql,mx+4,y);y+=2.4;
+        }
+      }
+      if(typeof EXPLANATIONS!=='undefined'&&EXPLANATIONS[qNum]){
+        doc.setFont('helvetica','italic');doc.setTextColor(100,100,100);doc.setFontSize(6);
+        var lines=doc.splitTextToSize(EXPLANATIONS[qNum],cw-5);
+        if(lines.length>2){lines=lines.slice(0,2);lines[1]=lines[1].substring(0,Math.max(0,lines[1].length-3))+'...';}
+        doc.text(lines,mx+4,y);y+=lines.length*2.2;
+      }
+      y+=2;
+    });
+    doc.setDrawColor(200,200,200);doc.setLineWidth(0.2);doc.line(mx,ph-10,pw-mx,ph-10);
+    doc.setTextColor(170,170,170);doc.setFontSize(6);doc.setFont('helvetica','normal');
+    doc.text('ACT Math Practice  |  Score Report',pw/2,ph-7,{align:'center'});
+    var tn=location.pathname.match(/test(\d+)/);
+    var testNum=tn?parseInt(tn[1])-100:0;
+    var ds=new Date().toISOString().slice(0,10);
+    doc.save('ACT-Math-Test-'+testNum+'-'+ds+'.pdf');
+    btn.textContent='Download Report (PDF)';btn.disabled=false;
+  };
+  document.head.appendChild(s);
+}
+</script>
+</body></html>

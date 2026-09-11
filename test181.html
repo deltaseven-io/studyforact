@@ -1,0 +1,222 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>ACT Math Test 81</title><style>@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:#fff;color:#2d3748;line-height:1.7}
+.container{max-width:800px;margin:0 auto;padding:20px 24px}
+header{background:linear-gradient(135deg,#1a3a4a 0%,#2d6a7a 100%);color:#fff;padding:28px 0;margin-bottom:36px;text-align:center}
+header .container{display:block}
+header h1{font-size:1.6rem;font-weight:700;letter-spacing:-0.3px}
+header a{color:rgba(255,255,255,.7);text-decoration:none;font-size:.9rem;display:inline-block;margin-bottom:6px;transition:color .2s}
+header a:hover{color:#fff}
+.question{background:#fff;border-radius:12px;padding:24px;margin-bottom:20px;border:1px solid #e2e8f0;transition:border-color .2s}
+.question:hover{border-color:#cbd5e0}
+.question p{margin-bottom:14px;font-size:1.05rem}
+img{max-width:100%;height:auto;margin:4px 0;vertical-align:middle}
+.choices{list-style:none}
+.choices li{padding:10px 14px;margin:6px 0;border-radius:8px;cursor:pointer;transition:all .2s;border:2px solid transparent}
+.choices li:hover{background:#f0f7fa}
+.choices li.selected{background:#d1ecf1;border-color:#bee5eb}
+.choices li.correct{background:#d4edda;border-color:#28a745}
+.choices li.wrong{background:#f8d7da;border-color:#dc3545}
+.choices li.show-correct{background:#d4edda;border-color:#28a745}
+.submit-wrap{text-align:center;margin:36px 0}
+.submit-btn{display:inline-block;padding:14px 40px;background:linear-gradient(135deg,#1a3a4a,#2d6a7a);color:#fff;border:none;border-radius:10px;font-size:1.1rem;cursor:pointer;font-weight:600;font-family:inherit;transition:all .25s;letter-spacing:.3px}
+.submit-btn:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(26,58,74,.25)}
+.score-box{background:#fff;border-radius:12px;padding:28px;margin-bottom:28px;text-align:center;border:1px solid #e2e8f0;box-shadow:0 4px 20px rgba(0,0,0,.06);display:none}
+.score-box h2{font-size:1.4rem;margin-bottom:8px;color:#1a3a4a;text-align:center}
+.score-box .pct{font-size:3rem;font-weight:700}
+.score-box .pct.good{color:#28a745}
+.score-box .pct.ok{color:#e6a817}
+.score-box .pct.bad{color:#dc3545}
+.score-box .detail{color:#666;margin-top:4px}
+.result-tag{display:inline-block;padding:2px 10px;border-radius:12px;font-size:.8rem;font-weight:600;margin-left:8px}
+.result-tag.correct{background:#d4edda;color:#155724}
+.result-tag.wrong{background:#f8d7da;color:#721c24}
+.reset-btn{display:none;margin:16px auto;padding:12px 28px;background:#6c757d;color:#fff;border:none;border-radius:10px;font-size:1rem;cursor:pointer;font-family:inherit;transition:all .25s}
+.reset-btn:hover{background:#5a6268;transform:translateY(-1px)}
+.explanation{background:#f0f7ff;border-left:4px solid #1a3a4a;padding:14px 18px;margin-top:14px;border-radius:0 8px 8px 0;font-size:.95rem;color:#444;display:none}
+.explanation.show{display:block}
+.explanation strong{color:#1a3a4a}
+.nav{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin:36px 0}
+.nav a{display:inline-block;padding:10px 24px;background:linear-gradient(135deg,#1a3a4a,#2d6a7a);color:#fff;text-decoration:none;border-radius:10px;font-weight:500;font-size:.95rem;transition:all .25s}
+.nav a:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(26,58,74,.25)}
+footer{text-align:center;padding:36px 24px;color:#8899a4;font-size:.85rem;border-top:1px solid #e2e8f0;margin-top:40px}
+.report-btn{display:inline-block;margin:0;padding:12px 28px;background:linear-gradient(135deg,#1a3a4a,#2d6a7a);color:#fff;border:none;border-radius:10px;font-size:1rem;cursor:pointer;font-family:inherit;transition:all .25s}
+.report-btn:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(26,58,74,.25)}
+.bottom-score{background:#fff;border-radius:12px;padding:20px;margin:20px 0;text-align:center;border:1px solid #e2e8f0;box-shadow:0 4px 20px rgba(0,0,0,.06)}
+.bottom-score .pct{font-size:2.5rem;font-weight:700}
+.bottom-score .pct.good{color:#28a745}
+.bottom-score .pct.ok{color:#e6a817}
+.bottom-score .pct.bad{color:#dc3545}
+.bottom-score .detail{color:#666;margin-top:4px;font-size:.95rem}
+.report-wrap{display:none;text-align:center;margin:16px 0}
+.name-input{padding:10px 14px;border:1px solid #e2e8f0;border-radius:10px;font-size:.95rem;font-family:inherit;width:200px;margin-right:8px;outline:none;transition:border-color .2s}
+.name-input:focus{border-color:#1a3a4a}
+</style></head><body><header><div class="container"><a href="index.html">&larr; All Tests</a><h1>ACT Math Practice Test 81</h1></div></header><div class="container"><div id="score-box" class="score-box"><h2>Your Score</h2><div class="pct">0%</div><div class="detail"></div></div><div class="question"><p><b>1.</b> A right circular cylinder is shown below, with dimensions given in inches. What is the total surface area of the cylinder, in square inches?(Note: The total surface area of a cylinder is given by 2<span class="italic">πr<sup><small>2</small></sup></span> + 2<span class="italic">πrh</span>, where <span class="italic">r</span> is the radius and <span class="italic">h</span> is the height.)<br><img src="https://www.crackab.com/image/tests/mg10/02584.jpg"><br></p><ul class="choices"><li>A. 3<span class="italic">π</span></li><li>B. 5<span class="italic">π</span></li><li>C. 6<span class="italic">π</span></li><li>D. 8<span class="italic">π</span></li><li>E. 11<span class="italic">π</span></li></ul></div><div class="question"><p><b>2.</b> Given <span class="italic">f</span> (<span class="italic">x</span>) = 3<span class="italic">x</span> + 5 and <span class="italic">g</span>(<span class="italic">x</span>) = <span class="italic">x<sup><small>2</small></sup></span> - <span class="italic">x</span> + 7, which of the following is an expression for <span class="italic">f</span> (<span class="italic">g</span>(<span class="italic">x</span>))?</p><ul class="choices"><li>F. 3<span class="italic">x<sup><small>2</small></sup></span> - 3<span class="italic">x</span> + 26</li><li>G. 3<span class="italic">x<sup><small>2</small></sup></span> - 3<span class="italic">x</span> + 12</li><li>H. <span class="italic">x<sup><small>2</small></sup></span> - <span class="italic">x</span> + 12</li><li>J. 9<span class="italic">x<sup><small>2</small></sup></span> + 25<span class="italic">x</span> + 27</li><li>K. 3<span class="italic">x<sup><small>2</small></sup></span> + 21</li></ul></div><div class="question"><p><b>3.</b> The table below shows the total number of touchdowns scored in each of 16 football games during a regular season. What is the average number of touchdowns scored per game, to the nearest tenth?<img src="https://www.crackab.com/image/tests/mg10/01974.jpg"></p><ul class="choices"><li>A. 2.6</li><li>B. 2.3</li><li>C. 2.0</li><li>D. 1.5</li><li>E. 0.9</li></ul></div><div class="question"><p><b>4.</b> In the triangles shown below, what is the average of angles <span class="italic">a, b, c, d</span>, and <span class="italic">e</span>?<br><img src="https://www.crackab.com/image/tests/mg10/00389.jpg"><br></p><ul class="choices"><li>F. 30°</li><li>G. 45°</li><li>H. 54°</li><li>J. 60°</li><li>K. 72°</li></ul></div><div class="question"><p><b>5.</b> (4<span class="italic">x<sup><small>4</small></sup></span>)<sup><small>4</small></sup> is equivalent to:</p><ul class="choices"><li>A. <span class="italic">x</span></li><li>B. 16<span class="italic">x<sup><small>8</small></sup></span></li><li>C. 16<span class="italic">x<sup><small>16</small></sup></span></li><li>D. 256<span class="italic">x<sup><small>8</small></sup></span></li><li>E. 256<span class="italic">x<sup><small>16</small></sup></span></li></ul></div><div class="question"><p><b>6.</b> Which of the following is equivalent to the inequality 3<span class="italic">x</span> - 6 &gt; 6<span class="italic">x</span> + 9?</p><ul class="choices"><li>F. <span class="italic">x</span> &gt; -5</li><li>G. <span class="italic">x</span> &lt; -5</li><li>H. <span class="italic">x</span> &gt; -2</li><li>J. <span class="italic">x</span> &lt; 3</li><li>K. <span class="italic">x</span> &gt; 3</li></ul></div><div class="question"><p><b>7.</b> In the <span class="italic">xy</span>-coordinate system, (<img src="https://www.crackab.com/image/tests/mg10/02597.jpg">, <span class="italic">s</span>) is one of the points of intersection of the graphs <span class="italic">y</span> = 2<span class="italic">x<sup><small>2</small></sup></span>+6 and <span class="italic">y</span> = -4<span class="italic">x<sup><small>2</small></sup></span> + <span class="italic">m</span>, where <span class="italic">m</span> is a constant. What is the value of <span class="italic">m</span>?</p><ul class="choices"><li>A. 30</li><li>B. 33</li><li>C. 36</li><li>D. 39</li><li>E. 42</li></ul></div><div class="question"><p><b>8.</b> For right triangle <span class="italic">XYZ</span> below, what is cos ∠<span class="italic">Z</span>?<br><img src="https://www.crackab.com/image/tests/mg10/02022.jpg"><br></p><ul class="choices"><li>F. <img src="https://www.crackab.com/image/tests/mg10/02604.jpg"></li><li>G. <img src="https://www.crackab.com/image/tests/mg10/02059.jpg"></li><li>H. <img src="https://www.crackab.com/image/tests/mg10/02081.jpg"></li><li>J. <img src="https://www.crackab.com/image/tests/mg10/02615.jpg"></li><li>K. Cannot be determined from the given information</li></ul></div><div class="question"><p><b>9.</b> Which of the following statements is NOT true about the arithmetic sequence 16, 11, 6, 1, … ?</p><ul class="choices"><li>A. The fifth term is -4.</li><li>B. The sum of the first 5 terms is 30.</li><li>C. The seventh term is -12.</li><li>D. The common difference of consecutive integers is -5.</li><li>E. The sum of the first 7 terms is 7.</li></ul></div><div class="question"><p><b>10.</b> If there are 6 × 10<sup><small><span>14</span></small></sup> oxygen molecules in a volume of 3 × 10<sup><small>7</small></sup> cubic meters, what is the average number of oxygen molecules per cubic meter?</p><ul class="choices"><li>F. 2 × 10<sup><small>5</small></sup></li><li>G. 2 × 10<sup><small>7</small></sup></li><li>H. 2 × 10<sup><small><span>21</span></small></sup></li><li>J. 18 × 10<sup><small>7</small></sup></li><li>K. 18 × 10<sup><small><span>21</span></small></sup></li></ul></div><div class="question"><p><b>11.</b> The lengths of the sides of right triangle <span class="italic">ABC</span> are shown in the figure below. What is the cotangent of ∠<span class="italic">B</span>?<br><img src="https://www.crackab.com/image/tests/mg10/02620.jpg"><br></p><ul class="choices"><li>A. <img src="https://www.crackab.com/image/tests/mg10/01439.jpg"></li><li>B. <img src="https://www.crackab.com/image/tests/mg10/02628.jpg"></li><li>C. <img src="https://www.crackab.com/image/tests/mg10/02632.jpg"></li><li>D. <img src="https://www.crackab.com/image/tests/mg10/01604.jpg"></li><li>E. <img src="https://www.crackab.com/image/tests/mg10/01772.jpg"></li></ul></div><div class="question"><p><b>12.</b> What rational number is halfway between <img src="https://www.crackab.com/image/tests/mg10/01918.jpg"> and <img src="https://www.crackab.com/image/tests/mg10/02088.jpg">?</p><ul class="choices"><li>F. <img src="https://www.crackab.com/image/tests/mg10/02315.jpg"></li><li>G. <img src="https://www.crackab.com/image/tests/mg10/01878.jpg"></li><li>H. <img src="https://www.crackab.com/image/tests/mg10/01285.jpg"></li><li>J. <img src="https://www.crackab.com/image/tests/mg10/01941.jpg"></li><li>K. <img src="https://www.crackab.com/image/tests/mg10/00289.jpg"></li></ul></div><div class="question"><p><b>13.</b> If |6-2<span class="italic">x</span>| &gt; 9, which of the following is a possible value of <span class="italic">x</span>?</p><ul class="choices"><li>A. -2</li><li>B. -1</li><li>C. 0</li><li>D. 4</li><li>E. 7</li></ul></div><div class="question"><p><b>14.</b> A square and a regular pentagon have equal perimeters. If the pentagon has sides of length 12, what is the area of the square?</p><ul class="choices"><li>F. 30</li><li>G. 48</li><li>H. 60</li><li>J. 225</li><li>K. 244</li></ul></div><div class="question"><p><b>15.</b> A classroom has 10 tables that will seat up to 4 students each. If 20 students are seated at tables, and NO tables are empty, what is the greatest possible number of tables that could be filled with students?</p><ul class="choices"><li>A. 5</li><li>B. 3</li><li>C. 2</li><li>D. 1</li><li>E. 0</li></ul></div><div class="submit-wrap"><button class="submit-btn" onclick="gradeTest()">Submit Test</button><button class="reset-btn" onclick="resetTest()">Try Again</button>
+<div class="report-wrap"><input type="text" class="name-input" placeholder="Student name (for report)"><button class="report-btn" onclick="generateReport()">Download Report (PDF)</button></div></div><div class="nav"><a href="test180.html">&larr; Prev</a><a href="index.html">All Tests</a><a href="test182.html">Next &rarr;</a></div></div><footer><div class="container">ACT Math Practice</div></footer>
+<script>
+const ANSWERS = {"1": "D", "2": "F", "3": "B", "4": "H", "5": "E", "6": "G", "7": "C", "8": "J", "9": "C", "10": "G", "11": "B", "12": "H", "13": "A", "14": "J", "15": "B"};
+const EXPLANATIONS = {"1":"The correct answer is D. To solve this problem, substitute the given values into the formula as follows:", "2":"The correct answer is F. To solve this problem, substitute the given values into the function as follows: f(x)  =  3x + 5 and g(x)  =  x2 - x + 7 Therefore, f (g(x))  =  f (x2 - x + 7). Substitute x2 - x + 7 for x and solve:", "3":"The correct answer is B. To solve this problem, first calculate the total number of touchdowns as follows: Now, calculate the average number of touchdowns per game. You are given that there were 16 games, so the average is 37 ÷ 16  =  2.3125, rounded to the nearest tenth is 2.3.", "4":"The correct answer is H. To solve this problem, first calculate the total measure of all the angles. The first triangle is a right triangle, which means that a + b  =  90°. The sum of the interior angles of any triangle is 180°, so c + d + e  =  180°. The total measure of the angles, then, is 90° + 180°, or 270°. Calculate the average: 270° ÷ 5  =  54°.", "5":"The correct answer is E. Because the entire value 4x4 is being raised to the 4th power, you must multiply the exponents: 4 × 4  =  16, so (x4)4  =  x16. Therefore, you can eliminate answer choices A, B, and D. Next, you must raise 4 to the 4th power: 44  =  256, and the correct answer is 256x16.", "6":"The correct answer is G. Inequalities can be solved like equations, by isolating the variable on one side. Remember, though, that when you multiply an inequality by a negative number, you must reverse the sign:", "7":"The correct answer is C. To find the point of intersection, set the equations equal to each other: 2x2 + 6  =  -4x2 + m. Add 4x2 to both sides: 6x2 + 6  =  m. Since the x-coordinate of the point of intersection is , then  and m  =  36", "8":"The correct answer is J. The first step in solving this problem is to calculate the length of the hypotenuse. If you recognize that this is a special triangle, you know that the hypotenuse is 5. You could also let the answer choices guide you, since they each include some combination of 3, 4, and 5. Otherwise, use the Pythagorean theorem, as follows: Next, recall that cosine is equal to the length of the adjacent side over the length of the hypotenuse. Therefore, cos ∠Z is .", "9":"The correct answer is C. The best way to solve this problem is to use the process of elimination. Remember that you are looking for the answer that is NOT true! First, determine the common difference of the sequence: 16 + (-5)  =  11; 11 + (-5)  =  6; 6 + (-5)  =  1. The common difference is -5, so eliminate answer choice D. Now, consider each of the remaining answer choices: Answer choice A: The common difference is -5, so the fifth term is 1 + (-5)  =  -4; eliminate answer choice A. Answer choice B: The sum of the first five terms is 16 + 11 + 6 + 1 + -4  =  30; eliminate answer choice B. Answer choice C: If the fifth term is -4, the sixth term is -4 + (-5)  =  -9, and the seventh term is -9 + (-5)  =  -14. Answer choice C is correct because it is NOT true.", "10":"The correct answer is G. The first step in solving this problem is to recognize that the average will be equivalent to the volume divided by the number of oxygen molecules. Set up the fraction and solve, keeping in mind that when you divide exponential values with the same base you subtract the exponents:", "11":"The correct answer is B. Cotangent is defined by the length of the adjacent side over the length of the opposite side. Therefore, the cotangent of ∠B is .", "12":"The correct answer is H. A rational number is any number that can be written as a ratio; in other words, a fraction. So simply determine the fraction that is exactly halfway between  and . One way to do this is to find the average, as follows: Another way to solve this problem is to find the Lowest Common Denominator (LCD): , so the LCD is 6. The value that is halfway between  and  is , which is equivalent to .", "13":"The correct answer is A. This problem tests your knowledge of absolute values and inequalities. The inequality |6 - 2x| > 5 can be written as two separate inequalities: 6 - 2x > 9 or 6 - 2x < -9. Because the original inequality was a greater than, the word in between the two new inequalities must be "or." This means that , or that . (Remember to reverse your inequality when multiplying or dividing by negative numbers.) The only answer choice that fits one of the inequalities is -2, which is less than . There are no answer choices that are greater than .", "14":"The correct answer is J. A regular pentagon (5-sided figure) is a pentagon with equal sides and equal angles. If each side of the pentagon has a length of 12, its perimeter is 60. For the square to have a perimeter of 60, each side of the square must have a length of 15. If each side of the square has length of 15, its area is 225.", "15":"The correct answer is B. You are given that no table can be empty, which means that there must be at least one student seated at each table. There are 20 students in all and 10 tables, so if one student is seated at each table, you have accounted for 10 students. Now simply fill tables with the remaining 10 students until no students remain: Table 1 already has 1 student; add 3 more so that it is filled. You now have 7 more students to seat. Table 2 already has 1 student; add 3 more so that it is filled. You now have 3 more students to seat. Table 3 already has 1 student; add the 3 remaining students so that it is filled. You have accounted for all of the students and have filled 3 tables. You cannot fill more than 3 tables with students while leaving no tables empty."};
+let graded = false;
+
+document.querySelectorAll('.choices li').forEach(li => {
+  // Remove old onclick
+  li.removeAttribute('onclick');
+  li.addEventListener('click', function() {
+    if (graded) return;
+    const siblings = this.parentElement.querySelectorAll('li');
+    siblings.forEach(s => s.classList.remove('selected'));
+    this.classList.add('selected');
+  });
+});
+
+function gradeTest() {
+  if (graded) return;
+  graded = true;
+  let correct = 0;
+  const total = Object.keys(ANSWERS).length;
+  
+  document.querySelectorAll('.question').forEach((qDiv, idx) => {
+    const qNum = idx + 1;
+    const correctAns = ANSWERS[qNum];
+    if (!correctAns) return;
+    const choices = qDiv.querySelectorAll('.choices li');
+    const selected = qDiv.querySelector('.choices li.selected');
+    const selectedLetter = selected ? selected.textContent.trim().charAt(0) : null;
+    
+    choices.forEach(li => {
+      const letter = li.textContent.trim().charAt(0);
+      if (letter === correctAns) li.classList.add('show-correct');
+      li.style.cursor = 'default';
+    });
+    
+    const tag = document.createElement('span');
+    tag.className = 'result-tag';
+    
+    if (selectedLetter === correctAns) {
+      correct++;
+      tag.className += ' correct';
+      tag.textContent = 'Correct';
+      if (selected) { selected.classList.remove('selected'); selected.classList.add('correct'); }
+    } else {
+      tag.className += ' wrong';
+      tag.textContent = 'Incorrect (Answer: ' + correctAns + ')';
+      if (selected) { selected.classList.remove('selected'); selected.classList.add('wrong'); }
+    }
+    
+    const firstP = qDiv.querySelector('p');
+    if (firstP) firstP.appendChild(tag);
+    
+    if (typeof EXPLANATIONS !== 'undefined' && EXPLANATIONS[qNum]) {
+      const explDiv = document.createElement('div');
+      explDiv.className = 'explanation show';
+      explDiv.innerHTML = '<strong>Explanation:</strong> ' + EXPLANATIONS[qNum];
+      qDiv.appendChild(explDiv);
+    }
+  });
+  
+  const pct = Math.round((correct / total) * 100);
+  document.querySelector('.submit-btn').style.display = 'none';
+  document.querySelector('.reset-btn').style.display = 'block';
+  var rw=document.querySelector('.report-wrap');if(rw)rw.style.display='block';
+  var bs=document.createElement('div');bs.className='bottom-score';bs.id='bottom-score';
+  bs.innerHTML='<h2 style="font-size:1.3rem;margin-bottom:6px;color:#1a3a4a">Your Score</h2><div class="pct '+(pct>=80?'good':pct>=60?'ok':'bad')+'">'+pct+'%</div><div class="detail">'+correct+' out of '+total+' correct</div>';
+  document.querySelector('.submit-wrap').after(bs);
+  try{var tn=location.pathname.match(/test(\d+)/);if(tn)localStorage.setItem('actmath_'+tn[1],pct);}catch(e){}
+}
+
+function resetTest() {
+  graded = false;
+  var bsEl=document.getElementById('bottom-score');if(bsEl)bsEl.remove();
+  document.querySelector('.submit-btn').style.display = '';
+  document.querySelector('.reset-btn').style.display = 'none';
+  var rw=document.querySelector('.report-wrap');if(rw)rw.style.display='none';
+  var ni=document.querySelector('.name-input');if(ni)ni.value='';
+  document.querySelectorAll('.choices li').forEach(li => {
+    li.classList.remove('selected','correct','wrong','show-correct');
+    li.style.cursor = 'pointer';
+  });
+  document.querySelectorAll('.result-tag').forEach(t => t.remove());
+  document.querySelectorAll('.explanation').forEach(e => e.remove());
+}
+
+function generateReport(){
+  var nameInput=document.querySelector('.name-input');
+  var name=(nameInput&&nameInput.value.trim())||'Student';
+  var testName=document.querySelector('header h1').textContent;
+  var bs=document.getElementById('bottom-score');
+  var scorePct=bs?bs.querySelector('.pct').textContent:'';
+  var detailTxt=bs?bs.querySelector('.detail').textContent:'';
+  var d=new Date().toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'});
+  var btn=document.querySelector('.report-btn');btn.textContent='Generating...';btn.disabled=true;
+  var s=document.createElement('script');
+  s.src='https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js';
+  s.onerror=function(){btn.textContent='Download Report (PDF)';btn.disabled=false;alert('Could not load PDF library.');};
+  s.onload=function(){
+    var doc=new jspdf.jsPDF('portrait','mm','letter');
+    var pw=215.9,ph=279.4,mx=12,cw=pw-2*mx,y=8;
+    doc.setFillColor(26,58,74);doc.rect(0,0,pw,22,'F');
+    doc.setTextColor(255,255,255);doc.setFontSize(13);doc.setFont('helvetica','bold');
+    doc.text(testName,mx,9);
+    doc.setFontSize(7.5);doc.setFont('helvetica','normal');
+    doc.text(d+'  |  Student: '+name,mx,14.5);
+    doc.setFontSize(18);doc.setFont('helvetica','bold');
+    doc.text(scorePct,pw-mx,11,{align:'right'});
+    doc.setFontSize(7.5);doc.setFont('helvetica','normal');
+    doc.text(detailTxt,pw-mx,16,{align:'right'});
+    y=25;
+    doc.setDrawColor(26,58,74);doc.setLineWidth(0.3);doc.line(mx,y,pw-mx,y);y+=3;
+    document.querySelectorAll('.question').forEach(function(qDiv,idx){
+      var qNum=idx+1;var ca=ANSWERS[qNum];if(!ca)return;
+      var sel=qDiv.querySelector('.choices li.correct,.choices li.wrong');
+      var sa=sel?sel.textContent.trim().charAt(0):'-';
+      var ok=sel&&sel.classList.contains('correct');
+      if(ok){
+        doc.setFillColor(40,167,69);doc.circle(mx+1.2,y-1,1,'F');
+        doc.setTextColor(33,33,33);doc.setFont('helvetica','bold');doc.setFontSize(8);
+        doc.text('Q'+qNum,mx+4,y);
+        doc.setFont('helvetica','normal');doc.setTextColor(40,167,69);
+        doc.text('Correct ('+ca+')',mx+14,y);
+      }else{
+        doc.setFillColor(220,53,69);doc.circle(mx+1.2,y-1,1,'F');
+        doc.setTextColor(33,33,33);doc.setFont('helvetica','bold');doc.setFontSize(8);
+        doc.text('Q'+qNum,mx+4,y);
+        doc.setFont('helvetica','normal');doc.setTextColor(220,53,69);
+        doc.text('Incorrect',mx+14,y);
+        doc.setTextColor(120,120,120);
+        doc.text('(Chose '+sa+', Correct: '+ca+')',mx+32,y);
+      }
+      y+=3.2;
+      var qP=qDiv.querySelector('p');
+      if(qP){
+        var qT=qP.cloneNode(true);
+        var tags=qT.querySelectorAll('.result-tag');tags.forEach(function(t){t.remove();});
+        var qt=qT.textContent.replace(/^\d+\.\s*/,'').trim();
+        if(qt.length>0){
+          doc.setFont('helvetica','normal');doc.setTextColor(60,60,60);doc.setFontSize(6.5);
+          var ql=doc.splitTextToSize(qt,cw-5);
+          ql=ql.slice(0,1);
+          if(doc.splitTextToSize(qt,cw-5).length>1){ql[0]=ql[0].substring(0,ql[0].length-3)+'...';}
+          doc.text(ql,mx+4,y);y+=2.4;
+        }
+      }
+      if(typeof EXPLANATIONS!=='undefined'&&EXPLANATIONS[qNum]){
+        doc.setFont('helvetica','italic');doc.setTextColor(100,100,100);doc.setFontSize(6);
+        var lines=doc.splitTextToSize(EXPLANATIONS[qNum],cw-5);
+        if(lines.length>2){lines=lines.slice(0,2);lines[1]=lines[1].substring(0,Math.max(0,lines[1].length-3))+'...';}
+        doc.text(lines,mx+4,y);y+=lines.length*2.2;
+      }
+      y+=2;
+    });
+    doc.setDrawColor(200,200,200);doc.setLineWidth(0.2);doc.line(mx,ph-10,pw-mx,ph-10);
+    doc.setTextColor(170,170,170);doc.setFontSize(6);doc.setFont('helvetica','normal');
+    doc.text('ACT Math Practice  |  Score Report',pw/2,ph-7,{align:'center'});
+    var tn=location.pathname.match(/test(\d+)/);
+    var testNum=tn?parseInt(tn[1])-100:0;
+    var ds=new Date().toISOString().slice(0,10);
+    doc.save('ACT-Math-Test-'+testNum+'-'+ds+'.pdf');
+    btn.textContent='Download Report (PDF)';btn.disabled=false;
+  };
+  document.head.appendChild(s);
+}
+</script>
+</body></html>

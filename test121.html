@@ -1,0 +1,222 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>ACT Math Test 21</title><style>@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:#fff;color:#2d3748;line-height:1.7}
+.container{max-width:800px;margin:0 auto;padding:20px 24px}
+header{background:linear-gradient(135deg,#1a3a4a 0%,#2d6a7a 100%);color:#fff;padding:28px 0;margin-bottom:36px;text-align:center}
+header .container{display:block}
+header h1{font-size:1.6rem;font-weight:700;letter-spacing:-0.3px}
+header a{color:rgba(255,255,255,.7);text-decoration:none;font-size:.9rem;display:inline-block;margin-bottom:6px;transition:color .2s}
+header a:hover{color:#fff}
+.question{background:#fff;border-radius:12px;padding:24px;margin-bottom:20px;border:1px solid #e2e8f0;transition:border-color .2s}
+.question:hover{border-color:#cbd5e0}
+.question p{margin-bottom:14px;font-size:1.05rem}
+img{max-width:100%;height:auto;margin:4px 0;vertical-align:middle}
+.choices{list-style:none}
+.choices li{padding:10px 14px;margin:6px 0;border-radius:8px;cursor:pointer;transition:all .2s;border:2px solid transparent}
+.choices li:hover{background:#f0f7fa}
+.choices li.selected{background:#d1ecf1;border-color:#bee5eb}
+.choices li.correct{background:#d4edda;border-color:#28a745}
+.choices li.wrong{background:#f8d7da;border-color:#dc3545}
+.choices li.show-correct{background:#d4edda;border-color:#28a745}
+.submit-wrap{text-align:center;margin:36px 0}
+.submit-btn{display:inline-block;padding:14px 40px;background:linear-gradient(135deg,#1a3a4a,#2d6a7a);color:#fff;border:none;border-radius:10px;font-size:1.1rem;cursor:pointer;font-weight:600;font-family:inherit;transition:all .25s;letter-spacing:.3px}
+.submit-btn:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(26,58,74,.25)}
+.score-box{background:#fff;border-radius:12px;padding:28px;margin-bottom:28px;text-align:center;border:1px solid #e2e8f0;box-shadow:0 4px 20px rgba(0,0,0,.06);display:none}
+.score-box h2{font-size:1.4rem;margin-bottom:8px;color:#1a3a4a;text-align:center}
+.score-box .pct{font-size:3rem;font-weight:700}
+.score-box .pct.good{color:#28a745}
+.score-box .pct.ok{color:#e6a817}
+.score-box .pct.bad{color:#dc3545}
+.score-box .detail{color:#666;margin-top:4px}
+.result-tag{display:inline-block;padding:2px 10px;border-radius:12px;font-size:.8rem;font-weight:600;margin-left:8px}
+.result-tag.correct{background:#d4edda;color:#155724}
+.result-tag.wrong{background:#f8d7da;color:#721c24}
+.reset-btn{display:none;margin:16px auto;padding:12px 28px;background:#6c757d;color:#fff;border:none;border-radius:10px;font-size:1rem;cursor:pointer;font-family:inherit;transition:all .25s}
+.reset-btn:hover{background:#5a6268;transform:translateY(-1px)}
+.explanation{background:#f0f7ff;border-left:4px solid #1a3a4a;padding:14px 18px;margin-top:14px;border-radius:0 8px 8px 0;font-size:.95rem;color:#444;display:none}
+.explanation.show{display:block}
+.explanation strong{color:#1a3a4a}
+.nav{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin:36px 0}
+.nav a{display:inline-block;padding:10px 24px;background:linear-gradient(135deg,#1a3a4a,#2d6a7a);color:#fff;text-decoration:none;border-radius:10px;font-weight:500;font-size:.95rem;transition:all .25s}
+.nav a:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(26,58,74,.25)}
+footer{text-align:center;padding:36px 24px;color:#8899a4;font-size:.85rem;border-top:1px solid #e2e8f0;margin-top:40px}
+.report-btn{display:inline-block;margin:0;padding:12px 28px;background:linear-gradient(135deg,#1a3a4a,#2d6a7a);color:#fff;border:none;border-radius:10px;font-size:1rem;cursor:pointer;font-family:inherit;transition:all .25s}
+.report-btn:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(26,58,74,.25)}
+.bottom-score{background:#fff;border-radius:12px;padding:20px;margin:20px 0;text-align:center;border:1px solid #e2e8f0;box-shadow:0 4px 20px rgba(0,0,0,.06)}
+.bottom-score .pct{font-size:2.5rem;font-weight:700}
+.bottom-score .pct.good{color:#28a745}
+.bottom-score .pct.ok{color:#e6a817}
+.bottom-score .pct.bad{color:#dc3545}
+.bottom-score .detail{color:#666;margin-top:4px;font-size:.95rem}
+.report-wrap{display:none;text-align:center;margin:16px 0}
+.name-input{padding:10px 14px;border:1px solid #e2e8f0;border-radius:10px;font-size:.95rem;font-family:inherit;width:200px;margin-right:8px;outline:none;transition:border-color .2s}
+.name-input:focus{border-color:#1a3a4a}
+</style></head><body><header><div class="container"><a href="index.html">&larr; All Tests</a><h1>ACT Math Practice Test 21</h1></div></header><div class="container"><div id="score-box" class="score-box"><h2>Your Score</h2><div class="pct">0%</div><div class="detail"></div></div><div class="question"><p><b>1.</b> A magician performing at children's birthday parties charges $120.00 total for a one-hour performance with ten goodie bags for children at the party. She will provide additional goodie bags for $2.50 each. For an additional $25.00, she will also present a 15-minute laser light show. The magician is always paid on the day of the show, receives no tips or other additional payments, and never varies the length of the show. If the magician performs exactly four shows one weekend, presents the light show at three of those performances, and collects $635.00 total, how many additional goodie bags did she provide?</p><ul class="choices"><li>A. 26</li><li>B. 32</li><li>C. 48</li><li>D. 86</li><li>E. 254</li></ul></div><div class="question"><p><b>2.</b> In an elite marathon runner's training, total mileage consists of miles run at or faster than marathon pace and miles run slower than marathon pace. The table below shows miles run at or below marathon pace and total mileage for an elite marathon runner for each of 3 consecutive years.<br><img alt="" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_345_r1.jpg"><br>In 2004, how many miles of the runner's total mileage were miles run slower than marathon pace?</p><ul class="choices"><li>F. 1,012</li><li>G. 2,972</li><li>H. 3,368</li><li>J. 3,832</li><li>K. 3,850</li></ul></div><div class="question"><p><b>3.</b> A 24-hour day is how many times as long as 60 seconds?</p><ul class="choices"><li>A. 12</li><li>B. 30</li><li>C. 365</li><li>D. 720</li><li>E. 1,440</li></ul></div><div class="question"><p><b>4.</b> A student reads <em>a</em> pages per day for <em>d</em> days and then reads <em>b</em> pages per day for 2<em>d</em> days. In terms of <em>a</em>, <em>b</em>, and <em>d</em>, how many pages did the student read?</p><ul class="choices"><li>F. <em>ad</em> + 2<em>b</em></li><li>G. <em>ad</em> + 2<em>bd</em></li><li>H. 2<em>ad</em> + <em>2bd</em></li><li>J. <em>2abd</em></li><li>K. <em>2abd</em><sup class="frac">2</sup></li></ul></div><div class="question"><p><b>5.</b> A trapezoidal driveway has the dimensions, in yards, given in the figure below. What is the area, in square yards, of the driveway?<br><img alt="" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_346_r1.jpg"></p><ul class="choices"><li>A. 42</li><li>B. 72</li><li>C. 102</li><li>D. 156</li><li>E. 204</li></ul></div><div class="question"><p><b>6.</b> The graph below shows the number of people visiting a museum during the first 5 months of the year. How many people need to visit the museum during June for the mean of the first 6 months to equal the mean of the first 5 months?<br><img alt="" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_347_r1.jpg"></p><ul class="choices"><li>F. 0</li><li>G. 200</li><li>H. 250</li><li>J. 500</li><li>K. 1,250</li></ul></div><div class="question"><p><b>7.</b> A graduation cap is tossed upward. It is <em>f</em> feet above the ground <em>s</em> seconds after it has been thrown. The relationship between <em>f</em> and <em>s</em> is given by the equation <em>f</em> = 60<em>s</em> - 17<em>s</em><sup class="frac">2</sup> where 0 ≤ <em>s</em> ≤ 3.5. How many feet above the ground is the cap 3 seconds after it is thrown?</p><ul class="choices"><li>A. 27</li><li>B. 41</li><li>C. 60</li><li>D. 80</li><li>E. 163</li></ul></div><div class="question"><p><b>8.</b> The highest and lowest test scores of five students in Mr. Canyon's science class are listed below. Which student had the greatest range of scores?<br><img alt="" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_349_r1.jpg"></p><ul class="choices"><li>F. Alicia</li><li>G. Brandon</li><li>H. Cleo</li><li>J. David</li><li>K. Emily</li></ul></div><div class="question"><p><b>9.</b> Nita, Craig, and Chris catch a total of 300 fish on their trip. If Chris catches 45% of the fish and Craig catches 25 fish, what fraction of the 300 fish does Nita catch?</p><ul class="choices"><li>A. <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_508_r1.jpg"></li><li>B. <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_810_r1.jpg"></li><li>C. <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_385_r1.jpg"></li><li>D. <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_006_r1.jpg"></li><li>E. <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_386_r1.jpg"></li></ul></div><div class="question"><p><b>10.</b> Given that <em>f</em>(<em>x</em>) = 4<em>x</em><sup class="frac">2</sup> and <em>g</em>(<em>x</em>) = 3 -<img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_156_r1.jpg">, what is the value of <em>f</em>(<em>g</em>(4)) ?</p><ul class="choices"><li>F. 1</li><li>G. 4</li><li>H. 8</li><li>J. 16</li><li>K. 64</li></ul></div><div class="question"><p><b>11.</b> In the grid shown below, each small square has a side length of 1 unit. In the shaded region, each vertex lies on a vertex of a small square. What is the area, in square units, of the shaded region?<br><img alt="" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_350_r1.jpg"></p><ul class="choices"><li>A. 35</li><li>B. 25</li><li>C. 24</li><li>D. 19</li><li>E. 13</li></ul></div><div class="question"><p><b>12.</b> A ramp rises 6 inches for each 24 inches of horizontal run. This ramp rises how many inches for 62 inches of horizontal run?</p><ul class="choices"><li>F. 15<img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_385_r1.jpg"></li><li>G. 20<img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_637_r1.jpg"></li><li>H. 44</li><li>J. 80</li><li>K. 248</li></ul></div><div class="question"><p><b>13.</b> What is the value of <em>y</em><sup class="frac">x</sup> + (2<em>x</em> - 2<em>y</em>) when <em>x</em> = 2 and <em>y</em> = -3?</p><ul class="choices"><li>A. -10</li><li>B. 1</li><li>C. 7</li><li>D. 16</li><li>E. 19</li></ul></div><div class="question"><p><b>14.</b> In the figure below, the circle with center <em>O</em> is tangent to <img alt="" class="root" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_026_r1.jpg">, <img alt="" class="root" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_033_r1.jpg">, <img alt="" class="root" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_039_r1.jpg">, and <img alt="" class="root" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_041_r1.jpg">. The measure of angle <img alt="" class="root" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_029_r1.jpg"><em>BDE</em> is 75° and the measure of <img alt="" class="root" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_029_r1.jpg"><em>DEA</em> is 105°.<br><img alt="" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_353_r1.jpg"><br>The lines in which of the following pairs of lines are necessarily parallel?<br> I. <img alt="" class="root" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_021_r1.jpg"> and <img alt="" class="root" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_041_r1.jpg"><br>II. <img alt="" class="root" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_033_r1.jpg"> and <img alt="" class="root" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_026_r1.jpg"><br>III. <img alt="" class="root" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_039_r1.jpg"> and <img alt="" class="root" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_041_r1.jpg"></p><ul class="choices"><li>F. I only</li><li>G. II only</li><li>H. III only</li><li>J. I and II only</li><li>K. I, II, and III</li></ul></div><div class="question"><p><b>15.</b> The day a clothing store puts out a batch of brand-name T-shirts it sells 95 shirts at $4.10 per shirt. However, each day the shirts are on the rack, the store reduces the price of the shirts by $0.02 and consequently sells 1 additional shirt with each price reduction. If <em>x</em> represents the number of $0.02 price reductions, which of the following expressions represents the amount of money, in dollars, that the store will take in daily in sales of these brand name T-shirts?</p><ul class="choices"><li>A. (4.10 + 2<em>x</em>)(95 + <em>x</em>)</li><li>B. (4.10 - 2<em>x</em>)(95 + <em>x</em>)</li><li>C. (4.10 + 0.02<em>x</em>)(95 + <em>x</em>)</li><li>D. (4.10 - 0.02<em>x</em>)(95 + <em>x</em>)</li><li>E. (4.10-- 0.02<em>x</em>)(95 + 0.02<em>x</em>)</li></ul></div><div class="submit-wrap"><button class="submit-btn" onclick="gradeTest()">Submit Test</button><button class="reset-btn" onclick="resetTest()">Try Again</button>
+<div class="report-wrap"><input type="text" class="name-input" placeholder="Student name (for report)"><button class="report-btn" onclick="generateReport()">Download Report (PDF)</button></div></div><div class="nav"><a href="test120.html">&larr; Prev</a><a href="index.html">All Tests</a><a href="test122.html">Next &rarr;</a></div></div><footer><div class="container">ACT Math Practice</div></footer>
+<script>
+const ANSWERS = {"1": "B", "2": "J", "3": "E", "4": "G", "5": "C", "6": "H", "7": "A", "8": "K", "9": "D", "10": "G", "11": "D", "12": "F", "13": "E", "14": "G", "15": "D"};
+const EXPLANATIONS = {"1":"B  The magician receives 4($120) + 3($25)  =  $555 in payment for performances and light shows, leaving $635 - $555  =  $80 in payment for additional goodie bags. Since each costs $2.50, she provides   =  32 bags. Choice (A) calculates all 4.75 hours worked at the $120 rate. Choice (C) divides the $120 and $2.50 from the problem without answering the question, and choice (D) miscalculates based on three performances instead of four. Choice (E) assumes the entire $635 is for additional goodie bag payment.", "2":"J  Subtract the number of miles run at or faster than marathon pace during 2004 from the number of total miles run in 2004. 4,982 - 1,150  =  3,832.", "3":"E  60 seconds is 1 minute. There are 60 minutes in 1 hour, so there are 60 × 24  =  1,440 minutes in 24 hours.", "4":"G  The total pages read by the student equals the number of pages read per day times the number of days at each rate. (a × d) + (b × 2d)  =  ad + 2bd. Choice (F) omits the d in the second term and choice (H) applies the 2 to both terms. Choice (J) drops the addition sign between the terms. Choice (K) multiplies the two terms instead of adding them.", "5":"C  To find the area of the trapezoid, split it into a rectangle with dimensions of 12 and 6 and a triangle with a height of 12 and a base of 5, then add the areas of the two smaller shapes: (6)(12) + (5)(12)  =  72 + 30  =  102. Choice (B) gives only the area of the rectangular portion and choice (A) gives the perimeter of the whole figure. Choice (E) doubles the area. Choice (D) finds the hypotenuse of the triangle and multiplies it by the height of the triangle.", "6":"H  Estimating should help you eliminate choices (F), (J), and (K). Find the mean (or average) of the first five months by finding the total number of visitors and dividing by 5: (200 + 300 + 200 + 350 + 200) ÷ 5  =  1,250 ÷ 5  =  250. Now try out the answer choices and see which one gives a six-month average equal to 250. Choice (F) doesn\'t work because you need to divide the total by 6 this time. Choice (G) is the mode. Choice (H) gives you 1,500 ÷ 6  =  250. Choice (J) is double what it should be. Choice (K) is the total of the first five months.", "7":"A  Substitute 3 seconds into the equation f  =  60(3) - 17 (3)2 and solve. f  =  180 - 153  =  27 feet.", "8":"K  To find the test-score range for each student, subtract the highest test score from the lowest. Emily\'s score range is 89 - 70  =  19 points. The range for Cleo\'s and David\'s scores are 18 points each, and Alicia\'s score range is 17 points. Brandon\'s score range is 12 points.", "9":"D  Subtract Craig\'s and Chris\'s fish to determine how many fish Nita catches. For Chris, 45% of 300  =  .45 × 300  =  135 fish. 300 - 135 - 25  =  140 fish that Nita catches make a: .", "10":"G  Find the value of g(4) and substitute it into the function given for f(x). g(4)  =  3 -  =  3 - 2  =  1 and f(1)  =  4(1)2  =  4, choice (G). Choice (F) stops at the value of g(4) and choice (K) finds f(4). The other choices make small math errors within each function.", "11":"D  Estimate by calculating the area of a 6 × 6 square surrounding the shaded figure, then counting and subtracting the unshaded squares within that 36 unit area: roughly 18 squares. Subtract 36 - 18  =  18. Answer choice (D) is closest.", "12":"F  Because the problem asks you about the rise after two different horizontal runs, sketch one run of 24 with a ramp of 6. Sketch a second run of 62 and a ramp of x. Make each a triangle by drawing a third line from the top of the ramp to the end of the run. The two triangles you\'ve sketched have three common angles, so they\'re similar. To solve, set up a proportion of rise/run. You know the rise after 24 inches is 6, so 6/24  =  x/62. Solve and you\'ll find that x  =  15.5, choice (A).", "13":"E  Substitute the given values of x and y into the expression and simplify, using the rules of order of operations (PEMDAS). (-3)2 + [(2 × 2) - (2 × -3)]  =  9 + [4 - (-6)]  =  9 + (4 + 6)  =  19. Choice (C) drops the second negative sign in the final term, subtracting 6 from 4 instead of adding. Choice (B) subtracts 9 from 10 in the last step instead of adding. Choice (A) negates the value of 2x - 2y. Choice (D) finds the value of xy in the first term of the expression instead of yx.", "14":"G  Because DEA measures 75° and BDE measures 105°, and the sum of these angles is 180°, you know that  and  are parallel. Eliminate choices that do not include II, choices (F) and (H). Since there is no way to determine the measures of ABD or BAE, it cannot be concluded that  and  are parallel. Therefore, eliminate choices (J) and (K).", "15":"D  Multiply the price by the number of shirts sold. The price of the shirts will be the original price: $4.10 - the $0.02 discount × the number of discounts (x). The number of shirts sold is the original 95 shirts + 1 shirt for each day the price is reduced: (x). Multiply (4.10 - 0.02x)(95 + x) to get the number of shirts sold on any given day. If you\'re stuck on a problem like this or if you can\'t figure out exactly what the answer should be, use process of elimination: you know that the price of the shirts goes down but the number sold goes up. Therefore, you\'ll want a (–) in your first set of parentheses and a (+) in your second set of them—this allows you to eliminate choices (A) and (C). Then, notice that the $0.02 will be a change in the price, not the number of items sold, so you can eliminate (E). Compare choices (B) and (D) and consider which contains numbers from the problem—in no part of the problem is there a 2, only $0.02, so choice (D) is the best answer choice."};
+let graded = false;
+
+document.querySelectorAll('.choices li').forEach(li => {
+  // Remove old onclick
+  li.removeAttribute('onclick');
+  li.addEventListener('click', function() {
+    if (graded) return;
+    const siblings = this.parentElement.querySelectorAll('li');
+    siblings.forEach(s => s.classList.remove('selected'));
+    this.classList.add('selected');
+  });
+});
+
+function gradeTest() {
+  if (graded) return;
+  graded = true;
+  let correct = 0;
+  const total = Object.keys(ANSWERS).length;
+  
+  document.querySelectorAll('.question').forEach((qDiv, idx) => {
+    const qNum = idx + 1;
+    const correctAns = ANSWERS[qNum];
+    if (!correctAns) return;
+    const choices = qDiv.querySelectorAll('.choices li');
+    const selected = qDiv.querySelector('.choices li.selected');
+    const selectedLetter = selected ? selected.textContent.trim().charAt(0) : null;
+    
+    choices.forEach(li => {
+      const letter = li.textContent.trim().charAt(0);
+      if (letter === correctAns) li.classList.add('show-correct');
+      li.style.cursor = 'default';
+    });
+    
+    const tag = document.createElement('span');
+    tag.className = 'result-tag';
+    
+    if (selectedLetter === correctAns) {
+      correct++;
+      tag.className += ' correct';
+      tag.textContent = 'Correct';
+      if (selected) { selected.classList.remove('selected'); selected.classList.add('correct'); }
+    } else {
+      tag.className += ' wrong';
+      tag.textContent = 'Incorrect (Answer: ' + correctAns + ')';
+      if (selected) { selected.classList.remove('selected'); selected.classList.add('wrong'); }
+    }
+    
+    const firstP = qDiv.querySelector('p');
+    if (firstP) firstP.appendChild(tag);
+    
+    if (typeof EXPLANATIONS !== 'undefined' && EXPLANATIONS[qNum]) {
+      const explDiv = document.createElement('div');
+      explDiv.className = 'explanation show';
+      explDiv.innerHTML = '<strong>Explanation:</strong> ' + EXPLANATIONS[qNum];
+      qDiv.appendChild(explDiv);
+    }
+  });
+  
+  const pct = Math.round((correct / total) * 100);
+  document.querySelector('.submit-btn').style.display = 'none';
+  document.querySelector('.reset-btn').style.display = 'block';
+  var rw=document.querySelector('.report-wrap');if(rw)rw.style.display='block';
+  var bs=document.createElement('div');bs.className='bottom-score';bs.id='bottom-score';
+  bs.innerHTML='<h2 style="font-size:1.3rem;margin-bottom:6px;color:#1a3a4a">Your Score</h2><div class="pct '+(pct>=80?'good':pct>=60?'ok':'bad')+'">'+pct+'%</div><div class="detail">'+correct+' out of '+total+' correct</div>';
+  document.querySelector('.submit-wrap').after(bs);
+  try{var tn=location.pathname.match(/test(\d+)/);if(tn)localStorage.setItem('actmath_'+tn[1],pct);}catch(e){}
+}
+
+function resetTest() {
+  graded = false;
+  var bsEl=document.getElementById('bottom-score');if(bsEl)bsEl.remove();
+  document.querySelector('.submit-btn').style.display = '';
+  document.querySelector('.reset-btn').style.display = 'none';
+  var rw=document.querySelector('.report-wrap');if(rw)rw.style.display='none';
+  var ni=document.querySelector('.name-input');if(ni)ni.value='';
+  document.querySelectorAll('.choices li').forEach(li => {
+    li.classList.remove('selected','correct','wrong','show-correct');
+    li.style.cursor = 'pointer';
+  });
+  document.querySelectorAll('.result-tag').forEach(t => t.remove());
+  document.querySelectorAll('.explanation').forEach(e => e.remove());
+}
+
+function generateReport(){
+  var nameInput=document.querySelector('.name-input');
+  var name=(nameInput&&nameInput.value.trim())||'Student';
+  var testName=document.querySelector('header h1').textContent;
+  var bs=document.getElementById('bottom-score');
+  var scorePct=bs?bs.querySelector('.pct').textContent:'';
+  var detailTxt=bs?bs.querySelector('.detail').textContent:'';
+  var d=new Date().toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'});
+  var btn=document.querySelector('.report-btn');btn.textContent='Generating...';btn.disabled=true;
+  var s=document.createElement('script');
+  s.src='https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js';
+  s.onerror=function(){btn.textContent='Download Report (PDF)';btn.disabled=false;alert('Could not load PDF library.');};
+  s.onload=function(){
+    var doc=new jspdf.jsPDF('portrait','mm','letter');
+    var pw=215.9,ph=279.4,mx=12,cw=pw-2*mx,y=8;
+    doc.setFillColor(26,58,74);doc.rect(0,0,pw,22,'F');
+    doc.setTextColor(255,255,255);doc.setFontSize(13);doc.setFont('helvetica','bold');
+    doc.text(testName,mx,9);
+    doc.setFontSize(7.5);doc.setFont('helvetica','normal');
+    doc.text(d+'  |  Student: '+name,mx,14.5);
+    doc.setFontSize(18);doc.setFont('helvetica','bold');
+    doc.text(scorePct,pw-mx,11,{align:'right'});
+    doc.setFontSize(7.5);doc.setFont('helvetica','normal');
+    doc.text(detailTxt,pw-mx,16,{align:'right'});
+    y=25;
+    doc.setDrawColor(26,58,74);doc.setLineWidth(0.3);doc.line(mx,y,pw-mx,y);y+=3;
+    document.querySelectorAll('.question').forEach(function(qDiv,idx){
+      var qNum=idx+1;var ca=ANSWERS[qNum];if(!ca)return;
+      var sel=qDiv.querySelector('.choices li.correct,.choices li.wrong');
+      var sa=sel?sel.textContent.trim().charAt(0):'-';
+      var ok=sel&&sel.classList.contains('correct');
+      if(ok){
+        doc.setFillColor(40,167,69);doc.circle(mx+1.2,y-1,1,'F');
+        doc.setTextColor(33,33,33);doc.setFont('helvetica','bold');doc.setFontSize(8);
+        doc.text('Q'+qNum,mx+4,y);
+        doc.setFont('helvetica','normal');doc.setTextColor(40,167,69);
+        doc.text('Correct ('+ca+')',mx+14,y);
+      }else{
+        doc.setFillColor(220,53,69);doc.circle(mx+1.2,y-1,1,'F');
+        doc.setTextColor(33,33,33);doc.setFont('helvetica','bold');doc.setFontSize(8);
+        doc.text('Q'+qNum,mx+4,y);
+        doc.setFont('helvetica','normal');doc.setTextColor(220,53,69);
+        doc.text('Incorrect',mx+14,y);
+        doc.setTextColor(120,120,120);
+        doc.text('(Chose '+sa+', Correct: '+ca+')',mx+32,y);
+      }
+      y+=3.2;
+      var qP=qDiv.querySelector('p');
+      if(qP){
+        var qT=qP.cloneNode(true);
+        var tags=qT.querySelectorAll('.result-tag');tags.forEach(function(t){t.remove();});
+        var qt=qT.textContent.replace(/^\d+\.\s*/,'').trim();
+        if(qt.length>0){
+          doc.setFont('helvetica','normal');doc.setTextColor(60,60,60);doc.setFontSize(6.5);
+          var ql=doc.splitTextToSize(qt,cw-5);
+          ql=ql.slice(0,1);
+          if(doc.splitTextToSize(qt,cw-5).length>1){ql[0]=ql[0].substring(0,ql[0].length-3)+'...';}
+          doc.text(ql,mx+4,y);y+=2.4;
+        }
+      }
+      if(typeof EXPLANATIONS!=='undefined'&&EXPLANATIONS[qNum]){
+        doc.setFont('helvetica','italic');doc.setTextColor(100,100,100);doc.setFontSize(6);
+        var lines=doc.splitTextToSize(EXPLANATIONS[qNum],cw-5);
+        if(lines.length>2){lines=lines.slice(0,2);lines[1]=lines[1].substring(0,Math.max(0,lines[1].length-3))+'...';}
+        doc.text(lines,mx+4,y);y+=lines.length*2.2;
+      }
+      y+=2;
+    });
+    doc.setDrawColor(200,200,200);doc.setLineWidth(0.2);doc.line(mx,ph-10,pw-mx,ph-10);
+    doc.setTextColor(170,170,170);doc.setFontSize(6);doc.setFont('helvetica','normal');
+    doc.text('ACT Math Practice  |  Score Report',pw/2,ph-7,{align:'center'});
+    var tn=location.pathname.match(/test(\d+)/);
+    var testNum=tn?parseInt(tn[1])-100:0;
+    var ds=new Date().toISOString().slice(0,10);
+    doc.save('ACT-Math-Test-'+testNum+'-'+ds+'.pdf');
+    btn.textContent='Download Report (PDF)';btn.disabled=false;
+  };
+  document.head.appendChild(s);
+}
+</script>
+</body></html>

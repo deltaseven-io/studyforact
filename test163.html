@@ -1,0 +1,222 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>ACT Math Test 63</title><style>@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:#fff;color:#2d3748;line-height:1.7}
+.container{max-width:800px;margin:0 auto;padding:20px 24px}
+header{background:linear-gradient(135deg,#1a3a4a 0%,#2d6a7a 100%);color:#fff;padding:28px 0;margin-bottom:36px;text-align:center}
+header .container{display:block}
+header h1{font-size:1.6rem;font-weight:700;letter-spacing:-0.3px}
+header a{color:rgba(255,255,255,.7);text-decoration:none;font-size:.9rem;display:inline-block;margin-bottom:6px;transition:color .2s}
+header a:hover{color:#fff}
+.question{background:#fff;border-radius:12px;padding:24px;margin-bottom:20px;border:1px solid #e2e8f0;transition:border-color .2s}
+.question:hover{border-color:#cbd5e0}
+.question p{margin-bottom:14px;font-size:1.05rem}
+img{max-width:100%;height:auto;margin:4px 0;vertical-align:middle}
+.choices{list-style:none}
+.choices li{padding:10px 14px;margin:6px 0;border-radius:8px;cursor:pointer;transition:all .2s;border:2px solid transparent}
+.choices li:hover{background:#f0f7fa}
+.choices li.selected{background:#d1ecf1;border-color:#bee5eb}
+.choices li.correct{background:#d4edda;border-color:#28a745}
+.choices li.wrong{background:#f8d7da;border-color:#dc3545}
+.choices li.show-correct{background:#d4edda;border-color:#28a745}
+.submit-wrap{text-align:center;margin:36px 0}
+.submit-btn{display:inline-block;padding:14px 40px;background:linear-gradient(135deg,#1a3a4a,#2d6a7a);color:#fff;border:none;border-radius:10px;font-size:1.1rem;cursor:pointer;font-weight:600;font-family:inherit;transition:all .25s;letter-spacing:.3px}
+.submit-btn:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(26,58,74,.25)}
+.score-box{background:#fff;border-radius:12px;padding:28px;margin-bottom:28px;text-align:center;border:1px solid #e2e8f0;box-shadow:0 4px 20px rgba(0,0,0,.06);display:none}
+.score-box h2{font-size:1.4rem;margin-bottom:8px;color:#1a3a4a;text-align:center}
+.score-box .pct{font-size:3rem;font-weight:700}
+.score-box .pct.good{color:#28a745}
+.score-box .pct.ok{color:#e6a817}
+.score-box .pct.bad{color:#dc3545}
+.score-box .detail{color:#666;margin-top:4px}
+.result-tag{display:inline-block;padding:2px 10px;border-radius:12px;font-size:.8rem;font-weight:600;margin-left:8px}
+.result-tag.correct{background:#d4edda;color:#155724}
+.result-tag.wrong{background:#f8d7da;color:#721c24}
+.reset-btn{display:none;margin:16px auto;padding:12px 28px;background:#6c757d;color:#fff;border:none;border-radius:10px;font-size:1rem;cursor:pointer;font-family:inherit;transition:all .25s}
+.reset-btn:hover{background:#5a6268;transform:translateY(-1px)}
+.explanation{background:#f0f7ff;border-left:4px solid #1a3a4a;padding:14px 18px;margin-top:14px;border-radius:0 8px 8px 0;font-size:.95rem;color:#444;display:none}
+.explanation.show{display:block}
+.explanation strong{color:#1a3a4a}
+.nav{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin:36px 0}
+.nav a{display:inline-block;padding:10px 24px;background:linear-gradient(135deg,#1a3a4a,#2d6a7a);color:#fff;text-decoration:none;border-radius:10px;font-weight:500;font-size:.95rem;transition:all .25s}
+.nav a:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(26,58,74,.25)}
+footer{text-align:center;padding:36px 24px;color:#8899a4;font-size:.85rem;border-top:1px solid #e2e8f0;margin-top:40px}
+.report-btn{display:inline-block;margin:0;padding:12px 28px;background:linear-gradient(135deg,#1a3a4a,#2d6a7a);color:#fff;border:none;border-radius:10px;font-size:1rem;cursor:pointer;font-family:inherit;transition:all .25s}
+.report-btn:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(26,58,74,.25)}
+.bottom-score{background:#fff;border-radius:12px;padding:20px;margin:20px 0;text-align:center;border:1px solid #e2e8f0;box-shadow:0 4px 20px rgba(0,0,0,.06)}
+.bottom-score .pct{font-size:2.5rem;font-weight:700}
+.bottom-score .pct.good{color:#28a745}
+.bottom-score .pct.ok{color:#e6a817}
+.bottom-score .pct.bad{color:#dc3545}
+.bottom-score .detail{color:#666;margin-top:4px;font-size:.95rem}
+.report-wrap{display:none;text-align:center;margin:16px 0}
+.name-input{padding:10px 14px;border:1px solid #e2e8f0;border-radius:10px;font-size:.95rem;font-family:inherit;width:200px;margin-right:8px;outline:none;transition:border-color .2s}
+.name-input:focus{border-color:#1a3a4a}
+</style></head><body><header><div class="container"><a href="index.html">&larr; All Tests</a><h1>ACT Math Practice Test 63</h1></div></header><div class="container"><div id="score-box" class="score-box"><h2>Your Score</h2><div class="pct">0%</div><div class="detail"></div></div><div class="question"><p><b>1.</b> If <img src="https://www.crackab.com/image/tests/cr2016/00959.jpg"> = -6 then which of the following must be true?</p><ul class="choices"><li>A. <span class="italic">y</span> = -18</li><li>B. <span class="italic">y</span> = -<img src="https://www.crackab.com/image/tests/cr2016/00962.jpg"></li><li>C. <span class="italic">y</span> = -<img src="https://www.crackab.com/image/tests/cr2016/00964.jpg"></li><li>D. <span class="italic">y</span> = -1</li><li>E. <span class="italic">y</span> = <img src="https://www.crackab.com/image/tests/cr2016/00964.jpg"></li></ul></div><div class="question"><p><b>2.</b> The expression <img src="https://www.crackab.com/image/tests/cr2016/00966.jpg"> is equivalent to:</p><ul class="choices"><li>F. 3<span class="italic">z<sup><small>5</small></sup></span></li><li>G. 8<span class="italic">z<sup><small>5</small></sup></span></li><li>H. 3<span class="italic">z<sup><small>8</small></sup></span></li><li>J. 8<span class="italic">z<sup><small>8</small></sup></span></li><li>K. 8<span class="italic">z<sup><small>12</small></sup></span></li></ul></div><div class="question"><p><b>3.</b> If <span class="italic">f</span>(<span class="italic">x</span>) = <img src="https://www.crackab.com/image/tests/cr2016/00969.jpg">, then <span class="italic">f</span>(12) = ?</p><ul class="choices"><li>A. -4</li><li>B. 3</li><li>C. 9</li><li>D. 12</li><li>E. 126</li></ul></div><div class="question"><p><b>4.</b> In one month, Rebecca, an entertainment journalist, recorded how many movies she watched and how many articles she wrote. She plotted this data in the graphs below: Graph 1 shows the relationship between the time elapsed and the number of movies watched; Graph 2 shows the relationship between the number of movies watched and the number of articles written. According to this data, how many articles did she write in the first 3 weeks of this month?<br><img src="https://www.crackab.com/image/tests/cr2016/00971.jpg"></p><ul class="choices"><li>F. 3</li><li>G. 5</li><li>H. 8</li><li>J. 12</li><li>K. 15</li></ul></div><div class="question"><p><b>5.</b> What is the value of 117 - 54 + 6, rounded to the nearest ten?</p><ul class="choices"><li>A. 40</li><li>B. 50</li><li>C. 60</li><li>D. 70</li><li>E. 80</li></ul></div><div class="question"><p><b>6.</b> A restaurant has 4 napkins at each table, plus 20 extra napkins held in reserve. If the restaurant has a total of 100 napkins, how many tables are in the restaurant?</p><ul class="choices"><li>F. 15</li><li>G. 20</li><li>H. 25</li><li>J. 30</li><li>K. 35</li></ul></div><div class="question"><p><b>7.</b> If 4(<span class="italic">w</span> - 2) - <span class="italic">w</span> = 46, then <span class="italic">w</span> = ?</p><ul class="choices"><li>A. 8</li><li>B. 10</li><li>C. 16</li><li>D. 18</li><li>E. 20</li></ul></div><div class="question"><p><b>8.</b> Six points (<span class="italic">U, V, W, X, Y, Z</span>) appear on a number line in that order, as shown in the figure below. Which of the following rays does NOT contain <span class="italic">WX</span> ?<br><img src="https://www.crackab.com/image/tests/cr2016/00973.jpg"></p><ul class="choices"><li>F. <span class="italic">UY</span></li><li>G. <span class="italic">VZ</span></li><li>H. <span class="italic">YV</span></li><li>J. <span class="italic">YZ</span></li><li>K. <span class="italic">ZV</span></li></ul></div><div class="question"><p><b>9.</b> If <span class="italic">ab</span> = 32, <span class="italic">bc</span> = 40, and <span class="italic">c</span> = 5, then which of the following could be the value of <span class="italic">a</span> ?</p><ul class="choices"><li>A. 4</li><li>B. 6</li><li>C. 8</li><li>D. 10</li><li>E. 12</li></ul></div><div class="question"><p><b>10.</b> Yunyun swam 4 laps, and her coach recorded her time for each as 43.4 seconds, 44.1 seconds, 42.9 seconds, and 45.4 seconds, respectively, for a total of 175.8 seconds. If Yunyun must swim her 5th lap in <span class="italic">x</span> seconds in order to make her average time for all 5 laps 43 seconds, then which of the following equations could be solved for the correct value of <span class="italic">x</span> ?</p><ul class="choices"><li>F. <img src="https://www.crackab.com/image/tests/cr2016/00977.jpg"></li><li>G. <img src="https://www.crackab.com/image/tests/cr2016/00979.jpg"> = 43</li><li>H. <img src="https://www.crackab.com/image/tests/cr2016/00981.jpg"> = 43</li><li>J. <img src="https://www.crackab.com/image/tests/cr2016/00984.jpg"> + <span class="italic">x</span> = 43</li><li>K. <img src="https://www.crackab.com/image/tests/cr2016/00987.jpg"> + <span class="italic">x</span> = 43</li></ul></div><div class="question"><p><b>11.</b> For how many integers from 123 to 132 is the tens digit greater than the ones digit?</p><ul class="choices"><li>A. 2</li><li>B. 3</li><li>C. 4</li><li>D. 9</li><li>E. 10</li></ul></div><div class="question"><p><b>12.</b> The number of points Julie scores in a basketball game is proportional to the amount of time she practiced that week. Last week, Julie scored 20 points after practicing for 12 hours. How many hours should Julie practice this week if she wants to score 35 points?</p><ul class="choices"><li>F. 7</li><li>G. 14</li><li>H. 16</li><li>J. 20</li><li>K. 21</li></ul></div><div class="question"><p><b>13.</b> Rectangle <span class="italic">ABCD</span> is graphed in the (<span class="italic">x,y</span>) coordinate plane below. What fraction of rectangle <span class="italic">ABCD</span> lies in Quadrant IV ?<br><img src="https://www.crackab.com/image/tests/cr2016/00989.jpg"></p><ul class="choices"><li>A. <img src="https://www.crackab.com/image/tests/cr2016/00992.jpg"></li><li>B. <img src="https://www.crackab.com/image/tests/cr2016/01376.jpg"></li><li>C. <img src="https://www.crackab.com/image/tests/cr2016/00030.jpg"></li><li>D. <img src="https://www.crackab.com/image/tests/cr2016/00243.jpg"></li><li>E. <img src="https://www.crackab.com/image/tests/cr2016/00994.jpg"></li></ul></div><div class="question"><p><b>14.</b> Which of the following is equivalent to the expression <img src="https://www.crackab.com/image/tests/cr2016/00449.jpg"> ?</p><ul class="choices"><li>F. -<img src="https://www.crackab.com/image/tests/cr2016/00999.jpg"></li><li>G. -<img src="https://www.crackab.com/image/tests/cr2016/00815.jpg"></li><li>H. -<img src="https://www.crackab.com/image/tests/cr2016/00816.jpg"></li><li>J. <img src="https://www.crackab.com/image/tests/cr2016/00818.jpg"></li><li>K. <img src="https://www.crackab.com/image/tests/cr2016/00819.jpg"></li></ul></div><div class="question"><p><b>15.</b> A circle with the equation <span class="italic">x<sup><small>2</small></sup></span> + <span class="italic">y<sup><small>2</small></sup></span> = 49 is graphed in the standard (<span class="italic">x,y</span>) coordinate plane. At which 2 points does this circle intersect the <span class="italic">x</span>-axis?</p><ul class="choices"><li>A. (-1,0) and (1,0)</li><li>B. (-7,0) and (7,0)</li><li>C. (-14,0) and (14,0)</li><li>D. (-21,0) and (21,0)</li><li>E. (-49,0) and (49,0)</li></ul></div><div class="submit-wrap"><button class="submit-btn" onclick="gradeTest()">Submit Test</button><button class="reset-btn" onclick="resetTest()">Try Again</button>
+<div class="report-wrap"><input type="text" class="name-input" placeholder="Student name (for report)"><button class="report-btn" onclick="generateReport()">Download Report (PDF)</button></div></div><div class="nav"><a href="test162.html">&larr; Prev</a><a href="index.html">All Tests</a><a href="test164.html">Next &rarr;</a></div></div><footer><div class="container">ACT Math Practice</div></footer>
+<script>
+const ANSWERS = {"1": "C", "2": "H", "3": "C", "4": "J", "5": "D", "6": "G", "7": "D", "8": "J", "9": "A", "10": "G", "11": "B", "12": "K", "13": "B", "14": "K", "15": "B"};
+const EXPLANATIONS = {"1":"C Isolate the variable. First, multiply each side by 3 to get 5y -1  =  -18. Next, add 1 to each side to get 5y  =  -17. Last, divide each side by 5 to get y  =  . Choices (B) and (E) are trap answers and result from mistakes with the negative sign.", "2":"H Simplify the expression by reducing the integers and following the rules for exponents (MADSPM):   =  3. When Dividing like bases, Subtract the exponents.   =  z8. Choices (F), (G), (J), and (K) are trap answers and result from swapping or mistaking some or all of the operations for the integers and exponents.", "3":"C Input 12 into the function given.   =  9. Use parentheses in your calculator when there are operations in the numerator and denominator of a fraction.", "4":"J Underline the question. Articleswritten are in Graph 2, but weeks are in Graph 1. The link between the two figures is movies watched. When weeks elapsed equals 3 on Graph 1, movies watched equals 15. When movies watched equals 15 on Graph 2, articles written equals 12 on Graph 2.", "5":"D First, perform the calculations to find that 117 -54 + 6  =  69. Next, round this value to the nearest ten, 70.", "6":"G Underline the question. Read the bite-sized pieces carefully and translate the English into math to write an equation. The number of tables is the unknown, so 4x + 20  =  100. Isolate the variable by subtracting 20 from both sides and then dividing each side by 4 to find that x  =  20. PITA (Plug In the Answer) is an alternative to writing the equation. Choice (H) is wrong because it doesn\'t include the extra 20 napkins. Choice (J) is wrong because it adds 20 to 100 instead of subtracting.", "7":"D Before you can isolate the variable, you have to collect like things, and the only way to collect the variables together is to first distribute. 4(w -2) -w  =  46 becomes 4w -8 -w  =  46 then 3w -8  =  46. Add 8 to both sides and then divide both sides by 3 to find that w  =  18. Choice (C) is wrong because the 4 wasn\'t distributed to the 2 as well as the variable.", "8":"J Be careful with the NOT in the question and use the answers to see which contain WX. Only (J) does not.", "9":"A Start with bc  =  40 and replace c with 5. If 5b  =  40, then b  =  8. Now replace b with 8 in ab  =  32 and solve for a: 8a  =  32, and a  =  4.", "10":"G Underline the question and work the problem in bite-sized pieces. Don\'t waste time adding up the times for the first 4 laps: The total of 178.5 is provided in the next bite-sized piece. Moreover, the answers make clear that the goal is to write the expression to solve for the 5th time without calculating the actual number. Use the Average Pie: Divide the total by the number of things to find the average. The total of all 5 laps will be the total of the first 4 (178.5) plus the 5th. Divide this total by 5 to get an average of 43:   =  43.", "11":"B List all the integers from 123 to 132: 123, 124, 125, 126, 127, 128, 129, 130, 131, 132. Circle all the integers whose tens digit (the 2 or the 3 in this case) is greater than the ones (or units) digit. Only 130, 131, and 132 satisfy the condition, since 0, 1, and 2 are all less than 3.", "12":"K Set up a proportion.   =  . Cross-multiply to solve for x. 20x  =  420, x  =  21.", "13":"B Count the hash marks to determine the length and width of rectangle ABCD. Since the sides are horizontal and vertical, there is no need to use the distance formula. The width is 5 (the distance from the y-point -3 to the y-point 2), and the length is 6 (the distance from the x-point -4 to the x-point 2). The formula for area of a rectangle is A  =  lw, so 6 × 5  =  30. The rectangle formed in Quadrant IV is bounded by the x-axis and the y-point -3 and by the y-axis and the x-point 2. Thus, it makes a rectangle with sides 2 and 3 and an area of 6,  of the whole, or .", "14":"K Choice (H) is a trap answer that illustrates a basic rule of math: You can\'t reduce terms in the numerator and denominator if the terms are connected to other terms by addition or subtraction. You can\'t cancel (z + 3) in the numerator and denominator. Instead, distribute and combine like things. 2(z + 3) -9  =  2z + 6 -9  =  2z -3. In the denominator, 5 + 4(z + 3)  =  5 + 4z + 12  =  4z + 17.", "15":"B The equation for a circle graphed in the standard (x,y) plane is (x -h)2 + (y -k)2  =  r2, where (h,k) are the coordinates of the center. If the circle is centered at the origin, both h and k are 0, and the equation simplifies to x2 + y2  =  r2. This circle is centered at the origin and has a radius of 7. Thus, the coordinates for the intersection with the x-axis are (-7, 0) and (7,0)."};
+let graded = false;
+
+document.querySelectorAll('.choices li').forEach(li => {
+  // Remove old onclick
+  li.removeAttribute('onclick');
+  li.addEventListener('click', function() {
+    if (graded) return;
+    const siblings = this.parentElement.querySelectorAll('li');
+    siblings.forEach(s => s.classList.remove('selected'));
+    this.classList.add('selected');
+  });
+});
+
+function gradeTest() {
+  if (graded) return;
+  graded = true;
+  let correct = 0;
+  const total = Object.keys(ANSWERS).length;
+  
+  document.querySelectorAll('.question').forEach((qDiv, idx) => {
+    const qNum = idx + 1;
+    const correctAns = ANSWERS[qNum];
+    if (!correctAns) return;
+    const choices = qDiv.querySelectorAll('.choices li');
+    const selected = qDiv.querySelector('.choices li.selected');
+    const selectedLetter = selected ? selected.textContent.trim().charAt(0) : null;
+    
+    choices.forEach(li => {
+      const letter = li.textContent.trim().charAt(0);
+      if (letter === correctAns) li.classList.add('show-correct');
+      li.style.cursor = 'default';
+    });
+    
+    const tag = document.createElement('span');
+    tag.className = 'result-tag';
+    
+    if (selectedLetter === correctAns) {
+      correct++;
+      tag.className += ' correct';
+      tag.textContent = 'Correct';
+      if (selected) { selected.classList.remove('selected'); selected.classList.add('correct'); }
+    } else {
+      tag.className += ' wrong';
+      tag.textContent = 'Incorrect (Answer: ' + correctAns + ')';
+      if (selected) { selected.classList.remove('selected'); selected.classList.add('wrong'); }
+    }
+    
+    const firstP = qDiv.querySelector('p');
+    if (firstP) firstP.appendChild(tag);
+    
+    if (typeof EXPLANATIONS !== 'undefined' && EXPLANATIONS[qNum]) {
+      const explDiv = document.createElement('div');
+      explDiv.className = 'explanation show';
+      explDiv.innerHTML = '<strong>Explanation:</strong> ' + EXPLANATIONS[qNum];
+      qDiv.appendChild(explDiv);
+    }
+  });
+  
+  const pct = Math.round((correct / total) * 100);
+  document.querySelector('.submit-btn').style.display = 'none';
+  document.querySelector('.reset-btn').style.display = 'block';
+  var rw=document.querySelector('.report-wrap');if(rw)rw.style.display='block';
+  var bs=document.createElement('div');bs.className='bottom-score';bs.id='bottom-score';
+  bs.innerHTML='<h2 style="font-size:1.3rem;margin-bottom:6px;color:#1a3a4a">Your Score</h2><div class="pct '+(pct>=80?'good':pct>=60?'ok':'bad')+'">'+pct+'%</div><div class="detail">'+correct+' out of '+total+' correct</div>';
+  document.querySelector('.submit-wrap').after(bs);
+  try{var tn=location.pathname.match(/test(\d+)/);if(tn)localStorage.setItem('actmath_'+tn[1],pct);}catch(e){}
+}
+
+function resetTest() {
+  graded = false;
+  var bsEl=document.getElementById('bottom-score');if(bsEl)bsEl.remove();
+  document.querySelector('.submit-btn').style.display = '';
+  document.querySelector('.reset-btn').style.display = 'none';
+  var rw=document.querySelector('.report-wrap');if(rw)rw.style.display='none';
+  var ni=document.querySelector('.name-input');if(ni)ni.value='';
+  document.querySelectorAll('.choices li').forEach(li => {
+    li.classList.remove('selected','correct','wrong','show-correct');
+    li.style.cursor = 'pointer';
+  });
+  document.querySelectorAll('.result-tag').forEach(t => t.remove());
+  document.querySelectorAll('.explanation').forEach(e => e.remove());
+}
+
+function generateReport(){
+  var nameInput=document.querySelector('.name-input');
+  var name=(nameInput&&nameInput.value.trim())||'Student';
+  var testName=document.querySelector('header h1').textContent;
+  var bs=document.getElementById('bottom-score');
+  var scorePct=bs?bs.querySelector('.pct').textContent:'';
+  var detailTxt=bs?bs.querySelector('.detail').textContent:'';
+  var d=new Date().toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'});
+  var btn=document.querySelector('.report-btn');btn.textContent='Generating...';btn.disabled=true;
+  var s=document.createElement('script');
+  s.src='https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js';
+  s.onerror=function(){btn.textContent='Download Report (PDF)';btn.disabled=false;alert('Could not load PDF library.');};
+  s.onload=function(){
+    var doc=new jspdf.jsPDF('portrait','mm','letter');
+    var pw=215.9,ph=279.4,mx=12,cw=pw-2*mx,y=8;
+    doc.setFillColor(26,58,74);doc.rect(0,0,pw,22,'F');
+    doc.setTextColor(255,255,255);doc.setFontSize(13);doc.setFont('helvetica','bold');
+    doc.text(testName,mx,9);
+    doc.setFontSize(7.5);doc.setFont('helvetica','normal');
+    doc.text(d+'  |  Student: '+name,mx,14.5);
+    doc.setFontSize(18);doc.setFont('helvetica','bold');
+    doc.text(scorePct,pw-mx,11,{align:'right'});
+    doc.setFontSize(7.5);doc.setFont('helvetica','normal');
+    doc.text(detailTxt,pw-mx,16,{align:'right'});
+    y=25;
+    doc.setDrawColor(26,58,74);doc.setLineWidth(0.3);doc.line(mx,y,pw-mx,y);y+=3;
+    document.querySelectorAll('.question').forEach(function(qDiv,idx){
+      var qNum=idx+1;var ca=ANSWERS[qNum];if(!ca)return;
+      var sel=qDiv.querySelector('.choices li.correct,.choices li.wrong');
+      var sa=sel?sel.textContent.trim().charAt(0):'-';
+      var ok=sel&&sel.classList.contains('correct');
+      if(ok){
+        doc.setFillColor(40,167,69);doc.circle(mx+1.2,y-1,1,'F');
+        doc.setTextColor(33,33,33);doc.setFont('helvetica','bold');doc.setFontSize(8);
+        doc.text('Q'+qNum,mx+4,y);
+        doc.setFont('helvetica','normal');doc.setTextColor(40,167,69);
+        doc.text('Correct ('+ca+')',mx+14,y);
+      }else{
+        doc.setFillColor(220,53,69);doc.circle(mx+1.2,y-1,1,'F');
+        doc.setTextColor(33,33,33);doc.setFont('helvetica','bold');doc.setFontSize(8);
+        doc.text('Q'+qNum,mx+4,y);
+        doc.setFont('helvetica','normal');doc.setTextColor(220,53,69);
+        doc.text('Incorrect',mx+14,y);
+        doc.setTextColor(120,120,120);
+        doc.text('(Chose '+sa+', Correct: '+ca+')',mx+32,y);
+      }
+      y+=3.2;
+      var qP=qDiv.querySelector('p');
+      if(qP){
+        var qT=qP.cloneNode(true);
+        var tags=qT.querySelectorAll('.result-tag');tags.forEach(function(t){t.remove();});
+        var qt=qT.textContent.replace(/^\d+\.\s*/,'').trim();
+        if(qt.length>0){
+          doc.setFont('helvetica','normal');doc.setTextColor(60,60,60);doc.setFontSize(6.5);
+          var ql=doc.splitTextToSize(qt,cw-5);
+          ql=ql.slice(0,1);
+          if(doc.splitTextToSize(qt,cw-5).length>1){ql[0]=ql[0].substring(0,ql[0].length-3)+'...';}
+          doc.text(ql,mx+4,y);y+=2.4;
+        }
+      }
+      if(typeof EXPLANATIONS!=='undefined'&&EXPLANATIONS[qNum]){
+        doc.setFont('helvetica','italic');doc.setTextColor(100,100,100);doc.setFontSize(6);
+        var lines=doc.splitTextToSize(EXPLANATIONS[qNum],cw-5);
+        if(lines.length>2){lines=lines.slice(0,2);lines[1]=lines[1].substring(0,Math.max(0,lines[1].length-3))+'...';}
+        doc.text(lines,mx+4,y);y+=lines.length*2.2;
+      }
+      y+=2;
+    });
+    doc.setDrawColor(200,200,200);doc.setLineWidth(0.2);doc.line(mx,ph-10,pw-mx,ph-10);
+    doc.setTextColor(170,170,170);doc.setFontSize(6);doc.setFont('helvetica','normal');
+    doc.text('ACT Math Practice  |  Score Report',pw/2,ph-7,{align:'center'});
+    var tn=location.pathname.match(/test(\d+)/);
+    var testNum=tn?parseInt(tn[1])-100:0;
+    var ds=new Date().toISOString().slice(0,10);
+    doc.save('ACT-Math-Test-'+testNum+'-'+ds+'.pdf');
+    btn.textContent='Download Report (PDF)';btn.disabled=false;
+  };
+  document.head.appendChild(s);
+}
+</script>
+</body></html>

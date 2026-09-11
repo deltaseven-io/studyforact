@@ -1,0 +1,222 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>ACT Math Test 74</title><style>@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:#fff;color:#2d3748;line-height:1.7}
+.container{max-width:800px;margin:0 auto;padding:20px 24px}
+header{background:linear-gradient(135deg,#1a3a4a 0%,#2d6a7a 100%);color:#fff;padding:28px 0;margin-bottom:36px;text-align:center}
+header .container{display:block}
+header h1{font-size:1.6rem;font-weight:700;letter-spacing:-0.3px}
+header a{color:rgba(255,255,255,.7);text-decoration:none;font-size:.9rem;display:inline-block;margin-bottom:6px;transition:color .2s}
+header a:hover{color:#fff}
+.question{background:#fff;border-radius:12px;padding:24px;margin-bottom:20px;border:1px solid #e2e8f0;transition:border-color .2s}
+.question:hover{border-color:#cbd5e0}
+.question p{margin-bottom:14px;font-size:1.05rem}
+img{max-width:100%;height:auto;margin:4px 0;vertical-align:middle}
+.choices{list-style:none}
+.choices li{padding:10px 14px;margin:6px 0;border-radius:8px;cursor:pointer;transition:all .2s;border:2px solid transparent}
+.choices li:hover{background:#f0f7fa}
+.choices li.selected{background:#d1ecf1;border-color:#bee5eb}
+.choices li.correct{background:#d4edda;border-color:#28a745}
+.choices li.wrong{background:#f8d7da;border-color:#dc3545}
+.choices li.show-correct{background:#d4edda;border-color:#28a745}
+.submit-wrap{text-align:center;margin:36px 0}
+.submit-btn{display:inline-block;padding:14px 40px;background:linear-gradient(135deg,#1a3a4a,#2d6a7a);color:#fff;border:none;border-radius:10px;font-size:1.1rem;cursor:pointer;font-weight:600;font-family:inherit;transition:all .25s;letter-spacing:.3px}
+.submit-btn:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(26,58,74,.25)}
+.score-box{background:#fff;border-radius:12px;padding:28px;margin-bottom:28px;text-align:center;border:1px solid #e2e8f0;box-shadow:0 4px 20px rgba(0,0,0,.06);display:none}
+.score-box h2{font-size:1.4rem;margin-bottom:8px;color:#1a3a4a;text-align:center}
+.score-box .pct{font-size:3rem;font-weight:700}
+.score-box .pct.good{color:#28a745}
+.score-box .pct.ok{color:#e6a817}
+.score-box .pct.bad{color:#dc3545}
+.score-box .detail{color:#666;margin-top:4px}
+.result-tag{display:inline-block;padding:2px 10px;border-radius:12px;font-size:.8rem;font-weight:600;margin-left:8px}
+.result-tag.correct{background:#d4edda;color:#155724}
+.result-tag.wrong{background:#f8d7da;color:#721c24}
+.reset-btn{display:none;margin:16px auto;padding:12px 28px;background:#6c757d;color:#fff;border:none;border-radius:10px;font-size:1rem;cursor:pointer;font-family:inherit;transition:all .25s}
+.reset-btn:hover{background:#5a6268;transform:translateY(-1px)}
+.explanation{background:#f0f7ff;border-left:4px solid #1a3a4a;padding:14px 18px;margin-top:14px;border-radius:0 8px 8px 0;font-size:.95rem;color:#444;display:none}
+.explanation.show{display:block}
+.explanation strong{color:#1a3a4a}
+.nav{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin:36px 0}
+.nav a{display:inline-block;padding:10px 24px;background:linear-gradient(135deg,#1a3a4a,#2d6a7a);color:#fff;text-decoration:none;border-radius:10px;font-weight:500;font-size:.95rem;transition:all .25s}
+.nav a:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(26,58,74,.25)}
+footer{text-align:center;padding:36px 24px;color:#8899a4;font-size:.85rem;border-top:1px solid #e2e8f0;margin-top:40px}
+.report-btn{display:inline-block;margin:0;padding:12px 28px;background:linear-gradient(135deg,#1a3a4a,#2d6a7a);color:#fff;border:none;border-radius:10px;font-size:1rem;cursor:pointer;font-family:inherit;transition:all .25s}
+.report-btn:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(26,58,74,.25)}
+.bottom-score{background:#fff;border-radius:12px;padding:20px;margin:20px 0;text-align:center;border:1px solid #e2e8f0;box-shadow:0 4px 20px rgba(0,0,0,.06)}
+.bottom-score .pct{font-size:2.5rem;font-weight:700}
+.bottom-score .pct.good{color:#28a745}
+.bottom-score .pct.ok{color:#e6a817}
+.bottom-score .pct.bad{color:#dc3545}
+.bottom-score .detail{color:#666;margin-top:4px;font-size:.95rem}
+.report-wrap{display:none;text-align:center;margin:16px 0}
+.name-input{padding:10px 14px;border:1px solid #e2e8f0;border-radius:10px;font-size:.95rem;font-family:inherit;width:200px;margin-right:8px;outline:none;transition:border-color .2s}
+.name-input:focus{border-color:#1a3a4a}
+</style></head><body><header><div class="container"><a href="index.html">&larr; All Tests</a><h1>ACT Math Practice Test 74</h1></div></header><div class="container"><div id="score-box" class="score-box"><h2>Your Score</h2><div class="pct">0%</div><div class="detail"></div></div><div class="question"><p><b>1.</b> What fraction lies exactly halfway between <img src="https://www.crackab.com/image/tests/mg10/02077.jpg"> and <img src="https://www.crackab.com/image/tests/mg10/02616.jpg">?</p><ul class="choices"><li>F. <img src="https://www.crackab.com/image/tests/mg10/02623.jpg"></li><li>G. <img src="https://www.crackab.com/image/tests/mg10/02166.jpg"></li><li>H. <img src="https://www.crackab.com/image/tests/mg10/02633.jpg"></li><li>J. <img src="https://www.crackab.com/image/tests/mg10/02626.jpg"></li><li>K. <img src="https://www.crackab.com/image/tests/mg10/02566.jpg"></li></ul></div><div class="question"><p><b>2.</b> When entering information about the budget of her charity ball, Laura records an expense of $20.00. However, Laura accidentally enters the $20.00 as income instead of an expense. The balance of the charity ball budget now shows:</p><ul class="choices"><li>A. $40 less than it should.</li><li>B. $20 less than it should.</li><li>C. the correct amount.</li><li>D. $20 more than it should.</li><li>E. $40 more than it should.</li></ul></div><div class="question"><p><b>3.</b> Rebecca is trying to schedule volunteers to help at a school carnival. There are 5 one-hour shifts to be filled by 5 different volunteers. If each shift must have one and only one volunteer, how many different arrangements can the schedule have?</p><ul class="choices"><li>F. 5</li><li>G. 20</li><li>H. 25</li><li>J. 50</li><li>K. 120</li></ul></div><div class="question"><p><b>4.</b> In the standard (<span class="italic">x</span>, <span class="italic">y</span>) coordinate plane, what is the distance between the points (4,-7) and (-1,5)?</p><ul class="choices"><li>A. 5</li><li>B. 12</li><li>C. 13</li><li>D. 20</li><li>E. 26</li></ul></div><div class="question"><p><b>5.</b> A formula for the volume, <span class="italic">V</span>, of a right circular cylinder is <span class="italic">V</span> = <span class="italic">πr<sup><small>2</small></sup>h</span>, where <span class="italic">r</span> is the radius and <span class="italic">h</span> is the height. If a tanker truck has a tank as shown below with a diameter of 3 meters and a length of 10 meters and is filled with water, then the weight, in pounds, of the water cargo is: (Note: 1 cubic meter of water weighs approximately 2,205 pounds.)<br><img src="https://www.crackab.com/image/tests/mg10/02543.jpg"><br></p><ul class="choices"><li>F. less than 75,000.</li><li>G. between 125,000 and 175,000.</li><li>H. between 175,000 and 225,000.</li><li>J. between 225,000 and 275,000.</li><li>K. more than 275,000.</li></ul></div><div class="question"><p><b>6.</b> In the figure below, line <span class="italic">AB</span> is parallel to the base of the triangle and creates a smaller triangle inside of the original triangle. If the lengths of segments are as shown and the smaller triangle has an area of 8 cm<sup><small>2</small></sup>, what is the area, in square centimeters, of the original triangle?<br><img src="https://www.crackab.com/image/tests/mg10/02529.jpg"><br></p><ul class="choices"><li>A. 16</li><li>B. 24</li><li>C. 32</li><li>D. 64</li><li>E. 128</li></ul></div><div class="question"><p><b>7.</b> The figure below is a regular hexagon. What is the measure of one of the interior angles of the hexagon?<br><img src="https://www.crackab.com/image/tests/mg10/02525.jpg"><br></p><ul class="choices"><li>F. 108°</li><li>G. 120°</li><li>H. 135°</li><li>J. 150°</li><li>K. 720°</li></ul></div><div class="question"><p><b>8.</b> It is estimated that, from the beginning of 1993 to the end of 1997, the average number of CDs bought by teenagers increased from 7 per year to 15 per year. During the same time period, the average number of video games purchased by teenagers increased from 6 per year to 18 per year. Assuming that in each case the rates or purchase are the same, in what year did teenagers buy the same average number of CDs and video games?</p><ul class="choices"><li>A. 1993</li><li>B. 1994</li><li>C. 1995</li><li>D. 1996</li><li>E. 1997</li></ul></div><div class="question"><p><b>9.</b> If <span class="italic">x<sup><small>2</small></sup></span> - 45<span class="italic">b<sup><small>2</small></sup></span> = 4<span class="italic">xb</span>, what are the 2 solutions for <span class="italic">x</span> in terms of <span class="italic">b</span>?</p><ul class="choices"><li>F. 15<span class="italic">b</span> or -3<span class="italic">b</span></li><li>G. 5<span class="italic">b</span> or -9<span class="italic">b</span></li><li>H. 15<span class="italic">b</span> or 3<span class="italic">b</span></li><li>J. 45<span class="italic">b</span> or -4<span class="italic">b</span></li><li>K. 9<span class="italic">b</span> or -5<span class="italic">b</span></li></ul></div><div class="question"><p><b>10.</b> Which of the following is (are) equivalent to the mathematical operation <span class="italic">a</span>(<span class="italic">b</span> - <span class="italic">c</span>) for all real numbers <span class="italic">a</span>, <span class="italic">b</span>, and <span class="italic">c</span>?<br>I. <span class="italic">ca</span> - <span class="italic">ba</span><br>II. <span class="italic">ab</span> - <span class="italic">ac</span><br>III. (<span class="italic">b</span> - <span class="italic">c</span>)<span class="italic">a</span></p><ul class="choices"><li>A. II only</li><li>B. I and II only</li><li>C. I and III only</li><li>D. II and III only</li><li>E. I, II and III</li></ul></div><div class="question"><p><b>11.</b> For values of <span class="italic">x</span> where sin <span class="italic">x</span>, cos <span class="italic">x</span>, and tan <span class="italic">x</span> are all defined, <img src="https://www.crackab.com/image/tests/mg10/02103.jpg"></p><ul class="choices"><li>F. <img src="https://www.crackab.com/image/tests/mg10/02173.jpg"></li><li>G. tan<sup><small>2</small></sup><span class="italic">x</span></li><li>H. 1</li><li>J. sin<sup><small>2</small></sup><span class="italic">x</span></li><li>K. sec <span class="italic">x</span></li></ul></div><div class="question"><p><b>12.</b> If <span class="italic">a</span> is inversely proportional to <span class="italic">b</span> and <span class="italic">a</span> = 36 when <span class="italic">b</span> = 12, what is the value of <span class="italic">a</span> when <span class="italic">b</span> = 48?</p><ul class="choices"><li>A. 0</li><li>B. <img src="https://www.crackab.com/image/tests/mg10/02139.jpg"></li><li>C. <img src="https://www.crackab.com/image/tests/mg10/02203.jpg"></li><li>D. 4</li><li>E. 9</li></ul></div><div class="question"><p><b>13.</b> For which of the following values of <span class="italic">c</span> will there be 2 distinct real solutions to the equation 5<span class="italic">x<sup><small>2</small></sup></span> + 16<span class="italic">x</span> + <span class="italic">c</span> = 0?</p><ul class="choices"><li>F. 3</li><li>G. 9</li><li>H. 14</li><li>J. 15</li><li>K. 20</li></ul></div><div class="question"><p><b>14.</b> If the volume of a cube is 64, what is the shortest distance from the center of the cube to the base of the cube?</p><ul class="choices"><li>A. 2</li><li>B. 4</li><li>C. <img src="https://www.crackab.com/image/tests/mg10/02170.jpg"></li><li>D. <img src="https://www.crackab.com/image/tests/mg10/02136.jpg"></li><li>E. 16</li></ul></div><div class="question"><p><b>15.</b> What is the slope of a line that is perpendicular to the line determined by the equation 5<span class="italic">x</span> + 8<span class="italic">y</span> = 17?</p><ul class="choices"><li>F. -3</li><li>G. <img src="https://www.crackab.com/image/tests/mg10/02187.jpg"></li><li>H. <img src="https://www.crackab.com/image/tests/mg10/02198.jpg"></li><li>J. <img src="https://www.crackab.com/image/tests/mg10/02102.jpg"></li><li>K. <img src="https://www.crackab.com/image/tests/mg10/02109.jpg"></li></ul></div><div class="submit-wrap"><button class="submit-btn" onclick="gradeTest()">Submit Test</button><button class="reset-btn" onclick="resetTest()">Try Again</button>
+<div class="report-wrap"><input type="text" class="name-input" placeholder="Student name (for report)"><button class="report-btn" onclick="generateReport()">Download Report (PDF)</button></div></div><div class="nav"><a href="test173.html">&larr; Prev</a><a href="index.html">All Tests</a><a href="test175.html">Next &rarr;</a></div></div><footer><div class="container">ACT Math Practice</div></footer>
+<script>
+const ANSWERS = {"1": "H", "2": "E", "3": "K", "4": "C", "5": "G", "6": "C", "7": "G", "8": "B", "9": "K", "10": "D", "11": "F", "12": "E", "13": "F", "14": "A", "15": "K"};
+const EXPLANATIONS = {"1":"The correct answer is H. To solve this problem, convert  and  to fractions with a common denominator, such that  and . The halfway point will be somewhere between  and . From there, you can increase the magnitude of the denominator so that a halfway point between the numerators is more evident.  and . Thus the halfway point is between  and , which is .", "2":"The correct answer is E. Because Laura recorded the $20 as income, the balance of the budget would appear to be $20 higher than it should be. However, because the $20 was an expense, once the $20 was deducted from the income statement and then deducted again from the expense report, the balance would appear to be $40 more than it should.", "3":"The correct answer is K. Think of each shift as a spot to be filled: __×__×__×__×__. In each spot there are only a certain number of available workers. For example, the first spot can have any of the 5 volunteers working, leaving 4 possible workers for the next shift, and so on. Therefore, the number of possible arrangements of volunteers is 5 × 4 × 3 × 2 × 1  =  5!, or 120.", "4":"The correct answer is C. To find the distance between points (4,-7) and (-1,5) in the standard (x,y) coordinate plane, use the distance formula  as follows: Another way to look at this problem would be to draw a picture (as shown). Then you can use the Pythagorean Theorem to find the hypotenuse of the triangle that is formed from those points.", "5":"The correct answer is G. The diameter of the cylinder is 3 meters. Therefore, the radius is 1.5 meters. Using the formula for the volume of a right circular cylinder, V  =  πr2h with h equal to the length 10 meters, V  =  π(1.5)2(10), or approximately 70.65 cubic meters. Since water weighs about 2,205 pounds per cubic meter, the weight of the water cargo is 2,205 × 70.65, or about 156,000 pounds.", "6":"The correct answer is C. Since the two lines are parallel, the two triangles are similar and share the same constant ratio. The smaller triangle has one side with a length of 4 cm, and the larger triangle has one side with a length of 4 + 12, or 16 cm. The legs of the triangles have a ratio of 4:16, which can be reduced to 1:4. The ratio of 1:4 also extends to the area of the triangles. You are given that the smaller triangle has an area of 8cm2. The larger triangle has an area that is 4 times larger, so the area of the larger triangle is 4 × 8  =  32 cm2.", "7":"The correct answer is G. To solve for the total measure of all interior angles of a regular polygon, use the formula (n - 2)(180°) where n is the number of vertices of the polygon. A regular hexagon has 6 vertices, so the total measure of all interior angles is (6 - 2)(180)  =  (4)(180)  =  720°. Since there are six interior angles, each one is .", "8":"The correct answer is B. The best way to solve this problem is to set up a table indicating the time period in years and the number of both CDs and video games purchased during the years given. The rate of purchase is the same, so, based on information in the problem, you can fill in the table below. Teenagers bought the same average number of CDs and video games in 1994.", "9":"The correct answer is K. The first step in answering this question is to set x2 - 45b2  =  4xb equal to zero, by isolating all of the terms on the left side: x2 - 4xb - 45b2  =  0 The next step is to factor the equation and set each group equal to 0 in order to solve for x: The two solutions for x are -5b or 9b.", "10":"The correct answer is D. This question tests your ability to recognize and apply the distributive property of multiplication. According to the distributive property, for any numbers a, b, and c, a(b - c)  =  ab - ac. a(b - c)  =  ab - ac which is NOT equivalent to ca - ba, so Roman Numeral I is incorrect; eliminate answer choices B, C, and E. ab - ac, so Roman Numeral II is correct. (b - c)a, so Roman Numeral III is also correct. Since II and III are equivalent to a(b - c), answer choice D is correct.", "11":"The correct answer is F. By definition, the tangent of any angle is . Therefore,  is equal to . Multiply both the numerator and denominator by cos x to get .", "12":"The correct answer is E. By definition, if a and b are inversely proportional, then a1b1  =  a2b2. Therefore, (36)(12)  =  (48)a. Solve for a as follows:", "13":"The correct answer is F. The best way to solve this problem is to plug in the answer choices for c, and factor the equation, starting with answer choice F: Answer choice F gives you 2 distinct solutions for x, so you do not need to try the remaining answer choices.", "14":"The correct answer is A. To solve this problem, you must realize that the volume of a cube is equal to (length)(width)(height) or simply (side)3, since all sides of a cube are equivalent in length. To find the length of one side, find the cube root of 64, which is 4. (43  =  64) Because all sides of a cube are equal, the shortest distance from the center of the cube to the base of the cube will equal the midpoint of the length of the cube, which is , or 2.", "15":"The correct answer is K. The line 5x + 8y  =  17 is given in standard form. You should find the slope of this line by converting the equation into slope-intercept form (y  =  mx + b, where m is the slope and b is the y-intercept): Since the equation is now in slope-intercept form, it is easy to see that the slope of the line is . The slope of a line perpendicular to the line with a slope of  is , answer choice K (remember that perpendicular lines have negative reciprocal slopes)."};
+let graded = false;
+
+document.querySelectorAll('.choices li').forEach(li => {
+  // Remove old onclick
+  li.removeAttribute('onclick');
+  li.addEventListener('click', function() {
+    if (graded) return;
+    const siblings = this.parentElement.querySelectorAll('li');
+    siblings.forEach(s => s.classList.remove('selected'));
+    this.classList.add('selected');
+  });
+});
+
+function gradeTest() {
+  if (graded) return;
+  graded = true;
+  let correct = 0;
+  const total = Object.keys(ANSWERS).length;
+  
+  document.querySelectorAll('.question').forEach((qDiv, idx) => {
+    const qNum = idx + 1;
+    const correctAns = ANSWERS[qNum];
+    if (!correctAns) return;
+    const choices = qDiv.querySelectorAll('.choices li');
+    const selected = qDiv.querySelector('.choices li.selected');
+    const selectedLetter = selected ? selected.textContent.trim().charAt(0) : null;
+    
+    choices.forEach(li => {
+      const letter = li.textContent.trim().charAt(0);
+      if (letter === correctAns) li.classList.add('show-correct');
+      li.style.cursor = 'default';
+    });
+    
+    const tag = document.createElement('span');
+    tag.className = 'result-tag';
+    
+    if (selectedLetter === correctAns) {
+      correct++;
+      tag.className += ' correct';
+      tag.textContent = 'Correct';
+      if (selected) { selected.classList.remove('selected'); selected.classList.add('correct'); }
+    } else {
+      tag.className += ' wrong';
+      tag.textContent = 'Incorrect (Answer: ' + correctAns + ')';
+      if (selected) { selected.classList.remove('selected'); selected.classList.add('wrong'); }
+    }
+    
+    const firstP = qDiv.querySelector('p');
+    if (firstP) firstP.appendChild(tag);
+    
+    if (typeof EXPLANATIONS !== 'undefined' && EXPLANATIONS[qNum]) {
+      const explDiv = document.createElement('div');
+      explDiv.className = 'explanation show';
+      explDiv.innerHTML = '<strong>Explanation:</strong> ' + EXPLANATIONS[qNum];
+      qDiv.appendChild(explDiv);
+    }
+  });
+  
+  const pct = Math.round((correct / total) * 100);
+  document.querySelector('.submit-btn').style.display = 'none';
+  document.querySelector('.reset-btn').style.display = 'block';
+  var rw=document.querySelector('.report-wrap');if(rw)rw.style.display='block';
+  var bs=document.createElement('div');bs.className='bottom-score';bs.id='bottom-score';
+  bs.innerHTML='<h2 style="font-size:1.3rem;margin-bottom:6px;color:#1a3a4a">Your Score</h2><div class="pct '+(pct>=80?'good':pct>=60?'ok':'bad')+'">'+pct+'%</div><div class="detail">'+correct+' out of '+total+' correct</div>';
+  document.querySelector('.submit-wrap').after(bs);
+  try{var tn=location.pathname.match(/test(\d+)/);if(tn)localStorage.setItem('actmath_'+tn[1],pct);}catch(e){}
+}
+
+function resetTest() {
+  graded = false;
+  var bsEl=document.getElementById('bottom-score');if(bsEl)bsEl.remove();
+  document.querySelector('.submit-btn').style.display = '';
+  document.querySelector('.reset-btn').style.display = 'none';
+  var rw=document.querySelector('.report-wrap');if(rw)rw.style.display='none';
+  var ni=document.querySelector('.name-input');if(ni)ni.value='';
+  document.querySelectorAll('.choices li').forEach(li => {
+    li.classList.remove('selected','correct','wrong','show-correct');
+    li.style.cursor = 'pointer';
+  });
+  document.querySelectorAll('.result-tag').forEach(t => t.remove());
+  document.querySelectorAll('.explanation').forEach(e => e.remove());
+}
+
+function generateReport(){
+  var nameInput=document.querySelector('.name-input');
+  var name=(nameInput&&nameInput.value.trim())||'Student';
+  var testName=document.querySelector('header h1').textContent;
+  var bs=document.getElementById('bottom-score');
+  var scorePct=bs?bs.querySelector('.pct').textContent:'';
+  var detailTxt=bs?bs.querySelector('.detail').textContent:'';
+  var d=new Date().toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'});
+  var btn=document.querySelector('.report-btn');btn.textContent='Generating...';btn.disabled=true;
+  var s=document.createElement('script');
+  s.src='https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js';
+  s.onerror=function(){btn.textContent='Download Report (PDF)';btn.disabled=false;alert('Could not load PDF library.');};
+  s.onload=function(){
+    var doc=new jspdf.jsPDF('portrait','mm','letter');
+    var pw=215.9,ph=279.4,mx=12,cw=pw-2*mx,y=8;
+    doc.setFillColor(26,58,74);doc.rect(0,0,pw,22,'F');
+    doc.setTextColor(255,255,255);doc.setFontSize(13);doc.setFont('helvetica','bold');
+    doc.text(testName,mx,9);
+    doc.setFontSize(7.5);doc.setFont('helvetica','normal');
+    doc.text(d+'  |  Student: '+name,mx,14.5);
+    doc.setFontSize(18);doc.setFont('helvetica','bold');
+    doc.text(scorePct,pw-mx,11,{align:'right'});
+    doc.setFontSize(7.5);doc.setFont('helvetica','normal');
+    doc.text(detailTxt,pw-mx,16,{align:'right'});
+    y=25;
+    doc.setDrawColor(26,58,74);doc.setLineWidth(0.3);doc.line(mx,y,pw-mx,y);y+=3;
+    document.querySelectorAll('.question').forEach(function(qDiv,idx){
+      var qNum=idx+1;var ca=ANSWERS[qNum];if(!ca)return;
+      var sel=qDiv.querySelector('.choices li.correct,.choices li.wrong');
+      var sa=sel?sel.textContent.trim().charAt(0):'-';
+      var ok=sel&&sel.classList.contains('correct');
+      if(ok){
+        doc.setFillColor(40,167,69);doc.circle(mx+1.2,y-1,1,'F');
+        doc.setTextColor(33,33,33);doc.setFont('helvetica','bold');doc.setFontSize(8);
+        doc.text('Q'+qNum,mx+4,y);
+        doc.setFont('helvetica','normal');doc.setTextColor(40,167,69);
+        doc.text('Correct ('+ca+')',mx+14,y);
+      }else{
+        doc.setFillColor(220,53,69);doc.circle(mx+1.2,y-1,1,'F');
+        doc.setTextColor(33,33,33);doc.setFont('helvetica','bold');doc.setFontSize(8);
+        doc.text('Q'+qNum,mx+4,y);
+        doc.setFont('helvetica','normal');doc.setTextColor(220,53,69);
+        doc.text('Incorrect',mx+14,y);
+        doc.setTextColor(120,120,120);
+        doc.text('(Chose '+sa+', Correct: '+ca+')',mx+32,y);
+      }
+      y+=3.2;
+      var qP=qDiv.querySelector('p');
+      if(qP){
+        var qT=qP.cloneNode(true);
+        var tags=qT.querySelectorAll('.result-tag');tags.forEach(function(t){t.remove();});
+        var qt=qT.textContent.replace(/^\d+\.\s*/,'').trim();
+        if(qt.length>0){
+          doc.setFont('helvetica','normal');doc.setTextColor(60,60,60);doc.setFontSize(6.5);
+          var ql=doc.splitTextToSize(qt,cw-5);
+          ql=ql.slice(0,1);
+          if(doc.splitTextToSize(qt,cw-5).length>1){ql[0]=ql[0].substring(0,ql[0].length-3)+'...';}
+          doc.text(ql,mx+4,y);y+=2.4;
+        }
+      }
+      if(typeof EXPLANATIONS!=='undefined'&&EXPLANATIONS[qNum]){
+        doc.setFont('helvetica','italic');doc.setTextColor(100,100,100);doc.setFontSize(6);
+        var lines=doc.splitTextToSize(EXPLANATIONS[qNum],cw-5);
+        if(lines.length>2){lines=lines.slice(0,2);lines[1]=lines[1].substring(0,Math.max(0,lines[1].length-3))+'...';}
+        doc.text(lines,mx+4,y);y+=lines.length*2.2;
+      }
+      y+=2;
+    });
+    doc.setDrawColor(200,200,200);doc.setLineWidth(0.2);doc.line(mx,ph-10,pw-mx,ph-10);
+    doc.setTextColor(170,170,170);doc.setFontSize(6);doc.setFont('helvetica','normal');
+    doc.text('ACT Math Practice  |  Score Report',pw/2,ph-7,{align:'center'});
+    var tn=location.pathname.match(/test(\d+)/);
+    var testNum=tn?parseInt(tn[1])-100:0;
+    var ds=new Date().toISOString().slice(0,10);
+    doc.save('ACT-Math-Test-'+testNum+'-'+ds+'.pdf');
+    btn.textContent='Download Report (PDF)';btn.disabled=false;
+  };
+  document.head.appendChild(s);
+}
+</script>
+</body></html>

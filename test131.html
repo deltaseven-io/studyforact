@@ -1,0 +1,222 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>ACT Math Test 31</title><style>@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:#fff;color:#2d3748;line-height:1.7}
+.container{max-width:800px;margin:0 auto;padding:20px 24px}
+header{background:linear-gradient(135deg,#1a3a4a 0%,#2d6a7a 100%);color:#fff;padding:28px 0;margin-bottom:36px;text-align:center}
+header .container{display:block}
+header h1{font-size:1.6rem;font-weight:700;letter-spacing:-0.3px}
+header a{color:rgba(255,255,255,.7);text-decoration:none;font-size:.9rem;display:inline-block;margin-bottom:6px;transition:color .2s}
+header a:hover{color:#fff}
+.question{background:#fff;border-radius:12px;padding:24px;margin-bottom:20px;border:1px solid #e2e8f0;transition:border-color .2s}
+.question:hover{border-color:#cbd5e0}
+.question p{margin-bottom:14px;font-size:1.05rem}
+img{max-width:100%;height:auto;margin:4px 0;vertical-align:middle}
+.choices{list-style:none}
+.choices li{padding:10px 14px;margin:6px 0;border-radius:8px;cursor:pointer;transition:all .2s;border:2px solid transparent}
+.choices li:hover{background:#f0f7fa}
+.choices li.selected{background:#d1ecf1;border-color:#bee5eb}
+.choices li.correct{background:#d4edda;border-color:#28a745}
+.choices li.wrong{background:#f8d7da;border-color:#dc3545}
+.choices li.show-correct{background:#d4edda;border-color:#28a745}
+.submit-wrap{text-align:center;margin:36px 0}
+.submit-btn{display:inline-block;padding:14px 40px;background:linear-gradient(135deg,#1a3a4a,#2d6a7a);color:#fff;border:none;border-radius:10px;font-size:1.1rem;cursor:pointer;font-weight:600;font-family:inherit;transition:all .25s;letter-spacing:.3px}
+.submit-btn:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(26,58,74,.25)}
+.score-box{background:#fff;border-radius:12px;padding:28px;margin-bottom:28px;text-align:center;border:1px solid #e2e8f0;box-shadow:0 4px 20px rgba(0,0,0,.06);display:none}
+.score-box h2{font-size:1.4rem;margin-bottom:8px;color:#1a3a4a;text-align:center}
+.score-box .pct{font-size:3rem;font-weight:700}
+.score-box .pct.good{color:#28a745}
+.score-box .pct.ok{color:#e6a817}
+.score-box .pct.bad{color:#dc3545}
+.score-box .detail{color:#666;margin-top:4px}
+.result-tag{display:inline-block;padding:2px 10px;border-radius:12px;font-size:.8rem;font-weight:600;margin-left:8px}
+.result-tag.correct{background:#d4edda;color:#155724}
+.result-tag.wrong{background:#f8d7da;color:#721c24}
+.reset-btn{display:none;margin:16px auto;padding:12px 28px;background:#6c757d;color:#fff;border:none;border-radius:10px;font-size:1rem;cursor:pointer;font-family:inherit;transition:all .25s}
+.reset-btn:hover{background:#5a6268;transform:translateY(-1px)}
+.explanation{background:#f0f7ff;border-left:4px solid #1a3a4a;padding:14px 18px;margin-top:14px;border-radius:0 8px 8px 0;font-size:.95rem;color:#444;display:none}
+.explanation.show{display:block}
+.explanation strong{color:#1a3a4a}
+.nav{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin:36px 0}
+.nav a{display:inline-block;padding:10px 24px;background:linear-gradient(135deg,#1a3a4a,#2d6a7a);color:#fff;text-decoration:none;border-radius:10px;font-weight:500;font-size:.95rem;transition:all .25s}
+.nav a:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(26,58,74,.25)}
+footer{text-align:center;padding:36px 24px;color:#8899a4;font-size:.85rem;border-top:1px solid #e2e8f0;margin-top:40px}
+.report-btn{display:inline-block;margin:0;padding:12px 28px;background:linear-gradient(135deg,#1a3a4a,#2d6a7a);color:#fff;border:none;border-radius:10px;font-size:1rem;cursor:pointer;font-family:inherit;transition:all .25s}
+.report-btn:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(26,58,74,.25)}
+.bottom-score{background:#fff;border-radius:12px;padding:20px;margin:20px 0;text-align:center;border:1px solid #e2e8f0;box-shadow:0 4px 20px rgba(0,0,0,.06)}
+.bottom-score .pct{font-size:2.5rem;font-weight:700}
+.bottom-score .pct.good{color:#28a745}
+.bottom-score .pct.ok{color:#e6a817}
+.bottom-score .pct.bad{color:#dc3545}
+.bottom-score .detail{color:#666;margin-top:4px;font-size:.95rem}
+.report-wrap{display:none;text-align:center;margin:16px 0}
+.name-input{padding:10px 14px;border:1px solid #e2e8f0;border-radius:10px;font-size:.95rem;font-family:inherit;width:200px;margin-right:8px;outline:none;transition:border-color .2s}
+.name-input:focus{border-color:#1a3a4a}
+</style></head><body><header><div class="container"><a href="index.html">&larr; All Tests</a><h1>ACT Math Practice Test 31</h1></div></header><div class="container"><div id="score-box" class="score-box"><h2>Your Score</h2><div class="pct">0%</div><div class="detail"></div></div><div class="question"><p><b>1.</b> A restaurant decides on the following production model, where <em>N</em> is the number of ounces of flour the restaurant purchases each month, based on the number of ounces, <em>x</em>, the restaurant uses during the preceding month. <em>N</em> = <em>x</em><sup class="frac">2</sup> - 600<em>x</em> - 160,000. According to this model, what is the greatest quantity of flour, in number of ounces, that the restaurant can use during a month, without having to purchase any new flour the next month?</p><ul class="choices"><li>A. 800</li><li>B. 550</li><li>C. 400</li><li>D. 350</li><li>E. 200</li></ul></div><div class="question"><p><b>2.</b> <img alt="" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_564_r1.jpg"><br>Fresco initially spent money promoting the project in the media. He also had to pay the celebrities to participate. After 6 months, Fresco had created and sold <em>x</em> number of trash sculptures and finally broke even: he hadn't made or lost any money. How many sculptures did Fresco sell in his first 6 months of the project?</p><ul class="choices"><li>F. 3</li><li>G. 5</li><li>H. 7</li><li>J. 10</li><li>K. 15</li></ul></div><div class="question"><p><b>3.</b> <img alt="" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_564_r1.jpg"><br>The cost function in the chart is determined by a constant production cost per sculpture—in this case the amount Fresco pays each celebrity to participate—as well as a fixed cost, or the initial cost of promoting the project. What is the fixed cost of Fresco's trash sculpture project?</p><ul class="choices"><li>A. $1,000</li><li>B. $5,000</li><li>C. $10,000</li><li>D. $15,000</li><li>E. $50,000</li></ul></div><div class="question"><p><b>4.</b> <img alt="" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_564_r1.jpg"><br>The selling price of each trash sculpture is an integer number of dollars. According to the revenue function, what is the selling price of one trash sculpture?</p><ul class="choices"><li>F. $1,000</li><li>G. $1,667</li><li>H. $2,000</li><li>J. $3,000</li><li>K. Cannot be determined from the chart</li></ul></div><div class="question"><p><b>5.</b> Which of the following is a <em>complete</em> factorization of the expression 12<em>b</em><sup class="frac">2</sup><em>c</em> + 6<em>bc</em> + 3<em>b</em>?</p><ul class="choices"><li>A. 4<em>bc</em> + 2<em>c</em> + 1</li><li>B. 3<em>b</em> (9<em>bc</em> + 2<em>c</em> + 1)</li><li>C. 3<em>b</em> (4<em>bc</em> + 2<em>c</em> + 1)</li><li>D. 3<em>b</em> (4<em>bc</em> + 2<em>c</em>)</li><li>E. 6<em>bc</em> (2<em>b</em> + 6) + 3<em>b</em></li></ul></div><div class="question"><p><b>6.</b> Which of the following could be the equation of a line that passes through the points (-2,-7) and (2,17) in the standard (<em>x</em>,<em>y</em>) coordinate plane?</p><ul class="choices"><li>F. 3<em>x</em> - 2<em>y</em> = 8</li><li>G. 6<em>x</em> - <em>y</em> = -5</li><li>H. 5<em>x</em> - 2<em>y</em> = 7</li><li>J. 9<em>x</em> - 2<em>y</em> = -16</li><li>K. <em>x</em> + <em>y</em> = 6</li></ul></div><div class="question"><p><b>7.</b> A circle has a radius that is the same length as the sides of a square. If the square has a perimeter of 64 square inches, what is the area, in square inches, of the circle?</p><ul class="choices"><li>A. 16</li><li>B. 16π</li><li>C. 32π</li><li>D. 64π</li><li>E. 256π</li></ul></div><div class="question"><p><b>8.</b> What is the <em>y</em>-coordinate of the solution of the following system, presuming the system has a solution?<br>  8<em>x</em> + <em>y</em> = 30<br>8<em>x</em> + 4<em>y</em> = 96</p><ul class="choices"><li>F. 1</li><li>G. 8</li><li>H. 19</li><li>J. 22</li><li>K. The system has no solution.</li></ul></div><div class="question"><p><b>9.</b> <img alt="" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_565_r1.jpg"><br>What is the area of <em>MQRL</em>, in square feet?</p><ul class="choices"><li>A. 3,200</li><li>B. 1,750</li><li>C. 1,600</li><li>D. 600</li><li>E. 500</li></ul></div><div class="question"><p><b>10.</b> <img alt="" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_565_r1.jpg"><br>What is the length of <img alt="" class="root" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_124_r1.jpg"> in feet?</p><ul class="choices"><li>F. <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_135_r1.jpg"></li><li>G. <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_132_r1.jpg"></li><li>H. <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_128_r1.jpg"></li><li>J. 50</li><li>K. 45</li></ul></div><div class="question"><p><b>11.</b> <img alt="" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_565_r1.jpg"><br>What is the diameter, in feet, of the largest circle that can be drawn inside <em>MNPQ</em>?</p><ul class="choices"><li>A. 20</li><li>B. 40</li><li>C. 50</li><li>D. 60</li><li>E. 70</li></ul></div><div class="question"><p><b>12.</b> The figure below shows a ramp for skateboarders. The base of the ramp is 25 feet long, and it rises at a 10° angle.<br><img alt="" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_566_r1.jpg"><br>Given the trigonometric calculations in the table below, how high off the ground will a skateboarder be at the top of the ramp, rounded to the nearest 0.1 foot?<br><img alt="" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_567_r1.jpg"></p><ul class="choices"><li>F. 2.3</li><li>G. 2.5</li><li>H. 4.3</li><li>J. 4.4</li><li>K. 24.6</li></ul></div><div class="question"><p><b>13.</b> The 12 numbers on a circular clock are equally spaced around the edges of the clock. Belinda chooses an integer, <em>n</em>, that is greater than 1. Beginning at a randomly chosen number, Belinda goes around the circle counterclockwise and paints in every <em>n</em>th number. She continues going around and around the clock, painting in every <em>n</em>th number, until all twelve numbers on the clock are painted. Which of the following could have been Belinda's integer <em>n</em>?</p><ul class="choices"><li>A. 2</li><li>B. 3</li><li>C. 6</li><li>D. 7</li><li>E. 9</li></ul></div><div class="question"><p><b>14.</b> Consider the exponential equation <em>y</em> = <img alt="" class="fraction" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_568_r1.jpg">, where <em>K</em> and <em>p</em> are positive real constants and <em>x</em> is a positive real number. The value of <em>y</em> decreases as the value of <em>x</em> increases if and only if which of the following statements about <em>p</em> is true?</p><ul class="choices"><li>F. 0 &lt; <em>p</em> &lt; 1</li><li>G. 1 &lt; <em>p &lt;</em> 2</li><li>H. <em>p</em> &gt; -1</li><li>J. <em>p</em> &gt; 0</li><li>K. <em>p</em> &gt; 1</li></ul></div><div class="question"><p><b>15.</b> What is the distance, in coordinate units, between the points <em>M</em> (1,-3) and <em>N</em> (-5,5) in the standard (<em>x</em>,<em>y</em>) coordinate plane?</p><ul class="choices"><li>A. <img alt="" class="root" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_130_r1.jpg"></li><li>B. <img alt="" class="root" src="https://www.crackab.com/images/tests/Prin_9780307945938_epub_134_r1.jpg"></li><li>C. 8</li><li>D. 10</li><li>E. 20</li></ul></div><div class="submit-wrap"><button class="submit-btn" onclick="gradeTest()">Submit Test</button><button class="reset-btn" onclick="resetTest()">Try Again</button>
+<div class="report-wrap"><input type="text" class="name-input" placeholder="Student name (for report)"><button class="report-btn" onclick="generateReport()">Download Report (PDF)</button></div></div><div class="nav"><a href="test130.html">&larr; Prev</a><a href="index.html">All Tests</a><a href="test132.html">Next &rarr;</a></div></div><footer><div class="container">ACT Math Practice</div></footer>
+<script>
+const ANSWERS = {"1": "A", "2": "G", "3": "C", "4": "J", "5": "C", "6": "G", "7": "E", "8": "J", "9": "C", "10": "F", "11": "B", "12": "J", "13": "D", "14": "F", "15": "D"};
+const EXPLANATIONS = {"1":"A  Set N  =  0 and factor the equation into (x - 800)(x + 200), because -800 × 200  =  -160,000 and -800 + 200  =  -600. Set each factor equal to 0 and solve for x. Either x  =  800 ounces or x  =  -200 ounces. Since -200 ounces is not possible, x  =  800 ounces. You could also try substituting the numbers in the answer choices for the x values in the given equation. You would have found that only 800 ounces used yields 0 new ounces that need to be purchased.", "2":"G  If Fresco finally broke even, his cost should be the same as the revenue. The point where the C(x) and R(x) functions cross represents 5 sculptures sold, or choice (G). Choice (F) shows a revenue that\'s still less than the cost, while (H) and (J) show a profit for the company because the revenue is greater than the cost. If you\'re reading the y-axis numbers instead of the x-axis, you might be misled to choice (K).", "3":"C  The cost function, or C(x), begins at the $10,000 mark on the y-axis, so this is its fixed cost, or choice (C). Choice (A) calculates the cost per sculpture, or fee paid each celebrity ($1,000). If you\'re mistakenly looking at the x-axis you might guess choice (D) or (E).", "4":"J  To determine the cost of each trash sculpture, consider a point on the revenue function line, R(x), and divide the money by the number of sculptures sold (). A convenient point shows 5 sculptures sold for $15,000, which is $3,000 per sculpture, or choice (J). Choice (F) calculates the cost per sculpture, or fee paid each celebrity ($1,000). If you\'re mistakenly reading the C(x) line, you might calculate that 10 sculptures cost $20,000, or choice (H) $2,000 per sculpture; or that 15 sculptures cost $25,000, or roughly choice (G), $1,667.", "5":"C  As you factor, take out one piece at a time, and remember that if you factor something out of the equation, you must be able to factor it out of every term: 12b2c + 6bc + 3b  =  b(12bc + 6c + 3)  =  3b(4bc + 2c + 1). Choice (A) omits the 3b you\'ve factored out of the other terms; choice (B) erroneously calculates 12 - 3  =  9 instead of 12 ÷ 3  =  4 for the first term in the parentheses; choice (D) omits the 3b ÷ 3b  =  1 term (the last in the parentheses); and choice (E) is factored correctly but it is not completely factored as the problem asks.", "6":"G  Use the two points given to find the slope of the line make a: . Manipulate the answer choices to match the slope-intercept form of a line, where y  =  mx + b. For choice (G), add y and subtract -5 from both sides to get 6x + 5  =  y, or y  =  6x + 5. m  =  6, which is the slope you need. None of the other lines have this slope, so you don\'t need to find the value of b. Choice (H) confuses signs in calculating the slope. Choice (K) confuses the slope and y-intercept. You can also answer this question by plugging the two given points into answer choices, but make sure both points work. Choice (F) works only for the first point given, and choice (J) works only for the second point.", "7":"E  The perimeter of a square is equal to the sum of its sides. For this square, 64  =  4s, s  =  16. The radius of the circle is thus also 16. To find the area of the circle, use A  =  πr2  =  π (16)2  =  256π. Choice (A) gives the radius of the circle and choice (C) gives its circumference. Choice (D) mistakes the perimeter of the square for its area, and choice (B) uses that calculation to find the circumference of the circle.", "8":"J  You can solve this problem at least three different ways. The fastest way, if you know how to do it, is to set up simultaneous equations like this: 8x + 4y  =  968x + y  =  30  -1(8x + y  =  30)  -8x - y  =  -30, and when you\'ve got opposite coefficients for one of your variables, add the two equations together like this: , and with 3y  =  66, find y  =  22. If you\'re not sure how to use simultaneous equations, you can also solve for one variable in one equation: 8x + y  =  30  8x  =  30 - y  x  =  , and then substitute it into the other equation: 8x + 4y  =  96   + 4y  =  96  3y  =  66 and again, y  =  22. Finally, since you know that your x-coordinate and y-coordinate must be the same in each equation, you can substitute possible y-coordinates and see which one produces the same x-coordinate in both equations. If you chose (F), be careful—this is your x-coordinate, and the problem asks for the y-coordinate.", "9":"C  Substitute the numbers in the diagram for the variables in the formula given for the area of a trapezoid: A  =  (40)(50 + 30)  =  1,600 ft2. If you chose (A), be careful—you may have forgotten the .", "10":"F  Make a right triangle by drawing in a perpendicular line from R to . This new line will be the same height as . Since  is 30 feet, the base of the new triangle will be 50 - 30  =  20 feet. To find , use the Pythagorean theorem: a2 + b2  =  c2, where a and b are the two legs of a right triangle, and c is the hypotenuse. 202 + 402  =  , 2,000  =  ,   =  .", "11":"B  , which is 40 feet, limits the diameter of the circle. If you chose (A), be careful—this is the radius.", "12":"J  To find the height of the ramp you\'ll need to use the tangent of 10°, since tangent is equal to length of side opposite the angle (unknown ramp height) divided by length of side adjacent to the angle (length of the base, or 25 feet). Calculate 0.176 × 25, and you\'ll get approximately 4.4, or choice (J). If you use the sine of 10°, you\'ll get 4.3, or (H); cosine will give you 24.6, or (K). If you multiply all three given numbers (cos, sin, tan) by 25, you\'ll get 2.3, or (F).", "13":"D  Draw the circular clock and mark twelve evenly spaced points on it, and start trying out the numbers for n in the given problem. Choose any starting point—let\'s say two for this example. If you start at 2 and every two numbers are painted, as in choice (A), then in the first revolution, the numbers painted will be 4, 6, 8, 10, 12; in the second revolution, they will be 2, 4, 6, 8, 10, 12. In other words, if the integer n is 2, then there is no way that all of the numbers on the face of the clock will be painted. Choices (B), (C), and (E) all create the same issue. Only choice (D), n  =  7, will fill in all of the numbers on successive revolutions.", "14":"F  Since (x + 1) will never be a negative exponent, increasing this exponent will always increase the value of a number greater than 1 and decrease the value of a real number between 0 and 1. The problem stipulates that p must be positive, so if y decreases as x increases, p must be a fractional constant less than 1.", "15":"D  Plug In the x and y values of the two given points into the distance formula. You can start with either point as long as you start with the same point each time. distance  =  . Choice (A) does not square the differences of the x and y values. Choice (B) confuses signs in subtracting in the first step. Choice (E) makes this same error and omits the square root sign as well. Choice (C) gives the amount of change along the x axis, which neglects the vertical distance."};
+let graded = false;
+
+document.querySelectorAll('.choices li').forEach(li => {
+  // Remove old onclick
+  li.removeAttribute('onclick');
+  li.addEventListener('click', function() {
+    if (graded) return;
+    const siblings = this.parentElement.querySelectorAll('li');
+    siblings.forEach(s => s.classList.remove('selected'));
+    this.classList.add('selected');
+  });
+});
+
+function gradeTest() {
+  if (graded) return;
+  graded = true;
+  let correct = 0;
+  const total = Object.keys(ANSWERS).length;
+  
+  document.querySelectorAll('.question').forEach((qDiv, idx) => {
+    const qNum = idx + 1;
+    const correctAns = ANSWERS[qNum];
+    if (!correctAns) return;
+    const choices = qDiv.querySelectorAll('.choices li');
+    const selected = qDiv.querySelector('.choices li.selected');
+    const selectedLetter = selected ? selected.textContent.trim().charAt(0) : null;
+    
+    choices.forEach(li => {
+      const letter = li.textContent.trim().charAt(0);
+      if (letter === correctAns) li.classList.add('show-correct');
+      li.style.cursor = 'default';
+    });
+    
+    const tag = document.createElement('span');
+    tag.className = 'result-tag';
+    
+    if (selectedLetter === correctAns) {
+      correct++;
+      tag.className += ' correct';
+      tag.textContent = 'Correct';
+      if (selected) { selected.classList.remove('selected'); selected.classList.add('correct'); }
+    } else {
+      tag.className += ' wrong';
+      tag.textContent = 'Incorrect (Answer: ' + correctAns + ')';
+      if (selected) { selected.classList.remove('selected'); selected.classList.add('wrong'); }
+    }
+    
+    const firstP = qDiv.querySelector('p');
+    if (firstP) firstP.appendChild(tag);
+    
+    if (typeof EXPLANATIONS !== 'undefined' && EXPLANATIONS[qNum]) {
+      const explDiv = document.createElement('div');
+      explDiv.className = 'explanation show';
+      explDiv.innerHTML = '<strong>Explanation:</strong> ' + EXPLANATIONS[qNum];
+      qDiv.appendChild(explDiv);
+    }
+  });
+  
+  const pct = Math.round((correct / total) * 100);
+  document.querySelector('.submit-btn').style.display = 'none';
+  document.querySelector('.reset-btn').style.display = 'block';
+  var rw=document.querySelector('.report-wrap');if(rw)rw.style.display='block';
+  var bs=document.createElement('div');bs.className='bottom-score';bs.id='bottom-score';
+  bs.innerHTML='<h2 style="font-size:1.3rem;margin-bottom:6px;color:#1a3a4a">Your Score</h2><div class="pct '+(pct>=80?'good':pct>=60?'ok':'bad')+'">'+pct+'%</div><div class="detail">'+correct+' out of '+total+' correct</div>';
+  document.querySelector('.submit-wrap').after(bs);
+  try{var tn=location.pathname.match(/test(\d+)/);if(tn)localStorage.setItem('actmath_'+tn[1],pct);}catch(e){}
+}
+
+function resetTest() {
+  graded = false;
+  var bsEl=document.getElementById('bottom-score');if(bsEl)bsEl.remove();
+  document.querySelector('.submit-btn').style.display = '';
+  document.querySelector('.reset-btn').style.display = 'none';
+  var rw=document.querySelector('.report-wrap');if(rw)rw.style.display='none';
+  var ni=document.querySelector('.name-input');if(ni)ni.value='';
+  document.querySelectorAll('.choices li').forEach(li => {
+    li.classList.remove('selected','correct','wrong','show-correct');
+    li.style.cursor = 'pointer';
+  });
+  document.querySelectorAll('.result-tag').forEach(t => t.remove());
+  document.querySelectorAll('.explanation').forEach(e => e.remove());
+}
+
+function generateReport(){
+  var nameInput=document.querySelector('.name-input');
+  var name=(nameInput&&nameInput.value.trim())||'Student';
+  var testName=document.querySelector('header h1').textContent;
+  var bs=document.getElementById('bottom-score');
+  var scorePct=bs?bs.querySelector('.pct').textContent:'';
+  var detailTxt=bs?bs.querySelector('.detail').textContent:'';
+  var d=new Date().toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'});
+  var btn=document.querySelector('.report-btn');btn.textContent='Generating...';btn.disabled=true;
+  var s=document.createElement('script');
+  s.src='https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js';
+  s.onerror=function(){btn.textContent='Download Report (PDF)';btn.disabled=false;alert('Could not load PDF library.');};
+  s.onload=function(){
+    var doc=new jspdf.jsPDF('portrait','mm','letter');
+    var pw=215.9,ph=279.4,mx=12,cw=pw-2*mx,y=8;
+    doc.setFillColor(26,58,74);doc.rect(0,0,pw,22,'F');
+    doc.setTextColor(255,255,255);doc.setFontSize(13);doc.setFont('helvetica','bold');
+    doc.text(testName,mx,9);
+    doc.setFontSize(7.5);doc.setFont('helvetica','normal');
+    doc.text(d+'  |  Student: '+name,mx,14.5);
+    doc.setFontSize(18);doc.setFont('helvetica','bold');
+    doc.text(scorePct,pw-mx,11,{align:'right'});
+    doc.setFontSize(7.5);doc.setFont('helvetica','normal');
+    doc.text(detailTxt,pw-mx,16,{align:'right'});
+    y=25;
+    doc.setDrawColor(26,58,74);doc.setLineWidth(0.3);doc.line(mx,y,pw-mx,y);y+=3;
+    document.querySelectorAll('.question').forEach(function(qDiv,idx){
+      var qNum=idx+1;var ca=ANSWERS[qNum];if(!ca)return;
+      var sel=qDiv.querySelector('.choices li.correct,.choices li.wrong');
+      var sa=sel?sel.textContent.trim().charAt(0):'-';
+      var ok=sel&&sel.classList.contains('correct');
+      if(ok){
+        doc.setFillColor(40,167,69);doc.circle(mx+1.2,y-1,1,'F');
+        doc.setTextColor(33,33,33);doc.setFont('helvetica','bold');doc.setFontSize(8);
+        doc.text('Q'+qNum,mx+4,y);
+        doc.setFont('helvetica','normal');doc.setTextColor(40,167,69);
+        doc.text('Correct ('+ca+')',mx+14,y);
+      }else{
+        doc.setFillColor(220,53,69);doc.circle(mx+1.2,y-1,1,'F');
+        doc.setTextColor(33,33,33);doc.setFont('helvetica','bold');doc.setFontSize(8);
+        doc.text('Q'+qNum,mx+4,y);
+        doc.setFont('helvetica','normal');doc.setTextColor(220,53,69);
+        doc.text('Incorrect',mx+14,y);
+        doc.setTextColor(120,120,120);
+        doc.text('(Chose '+sa+', Correct: '+ca+')',mx+32,y);
+      }
+      y+=3.2;
+      var qP=qDiv.querySelector('p');
+      if(qP){
+        var qT=qP.cloneNode(true);
+        var tags=qT.querySelectorAll('.result-tag');tags.forEach(function(t){t.remove();});
+        var qt=qT.textContent.replace(/^\d+\.\s*/,'').trim();
+        if(qt.length>0){
+          doc.setFont('helvetica','normal');doc.setTextColor(60,60,60);doc.setFontSize(6.5);
+          var ql=doc.splitTextToSize(qt,cw-5);
+          ql=ql.slice(0,1);
+          if(doc.splitTextToSize(qt,cw-5).length>1){ql[0]=ql[0].substring(0,ql[0].length-3)+'...';}
+          doc.text(ql,mx+4,y);y+=2.4;
+        }
+      }
+      if(typeof EXPLANATIONS!=='undefined'&&EXPLANATIONS[qNum]){
+        doc.setFont('helvetica','italic');doc.setTextColor(100,100,100);doc.setFontSize(6);
+        var lines=doc.splitTextToSize(EXPLANATIONS[qNum],cw-5);
+        if(lines.length>2){lines=lines.slice(0,2);lines[1]=lines[1].substring(0,Math.max(0,lines[1].length-3))+'...';}
+        doc.text(lines,mx+4,y);y+=lines.length*2.2;
+      }
+      y+=2;
+    });
+    doc.setDrawColor(200,200,200);doc.setLineWidth(0.2);doc.line(mx,ph-10,pw-mx,ph-10);
+    doc.setTextColor(170,170,170);doc.setFontSize(6);doc.setFont('helvetica','normal');
+    doc.text('ACT Math Practice  |  Score Report',pw/2,ph-7,{align:'center'});
+    var tn=location.pathname.match(/test(\d+)/);
+    var testNum=tn?parseInt(tn[1])-100:0;
+    var ds=new Date().toISOString().slice(0,10);
+    doc.save('ACT-Math-Test-'+testNum+'-'+ds+'.pdf');
+    btn.textContent='Download Report (PDF)';btn.disabled=false;
+  };
+  document.head.appendChild(s);
+}
+</script>
+</body></html>

@@ -1,0 +1,222 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>ACT Math Test 65</title><style>@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:#fff;color:#2d3748;line-height:1.7}
+.container{max-width:800px;margin:0 auto;padding:20px 24px}
+header{background:linear-gradient(135deg,#1a3a4a 0%,#2d6a7a 100%);color:#fff;padding:28px 0;margin-bottom:36px;text-align:center}
+header .container{display:block}
+header h1{font-size:1.6rem;font-weight:700;letter-spacing:-0.3px}
+header a{color:rgba(255,255,255,.7);text-decoration:none;font-size:.9rem;display:inline-block;margin-bottom:6px;transition:color .2s}
+header a:hover{color:#fff}
+.question{background:#fff;border-radius:12px;padding:24px;margin-bottom:20px;border:1px solid #e2e8f0;transition:border-color .2s}
+.question:hover{border-color:#cbd5e0}
+.question p{margin-bottom:14px;font-size:1.05rem}
+img{max-width:100%;height:auto;margin:4px 0;vertical-align:middle}
+.choices{list-style:none}
+.choices li{padding:10px 14px;margin:6px 0;border-radius:8px;cursor:pointer;transition:all .2s;border:2px solid transparent}
+.choices li:hover{background:#f0f7fa}
+.choices li.selected{background:#d1ecf1;border-color:#bee5eb}
+.choices li.correct{background:#d4edda;border-color:#28a745}
+.choices li.wrong{background:#f8d7da;border-color:#dc3545}
+.choices li.show-correct{background:#d4edda;border-color:#28a745}
+.submit-wrap{text-align:center;margin:36px 0}
+.submit-btn{display:inline-block;padding:14px 40px;background:linear-gradient(135deg,#1a3a4a,#2d6a7a);color:#fff;border:none;border-radius:10px;font-size:1.1rem;cursor:pointer;font-weight:600;font-family:inherit;transition:all .25s;letter-spacing:.3px}
+.submit-btn:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(26,58,74,.25)}
+.score-box{background:#fff;border-radius:12px;padding:28px;margin-bottom:28px;text-align:center;border:1px solid #e2e8f0;box-shadow:0 4px 20px rgba(0,0,0,.06);display:none}
+.score-box h2{font-size:1.4rem;margin-bottom:8px;color:#1a3a4a;text-align:center}
+.score-box .pct{font-size:3rem;font-weight:700}
+.score-box .pct.good{color:#28a745}
+.score-box .pct.ok{color:#e6a817}
+.score-box .pct.bad{color:#dc3545}
+.score-box .detail{color:#666;margin-top:4px}
+.result-tag{display:inline-block;padding:2px 10px;border-radius:12px;font-size:.8rem;font-weight:600;margin-left:8px}
+.result-tag.correct{background:#d4edda;color:#155724}
+.result-tag.wrong{background:#f8d7da;color:#721c24}
+.reset-btn{display:none;margin:16px auto;padding:12px 28px;background:#6c757d;color:#fff;border:none;border-radius:10px;font-size:1rem;cursor:pointer;font-family:inherit;transition:all .25s}
+.reset-btn:hover{background:#5a6268;transform:translateY(-1px)}
+.explanation{background:#f0f7ff;border-left:4px solid #1a3a4a;padding:14px 18px;margin-top:14px;border-radius:0 8px 8px 0;font-size:.95rem;color:#444;display:none}
+.explanation.show{display:block}
+.explanation strong{color:#1a3a4a}
+.nav{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin:36px 0}
+.nav a{display:inline-block;padding:10px 24px;background:linear-gradient(135deg,#1a3a4a,#2d6a7a);color:#fff;text-decoration:none;border-radius:10px;font-weight:500;font-size:.95rem;transition:all .25s}
+.nav a:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(26,58,74,.25)}
+footer{text-align:center;padding:36px 24px;color:#8899a4;font-size:.85rem;border-top:1px solid #e2e8f0;margin-top:40px}
+.report-btn{display:inline-block;margin:0;padding:12px 28px;background:linear-gradient(135deg,#1a3a4a,#2d6a7a);color:#fff;border:none;border-radius:10px;font-size:1rem;cursor:pointer;font-family:inherit;transition:all .25s}
+.report-btn:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(26,58,74,.25)}
+.bottom-score{background:#fff;border-radius:12px;padding:20px;margin:20px 0;text-align:center;border:1px solid #e2e8f0;box-shadow:0 4px 20px rgba(0,0,0,.06)}
+.bottom-score .pct{font-size:2.5rem;font-weight:700}
+.bottom-score .pct.good{color:#28a745}
+.bottom-score .pct.ok{color:#e6a817}
+.bottom-score .pct.bad{color:#dc3545}
+.bottom-score .detail{color:#666;margin-top:4px;font-size:.95rem}
+.report-wrap{display:none;text-align:center;margin:16px 0}
+.name-input{padding:10px 14px;border:1px solid #e2e8f0;border-radius:10px;font-size:.95rem;font-family:inherit;width:200px;margin-right:8px;outline:none;transition:border-color .2s}
+.name-input:focus{border-color:#1a3a4a}
+</style></head><body><header><div class="container"><a href="index.html">&larr; All Tests</a><h1>ACT Math Practice Test 65</h1></div></header><div class="container"><div id="score-box" class="score-box"><h2>Your Score</h2><div class="pct">0%</div><div class="detail"></div></div><div class="question"><p><b>1.</b> What is the distance, in coordinate units, between points <span class="italic">J</span>(-5, 4) and <span class="italic">K</span>(6,-2) in the standard (<span class="italic">x,y</span>) coordinate plane?</p><ul class="choices"><li>A. <img src="https://www.crackab.com/image/tests/cr2016/00837.jpg"></li><li>B. <img src="https://www.crackab.com/image/tests/cr2016/00838.jpg"></li><li>C. <img src="https://www.crackab.com/image/tests/cr2016/00840.jpg"></li><li>D. 10</li><li>E. 17</li></ul></div><div class="question"><p><b>2.</b> Cynthia decorates the ceiling of her bedroom with stars that glow in the dark. She puts 1 star on the ceiling on the 1st day of decorating, 2 stars on the ceiling on the 2nd day of decorating, 3 stars on the 3rd day, and so on. If she puts stars on the ceiling in this pattern for 30 days (so she puts 30 stars on the ceiling on the 30th day), then what will be the total number of stars on the ceiling at the end of the 30 days?</p><ul class="choices"><li>F. 155</li><li>G. 435</li><li>H. 450</li><li>J. 465</li><li>K. 480</li></ul></div><div class="question"><p><b>3.</b> In Δ<span class="italic">PQR</span>, side <span class="italic">PQ</span> is 12 inches long and side <span class="italic">QR</span> is 41 inches long. Which of the following CANNOT be the length, in inches, of side <span class="italic">PR</span> ?</p><ul class="choices"><li>A. 17</li><li>B. 30</li><li>C. 38</li><li>D. 44</li><li>E. 52</li></ul></div><div class="question"><p><b>4.</b> Which of the following is equivalent to the expression <img src="https://www.crackab.com/image/tests/cr2016/00841.jpg"> ?</p><ul class="choices"><li>F. <img src="https://www.crackab.com/image/tests/cr2016/00843.jpg"></li><li>G. <img src="https://www.crackab.com/image/tests/cr2016/00844.jpg"></li><li>H. <span class="italic">d</span></li><li>J. <img src="https://www.crackab.com/image/tests/cr2016/00845.jpg"></li><li>K. <img src="https://www.crackab.com/image/tests/cr2016/00846.jpg"></li></ul></div><div class="question"><p><b>5.</b> Merav's school has an Olympic-size pool that is 50 meters long, 25 meters wide, and 2 meters deep. The pool is surrounded by special non-slip tiles, as shown in the figure below.<br><img src="https://www.crackab.com/image/tests/cr2016/00848.jpg"><br>Merav's school laid non-slip tiles on the floor around its pool to reduce injuries among its athletes. These non-slip tiles extend 5 meters beyond the pool on all sides. What is the area, in square meters, of the floor space that has the non-slip tiles?</p><ul class="choices"><li>A. 800</li><li>B. 850</li><li>C. 900</li><li>D. 950</li><li>E. 1,000</li></ul></div><div class="question"><p><b>6.</b> Merav's school has an Olympic-size pool that is 50 meters long, 25 meters wide, and 2 meters deep. The pool is surrounded by special non-slip tiles, as shown in the figure below.<br><img src="https://www.crackab.com/image/tests/cr2016/00848.jpg"><br>For the synchronized swimming team, each swimmer needs an area within the pool to perform her routine without colliding with a teammate. Each area is 5 meters wide and 5 meters long. What is the maximum number of synchronized swimmers in the pool who can perform the routine without any collisions?</p><ul class="choices"><li>F. 75</li><li>G. 50</li><li>H. 25</li><li>J. 15</li><li>K. 10</li></ul></div><div class="question"><p><b>7.</b> Merav's school has an Olympic-size pool that is 50 meters long, 25 meters wide, and 2 meters deep. The pool is surrounded by special non-slip tiles, as shown in the figure below.<br><img src="https://www.crackab.com/image/tests/cr2016/00848.jpg"><br>Merav pays $4.00 for a ticket to her school's first swim meet to watch her classmates compete. While there, Merav buys a slice of pizza and a soda. She pays $3.75 for the pizza and $1.75 for the soda, plus 10% sales tax for both of these items. What is the total amount Merav pays for her ticket, pizza, and soda?</p><ul class="choices"><li>A. $ 3.75</li><li>B. $ 9.50</li><li>C. $10.05</li><li>D. $10.45</li><li>E. $10.75<br></li></ul></div><div class="question"><p><b>8.</b> Points <span class="italic">G</span> and <span class="italic">H</span> lie on circle <span class="italic">F</span> as shown below. If the measure of ∠<span class="italic">FGH</span> is 40°, then what is the measure of central angle ∠<span class="italic">GFH</span>?<br><img src="https://www.crackab.com/image/tests/cr2016/00849.jpg"></p><ul class="choices"><li>F. 60°</li><li>G. 80°</li><li>H. 100°</li><li>J. 120°</li><li>K. Cannot be determined from the information given</li></ul></div><div class="question"><p><b>9.</b> The pie chart below shows the operating expenses of Stephanie's office for the month of July, during which time the expenses totaled $10,000.<br><img src="https://www.crackab.com/image/tests/cr2016/00851.jpg"><br>&nbsp;</p><ul class="choices"><li>A. 5.0%</li><li>B. 7.5%</li><li>C. 10.0%</li><li>D. 12.5%</li><li>E. 15.0%</li></ul></div><div class="question"><p><b>10.</b> Assuming <span class="italic">q</span> is a positive integer, then the difference between 14<span class="italic">q</span> and 5<span class="italic">q</span> is always divisible by:</p><ul class="choices"><li>F. 5</li><li>G. 9</li><li>H. 14</li><li>J. 19</li><li>K. 70</li></ul></div><div class="question"><p><b>11.</b> Ron earns $1,800 for a 6-week assignment. While working a 6-week assignment, Ron works a minimum of 20 hours each week. Ron's hourly rate of pay, therefore, depends upon how many hours he works. If <span class="italic">r</span> is Ron's average hourly pay, in dollars, for a 6-week assignment, then which of the following best describes <span class="italic">r</span> ?</p><ul class="choices"><li>A. <span class="italic">r</span> ≤ $15.00</li><li>B. <span class="italic">r</span> ≥ $15.00</li><li>C. <span class="italic">r</span> ≤ $90.00</li><li>D. <span class="italic">r</span> ≥ $90.00</li><li>E. <span class="italic">r</span> ≥ $180.00</li></ul></div><div class="question"><p><b>12.</b> In the standard (<span class="italic">x, y</span>) coordinate plane, the endpoints of <span class="italic">EF</span> lie at (-5,9) and (3,-3). What is the <span class="italic">y</span>-coordinate of the midpoint of <span class="italic">EF</span> ?</p><ul class="choices"><li>F. -6</li><li>G. -3</li><li>H. -1</li><li>J. 3</li><li>K. 6</li></ul></div><div class="question"><p><b>13.</b> Two wires connect the top of a flagpole to the ground, as shown below. Each wire makes a 75° angle with the ground at a point 8 feet from the flagpole. Which of the following expressions gives the height, in feet, of the flagpole?<br><img src="https://www.crackab.com/image/tests/cr2016/00852.jpg"></p><ul class="choices"><li>A. 8cos75°</li><li>B. 8sin75°</li><li>C. 8tan75°</li><li>D. <img src="https://www.crackab.com/image/tests/cr2016/00853.jpg"></li><li>E. <img src="https://www.crackab.com/image/tests/cr2016/00854.jpg"></li></ul></div><div class="question"><p><b>14.</b> As shown in the figure below, Δ<span class="italic">XYZ</span> is a right triangle with legs of length <span class="italic">x</span> units and <span class="italic">y</span> units and hypotenuse of <span class="italic">z</span> units, such that 0 &lt; <span class="italic">x</span> &lt; <span class="italic">y</span>. Quadrilaterals <span class="italic">ABYX</span>, <span class="italic">CDZY</span>, and <span class="italic">EFXZ</span> are squares.<br><img src="https://www.crackab.com/image/tests/cr2016/00857.jpg"><br>What is the perimeter, in units, of polygon <span class="italic">CDZXY</span> ?</p><ul class="choices"><li>F. 3<span class="italic">x</span> + <span class="italic">y</span> + <span class="italic">z</span></li><li>G. 3<span class="italic">x</span> + 2<span class="italic">y</span> + <span class="italic">z</span></li><li>H. 3<span class="italic">x</span> + 3<span class="italic">y</span> + 3<span class="italic">z</span></li><li>J. 4<span class="italic">x</span> + <span class="italic">y</span> + <span class="italic">z</span></li><li>K. 4<span class="italic">x</span> + 4<span class="italic">y</span> + 4<span class="italic">z</span></li></ul></div><div class="question"><p><b>15.</b> As shown in the figure below, Δ<span class="italic">XYZ</span> is a right triangle with legs of length <span class="italic">x</span> units and <span class="italic">y</span> units and hypotenuse of <span class="italic">z</span> units, such that 0 &lt; <span class="italic">x</span> &lt; <span class="italic">y</span>. Quadrilaterals <span class="italic">ABYX</span>, <span class="italic">CDZY</span>, and <span class="italic">EFXZ</span> are squares.<br><img src="https://www.crackab.com/image/tests/cr2016/00857.jpg"><br>Given that 0 &lt; <span class="italic">x</span> &lt; <span class="italic">y</span>, which of the following correctly lists the angles ∠<span class="italic">BYC</span>, ∠<span class="italic">AXF</span>, and ∠<span class="italic">EZD</span> in order of their measures from least to greatest?</p><ul class="choices"><li>A. ∠<span class="italic">AXF</span>, ∠<span class="italic">EZD</span>, ∠<span class="italic">BYC</span></li><li>B. ∠<span class="italic">BYC</span>, ∠<span class="italic">EZD</span>, ∠<span class="italic">AXF</span></li><li>C. ∠<span class="italic">BYC</span>, ∠<span class="italic">AXF</span>, ∠<span class="italic">EZD</span></li><li>D. ∠<span class="italic">EZD</span>, ∠<span class="italic">AXF</span>, ∠<span class="italic">BYC</span></li><li>E. ∠<span class="italic">EZD</span>, ∠<span class="italic">BYC</span>, ∠<span class="italic">AXF</span></li></ul></div><div class="submit-wrap"><button class="submit-btn" onclick="gradeTest()">Submit Test</button><button class="reset-btn" onclick="resetTest()">Try Again</button>
+<div class="report-wrap"><input type="text" class="name-input" placeholder="Student name (for report)"><button class="report-btn" onclick="generateReport()">Download Report (PDF)</button></div></div><div class="nav"><a href="test164.html">&larr; Prev</a><a href="index.html">All Tests</a><a href="test166.html">Next &rarr;</a></div></div><footer><div class="container">ACT Math Practice</div></footer>
+<script>
+const ANSWERS = {"1": "C", "2": "J", "3": "A", "4": "J", "5": "B", "6": "G", "7": "C", "8": "H", "9": "D", "10": "G", "11": "A", "12": "J", "13": "C", "14": "F", "15": "E"};
+const EXPLANATIONS = {"1":"C Use the distance formula if you have memorized it or have it programmed into your calculator. If you don\'t have it memorized, draw the axes, plot the points, connect them with a line, make a right triangle, and use the Pythagorean theorem, a2 + b2  =  c2. See below. 112 + 62  =  c2, and c2  =  157. Thus, c  =  , (C). Both (B) and (E) are trap answers because a and b must be squared before they are added.", "2":"J Underline the question and work the problem in bite-sized pieces. You can use your calculator to add 1 + 2 + 3 + 4 +…30  =  465. If you identified this as an arithmetic series, you can use the simplified formula S  =  (a1 + an) × , where n is the number of terms (30), a1 is the first term (1), an is the nth term (30). (1 + 30) ×   =  465.", "3":"A Draw the figure if none is provided. This question tests the third-side rule of triangles: The third side must be less than the sum of the other two sides and greater than the difference of the other two sides. Choice (A) is correct because this is the only value that CANNOT be the third side because it falls out of the range of 29 and 53.", "4":"J Plug In your own number for d, find the value of the expression, and then find the same value in the answers, substituting your number for each d. If d is 2, then , or . Choices (F) and (H) can be eliminated right away. Choice (G) equals , and (K) equals . Choice (J) is the equivalent value, . The rest of the choices are all trap answers for solving it algebraically because they represent errors in cancelation. Terms in the numerator and denominator can\'t be reduced if the terms are connected to other terms by addition or subtraction.", "5":"B Underline the question and work the problem in bite-sized pieces. With a series of questions, some of the information needed may be in the introduction. To find the surface area of just the non-stick tiles, find the surface area of the pool and the non-stick tiles, and then subtract the surface area of the pool. The non-stick tiles extend by 5 meters on all sides for a total of 10 meters added to the length and 10 meters added to the width. A  =  lw, so (50 + 10)(25 + 10)  =  (60)(35)  =  2,100. Subtract from this total the surface area of the pool: 2,100 -(50)(25)  =  2,100 -1,250  =  850, (B).", "6":"G Underline the question and work the problem in bite-sized pieces. With a series of questions, some of the information needed may be in the introduction. Find the number of swimmers by dividing the surface area of the pool by the individual area each swimmer needs. The surface area of the pool is A  =  lw, (50)(25)  =  1,250. The individual area for each swimmer is (5)(5)  =  25. 1,250 ÷ 25  =  50, (G). Choices (H), (J), and (K) could all fit, but the question asks for the maximum number of swimmers who can fit.", "7":"C Underline the question, and work the problem in bite-sized pieces. Add the cost of the pizza and soda, and calculate the tax first. $3.75 + $1.75  =  $5.50. Multiply the food subtotal by , or .10, to get a tax of $0.55. Add the tax to the food subtotal ($5.50 + $0.55  =  $6.05), and then add the cost of the ticket ($4) for a total of $10.05, (C). Choice (B) is wrong because it is the total of all three items without the tax on the food. Choice (D) is wrong because it includes the ticket in the tax calculation.", "8":"H The three angles of a triangle equal 180°. The triangle formed in the circle is isosceles because sides FG and FH are each a radius of the circle. The sides are equal and therefore the angles opposite them are equal. 180° -2(40°)  =  100°, (H).", "9":"D Underline the question and work the problem in bite-sized pieces. Subtract the $700 and $1,300 from the given July total of $10,000 to find the August total of $8,000. To find the percent of the August total spent on office supplies, divide the part ($1,000) by the whole ($8,000).   =  12.5%, (D). Choice (C) is wrong because it is the percent of office supplies out of July\'s total.", "10":"G Plug In your own number for q. If q is 2, then the difference between (14)(2) and (5)(2) is 28 -10  =  18. Only (G) is a factor of 18.", "11":"A Underline the question and work the problem in bite-sized pieces. Divide the total amount earned ($1,800) by the number of weeks of the assignment (6) to find that Ron earned an average of $300/week. Divide the average week total by the minimum number of hours worked (20) to find that Ron\'s hourly wage, r, for those 20 hours is $15.00/hr. Ron will be paid $1,800 for 6 weeks of work whether he works as few as 20 hours or if he works more than 20 hours. If he works more than 20 hours in any given week, his hourly rate will drop, or be less than $15.00/hr. Thus, r ≤ $15.00, (A). Choice (B) is wrong because his rate will decrease with more hours, not increase. Choices (C) and (D) are both wrong because $1,800 must be divided by 6, and then that quotient must be divided by 20.", "12":"J The midpoint is the average of the x-coordinates and the average of the y-coordinates:   =  3, (J). Choice (H) is wrong because it\'s the x-coordinate of the midpoint. Choice (K) is wrong because it either is the result from adding the y-coordinates but forgetting to divide them or from dividing the difference between the y-coordinates.", "13":"C Underline the question and work the problem in bite-sized pieces. The answers help by making it clear to use trigonometry, specifically SOHCAHTOA, to solve for the height of the flagpole in terms of the angle 75°. The figure provides the length of the ground (the side adjacent to the angle) but not the length of the wire (the hypotenuse). The only trig ratio that will work is tangent, found only in (C). TOA stands for Tangent  =  , so tan75°  =  . Solve for x by multiplying both sides by 8, so 8tan75°  =  x.", "14":"F With a series of questions, some of the information needed may be in the introduction. The lengths of the sides are provided on the figure as variables. The polygon CDZXY is made up of the smaller square and the triangle: sides x, x, x, z, and y, or 3x + y + z, (F). The perimeter, however, will not include the interior side YZ, as (J) does.", "15":"E With a series of questions, some of the information needed may be in the introduction or on the figure. ∠EZD is a vertical angle to ∠YZX, which is marked as 90°. Thus, ∠EZD is 90° as well. The introduction confirms what the figures look like: ABYX, CDZY, and EFXZ are squares, and each angle of a square is 90°. The question adds that x < y, which means ∠YXZ <∠XYZ. Since ∠YZX is 90°, ∠YXZ and ∠XYZ are complementary; that is, they add up to 90°. ∠BYC + 2(90°) + ∠XYZ  =  360°: ∠AXF + 2(90°) + ∠YXZ  =  360°. Since ∠YXZ <∠XYZ, ∠AXF must be > ∠BYC, and both must be > ∠EZD. Choice (E) provides the correct order."};
+let graded = false;
+
+document.querySelectorAll('.choices li').forEach(li => {
+  // Remove old onclick
+  li.removeAttribute('onclick');
+  li.addEventListener('click', function() {
+    if (graded) return;
+    const siblings = this.parentElement.querySelectorAll('li');
+    siblings.forEach(s => s.classList.remove('selected'));
+    this.classList.add('selected');
+  });
+});
+
+function gradeTest() {
+  if (graded) return;
+  graded = true;
+  let correct = 0;
+  const total = Object.keys(ANSWERS).length;
+  
+  document.querySelectorAll('.question').forEach((qDiv, idx) => {
+    const qNum = idx + 1;
+    const correctAns = ANSWERS[qNum];
+    if (!correctAns) return;
+    const choices = qDiv.querySelectorAll('.choices li');
+    const selected = qDiv.querySelector('.choices li.selected');
+    const selectedLetter = selected ? selected.textContent.trim().charAt(0) : null;
+    
+    choices.forEach(li => {
+      const letter = li.textContent.trim().charAt(0);
+      if (letter === correctAns) li.classList.add('show-correct');
+      li.style.cursor = 'default';
+    });
+    
+    const tag = document.createElement('span');
+    tag.className = 'result-tag';
+    
+    if (selectedLetter === correctAns) {
+      correct++;
+      tag.className += ' correct';
+      tag.textContent = 'Correct';
+      if (selected) { selected.classList.remove('selected'); selected.classList.add('correct'); }
+    } else {
+      tag.className += ' wrong';
+      tag.textContent = 'Incorrect (Answer: ' + correctAns + ')';
+      if (selected) { selected.classList.remove('selected'); selected.classList.add('wrong'); }
+    }
+    
+    const firstP = qDiv.querySelector('p');
+    if (firstP) firstP.appendChild(tag);
+    
+    if (typeof EXPLANATIONS !== 'undefined' && EXPLANATIONS[qNum]) {
+      const explDiv = document.createElement('div');
+      explDiv.className = 'explanation show';
+      explDiv.innerHTML = '<strong>Explanation:</strong> ' + EXPLANATIONS[qNum];
+      qDiv.appendChild(explDiv);
+    }
+  });
+  
+  const pct = Math.round((correct / total) * 100);
+  document.querySelector('.submit-btn').style.display = 'none';
+  document.querySelector('.reset-btn').style.display = 'block';
+  var rw=document.querySelector('.report-wrap');if(rw)rw.style.display='block';
+  var bs=document.createElement('div');bs.className='bottom-score';bs.id='bottom-score';
+  bs.innerHTML='<h2 style="font-size:1.3rem;margin-bottom:6px;color:#1a3a4a">Your Score</h2><div class="pct '+(pct>=80?'good':pct>=60?'ok':'bad')+'">'+pct+'%</div><div class="detail">'+correct+' out of '+total+' correct</div>';
+  document.querySelector('.submit-wrap').after(bs);
+  try{var tn=location.pathname.match(/test(\d+)/);if(tn)localStorage.setItem('actmath_'+tn[1],pct);}catch(e){}
+}
+
+function resetTest() {
+  graded = false;
+  var bsEl=document.getElementById('bottom-score');if(bsEl)bsEl.remove();
+  document.querySelector('.submit-btn').style.display = '';
+  document.querySelector('.reset-btn').style.display = 'none';
+  var rw=document.querySelector('.report-wrap');if(rw)rw.style.display='none';
+  var ni=document.querySelector('.name-input');if(ni)ni.value='';
+  document.querySelectorAll('.choices li').forEach(li => {
+    li.classList.remove('selected','correct','wrong','show-correct');
+    li.style.cursor = 'pointer';
+  });
+  document.querySelectorAll('.result-tag').forEach(t => t.remove());
+  document.querySelectorAll('.explanation').forEach(e => e.remove());
+}
+
+function generateReport(){
+  var nameInput=document.querySelector('.name-input');
+  var name=(nameInput&&nameInput.value.trim())||'Student';
+  var testName=document.querySelector('header h1').textContent;
+  var bs=document.getElementById('bottom-score');
+  var scorePct=bs?bs.querySelector('.pct').textContent:'';
+  var detailTxt=bs?bs.querySelector('.detail').textContent:'';
+  var d=new Date().toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'});
+  var btn=document.querySelector('.report-btn');btn.textContent='Generating...';btn.disabled=true;
+  var s=document.createElement('script');
+  s.src='https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js';
+  s.onerror=function(){btn.textContent='Download Report (PDF)';btn.disabled=false;alert('Could not load PDF library.');};
+  s.onload=function(){
+    var doc=new jspdf.jsPDF('portrait','mm','letter');
+    var pw=215.9,ph=279.4,mx=12,cw=pw-2*mx,y=8;
+    doc.setFillColor(26,58,74);doc.rect(0,0,pw,22,'F');
+    doc.setTextColor(255,255,255);doc.setFontSize(13);doc.setFont('helvetica','bold');
+    doc.text(testName,mx,9);
+    doc.setFontSize(7.5);doc.setFont('helvetica','normal');
+    doc.text(d+'  |  Student: '+name,mx,14.5);
+    doc.setFontSize(18);doc.setFont('helvetica','bold');
+    doc.text(scorePct,pw-mx,11,{align:'right'});
+    doc.setFontSize(7.5);doc.setFont('helvetica','normal');
+    doc.text(detailTxt,pw-mx,16,{align:'right'});
+    y=25;
+    doc.setDrawColor(26,58,74);doc.setLineWidth(0.3);doc.line(mx,y,pw-mx,y);y+=3;
+    document.querySelectorAll('.question').forEach(function(qDiv,idx){
+      var qNum=idx+1;var ca=ANSWERS[qNum];if(!ca)return;
+      var sel=qDiv.querySelector('.choices li.correct,.choices li.wrong');
+      var sa=sel?sel.textContent.trim().charAt(0):'-';
+      var ok=sel&&sel.classList.contains('correct');
+      if(ok){
+        doc.setFillColor(40,167,69);doc.circle(mx+1.2,y-1,1,'F');
+        doc.setTextColor(33,33,33);doc.setFont('helvetica','bold');doc.setFontSize(8);
+        doc.text('Q'+qNum,mx+4,y);
+        doc.setFont('helvetica','normal');doc.setTextColor(40,167,69);
+        doc.text('Correct ('+ca+')',mx+14,y);
+      }else{
+        doc.setFillColor(220,53,69);doc.circle(mx+1.2,y-1,1,'F');
+        doc.setTextColor(33,33,33);doc.setFont('helvetica','bold');doc.setFontSize(8);
+        doc.text('Q'+qNum,mx+4,y);
+        doc.setFont('helvetica','normal');doc.setTextColor(220,53,69);
+        doc.text('Incorrect',mx+14,y);
+        doc.setTextColor(120,120,120);
+        doc.text('(Chose '+sa+', Correct: '+ca+')',mx+32,y);
+      }
+      y+=3.2;
+      var qP=qDiv.querySelector('p');
+      if(qP){
+        var qT=qP.cloneNode(true);
+        var tags=qT.querySelectorAll('.result-tag');tags.forEach(function(t){t.remove();});
+        var qt=qT.textContent.replace(/^\d+\.\s*/,'').trim();
+        if(qt.length>0){
+          doc.setFont('helvetica','normal');doc.setTextColor(60,60,60);doc.setFontSize(6.5);
+          var ql=doc.splitTextToSize(qt,cw-5);
+          ql=ql.slice(0,1);
+          if(doc.splitTextToSize(qt,cw-5).length>1){ql[0]=ql[0].substring(0,ql[0].length-3)+'...';}
+          doc.text(ql,mx+4,y);y+=2.4;
+        }
+      }
+      if(typeof EXPLANATIONS!=='undefined'&&EXPLANATIONS[qNum]){
+        doc.setFont('helvetica','italic');doc.setTextColor(100,100,100);doc.setFontSize(6);
+        var lines=doc.splitTextToSize(EXPLANATIONS[qNum],cw-5);
+        if(lines.length>2){lines=lines.slice(0,2);lines[1]=lines[1].substring(0,Math.max(0,lines[1].length-3))+'...';}
+        doc.text(lines,mx+4,y);y+=lines.length*2.2;
+      }
+      y+=2;
+    });
+    doc.setDrawColor(200,200,200);doc.setLineWidth(0.2);doc.line(mx,ph-10,pw-mx,ph-10);
+    doc.setTextColor(170,170,170);doc.setFontSize(6);doc.setFont('helvetica','normal');
+    doc.text('ACT Math Practice  |  Score Report',pw/2,ph-7,{align:'center'});
+    var tn=location.pathname.match(/test(\d+)/);
+    var testNum=tn?parseInt(tn[1])-100:0;
+    var ds=new Date().toISOString().slice(0,10);
+    doc.save('ACT-Math-Test-'+testNum+'-'+ds+'.pdf');
+    btn.textContent='Download Report (PDF)';btn.disabled=false;
+  };
+  document.head.appendChild(s);
+}
+</script>
+</body></html>
