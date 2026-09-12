@@ -1,0 +1,144 @@
+<!DOCTYPE html><html lang="en"><head><script async src="https://www.googletagmanager.com/gtag/js?id=G-R844L9265X"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-R844L9265X');</script><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Plane Geometry Practice — ACT Math Practice</title><meta name="description" content="Plane Geometry practice for ACT Math: triangles, circles, special right triangles, area, volume, and angle relationships."><style>@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:#fff;color:#2d3748;line-height:1.7}
+.container{max-width:800px;margin:0 auto;padding:20px 24px}
+header{background:linear-gradient(135deg,#1a3a4a 0%,#2d6a7a 100%);color:#fff;padding:28px 0;margin-bottom:36px;text-align:center}
+header .container{display:block}
+header h1{font-size:1.5rem;font-weight:700;letter-spacing:-0.3px}
+header a{color:rgba(255,255,255,.7);text-decoration:none;font-size:.9rem;display:inline-block;margin-bottom:6px;transition:color .2s}
+header a:hover{color:#fff}
+header .sub{font-size:.95rem;opacity:.7;margin-top:6px}
+.concepts{background:#f8f9fa;border:1px solid #e2e8f0;border-radius:12px;padding:24px;margin-bottom:32px}
+.concepts h2{font-size:1.1rem;color:#1a3a4a;margin-bottom:14px;cursor:pointer;user-select:none}
+.concepts h2::after{content:" ▾";font-size:.8rem}
+.concepts ul{list-style:none;padding:0}
+.concepts li{padding:8px 0;border-bottom:1px solid #eee;font-size:.95rem;line-height:1.6}
+.concepts li:last-child{border:none}
+.concepts li strong{color:#1a3a4a}
+.question{background:#fff;border-radius:12px;padding:24px;margin-bottom:20px;border:1px solid #e2e8f0;transition:border-color .2s}
+.question:hover{border-color:#cbd5e0}
+.question p{margin-bottom:14px;font-size:1.05rem}
+.question p b{color:#1a3a4a;font-size:1.1rem;margin-right:2px}
+.choices{list-style:none}
+.choices li{padding:10px 14px;margin:6px 0;border-radius:8px;cursor:pointer;transition:all .2s;border:2px solid transparent}
+.choices li:hover{background:#f0f7fa}
+.choices li.selected{background:#d1ecf1;border-color:#bee5eb}
+.choices li.correct{background:#d4edda;border-color:#28a745}
+.choices li.wrong{background:#f8d7da;border-color:#dc3545}
+.choices li.show-correct{background:#d4edda;border-color:#28a745}
+.explanation{background:#f0f7ff;border-left:4px solid #1a3a4a;padding:14px 18px;margin-top:14px;border-radius:0 8px 8px 0;font-size:.95rem;color:#444;display:none}
+.explanation.show{display:block}
+.explanation strong{color:#1a3a4a}
+.result-tag{display:inline-block;padding:2px 10px;border-radius:12px;font-size:.8rem;font-weight:600;margin-left:8px}
+.result-tag.correct{background:#d4edda;color:#155724}
+.result-tag.wrong{background:#f8d7da;color:#721c24}
+.submit-wrap{text-align:center;margin:36px 0}
+.submit-btn{display:inline-block;padding:14px 40px;background:linear-gradient(135deg,#1a3a4a,#2d6a7a);color:#fff;border:none;border-radius:12px;font-size:1.1rem;cursor:pointer;font-weight:600;font-family:inherit;transition:all .25s}
+.submit-btn:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(26,58,74,.25)}
+.score-box{background:#fff;border-radius:12px;padding:28px;margin-bottom:28px;text-align:center;border:1px solid #e2e8f0;box-shadow:0 4px 20px rgba(0,0,0,.06);display:none}
+.score-box h2{font-size:1.4rem;margin-bottom:8px;color:#1a3a4a;text-align:center}
+.score-box .pct{font-size:3rem;font-weight:700}
+.score-box .pct.good{color:#28a745}
+.score-box .pct.ok{color:#e6a817}
+.score-box .pct.bad{color:#dc3545}
+.score-box .detail{color:#666;margin-top:4px}
+.nav{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin:36px 0}
+.nav a,.nav button{display:inline-block;padding:10px 24px;background:linear-gradient(135deg,#1a3a4a,#2d6a7a);color:#fff;text-decoration:none;border-radius:10px;font-weight:500;font-size:.95rem;transition:all .25s;border:none;cursor:pointer;font-family:inherit}
+.nav a:hover,.nav button:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(26,58,74,.25)}
+.reset-btn{display:none;background:#6c757d!important}
+footer{text-align:center;padding:36px 24px;color:#8899a4;font-size:.85rem;border-top:1px solid #e2e8f0;margin-top:40px}
+</style></head><body>
+<header><div class="container"><a href="diagnostic.html">&larr; Back to Diagnostic</a><h1>Plane Geometry Practice</h1><p class="sub">Practice Module &middot; 8 Questions</p></div></header>
+<div class="container">
+<div id="score-box" class="score-box"><h2>Your Score</h2><div class="pct" id="pct">0%</div><div class="detail" id="detail"></div></div>
+<div class="concepts"><h2 onclick="this.parentElement.classList.toggle('collapsed')">Key Concepts</h2><ul><li><strong>Pythagorean Theorem</strong> — a&sup2; + b&sup2; = c&sup2;. Common triples: 3-4-5, 5-12-13, 8-15-17</li><li><strong>30-60-90 Triangle</strong> — Sides are x, x&radic;3, 2x (opposite 30&deg;, 60&deg;, 90&deg;)</li><li><strong>45-45-90 Triangle</strong> — Sides are x, x, x&radic;2</li><li><strong>Circle Formulas</strong> — Area = &pi;r&sup2;. Circumference = 2&pi;r. Arc length = (&theta;/360)&times;2&pi;r. Sector area = (&theta;/360)&times;&pi;r&sup2;</li><li><strong>Supplementary Angles</strong> — Sum to 180&deg;. <strong>Complementary</strong> — Sum to 90&deg;</li><li><strong>Triangle Angles</strong> — Always sum to 180&deg;. Exterior angle = sum of two non-adjacent interior angles</li><li><strong>Volume</strong> — Rectangular box: lwh. Cylinder: &pi;r&sup2;h. Surface area of cylinder: 2&pi;r&sup2; + 2&pi;rh</li><li><strong>Similar Figures</strong> — If sides are in ratio k, areas are in ratio k&sup2;, volumes in ratio k&sup3;</li></ul></div>
+<div class="question"><p><b>1.</b> In a 30-60-90 triangle, the side opposite the 30&deg; angle is 7. What is the length of the hypotenuse?</p><ul class="choices"><li>A. 7&radic;2</li><li>B. 7&radic;3</li><li>C. 14</li><li>D. 14&radic;3</li><li>E. 21</li></ul><div class="explanation"><strong>C.</strong> In a 30-60-90 triangle, the hypotenuse is twice the short leg: 2 &times; 7 = 14.</div></div>
+<div class="question"><p><b>2.</b> What is the arc length of a 90&deg; arc of a circle with radius 6?</p><ul class="choices"><li>F. 3&pi;</li><li>G. 6&pi;</li><li>H. 9&pi;</li><li>J. 12&pi;</li><li>K. 36&pi;</li></ul><div class="explanation"><strong>F.</strong> Arc length = (90/360) &times; 2&pi;(6) = (1/4)(12&pi;) = 3&pi;.</div></div>
+<div class="question"><p><b>3.</b> Two angles are supplementary. One angle is 40&deg; more than the other. What is the larger angle?</p><ul class="choices"><li>A. 70&deg;</li><li>B. 90&deg;</li><li>C. 100&deg;</li><li>D. 110&deg;</li><li>E. 140&deg;</li></ul><div class="explanation"><strong>D.</strong> <i>x</i> + (<i>x</i> + 40) = 180. 2<i>x</i> = 140, <i>x</i> = 70. Larger angle = 110&deg;.</div></div>
+<div class="question"><p><b>4.</b> In a 45-45-90 triangle, each leg has length 8. What is the length of the hypotenuse?</p><ul class="choices"><li>F. 4&radic;2</li><li>G. 8</li><li>H. 8&radic;2</li><li>J. 16</li><li>K. 8&radic;3</li></ul><div class="explanation"><strong>H.</strong> In a 45-45-90, hypotenuse = leg &times; &radic;2 = 8&radic;2.</div></div>
+<div class="question"><p><b>5.</b> What is the area of a trapezoid with parallel sides of length 10 and 14, and a height of 6?</p><ul class="choices"><li>A. 48</li><li>B. 60</li><li>C. 72</li><li>D. 84</li><li>E. 144</li></ul><div class="explanation"><strong>C.</strong> Area = &frac12;(b<sub>1</sub> + b<sub>2</sub>)h = &frac12;(10 + 14)(6) = &frac12;(24)(6) = 72.</div></div>
+<div class="question"><p><b>6.</b> A cylinder has a radius of 3 and a height of 10. What is its surface area?</p><ul class="choices"><li>F. 30&pi;</li><li>G. 60&pi;</li><li>H. 78&pi;</li><li>J. 90&pi;</li><li>K. 108&pi;</li></ul><div class="explanation"><strong>H.</strong> SA = 2&pi;r&sup2; + 2&pi;rh = 2&pi;(9) + 2&pi;(3)(10) = 18&pi; + 60&pi; = 78&pi;.</div></div>
+<div class="question"><p><b>7.</b> An inscribed angle in a circle intercepts an arc of 120&deg;. What is the measure of the inscribed angle?</p><ul class="choices"><li>A. 30&deg;</li><li>B. 60&deg;</li><li>C. 90&deg;</li><li>D. 120&deg;</li><li>E. 240&deg;</li></ul><div class="explanation"><strong>B.</strong> An inscribed angle is half the intercepted arc: 120&deg; &divide; 2 = 60&deg;.</div></div>
+<div class="question"><p><b>8.</b> In a parallelogram, one angle measures 65&deg;. What is the measure of the adjacent angle?</p><ul class="choices"><li>F. 65&deg;</li><li>G. 90&deg;</li><li>H. 115&deg;</li><li>J. 130&deg;</li><li>K. 180&deg;</li></ul><div class="explanation"><strong>H.</strong> Adjacent angles in a parallelogram are supplementary: 180&deg; &minus; 65&deg; = 115&deg;.</div></div>
+
+<div class="submit-wrap"><button class="submit-btn" onclick="gradeTest()">Check Answers</button><button class="reset-btn" onclick="resetTest()">Try Again</button></div>
+<div class="nav"><a href="diagnostic.html">Retake Diagnostic</a><a href="index.html">All Practice Tests</a></div>
+</div>
+<footer><div class="container">ACT Math Practice &middot; Plane Geometry Module</div></footer>
+<script>
+const ANSWERS = {"1": "C", "2": "F", "3": "D", "4": "H", "5": "C", "6": "H", "7": "B", "8": "H"};
+let graded = false;
+document.querySelectorAll('.choices li').forEach(li => {
+  li.addEventListener('click', function() {
+    if (graded) return;
+    const siblings = this.parentElement.querySelectorAll('li');
+    siblings.forEach(s => s.classList.remove('selected'));
+    this.classList.add('selected');
+  });
+});
+function gradeTest() {
+  if (graded) return;
+  graded = true;
+  let correct = 0;
+  const total = Object.keys(ANSWERS).length;
+  document.querySelectorAll('.question').forEach((qDiv, idx) => {
+    const qNum = idx + 1;
+    const choices = qDiv.querySelectorAll('.choices li');
+    const selected = qDiv.querySelector('.choices li.selected');
+    const ansLetter = ANSWERS[qNum];
+    const letters = qNum % 2 === 1 ? ['A','B','C','D','E'] : ['F','G','H','J','K'];
+    const correctIdx = letters.indexOf(ansLetter);
+    if (selected) {
+      const selIdx = Array.from(choices).indexOf(selected);
+      if (selIdx === correctIdx) {
+        correct++;
+        selected.classList.add('correct');
+        const tag = document.createElement('span');
+        tag.className = 'result-tag correct';
+        tag.textContent = 'Correct';
+        qDiv.querySelector('p').appendChild(tag);
+      } else {
+        selected.classList.add('wrong');
+        choices[correctIdx].classList.add('show-correct');
+        const tag = document.createElement('span');
+        tag.className = 'result-tag wrong';
+        tag.textContent = 'Wrong';
+        qDiv.querySelector('p').appendChild(tag);
+      }
+    } else {
+      choices[correctIdx].classList.add('show-correct');
+      const tag = document.createElement('span');
+      tag.className = 'result-tag wrong';
+      tag.textContent = 'Skipped';
+      qDiv.querySelector('p').appendChild(tag);
+    }
+    const exp = qDiv.querySelector('.explanation');
+    if (exp) exp.classList.add('show');
+    choices.forEach(li => li.style.pointerEvents = 'none');
+  });
+  const pct = Math.round(correct / total * 100);
+  const box = document.getElementById('score-box');
+  box.style.display = 'block';
+  document.getElementById('pct').textContent = pct + '%';
+  document.getElementById('pct').className = 'pct ' + (pct >= 70 ? 'good' : pct >= 50 ? 'ok' : 'bad');
+  document.getElementById('detail').textContent = correct + ' of ' + total + ' correct';
+  document.querySelector('.submit-btn').style.display = 'none';
+  document.querySelector('.reset-btn').style.display = 'inline-block';
+}
+function resetTest() {
+  graded = false;
+  document.getElementById('score-box').style.display = 'none';
+  document.querySelector('.submit-btn').style.display = '';
+  document.querySelector('.reset-btn').style.display = 'none';
+  document.querySelectorAll('.question').forEach(q => {
+    q.querySelectorAll('.choices li').forEach(li => {
+      li.className = '';
+      li.style.pointerEvents = '';
+    });
+    q.querySelectorAll('.result-tag').forEach(t => t.remove());
+    const exp = q.querySelector('.explanation');
+    if (exp) exp.classList.remove('show');
+  });
+  window.scrollTo(0, 0);
+}
+</script></body></html>

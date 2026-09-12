@@ -1,0 +1,144 @@
+<!DOCTYPE html><html lang="en"><head><script async src="https://www.googletagmanager.com/gtag/js?id=G-R844L9265X"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-R844L9265X');</script><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Intermediate Algebra Practice — ACT Math Practice</title><meta name="description" content="Intermediate Algebra practice for ACT Math: quadratic formula, functions, logarithms, systems, complex numbers, and sequences."><style>@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:#fff;color:#2d3748;line-height:1.7}
+.container{max-width:800px;margin:0 auto;padding:20px 24px}
+header{background:linear-gradient(135deg,#1a3a4a 0%,#2d6a7a 100%);color:#fff;padding:28px 0;margin-bottom:36px;text-align:center}
+header .container{display:block}
+header h1{font-size:1.5rem;font-weight:700;letter-spacing:-0.3px}
+header a{color:rgba(255,255,255,.7);text-decoration:none;font-size:.9rem;display:inline-block;margin-bottom:6px;transition:color .2s}
+header a:hover{color:#fff}
+header .sub{font-size:.95rem;opacity:.7;margin-top:6px}
+.concepts{background:#f8f9fa;border:1px solid #e2e8f0;border-radius:12px;padding:24px;margin-bottom:32px}
+.concepts h2{font-size:1.1rem;color:#1a3a4a;margin-bottom:14px;cursor:pointer;user-select:none}
+.concepts h2::after{content:" ▾";font-size:.8rem}
+.concepts ul{list-style:none;padding:0}
+.concepts li{padding:8px 0;border-bottom:1px solid #eee;font-size:.95rem;line-height:1.6}
+.concepts li:last-child{border:none}
+.concepts li strong{color:#1a3a4a}
+.question{background:#fff;border-radius:12px;padding:24px;margin-bottom:20px;border:1px solid #e2e8f0;transition:border-color .2s}
+.question:hover{border-color:#cbd5e0}
+.question p{margin-bottom:14px;font-size:1.05rem}
+.question p b{color:#1a3a4a;font-size:1.1rem;margin-right:2px}
+.choices{list-style:none}
+.choices li{padding:10px 14px;margin:6px 0;border-radius:8px;cursor:pointer;transition:all .2s;border:2px solid transparent}
+.choices li:hover{background:#f0f7fa}
+.choices li.selected{background:#d1ecf1;border-color:#bee5eb}
+.choices li.correct{background:#d4edda;border-color:#28a745}
+.choices li.wrong{background:#f8d7da;border-color:#dc3545}
+.choices li.show-correct{background:#d4edda;border-color:#28a745}
+.explanation{background:#f0f7ff;border-left:4px solid #1a3a4a;padding:14px 18px;margin-top:14px;border-radius:0 8px 8px 0;font-size:.95rem;color:#444;display:none}
+.explanation.show{display:block}
+.explanation strong{color:#1a3a4a}
+.result-tag{display:inline-block;padding:2px 10px;border-radius:12px;font-size:.8rem;font-weight:600;margin-left:8px}
+.result-tag.correct{background:#d4edda;color:#155724}
+.result-tag.wrong{background:#f8d7da;color:#721c24}
+.submit-wrap{text-align:center;margin:36px 0}
+.submit-btn{display:inline-block;padding:14px 40px;background:linear-gradient(135deg,#1a3a4a,#2d6a7a);color:#fff;border:none;border-radius:12px;font-size:1.1rem;cursor:pointer;font-weight:600;font-family:inherit;transition:all .25s}
+.submit-btn:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(26,58,74,.25)}
+.score-box{background:#fff;border-radius:12px;padding:28px;margin-bottom:28px;text-align:center;border:1px solid #e2e8f0;box-shadow:0 4px 20px rgba(0,0,0,.06);display:none}
+.score-box h2{font-size:1.4rem;margin-bottom:8px;color:#1a3a4a;text-align:center}
+.score-box .pct{font-size:3rem;font-weight:700}
+.score-box .pct.good{color:#28a745}
+.score-box .pct.ok{color:#e6a817}
+.score-box .pct.bad{color:#dc3545}
+.score-box .detail{color:#666;margin-top:4px}
+.nav{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin:36px 0}
+.nav a,.nav button{display:inline-block;padding:10px 24px;background:linear-gradient(135deg,#1a3a4a,#2d6a7a);color:#fff;text-decoration:none;border-radius:10px;font-weight:500;font-size:.95rem;transition:all .25s;border:none;cursor:pointer;font-family:inherit}
+.nav a:hover,.nav button:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(26,58,74,.25)}
+.reset-btn{display:none;background:#6c757d!important}
+footer{text-align:center;padding:36px 24px;color:#8899a4;font-size:.85rem;border-top:1px solid #e2e8f0;margin-top:40px}
+</style></head><body>
+<header><div class="container"><a href="diagnostic.html">&larr; Back to Diagnostic</a><h1>Intermediate Algebra Practice</h1><p class="sub">Practice Module &middot; 8 Questions</p></div></header>
+<div class="container">
+<div id="score-box" class="score-box"><h2>Your Score</h2><div class="pct" id="pct">0%</div><div class="detail" id="detail"></div></div>
+<div class="concepts"><h2 onclick="this.parentElement.classList.toggle('collapsed')">Key Concepts</h2><ul><li><strong>Vertex Form</strong> — y = a(x &minus; h)&sup2; + k. Vertex is (h, k)</li><li><strong>Simplifying Rational Expressions</strong> — Factor numerator and denominator, then cancel common factors</li><li><strong>Function Composition</strong> — f(g(x)): evaluate the inner function first, then plug into the outer</li><li><strong>Exponential Growth/Decay</strong> — A = A<sub>0</sub> &times; r<sup>t</sup> where r is the growth factor per period</li><li><strong>Domain Restrictions</strong> — Denominators cannot equal 0. Expressions under even roots must be &ge; 0</li><li><strong>Geometric Sequences</strong> — a<sub>n</sub> = a<sub>1</sub> &times; r<sup>n&minus;1</sup>. Common ratio r = a<sub>2</sub>/a<sub>1</sub></li><li><strong>Complex Numbers</strong> — i = &radic;(&minus;1). i&sup2; = &minus;1. Multiply using FOIL and replace i&sup2; with &minus;1</li></ul></div>
+<div class="question"><p><b>1.</b> What is the vertex of the parabola <i>y</i> = (<i>x</i> &minus; 3)&sup2; + 5?</p><ul class="choices"><li>A. (3, 5)</li><li>B. (&minus;3, 5)</li><li>C. (3, &minus;5)</li><li>D. (&minus;3, &minus;5)</li><li>E. (5, 3)</li></ul><div class="explanation"><strong>A.</strong> In vertex form y = (x &minus; h)&sup2; + k, the vertex is (h, k) = (3, 5).</div></div>
+<div class="question"><p><b>2.</b> Simplify: (<i>x</i>&sup2; &minus; 9)/(<i>x</i> + 3)</p><ul class="choices"><li>F. <i>x</i> &minus; 3</li><li>G. <i>x</i> + 3</li><li>H. <i>x</i>&sup2; &minus; 3</li><li>J. <i>x</i> &minus; 9</li><li>K. <i>x</i> + 9</li></ul><div class="explanation"><strong>F.</strong> Factor the numerator: (<i>x</i> &minus; 3)(<i>x</i> + 3)/(<i>x</i> + 3) = <i>x</i> &minus; 3.</div></div>
+<div class="question"><p><b>3.</b> If <i>f</i>(<i>x</i>) = <i>x</i>&sup2; + 1 and <i>g</i>(<i>x</i>) = 2<i>x</i> &minus; 3, what is <i>f</i>(<i>g</i>(2))?</p><ul class="choices"><li>A. 0</li><li>B. 2</li><li>C. 5</li><li>D. 8</li><li>E. 10</li></ul><div class="explanation"><strong>B.</strong> <i>g</i>(2) = 2(2) &minus; 3 = 1. Then <i>f</i>(1) = 1&sup2; + 1 = 2.</div></div>
+<div class="question"><p><b>4.</b> A population doubles every 5 years. If it starts at 1,000, what is the population after 15 years?</p><ul class="choices"><li>F. 3,000</li><li>G. 4,000</li><li>H. 6,000</li><li>J. 8,000</li><li>K. 16,000</li></ul><div class="explanation"><strong>J.</strong> 15 years = 3 doubling periods. 1,000 &times; 2&sup3; = 1,000 &times; 8 = 8,000.</div></div>
+<div class="question"><p><b>5.</b> For what value(s) of <i>x</i> is the expression (<i>x</i> + 2)/(<i>x</i>&sup2; &minus; 4) undefined?</p><ul class="choices"><li>A. <i>x</i> = 2 only</li><li>B. <i>x</i> = &minus;2 only</li><li>C. <i>x</i> = 2 and <i>x</i> = &minus;2</li><li>D. <i>x</i> = 4 only</li><li>E. <i>x</i> = &minus;4 only</li></ul><div class="explanation"><strong>C.</strong> <i>x</i>&sup2; &minus; 4 = (<i>x</i> &minus; 2)(<i>x</i> + 2) = 0 when <i>x</i> = 2 or <i>x</i> = &minus;2.</div></div>
+<div class="question"><p><b>6.</b> What is the 10th term of the geometric sequence 2, 6, 18, 54, &hellip;?</p><ul class="choices"><li>F. 1,458</li><li>G. 4,374</li><li>H. 13,122</li><li>J. 39,366</li><li>K. 118,098</li></ul><div class="explanation"><strong>J.</strong> a<sub>1</sub> = 2, r = 3. a<sub>10</sub> = 2 &times; 3<sup>9</sup> = 2 &times; 19,683 = 39,366.</div></div>
+<div class="question"><p><b>7.</b> Solve: &radic;(2<i>x</i> + 5) = 7</p><ul class="choices"><li>A. 16</li><li>B. 18</li><li>C. 20</li><li>D. 22</li><li>E. 24</li></ul><div class="explanation"><strong>D.</strong> Square both sides: 2<i>x</i> + 5 = 49. 2<i>x</i> = 44. <i>x</i> = 22.</div></div>
+<div class="question"><p><b>8.</b> What is (3 + 2<i>i</i>)(1 &minus; <i>i</i>)?</p><ul class="choices"><li>F. 1 &minus; <i>i</i></li><li>G. 5 + <i>i</i></li><li>H. 5 &minus; <i>i</i></li><li>J. 1 + <i>i</i></li><li>K. 3 &minus; 2<i>i</i></li></ul><div class="explanation"><strong>H.</strong> FOIL: 3 &minus; 3<i>i</i> + 2<i>i</i> &minus; 2<i>i</i>&sup2; = 3 &minus; <i>i</i> + 2 = 5 &minus; <i>i</i> (since <i>i</i>&sup2; = &minus;1).</div></div>
+
+<div class="submit-wrap"><button class="submit-btn" onclick="gradeTest()">Check Answers</button><button class="reset-btn" onclick="resetTest()">Try Again</button></div>
+<div class="nav"><a href="diagnostic.html">Retake Diagnostic</a><a href="index.html">All Practice Tests</a></div>
+</div>
+<footer><div class="container">ACT Math Practice &middot; Intermediate Algebra Module</div></footer>
+<script>
+const ANSWERS = {"1": "A", "2": "F", "3": "B", "4": "J", "5": "C", "6": "J", "7": "D", "8": "H"};
+let graded = false;
+document.querySelectorAll('.choices li').forEach(li => {
+  li.addEventListener('click', function() {
+    if (graded) return;
+    const siblings = this.parentElement.querySelectorAll('li');
+    siblings.forEach(s => s.classList.remove('selected'));
+    this.classList.add('selected');
+  });
+});
+function gradeTest() {
+  if (graded) return;
+  graded = true;
+  let correct = 0;
+  const total = Object.keys(ANSWERS).length;
+  document.querySelectorAll('.question').forEach((qDiv, idx) => {
+    const qNum = idx + 1;
+    const choices = qDiv.querySelectorAll('.choices li');
+    const selected = qDiv.querySelector('.choices li.selected');
+    const ansLetter = ANSWERS[qNum];
+    const letters = qNum % 2 === 1 ? ['A','B','C','D','E'] : ['F','G','H','J','K'];
+    const correctIdx = letters.indexOf(ansLetter);
+    if (selected) {
+      const selIdx = Array.from(choices).indexOf(selected);
+      if (selIdx === correctIdx) {
+        correct++;
+        selected.classList.add('correct');
+        const tag = document.createElement('span');
+        tag.className = 'result-tag correct';
+        tag.textContent = 'Correct';
+        qDiv.querySelector('p').appendChild(tag);
+      } else {
+        selected.classList.add('wrong');
+        choices[correctIdx].classList.add('show-correct');
+        const tag = document.createElement('span');
+        tag.className = 'result-tag wrong';
+        tag.textContent = 'Wrong';
+        qDiv.querySelector('p').appendChild(tag);
+      }
+    } else {
+      choices[correctIdx].classList.add('show-correct');
+      const tag = document.createElement('span');
+      tag.className = 'result-tag wrong';
+      tag.textContent = 'Skipped';
+      qDiv.querySelector('p').appendChild(tag);
+    }
+    const exp = qDiv.querySelector('.explanation');
+    if (exp) exp.classList.add('show');
+    choices.forEach(li => li.style.pointerEvents = 'none');
+  });
+  const pct = Math.round(correct / total * 100);
+  const box = document.getElementById('score-box');
+  box.style.display = 'block';
+  document.getElementById('pct').textContent = pct + '%';
+  document.getElementById('pct').className = 'pct ' + (pct >= 70 ? 'good' : pct >= 50 ? 'ok' : 'bad');
+  document.getElementById('detail').textContent = correct + ' of ' + total + ' correct';
+  document.querySelector('.submit-btn').style.display = 'none';
+  document.querySelector('.reset-btn').style.display = 'inline-block';
+}
+function resetTest() {
+  graded = false;
+  document.getElementById('score-box').style.display = 'none';
+  document.querySelector('.submit-btn').style.display = '';
+  document.querySelector('.reset-btn').style.display = 'none';
+  document.querySelectorAll('.question').forEach(q => {
+    q.querySelectorAll('.choices li').forEach(li => {
+      li.className = '';
+      li.style.pointerEvents = '';
+    });
+    q.querySelectorAll('.result-tag').forEach(t => t.remove());
+    const exp = q.querySelector('.explanation');
+    if (exp) exp.classList.remove('show');
+  });
+  window.scrollTo(0, 0);
+}
+</script></body></html>

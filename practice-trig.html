@@ -1,0 +1,144 @@
+<!DOCTYPE html><html lang="en"><head><script async src="https://www.googletagmanager.com/gtag/js?id=G-R844L9265X"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-R844L9265X');</script><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Trigonometry Practice — ACT Math Practice</title><meta name="description" content="Trigonometry practice for ACT Math: SOH-CAH-TOA, unit circle, identities, Law of Sines/Cosines, radians, and graphing."><style>@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:#fff;color:#2d3748;line-height:1.7}
+.container{max-width:800px;margin:0 auto;padding:20px 24px}
+header{background:linear-gradient(135deg,#1a3a4a 0%,#2d6a7a 100%);color:#fff;padding:28px 0;margin-bottom:36px;text-align:center}
+header .container{display:block}
+header h1{font-size:1.5rem;font-weight:700;letter-spacing:-0.3px}
+header a{color:rgba(255,255,255,.7);text-decoration:none;font-size:.9rem;display:inline-block;margin-bottom:6px;transition:color .2s}
+header a:hover{color:#fff}
+header .sub{font-size:.95rem;opacity:.7;margin-top:6px}
+.concepts{background:#f8f9fa;border:1px solid #e2e8f0;border-radius:12px;padding:24px;margin-bottom:32px}
+.concepts h2{font-size:1.1rem;color:#1a3a4a;margin-bottom:14px;cursor:pointer;user-select:none}
+.concepts h2::after{content:" ▾";font-size:.8rem}
+.concepts ul{list-style:none;padding:0}
+.concepts li{padding:8px 0;border-bottom:1px solid #eee;font-size:.95rem;line-height:1.6}
+.concepts li:last-child{border:none}
+.concepts li strong{color:#1a3a4a}
+.question{background:#fff;border-radius:12px;padding:24px;margin-bottom:20px;border:1px solid #e2e8f0;transition:border-color .2s}
+.question:hover{border-color:#cbd5e0}
+.question p{margin-bottom:14px;font-size:1.05rem}
+.question p b{color:#1a3a4a;font-size:1.1rem;margin-right:2px}
+.choices{list-style:none}
+.choices li{padding:10px 14px;margin:6px 0;border-radius:8px;cursor:pointer;transition:all .2s;border:2px solid transparent}
+.choices li:hover{background:#f0f7fa}
+.choices li.selected{background:#d1ecf1;border-color:#bee5eb}
+.choices li.correct{background:#d4edda;border-color:#28a745}
+.choices li.wrong{background:#f8d7da;border-color:#dc3545}
+.choices li.show-correct{background:#d4edda;border-color:#28a745}
+.explanation{background:#f0f7ff;border-left:4px solid #1a3a4a;padding:14px 18px;margin-top:14px;border-radius:0 8px 8px 0;font-size:.95rem;color:#444;display:none}
+.explanation.show{display:block}
+.explanation strong{color:#1a3a4a}
+.result-tag{display:inline-block;padding:2px 10px;border-radius:12px;font-size:.8rem;font-weight:600;margin-left:8px}
+.result-tag.correct{background:#d4edda;color:#155724}
+.result-tag.wrong{background:#f8d7da;color:#721c24}
+.submit-wrap{text-align:center;margin:36px 0}
+.submit-btn{display:inline-block;padding:14px 40px;background:linear-gradient(135deg,#1a3a4a,#2d6a7a);color:#fff;border:none;border-radius:12px;font-size:1.1rem;cursor:pointer;font-weight:600;font-family:inherit;transition:all .25s}
+.submit-btn:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(26,58,74,.25)}
+.score-box{background:#fff;border-radius:12px;padding:28px;margin-bottom:28px;text-align:center;border:1px solid #e2e8f0;box-shadow:0 4px 20px rgba(0,0,0,.06);display:none}
+.score-box h2{font-size:1.4rem;margin-bottom:8px;color:#1a3a4a;text-align:center}
+.score-box .pct{font-size:3rem;font-weight:700}
+.score-box .pct.good{color:#28a745}
+.score-box .pct.ok{color:#e6a817}
+.score-box .pct.bad{color:#dc3545}
+.score-box .detail{color:#666;margin-top:4px}
+.nav{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin:36px 0}
+.nav a,.nav button{display:inline-block;padding:10px 24px;background:linear-gradient(135deg,#1a3a4a,#2d6a7a);color:#fff;text-decoration:none;border-radius:10px;font-weight:500;font-size:.95rem;transition:all .25s;border:none;cursor:pointer;font-family:inherit}
+.nav a:hover,.nav button:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(26,58,74,.25)}
+.reset-btn{display:none;background:#6c757d!important}
+footer{text-align:center;padding:36px 24px;color:#8899a4;font-size:.85rem;border-top:1px solid #e2e8f0;margin-top:40px}
+</style></head><body>
+<header><div class="container"><a href="diagnostic.html">&larr; Back to Diagnostic</a><h1>Trigonometry Practice</h1><p class="sub">Practice Module &middot; 8 Questions</p></div></header>
+<div class="container">
+<div id="score-box" class="score-box"><h2>Your Score</h2><div class="pct" id="pct">0%</div><div class="detail" id="detail"></div></div>
+<div class="concepts"><h2 onclick="this.parentElement.classList.toggle('collapsed')">Key Concepts</h2><ul><li><strong>SOH-CAH-TOA</strong> — sin = opposite/hypotenuse, cos = adjacent/hypotenuse, tan = opposite/adjacent</li><li><strong>Reciprocal Functions</strong> — csc = 1/sin, sec = 1/cos, cot = 1/tan</li><li><strong>Unit Circle Values</strong> — sin 30&deg; = 1/2, cos 30&deg; = &radic;3/2, sin 45&deg; = cos 45&deg; = &radic;2/2, sin 60&deg; = &radic;3/2, cos 60&deg; = 1/2</li><li><strong>Radian Conversion</strong> — degrees &times; &pi;/180 = radians. Radians &times; 180/&pi; = degrees</li><li><strong>Pythagorean Identity</strong> — sin&sup2;&theta; + cos&sup2;&theta; = 1</li><li><strong>Graphing</strong> — y = A sin(Bx + C) + D. Amplitude = |A|, Period = 2&pi;/B, Phase shift = &minus;C/B, Vertical shift = D</li><li><strong>Law of Sines</strong> — a/sin A = b/sin B = c/sin C. <strong>Law of Cosines</strong> — c&sup2; = a&sup2; + b&sup2; &minus; 2ab cos C</li></ul></div>
+<div class="question"><p><b>1.</b> In a right triangle, the adjacent side to angle &theta; is 8 and the hypotenuse is 17. What is cos &theta;?</p><ul class="choices"><li>A. 8/17</li><li>B. 15/17</li><li>C. 8/15</li><li>D. 17/8</li><li>E. 17/15</li></ul><div class="explanation"><strong>A.</strong> cos &theta; = adjacent/hypotenuse = 8/17.</div></div>
+<div class="question"><p><b>2.</b> What is the value of sin(150&deg;)?</p><ul class="choices"><li>F. &minus;1/2</li><li>G. &minus;&radic;3/2</li><li>H. 1/2</li><li>J. &radic;3/2</li><li>K. 1</li></ul><div class="explanation"><strong>H.</strong> 150&deg; is in Quadrant II where sine is positive. sin(150&deg;) = sin(180&deg; &minus; 30&deg;) = sin(30&deg;) = 1/2.</div></div>
+<div class="question"><p><b>3.</b> What is the value of tan(45&deg;)?</p><ul class="choices"><li>A. 0</li><li>B. 1/2</li><li>C. &radic;2/2</li><li>D. 1</li><li>E. &radic;2</li></ul><div class="explanation"><strong>D.</strong> tan(45&deg;) = sin(45&deg;)/cos(45&deg;) = (&radic;2/2)/(&radic;2/2) = 1.</div></div>
+<div class="question"><p><b>4.</b> What is the amplitude of <i>y</i> = 3 sin(4<i>x</i>) + 1?</p><ul class="choices"><li>F. 1</li><li>G. 3</li><li>H. 4</li><li>J. 7</li><li>K. 12</li></ul><div class="explanation"><strong>G.</strong> For y = A sin(Bx) + D, amplitude = |A| = |3| = 3.</div></div>
+<div class="question"><p><b>5.</b> Convert 210&deg; to radians.</p><ul class="choices"><li>A. 5&pi;/6</li><li>B. 7&pi;/6</li><li>C. 5&pi;/4</li><li>D. 7&pi;/4</li><li>E. 11&pi;/6</li></ul><div class="explanation"><strong>B.</strong> 210 &times; &pi;/180 = 210&pi;/180 = 7&pi;/6.</div></div>
+<div class="question"><p><b>6.</b> If sin &theta; = 5/13 and &theta; is in Quadrant I, what is tan &theta;?</p><ul class="choices"><li>F. 5/12</li><li>G. 12/5</li><li>H. 5/13</li><li>J. 12/13</li><li>K. 13/5</li></ul><div class="explanation"><strong>F.</strong> From the 5-12-13 right triangle, cos &theta; = 12/13. So tan &theta; = sin/cos = (5/13)/(12/13) = 5/12.</div></div>
+<div class="question"><p><b>7.</b> In a triangle, sides <i>a</i> = 5, <i>b</i> = 7, and the included angle <i>C</i> = 60&deg;. Using the Law of Cosines, what is <i>c</i>&sup2;?</p><ul class="choices"><li>A. 24</li><li>B. 39</li><li>C. 49</li><li>D. 74</li><li>E. 109</li></ul><div class="explanation"><strong>B.</strong> <i>c</i>&sup2; = <i>a</i>&sup2; + <i>b</i>&sup2; &minus; 2<i>ab</i> cos <i>C</i> = 25 + 49 &minus; 2(5)(7)(1/2) = 74 &minus; 35 = 39.</div></div>
+<div class="question"><p><b>8.</b> From the top of a 50-foot building, the angle of depression to a point on the ground is 30&deg;. How far is the point from the base of the building?</p><ul class="choices"><li>F. 25</li><li>G. 25&radic;3</li><li>H. 50</li><li>J. 50&radic;3</li><li>K. 100</li></ul><div class="explanation"><strong>J.</strong> tan(30&deg;) = 50/<i>d</i>. Since tan(30&deg;) = 1/&radic;3: <i>d</i> = 50&radic;3.</div></div>
+
+<div class="submit-wrap"><button class="submit-btn" onclick="gradeTest()">Check Answers</button><button class="reset-btn" onclick="resetTest()">Try Again</button></div>
+<div class="nav"><a href="diagnostic.html">Retake Diagnostic</a><a href="index.html">All Practice Tests</a></div>
+</div>
+<footer><div class="container">ACT Math Practice &middot; Trigonometry Module</div></footer>
+<script>
+const ANSWERS = {"1": "A", "2": "H", "3": "D", "4": "G", "5": "B", "6": "F", "7": "B", "8": "J"};
+let graded = false;
+document.querySelectorAll('.choices li').forEach(li => {
+  li.addEventListener('click', function() {
+    if (graded) return;
+    const siblings = this.parentElement.querySelectorAll('li');
+    siblings.forEach(s => s.classList.remove('selected'));
+    this.classList.add('selected');
+  });
+});
+function gradeTest() {
+  if (graded) return;
+  graded = true;
+  let correct = 0;
+  const total = Object.keys(ANSWERS).length;
+  document.querySelectorAll('.question').forEach((qDiv, idx) => {
+    const qNum = idx + 1;
+    const choices = qDiv.querySelectorAll('.choices li');
+    const selected = qDiv.querySelector('.choices li.selected');
+    const ansLetter = ANSWERS[qNum];
+    const letters = qNum % 2 === 1 ? ['A','B','C','D','E'] : ['F','G','H','J','K'];
+    const correctIdx = letters.indexOf(ansLetter);
+    if (selected) {
+      const selIdx = Array.from(choices).indexOf(selected);
+      if (selIdx === correctIdx) {
+        correct++;
+        selected.classList.add('correct');
+        const tag = document.createElement('span');
+        tag.className = 'result-tag correct';
+        tag.textContent = 'Correct';
+        qDiv.querySelector('p').appendChild(tag);
+      } else {
+        selected.classList.add('wrong');
+        choices[correctIdx].classList.add('show-correct');
+        const tag = document.createElement('span');
+        tag.className = 'result-tag wrong';
+        tag.textContent = 'Wrong';
+        qDiv.querySelector('p').appendChild(tag);
+      }
+    } else {
+      choices[correctIdx].classList.add('show-correct');
+      const tag = document.createElement('span');
+      tag.className = 'result-tag wrong';
+      tag.textContent = 'Skipped';
+      qDiv.querySelector('p').appendChild(tag);
+    }
+    const exp = qDiv.querySelector('.explanation');
+    if (exp) exp.classList.add('show');
+    choices.forEach(li => li.style.pointerEvents = 'none');
+  });
+  const pct = Math.round(correct / total * 100);
+  const box = document.getElementById('score-box');
+  box.style.display = 'block';
+  document.getElementById('pct').textContent = pct + '%';
+  document.getElementById('pct').className = 'pct ' + (pct >= 70 ? 'good' : pct >= 50 ? 'ok' : 'bad');
+  document.getElementById('detail').textContent = correct + ' of ' + total + ' correct';
+  document.querySelector('.submit-btn').style.display = 'none';
+  document.querySelector('.reset-btn').style.display = 'inline-block';
+}
+function resetTest() {
+  graded = false;
+  document.getElementById('score-box').style.display = 'none';
+  document.querySelector('.submit-btn').style.display = '';
+  document.querySelector('.reset-btn').style.display = 'none';
+  document.querySelectorAll('.question').forEach(q => {
+    q.querySelectorAll('.choices li').forEach(li => {
+      li.className = '';
+      li.style.pointerEvents = '';
+    });
+    q.querySelectorAll('.result-tag').forEach(t => t.remove());
+    const exp = q.querySelector('.explanation');
+    if (exp) exp.classList.remove('show');
+  });
+  window.scrollTo(0, 0);
+}
+</script></body></html>

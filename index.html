@@ -5,6 +5,10 @@ body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:#fff;colo
 header{background:linear-gradient(135deg,#1a3a4a 0%,#2d6a7a 100%);color:#fff;padding:48px 0;margin-bottom:40px;text-align:center}
 header h1{font-size:2.2rem;font-weight:700;letter-spacing:-0.5px}
 header .subtitle{font-size:1.05rem;opacity:0.75;margin-top:10px;font-weight:400}
+.diag-banner{text-align:center;margin-bottom:28px}
+.diag-banner a{display:inline-block;padding:14px 32px;background:linear-gradient(135deg,#28a745,#218838);color:#fff;text-decoration:none;border-radius:12px;font-weight:600;font-size:1.05rem;transition:all .25s;box-shadow:0 4px 12px rgba(40,167,69,.25)}
+.diag-banner a:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(40,167,69,.35)}
+.diag-banner .sub{font-size:.82rem;color:#8899a4;margin-top:8px}
 h2{margin-bottom:28px;color:#1a3a4a;font-size:1.3rem;font-weight:600;text-align:center;letter-spacing:-0.2px}
 .test-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(155px,1fr));gap:14px}
 .test-card{background:#fff;border-radius:12px;padding:0;text-align:center;border:1px solid #e2e8f0;transition:all .25s ease;overflow:hidden}
@@ -19,7 +23,7 @@ footer{text-align:center;padding:40px 24px 28px;color:#8899a4;font-size:.85rem;b
 .progress-bar-wrap .bar{background:#e2e8f0;border-radius:8px;height:8px;max-width:400px;margin:8px auto 0;overflow:hidden}
 .progress-bar-wrap .fill{background:linear-gradient(90deg,#28a745,#2d6a7a);height:100%;border-radius:8px;transition:width .3s}
 .progress-bar-wrap .label{font-size:.85rem;color:#8899a4}
-</style></head><body><header><div class="container"><h1>ACT Math Practice Tests</h1><p class="subtitle">114 Practice Tests &middot; Instant Grading &middot; Full Explanations</p></div></header><div class="container"><h2>Choose a Practice Test</h2><div class="test-grid"><div class="test-card"><a href="test101.html">Practice Test 1<div class="sub">15 questions</div></a></div>
+</style></head><body><header><div class="container"><h1>ACT Math Practice Tests</h1><p class="subtitle">114 Practice Tests &middot; Instant Grading &middot; Full Explanations</p></div></header><div class="container"><div class="diag-banner"><a href="diagnostic.html">Take the Diagnostic Assessment</a><div class="sub">36 questions &middot; Find your weak spots &middot; Get a custom practice plan</div></div><h2>Choose a Practice Test</h2><div class="test-grid"><div class="test-card"><a href="test101.html">Practice Test 1<div class="sub">15 questions</div></a></div>
 <div class="test-card"><a href="test102.html">Practice Test 2<div class="sub">15 questions</div></a></div>
 <div class="test-card"><a href="test103.html">Practice Test 3<div class="sub">15 questions</div></a></div>
 <div class="test-card"><a href="test104.html">Practice Test 4<div class="sub">15 questions</div></a></div>
@@ -149,7 +153,7 @@ cards.forEach(function(card){
     var badge=document.createElement('div');
     badge.className='score-badge';
     badge.textContent=score+'%';
-    card.appendChild(badge);
+    a.appendChild(badge);
   }
 });
 if(done>0){
